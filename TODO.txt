@@ -1,0 +1,14 @@
+- Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+- Create custom welcome page
+- Define structure
+  - blog (architecture, comparison, posts to Social Networks) (never gets outdated, high priority)
+  - getting started (fast track to get on speed)              (highest priority)
+  - tutorials/How to
+  - references (diagrams, API, Architecture)
+  - Documentation/Guides
+    - User / author (low priority)
+    - Administrator (medium priority)
+    - WebSight Developer (low priority, rather focusing on extensions)
+    - Site Developer (highest priority)
+- Define minimum scope
+- Deploy to S3 / AWS
