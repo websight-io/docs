@@ -1,5 +1,8 @@
-- Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+- Go through mkdocs-material setup guide
 - Create custom welcome page
+- Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+- Create custom theme (palette, fonts)
+
 - Define structure
   - blog (architecture, comparison, posts to Social Networks) (never gets outdated, high priority)
   - getting started (fast track to get on speed)              (highest priority)
@@ -13,9 +16,17 @@
     - WebSight Developer (low priority, rather focusing on extensions)
     - Site Developer (highest priority)
   - Roadmap
+
 - Define minimum scope
 - Deploy to S3 / AWS
-- Add Google Analytics
+- Add Google Analytics (with Cookie)
+- See: https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
+- Setup blogs: https://github.com/Andre601/blog
+- Setup Roadmap (is it for now?)
+- Set favicon, sitemap, robots, logo
+- Setup Search
+- Setup Navigation
+- Validate "edit this page"
 
 
 Links:

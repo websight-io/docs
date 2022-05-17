@@ -14,6 +14,7 @@ WebSight documentation created using [MkDocs Material](https://squidfunk.github.
 
 ## Project layout
     mkdocs.yml    # The configuration file.
+    theme/        # Custom templates, overrides, styles and assets
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.

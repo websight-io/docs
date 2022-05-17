@@ -1,7 +1,21 @@
-site_name: WebSight.io
+site_name: WebSight DXP Documentation
+site_description: 'Explore materials, tutorials and documentation to discover how to use WebSight effectively. Discover enterprise grade, web-scale content management system.'
+site_author: 'Dynamic Solutions'
+site_url: 'https://websight.io'
+copyright: |
+  &copy; Dynamic Solutions
+
 theme:
   name: material
+  custom_dir: 'theme'
+
+repo_name: websight-io/starter
 repo_url: https://github.com/websight-io/starter
+edit_uri: ../docs/edit/main/docs
+
+# Custom directories to watch for changes while running `mkdocs serve`
+watch:
+  - theme
 
 
 
