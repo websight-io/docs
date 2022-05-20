@@ -1,7 +1,22 @@
-- Go through mkdocs-material setup guide
+DONE: - Go through mkdocs-material setup guide
+DONE: - Transfer websight.io domain to our service provider
+DONE: - Deploy to S3 / AWS / GH Pages
+DONE: - Validate "edit this page"
+
+IN WORK: - Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+IN WORK: - Create SSL certificate - https://github.com/websight-io/docs/settings/pages
+
 - Create custom welcome page
-- Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
 - Create custom theme (palette, fonts)
+- Remove footer link
+- Define minimum scope
+- Add Google Analytics (with Cookie)
+- See: https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
+- Setup blogs: https://github.com/Andre601/blog
+- Setup Roadmap (is it for now?)
+- Set favicon, sitemap, robots, logo
+- Setup Search
+- Setup Navigation
 
 - Define structure
   - blog (architecture, comparison, posts to Social Networks) (never gets outdated, high priority)
@@ -15,18 +30,9 @@
     - Administrator (medium priority)
     - WebSight Developer (low priority, rather focusing on extensions)
     - Site Developer (highest priority)
-  - Roadmap
-
-- Define minimum scope
-- Deploy to S3 / AWS
-- Add Google Analytics (with Cookie)
-- See: https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
-- Setup blogs: https://github.com/Andre601/blog
-- Setup Roadmap (is it for now?)
-- Set favicon, sitemap, robots, logo
-- Setup Search
-- Setup Navigation
-- Validate "edit this page"
+  - Roadmap (will be on GH)
+  - Validate with advanced configuration: https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration
+  - Add Social icons (GitHub, LN, Twitter, docker hub, to consider: https://gitter.im/squidfunk/mkdocs-material)
 
 
 Links:
@@ -35,11 +41,11 @@ So far the best:
 - https://github.com/strapi/documentation/tree/main/docs/developer-docs/latest (MIT)
 
 Roadmap:
-- https://portal.productboard.com/apostrophecms/1-product-roadmap/tabs/2-planned
+- https://portal.productboard.com/apostrophecms/1-product-roadmap/tabs/2-planned (will use GH Roadmap as AWS containers)
 Documentation:
 - https://v3.docs.apostrophecms.org/guide/setting-up.html
 - https://keystonejs.com/docs
-Style Guide:
+Style Guide: (One to choose)
 - https://github.com/keystonejs/keystone/blob/main/STYLE_GUIDE.md
 - https://google.github.io/styleguide/docguide/style.html
 - https://github.com/couchbaselabs/docs-style-guide/blob/master/md-style-guide.md
