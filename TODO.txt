@@ -23,6 +23,7 @@ Team TODO:
 - Setup Roadmap/IM/Discussion
 - Select Style Guide
 - Work on the structure/content
+- When ready - enable robots.txt
 
 Helpful Links:
 So far the best:

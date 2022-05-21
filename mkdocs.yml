@@ -49,3 +49,4 @@ extra:
 
 plugins:
   - awesome-pages
+  - search
