@@ -1,4 +1,4 @@
-name: ci 
+name: mkdocs-gh-deploy 
 
 on:
   push:
