@@ -21,7 +21,6 @@ watch:
 
 extra:
   generator: false
-
   consent:
     title: Cookie consent
     description: >-
