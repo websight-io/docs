@@ -1,4 +1,4 @@
-site_name: WebSight DXP Documentation
+site_name: WebSight DXP
 site_description: 'Explore materials, tutorials and documentation to discover how to use WebSight effectively. Discover enterprise grade, web-scale content management system.'
 site_author: 'Dynamic Solutions'
 site_url: 'https://websight.io'
@@ -15,13 +15,13 @@ theme:
     - navigation.tabs
   palette:
     - scheme: default
-      primary: blue
+      primary: indigo
       accent: blue
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
     - scheme: slate
-      primary: blue
+      primary: indigo
       accent: blue
       toggle:
         icon: material/toggle-switch-off-outline

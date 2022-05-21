@@ -10,12 +10,10 @@ DONE: - Add Cookie consent
 DONE: - Create custom theme (palette, fonts)
 DONE: - Setup logo/favicon
 DONE: - Setup navigation
+DONE: - Setup Sitemap/robots
+DONE: - Create custom welcome page (https://pinferencia.underneathall.app/)
 
-- Create custom welcome page
 - Setup blogs: https://github.com/Andre601/blog
-- Set sitemap, robots
-
-
 
 Team TODO:
 - Define color palette, review icons, images, favicon
