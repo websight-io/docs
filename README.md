@@ -4,7 +4,7 @@ WebSight documentation created using [MkDocs Material](https://squidfunk.github.
 ## Setup
 1. Install Python
 2. Install PIP
-3. Run command:  `pip install mkdocs-material`
+3. Run command:  `pip install mkdocs-material mkdocs-awesome-pages-plugin`
 
 ## Commands
 * `mkdocs build`      - Build the MkDocs documentation
@@ -23,3 +23,4 @@ WebSight documentation created using [MkDocs Material](https://squidfunk.github.
 ## Further reading
 - [MkDocs Material Site](https://squidfunk.github.io/mkdocs-material/getting-started/)
 - [MkDocs Site](https://www.mkdocs.org)
+- [MkDocs Awesome Pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin)

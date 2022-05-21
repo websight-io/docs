@@ -6,7 +6,7 @@ var cookie = '🍪';
 // run plugin with config object
 cc.run({
     current_lang : 'en',
-    theme_css: '../stylesheets/cookieconsent.css',
+    theme_css: '/assets/stylesheets/cookieconsent.css',
     autoclear_cookies: true,
     languages: {
         'en': {

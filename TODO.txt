@@ -6,40 +6,28 @@ DONE: - Remove footer link
 DONE: - Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
 DONE: - Create SSL certificate - https://github.com/websight-io/docs/settings/pages
 DONE: - Add Google Analytics
+DONE: - Add Cookie consent
+DONE: - Create custom theme (palette, fonts)
+DONE: - Setup logo/favicon
+DONE: - Setup navigation
 
-- Define minimum scope
 - Create custom welcome page
-- Create custom theme (palette, fonts)
-- See: https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
 - Setup blogs: https://github.com/Andre601/blog
-- Setup Roadmap (is it for now?)
-- Set favicon, sitemap, robots, logo
-- Setup Search
-- Setup Navigation
-- Validate with advanced configuration: https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration
-- Add Social icons (GitHub, LN, Twitter, docker hub, to consider: https://gitter.im/squidfunk/mkdocs-material)
-- Add Cookie consent
-
-- Define structure:
-  - blog (architecture, comparison, posts to Social Networks) (never gets outdated, high priority)
-  - getting started (fast track to get on speed)              (highest priority)
-  - Documentation
-    - Diagrams
-    - API
-    - Architecture
-  - Guides (tutorials)
-    - User / author (low priority)
-    - Administrator (medium priority)
-    - WebSight Developer (low priority, rather focusing on extensions)
-    - Site Developer (highest priority)
-  - Roadmap (will be on GH)
+- Set sitemap, robots
 
 
-Links:
+
+Team TODO:
+- Define color palette, review icons, images, favicon
+- Add social links when available (GitHub, LN, Twitter, Docker Hub, to consider: https://gitter.im/squidfunk/mkdocs-material)
+- Setup Roadmap/IM/Discussion
+- Select Style Guide
+- Work on the structure/content
+
+Helpful Links:
 So far the best:
 - https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html
 - https://github.com/strapi/documentation/tree/main/docs/developer-docs/latest (MIT)
-
 Roadmap:
 - https://portal.productboard.com/apostrophecms/1-product-roadmap/tabs/2-planned (will use GH Roadmap as AWS containers)
 Documentation:

@@ -9,19 +9,36 @@ theme:
   custom_dir: 'theme'
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.ico
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
 
 repo_name: websight-io/starter
 repo_url: https://github.com/websight-io/starter
 edit_uri: ../docs/edit/main/docs
 
 extra_css:
-  - stylesheets/websight.css
+  - assets/stylesheets/websight.css
 
 extra_javascript:
-  - javascripts/cookieconsent.js
-  - javascripts/cookieconsent_init.js
+  - assets/javascripts/cookieconsent.js
+  - assets/javascripts/cookieconsent_init.js
 
-  # Custom directories to watch for changes while running `mkdocs serve`
+# Custom directories to watch for changes while running `mkdocs serve`
 watch:
   - theme
 
@@ -29,3 +46,6 @@ extra:
   analytics:
     provider: google
     property: G-FV5Y0B6W17
+
+plugins:
+  - awesome-pages
