@@ -4,7 +4,6 @@ site_author: 'Dynamic Solutions'
 site_url: 'https://websight.io'
 copyright: Copyright &copy; Dynamic Solutions
 
-
 theme:
   name: material
   custom_dir: 'theme'
@@ -15,19 +14,18 @@ repo_name: websight-io/starter
 repo_url: https://github.com/websight-io/starter
 edit_uri: ../docs/edit/main/docs
 
-# Custom directories to watch for changes while running `mkdocs serve`
+extra_css:
+  - stylesheets/websight.css
+
+extra_javascript:
+  - javascripts/cookieconsent.js
+  - javascripts/cookieconsent_init.js
+
+  # Custom directories to watch for changes while running `mkdocs serve`
 watch:
   - theme
 
 extra:
-  generator: false
-  consent:
-    title: Cookie consent
-    description: >-
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
   analytics:
     provider: google
     property: G-FV5Y0B6W17

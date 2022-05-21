@@ -3,10 +3,9 @@ DONE: - Transfer websight.io domain to our service provider
 DONE: - Deploy to S3 / AWS / GH Pages
 DONE: - Validate "edit this page"
 DONE: - Remove footer link
-
-IN WORK: - Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
-IN WORK: - Create SSL certificate - https://github.com/websight-io/docs/settings/pages
-IN WORK: - Add Google Analytics (with Cookie)
+DONE: - Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+DONE: - Create SSL certificate - https://github.com/websight-io/docs/settings/pages
+DONE: - Add Google Analytics
 
 - Define minimum scope
 - Create custom welcome page
@@ -19,6 +18,7 @@ IN WORK: - Add Google Analytics (with Cookie)
 - Setup Navigation
 - Validate with advanced configuration: https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration
 - Add Social icons (GitHub, LN, Twitter, docker hub, to consider: https://gitter.im/squidfunk/mkdocs-material)
+- Add Cookie consent
 
 - Define structure:
   - blog (architecture, comparison, posts to Social Networks) (never gets outdated, high priority)

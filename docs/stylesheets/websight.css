@@ -1,0 +1,7 @@
+.md-footer-links {
+    padding: .6rem 0;
+}
+.md-footer-links__link {
+    color: var(--md-footer-fg-color--light);
+    font-size: .64rem;
+}
