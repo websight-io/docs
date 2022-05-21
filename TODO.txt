@@ -2,23 +2,25 @@ DONE: - Go through mkdocs-material setup guide
 DONE: - Transfer websight.io domain to our service provider
 DONE: - Deploy to S3 / AWS / GH Pages
 DONE: - Validate "edit this page"
+DONE: - Remove footer link
 
 IN WORK: - Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
 IN WORK: - Create SSL certificate - https://github.com/websight-io/docs/settings/pages
+IN WORK: - Add Google Analytics (with Cookie)
 
+- Define minimum scope
 - Create custom welcome page
 - Create custom theme (palette, fonts)
-- Remove footer link
-- Define minimum scope
-- Add Google Analytics (with Cookie)
 - See: https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml
 - Setup blogs: https://github.com/Andre601/blog
 - Setup Roadmap (is it for now?)
 - Set favicon, sitemap, robots, logo
 - Setup Search
 - Setup Navigation
+- Validate with advanced configuration: https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration
+- Add Social icons (GitHub, LN, Twitter, docker hub, to consider: https://gitter.im/squidfunk/mkdocs-material)
 
-- Define structure
+- Define structure:
   - blog (architecture, comparison, posts to Social Networks) (never gets outdated, high priority)
   - getting started (fast track to get on speed)              (highest priority)
   - Documentation
@@ -31,8 +33,6 @@ IN WORK: - Create SSL certificate - https://github.com/websight-io/docs/settings
     - WebSight Developer (low priority, rather focusing on extensions)
     - Site Developer (highest priority)
   - Roadmap (will be on GH)
-  - Validate with advanced configuration: https://squidfunk.github.io/mkdocs-material/creating-your-site/#advanced-configuration
-  - Add Social icons (GitHub, LN, Twitter, docker hub, to consider: https://gitter.im/squidfunk/mkdocs-material)
 
 
 Links:
