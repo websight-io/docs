@@ -10,9 +10,9 @@ theme:
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.ico
   features:
-    - navigation.instant
     - navigation.tracking
     - navigation.tabs
+    - navigation.indexes
   palette:
     - scheme: default
       primary: indigo
@@ -50,3 +50,12 @@ extra:
 plugins:
   - awesome-pages
   - search
+  - blogging:
+      locale: en
+      dirs:
+        - blog/2022
+      template: theme/ws-blog.html
+      features:
+        tags:
+          index_page: blog/tags.md
+          insert: bottom

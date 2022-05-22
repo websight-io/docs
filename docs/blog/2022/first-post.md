@@ -1,4 +1,15 @@
-# Welcome to MkDocs
+---
+title: First Blog Post
+description: First Blog Post created for testing
+author: Michal Cukierman
+tags:
+  - Java
+  - WebSight
+  - AWS
+  - Fun
+  - Sling
+---
+# First Blog Post
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 

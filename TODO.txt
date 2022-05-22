@@ -1,23 +1,25 @@
-DONE: - Go through mkdocs-material setup guide
-DONE: - Transfer websight.io domain to our service provider
-DONE: - Deploy to S3 / AWS / GH Pages
-DONE: - Validate "edit this page"
-DONE: - Remove footer link
-DONE: - Create custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
-DONE: - Create SSL certificate - https://github.com/websight-io/docs/settings/pages
-DONE: - Add Google Analytics
-DONE: - Add Cookie consent
-DONE: - Create custom theme (palette, fonts)
-DONE: - Setup logo/favicon
-DONE: - Setup navigation
-DONE: - Setup Sitemap/robots
-DONE: - Create custom welcome page (https://pinferencia.underneathall.app/)
-
-- Setup blogs: https://github.com/Andre601/blog
+DONE: Basic MkDocs setup
+DONE: Transfer websight.io domain
+DONE: Deploy to GH Pages
+DONE: Edit this page support
+DONE: Custom footer
+DONE: Custom domain
+DONE: SSL certificate
+DONE: Google Analytics
+DONE: Cookie consent
+DONE: Basic theme setup
+DONE: Logo favicon
+DONE: Navigation setup
+DONE: Sitemap/robots
+DONE: Custom welcome page
+DONE: Blog support
 
 Team TODO:
 - Define color palette, review icons, images, favicon
-- Add social links when available (GitHub, LN, Twitter, Docker Hub, to consider: https://gitter.im/squidfunk/mkdocs-material)
+- Improve homepage/blog design (authors, colors, UX/UI)
+- Decide if we need tags: https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/
+- Decide if we need commenting system: https://squidfunk.github.io/mkdocs-material/setup/adding-a-comment-system/#giscus-integration
+- Setup Footer: https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#social-links
 - Setup Roadmap/IM/Discussion
 - Select Style Guide
 - Work on the structure/content

@@ -1,4 +1,12 @@
-# Welcome to MkDocs
+---
+title: Second Blog Post
+description: Second Blog Post created for testing
+author: Michal Cukierman
+tags:
+  - AEM
+  - WebSight
+---
+# Second Blog Post
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
