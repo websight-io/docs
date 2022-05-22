@@ -1,4 +1,4 @@
-# Welcome to MkDocs
+# Work With the Content
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 

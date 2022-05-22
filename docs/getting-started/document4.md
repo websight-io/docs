@@ -1,4 +1,4 @@
-# Welcome to MkDocs
+# Deploy to AWS
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 

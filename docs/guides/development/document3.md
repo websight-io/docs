@@ -1,4 +1,4 @@
-# Setup WebSight
+# Setup Navigation
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
