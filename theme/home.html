@@ -1,20 +1,20 @@
 {% extends "main.html" %}
-{% block tabs %}
-{{ super() }}
+{% block tabs %}{% endblock %}
 
+{% block hero %}
 <link rel="stylesheet" href="/assets/stylesheets/home.css">
 
-<section class="tx-container">
+<section>
     <div class="md-grid md-typeset">
-        <div class="tx-hero">
-            <div class="tx-hero__image">
-                <img src="assets/images/logo.svg">
+        <div class="ds-hero">
+            <div class="ds-hero__image">
+                <img src="assets/images/hero.png">
             </div>
-            <div class="tx-hero__content">
+            <div class="ds-hero__content">
                 <h1>WebSight DXP</h1>
                 <p>
-                    Cloud native solution backed by enterprise grade CMS, created to help organizations deliver digital
-                    experiences at web scale!
+                    Cloud native solution backed by enterprise grade CMS, <br>
+                    created to help organizations deliver digital experiences at web scale!
                 </p>
                 <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}"
                    class="md-button md-button--primary">
@@ -28,7 +28,7 @@
     </div>
 </section>
 
-<section class="mdx-parallax__group" data-md-color-scheme="slate">
+<section class="ds-section__even">
     <div class="md-content md-grid" data-md-component="content">
         <div class="md-content__inner">
             <div class="mdx-expect">
@@ -145,8 +145,7 @@
     </div>
 </section>
 
-<!-- Display Panels -->
-<section class="mdx-parallax__group" data-md-color-scheme="default">
+<section class="">
     <div class="md-content md-grid" data-md-component="content">
         <div class="md-content__inner">
             <header class="md-typeset">
@@ -195,22 +194,6 @@
                     </figcaption>
                 </figure>
                 <figure class="mdx-spotlight__feature">
-                    <a href="#delivery" title="Delivery" tabindex="-1">
-                        <img src="assets/images/delivery.png" alt="Delivery" loading="lazy" width="500"
-                             height="327">
-                    </a>
-                    <figcaption class="md-typeset">
-                        <h2>Delivery</h2>
-                        <p>
-                            - Lightweight, built-in CI <br>
-                            - Ephemeral environments: on-demand, per PR <br>
-                            - Quality automation <br>
-                            - Infrastructure as code <br>
-                            - Developer Experience
-                        </p>
-                    </figcaption>
-                </figure>
-                <figure class="mdx-spotlight__feature">
                     <a href="#developer-experience" title="Developer Experience" tabindex="-1">
                         <img src="assets/images/developer-experience.png" alt="Developer Experience" loading="lazy"
                              width="500"
@@ -226,6 +209,13 @@
                             - Everything as code <br>
                             - Modern tech stack <br>
                         </p>
+                        <p>
+                            - Lightweight, built-in CI <br>
+                            - Ephemeral environments: on-demand, per PR <br>
+                            - Quality automation <br>
+                            - Infrastructure as code <br>
+                            - Developer Experience
+                        </p>
                     </figcaption>
                 </figure>
             </div>
@@ -233,7 +223,7 @@
     </div>
 </section>
 
-<section class="mdx-parallax__group" data-md-color-scheme="slate">
+<section class="ds-section__even">
     <div class="md-content md-grid" data-md-component="content">
         <div class="md-content__inner mdx-content__inner">
             <div class="mdx-content__column">
@@ -279,20 +269,22 @@
         </div>
     </div>
 </section>
-<div class="mdx-parallax__group" data-md-color-scheme="slate">
+
+<div class="">
     <footer class="md-footer">
         <nav class="md-footer__inner md-grid" aria-label="Footer">
-            <a href="/getting-started" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started"
+            <a href="/getting-started" class="md-footer__link md-footer__link--next" aria-label="Next: Get Started"
                rel="next">
                 <div class="md-footer__title">
-                    <div class="md-ellipsis"><span class="md-footer__direction"> Next </span>Getting Started</div>
+                    <div class="md-ellipsis"><span class="md-footer__direction"> Next </span>Get Started</div>
                 </div>
                 <div class="md-footer__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path>
                     </svg>
                 </div>
-            </a></nav>
+            </a>
+        </nav>
     </footer>
 </div>
 

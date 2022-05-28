@@ -15,13 +15,13 @@ theme:
     - navigation.indexes
   palette:
     - scheme: default
-      primary: indigo
+      primary: white
       accent: blue
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
+      primary: black
       accent: blue
       toggle:
         icon: material/toggle-switch-off-outline

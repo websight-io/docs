@@ -5,3 +5,31 @@
     color: var(--md-footer-fg-color--light);
     font-size: .64rem;
 }
+
+.ds-hero {
+    padding: 2em 1em;
+}
+
+.ds-hero__content {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ds-hero__content h1 {
+    color: var(--md-default-fg-color);
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+.ds-hero__content p {
+    color: var(--md-default-fg-color--light);
+    margin-bottom: 1.5em;
+}
+
+.ds-section__even {
+    background-color: var(--md-default-fg-color--lightest);
+}
+@media screen and (min-width: 76.1875em) {
+    .md-header__ellipsis {
+        display: none;
+    }
+}
