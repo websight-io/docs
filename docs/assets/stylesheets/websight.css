@@ -21,13 +21,34 @@
     margin-bottom: 0.5em;
 }
 .ds-hero__content p {
-    color: var(--md-default-fg-color--light);
     margin-bottom: 1.5em;
+}
+
+.ds-section p {
+    color: var(--md-default-fg-color--light);
+}
+
+.ds-section .md-typeset h2 {
+    font-weight: 500;
 }
 
 .ds-section__even {
     background-color: var(--md-default-fg-color--lightest);
 }
+
+.ds-section .md-content__inner {
+    padding: 3rem 0;
+}
+.ds-section .mdx-expect__icon {
+    background-color: var(--md-primary-fg-color);
+}
+
+@media screen and (max-width: 76.1875em) {
+    .mdx-expect__description h2 {
+        margin-left: 2.8rem;
+    }
+}
+
 @media screen and (min-width: 76.1875em) {
     .md-header__ellipsis {
         display: none;
