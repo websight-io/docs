@@ -1,4 +1,4 @@
-# Structure Overview
+# Structure Overview for WS
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
