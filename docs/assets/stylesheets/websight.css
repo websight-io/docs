@@ -72,6 +72,21 @@
     background-color: var(--md-default-fg-color--lightest);
 }
 
+.ds-section:last-of-type {
+    background-image: url("/assets/images/last-section-background.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.ds-section:last-of-type h2 {
+    text-align: left;
+}
+.ds-section:last-of-type .mdx-content__column:first-child {
+    flex: 1 0;
+}
+.ds-footer .md-footer {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+}
 .ds-section .md-content__inner {
     padding: 3rem 0;
 }
