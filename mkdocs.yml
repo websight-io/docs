@@ -38,6 +38,20 @@ extra_javascript:
   - assets/javascripts/cookieconsent.js
   - assets/javascripts/cookieconsent_init.js
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
 # Custom directories to watch for changes while running `mkdocs serve`
 watch:
   - theme
