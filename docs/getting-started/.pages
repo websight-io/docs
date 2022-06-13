@@ -1,7 +1,3 @@
-title: Getting Started
 nav:
-  - index.md
-  - WebSight setup: websight-setup
-  - work-with-content
-  - create-custom-project
-  - Deploy to AWS: deploy-to-aws
+  - introduction
+  - Quick Start Guide: quick-start
