@@ -73,3 +73,6 @@ plugins:
         tags:
           index_page: blog/tags.md
           insert: bottom
+  - redirects:
+      redirect_maps:
+          'getting-started/index.md': 'getting-started/introduction/index.md'
