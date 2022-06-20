@@ -14,7 +14,7 @@ tags:
 
 ## OSGi Bundles
 
-Components are the main building blocks for OSGi applications. With single annotation, we can make a POJO an OSGi component and let the OSGi manage its lifecycle. However, if we want to use other components in our component we need to declare it as a **_service_**.
+Components are the main building blocks for OSGi applications. With single annotation, we can make a POJO an OSGi component and let the OSGi manage its lifecycle. However, if we want to reference it within our application, we need to declare it as a **_service_**.
 
 ![OSGi Services](building-blocks-services.png "The main building blocks for OSGi applications")
 
