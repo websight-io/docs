@@ -54,14 +54,61 @@ docker compose up
 The fresh WebSight instance will start in a couple of seconds. Now, you may enter [http://localhost:8080/](http://localhost:8080/) to open the WebSight admin panel.
 Log in with `admin` username and `admin` as a password.
 
-To stop the environment use `ctrl + c`. You may run it later exactly the same as it was started for the first time.
+!!! info "Tip"
+  
+    To stop the environment use `ctrl + c`. You may run it later exactly the same as it was started for the first time.
 
 ---
 
-## Part B: First steps
+## Part B: Update a page
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio purus, tempus congue ultrices id, malesuada sit amet metus. Vestibulum at orci commodo, eleifend libero vel, auctor ipsum. Pellentesque non iaculis urna. Quisque hendrerit est sem, id ultricies nulla facilisis nec. Suspendisse non lacinia sapien. Duis sed dui mollis sapien pretium hendrerit ut quis dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin tempor ante a ante ultricies varius. Sed sem velit, tristique ac placerat a, viverra vel nibh. Nunc purus nulla, blandit eget ornare venenatis, efficitur eget nisl. In hac habitasse platea dictumst. Pellentesque sagittis congue efficitur. Quisque orci tortor, commodo a faucibus et, hendrerit et quam. Nullam sed luctus purus.
+Now that your local environment is ready for use, we would like to guide you through basic page amendments. You will update the home page for the demo site delivered together with the WebSight.
+
+### 1. Open the Websight admin panel
+
+The WebSight admin panel runs at [http://localhost:8080/](http://localhost:8080/). Log in with `admin` username and `admin` as a password.
+
+### 2. Select space for the demo site
+
+We use _Spaces_ to organise content. Please open the space for the demo site _Luna_.
+
+![Spaces](./quick-start-spaces.png)
+
+### 3. Edit the home page
+
+Open _Actions_ dropdown for home page and select _Edit_. This action runs _Page editor_. 
+
+![Actions available for a page](./quick-start-page-actions.png)
+
+Scroll down to section _Custom Made Engagement Rings_.
+
+Use drag & drop to place _Rich text editor_ component just below the section title. 
+
+![Rich text editor available in component tree](./quick-start-RTE-component.png)
+
+Click on the new component to open available actions. Select pencil icon to edit properties.
+
+![Actions available for RTE component](./quick-start-RTE-editing.png)
+
+Copy & paste the following text on _General_ tab of the modal.
+
+```
+Every couple is unique and we want to deliver an engagement ring that is unique too – taking the tastes of the couple into account. We love having couples visit the store and work with them to create a unique custom engagement ring according to their tastes.
+```
+
+![RTE component properties](./quick-start-RTE-properties.png)
+
+### 4. Publish changes
+
+You need to publish the changes so they are visible on the site. Open the dropdown in the top right corner and select action _Publish_.
+
+![Publish page action](./quick-start-publish-page.png)
+
+### 5. Check the local instance 
+
+Open the demo site again [http://localhost:8080/](http://localhost:8080/). Your changes should be visible now.
 
 ## Next steps
 
-Curabitur lacinia nunc at pretium dapibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales condimentum hendrerit. Phasellus eleifend sem eu eleifend sollicitudin. Sed vel ligula ut turpis finibus scelerisque nec sit amet lacus. Praesent euismod ipsum eu malesuada ultricies. Curabitur pretium elementum lectus et viverra.
+- Working with page editor
+- Using layouts to speed up page authoring
