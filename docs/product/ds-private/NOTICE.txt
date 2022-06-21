@@ -1,0 +1,3 @@
+Copyright (C) 2013-2022 Dynamic Solutions
+
+This product includes software developed at Dynamic Solutions (https://ds.pl/).
