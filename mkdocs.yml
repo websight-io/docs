@@ -75,4 +75,4 @@ plugins:
           insert: bottom
   - redirects:
       redirect_maps:
-          'getting-started/index.md': 'getting-started/introduction/index.md'
+          'getting-started/index.md': 'getting-started/quick-start/index.md'

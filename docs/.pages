@@ -1,6 +1,4 @@
 nav:
   - index.md
-  - getting-started
-  - Guides: guides
-  - Community: community
+  - Getting Started: getting-started
   - Blog: blog
