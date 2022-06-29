@@ -13,7 +13,7 @@ Follow this guide to quickly run the WebSight local instance using Docker.
 Currently we are running alpha tests. If you would like to join, please drop us an email. We will contact you and share the WebSight Docker image.
 
 <figure markdown>
-  [Ask to join WebSight closed early reviewers group :fontawesome-regular-paper-plane:](#){ .md-button }
+  [Join WebSight early reviewers group :fontawesome-regular-paper-plane:](#){ .md-button }
 </figure>
 
 ### 2. Create Docker Compose manifest
@@ -68,27 +68,13 @@ Your local environment is running now. The next step is to publish a demo site i
 
 The WebSight admin panel runs at [http://localhost:8080/](http://localhost:8080/). Log in with `admin` username and `admin` as a password.
 
-### 2. Run groovy script to publish theming
+### 2. Select space for the demo site
 
-Open _Groovy Console_ in _Tools_.
-
-![Navigation - Tools](./quick-start-tools.png)
-
-Select _publish_file_ available in recent scripts to load it.
-
-![Groovy Console](./quick-start-groovy-console.png)
-
-Expand _Data_ input field, paste `/libs/howlite` and run the script.
-
-![Run groovy script](./quick-start-groovy-run-script.png)
-
-### 3. Select space for the demo site
-
-We use _Spaces_ to organise content. Select _WebSight_ icon to see all of them. Then, open the space for the demo site _Luna_.
+We use _Spaces_ to organise content. Please open the space for the demo site _Luna_.
 
 ![Spaces](./quick-start-spaces.png)
 
-### 4. Publish assets and the demo site
+### 3. Publish assets and the demo site
 
 Open list of _Assets_ using the left sidebar. Go to folder _images_, select all subfolders and use action _Publish_.
 
@@ -98,7 +84,7 @@ Open list of _Pages_ using the left sidebar. Select all pages and use action _Pu
 
 ![Pages publication](./quick-start-pages-publication.png)
 
-### 6. See the demo site
+### 4. See the demo site
 
 Congratulations! The demo site is available at [http://localhost/content/luna/pages/Homepage.html](http://localhost/content/luna/pages/Homepage.html).
 
