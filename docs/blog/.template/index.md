@@ -7,6 +7,7 @@ tags:
   - AWS
   - Fun
   - Sling
+  - DXP
 ---
 
 Content of your blog goes here
