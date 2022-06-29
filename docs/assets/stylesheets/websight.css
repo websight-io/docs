@@ -1,3 +1,19 @@
+.md-typeset .md-button.md-button--primary {
+    color           :  var(--md-primary-fg-color);
+    background-color:  var(--md-primary-bg-color);
+    border-color    : var(--md-primary-bg-color);
+}
+
+.md-typeset .md-button {
+    color           : var(--md-primary-bg-color);
+}
+
+.md-typeset .md-button:hover {
+    background-color: var(--md-primary-bg-color);
+    color           : var(--md-primary-fg-color);
+    border-color    : var(--md-primary-fg-color);
+}
+
 .md-grid {
     max-width: 66rem !important;
 }
