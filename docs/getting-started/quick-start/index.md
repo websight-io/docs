@@ -28,6 +28,9 @@ services:
     image: <image-you-will-receive-after-joining-reviewers-group>
     ports:
       - "8080:8080"
+    environment:
+      - WS_ADMIN_USERNAME=wsadmin
+      - WS_ADMIN_PASSWORD=wsadmin
     volumes:
       - websight_repository:/websight/repository
       - websight_html:/websight/docroot
@@ -52,7 +55,7 @@ docker compose up
 ```
 
 The fresh WebSight instance will start in a couple of seconds. Now, you may enter [http://localhost:8080/](http://localhost:8080/) to open the WebSight admin panel.
-Log in with `admin` username and `admin` as a password.
+Log in with `wsadmin` username and `wsadmin` as a password.
 
 !!! info "Tip"
   
