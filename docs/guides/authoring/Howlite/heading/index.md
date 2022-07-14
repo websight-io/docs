@@ -11,4 +11,5 @@ Click "Edit" icon to see all heading properties:
 - Insert **Heading text** 
 - Optionally, you can add an **Overline** (kicker) above the main title
 
+![Heading Example](heading-example.png "Heading rendered on a page")
 ![Heading Dialog](dialog.png "Heading general properties")
