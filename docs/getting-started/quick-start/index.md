@@ -13,7 +13,7 @@ Follow this guide to quickly run the WebSight local instance using Docker.
 Currently we are running alpha tests. If you would like to join, please drop us an email. We will contact you and share the WebSight Docker image.
 
 <figure markdown>
-  [Join WebSight early reviewers group :fontawesome-regular-paper-plane:](#){ .md-button }
+  [Join WebSight early reviewers group :fontawesome-regular-paper-plane:](mailto:websight@ds.pl){ .md-button }
 </figure>
 
 ### 2. Create Docker Compose manifest
