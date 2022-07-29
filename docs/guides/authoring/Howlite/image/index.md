@@ -1,7 +1,7 @@
 # Image Component
 
 ## Usage
-Drag & drop image component to a Page section. You will see a default image placeholder. It is visible in edit mode only and will dissapear in preview and on published page.
+Drag & drop image component to a Page section. You will see a default image placeholder. (It is visible in edit mode only.)
 ![Image placeholder](placeholder.jpg "Image placeholder in edit mode")
 
 ## Authorable properties
@@ -19,4 +19,22 @@ Click "Edit" icon to see all image component's properties:
 </p>
 
 ## Rendered component
+If you add an image that is wider then image container, it will have the container width and height respecting the asset ratio. You can see an example of an image with 12 columns width below:
 
+<p align="center" width="100%">
+    <img src="./12-col-img.jpg" alt="Image: 12 cols example">
+</p>
+
+You can resize the image container by using the grid options in the layout tab of authoring dialog (See [grid](../grid) description for details).
+You can see an example of 2-columns-wide image below:
+
+<p align="center" width="100%">
+    <img src="./2-col-img.jpg" alt="Image: 2 cols example">
+</p>
+
+## Additional notes
+Wen an asset has been deleted and the path to image is no longer valid, a broken icon of an image will be displayed in editor:
+
+<p align="center" width="100%">
+    <img src="./broken-path.jpg" alt="Broken path icon">
+</p>
