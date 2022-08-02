@@ -2,7 +2,7 @@
 
 ## Usage
 
-Page Section component can only be added directly to the Main Content parsys. It renders a __section__ html tag with a top & bottom padding.
+Page Section component can only be added directly to the Main Content parsys. It renders a __section__ html tag with a top & bottom padding. 
 
 If you drag & drop a single Page Section to the page, you will see a default placeholder.
 
@@ -11,6 +11,8 @@ If you drag & drop a single Page Section to the page, you will see a default pla
 </p>
 
 Page Section components in Howlite project always have 12 columns. The components added inside can be [resized](../grid) to 1-12 columns.
+
+If you need to resize or group content inside a page section use a [Container component](../container) instead.
 
 ## Authorable properties
 
