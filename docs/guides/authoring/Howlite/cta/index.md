@@ -1,7 +1,7 @@
 # CTA & CTAs List Components
 
 ## Usage
-CTA component renders a single link (an anchor html tag) with look & feel of a button or text link (controlled by style variants).
+CTA component renders a single link (an anchor html tag) with look & feel of a button or text link (controlled by [style variants](#cta-variants)).
 If you need just a single CTA, you can add it directly to a page section or container. To render multiple CTAs in one row, use **CTAs List** component and add buttons there.
 
 ## Authorable properties
