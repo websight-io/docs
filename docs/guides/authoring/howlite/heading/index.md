@@ -11,8 +11,13 @@ Click "Edit" icon to see all heading properties:
 - Insert **Heading text** 
 - Optionally, you can add an **Overline** (kicker) above the main title
 - You can resize the heading as any other component using the **Layout** tab. (See [grid](../grid) description for details.)
-![Heading Dialog](dialog.jpg "Heading general properties")
+
+<p align="center" width="100%">
+    <img src="./dialog.jpg" alt="Heading general properties" width="400px">
+</p>
 
 ## Rendered component
-![Heading Example](heading-example.jpg "Heading rendered on a page")
 
+<p align="center" width="100%">
+    <img src="./heading-example.jpg" alt="Heading rendered on a page" width="400px">
+</p>
