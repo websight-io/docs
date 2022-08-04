@@ -21,29 +21,45 @@ Currently we are running alpha tests. If you would like to join, please drop us 
 Create `docker-compose.yml` file. Paste the content presented below and save the file on your hard drive.
 
 ``` yaml title="docker-compose.yml"
+
 version: "3.9"
 
 services:
-  ice:
-    image: <image-you-will-receive-after-joining-reviewers-group>
+  wsce:
+    image: public.ecr.aws/ds/websight-ce-alpha:202208030803
     ports:
       - "8080:8080"
+      - "5005:5005"
     environment:
-      - WS_ADMIN_USERNAME=wsadmin
-      - WS_ADMIN_PASSWORD=wsadmin
+      WS_DEBUG: "true"
+      WS_WEBSIGHT_LOG_LEVEL: "debug"
+      WS_ADMIN_USERNAME: "wsadmin"
+      WS_ADMIN_PASSWORD: "wsadmin"
+      MONGODB_HOST: "mongo"
+      MONGODB_PORT: 27017
     volumes:
-      - websight_repository:/websight/repository
-      - websight_html:/websight/docroot
+      - wsce_logs:/websight/logs
+      - site_repository:/websight/docroot
+    links:
+      - mongo
   nginx:
     image: nginx
     ports:
       - "80:80"
     volumes:
-      - websight_html:/usr/share/nginx/html:ro
+      - site_repository:/usr/share/nginx/html:ro
+  mongo:
+    image: mongo:4.4.6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_repository:/data/db
 
 volumes:
-  websight_repository:
-  websight_html:
+  wsce_logs:
+  mongo_repository:
+  site_repository:
+
 ```
 
 ### 3. Run the local instance
@@ -69,7 +85,7 @@ Your local environment is running now. The next step is to publish a demo site i
 
 ### 1. Open the Websight admin panel
 
-The WebSight admin panel runs at [http://localhost:8080/](http://localhost:8080/). Log in with `admin` username and `admin` as a password.
+The WebSight admin panel runs at [http://localhost:8080/](http://localhost:8080/). Log in with `wsadmin` username and `wsadmin` as a password.
 
 ### 2. Select space for the demo site
 
@@ -99,7 +115,7 @@ Now that your local demo site is published, we would like to guide you through b
 
 ### 1. Open the Websight admin panel
 
-The WebSight admin panel runs at [http://localhost:8080/](http://localhost:8080/). Log in with `admin` username and `admin` as a password.
+The WebSight admin panel runs at [http://localhost:8080/](http://localhost:8080/). Log in with `wsadmin` username and `wsadmin` as a password.
 
 ### 2. Select space for the demo site
 
@@ -109,7 +125,7 @@ We use _Spaces_ to organise content. Please open the space for the demo site _Lu
 
 ### 3. Edit the home page
 
-Open _Actions_ dropdown for _Homepage_ and select _Edit_. This action runs _Page editor_. 
+Use _Pencil_ icon to open _Page editor_ for the home page. 
 
 ![Actions available for a page](./quick-start-page-actions.png)
 
@@ -135,7 +151,7 @@ Every couple is unique and we want to deliver an engagement ring that is unique 
 
 ### 4. Publish changes
 
-You need to publish the changes so they are visible on the site. Open the dropdown in the top right corner and select action _Publish_.
+You updated the page. However, unpublished changes are not visible on the site yet. In the top right corner, open the dropdown and select action _Publish_.
 
 ![Publish page action](./quick-start-publish-page.png)
 
