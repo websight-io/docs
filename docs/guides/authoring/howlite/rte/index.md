@@ -21,6 +21,7 @@ Click the "Edit" icon on the *RTE* component to see its properties:
     <img src="./dialog-rte.jpg" alt="Quote component" width="600px">
 </p>
 
+
 - You can set the Style for the RTE using the **Style** tab:
 
 <p align="center" width="100%">
@@ -32,12 +33,14 @@ Click the "Edit" icon on the *RTE* component to see its properties:
 
 ## Rendered component
 
+RTE with customized style with **Default**:
 
 <p align="center" width="100%">
     <img src="./rte-example.jpg" alt="Rendered Rich Text" width="900px">
 </p>
 
-RTE with customized style with checked list:
+
+RTE with customized style with **Checked bullet points**:
 
 <p align="center" width="100%">
     <img src="./rte-example-checked-list.jpg" alt="Rendered Rich Text" width="900px">
