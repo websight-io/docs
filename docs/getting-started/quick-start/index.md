@@ -26,7 +26,7 @@ version: "3.9"
 
 services:
   wsce:
-    image: public.ecr.aws/ds/websight-ce-alpha:202208030803
+    image: <image-you-will-receive-after-joining-reviewers-group>
     ports:
       - "8080:8080"
       - "5005:5005"
