@@ -1,8 +1,10 @@
-# Image Component
+# Image component
 
 ## Usage
 Drag & drop image component to a Page section. You will see a default image placeholder. (It is visible in edit mode only.)
-![Image placeholder](placeholder.jpg "Image placeholder in edit mode")
+<p align="center" width="100%">
+    <img class="image--with-border" src="./placeholder.jpg" alt="Image placeholder in edit mode">
+</p>
 
 ## Authorable properties
 Click "Edit" icon to see all image component's properties:

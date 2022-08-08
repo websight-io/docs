@@ -1,4 +1,4 @@
-# CTA & CTAs List Components
+# CTA & CTAs List components
 
 ## Usage
 CTA component renders a single link (an anchor html tag) with look & feel of a button or text link (controlled by [style variants](#cta-variants)).

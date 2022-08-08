@@ -1,4 +1,4 @@
-# Heading Component
+# Heading component
 ## Usage
 Heading component can be used to add a page or section title.
 Drag & drop heading component to a Page section.
