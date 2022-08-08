@@ -38,11 +38,11 @@ Here is an example of a "Hero with mouse icon" page section (with some content i
     <img class="image--with-border" src="./example.jpg" alt="Page section - hero variant example">
 </p>
 
-Please note that Page Section's variants work only with a properly structured content inside. 
+Please note that Page Section's variants work only with properly structured content inside. 
 
 In order to speed up the page assembly, Howlite project provides predefined page sections in the **Layouts** left side panel.
 
-You can preview different types of Page Section variants with the properly structured content, by drag & dropping one of the layouts below to any page.
+You can preview different types of Page Section variants with properly structured content, by drag & dropping one of the layouts below to any page.
 
 <p align="center" width="100%">
     <img class="image--with-border" width="400px" src="./predefined-layouts.jpg" alt="Predefined layouts with different Page Section variants">
