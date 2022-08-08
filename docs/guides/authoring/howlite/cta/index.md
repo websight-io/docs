@@ -12,14 +12,14 @@ Click "Edit" icon to see all CTAs component's properties:
 - optionally, you can select if the link should be **open in a new tab**, and if it should have an additional **Icon**.
 
 <p align="center" width="100%">
-    <img src="./dialog.jpg" alt="CTA dialog">
+    <img class="image--with-border" src="./dialog.jpg" alt="CTA dialog" width="500px">
 </p>
 
 ## Rendered component
 You can see an example of 2 CTA components inside a CTA list container below:
 
 <p align="center" width="100%">
-    <img src="./two-ctas.jpg" alt="Two CTAs in a CTAs List container">
+    <img class="image--with-border" src="./two-ctas.jpg" alt="Two CTAs in a CTAs List container">
 </p>
 
 Please note that the CTA component does not have grid options. The width of CTA depends on its text width, and is not aligned to the grid.
@@ -32,5 +32,5 @@ If multiple CTAs are added directly to a page section, they will stack one below
 Check the **Style** tab in the authoring dialog to see the available style variants for a CTA component.
 
 <p align="center" width="100%">
-    <img src="./styles.jpg" alt="Style variants">
+    <img class="image--with-border" src="./styles.jpg" alt="Style variants" width="500px">
 </p>

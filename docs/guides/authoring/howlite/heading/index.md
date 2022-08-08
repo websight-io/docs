@@ -13,11 +13,11 @@ Click "Edit" icon to see all heading properties:
 - You can resize the heading as any other component using the **Layout** tab. (See [grid](../grid) description for details.)
 
 <p align="center" width="100%">
-    <img src="./dialog.jpg" alt="Heading general properties" width="400px">
+    <img class="image--with-border" src="./dialog.jpg" alt="Heading general properties" width="400px">
 </p>
 
 ## Rendered component
 
 <p align="center" width="100%">
-    <img src="./heading-example.jpg" alt="Heading rendered on a page" width="400px">
+    <img class="image--with-border" src="./heading-example.jpg" alt="Heading rendered on a page" width="400px">
 </p>

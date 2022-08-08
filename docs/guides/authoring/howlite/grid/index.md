@@ -5,13 +5,13 @@ In order to align content into multiple columns you can use a **Container** comp
 Drag&drop a **Container** component into a page section to see the default 12-columns placeholder. 
 
 <p align="center" width="100%">
-    <img src="./resize.jpg" alt="Grid options">
+    <img class="image--with-border" src="./resize.jpg" alt="Grid options">
 </p>
 
 Click edit icon, and open the **Layout** tab.
 
 <p align="center" width="100%">
-    <img src="./resize.jpg" alt="Grid options">
+    <img class="image--with-border" src="./resize.jpg" alt="Grid options">
 </p>
 
 
@@ -21,7 +21,7 @@ Click edit icon, and open the **Layout** tab.
 To see it in action, open a page editor and drag & drop a **4 Columns** Layout (From Layouts panel > __Empty Sections__ group).
 
 <p align="center" width="100%">
-    <img src="./4-cols.jpg" alt="4 Containers">
+    <img class="image--with-border" src="./4-cols.jpg" alt="4 Containers">
 </p>
 
 ## Breakpoints definition

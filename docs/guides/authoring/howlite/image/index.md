@@ -16,26 +16,26 @@ Click "Edit" icon to see all image component's properties:
 - Optionally you can wrap the image in a link
 
 <p align="center" width="100%">
-    <img src="./dialog.jpg" alt="Image dialog">
+    <img class="image--with-border" src="./dialog.jpg" alt="Image dialog">
 </p>
 
 ## Rendered component
 If you add an image that is wider than image container, it will have the container width and height respecting the asset ratio. You can see an example of an image with 12 columns width below:
 
 <p align="center" width="100%">
-    <img src="./12-col-img.jpg" alt="Image: 12 cols example">
+    <img class="image--with-border" src="./12-col-img.jpg" alt="Image: 12 cols example">
 </p>
 
 You can resize the image container by using the grid options in the layout tab of authoring dialog (See [grid](../grid) description for details).
-You can see an example of 2-columns-wide image below:
+You can see an example of 2-columns-wide image below. Image is shrinked to 2 columns width, and it's height respects the orginal asset ratio.
 
 <p align="center" width="100%">
-    <img src="./2-col-img.jpg" alt="Image: 2 cols example">
+    <img class="image--with-border" src="./2-col-img.jpg" alt="Image: 2 cols example">
 </p>
 
 ## Additional notes
 Wen an asset has been deleted and the path to image is no longer valid, a broken icon of an image will be displayed in editor:
 
 <p align="center" width="100%">
-    <img src="./broken-path.jpg" alt="Broken path icon">
+    <img class="image--with-border" src="./broken-path.jpg" alt="Broken path icon">
 </p>

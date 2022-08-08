@@ -2,4 +2,4 @@
 
 ## Usage
 
-Container 
+Container component
