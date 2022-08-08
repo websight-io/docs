@@ -26,3 +26,10 @@ Across the Howlite projects the following breakpoints are used:
 - **L Breakpoint**: 970px and above
 - **M Breakpoint**: 768px - 969px
 - **S Breakpoint**: 0 - 767px
+
+## Additional notes
+
+In Howlite the following components intentionally don't have "resize" options:
+
+- [CTA](../cta) - buttons width depends only on its label width
+- [Page Section](../page-section) - it's always 12 columns wide in Howlite (but you can resize a container inside if needed)
