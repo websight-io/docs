@@ -6,13 +6,13 @@ An Accordion is an interactive component that can have multiple Accordion Items 
 Drag & drop Accordion to a Page Section. Accordion will be prefilled with 3 initial Accordion Items. 
 
 <p align="center" width="100%">
-    <img src="./accordion.jpg" alt="Accordion">
+    <img class="image--with-border" src="./accordion.jpg" alt="Accordion">
 </p>
 
 You can drag & drop additional Accordion Item to Accordion component, or delete uneeded items. You can also move Accordion Items up/down to achieve expected items order.
 
 <p align="center" width="100%">
-    <img src="./accordion-item.jpg" alt="Accordion Item">
+    <img class="image--with-border" src="./accordion-item.jpg" alt="Accordion Item">
 </p>
 
 
@@ -23,7 +23,7 @@ Click the "Edit" icon on **Accordion's Item** to see its properties:
 - Content - text to be displayed inside the Accordion Item.
 
 <p align="center" width="100%">
-    <img src="./dialog-accordion-item.jpg" alt="Accordion Item" width="700px">
+    <img class="image--with-border" src="./dialog-accordion-item.jpg" alt="Accordion Item" width="500px">
 </p>
 
 
@@ -33,5 +33,5 @@ Click the "Edit" icon on the **Accordion** component to resize the Accordion as 
 An example of FAQ Accordion with one item open (in preview mode):
 
 <p align="center" width="100%">
-    <img src="./12-col-acc.jpg" alt="Accordion: 12 cols example">
+    <img class="image--with-border" src="./12-col-acc.jpg" alt="Accordion: 12 cols example">
 </p>
