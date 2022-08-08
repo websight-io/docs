@@ -1,17 +1,17 @@
 # Cards List & Card Item
 
 ## Usage
-The Cards List component can be used to add content composed of different elements whose supported layout and behaviour can vary.
+The Cards List component can be used to arrange multiple card components on a page. If you have 20 cards, you may want to display them in a grid with 4 items or 5 items per row or as a slider with 4 or 5 cards per slide. A Cards List component makes it easy to quickly switch between diferent layouts.
 
-Cards may contain a photo, text and a link. A card collection is a layout of cards on the same plane.
+Cards may contain an image, text and a CTA.
 
-To add drag & drop the component to a Page section. By default, Cards List consists of 3 Card Items. 
+Drag & drop the Card List component to a Page section. Cards List is prefilled with 3 initial Card Items. 
 
 <p align="center" width="100%">
     <img src="./cards.jpg" alt="Cards List">
 </p>
 
-You can change the number of Items inside the List. Drag & drop a Card Item to extend the Cards List.
+You can drag & drop additional Card Item to the Card List component, or delete uneeded Card Items.
 
 <p align="center" width="80%">
     <img src="./card-item.jpg" alt="Card Item" width="300px">
@@ -20,22 +20,21 @@ You can change the number of Items inside the List. Drag & drop a Card Item to e
 ## Authorable properties
 Click the "Edit" icon to see all available *Cards List* properties:
 
-- You can check an option **Display as a slider** - the Slider option allows displaying cards in a slider which is fully responsive and supports touch and swipe navigation as well as mouse drag for the desktop. 
-- You can select the **Heading level** that is most appropriate from SEO and accessibility perspective (options H1 - H6).
-- You can select the **Heading size** to increase or decrease font size.
-- You can set Items per row for each breakpoint - S, M, L by increasing/decreasing the number.
+- You can check an option **Display as a slider**  to switch on the slider mode. The slider is fully responsive and supports touch and swipe navigation as well as mouse drag for the desktop. 
+- You can select the **Heading level** for the Cards headings. Choose the level that is most appropriate from SEO and accessibility perspective (options H1 - H6).
+- You can select the **Heading size** to increase or decrease cards headings' font size.
+- You can change Items per row for each [breakpoint](../grid#breakpoints-definition) separately. 
+    - if the slider option is selected, this number will control how many Cards are visible at once (on each slide).
 
 <p align="center" width="100%">
-    <img src="./dialog.jpg" alt="Cards List general properties" width="700px">
+    <img src="./dialog.jpg" alt="Cards List general properties" width="600px">
 </p>
 
-- You can set the Style for the Cards List using the **Style** tab:
+- You can set the Style for the Cards List using the **Style** tab.
 
 <p align="center" width="100%">
     <img src="./dialog-styles.jpg" alt="Cards List general properties" width="700px">
 </p>
-
-- You can resize the Cards List as any other component using the **Layout** tab. (See [grid](../grid) description for details.)
 
 
 Click the "Edit" icon on *Card's Item* to see its properties:
@@ -45,7 +44,7 @@ Click the "Edit" icon on *Card's Item* to see its properties:
     - Content - the text to be displayed in the Card Item.
 
 <p align="center" width="100%">
-    <img src="./dialog-card-item.jpg" alt="Card Item" width="700px">
+    <img class="image--with-border" src="./dialog-card-item.jpg" alt="Card Item" width="500px">
 </p>
 
 - On the **Image** tab you can add:
@@ -54,7 +53,7 @@ Click the "Edit" icon on *Card's Item* to see its properties:
 
 
 <p align="center" width="100%">
-    <img src="./dialog-card-item-image.jpg" alt="Card Item" width="700px">
+    <img class="image--with-border" src="./dialog-card-item-image.jpg" alt="Card Item" width="500px">
 </p>
 
 - You can add CTA to the Card Item as any other CTA component using the **Card CTA** tab. (See [CTA](https://www.websight.io/guides/authoring/Howlite/cta/) description for details.)
@@ -62,16 +61,26 @@ Click the "Edit" icon on *Card's Item* to see its properties:
 
 ## Rendered component
 
-Cards List with two Items consisting of an image, text and a link:
+Here is an example of a Cards List component with 2 Card Items inside. 2 items per row are set. Each Card consists of an image, text and a text link:
 
-![Cards List Example](2-cards-list.jpg "2 Cards List rendered on a page")
+<p align="center" width="100%">
+    <img class="image--with-border" src="./2-cards-list.jpg" alt="2 Cards List rendered on a page">
+</p>
 
+A Cards List with 5 Card Items and 3 items per row set:
 
-Cards List with three Items:
+<p align="center" width="100%">
+    <img class="image--with-border" src="./3-cards-list.jpg" alt="5 Cards List rendered on a page">
+</p>
 
-![Cards List Example](3-cards-list.jpg "3 Cards List rendered on a page")
+A Cards List with 5 Card Items, 3 items per row set and selected slider mode (user can drag cards left/right to see previous or next items):
 
+<p align="center" width="100%">
+    <img class="image--with-border" src="./slider.jpg" alt="3 cards slider">
+</p>
 
-Cards List with three Items with text centred-aligned:
+Cards List with three Items with "Text Centered" Style variant selected (On Cards List level):
 
-![Cards List Example](3-cards-list-centred.jpg "3 Cards List with text centered rendered on a page")
+<p align="center" width="100%">
+    <img class="image--with-border" src="./3-cards-list-centred.jpg" alt="3 Cards List with text centered rendered on a page">
+</p>

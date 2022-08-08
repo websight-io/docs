@@ -121,3 +121,9 @@
         display: none;
     }
 }
+
+.image--with-border {
+  padding: 5px;
+  border: 2px solid #d0d0d0;
+  background: var(--md-primary-fg-color--dark);
+}
