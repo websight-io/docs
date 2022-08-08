@@ -2,7 +2,7 @@
 
 ## Usage
 
-Page Section component can only be added directly to the Main Content parsys. It renders a __section__ html tag with a top & bottom padding. 
+The Page Section component can only be added directly to the Main Content parsys. It renders a __section__ html tag with a top & bottom padding. 
 
 If you drag & drop a single Page Section to the page, you will see a default placeholder.
 
@@ -10,7 +10,7 @@ If you drag & drop a single Page Section to the page, you will see a default pla
     <img class="image--with-border" src="./page-section-placeholder.jpg" alt="Page Section placeholder">
 </p>
 
-Page Section components in Howlite project always have 12 columns. The components added inside can be [resized](../grid) to 1-12 columns.
+Page Section components in the Howlite project always have 12 columns. The components added inside can be [resized](../grid) to 1-12 columns.
 
 If you need to resize or group content inside a page section use a [Container component](../container) instead.
 
@@ -38,4 +38,12 @@ Here is an example of a "Hero with mouse icon" page section (with some content i
     <img class="image--with-border" src="./example.jpg" alt="Page section - hero variant example">
 </p>
 
-Please note that Page Section's variants work only with some content inside. In order to speed up the page assembly in Luna project, you can see multiple pre-defined page sections in the **Layouts** left side panel.
+Please note that Page Section's variants work only with a properly structured content inside. 
+
+In order to speed up the page assembly, Howlite project provides predefined page sections in the **Layouts** left side panel.
+
+You can preview different types of Page Section variants with the properly structured content, by drag & dropping one of the layouts below to any page.
+
+<p align="center" width="100%">
+    <img class="image--with-border" width="400px" src="./predefined-layouts.jpg" alt="Predefined layouts with different Page Section variants">
+</p>
