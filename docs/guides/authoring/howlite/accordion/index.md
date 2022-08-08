@@ -1,15 +1,15 @@
 # Accordion & Accordion Item
 
 ## Usage
-An Accordion is a vertical stack of headings used to display information into sections. Each Accordion is 'collapsed' by default, only a title is visible. Users can expand to show the full content. 
+An Accordion is an interactive component that can have multiple Accordion Items inside. Each Accordion Item is 'collapsed' by default, and only a title is visible. To open the accordion item, switch editor to the "Preview" mode and click on heading.
 
-To add drag & drop Accordion to a Page Section. By default, Accordion consists of 3 Accordion Items. 
+Drag & drop Accordion to a Page Section. Accordion will be prefilled with 3 initial Accordion Items. 
 
 <p align="center" width="100%">
     <img src="./accordion.jpg" alt="Accordion">
 </p>
 
-You can change the number of Items inside the Accordion. Drag & drop an Accordion Item to extend the Accordion.
+You can drag & drop additional Accordion Item to Accordion component, or delete uneeded items. You can also move Accordion Items up/down to achieve expected items order.
 
 <p align="center" width="100%">
     <img src="./accordion-item.jpg" alt="Accordion Item">
@@ -20,7 +20,7 @@ You can change the number of Items inside the Accordion. Drag & drop an Accordio
 Click the "Edit" icon on **Accordion's Item** to see its properties:
 
 - Title - the Accordion's heading.
-- Content - text to be displayed in the Accordion Item.
+- Content - text to be displayed inside the Accordion Item.
 
 <p align="center" width="100%">
     <img src="./dialog-accordion-item.jpg" alt="Accordion Item" width="700px">
@@ -30,18 +30,8 @@ Click the "Edit" icon on **Accordion's Item** to see its properties:
 Click the "Edit" icon on the **Accordion** component to resize the Accordion as any other component using the **Layout** tab. (See [grid](../grid) description for details.)
 
 ## Rendered component
-You can resize the Accordion section by using the grid options in the layout tab of the authoring dialogue (See [grid](../grid) description for details).
-
-An example Accordion with layout starting with 1st column for L breakpoint:
+An example of FAQ Accordion with one item open (in preview mode):
 
 <p align="center" width="100%">
     <img src="./12-col-acc.jpg" alt="Accordion: 12 cols example">
 </p>
-
-An accordion with layout starting with 6th column for L breakpoint and width set to 2 columns:
-
-<p align="center" width="100%">
-    <img src="./6-col-accordion.jpg" alt="Accordion: 6 col wide example" width="200px">
-</p>
-
-
