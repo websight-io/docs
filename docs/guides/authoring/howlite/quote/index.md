@@ -29,7 +29,7 @@ On the **General** tab you can add:
 You can change the Style for the Quote using the **Style** tab. Smaller variant will decrease the quote's font-size.
 
 <p align="center" width="100%">
-    <img src="./dialog-styles.jpg" alt="Quote styles" width="600px">
+    <img class="image--with-border" src="./dialog-styles.jpg" alt="Quote styles" width="500px">
 </p>
 
 You can also resize the Quote as any other component using the **Layout** tab. (See [grid](../grid) description for details.)
@@ -40,7 +40,7 @@ You can also resize the Quote as any other component using the **Layout** tab. (
 An example Quote:
 
 <p align="center" width="100%">
-    <img src="./quote.jpg" alt="Rendered Quote" width="900px">
+    <img class="image--with-border" src="./quote.jpg" alt="Rendered Quote">
 </p>
 
 
