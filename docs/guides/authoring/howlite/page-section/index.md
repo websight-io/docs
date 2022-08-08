@@ -22,7 +22,7 @@ Click the "Edit" icon to see all page section's editable properties.
     <img class="image--with-border" src="./dialog.jpg" alt="Page section - general properties">
 </p>
 
-- you can drag & drop an image from the left assets panel, to add a background image (for each [breakpoint](../grid#breakpoints-definition separately).
+- you can drag & drop an image from the left assets panel, to add a background image (for each [breakpoint](../grid#breakpoints-definition) separately).
 - each breakpoint's asset will be rendered on this breakpoint only. For example, if you leave M breakpoint image blank, nothing will be rendered on tablet resolutions.
 
 ## Page Section variants
