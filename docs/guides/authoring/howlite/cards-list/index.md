@@ -18,12 +18,12 @@ You can drag & drop additional Card Item to the Card List component, or delete u
 </p>
 
 ## Authorable properties
-Click the "Edit" icon to see all available *Cards List* properties:
+Click the "Edit" icon to see all available **Cards List** properties:
 
 - You can check an option **Display as a slider**  to switch on the slider mode. The slider is fully responsive and supports touch and swipe navigation as well as mouse drag for the desktop. 
 - You can select the **Heading level** for the Cards headings. Choose the level that is most appropriate from SEO and accessibility perspective (options H1 - H6).
 - You can select the **Heading size** to increase or decrease cards headings' font size.
-- You can change Items per row for each [breakpoint](../grid#breakpoints-definition) separately. 
+- You can change **Items per row** for each [breakpoint](../grid#breakpoints-definition) separately. 
     - if the slider option is selected, this number will control how many Cards are visible at once (on each slide).
 
 <p align="center" width="100%">
@@ -37,7 +37,7 @@ Click the "Edit" icon to see all available *Cards List* properties:
 </p>
 
 
-Click the "Edit" icon on *Card's Item* to see its properties:
+Click the "Edit" icon on **Card's Item** to see its properties:
 
 - On the **General** tab you can add:
     - Title - the Card's Item heading.
@@ -56,7 +56,7 @@ Click the "Edit" icon on *Card's Item* to see its properties:
     <img class="image--with-border" src="./dialog-card-item-image.jpg" alt="Card Item" width="500px">
 </p>
 
-- You can add CTA to the Card Item as any other CTA component using the **Card CTA** tab. (See [CTA](https://www.websight.io/guides/authoring/Howlite/cta/) description for details.)
+- You can add CTA to the Card Item as any other CTA component using the **Card CTA** tab. (See [CTA](../cta/) description for details.)
 
 
 ## Rendered component

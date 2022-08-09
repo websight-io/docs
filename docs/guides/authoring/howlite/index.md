@@ -1,8 +1,10 @@
-# Howlite Authoring Guides
+# Howlite Authoring Guide
+
+
 
 - [Resize functionality and breakpoints description](./grid)
 
-## Components:
+## Components
 
 - [Accordion and Accordion Item](./accordion)
 - [Cards List and Card Item](./cards-list)
