@@ -1,3 +1,4 @@
 nav:
   - ...
-  - test: cta
+  - Rich Text Editor: rte
+  - Resize options and breakpoints: grid
