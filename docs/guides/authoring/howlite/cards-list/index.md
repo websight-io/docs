@@ -8,13 +8,13 @@ Cards may contain an image, text and a CTA.
 Drag & drop the Card List component to a Page section. Cards List is prefilled with 3 initial Card Items. 
 
 <p align="center" width="100%">
-    <img src="./cards.jpg" alt="Cards List">
+    <img class="image--with-border" src="./cards.jpg" alt="Cards List">
 </p>
 
 You can drag & drop additional Card Item to the Card List component, or delete uneeded Card Items.
 
 <p align="center" width="80%">
-    <img src="./card-item.jpg" alt="Card Item" width="300px">
+    <img class="image--with-border" src="./card-item.jpg" alt="Card Item" width="300px">
 </p>
 
 ## Authorable properties
@@ -27,13 +27,13 @@ Click the "Edit" icon to see all available **Cards List** properties:
     - if the slider option is selected, this number will control how many Cards are visible at once (on each slide).
 
 <p align="center" width="100%">
-    <img src="./dialog.jpg" alt="Cards List general properties" width="600px">
+    <img class="image--with-border" src="./dialog.jpg" alt="Cards List general properties" width="600px">
 </p>
 
 - You can set the Style for the Cards List using the **Style** tab.
 
 <p align="center" width="100%">
-    <img src="./dialog-styles.jpg" alt="Cards List general properties" width="700px">
+    <img class="image--with-border" src="./dialog-styles.jpg" alt="Cards List general properties" width="700px">
 </p>
 
 
