@@ -27,13 +27,13 @@ Click the "Edit" icon to see all available **Cards List** properties:
     - if the slider option is selected, this number will control how many Cards are visible at once (on each slide).
 
 <p align="center" width="100%">
-    <img class="image--with-border" src="./dialog.jpg" alt="Cards List general properties" width="600px">
+    <img class="image--with-border" src="./dialog.jpg" alt="Cards List general properties" width="500px">
 </p>
 
 - You can set the Style for the Cards List using the **Style** tab.
 
 <p align="center" width="100%">
-    <img class="image--with-border" src="./dialog-styles.jpg" alt="Cards List general properties" width="700px">
+    <img class="image--with-border" src="./dialog-styles.jpg" alt="Cards List general properties" width="500px">
 </p>
 
 
