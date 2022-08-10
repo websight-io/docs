@@ -11,7 +11,7 @@ Drag & drop Quote to a Page Section. By default a simple quote with "lorem ipsum
 
 
 ## Authorable properties
-Click the "Edit" icon on the *Quote* component to see its properties
+Click the "Edit" icon on the **Quote** component to see its properties
 
 On the **General** tab you can add:
 

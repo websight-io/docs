@@ -5,11 +5,11 @@ CTA component renders a single link (an anchor html tag) with look & feel of a b
 If you need just a single CTA, you can add it directly to a page section or container. To render multiple CTAs in one row, use **CTAs List** component and add buttons there.
 
 ## Authorable properties
-Click "Edit" icon to see all CTAs component's properties:
+Click "Edit" icon to see all **CTA's** component's properties:
 
 - You can provide a **Text** (label) for the CTA
 - add an **URL**. It can be either an external link starting with http(s) or an internal link. Type **/** to enable auto suggestions of internal pages.
-- optionally, you can select if the link should be **open in a new tab**, and if it should have an additional **Icon**.
+- optionally, you can select if the link should be **opened in a new tab**, and if it should have an additional **icon**.
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./dialog.jpg" alt="CTA dialog" width="500px">
