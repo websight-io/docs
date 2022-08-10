@@ -1,7 +1,7 @@
 # Howlite
 
 !!! info "Howlite"
-    Howlite is a sample **component library** for WebSight. A sample project that uses those components - called **Luna** - is available in the WebSight docker distribution. Check the [Getting Started](../../../getting-started/quick-start/) page for information on how to run the WebSight local instance using Docker.
+    Howlite is a sample **component library** for WebSight. A sample project that uses those components - called **Luna** - is available in the WebSight Docker distribution. Check the [Getting Started](../../../getting-started/quick-start/) page for information on how to run the WebSight local instance using Docker.
 ## Components Authoring Guides
 
 - [Accordion and Accordion Item](./accordion)
