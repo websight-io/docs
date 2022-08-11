@@ -13,8 +13,8 @@ Drag & drop the Card List component to a Page section. Cards List is prefilled w
 
 You can drag & drop additional Card Item to the Card List component, or delete uneeded Card Items.
 
-<p align="center" width="80%">
-    <img class="image--with-border" src="./card-item.jpg" alt="Card Item" width="300px">
+<p align="center" width="100%">
+    <img class="image--with-border" src="./card-item.jpg" alt="Card Item" width="250px">
 </p>
 
 ## Authorable properties
