@@ -18,7 +18,7 @@ You can drag & drop additional Accordion Item to Accordion component, or delete 
 
 
 ## Authorable properties
-Click the "Edit" icon on **Accordion's Item** to see its properties:
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) on **Accordion's Item** to see its properties:
 
 - **Title** - the Accordion's heading.
 - **Content** - text to be displayed inside the Accordion Item.
@@ -28,7 +28,7 @@ Click the "Edit" icon on **Accordion's Item** to see its properties:
 </p>
 
 
-Click the "Edit" icon on the **Accordion** component to resize the Accordion as any other component using the **Layout** tab. (See [grid](../grid) description for details.)
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) on the **Accordion** component to resize the Accordion as any other component using the **Layout** tab. (See [grid](../grid) description for details.)
 
 ## Rendered component
 An example of FAQ Accordion with one item open (in preview mode):

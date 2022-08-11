@@ -10,7 +10,7 @@ Drag & drop heading component to a Page section. By default, a placeholder with 
 </p>
 
 ## Authorable properties
-Click "Edit" icon to see all **heading** component's properties:
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) to see all **heading** component's properties:
 
 - You can select **Heading level** that is most appropriate from SEO and accessibility perspective (options H1 - H6).
 - You can select **Heading size** to increase or decrease font-size

@@ -8,7 +8,7 @@ Drag & drop image component to a Page section. You will see a default image plac
 </p>
 
 ## Authorable properties
-Click "Edit" icon to see all **Image** component's properties:
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) to see all **Image** component's properties:
 
 - You can open the left **assets panel** and drag & drop an image to the **L breakpoint** asset section. If only the **L breakpoint** asset is provided, an __img__ html tag will be rendered with the provided image on all breakpoints. (See [breakpoints definition](../grid#breakpoints-definition) for L, M, S breakpoints width)
 

@@ -17,7 +17,7 @@ If you need to resize or group content inside a page section use a [Container co
 
 ## Authorable properties
 
-Click the "Edit" icon to see all **Page Section** component's editable properties.
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) to see all **Page Section** component's editable properties.
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./dialog.jpg" alt="Page section - general properties">

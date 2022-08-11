@@ -2,7 +2,7 @@
 
 ## Resize options
 Almost all components in Howlite can be resized (inside a [Page section component](../page-section)).
-In order to resize an [Image](../image) or [Container](../container) click "Edit" icon for the selected component and open the "Layout" tab in the dialog.
+In order to resize an [Image](../image) or [Container](../container) click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) for the selected component and open the "Layout" tab in the dialog.
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./resize.jpg" alt="Grid options" width="500px">

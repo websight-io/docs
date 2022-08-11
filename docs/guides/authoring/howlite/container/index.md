@@ -24,7 +24,7 @@ This layout consists of a Page Section component with 4 container components ins
 
 ## Authorable properties
 
-Click the "Edit" icon to see all editable properties.
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) on the **Container** component to see its all editable properties.
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./dialog.jpg" alt="Container - general properties" width="500px">
