@@ -1,13 +1,14 @@
 # Image component
 
+Image components renders and __img__ or __picture__ html tag, with an optional link and alt attribute.
 ## Usage
-Drag & drop image component to a Page section. You will see a default image placeholder. (It is visible in edit mode only.)
+Drag & drop image component to a Page section. You will see a default image placeholder. (It is visible in edit mode only).
 <p align="center" width="100%">
     <img class="image--with-border" src="./placeholder.jpg" alt="Image placeholder in edit mode">
 </p>
 
 ## Authorable properties
-Click "Edit" icon to see all **Image** component's properties:
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) to see all **Image** component's properties:
 
 - You can open the left **assets panel** and drag & drop an image to the **L breakpoint** asset section. If only the **L breakpoint** asset is provided, an __img__ html tag will be rendered with the provided image on all breakpoints. (See [breakpoints definition](../grid#breakpoints-definition) for L, M, S breakpoints width)
 
@@ -36,7 +37,7 @@ You can see an example of 2-columns-wide image below. Image is shrinked to 2 col
 </p>
 
 ## Additional notes
-Wen an asset has been deleted and the path to image is no longer valid, a broken icon of an image will be displayed in editor:
+When an asset has been deleted and the path to image is no longer valid, a broken icon of an image will be displayed in editor:
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./broken-path.jpg" alt="Broken path icon">

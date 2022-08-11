@@ -1,8 +1,9 @@
 # Page Section component
 
-## Usage
 
-The Page Section component can only be added directly to the Main Content parsys. It renders a __section__ html tag with a top & bottom padding. 
+The Page Section component renders a __section__ html tag with a top & bottom padding. It can only be added directly to the Main Content parsys.
+
+## Usage
 
 If you drag & drop a single Page Section to the page, you will see a default placeholder.
 
@@ -12,18 +13,18 @@ If you drag & drop a single Page Section to the page, you will see a default pla
 
 Page Section components in the Howlite project always have 12 columns. The components added inside can be [resized](../grid) to 1-12 columns.
 
-If you need to resize or group content inside a page section use a [Container component](../container) instead.
+If you need to resize or group content inside a page section use a [Container component](../container).
 
 ## Authorable properties
 
-Click the "Edit" icon to see all **Page Section** component's editable properties.
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) to see all **Page Section** component's editable properties.
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./dialog.jpg" alt="Page section - general properties">
 </p>
 
-- you can drag & drop an image from the left assets panel, to add a background image (for each [breakpoint](../grid#breakpoints-definition) separately).
-- each breakpoint's asset will be rendered on this breakpoint only. For example, if you leave M breakpoint image blank, nothing will be rendered on tablet resolutions.
+- you can drag & drop an image from the left assets panel, to add a **background image** (for each [breakpoint](../grid#breakpoints-definition) separately).
+    - each breakpoint's asset will be rendered on this breakpoint only. For example, if you leave M breakpoint image blank, nothing will be rendered on tablet resolutions.
 
 ## Page Section variants
 Check the **Style** tab in the authoring dialog to see the available style variants for the Page Section component. 

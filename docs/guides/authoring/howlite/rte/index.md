@@ -1,7 +1,8 @@
 # RTE Component
 
-## Usage
 A Rich Text Editor allows editors to create text content (paragraphs with headings, bullet lists, links and more) across pages.
+
+## Usage
 
 Drag & drop RTE component to a Page Section. A simple paragraph with "lorem ipsum" content will be rendered on a page:
 
@@ -11,7 +12,7 @@ Drag & drop RTE component to a Page Section. A simple paragraph with "lorem ipsu
 
 
 ## Authorable properties
-Click the "Edit" icon on the **RTE** component to see its properties:
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) on the **RTE** component to see its properties:
 
 On the **General** tab, you can add:
   

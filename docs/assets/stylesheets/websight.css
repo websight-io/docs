@@ -127,3 +127,9 @@
   border: 2px solid #d0d0d0;
   background: var(--md-primary-fg-color--dark);
 }
+
+img.image--inline {
+  height: 30px;
+  position: relative;
+  top: 8px;
+}

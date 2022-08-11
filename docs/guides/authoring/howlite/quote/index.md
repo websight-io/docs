@@ -1,7 +1,8 @@
 # Quote Component
 
-## Usage
 A Quote component displays a block quote with styled quotation marks, quote text, author's name & description. Additionally, it allows including the author's image.
+
+## Usage
 
 Drag & drop Quote to a Page Section. By default a simple quote with "lorem ipsum" text is visible.
 
@@ -11,7 +12,7 @@ Drag & drop Quote to a Page Section. By default a simple quote with "lorem ipsum
 
 
 ## Authorable properties
-Click the "Edit" icon on the **Quote** component to see its properties
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) on the **Quote** component to see its properties
 
 On the **General** tab you can add:
 

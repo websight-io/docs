@@ -1,4 +1,14 @@
 nav:
   - ...
-  - Rich Text Editor: rte
-  - Resize options and breakpoints: grid
+  - Components:
+    - Accordion and Accordion Item: accordion
+    - Cards List and Card Item: cards-list
+    - Container: container
+    - CTA and CTAs List: cta
+    - Heading: heading
+    - Image: image
+    - Page Section: page-section
+    - Quote: quote
+    - Rich Text Editor: rte
+  - Grid:
+    - Resize options and breakpoints: grid
