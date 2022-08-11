@@ -2,10 +2,13 @@
 title: On the road to the perfect DXP
 description: The Past, the present, and the future of the CMS and DXP platforms. I will describe the evolution from WordPress to cloud-native emerging solutions, with an accent on enterprise-grade systems. 
 author: Michał Cukierman
+publicationDate: 01.07.2022
 tags:
   - WebSight
   - DXP
 ---
+
+*Published at: 01.07.2022 by [Michał Cukierman](https://github.com/michalcukierman)*
 
 ## THE PROBLEM
 It is very easy to get lost when it comes to choosing the technology stack driving your digital projects. It may be surprising, but WordPress, Joomla, and Drupal are still the most popular options for small and medium companies. Larger ones often choose full-flagged DXPs like Adobe Experience Manager, Sitecore, or Magnolia to fulfill their enterprise needs. All of the solutions above are mature and battle-tested, they adapt to changing world but still use best practices from previous decades.

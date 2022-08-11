@@ -2,12 +2,15 @@
 title: Why we decided to ship and develop the OSGi application in containers
 description: In this article, I will point out five reasons we use containers to develop and ship OSGi Sling-based applications.
 author: Maciej Laskowski
+publicationDate: 02.08.2022
 tags:
   - WebSight
   - Containers
   - Docker
   - Sling
 ---
+
+*Published at: 02.08.2022 by [Maciej Laskowski](https://github.com/malaskowski)*
 
 > Modern distributed software systems consist of multiple cooperating software applications. However, to run the application, the software we develop is only one part. The second one is the environment (e.g., JVM and OS). In this article, I will focus on building an OSGi application and explain five benefits we gained thanks to containerizing it.
 
