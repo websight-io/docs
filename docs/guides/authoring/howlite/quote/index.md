@@ -1,7 +1,8 @@
 # Quote Component
 
-## Usage
 A Quote component displays a block quote with styled quotation marks, quote text, author's name & description. Additionally, it allows including the author's image.
+
+## Usage
 
 Drag & drop Quote to a Page Section. By default a simple quote with "lorem ipsum" text is visible.
 

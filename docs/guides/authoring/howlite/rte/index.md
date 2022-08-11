@@ -1,7 +1,8 @@
 # RTE Component
 
-## Usage
 A Rich Text Editor allows editors to create text content (paragraphs with headings, bullet lists, links and more) across pages.
+
+## Usage
 
 Drag & drop RTE component to a Page Section. A simple paragraph with "lorem ipsum" content will be rendered on a page:
 

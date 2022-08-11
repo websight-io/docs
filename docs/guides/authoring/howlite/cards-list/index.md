@@ -1,9 +1,10 @@
 # Cards List & Card Item
 
-## Usage
 The Cards List component can be used to arrange multiple card components on a page. If you have 20 cards, you may want to display them in a grid with 4 items or 5 items per row or as a slider with 4 or 5 cards per slide. A Cards List component makes it easy to quickly switch between different layouts.
 
 Cards may contain an image, text and a CTA.
+
+## Usage
 
 Drag & drop the Card List component to a Page section. Cards List is prefilled with 3 initial Card Items. 
 
@@ -11,7 +12,7 @@ Drag & drop the Card List component to a Page section. Cards List is prefilled w
     <img class="image--with-border" src="./cards.jpg" alt="Cards List">
 </p>
 
-You can drag & drop additional Card Item to the Card List component, or delete uneeded Card Items.
+You can drag & drop additional Card Item to the Card List component, or delete unneeded Card Items.
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./card-item.jpg" alt="Card Item" width="250px">

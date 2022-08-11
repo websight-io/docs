@@ -1,7 +1,13 @@
 # Heading component
-## Usage
+
 Heading component can be used to add a page or section title.
-Drag & drop heading component to a Page section.
+
+## Usage
+Drag & drop heading component to a Page section. By default, a placeholder with "Add your heading here" text is visible:
+
+<p align="center" width="100%">
+    <img class="image--with-border" src="./heading-placeholder.jpg" alt="Heading general properties">
+</p>
 
 ## Authorable properties
 Click "Edit" icon to see all **heading** component's properties:
