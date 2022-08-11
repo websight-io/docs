@@ -1,7 +1,7 @@
 # Cards List & Card Item
 
 ## Usage
-The Cards List component can be used to arrange multiple card components on a page. If you have 20 cards, you may want to display them in a grid with 4 items or 5 items per row or as a slider with 4 or 5 cards per slide. A Cards List component makes it easy to quickly switch between diferent layouts.
+The Cards List component can be used to arrange multiple card components on a page. If you have 20 cards, you may want to display them in a grid with 4 items or 5 items per row or as a slider with 4 or 5 cards per slide. A Cards List component makes it easy to quickly switch between different layouts.
 
 Cards may contain an image, text and a CTA.
 

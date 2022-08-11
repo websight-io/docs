@@ -9,7 +9,7 @@ Drag & drop Accordion to a Page Section. Accordion will be prefilled with 3 init
     <img class="image--with-border" src="./accordion.jpg" alt="Accordion">
 </p>
 
-You can drag & drop additional Accordion Item to Accordion component, or delete uneeded items. You can also move Accordion Items up/down to achieve expected items order.
+You can drag & drop additional Accordion Item to Accordion component, or delete unneeded items. You can also move Accordion Items up/down to achieve expected items order.
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./accordion-item.jpg" alt="Accordion Item">

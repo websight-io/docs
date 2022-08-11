@@ -36,7 +36,7 @@ You can see an example of 2-columns-wide image below. Image is shrinked to 2 col
 </p>
 
 ## Additional notes
-Wen an asset has been deleted and the path to image is no longer valid, a broken icon of an image will be displayed in editor:
+When an asset has been deleted and the path to image is no longer valid, a broken icon of an image will be displayed in editor:
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./broken-path.jpg" alt="Broken path icon">
