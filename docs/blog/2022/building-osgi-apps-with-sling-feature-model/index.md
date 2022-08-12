@@ -2,11 +2,14 @@
 title: Building OSGi applications with Sling Feature Model
 description: In this article, you will learn how we can benefit from OSGi modularity and Sling Feature Model.
 author: Tomasz Michalak
+publicationDate: 15.07.2022
 tags:
   - WebSight
   - OSGi
   - Sling Feature Model
 ---
+
+*Published at: 15.07.2022 by [Tomasz Michalak](https://github.com/tomaszmichalak)*
 
 > Living in a city, we care about the streets and parks inside it. However, the city is not something permanent. It is constantly changing within its borders. City planners should replan internal city roads easily, adapting them to new requirements. However, for provincial and municipal roads, all changes should be approved by the provincial executive planners. 
 > The same rules are valid in IT. As long as we change our private functions, the impact on the overall system is low. However, by changing module interfaces, we can break other modules. We expect a mechanism to define and constantly validate our national, provincial, city and private application roads.

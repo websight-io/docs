@@ -13,14 +13,10 @@
         <a class="link" href="{{ url }}">{{ title }}</a>
     </h3>
     <div class="blog-post-extra">
-        {{ ("Updated" if is_revision else "Published") + " at: " + time }}
+        {{ "Published at: " + page.meta.publicationDate }}
         by {{page.meta["author"] if "author" in page.meta else "" }}
 
     </div>
-    {% if show_tags and "tags" in page.meta %}
-    {% call render_tags(page.meta["tags"], index_url) %}
-    {% endcall %}
-    {% endif %}
     <p class="blog-post-description">
         {{ description }}
     </p>
