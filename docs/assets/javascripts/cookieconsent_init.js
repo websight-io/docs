@@ -7,6 +7,7 @@ var cookie = '🍪';
 cc.run({
     current_lang : 'en',
     theme_css: '/assets/stylesheets/cookieconsent.css',
+    page_scripts: true,
     autoclear_cookies: true,
     languages: {
         'en': {
