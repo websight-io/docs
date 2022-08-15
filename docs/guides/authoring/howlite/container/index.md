@@ -1,7 +1,5 @@
 # Container component
 
-## Usage
-
 Container component is used to group content together (inside a [Page Section component](../page-section)). Container renders a simple __div__ html tag without extra styling.
 
 ## Usage
