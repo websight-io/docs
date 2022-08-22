@@ -29,7 +29,6 @@ services:
     image: <image-you-will-receive-after-joining-reviewers-group>
     ports:
       - "8080:8080"
-      - "5005:5005"
     environment:
       WS_DEBUG: "true"
       WS_WEBSIGHT_LOG_LEVEL: "debug"
@@ -52,6 +51,9 @@ services:
     image: mongo:4.4.6
     ports:
       - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=mongoadmin
     volumes:
       - mongo_repository:/data/db
 
