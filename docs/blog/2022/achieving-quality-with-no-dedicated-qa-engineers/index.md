@@ -1,6 +1,6 @@
 ---
-title: How we deliver a quality product
-description: We do not need a dedicated role of a quality assurance engineer nor automation engineer. Read the article to learn how we manage it. 
+title: Achieving quality with no dedicated QA Engineers
+description: Read the article to find out how we manage quality in our project. 
 author: Radek Lawgmin
 publicationDate: 23.08.2022
 tags:
@@ -14,7 +14,7 @@ tags:
 >Making sure that a product conforms to its specification is always a challenge. Defining quality, agreeing on KPIs and planning subsequent steps is a thing. So is having an efficient QA process that helps to achieve it (not block the team from reaching their goals nor demotivate them). It is even more demanding to make the whole development team really care about the quality and make each member feel responsible for it when we move from quality assurance to quality assistance and want to share some of typical QA duties between each team member. So is it possible to have the whole team (not a single quality hero) that ensures the manufactured product meets requirements and keeps guard over quality standards? How and when we do it in our project?
 
 <p align="center">
-    <img src="./how-we-deliver-quality-product-hero-banner.png" alt="Sample test run" width = 100% style="margin-top: 25px">
+    <img src="./sample-test-run.png" alt="Sample test run" width = 100% style="margin-top: 25px">
 </p>
 
 ## How we care about the quality
