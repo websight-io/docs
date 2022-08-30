@@ -36,7 +36,7 @@ services:
       WS_ADMIN_PASSWORD: "wsadmin"
       MONGODB_HOST: "mongo"
       MONGODB_PORT: 27017
-      LEASE_CHECK_MODE: "LENIENT" # Do not use this on production environment
+      LEASE_CHECK_MODE: "LENIENT"
     volumes:
       - wsce_logs:/websight/logs
       - site_repository:/websight/docroot
