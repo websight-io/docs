@@ -14,7 +14,7 @@ All the examples presented in this guide are related to a simple _Title_ compone
 
 <p align="center">
     <img class="image--with-border" src="./title-component-dialog.png" alt="A dialog to set up the properties of the Title components"> <br>
-    A dialog to set up the properties of the Title components.
+    A dialog to set up the properties of the Title component.
 </p>
 
 <p align="center" >
@@ -26,7 +26,7 @@ The above component generates the following HTML. Note that the CSS class is ski
 
 
 ``` html
-<h2>Lorem ipsum</h2>
+<h2>Jewelry Decorates Your Beauty</h2>
 ```
 
 ## Location and structure
@@ -37,7 +37,7 @@ Each site requires a collection of components. You should use a dedicated folder
 ui.apps/src/main/jcr_root/apps/[my-collection]/components
 ```
 
-For [Howlite](../../../authoring/howlite/), the path is 
+For [Howlite](../../authoring/howlite/), the path is 
 ```
 ui.apps/src/main/jcr_root/apps/howlite/components/
 ```

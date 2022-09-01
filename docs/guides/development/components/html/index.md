@@ -4,7 +4,7 @@ The look of a given component is defined in an HTML file. Its name has to be con
 
 The file contains regular HTML tags and elements generated based on the component properties stored in the model. You can implement the dynamic part using [HTL Block Statements](https://experienceleague.adobe.com/docs/experience-manager-htl/using/htl/block-statements.html?lang=en). 
 
-The fundamental part of an HTL statement is `<sly>` tag and its `data-sly-use.model` property that defines `model` variable. They enable you to refer to fields (component properties) defined in the corresponding java file. 
+The fundamental part of an HTL statement (for the component) is `<sly>` tag and its `data-sly-use.model` property that defines `model` variable. They enable you to refer to fields (component properties) defined in the corresponding java file. 
 
 You can use variable `${model.title}` to get a value of the title property and inject it directly into HTML. For example, you can add a text inside `<h3>` tag.
 
