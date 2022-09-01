@@ -2,7 +2,7 @@
 
 ## Foundations
 
-The dialog definition is an XML file included inside the subfolder `_ws_directory`. The file name should be `.content.xml`. For the _Title_ component, the full path is 
+The dialog definition is an XML file included inside the subfolder `_ws_dialog`. The file name should be `.content.xml`. For the _Title_ component, the full path is 
 
 ```
 ui.apps/src/main/jcr_root/apps/howlite/components/title/_ws_directory/.content.xml

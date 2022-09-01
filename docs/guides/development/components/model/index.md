@@ -1,6 +1,8 @@
 # Model
 
-The data model is a java file. It should contain the following:
+The data model is needed only if the component requires a dialog to configure properties. The model is a java file that defines storage for values provided by a user. 
+
+The file should contain the following:
 
 - public class having annotation: `@Model(adaptables = Resource.class)`
 - private fields corresponding to component properties defined in a dialog
@@ -16,7 +18,7 @@ core/src/main/java/pl/ds/howlite/components/models
 
 The data model for the _Title_ component is presented below. 
 
-``` java title="//core/src/main/java/pl/ds/howlite/components/models/TitleComponent.java"
+``` java title="core/src/main/java/pl/ds/howlite/components/models/TitleComponent.java"
 
 @Model(adaptables = Resource.class)
 public class TitleComponent {
