@@ -10,7 +10,7 @@ In order to resize an [Image](../image) or [Container](../container) click <img 
 
 For each breakpoint separately, you can control:
 
-  - the **Start** property: for example, if you set it to "2 Column" on L breakpoint, the component will start from the second column on the desktop.
+  - the **Offset** property: for example, if you set it to "1 Column" on L breakpoint, the component will be moved 1 column to the right side.
   - the **Width** property: for example, if you set it to "6 Columns" on L breakpoint, the component will be 6 columns wide on the desktop.
 
 The above settings will result in the following container size and position:
