@@ -26,7 +26,7 @@ version: "3.9"
 
 services:
   wsce:
-    image: <image-you-will-receive-after-joining-reviewers-group>
+    image: <websight-ce-image-you-will-receive-after-joining-reviewers-group>
     ports:
       - "8080:8080"
     environment:
@@ -43,7 +43,7 @@ services:
     links:
       - mongo
   nginx:
-    image: nginx
+    image: <nginx-image-you-will-receive-after-joining-reviewers-group>
     ports:
       - "80:80"
     volumes:
@@ -108,7 +108,7 @@ Open list of _Pages_ using the left sidebar. Select all pages and use action _Pu
 
 ### 4. See the demo site
 
-Congratulations! The demo site is available at [http://localhost/content/luna/pages/Homepage.html](http://localhost/content/luna/pages/Homepage.html).
+Congratulations! The demo site is available at [http://localhost/Homepage.html](http://localhost/Homepage.html).
 
 ![Published demo page](./quick-start-published-page.png)
 
@@ -160,6 +160,6 @@ You updated the page. However, unpublished changes are not visible on the site y
 
 ### 5. See the updated page
 
-Congratulations! Your changes should be visible now at [http://localhost/content/luna/pages/Homepage.html](http://localhost/content/luna/pages/Homepage.html). 
+Congratulations! Your changes should be visible now at [http://localhost/Homepage.html](http://localhost/Homepage.html). 
 
 ![Publish page action](./quick-start-updated-page.png)
