@@ -3,8 +3,10 @@ WebSight documentation created using [MkDocs Material](https://squidfunk.github.
 
 ## Setup
 1. Install Python
-2. Install PIP
-3. Run command:  `pip install -r requirements.txt`
+2. Install PIP (for Windows) or PIP3 (for Mac or Linux)
+3. Run command:  
+   * On Windows: `pip install -r requirements.txt`
+   * On Mac/Linux: `pip3 install -r requirements.txt`
 
 ## Commands
 * `mkdocs build`      - Build the MkDocs documentation

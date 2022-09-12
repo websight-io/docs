@@ -69,6 +69,9 @@ plugins:
       dirs:
         - blog/2022
       template: theme/ws-blog.html
+      features:
+        tags:
+          template: theme/ws-tags.html
   - redirects:
       redirect_maps:
           'getting-started/index.md': 'getting-started/quick-start/index.md'

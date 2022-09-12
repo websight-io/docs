@@ -3,6 +3,8 @@ title: On the road to the perfect DXP
 description: The Past, the present, and the future of the CMS and DXP platforms. I will describe the evolution from WordPress to cloud-native emerging solutions, with an accent on enterprise-grade systems. 
 author: Michał Cukierman
 publicationDate: 01.07.2022
+minReadTime: 10
+image: create-deliver-serve.jpg
 tags:
   - WebSight
   - DXP

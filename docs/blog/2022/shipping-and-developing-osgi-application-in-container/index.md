@@ -3,6 +3,8 @@ title: Why we decided to ship and develop the OSGi application in containers
 description: In this article, I will point out five reasons we use containers to develop and ship OSGi Sling-based applications.
 author: Maciej Laskowski
 publicationDate: 02.08.2022
+minReadTime: 3
+image: modularity_with_containers.jpg
 tags:
   - WebSight
   - Containers
