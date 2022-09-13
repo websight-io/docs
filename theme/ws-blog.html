@@ -4,11 +4,6 @@
 
 {% macro render_blog(title, description, time, url, page) -%}
 <div class="blog-post">
-    <img src="{{ url }}/{{ page.meta.image }}" alt="Sample test run" width = 100% style="margin-top: 25px">
-    {% if show_tags and "tags" in page.meta %}
-    {% call render_tags(page.meta["tags"], index_url) %}
-    {% endcall %}
-    {% endif %}
     <h3 class="blog-post-title">
         <a class="link" href="{{ url }}">{{ title }}</a>
     </h3>
@@ -23,6 +18,7 @@
             {{page.meta.minReadTime}} min read
         </span>
     </div>
+    <img src="{{ url }}/{{ page.meta.image }}" alt="Sample test run">
 </div>
 {{ caller() }}
 {%- endmacro %}

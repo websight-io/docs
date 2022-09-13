@@ -29,18 +29,15 @@ body[data-md-color-primary="black"] {
     margin-bottom: 16px;
 }
 
-.blogging-tags > *:not(.blogging-tags-grid){
-    display: none;
-}
-
-.blogging-tags {
-    margin-bottom: 40px;
-}
-
 .blog-post {
     width: 634px;
     text-align: left;
-    margin: 0 auto;
+    margin: 35px auto;
+}
+
+.blog-post img {
+    margin-top: 8px;
+    width: 100%;
 }
 
 #websight-blog + p {
@@ -51,11 +48,6 @@ body[data-md-color-primary="black"] {
 
 .md-content {
     text-align: center;
-}
-
-.md-content .md-typeset .blogging-tags-grid {
-    justify-content: center;
-    gap: 48px;
 }
 
 .md-typeset .blog-post-title {
@@ -69,7 +61,7 @@ body[data-md-color-primary="black"] {
 .md-typeset .blog-post .blog-post-extra {
     font: normal 400 18px/28px Roboto;
     color: rgba(var(--secondary-color-hex), var(--secondary-color-alpha));
-    margin-top: 20px;
+    margin-top: 0;
 }
 
 .blog-post-extra span {
@@ -87,29 +79,6 @@ body[data-md-color-primary="black"] {
 }
 .blog-post-extra span:last-child:after {
     display: none;
-}
-
-.md-content .md-typeset .blog-post .blogging-tags-grid {
-    justify-content: flex-start;
-    gap: 20px;
-    margin: 10px 0 5px;
-}
-
-.md-content .md-typeset .blog-post .blogging-tags-grid a {
-    font: normal 400 14px/20px Roboto;
-    color: var(--primary-color);
-    opacity: .7;
-    background: var(--secondary-alt-color);
-    border-radius: 4px;
-    padding: 4px 8px;
-}
-
-.md-typeset .blogging-tags-grid a {
-    font: normal 700 16px/24px Roboto;
-    color: var(--primary-color);
-}
-.md-typeset .blogging-tags-grid a code {
-    background: transparent;
 }
 
 .md-sidebar,
