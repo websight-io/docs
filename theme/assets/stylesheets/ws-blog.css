@@ -31,6 +31,7 @@ body[data-md-color-primary="black"] {
 
 .blog-post {
     width: 634px;
+    max-width: 100%;
     text-align: left;
     margin: 35px auto;
 }
