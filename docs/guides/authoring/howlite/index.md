@@ -8,7 +8,7 @@
 - [Cards List and Card Item](./cards-list)
 - [Container](./container)
 - [CTA and CTAs List](./cta)
-- [Heading](./heading)
+- [Title](./title)
 - [Image](./image)
 - [Page Section](./page-section)
 - [Quote](./quote)
