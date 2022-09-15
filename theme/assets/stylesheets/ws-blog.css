@@ -1,0 +1,111 @@
+body[data-md-color-primary="white"] {
+    --primary-color: #181818;
+    --primary-alt-color: #494848;
+    --secondary-color-hex: 0, 0, 0;
+    --secondary-color-alpha: 0.54;
+    --secondary-alt-color: #F2F3F5;
+
+    --footer-background-color: transparent;
+    --footer-color: var(--primary-color);
+}
+
+body[data-md-color-primary="black"] {
+    --primary-color: #e7e7e7;
+    --primary-alt-color: #b6b7b7;
+    --secondary-color-hex: 255, 255, 255;
+    --secondary-color-alpha: 0.54;
+    --secondary-alt-color: #0d0c0a;
+
+    --footer-background-color: var(--md-footer-bg-color);
+    --footer-color: var(--md-footer-fg-color);
+}
+
+@font-face { font-family: 'Inter';
+    src: url('../fonts/Inter/Inter.ttf'); }
+
+#websight-blog {
+    font: normal 600 35px Roboto;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.blog-post {
+    width: 634px;
+    max-width: 100%;
+    text-align: left;
+    margin: 35px auto;
+}
+
+.blog-post img {
+    margin-top: 8px;
+    width: 100%;
+}
+
+#websight-blog + p {
+    font: normal 400 18px/28px Roboto;
+    color: var(--primary-alt-color);
+    margin-bottom: 80px;
+}
+
+.md-content {
+    text-align: center;
+}
+
+.md-typeset .blog-post-title {
+    margin: 0;
+}
+.blog-post-title a {
+    font: normal 600 28px/140% 'Inter';
+    color: var(--primary-color);
+}
+
+.md-typeset .blog-post .blog-post-extra {
+    font: normal 400 18px/28px Roboto;
+    color: rgba(var(--secondary-color-hex), var(--secondary-color-alpha));
+    margin-top: 0;
+}
+
+.blog-post-extra span {
+    margin-right: 7px;
+}
+
+.blog-post-extra span:after {
+    content: "";
+    margin-left: 7px;
+    width: 1px;
+    height: 24px;
+    background: rgba(var(--secondary-color-hex), var(--secondary-color-alpha));
+    display: inline-block;
+    transform: translateY(6px);
+}
+.blog-post-extra span:last-child:after {
+    display: none;
+}
+
+.md-sidebar,
+.md-sidebar.md-sidebar--secondary {
+    display: none;
+}
+
+.md-footer {
+    background: var(--footer-background-color);
+    color: var(--footer-color);
+}
+
+.md-footer-meta {
+    background: var(--secondary-alt-color);
+}
+
+.md-footer-meta .md-copyright__highlight,
+.md-footer-meta.md-typeset a {
+    color: rgba(var(--secondary-color-hex), var(--secondary-color-alpha));
+}
+
+.md-typeset .md-button {
+    margin-bottom: 10px;
+}
+
+.md-typeset .blog-post-extra {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

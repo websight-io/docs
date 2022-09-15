@@ -3,6 +3,8 @@ title: Building OSGi applications with Sling Feature Model
 description: In this article, you will learn how we can benefit from OSGi modularity and Sling Feature Model.
 author: Tomasz Michalak
 publicationDate: 15.07.2022
+minReadTime: 5
+image: building-blocks-services.jpg
 tags:
   - WebSight
   - OSGi

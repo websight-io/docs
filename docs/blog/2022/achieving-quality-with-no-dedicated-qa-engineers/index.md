@@ -3,6 +3,8 @@ title: Achieving quality with no dedicated QA Engineers
 description: Read the article to find out how we manage quality in our project. 
 author: Radek Lawgmin
 publicationDate: 23.08.2022
+minReadTime: 8
+image: sample-test-run.png
 tags:
   - WebSight
   - QA
