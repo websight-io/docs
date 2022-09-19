@@ -15,6 +15,10 @@
 - [Title](./title)
 - [Quote](./quote)
 
+## Layouts
+
+- [List of predefined layouts](./layouts)
+
 ## Grid
 
 - [Resize functionality and breakpoints description](./grid)

@@ -11,5 +11,6 @@ nav:
       - Rich Text Editor: rte
       - Title: title
       - Quote: quote
+  - Layouts: layouts
   - Grid:
       - Resize options and breakpoints: grid
