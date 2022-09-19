@@ -8,17 +8,17 @@
 - [Cards List and Card Item](./cards-list)
 - [Container](./container)
 - [CTA and CTAs List](./cta)
-- [Title](./title)
 - [Image](./image)
+- [Logo Cloud](./logo-cloud)
 - [Page Section](./page-section)
-- [Quote](./quote)
 - [Rich Text Editor](./rte)
+- [Title](./title)
+- [Quote](./quote)
+
+## Layouts
+
+- [List of predefined layouts](./layouts)
 
 ## Grid
+
 - [Resize functionality and breakpoints description](./grid)
-
-
-
-
-
-

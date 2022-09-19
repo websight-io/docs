@@ -1,14 +1,16 @@
 nav:
   - ...
   - Components:
-    - Accordion and Accordion Item: accordion
-    - Cards List and Card Item: cards-list
-    - Container: container
-    - CTA and CTAs List: cta
-    - Title: title
-    - Image: image
-    - Page Section: page-section
-    - Quote: quote
-    - Rich Text Editor: rte
+      - Accordion and Accordion Item: accordion
+      - Cards List and Card Item: cards-list
+      - Container: container
+      - CTA and CTAs List: cta
+      - Image: image
+      - Logo Cloud: logo-cloud
+      - Page Section: page-section
+      - Rich Text Editor: rte
+      - Title: title
+      - Quote: quote
+  - Layouts: layouts
   - Grid:
-    - Resize options and breakpoints: grid
+      - Resize options and breakpoints: grid
