@@ -11,7 +11,7 @@ If you drag & drop a single Page Section to the page, you will see a default pla
 </p>
 
 ## Multiple columns layouts
-By using containers inside a page section, you can achieve multiple columns layouts. To see this in action, you can drag & drop the **4 Columns** predefined layout from the "Empty Sections" group.
+By using containers inside a page section, you can achieve multiple columns layouts. To see this in action, you can drag & drop the **4 Columns** predefined layout from the "Empty Sections" group. (See the [layouts]('../layouts') page for details regarding predefined sections)
 
 This layout consists of a Page Section component with 4 container components inside. Each container is resized to use 3 out of 12 columns. For resize options description please see the [grid](../grid) page.
 
@@ -28,8 +28,5 @@ Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> 
     <img class="image--with-border" src="./dialog.jpg" alt="Container - general properties" width="500px">
 </p>
 
-- the **Display Type** controls children components' alignment
-    - By default the **Grid** option is selected, which means that all children components are aligned to the grid and their grid settings will be respected.
-    - If you change the Display type to **Inline** - the grid settings of children components will be ignored, and all items will align in a row (using CSS flex property).
 - you can drag & drop an image from the left assets panel, to add a background image (for each [breakpoint](../grid#breakpoints-definition) separately).
     - each breakpoint's asset will be rendered on this breakpoint only. For example, if you leave M breakpoint image blank, nothing will be rendered on tablet resolutions.
