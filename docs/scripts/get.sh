@@ -5,14 +5,18 @@ if [ -x "$(command -v docker)" ]; then
     mkdir websight-cms-ce
     cd websight-cms-ce
     curl --silent https://www.websight.io/scripts/docker-compose.yml --output docker-compose.yml
+    echo "Starting WebSight..."
     {
-        echo "Starting WebSight..."
         until curl --output /dev/null --silent --head --fail "http://localhost:8080/system/health"; do
-            echo "WebSight is not ready yet. Retrying [$((counter++))/$MAX_RETRIES]"
+            echo "Browser Launcher | WebSight is not ready yet. Retrying [$((counter++))/$MAX_RETRIES]"
+            if [ $counter -gt $MAX_RETRIES ] ; then
+                echo "Browser launcher | Gave up waiting for WebSight"
+                exit 1;
+            fi
             sleep 1
         done
         sleep 1
-        echo "WebSight is ready. Launching the browser"
+        echo "Browser Launcher | WebSight is ready. Launching the browser"
         open http://localhost:8080
     }&
     docker compose up
@@ -20,4 +24,4 @@ else
     echo "Docker is not found on the system"
 fi
 
-trap "trap - SIGTERM && kill $! 2>/dev/null" SIGINT SIGTERM EXIT
+trap "trap - SIGTERM && kill $! 2>/dev/null" SIGINT SIGTERM EXIT 2>/dev/null
