@@ -8,7 +8,7 @@ if [ -x "$(command -v docker)" ]; then
     echo "Starting WebSight..."
     {
         until curl --output /dev/null --silent --head --fail "http://localhost:8080/system/health"; do
-            echo "Browser Launcher | WebSight is not ready yet. Retrying [$((counter++))/$MAX_RETRIES]"
+            echo "***WebSight Launcher*** WebSight is still getting ready for you... Check no. [$((counter++))/$MAX_RETRIES]"
             if [ $counter -gt $MAX_RETRIES ] ; then
                 echo "Browser launcher | Gave up waiting for WebSight"
                 exit 1;
