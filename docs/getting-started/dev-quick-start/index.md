@@ -4,6 +4,9 @@ Follow this guide to get know how to make changes in existing component.
 
 ### Pre requirements
 
+> Before going any further, please make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and running.
+
+
 ```shell
 export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain websight --domain-owner 299371835903 --query authorizationToken --output text`
 ```
