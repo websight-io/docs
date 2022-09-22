@@ -1,3 +1,4 @@
+#!/bin/sh
 MAX_RETRIES=100;
 counter=1;
 if [ -x "$(command -v docker)" ]; then
