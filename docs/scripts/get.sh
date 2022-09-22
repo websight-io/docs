@@ -5,7 +5,7 @@ if [ -x "$(command -v docker)" ]; then
     mkdir websight-cms-ce
     cd websight-cms-ce
     curl --silent https://www.websight.io/scripts/docker-compose.yml --output docker-compose.yml
-    echo "Starting WebSight..."
+    curl --silent https://www.websight.io/scripts/logo.ascii.txt 
     {
         until curl --output /dev/null --silent --head --fail "http://localhost:8080/system/health"; do
             echo "***WebSight Launcher*** WebSight is still getting ready for you... Check no. [$((counter++))/$MAX_RETRIES]"
@@ -16,7 +16,7 @@ if [ -x "$(command -v docker)" ]; then
             sleep 1
         done
         sleep 1
-        echo "Browser Launcher | WebSight is ready. Launching the browser"
+        echo "***WebSight Launcher*** WebSight is ready. Launching the browser"
         open http://localhost:8080
     }&
     docker compose up
