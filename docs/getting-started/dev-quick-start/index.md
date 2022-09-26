@@ -1,40 +1,61 @@
 # Developers Quick Start Guide
 
-Follow this guide to get know how to make changes in existing component.
+## Introduction
 
-### Pre requirements
+Use this guide to learn how to update a simple Howlite component. We recommend completing the general [quick start guide](/docs/getting-started/quick-start/index.md) first to get familiar with basic concepts.
 
-> Before going any further, please make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and running.
+The scenario utilises a sample component library [Howlite](https://github.com/websight-io/howlite) and a demo site project _Luna_. For the exercise simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and prepared the _Luna Title_ component defined inside the demo site project. 
+
+Your task is to update the _Luna Title_ component and extend existing functionality and tests. See more details in the sections below.
+
+!!! info "Important notice"
+
+    All scripts presented below are designed for Linux-based platforms. If you are a Windows user, please install and configure [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) (WSL).
+
+## Part A: Prerequisites
+
+1. Install [AdoptOpenJDK 17](https://adoptium.net/) with 'x64/aarch64' architecture (on mac use `brew install openjdk@17`):
+``` script
+$ java --version
+openjdk 17.0.2 2022-01-18
+OpenJDK Runtime Environment Temurin-17.0.2+8 (build 17.0.2+8)
+OpenJDK 64-Bit Server VM Temurin-17.0.2+8 (build 17.0.2+8, mixed mode)
+```
+1. Install Maven 3.8.5+
+
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 
-```shell
-export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain websight --domain-owner 299371835903 --query authorizationToken --output text`
+## Part B: Setup local environment
+
+### Download Maven configuration
+
+Create a dedicated settings file to not override your default configuration.
+
+``` shell
+mkdir -p ~/.m2
+curl -s https://repo.websight.io/settings-websight-public.xml --output ~/.m2/websight-settings.xml
 ```
 
-#### Build Howlite
+### Build Howlite
+
+Clone _Howlite_ repository and build it.
 
 ```shell
 git clone git@github.com:websight-io/howlite.git
 cd howlite
-mvn clean install -P e2e
+mvn clean install -s ~/.m2/websight-settings.xml -P e2e
+cd ..
 ```
 
-## Introduction
+### Build Luna
 
-We are going to use sample project using [Howlite](https://github.com/websight-io/howlite) components and delivers sample content. This project contains also **Luna Title** component that override **Title** component from **Howlite**. You are going to change this component during this guide.
-
-## Prepare environment
-
-### Clone [repository](https://github.com/websight-io/luna-project)
+Clone _Luna_ repository and build it.
 
 ```shell
 git clone git@github.com:websight-io/luna-project.git
 cd luna-project
-```
-
-### Build project
-```shell
-mvn clean install -P e2e
+mvn clean install -s ~/.m2/websight-settings.xml -P e2e
 ```
 
 ### Run docker environment
@@ -43,11 +64,17 @@ docker compose -f environment/docker-compose.yml up -d
 ```
 
 ### Take a tour on application with sample content
-Open [http://localhost:8080/](http://localhost:8080/) and login using wsadmin/wsadmin credentials.
 
-## Changing component
+Congratulations! Your local environment is ready. Open [http://localhost:8080/](http://localhost:8080/) and login using `wsadmin`/`wsadmin` credentials.
 
-You should see a **Luna Title** component available on **Components** list in page editor. In this step we want to update this component.
+## Part C: Changing component
+
+### The original state
+
+!!! info "Hint"
+    If you need help to navigate inside WebSight see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
+
+Open _Luna_ space and edit home page (see ). Find _Luna Title_. Drag and drop it on the page. 
 ![](luna-title-componet.png)
 
 This component allows to set title with optional overline. 
