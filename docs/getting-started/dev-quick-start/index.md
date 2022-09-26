@@ -179,21 +179,21 @@ Run the following command to install the changes on your local environment.
 mvn -f luna/core/pom.xml clean install -P autoInstallBundle
 ```
 
-## Part D: Running functional tests
+## Part D: Functional tests
 
-Our functional tests are running during maven build 
-```shell
-mvn clean install -P e2e
-```
+### Running functional tests
 
-but you cna also run them on your local environment. 
-You have to add the test content and run functional tests:
+Functional tests are executed during maven build. You can run them using `npm` on your local environment too. However, you have to add the test content before. We prepared two functional test for the _Luna Title_ component. Use the following script to install them.
 ```shell
 mvn -f luna/tests/content/pom.xml clean install -P autoInstallPackage
+```
+
+Run them using the command.
+```shell
 npm run-script test --prefix luna/tests/end-to-end
 ```
 
-Functional tests detect your changes, so they fail:
+If you execute them, they detect your changes for the _Luna Title_ and fail. You should get the following results.
 ```
 Running:  title.cy.ts                                                                     (1 of 1)
 
@@ -233,7 +233,8 @@ Title component
        headingSize: 'hl-title__heading--size-2' }
 ```
 
-First test detects change in default font size, and the second one detects new property added to component.
+Firstly, you updated the default font size of the overline to ensure consistency with the design. The first test detected the change and failed as a result. Secondly, you added a new property to the component and it was recognised as well.
+
 
 ### Update functional tests
 As functional tests fail due to changes you expected, so you have to update those tests. They are placed in file `luna/tests/end-to-end/tests/title.cy.ts`. 
