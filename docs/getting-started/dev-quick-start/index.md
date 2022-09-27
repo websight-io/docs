@@ -168,7 +168,7 @@ mvn -f luna/core/pom.xml clean install -P autoInstallBundle
 
 ### Running functional tests
 
-Functional tests are executed during maven build. You can run them using `npm` on your local environment too. However, you have to add the test content before. We prepared two functional test for the _Luna Title_ component. Use the following script to install them.
+We prepared sample functional tests using [Cypress](https://www.cypress.io/). They are executed during maven build. You can run them using `npm` on your local environment too. However, you have to add the test content before. We prepared two functional tests for the _Luna Title_ component. Use the following script to install them.
 ```shell
 mvn -f tests/content/pom.xml clean install -P autoInstallPackage
 ```
@@ -218,12 +218,13 @@ Title component
        headingSize: 'hl-title__heading--size-2' }
 ```
 
-Firstly, you updated the default font size of the overline to ensure consistency with the design. The first test detected the change and failed as a result. Secondly, you added a new property to the component and it was recognised as well.
+Firstly, you updated the default font size of the overline to ensure consistency with the design. The first test detected the change and failed as a result. Secondly, you added a new property to the dialog for the component. It was recognised as well.
 
 
 ### Update functional tests
-As functional tests fail due to changes you expected, so you have to update those tests. They are placed in file `tests/end-to-end/tests/title.cy.ts`. 
-Let's change:
+As functional tests fail due to the changes, you should adjust related assertions. They are placed in file `tests/end-to-end/tests/title.cy.ts`. 
+
+The first test checks the font size for the overline text. There are two component intances validated. Thus, you need to update assertions for both of them as follows.
 
 ```typescript
     cy.getByTestId('component_title1')
@@ -238,6 +239,8 @@ Let's change:
       .should('have.css', "font-size", "25.008px")
       .should('have.text', 'Resized to 6 cols on L breakpoint')
 ```
+
+The second test validates the dialog for the component. Update the test to recognise the new input field.
 
 ```typescript
     cy.request(
@@ -256,19 +259,16 @@ Let's change:
       });
 ```
 
-### Running functional tests
-You can run functional tests again by running maven build
-```shell
-mvn clean install -s ~/.m2/websight-settings.xml -P e2e
-```
+### Running functional tests again
 
-or on local environment:
+Now, you can execute the functional tests again.
+
 ```shell
 mvn -f tests/content/pom.xml clean install -P autoInstallPackage
 npm run-script test --prefix tests/end-to-end
 ```
 
-This time we expect passing tests:
+Both tests should passs this time. You should get a report like the one below.
 ```
 Running:  title.cy.ts                                                                     (1 of 1)
  
@@ -282,34 +282,39 @@ Title component
 
 ```
 
+Congratulations! You updated the component, and it passed tests.
 
 ## Part E: Use updated component
 
 !!! info "Hint"
     If you need help to navigate inside WebSight see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
 
-Open _Luna_ space and edit home page (see ). Find _Luna Title_. Drag and drop it on the page. 
+The page owner can use the updated component now. Let's check it too.
+
+Run WebSight, open _Luna_ space and edit home page. Find the _Title_ having text `Meet our New Grand Luxor Jewelry Collection`. 
 ![](luna-title-componet.png)
 
-This component allows to set title with optional overline. 
-![](luna-title-view-before.png)
+Find _Luna Title_ in the component tree on the left. Drag and drop the component on the page just below the orginal one. 
 
-It allows to set level and size for main title.
-![](luna-title-dialog-before.png)
+Edit properties of the _Luna Title_:
+1. set _Heading size_ to `XL`
+1. set _Heading text_ to `New Grand Luxor Jewelry Collection`
+1. enable overline text
+1. set _Overline text_ to `Meet our` 
+1. set _Overline text_ to `L`
 
-Now our overline should be bigger then previously
-![](luna-title-view-after.png)
-
-> If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache
-
-And you can change **Overline size**
 ![](luna-title-dialog-after.png)
+
+Submit changes. The title should look like expected now. You can delete the orginal _Title_ comonent to finalize the change.
+
+!!! info "Hint"
+    If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache
 
 ## Part F: Clean-up
 
 ### Stop the environment
 
-After all you can stop your environment by running:
+After all, you can stop your environment.
 
 ```shell
 docker compose -f environment/docker-compose.yml down
@@ -317,7 +322,7 @@ docker compose -f environment/docker-compose.yml down
 
 ### Delete environment
 
-If you don't want to work on your environment than you can delete it using script:
+If you don't need your environment anymore, you can delete it using a script.
 
 ```shell
 sh environment/delete.sh
