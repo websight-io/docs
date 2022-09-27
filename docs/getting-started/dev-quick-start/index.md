@@ -37,17 +37,6 @@ mkdir -p ~/.m2
 curl -s https://repo.websight.io/settings-websight-public.xml --output ~/.m2/websight-settings.xml
 ```
 
-### Build Howlite
-
-Clone _Howlite_ repository and build it.
-
-```shell
-git clone git@github.com:websight-io/howlite.git
-cd howlite
-mvn clean install -s ~/.m2/websight-settings.xml -P e2e
-cd ..
-```
-
 ### Build Luna
 
 Clone _Luna_ repository and build it.
@@ -141,13 +130,9 @@ The last step is to add the field to the dialog used by authors. They need it to
 
 ```json title="luna/core/src/main/resources/apps/luna/components/title/dialog/.content.json"
 {
-  "sling:resourceType": "wcm/dialogs/dialog",
   "tabs": {
-    "sling:resourceType": "wcm/dialogs/components/tabs",
     "generalTab": {
-      "sling:resourceType": "wcm/dialogs/components/tab",
       "container": {
-        "sling:resourceType": "wcm/dialogs/components/container",
         "overlineSize": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "sling:orderBefore": "overline",
@@ -185,12 +170,12 @@ mvn -f luna/core/pom.xml clean install -P autoInstallBundle
 
 Functional tests are executed during maven build. You can run them using `npm` on your local environment too. However, you have to add the test content before. We prepared two functional test for the _Luna Title_ component. Use the following script to install them.
 ```shell
-mvn -f luna/tests/content/pom.xml clean install -P autoInstallPackage
+mvn -f tests/content/pom.xml clean install -P autoInstallPackage
 ```
 
 Run them using the command.
 ```shell
-npm run-script test --prefix luna/tests/end-to-end
+npm run-script test --prefix tests/end-to-end
 ```
 
 If you execute them, they detect your changes for the _Luna Title_ and fail. You should get the following results.
@@ -237,7 +222,7 @@ Firstly, you updated the default font size of the overline to ensure consistency
 
 
 ### Update functional tests
-As functional tests fail due to changes you expected, so you have to update those tests. They are placed in file `luna/tests/end-to-end/tests/title.cy.ts`. 
+As functional tests fail due to changes you expected, so you have to update those tests. They are placed in file `tests/end-to-end/tests/title.cy.ts`. 
 Let's change:
 
 ```typescript
@@ -274,13 +259,13 @@ Let's change:
 ### Running functional tests
 You can run functional tests again by running maven build
 ```shell
-mvn clean install -P e2e
+mvn clean install -s ~/.m2/websight-settings.xml -P e2e
 ```
 
 or on local environment:
 ```shell
-mvn -f luna/tests/content/pom.xml clean install -P autoInstallPackage
-npm run-script test --prefix luna/tests/end-to-end
+mvn -f tests/content/pom.xml clean install -P autoInstallPackage
+npm run-script test --prefix tests/end-to-end
 ```
 
 This time we expect passing tests:
