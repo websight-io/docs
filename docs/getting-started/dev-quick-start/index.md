@@ -4,7 +4,7 @@
 
 Use this guide to learn how to update a simple Howlite component. We recommend completing the general [quick start guide](/docs/getting-started/quick-start/index.md) first to get familiar with basic concepts.
 
-The scenario utilises a sample component library [Howlite](https://github.com/websight-io/howlite) and a demo site project _Luna_. For simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and prepared the _Luna Title_ component defined inside the demo site project. 
+The scenario utilises a sample component library [Howlite](https://github.com/websight-io/howlite) and a demo site project _Luna_. For simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and prepared the _Luna Title_ component inside the demo project. 
 
 Your task is to update the _Luna Title_ component and extend existing functionality and tests. See more details in the sections below.
 
@@ -61,25 +61,28 @@ Congratulations! Your local environment is ready. Open [http://localhost:8080/](
 
 ### Business requirement
 
-Let's imagine the following scenario. Page onwer wants to update the title of the New Grand Luxor Jewelry Collection.
+Let's imagine the following scenario. Page owner wants to update the title of the new Grand Luxor Jewelry Collection.
 
-![The current title](TBD.png)
+![The current title](the-current-title.png)
 
-The ask is to keep the collection name in one line and decrease the font size for the text `Meet our`. Expected result is designed and presented below.
+The ask is to keep the collection name in one line and decrease the font size for the text `Meet our`. The expected result is presented below.
 
-![Expected result](TBD.png)
+![Expected result](the-expected-result.png)
 
 ### Technical scope
 
-You need to extend the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) to implement the above requirement. However, let's check the orginal component first to identify the scope of changes. Run WebSight, open _Luna_ space and edit home page. Find the _Title_ having text `Meet our New Grand Luxor Jewelry Collection` and edit its properties.
+You need to extend the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) to implement the above requirement. However, let's check the orginal component first to identify the scope of changes. 
 
-![Title dialog properties](TBD.png)
+Run WebSight, open _Luna_ space and edit home page. Find the _Title_ having text `Meet our New Grand Luxor Jewelry Collection` and edit its properties. 
+
+![Title dialog properties](title-dialog-properties.png)
 
 Enable `Overline text` option, move `Meet our` from `Heding text` to `Overline text` and submit changes.
 
-![Updated title](TBD.png)
+![Updated title](title-updated.png)
 
 The result is close to the expectation, but the font size of the overline text is too small. You could prepare a new version of the _Title_ component having a different font size for the overline text. However, this is not a flexible solution. An additional input field to define the font size for the overline text is a better option. 
+
 
 !!! info
     For simplicity, we overrode the original component in advance and prepared the _Luna Title_. It is a part of the demo site project, but it is just a placeholder. It works exactly as the _Title_. The following sections guide you on how to implement the change.
@@ -126,7 +129,7 @@ As you updated the model class, you can use its property now.
     data-testid="overline">${model.subtitle}</h6>
 ```
 
-The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new `.content.json` file inside the dialog directory.
+The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new `dialog` directory and put `.content.json` file inside.
 
 ```json title="luna/core/src/main/resources/apps/luna/components/title/dialog/.content.json"
 {
@@ -156,7 +159,7 @@ The last step is to add the field to the dialog used by authors. They need it to
 }
 ```
 
-The above definition specifies the new `overlineSize` field. It is placed before `overline` field and uses heading size definition from Howlite, but with **small** size selected by default.
+The above definition specifies the new `overlineSize` field. It is placed before `overline` field and uses heading size definition from Howlite, but with _small_ size selected by default.
 
 ### Install changes 
 Run the following command to install the changes on your local environment.
@@ -173,7 +176,7 @@ We prepared sample functional tests using [Cypress](https://www.cypress.io/). Th
 mvn -f tests/content/pom.xml clean install -P autoInstallPackage
 ```
 
-Run them using the command.
+Run them using the following command.
 ```shell
 npm run-script test --prefix tests/end-to-end
 ```
@@ -284,7 +287,7 @@ Title component
 
 Congratulations! You updated the component, and it passed tests.
 
-## Part E: Use updated component
+## Part E: Use the new component
 
 !!! info "Hint"
     If you need help to navigate inside WebSight see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
@@ -292,20 +295,25 @@ Congratulations! You updated the component, and it passed tests.
 The page owner can use the updated component now. Let's check it too.
 
 Run WebSight, open _Luna_ space and edit home page. Find the _Title_ having text `Meet our New Grand Luxor Jewelry Collection`. 
-![](luna-title-componet.png)
 
-Find _Luna Title_ in the component tree on the left. Drag and drop the component on the page just below the orginal one. 
+Find the _Luna Title_ in the component tree on the left. Drag and drop the component on the page just below the orginal one. 
+
+![Luna Title added](luna-title-component.png)
+
 
 Edit properties of the _Luna Title_:
+
 1. set _Heading size_ to `XL`
 1. set _Heading text_ to `New Grand Luxor Jewelry Collection`
 1. enable overline text
+1. set _Overline size_ to `L`
 1. set _Overline text_ to `Meet our` 
-1. set _Overline text_ to `L`
 
-![](luna-title-dialog-after.png)
+![Luna Title Dialog Properites](luna-title-dialog-properties.png)
 
 Submit changes. The title should look like expected now. You can delete the orginal _Title_ comonent to finalize the change.
+
+![Updated Luna Title](luna-title-updated.png)
 
 !!! info "Hint"
     If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache
