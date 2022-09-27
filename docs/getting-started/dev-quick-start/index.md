@@ -91,6 +91,8 @@ The result is close to the expectation, but the font size of the overline text i
 
 Your task is to enable the setting of the overline font size.
 
+#### 1. Model class
+
 Firstly, you need to add a new field `overlineSize` in the model class `LunaTitleComponent.java`. Let's define a default size `hl-title__heading--size-5` according to the received design too.
 
 ```java title="luna/core/src/main/java/pl/ds/luna/compoennts/models/LunaTitleComponent.java"
@@ -116,6 +118,8 @@ public class LunaTitleComponent extends TitleComponent {
 }
 ```
 
+#### 2. Component HTML template
+
 Next, you need to update the component HTML template. The orginal one defines the CSS class determining the font size as `hl-title__heading--size-6`.
 
 ```html
@@ -124,14 +128,15 @@ Next, you need to update the component HTML template. The orginal one defines th
 ```
 As you updated the model class, you can use its property now.
 
-```html title="luna/core/src/main/resources/apps/luna/components/title/template.html"
+```html title="luna/core/src/main/resources/apps/luna/components/lunatitle/lunatitle.html"
 <h6 class="hl-title__heading ${model.overlineSize}" 
     data-testid="overline">${model.subtitle}</h6>
 ```
+#### 3. Dialog field definition
 
-The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new `dialog` directory and put `.content.json` file inside.
+The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new `.content.json` file inside the dialog directory.
 
-```json title="luna/core/src/main/resources/apps/luna/components/title/dialog/.content.json"
+```json title="luna/core/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json"
 {
   "tabs": {
     "generalTab": {
@@ -183,10 +188,10 @@ npm run-script test --prefix tests/end-to-end
 
 If you execute them, they detect your changes for the _Luna Title_ and fail. You should get the following results.
 ```
-Running:  title.cy.ts                                                                     (1 of 1)
+Running:  lunatitle.cy.ts                                                                 (1 of 1)
 
 
-Title component
+Luna Title component
   1) renders correctly in preview mode
   2) renders correctly in edit mode
 
@@ -194,7 +199,7 @@ Title component
 0 passing (8s)
 2 failing
 
-1) Title component
+1) Luna Title component
      renders correctly in preview mode:
 
     AssertionError: expected '<h6.hl-title__heading.hl-title__heading--size-5>' to have CSS property 'font-size' with the value '20px', but the value was '25.008px'
@@ -205,13 +210,13 @@ Title component
     
     ...
 
-2) Title component
+2) Luna Title component
      renders correctly in edit mode:
 
     Timed out retrying after 4000ms
     + expected - actual
 
-    { 'sling:resourceType': 'luna/components/title',
+    { 'sling:resourceType': 'luna/components/lunatitle',
        title: 'New heading',
        showSubtitle: 'true',
     -  overlineSize: 'hl-title__heading--size-5',
@@ -225,7 +230,7 @@ Firstly, you updated the default font size of the overline to ensure consistency
 
 
 ### Update functional tests
-As functional tests fail due to the changes, you should adjust related assertions. They are placed in file `tests/end-to-end/tests/title.cy.ts`. 
+As functional tests fail due to the changes, you should adjust related assertions. They are placed in file `tests/end-to-end/tests/lunatitle.cy.ts`. 
 
 The first test checks the font size for the overline text. There are two component intances validated. Thus, you need to update assertions for both of them as follows.
 
@@ -247,11 +252,11 @@ The second test validates the dialog for the component. Update the test to recog
 
 ```typescript
     cy.request(
-      '/content/luna-test/pages/Title/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
+      '/content/luna-test/pages/LunaTitle/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
     )
       .its('body')
       .should('deep.eq', {
-        'sling:resourceType': 'luna/components/title',
+        'sling:resourceType': 'luna/components/lunatitle',
         title: 'New heading',
         showSubtitle: 'true',
         overlineSize: 'hl-title__heading--size-5',
@@ -273,10 +278,10 @@ npm run-script test --prefix tests/end-to-end
 
 Both tests should passs this time. You should get a report like the one below.
 ```
-Running:  title.cy.ts                                                                     (1 of 1)
+Running:  lunatitle.cy.ts                                                                 (1 of 1)
  
  
-Title component
+Luna Title component
   ✓ renders correctly in preview mode (1030ms)
   ✓ renders correctly in edit mode (2774ms)
 
@@ -309,11 +314,9 @@ Edit properties of the _Luna Title_:
 1. set _Overline size_ to `L`
 1. set _Overline text_ to `Meet our` 
 
-![Luna Title Dialog Properites](luna-title-dialog-properties.png)
+![](luna-title-dialog-after.png)
 
 Submit changes. The title should look like expected now. You can delete the orginal _Title_ comonent to finalize the change.
-
-![Updated Luna Title](luna-title-updated.png)
 
 !!! info "Hint"
     If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache
