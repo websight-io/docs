@@ -1,25 +1,23 @@
 version: "3.9"
 
 services:
-  wsce:
-    image: public.ecr.aws/ds/websight-ce-alpha:202209171922
+  cms:
+    image: public.ecr.aws/ds/websight-cms-ce:luna-0.2.0
     ports:
       - "8080:8080"
     environment:
-      WS_DEBUG: "true"
-      WS_WEBSIGHT_LOG_LEVEL: "debug"
       WS_ADMIN_USERNAME: "wsadmin"
       WS_ADMIN_PASSWORD: "wsadmin"
       MONGODB_HOST: "mongo"
       MONGODB_PORT: 27017
       LEASE_CHECK_MODE: "LENIENT"
     volumes:
-      - wsce_logs:/websight/logs
+      - cms_logs:/websight/logs
       - site_repository:/websight/docroot
-    links:
+    depends_on:
       - mongo
   nginx:
-    image: public.ecr.aws/ds/websight-nginx-alpha:202209171922
+    image: public.ecr.aws/ds/websight-nginx-ce:luna-0.2.0
     ports:
       - "80:80"
     volumes:
@@ -35,6 +33,6 @@ services:
       - mongo_repository:/data/db
 
 volumes:
-  wsce_logs:
+  cms_logs:
   mongo_repository:
   site_repository:
