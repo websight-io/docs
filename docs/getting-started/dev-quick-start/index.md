@@ -42,7 +42,7 @@ curl -s https://repo.websight.io/settings-websight-public.xml --output ~/.m2/web
 Clone _Luna_ repository and build it.
 
 ```shell
-git clone git@github.com:websight-io/luna-project.git
+git clone https://github.com/websight-io/luna-project.git
 cd luna-project
 mvn clean install -s ~/.m2/websight-settings.xml -P e2e
 ```
