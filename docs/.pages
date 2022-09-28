@@ -1,5 +1,4 @@
 nav:
-  - index.md
-  - Getting Started: getting-started
-  - Guides: guides
+  - Overview: index.md
+  - Docs & Resources: docs-resources
   - Blog: blog
