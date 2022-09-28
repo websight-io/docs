@@ -2,10 +2,10 @@
 
 ## Introduction
 
-Building a site is a challenge for users. They have no technical knowledge to implement the expected UI style. Moreover, there is a need to ensure a consistent look & feel for a given content type across the whole website. 
+Building a site is a challenge for users. They have no technical knowledge to implement the expected UI style. Moreover, there is a need to ensure a consistent look & feel for a given content type across the whole website.
 
 WebSight CMS solves the above issues by components. They are ready blocks (for example, a page title or image) that users can put on pages. Additionally, users can set some properties that impact their rendering.
- 
+
 As a developer, you have to implement a collection of components in advance. This guideline presents how to develop them for WebSight CMS.  
 
 ## Sample component
@@ -24,7 +24,6 @@ All the examples presented in this guide are related to a simple _Title_ compone
 
 The above component generates the following HTML. Note that the CSS class is skipped here for simplicity. More details on the CSS are available in the sections [Styling](./styling/index.md).
 
-
 ``` html
 <h2>Jewelry Decorates Your Beauty</h2>
 ```
@@ -37,12 +36,13 @@ Each site requires a collection of components. You should use a dedicated folder
 ui.apps/src/main/jcr_root/apps/[my-collection]/components
 ```
 
-For [Howlite](../../authoring/howlite/), the path is 
+For [Howlite](../../authoring/howlite/), the path is
+
 ```
 ui.apps/src/main/jcr_root/apps/howlite/components/
 ```
 
-Each component requires a subfolder. For the _Title_ component, it is 
+Each component requires a subfolder. For the _Title_ component, it is
 
 ```
 ui.apps/src/main/jcr_root/apps/howlite/components/title
