@@ -119,7 +119,7 @@ As you updated the model class, you can use its property now.
     data-testid="overline">${model.subtitle}</h6>
 ```
 
-The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new `.content.json` file inside the dialog directory.
+The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new `dialog` directory and put `.content.json` file inside.
 
 ```json title="luna/core/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json"
 {
