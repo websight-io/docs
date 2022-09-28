@@ -71,9 +71,9 @@ plugins:
       template: theme/ws-blog.html
   - redirects:
       redirect_maps:
-          'docs-resources/index.md': 'docs-resources/quick-start/index.md'
-          'docs-resources/authors/index.md': 'docs-resources/authors/component-libs/howlite/index.md'
-          'docs-resources/authors/component-libs/index.md': '/docs-resources/authors/component-libs/howlite/index.md'
+          'docs/index.md': 'docs/quick-start/index.md'
+          'docs/authors/index.md': 'docs/authors/component-libs/howlite/index.md'
+          'docs/authors/component-libs/index.md': '/docs/authors/component-libs/howlite/index.md'
 
           'getting-started/quick-start/index.md': 'docs-resources/quick-start/index.md'
           'guides/authoring/howlite/index.md': 'docs-resources/authors/component-libs/howlite/index.md'
