@@ -57,7 +57,7 @@ Congratulations! Your local environment is ready. Open [http://localhost:8080/](
 ## Part C: Changing component
 
 !!! info "Hint"
-    If you need help to navigate inside WebSight see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
+    If you need help to navigate inside WebSight, see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
 
 ### Business requirement
 
