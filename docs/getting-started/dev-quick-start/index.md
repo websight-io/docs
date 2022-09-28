@@ -4,7 +4,7 @@
 
 Use this guide to learn how to update a simple Howlite component. We recommend completing the general [quick start guide](/docs/getting-started/quick-start/index.md) first to get familiar with basic concepts.
 
-The scenario utilises a sample component library [Howlite](https://github.com/websight-io/howlite) and a demo site project _Luna_. For simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and prepared the _Luna Title_ component inside the demo project. 
+The scenario utilizes a sample component library [Howlite](https://github.com/websight-io/howlite) and a demo site project _Luna_. For simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and prepared the _Luna Title_ component inside the demo project. 
 
 Your task is to update the _Luna Title_ component and extend existing functionality and tests. See more details in the sections below.
 
@@ -28,31 +28,20 @@ OpenJDK 64-Bit Server VM Temurin-17.0.2+8 (build 17.0.2+8, mixed mode)
 
 ## Part B: Setup local environment
 
-### Download Maven configuration
-
-Create a dedicated settings file to not override your default configuration.
-
-``` shell
-mkdir -p ~/.m2
-curl -s https://repo.websight.io/settings-websight-public.xml --output ~/.m2/websight-settings.xml
-```
-
-### Build Luna
-
 Clone _Luna_ repository and build it.
 
 ```shell
 git clone https://github.com/websight-io/luna-project.git
 cd luna-project
-mvn clean install -s ~/.m2/websight-settings.xml -P e2e
+mvn clean install -P e2e
 ```
 
-### Run docker environment
+Run docker environment.
 ```shell
 docker compose -f environment/docker-compose.yml up -d
 ```
 
-Congratulations! Your local environment is ready. Open [http://localhost:8080/](http://localhost:8080/) and login using `wsadmin`/`wsadmin` credentials.
+Congratulations! Your local environment is ready. Open [http://localhost:8080/](http://localhost:8080/) and log in using `wsadmin`/`wsadmin` credentials.
 
 ## Part C: Changing component
 
@@ -77,7 +66,7 @@ Run WebSight, open _Luna_ space and edit home page. Find the _Title_ having text
 
 ![Title dialog properties](title-dialog-properties.png)
 
-Enable `Overline text` option, move `Meet our` from `Heding text` to `Overline text` and submit changes.
+Enable `Overline text` option, move `Meet our` from `Heading text` to `Overline text` and submit changes.
 
 ![Updated title](title-updated.png)
 
@@ -174,14 +163,16 @@ mvn -f luna/core/pom.xml clean install -P autoInstallBundle
 
 ## Part D: Functional tests
 
-### Running functional tests
+### Run functional tests
 
-We prepared sample functional tests using [Cypress](https://www.cypress.io/). They are executed during maven build. You can run them using `npm` on your local environment too. However, you have to add the test content before. We prepared two functional tests for the _Luna Title_ component. Use the following script to install them.
+We enhance WebSight CMS by adding new features, improving UX, and fixing bugs. Thus, we need confidence that implemented changes don't lead to any regression. We use [Cypress](https://www.cypress.io/) for automated testing to ensure it. Moreover, this approach enables us to spend less time on manual testing and regression fixes. We can focus on developing new features and improvements as a result.
+
+We prepared two sample functional tests for the _Luna Title_ component. They are executed during maven build. You can run them using `npm` on your local environment too. However, you have to add a test content before. Use the following script to install it.
 ```shell
 mvn -f tests/content/pom.xml clean install -P autoInstallPackage
 ```
 
-Run them using the following command.
+Now, you can run the tests using the following command.
 ```shell
 npm run-script test --prefix tests/end-to-end
 ```
@@ -226,11 +217,15 @@ Luna Title component
        headingSize: 'hl-title__heading--size-2' }
 ```
 
-Firstly, you updated the default font size of the overline to ensure consistency with the design. The first test detected the change and failed as a result. Secondly, you added a new property to the dialog for the component. It was recognised as well.
+When a functional test fails, you should check why. It is expected in this case, as you implemented the new requirements. Firstly, you updated the default font size of the overline (to ensure consistency with the design). Secondly, you added a new property to the dialog for the component. The tests recognized both changes, and you should adjust them as well. The following section presents how to complete it.
+
+
+!!! info "Hint"
+    Even better is to start by changing a test, so it fails and then adjusting the implementation so that the test passes.
 
 
 ### Update functional tests
-As functional tests fail due to the changes, you should adjust related assertions. They are placed in file `tests/end-to-end/tests/lunatitle.cy.ts`. 
+As functional tests fail due to the changes, you should adjust them. They are placed in file `tests/end-to-end/tests/lunatitle.cy.ts`. 
 
 The first test checks the font size for the overline text. There are two component intances validated. Thus, you need to update assertions for both of them as follows.
 
@@ -248,7 +243,7 @@ The first test checks the font size for the overline text. There are two compone
       .should('have.text', 'Resized to 6 cols on L breakpoint')
 ```
 
-The second test validates the dialog for the component. Update the test to recognise the new input field.
+The second test validates the dialog for the component. Update the test to recognize the new input field.
 
 ```typescript
     cy.request(
@@ -267,7 +262,7 @@ The second test validates the dialog for the component. Update the test to recog
       });
 ```
 
-### Running functional tests again
+### Run functional tests again
 
 Now, you can execute the functional tests again.
 
@@ -295,11 +290,11 @@ Congratulations! You updated the component, and it passed tests.
 ## Part E: Use the new component
 
 !!! info "Hint"
-    If you need help to navigate inside WebSight see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
+    If you need help to navigate inside WebSight, see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
 
 The page owner can use the updated component now. Let's check it too.
 
-Run WebSight, open _Luna_ space and edit home page. Find the _Title_ having text `Meet our New Grand Luxor Jewelry Collection`. 
+Switch to WebSight CMS, open _Luna_ space, and edit the home page. Find the _Title_ with text `Meet our New Grand Luxor Jewelry Collection`. 
 
 Find the _Luna Title_ in the component tree on the left. Drag and drop the component on the page just below the orginal one. 
 
@@ -316,7 +311,7 @@ Edit properties of the _Luna Title_:
 
 ![Luna Title Dialog Properites](luna-title-dialog-properties.png)
 
-Submit changes. The title should look like expected now. You can delete the orginal _Title_ comonent to finalize the change.
+Submit changes. The title should look like expected now. You can delete the orginal _Title_ component to finalize the change.
 
 ![Updated Luna Title](luna-title-updated.png)
 
