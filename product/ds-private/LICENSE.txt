@@ -1,0 +1,3 @@
+Copyright (C) 2013-2022 Dynamic Solutions
+This is a private, internal software. Using or copying as a
+whole or in fragments is disallowed without permission.

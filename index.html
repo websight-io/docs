@@ -1,0 +1,3217 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Explore materials, tutorials and documentation to discover how to use WebSight effectively. Discover enterprise grade, web-scale content management system.">
+      
+      
+        <meta name="author" content="Dynamic Solutions">
+      
+      
+        <link rel="canonical" href="https://websight.io/">
+      
+      <link rel="icon" href="assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>WebSight DXP</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/websight.css">
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Determine analytics property -->
+
+
+
+
+<!-- Google Analytics 4 (G-XXXXXXXXXX) -->
+
+<script type="text/plain" data-cookiecategory="analytics">
+    window.dataLayer = window.dataLayer || []
+    function gtag() { dataLayer.push(arguments) }
+
+    /* Set up integration and send page view */
+    gtag("js", new Date())
+    gtag("config", "G-FV5Y0B6W17")
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+        if (document.forms.search) {
+            var query = document.forms.search.query
+            query.addEventListener("blur", function() {
+                if (this.value)
+                    gtag("event", "search", { search_term: this.value })
+            })
+        }
+
+        /* Send page view on location change */
+        if (typeof location$ !== "undefined")
+            location$.subscribe(function(url) {
+                gtag("config", "G-FV5Y0B6W17", {
+                    page_path: url.pathname
+                })
+            })
+    })
+</script>
+<script type="text/plain" data-cookiecategory="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-FV5Y0B6W17">
+</script>
+
+<!-- Google Analytics (UA-XXXXXXXX-X) -->
+
+
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#home" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="WebSight DXP" class="md-header__button md-logo" aria-label="WebSight DXP" data-md-component="logo">
+      
+  <img src="assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WebSight DXP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/websight-io/starter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    websight-io/starter
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+<link rel="stylesheet" href="/assets/stylesheets/home.css">
+
+<section clas="ds-section">
+    <div class="md-grid md-typeset">
+        <div class="ds-hero">
+            <div class="ds-hero__image">
+                <img src="/assets/images/hero.png">
+            </div>
+            <div class="ds-hero__content">
+                <h1>WebSight DXP</h1>
+                <p>
+                    Discover cloud native Digitial Experience Platform driven by the enterprise-grade CMS
+                </p>
+                <a href="docs/quick-start" title="Quick Start Guide"
+                   class="md-button md-button--primary">
+                    Get Started
+                </a>
+                <a href="https://github.com/websight-io/starter" title="Go to repository" class="md-button">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ds-section ds-section__even">
+    <div class="md-content md-grid" data-md-component="content">
+        <div class="md-content__inner">
+            <div class="mdx-spotlight">
+                <figure class="mdx-spotlight__feature" id="create-distribute-deliver">
+                    <a href="#create-distribute-deliver" title="Create. Distribute. Deliver." tabindex="-1">
+                        <img src="/assets/images/infrastructure.png" alt="Authoring experience" loading="lazy">
+                    </a>
+                    <figcaption class="md-typeset">
+                        <h2>Create. Distribute. Deliver.</h2>
+                        <p>
+                            What makes WebSight different is a true separation of concerns. The authoring environment is completely detached from the runtime. Content authors need distributed collaboration platform focused on providing rich authoring features. It’s designed specifically to <b>create</b> and manage the content between publications.
+                        </p>
+                        <p>
+                            Once ready, we generate static pages, prepare content fragments and <b>distribute</b> them with all dependencies to the runtime environment using the push model.
+                        </p>
+                        <p>
+                            The runtime environment adds dynamic behaviors and acts as an integration layer. It <b>delivers</b> complete experiences to the end users. Delivers them in a fast, secure, and scalable way.
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ds-section">
+    <div class="md-content md-grid" data-md-component="content">
+        <div class="md-content__inner">
+            <div class="mdx-expect">
+                <ul class="mdx-expect__list">
+                    <li class="mdx-expect__item md-typeset">
+                        <div class="mdx-expect__icon">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24.1875 12.55C23.3375 8.2375 19.55 5 15 5C11.3875 5 8.25 7.05 6.6875 10.05C2.925 10.45 0 13.6375 0 17.5C0 21.6375 3.3625 25 7.5 25H23.75C27.2 25 30 22.2 30 18.75C30 15.45 27.4375 12.775 24.1875 12.55ZM23.75 22.5H7.5C4.7375 22.5 2.5 20.2625 2.5 17.5C2.5 14.9375 4.4125 12.8 6.95 12.5375L8.2875 12.4L8.9125 11.2125C10.1 8.925 12.425 7.5 15 7.5C18.275 7.5 21.1 9.825 21.7375 13.0375L22.1125 14.9125L24.025 15.05C25.975 15.175 27.5 16.8125 27.5 18.75C27.5 20.8125 25.8125 22.5 23.75 22.5ZM12.5 17.725L9.8875 15.1125L8.125 16.875L12.5 21.25L20.0125 13.7375L18.25 11.975L12.5 17.725Z" fill="#181818"/>
+                            </svg>
+                        </div>
+                        <div class="mdx-expect__description">
+                            <h2>Cloud Native Architecture</h2>
+                            <p>
+                                Architecture is designed to make the web fast, secure, and easy to scale.
+                                Pages are rendered in advance, stored, and enriched in runtime by serverless functions.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="mdx-expect__item md-typeset">
+                        <div class="mdx-expect__icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.7467 12.0267L19.9733 13.2533L7.89333 25.3333H6.66667V24.1067L18.7467 12.0267V12.0267ZM23.5467 4C23.2133 4 22.8667 4.13333 22.6133 4.38667L20.1733 6.82667L25.1733 11.8267L27.6133 9.38667C28.1333 8.86667 28.1333 8.02667 27.6133 7.50667L24.4933 4.38667C24.2267 4.12 23.8933 4 23.5467 4V4ZM18.7467 8.25333L4 23V28H9L23.7467 13.2533L18.7467 8.25333V8.25333Z" fill="#181818"/>
+                            </svg>
+                        </div>
+                        <div class="mdx-expect__description">
+                            <h2>Enterprise Grade CMS</h2>
+                            <p>
+                                Create digital experiences with modern and intuitive UI and get a live preview before
+                                publishing. The authoring layer shares the technology stack with enterprise market leaders,
+                                which results in a feature-rich, battle-tested platform. Redesigned to meet the latest
+                                standards.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="mdx-expect__item md-typeset">
+                        <div class="mdx-expect__icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M27.1729 11.4265L25.5329 13.8932C26.3238 15.4706 26.711 17.2196 26.6598 18.9835C26.6086 20.7473 26.1206 22.4709 25.2396 23.9998H6.75958C5.61447 22.0133 5.13997 19.7107 5.40643 17.4333C5.67289 15.1559 6.66613 13.0249 8.23888 11.3564C9.81164 9.68788 11.8802 8.57056 14.1379 8.1701C16.3956 7.76964 18.7222 8.10735 20.7729 9.13317L23.2396 7.49317C20.7282 5.88279 17.7493 5.16118 14.7794 5.44375C11.8095 5.72633 9.02017 6.99677 6.85757 9.05185C4.69497 11.1069 3.28406 13.8279 2.85054 16.7796C2.41701 19.7312 2.98591 22.743 4.46625 25.3332C4.69893 25.7362 5.03303 26.0713 5.43535 26.3052C5.83768 26.5391 6.29421 26.6637 6.75958 26.6665H25.2262C25.6961 26.6684 26.1582 26.546 26.5656 26.3119C26.973 26.0778 27.3113 25.7401 27.5462 25.3332C28.7747 23.2051 29.3913 20.7789 29.3277 18.3224C29.2642 15.866 28.5231 13.4749 27.1862 11.4132L27.1729 11.4265ZM14.1196 20.5465C14.3672 20.7944 14.6613 20.9911 14.9851 21.1253C15.3088 21.2595 15.6558 21.3286 16.0062 21.3286C16.3567 21.3286 16.7037 21.2595 17.0274 21.1253C17.3511 20.9911 17.6453 20.7944 17.8929 20.5465L25.4396 9.2265L14.1196 16.7732C13.8716 17.0208 13.675 17.3149 13.5408 17.6387C13.4066 17.9624 13.3375 18.3094 13.3375 18.6598C13.3375 19.0103 13.4066 19.3573 13.5408 19.681C13.675 20.0047 13.8716 20.2988 14.1196 20.5465Z" fill="#181818"/>
+                            </svg>
+                        </div>
+                        <div class="mdx-expect__description">
+                            <h2>Great Performance</h2>
+                            <p>
+                                Better performance due to edge processing and always available computing power.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="mdx-expect__item md-typeset">
+                        <div class="mdx-expect__icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 1.3335L4 6.66683V14.6668C4 22.0668 9.12 28.9868 16 30.6668C22.88 28.9868 28 22.0668 28 14.6668V6.66683L16 1.3335ZM25.3333 14.6668C25.3333 20.6935 21.36 26.2535 16 27.9068C10.64 26.2535 6.66667 20.6935 6.66667 14.6668V8.40016L16 4.2535L25.3333 8.40016V14.6668ZM9.88 15.4535L8 17.3335L13.3333 22.6668L24 12.0002L22.12 10.1068L13.3333 18.8935L9.88 15.4535Z" fill="#181818"/>
+                            </svg>
+                        </div>
+                        <div class="mdx-expect__description">
+                            <h2>High Security</h2>
+                            <p>
+                                External users have access only to client experiences. The authoring part is secured and is not a runtime dependency. In WebSight, you always expose the minimum.                            </p>
+                        </div>
+                    </li>
+                    <li class="mdx-expect__item md-typeset">
+                        <div class="mdx-expect__icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M28 14.6667V4H17.3333L21.72 8.38667L8.38667 21.72L4 17.3333V28H14.6667L10.28 23.6133L23.6133 10.28L28 14.6667Z" fill="#181818"/>
+                            </svg>
+                        </div>
+                        <div class="mdx-expect__description">
+                            <h2>Cheap and Easy Scaling</h2>
+                            <p>
+                                Scale from zero to infinity. We eliminated bottlenecks to give you a flexible platform.
+                                Pay for what you use while handling traffic peaks and downscale the resources to a minimum when needed.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="mdx-expect__item md-typeset">
+                        <div class="mdx-expect__icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M28.8935 24.2268L21.8268 17.1602H20.5068L17.1201 20.5468V21.8668L24.1868 28.9335C24.7068 29.4535 25.5468 29.4535 26.0668 28.9335L28.8935 26.1068C29.4135 25.6002 29.4135 24.7468 28.8935 24.2268ZM25.1201 26.1202L19.4668 20.4668L20.4135 19.5202L26.0668 25.1735L25.1201 26.1202Z" fill="#181818"/>
+                                <path d="M23.1203 13.5868L25.0003 11.7068L27.827 14.5335C29.387 12.9735 29.387 10.4402 27.827 8.88016L23.107 4.16016L21.227 6.04016V2.28016L20.2937 1.3335L15.5737 6.0535L16.5203 7.00016H20.2937L18.4137 8.88016L19.827 10.2935L15.9737 14.1468L10.467 8.64016V6.74683L6.44033 2.72016L2.66699 6.4935L6.70699 10.5335H8.58699L14.0937 16.0402L12.9603 17.1735H10.1337L3.06699 24.2402C2.54699 24.7602 2.54699 25.6002 3.06699 26.1202L5.89366 28.9468C6.41366 29.4668 7.25366 29.4668 7.77366 28.9468L14.8403 21.8802V19.0535L21.707 12.1868L23.1203 13.5868ZM12.4803 20.4535L6.82699 26.1068L5.88033 25.1602L11.5337 19.5068L12.4803 20.4535Z" fill="#181818"/>
+                            </svg>
+                        </div>
+                        <div class="mdx-expect__description">
+                            <h2>Tailor Made Solution</h2>
+                            <p>
+                                Use the best tools to do the job. Use Content Management System to manage the content.
+                                Utilize cloud technologies like Amazon IAM, Cognito, or Cloud Search to extend the platform.
+                                Compose the platform using IaC solution and keep it simple.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ds-section  ds-section__even">
+    <div class="md-content md-grid" data-md-component="content">
+        <div class="md-content__inner">
+            <div class="mdx-spotlight">
+                <figure class="mdx-spotlight__feature" id="authoring-experience">
+                    <a href="#authoring-experience" title="Authoring experience" tabindex="-1">
+                        <img src="/assets/images/authoring-experience.png" alt="Authoring experience" loading="lazy">
+                    </a>
+                    <figcaption class="md-typeset">
+                        <h2>Authoring Experience</h2>
+                        <p>
+                            Everything that happens before page publishing is done on the authoring instances. WebSight
+                            enables teams to create content in distributed environments. Teams can collaborate
+                            on multiple sites and markets using different roles and permissions. Data is organized into
+                            sites using spaces, assets, pages, tags, templates, and components and uses functionalities like
+                            multi-site management, page versioning, and more.
+                        </p>
+                        <p>
+                            WebSight supports headless and traditional architectures, making it true hybrid CMS.
+                            The authoring environment is fast and responsive without any legacy code. UX is optimized for
+                            productivity and the best possible user experience. The environment is pluggable and easily customizable.
+                            Can be easily extended to meet specific requirements.
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure class="mdx-spotlight__feature" id="developer-experience">
+                    <a href="#developer-experience" title="Developer Experience" tabindex="-1">
+                        <img src="/assets/images/developer-experience.png" alt="Developer Experience" loading="lazy">
+                    </a>
+                    <figcaption class="md-typeset">
+                        <h2>Technology First</h2>
+                        <p>
+                            WebSight is based on a solid foundation of Apache Sling, Jackrabbit Oak, and Felix.
+                            It shares a core technology stack with mature Digital Experience Platforms like AEM or Magnolia.
+                            On the other hand, we implemented the platform to target cloud infrastructures. We use containers and serverless
+                            for easier development, testing, and delivery. Containerized local setups, ephemeral environments, self-healing,
+                            and scalable target infrastructures are just some of the benefits of moving to modern technologies.
+                        </p>
+                        <p>
+                            We can surely say that WebSight is made by engineers for engineers.
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ds-section">
+    <div class="md-content md-grid" data-md-component="content">
+        <div class="md-content__inner mdx-content__inner">
+            <div class="mdx-content__column">
+                <header class="md-typeset">
+                    <h2 id="why-websight"> Why WebSight?
+                        <a href="#why-websight" class="headerlink" title="Permanent link"> ¶ </a>
+                    </h2>
+                </header>
+                <div class="mdx-connect md-typeset">
+                    <div class="mdx-connect__column">
+                        <p>
+                            Our 50+ team has together hundreds of years of experience with market-leading
+                            enterprise-class CMSs like AEM.
+                            We are using this experience to provide the solution for issues we’ve seen too many times.
+                        </p>
+                        <a href="docs/quick-start" title="Quick Start Guide"
+                           class="md-button md-button--primary">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mdx-content__column">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="." class="md-tabs__link md-tabs__link--active">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="docs/quick-start/" class="md-tabs__link">
+        Docs
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="community/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="blog/" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="WebSight DXP" class="md-nav__button md-logo" aria-label="WebSight DXP" data-md-component="logo">
+      
+  <img src="assets/images/logo.svg" alt="logo">
+
+    </a>
+    WebSight DXP
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/websight-io/starter" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    websight-io/starter
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Home
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/quick-start/">Quick Start Guide</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Quick Start Guide" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Authors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Authors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Authors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1">
+          Component libs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Component libs" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Component libs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1" type="checkbox" id="__nav_2_2_1_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/">Howlite</a>
+          
+            <label for="__nav_2_2_1_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Howlite" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_2_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Howlite
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2" type="checkbox" id="__nav_2_2_1_1_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1_1_2">
+          Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Components" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_1" type="checkbox" id="__nav_2_2_1_1_2_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/accordion/">Accordion and Accordion Item</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Accordion and Accordion Item" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Accordion and Accordion Item
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_2" type="checkbox" id="__nav_2_2_1_1_2_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/cards-list/">Cards List and Card Item</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Cards List and Card Item" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cards List and Card Item
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_3" type="checkbox" id="__nav_2_2_1_1_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/container/">Container</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Container" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Container
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_4" type="checkbox" id="__nav_2_2_1_1_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/cta/">CTA and CTAs List</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="CTA and CTAs List" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          CTA and CTAs List
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_5" type="checkbox" id="__nav_2_2_1_1_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/image/">Image</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Image" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Image
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_6" type="checkbox" id="__nav_2_2_1_1_2_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/logo-cloud/">Logo Cloud</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Logo Cloud" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Logo Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_7" type="checkbox" id="__nav_2_2_1_1_2_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/page-section/">Page Section</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Page Section" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Page Section
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_8" type="checkbox" id="__nav_2_2_1_1_2_8" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/rte/">Rich Text Editor</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Rich Text Editor" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Rich Text Editor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_9" type="checkbox" id="__nav_2_2_1_1_2_9" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/title/">Title</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Title" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Title
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_10" type="checkbox" id="__nav_2_2_1_1_2_10" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/quote/">Quote</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Quote" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Quote
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_3" type="checkbox" id="__nav_2_2_1_1_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/layouts/">Layouts</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Layouts" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_2_1_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Layouts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_4" type="checkbox" id="__nav_2_2_1_1_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_1_1_4">
+          Grid
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Grid" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_2_1_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Grid
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_4_1" type="checkbox" id="__nav_2_2_1_1_4_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/authors/component-libs/howlite/grid/">Resize options and breakpoints</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Resize options and breakpoints" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_2_1_1_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Resize options and breakpoints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Developers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Developers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_1" type="checkbox" id="__nav_2_3_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/quick-start/">Quick Start for Developers</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Quick Start for Developers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Quick Start for Developers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/components/">Components</a>
+          
+            <label for="__nav_2_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Components" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2_2" type="checkbox" id="__nav_2_3_2_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/components/definition/">Definition</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Definition" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Definition
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/">Dialogs</a>
+          
+            <label for="__nav_2_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Dialogs" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Dialogs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_2" type="checkbox" id="__nav_2_3_3_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/assetreference/">Assetreference</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Assetreference" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Assetreference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_3" type="checkbox" id="__nav_2_3_3_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/checkbox/">Checkbox</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Checkbox" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Checkbox
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_4" type="checkbox" id="__nav_2_3_3_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/container/">Container</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Container" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Container
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_5" type="checkbox" id="__nav_2_3_3_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3_3_5">
+          Date picker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Date picker" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Date picker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docs/developers/dialogs/date-picker/datepicker/" class="md-nav__link">
+        DatePicker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_6" type="checkbox" id="__nav_2_3_3_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/include/">Include</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Include" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Include
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_7" type="checkbox" id="__nav_2_3_3_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/multifield/">Multifield</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Multifield" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Multifield
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_8" type="checkbox" id="__nav_2_3_3_8" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/number-field/">Number field</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Number field" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Number field
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_9" type="checkbox" id="__nav_2_3_3_9" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/pathpicker/">Pathpicker</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Pathpicker" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Pathpicker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_10" type="checkbox" id="__nav_2_3_3_10" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/radio/">Radio</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Radio" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_10">
+          <span class="md-nav__icon md-icon"></span>
+          Radio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_11" type="checkbox" id="__nav_2_3_3_11" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/richtext-editor/">Richtext editor</a>
+          
+            <label for="__nav_2_3_3_11">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Richtext editor" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Richtext editor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_11_2" type="checkbox" id="__nav_2_3_3_11_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/richtext-editor/richtext-editor-configuration.md/">Richtext editor configuration.md</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Richtext editor configuration.md" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_3_3_11_2">
+          <span class="md-nav__icon md-icon"></span>
+          Richtext editor configuration.md
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_11_3" type="checkbox" id="__nav_2_3_3_11_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/richtext-editor/richtext-editor-plugin-components/">Richtext editor plugin components</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Richtext editor plugin components" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_3_3_11_3">
+          <span class="md-nav__icon md-icon"></span>
+          Richtext editor plugin components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_11_4" type="checkbox" id="__nav_2_3_3_11_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/">Richtext editor ui components</a>
+          
+            <label for="__nav_2_3_3_11_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Richtext editor ui components" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_3_3_11_4">
+          <span class="md-nav__icon md-icon"></span>
+          Richtext editor ui components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_11_4_2" type="checkbox" id="__nav_2_3_3_11_4_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/button/">Button</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Button" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_3_3_11_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Button
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_11_4_3" type="checkbox" id="__nav_2_3_3_11_4_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/button-dropdown/">Button dropdown</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Button dropdown" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_3_3_11_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Button dropdown
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_11_4_4" type="checkbox" id="__nav_2_3_3_11_4_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/dropdown/">Dropdown</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Dropdown" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_3_3_11_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Dropdown
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_11_4_5" type="checkbox" id="__nav_2_3_3_11_4_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/link/">Link</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Link" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_3_3_11_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Link
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_12" type="checkbox" id="__nav_2_3_3_12" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/select/">Select</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Select" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_12">
+          <span class="md-nav__icon md-icon"></span>
+          Select
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_13" type="checkbox" id="__nav_2_3_3_13" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/tabs/">Tabs</a>
+          
+            <label for="__nav_2_3_3_13">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tabs" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_13">
+          <span class="md-nav__icon md-icon"></span>
+          Tabs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_13_2" type="checkbox" id="__nav_2_3_3_13_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/tabs/tab/">Tab</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tab" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_3_3_13_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tab
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_14" type="checkbox" id="__nav_2_3_3_14" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/text-area/">Text area</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Text area" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_14">
+          <span class="md-nav__icon md-icon"></span>
+          Text area
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_15" type="checkbox" id="__nav_2_3_3_15" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/textfield/">Textfield</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Textfield" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_15">
+          <span class="md-nav__icon md-icon"></span>
+          Textfield
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3_16" type="checkbox" id="__nav_2_3_3_16" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="docs/developers/dialogs/toggle/">Toggle</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Toggle" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_3_16">
+          <span class="md-nav__icon md-icon"></span>
+          Toggle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="community/">Community</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="blog/">Blog</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          2022
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2022" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          2022
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_1" type="checkbox" id="__nav_4_2_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="blog/2022/achieving-quality-with-no-dedicated-qa-engineers/">Achieving quality with no dedicated QA Engineers</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Achieving quality with no dedicated QA Engineers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Achieving quality with no dedicated QA Engineers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="blog/2022/are-jcr-nodes-and-sling-resources-the-same-thing/">Are JCR Nodes and Sling Resources the same thing?</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Are JCR Nodes and Sling Resources the same thing?" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Are JCR Nodes and Sling Resources the same thing?
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_3" type="checkbox" id="__nav_4_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="blog/2022/building-osgi-apps-with-sling-feature-model/">Building OSGi applications with Sling Feature Model</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Building OSGi applications with Sling Feature Model" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Building OSGi applications with Sling Feature Model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_4" type="checkbox" id="__nav_4_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="blog/2022/on-the-road-to-the-perfect-dxp/">On the road to the perfect DXP</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="On the road to the perfect DXP" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          On the road to the perfect DXP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_5" type="checkbox" id="__nav_4_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="blog/2022/shipping-and-developing-osgi-application-in-container/">Why we decided to ship and develop the OSGi application in containers</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Why we decided to ship and develop the OSGi application in containers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Why we decided to ship and develop the OSGi application in containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_6" type="checkbox" id="__nav_4_2_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="blog/2022/websight-cms-ce-1-0-0/">WebSight CMS Community Edition 1.0.0 Relase</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="WebSight CMS Community Edition 1.0.0 Relase" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          WebSight CMS Community Edition 1.0.0 Relase
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="docs/quick-start/" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Start Guide" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Quick Start Guide
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    
+    <div class="md-copyright__highlight">
+        Copyright &copy; Dynamic Solutions
+    </div>
+    
+</div>
+
+<div class="md-footer-links">
+    <a href="#" aria-label="View cookie settings" data-cc="c-settings" class="md-footer-links__link">Cookie Settings</a>
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/websight-io" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/websight_io" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/websight-io/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://gallery.ecr.aws/ds" target="_blank" rel="noopener" title="gallery.ecr.aws" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="assets/javascripts/cookieconsent.js"></script>
+      
+        <script src="assets/javascripts/cookieconsent_init.js"></script>
+      
+    
+  </body>
+</html>
