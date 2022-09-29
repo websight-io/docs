@@ -33,8 +33,8 @@ OpenJDK 64-Bit Server VM Temurin-17.0.2+8 (build 17.0.2+8, mixed mode)
 Clone _Luna_ repository and build it.
 
 ```shell
-git clone https://github.com/websight-io/luna-project.git
-cd luna-project
+git clone https://github.com/websight-io/starter.git
+cd starter
 mvn clean install -P e2e
 ```
 
