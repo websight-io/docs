@@ -2920,19 +2920,19 @@
 <h2 id="description">Description:</h2>
 <p>Component allows to group other elements. May be useful e.g. to <a href="/dialog/index.md">show/hide</a> group of components.</p>
 <h2 id="example">Example:</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1&lt;conatiner 
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2       jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3       sling:resourceType=&quot;wcm/dialogs/components/container&quot;&gt; 
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>4   &lt;firstelement 
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>5           jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>6           sling:resourceType=&quot;wcm/dialogs/components/textfield&quot; 
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>7           name=&quot;firstelement&quot; 
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>8           label=&quot;First element&quot;/&gt; 
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>9   &lt;secondelement 
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>10          jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>11          sling:resourceType=&quot;wcm/dialogs/components/textfield&quot; 
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>12          name=&quot;secondelement&quot; 13 label=&quot;Second element&quot;/&gt; 
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>14&lt;/conatiner&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;container&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/container&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;firstelement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/textfield&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;firstelement&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;First element&quot;</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;secondelement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/textfield&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;secondelement&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Second element&quot;</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
               

@@ -2959,47 +2959,31 @@
 </li>
 </ul>
 <h2 id="example">Example</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1&lt;headingLevel 
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2           jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3           sling:resourceType=&quot;wcm/dialogs/components/select&quot; 
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>4           name=&quot;level&quot; 
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>5           label=&quot;Heading Level&quot; 
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>6           required=&quot;true&quot;&gt; 
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>7       &lt;h1 
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>8           jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>9           sling:resourceType=&quot;wcm/dialogs/components/selectitem&quot; 
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>10          label=&quot;Heading 1&quot; 
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>11          value=&quot;h1&quot;/&gt; 
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>12      &lt;h2 
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>13          jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>14          sling:resourceType=&quot;wcm/dialogs/components/selectitem&quot; 
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>15          label=&quot;Heading 2&quot; 
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>16          value=&quot;h2&quot;/&gt; 
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>17      &lt;h3 
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>18          jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>19          sling:resourceType=&quot;wcm/dialogs/components/selectitem&quot; 
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>20          label=&quot;Heading 3&quot; 
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>21          value=&quot;h3&quot;/&gt; 
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>22      &lt;h4 
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>23          jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>24          sling:resourceType=&quot;wcm/dialogs/components/selectitem&quot; 
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>25          label=&quot;Heading 4&quot; 
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>26          value=&quot;h4&quot;/&gt; 
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>27      &lt;h5 
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>28          jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>29          sling:resourceType=&quot;wcm/dialogs/components/selectitem&quot; 
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>30          label=&quot;Heading 5&quot; 
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>31          value=&quot;h5&quot;/&gt; 
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>32      &lt;h6 
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>33          jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>34          sling:resourceType=&quot;wcm/dialogs/components/selectitem&quot; 
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>35          label=&quot;Heading 6&quot; 
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>36          value=&quot;h6&quot;/&gt; 
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>37      &lt;p 
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>38          jcr:primaryType=&quot;nt:unstructured&quot; 
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>39          sling:resourceType=&quot;wcm/dialogs/components/selectitem&quot; 
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>40          label=&quot;Paragraph&quot; 
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>41          value=&quot;p&quot;/&gt; 42&lt;/headingLevel&gt;`
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/select&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;socialLinkIcon&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Social Link icon&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;linkedin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/select/selectitem&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LinkedIn&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;icon-linkedin&quot;</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&quot;facebook&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/select/selectitem&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Facebook&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;icon-facebook&quot;</span><span class="w"></span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">&quot;twitter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/select/selectitem&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Twitter&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;icon-twitter&quot;</span><span class="w"></span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="nt">&quot;instagram&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/select/selectitem&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Instagram&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;icon-instagram&quot;</span><span class="w"></span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
               

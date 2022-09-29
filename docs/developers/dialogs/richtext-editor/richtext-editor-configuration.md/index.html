@@ -2901,52 +2901,51 @@
 <p>RTE provides default configuration at <code>/apps/wcm/dialogs/components/richtext/configuration</code>.</p>
 <p>Configuration can be referenced by path or defined inline. If inline configuration is defined then referenced configuration is ignored.</p>
 <p>Example using default configuration defined by RTE:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1&lt;richtext  
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3  sling:resourceType=&quot;wcm/dialogs/components/richtext&quot;  
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>4  name=&quot;text&quot;/&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;content&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Content&quot;</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="referencing-configuration">Referencing configuration</h2>
 <p>RTE component allows to define <strong>configuration</strong> string propery. Value is a absolute path to configuration node.</p>
 <p>Referencing configuration by path:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1&lt;richtext  
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>3  sling:resourceType=&quot;wcm/dialogs/components/richtext&quot;  
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>4  name=&quot;text&quot;  
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>5  configuration=&quot;/apps/myapp/components/common/rte/myconfiguration&quot;/&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;content&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Content&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/apps/myapp/components/common/rte/myconfiguration&quot;</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="inline-configuration">Inline configuration</h2>
 <p>Inline configuration can be definde in dialog under RTE filed in node named <code>configuration</code>.</p>
 <p>Inline configuration defined by RTE:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1&lt;richtext  
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>2   jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>3   sling:resourceType=&quot;wcm/dialogs/components/richtext&quot;  
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>4   name=&quot;text&quot;&gt;  
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>5   &lt;configuration  
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>6       jcr:primaryType=&quot;nt:unstructured&quot;&gt;  
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>7       &lt;bold  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>8           sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>9           title=&quot;Bold&quot;  
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>10          icon=&quot;format_bold&quot;&gt;  
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>11          &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>12              sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/bold&quot;/&gt;  
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>13      &lt;/bold&gt;  
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>14  &lt;/configuration&gt;  
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>15&lt;/richtext&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;content&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Content&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;bold&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bold&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;format_bold&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/bold&quot;</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="extending-and-overriding-configuration">Extending and overriding configuration</h2>
 <p>Configuration (referenced or inline) can extend other configuration by using <code>sling:resourceSuperType</code>, see <a href="https://sling.apache.org/documentation/bundles/resource-merger.html" title="https://sling.apache.org/documentation/bundles/resource-merger.html">Sling Resource Merger</a> (/mnt/override) and customize it with options comming from Resource Merger, like <code>sling:hideChildren</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>1&lt;configuration  
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>2   jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>3   sling:resourceSuperType=&quot;wcm/dialogs/components/richtext/configuration&quot;  4  sling:hideChildren=&quot;[italic]&quot;&gt;  
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>5   &lt;bold  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>6   sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>7       title=&quot;Bold&quot;  
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>8       icon=&quot;format_bold&quot;&gt;  
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>9       &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>10          sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/bold&quot;/&gt;  
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>11      &lt;/bold&gt;  
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>12&lt;/configuration&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceSuperType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/configuration&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;sling:hideChildren&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[italic]&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;bold&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bold&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;format_bold&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/bold&quot;</span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h1 id="building-configuration">Building configuration</h1>
 <p>Configuration is prepared by two kinds of components:</p>
@@ -2963,94 +2962,99 @@ There is also possibility to create dedicated UI components and build whole tool
 <p>Configuration examples:  </p>
 <hr />
 <p><img alt="RichText Editor Configuration" src="rteconfig1.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1&lt;textstyle  
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>2       jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>3       sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/dropdown&quot;  
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>4       title=&quot;Text Style&quot;&gt;  
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>5   &lt;h1  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>6       sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/dropdown/dropdownitem&quot;  
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>7       title=&quot;Heading 1&quot;&gt;  
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>8       &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>9           sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/heading&quot;  
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>10          level=&quot;1&quot;/&gt;  
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>11  &lt;/h1&gt;  
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>12  &lt;h2  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>13      sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/dropdown/dropdownitem&quot;  
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>14      title=&quot;Heading 2&quot;&gt;  
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>15      &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>16          sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/heading&quot;  
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>17          level=&quot;2&quot;/&gt;  
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>18  &lt;/h2&gt;  
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>19  &lt;h3  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>20      sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/dropdown/dropdownitem&quot;  
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>21      title=&quot;Heading 3&quot;&gt;  
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>22      &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>23          sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/heading&quot;  
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>24          level=&quot;3&quot;/&gt;  
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>25  &lt;/h3&gt;  
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>26  &lt;paragraph  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>27      sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/dropdown/dropdownitem&quot;  
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>28      title=&quot;Paragraph&quot;&gt;  
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>29      &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>30          sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/paragraph&quot;/&gt;  
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>31  &lt;/paragraph&gt;  
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>32  &lt;/textstyle&gt;  
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>33&lt;bold  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>34      sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>35      title=&quot;Bold&quot;  
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>36      icon=&quot;format_bold&quot;&gt;  
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>37      &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>38      sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/bold&quot;/&gt;  39&lt;/bold&gt;  
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>40&lt;italic  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>41      sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>42      title=&quot;Italic&quot;  
-<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>43      icon=&quot;format_italic&quot;&gt;  
-<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>44      &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>45  sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/italic&quot;/&gt;  
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>46&lt;/italic&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;textstyle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/dropdown&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Text Style&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;h1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/dropdown/dropdownitem&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Heading 1&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/heading&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="nt">&quot;h2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/dropdown/dropdownitem&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Heading 2&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">      </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/heading&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">      </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="nt">&quot;h3&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/dropdown/dropdownitem&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Heading 3&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">      </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/heading&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">      </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="nt">&quot;bold&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bold&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">  </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;format_bold&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">  </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/bold&quot;</span><span class="w"></span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="nt">&quot;italic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Italic&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">  </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;format_italic&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">  </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/italic&quot;</span><span class="w"></span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <hr />
 <p><img alt="RichText Editor Configuration" src="rteconfig2.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>1&lt;textformat  
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>2       jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>3       sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/buttondropdown&quot;  4  icon=&quot;more_horiz&quot;  
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>5       activable=&quot;true&quot;  
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>6       title=&quot;Text Format&quot;&gt;  
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>7   &lt;bold  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>8           sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>9           title=&quot;Bold&quot;  
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>10          icon=&quot;format_bold&quot;&gt;  
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>11      &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>12              sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/bold&quot;/&gt;  
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>13  &lt;/bold&gt;  
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>14  &lt;italic  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>15          sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>16          title=&quot;Italic&quot;  
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>17          icon=&quot;format_italic&quot;&gt;  
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>18      &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>19              sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/italic&quot;/&gt;  
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>20  &lt;/italic&gt;  
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>21&lt;/textformat&gt;  
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>22&lt;h1  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>23      sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>24      title=&quot;Heading 1&quot;&gt;  
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>25    &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>26          sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/heading&quot;  
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>27    level=&quot;1&quot;/&gt;  
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>28&lt;/h1&gt;  
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>29&lt;h2  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>30      sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>31      title=&quot;Heading 2&quot;&gt;  
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>32  &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>33          sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/heading&quot;  
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>34  level=&quot;2&quot;/&gt;  
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>35&lt;/h2&gt;  
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>36&lt;h3  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>37      sling:resourceType=&quot;wcm/dialogs/components/richtext/ui/button&quot;  
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>38      title=&quot;Heading 3&quot;&gt;  
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>39  &lt;plugin  jcr:primaryType=&quot;nt:unstructured&quot;  
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>40          sling:resourceType=&quot;wcm/dialogs/components/richtext/plugin/heading&quot;  
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>41  level=&quot;3&quot;/&gt;  42&lt;/h3&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&quot;textformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/buttondropdown&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;more_horiz&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;activable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Text Format&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">&quot;bold&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bold&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;format_bold&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/bold&quot;</span><span class="w"></span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nt">&quot;italic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Italic&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;format_italic&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">      </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/italic&quot;</span><span class="w"></span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="nt">&quot;h1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Heading 1&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/heading&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="nt">&quot;h2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Heading 2&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">  </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/heading&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="nt">&quot;h3&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Heading 3&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">  </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/plugin/heading&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">    </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="available-components">Available Components</h2>
 <h3 id="available-ui-components">Available UI components</h3>
