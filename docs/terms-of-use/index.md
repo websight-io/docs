@@ -14,7 +14,7 @@ Copyright (c) 2019-present Dynamic Solutions sp. z o.o. sp. k. ([Dynamic Solutio
 
 Portions of the WebSight software are licensed as follows:
 
-* All projects hosted on [WebSight-io GitHub](https://github.com/websight-io/) are licensed under the license defined in `LICENSE` file in the project root directory. If the file does not exists, the fallback license is [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+* All projects hosted on [WebSight-io GitHub](https://github.com/websight-io/) are licensed under the license defined in `LICENSE` file in the project root directory. If the file does not exist, the fallback license is [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 * Closed source projects hosted on internal Dynamic Solutions repositories are licensed under [Dynamic Solutions License](https://websight.io/product/ds-private/LICENSE.txt)
 
