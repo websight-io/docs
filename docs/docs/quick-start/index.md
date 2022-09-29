@@ -1,22 +1,21 @@
 # Quick Start Guide
 
-Follow this guide to quickly run the WebSight local instance using Docker.
+Follow this guide to run the WebSight CMS local instance using Docker. You can use it to review our demo site _Luna_. You can use [Howlite](/docs/docs/authors/component-libs/howlite/index.md), our example components library, to create or update pages too. 
+
+If you want to develop custom components for WebSight CMS, complete this guide to learn foundations first. Then, read more details in [quick start for developers](../developers/quick-start/index.md).
 
 ## Part A: Run local instance using Docker
 
 !!! info "Prerequisites"
 
-    Before going any further, please make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and running.
+    Before going any further, please make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and running. 
 
-### 1. Join closed WebSight testers group
+!!! hint "Quick setup with `curl`"
+    If you have `curl` installed, you can setup the local environment using the following command
 
-Currently we are running alpha tests. If you would like to join, please drop us an email. We will contact you and share the WebSight Docker image.
+    `curl https://www.websight.io/scripts/get.sh | sh`
 
-<figure markdown>
-  [Join WebSight early reviewers group :fontawesome-regular-paper-plane:](mailto:websight@ds.pl){ .md-button }
-</figure>
-
-### 2. Create Docker Compose manifest
+### 1. Create Docker Compose manifest
 
 Create `docker-compose.yml` file. Paste the content presented below and save the file on your hard drive.
 
@@ -25,47 +24,62 @@ Create `docker-compose.yml` file. Paste the content presented below and save the
 version: "3.9"
 
 services:
-  wsce:
-    image: <websight-ce-image-you-will-receive-after-joining-reviewers-group>
+  cms:
+    image: ds/websight-cms-luna:latest
     ports:
       - "8080:8080"
     environment:
-      WS_DEBUG: "true"
-      WS_WEBSIGHT_LOG_LEVEL: "debug"
+      WS_LUNA_LOG_LEVEL: "info"
       WS_ADMIN_USERNAME: "wsadmin"
-      WS_ADMIN_PASSWORD: "wsadmin"
       MONGODB_HOST: "mongo"
       MONGODB_PORT: 27017
-      LEASE_CHECK_MODE: "LENIENT"
+      MONGODB_USERNAME: "mongoadmin"
     volumes:
-      - wsce_logs:/websight/logs
+      - cms_logs:/websight/logs
       - site_repository:/websight/docroot
-    links:
+    secrets:
+      - source: mongo_password
+        target: mongo.password
+    depends_on:
       - mongo
-  nginx:
-    image: <nginx-image-you-will-receive-after-joining-reviewers-group>
-    ports:
-      - "80:80"
-    volumes:
-      - site_repository:/usr/share/nginx/html:ro
+
   mongo:
     image: mongo:4.4.6
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 4096M
     ports:
       - "27017:27017"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD_FILE=/run/secrets/mongo.password
     volumes:
       - mongo_repository:/data/db
+    secrets:
+      - source: mongo_password
+        target: mongo.password
+
+  nginx:
+    image: ds/nginx-luna:latest
+    ports:
+      - "80:80"
+    volumes:
+      - site_repository:/usr/share/nginx/html:ro
 
 volumes:
-  wsce_logs:
+  cms_logs:
   mongo_repository:
   site_repository:
 
+secrets:
+  mongo_password:
+    file: ./mongo_password.txt
+
 ```
 
-### 3. Run the local instance
+### 2. Run the local instance
 
 Open the terminal next to the `docker-compose.yml` file and run the following command:
 
@@ -76,7 +90,7 @@ docker compose up
 The fresh WebSight instance will start in a couple of seconds. Now, you may enter [http://localhost:8080/](http://localhost:8080/) to open the WebSight admin panel.
 Log in with `wsadmin` username and `wsadmin` as a password.
 
-!!! info "Tip"
+!!! hint "Tip"
   
     To stop the environment use `ctrl + c`. You may run it later exactly the same as it was started for the first time.
 
