@@ -29,11 +29,12 @@ Component requires [configuration](./richtext-editor-configuration.md/) which de
 
 Example:
 
-```
-1<richtext  
-2  jcr:primaryType="nt:unstructured"  
-3  sling:resourceType="wcm/dialogs/components/richtext"  
-4  name="text"  5  label="Text"/>
+```json
+"content": {
+  "sling:resourceType": "wcm/dialogs/components/richtext",
+  "name": "content",
+  "label": "Content"
+}
 ```
 
 ![RichText Editor](rte1.png)

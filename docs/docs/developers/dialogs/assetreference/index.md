@@ -27,12 +27,11 @@ Asset reference is an input that allows the user to pick an asset from the space
 
 ## Example
 
-```
-1<imageAsset 
-2 jcr:primaryType="nt:unstructured" 
-3 sling:resourceType="wcm/dialogs/components/assetreference" 
-4 mimeTypes="[image/jpeg,image/gif]" 
-5 emptyText="No asset yet, just drop one here" 
-6 name="imageAsset" 
-7 label="Image Asset" />
+```json
+"imageAsset": {
+  "sling:resourceType": "wcm/dialogs/components/assetreference",
+  "mimeTypes": ["image/*"],
+  "name": "imageAsset",
+  "label": "Image Asset"
+}
 ```

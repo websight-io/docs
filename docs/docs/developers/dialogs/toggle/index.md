@@ -28,12 +28,10 @@ Display description value as a tooltip
 
 ## Example
 
-```
-1<openInNewTab jcr:primaryType="nt:unstructured" 
-2   sling:resourceType="wcm/dialogs/components/toggle" 
-3   name="openInNewTab" 
-4   label="Open link in new tab" 
-5   checkedByDefault="true" 
-6   checkedValue="yes" 
-7   uncheckedValue="no"/>
+```json
+"openInNewTab": {
+  "sling:resourceType": "wcm/dialogs/components/toggle",
+  "name": "openInNewTab",
+  "label": "Open in new tab"
+}
 ```

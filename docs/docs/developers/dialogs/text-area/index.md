@@ -25,11 +25,10 @@ Allows user to enter any text over multiple lines.
 
 ## Example
 
-```
-1<pageContent  
-2  jcr:primaryType="nt:unstructured"  
-3  sling:resourceType="wcm/dialogs/components/textarea"  
-4  name="jcr:pageContent"  
-5  label="Page Content"  
-6  required="true"/>
+```json
+"content": {
+  "sling:resourceType": "wcm/dialogs/components/textarea",
+  "name": "content",
+  "label": "Content"
+}
 ```

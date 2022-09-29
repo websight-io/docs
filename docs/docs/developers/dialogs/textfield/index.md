@@ -25,11 +25,10 @@ Allows user to enter any text.
 
 ## Example
 
-```
-1<pageTitle 
-2 jcr:primaryType="nt:unstructured" 
-3 sling:resourceType="wcm/dialogs/components/textfield" 
-4 name="jcr:title" 
-5 label="Page Title" 
-6 required="true"/>
+```json
+"title": {
+  "sling:resourceType": "wcm/dialogs/components/textarea",
+  "name": "title",
+  "label": "Title"
+}
 ```

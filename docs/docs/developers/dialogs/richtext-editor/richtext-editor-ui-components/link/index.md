@@ -37,12 +37,13 @@ It expects also both `href` and `target` properties returning from plugin getSta
 
 ## Example
 
-```
-1<link jcr:primaryType="nt:unstructured" 
-2       sling:resourceType="wcm/dialogs/components/richtext/ui/link" 
-3       title="Link" 
-4       icon="link"> 
-5   <plugin jcr:primaryType="nt:unstructured" 
-6       sling:resourceType="wcm/dialogs/components/richtext/plugin/link"/> 
-7</link>
+```json
+"link": {
+  "sling:resourceType": "wcm/dialogs/components/richtext/ui/link",
+  "title": "Link",
+  "icon": "link",
+  "plugin": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/plugin/link"
+  }
+}
 ```

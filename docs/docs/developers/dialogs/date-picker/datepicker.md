@@ -40,18 +40,12 @@ Allows user to pick a date, time or datetime.
 
 ## Example
 
-```
-1<chapter2date  
-2  jcr:primaryType="nt:unstructured"  
-3  sling:resourceType="wcm/dialogs/components/datepicker"  
-4  name="chapter2date"  
-5  label="Chapter2 Release Date"  
-6  required="true"  
-7  type="date"  
-8  displayDateFormat="YYYY-MM-DD"  
-9  displayTimeFormat="HH:mm"  
-10  minDate="2020-01-02"  
-11  maxDate="2022-12-12"  
-12  after="chapter1date"  
-13  before="chapter3date, chapter4date"/>
+```json
+"displayDate": {
+  "sling:resourceType": "wcm/dialogs/components/datepicker",
+  "name": "displayDate",
+  "label": "Display date",
+  "type": "date",
+  "displayDateFormat": "YYYY-MM-DD"
+}
 ```

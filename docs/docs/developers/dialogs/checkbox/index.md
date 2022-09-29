@@ -28,13 +28,11 @@ Allows user choose check some option.
 
 ## Example
 
-```
-1<openInNewTab 
-2 jcr:primaryType="nt:unstructured" 
-3 sling:resourceType="wcm/dialogs/components/textfield" 
-4 name="openInNewTab" 
-5 label="Open link in new tab" 
-6 checkedByDefault="true" 
-7 checkedValue="yes" 
-8 uncheckedValue="no"/>
+```json
+"isSlider": {
+  "sling:resourceType": "wcm/dialogs/components/checkbox",
+  "name": "isSlider",
+  "label": "Display as a slider",
+  "checkedByDefault": "true"
+}
 ```
