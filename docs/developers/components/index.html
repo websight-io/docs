@@ -2933,7 +2933,7 @@
 <p>Check WebSight project setup documentation to see more details about</p>
 <ul>
 <li>what is WebSight CMS and what it gives you</li>
-<li>implementing applications to WebSight CMS </li>
+<li>implementing applications for WebSight CMS Community Edition</li>
 <li>OSGi, OSGi bundles, Sling Resources, JCR, and more</li>
 </ul>
 <h2 id="what-is-component">What is component</h2>
@@ -2963,13 +2963,13 @@
 Components definitions listed in WebSight CMS page editor</p>
 <p>Page content structure can be checked in the page editor content tree tab. This view presents the components tree under page content.
 This example page for now contains just the Page Section component - this is the only component present currently in page content of this example page.</p>
-<p><img alt="Page content tree in editor" src="page-editor-content-tree.png" />
-Page content tree in editor</p>
+<p><img alt="Page content tree in editor" src="page-editor-content-tree.png" style="width:350px" /></p>
+<p>Page content tree in editor</p>
 <p>The Page Section component is a container, so it allows adding other components via the authoring interface. In the page editor content section it is displayed as a box with plus icon (empty container placeholder).</p>
 <p>After drag and drop of Title and Rich Text components the page content tree is updated with new nodes. The nodes visible in the content tree are the instances of components. 
 Title and Rich Text components are not containers so other components cannot be added as their child components. During dragging other components from components list the new items can be added just next to those components as other children on the Page Section component.</p>
 <p><img alt="RTE component" src="RTE-component.png" /></p>
-<p>After adding a component to the page, edit action can be used to edit selected component instance. The dialog which is displayed is a part of component definition. It is defined by the developer implementing a given component with use of set given dialog fields (see more in Dialogs section). Properties set via the dialog are saved at edited component instances and used by the component to render the part of content according to the implemented functionality - for example Title component is rendering the <code>Heading text</code> field value in HTML <code>&lt;h&gt;</code> tag and allows to set <code>&lt;h&gt;</code> tag level and styling.</p>
+<p>After adding a component to the page, edit action can be used to edit selected component instance. The dialog which is displayed is a part of component definition. It is defined by the developer implementing a given component with use of set given dialog fields (see more in Dialogs documentation). Properties set via the dialog are saved at edited component instances and used by the component to render the part of content according to the implemented functionality - for example Title component is rendering the <code>Heading text</code> field value in HTML <code>&lt;h&gt;</code> tag and allows to set <code>&lt;h&gt;</code> tag level and styling.</p>
 <p><img alt="Title component - dialog" src="title-component-dialog.png" /></p>
 <p>Components are reusable. Another title component can be added to the page and configured with its own data.
 After the second title, the Cards List component is added now. This component is a container but implemented to work with specific type of child components - only Card Item components can be added inside (this behavior is part of Cards List component definition).
