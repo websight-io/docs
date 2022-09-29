@@ -16,7 +16,7 @@ Both views can be open from WebSight UI:
 Check WebSight project setup documentation to see more details about
 
 - what is WebSight CMS and what it gives you
-- implementing applications to WebSight CMS 
+- implementing applications for WebSight CMS Community Edition
 - OSGi, OSGi bundles, Sling Resources, JCR, and more
 
 ## What is component
@@ -52,7 +52,8 @@ Components definitions listed in WebSight CMS page editor
 Page content structure can be checked in the page editor content tree tab. This view presents the components tree under page content.
 This example page for now contains just the Page Section component - this is the only component present currently in page content of this example page.
 
-![Page content tree in editor](page-editor-content-tree.png)
+![Page content tree in editor](page-editor-content-tree.png){: style="width:350px"}
+
 Page content tree in editor
 
 The Page Section component is a container, so it allows adding other components via the authoring interface. In the page editor content section it is displayed as a box with plus icon (empty container placeholder).
@@ -63,7 +64,7 @@ Title and Rich Text components are not containers so other components cannot be 
 
 ![RTE component](RTE-component.png)
 
-After adding a component to the page, edit action can be used to edit selected component instance. The dialog which is displayed is a part of component definition. It is defined by the developer implementing a given component with use of set given dialog fields (see more in Dialogs section). Properties set via the dialog are saved at edited component instances and used by the component to render the part of content according to the implemented functionality - for example Title component is rendering the `Heading text` field value in HTML `<h>` tag and allows to set `<h>` tag level and styling.
+After adding a component to the page, edit action can be used to edit selected component instance. The dialog which is displayed is a part of component definition. It is defined by the developer implementing a given component with use of set given dialog fields (see more in Dialogs documentation). Properties set via the dialog are saved at edited component instances and used by the component to render the part of content according to the implemented functionality - for example Title component is rendering the `Heading text` field value in HTML `<h>` tag and allows to set `<h>` tag level and styling.
 
 
 ![Title component - dialog](title-component-dialog.png)
