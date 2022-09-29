@@ -1,17 +1,17 @@
 # Quick Start Guide
 
-Follow this guide to run the WebSight CMS local instance using Docker. You can use it to review our demo site _Luna_. You can use [Howlite](/docs/docs/authors/component-libs/howlite/index.md), our example components library, to create or update pages too. 
+Follow this guide to run the WebSight CMS local instance using Docker. You can use it to review our demo site _Luna_. You can use [Howlite](/docs/authors/component-libs/howlite/), our example components library, to create or update pages too. 
 
 If you want to develop custom components for WebSight CMS, complete this guide to learn foundations first. Then, read more details in [quick start for developers](../developers/quick-start/index.md).
-
-## Part A: Run local instance using Docker
 
 !!! info "Prerequisites"
 
     Before going any further, please make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and running. 
 
+## Part A: Run local instance using Docker
+
 !!! hint "Quick setup with `curl`"
-    If you have `curl` installed, you can setup the local environment using the following command
+    If you have `curl` installed, you can set up the local environment using the following command. Then, you can go directly to Part B below.
 
     `curl https://www.websight.io/scripts/get.sh | sh`
 
@@ -154,7 +154,7 @@ Find _Rich text editor_ on tab _Components_ and use drag & drop to place it just
 
 ![Rich text editor available in component tree](./quick-start-RTE-component.png)
 
-Click on the new component to open available actions. Select pencil icon to edit properties.
+Click on the new component to open available actions. Select _Pencil_ icon to edit properties.
 
 ![Actions available for RTE component](./quick-start-RTE-editing.png)
 
