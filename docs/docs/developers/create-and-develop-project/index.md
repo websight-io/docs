@@ -62,7 +62,7 @@ Overview of the modules:
     - `frontend` - contains application frontend
 - `content` - contains sample content created with use of application
 - `distribution` - builds a distribution of the project - instance feature model and docker images for runtime components
-- `environment` - contains scripts and files used but build environment
+- `environment` - contains scripts and files used to build environment
     - `local` - starts local environment
 - `tests` - responsible for the automatic distribution validation
     - `content` - contains content used for end to end tests
@@ -131,7 +131,7 @@ If you need you can download the Docker Desktop [here](https://www.docker.com/)
 See also README.md in environment and environment/local folders for the details about the running environment.
 
 After build of the project to start a local instance go to the environment/local folder and run:
-docker compose up
+```docker compose up```
 
 Local WebSight CMS with your application installed is running at [http://localhost:8080/](http://localhost:8080/) (login with wsadmin/wsadmin)
 Published content is available locally at [http://localhost/](http://localhost)
