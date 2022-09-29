@@ -51,6 +51,15 @@ extra:
   analytics:
     provider: google
     property: G-FV5Y0B6W17
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/websight-io
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/websight_io
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/websight-io/
+    - icon: fontawesome/brands/docker
+      link: https://gallery.ecr.aws/ds
 
 plugins:
   - awesome-pages
