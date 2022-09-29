@@ -15,7 +15,7 @@ If you want to develop custom components for WebSight CMS, complete this guide t
 
     `curl https://www.websight.io/scripts/get.sh | sh`
 
-### 2. Create Docker Compose manifest
+### 1. Create Docker Compose manifest
 
 Create `docker-compose.yml` file. Paste the content presented below and save the file on your hard drive.
 
@@ -79,7 +79,7 @@ secrets:
 
 ```
 
-### 3. Run the local instance
+### 2. Run the local instance
 
 Open the terminal next to the `docker-compose.yml` file and run the following command:
 
