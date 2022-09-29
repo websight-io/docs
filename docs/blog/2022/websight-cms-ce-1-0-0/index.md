@@ -4,6 +4,7 @@ description: Today we announce the release of WebSight CMS Community Edition 1.0
 author: WebSight Team
 publicationDate: 29.09.2022
 image: luna-screenshot.png
+minReadTime: 2
 tags:
   - WebSight
   - release
