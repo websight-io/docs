@@ -17,15 +17,6 @@ theme:
     - scheme: default
       primary: white
       accent: blue
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to dark mode
-    - scheme: slate
-      primary: black
-      accent: blue
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to light mode
 
 repo_name: websight-io/starter
 repo_url: https://github.com/websight-io/starter
