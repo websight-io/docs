@@ -1,9 +1,9 @@
 # Button dropdown
 **wcm/dialogs/components/richtext/ui/buttondropdown**
 
-![Button Dropdown](buttondrop1.png)
+![Button Dropdown](RTE-button-dropdown-1.png)
 
-![Button Dropdown](buttondrop2.png)
+![Button Dropdown](RTE-button-dropdown-2.png)
 
 Description:
 

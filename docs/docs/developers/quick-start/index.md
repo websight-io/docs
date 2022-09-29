@@ -108,7 +108,7 @@ public class LunaTitleComponent extends TitleComponent {
 ```
 
 
-Next, you need to update the component HTML template. The orginal one defines the CSS class determining the font size as `hl-title__heading--size-6`.
+Next, you need to update the component HTML template. The original one defines the CSS class determining the font size as `hl-title__heading--size-6`.
 
 ```html
 <h6 class="hl-title__heading hl-title__heading--size-6" 
@@ -225,7 +225,7 @@ When a functional test fails, you should check why. It is expected in this case,
 ### Update functional tests
 As functional tests fail due to the changes, you should adjust them. They are placed in file `tests/end-to-end/tests/lunatitle.cy.ts`. 
 
-The first test checks the font size for the overline text. There are two component intances validated. Thus, you need to update assertions for both of them as follows.
+The first test checks the font size for the overline text. There are two component instances validated. Thus, you need to update assertions for both of them as follows.
 
 ```typescript
     cy.getByTestId('component_title1')
@@ -269,7 +269,7 @@ mvn -f tests/content/pom.xml clean install -P autoInstallPackage
 npm run-script test --prefix tests/end-to-end
 ```
 
-Both tests should passs this time. You should get a report like the one below.
+Both tests should pass this time. You should get a report like the one below.
 ```
 Running:  lunatitle.cy.ts                                                                 (1 of 1)
  
@@ -309,7 +309,7 @@ Edit properties of the _Luna Title_:
 
 ![Luna Title Dialog Properites](luna-title-dialog-properties.png)
 
-Submit changes. The title should look like expected now. You can delete the orginal _Title_ component to finalize the change.
+Submit changes. The title should look like expected now. You can delete the original _Title_ component to finalize the change.
 
 ![Updated Luna Title](luna-title-updated.png)
 

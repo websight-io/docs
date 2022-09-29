@@ -16,7 +16,7 @@ My example application delivers the resource `/apps/example-site/components/hell
 
 
 ![Example component definition in WebSight Resource Browser](example-component-definition.png)
-Example component definition in WebSigh Resource Browser
+Example component definition in WebSight Resource Browser
 
 The component is visible in the WebSight CMS page editor and after adding to the page it renders ‘Hello World!’ text.
 
