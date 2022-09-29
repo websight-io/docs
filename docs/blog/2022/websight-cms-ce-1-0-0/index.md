@@ -1,5 +1,5 @@
 ---
-title: WebSight CMS Community Edition 1.0.0 Relase
+title: WebSight CMS Community Edition 1.0.0 Release
 description: Today we announce the release of WebSight CMS Community Edition 1.0, the first part of the WebSight Digital Experience Platform (DXP).
 author: WebSight Team
 publicationDate: 29.09.2022
