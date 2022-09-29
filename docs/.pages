@@ -1,4 +1,4 @@
 nav:
-  - Overview: index.md
-  - Docs & Resources: docs-resources
+  - Home: index.md
+  - Docs: docs
   - Blog: blog
