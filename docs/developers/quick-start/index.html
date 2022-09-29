@@ -1600,13 +1600,17 @@
       
         
           
+            
+          
         
       
       
-        <label class="md-nav__link" for="__nav_2_3_4_5">
-          Date picker
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../dialogs/date-picker/">Date picker</a>
+          
+        </div>
       
       <nav class="md-nav" aria-label="Date picker" data-md-level="4">
         <label class="md-nav__title" for="__nav_2_3_4_5">
@@ -1615,18 +1619,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dialogs/date-picker/datepicker/" class="md-nav__link">
-        DatePicker
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -3156,7 +3148,7 @@
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Next, you need to update the component HTML template. The orginal one defines the CSS class determining the font size as <code>hl-title__heading--size-6</code>.</p>
+<p>Next, you need to update the component HTML template. The original one defines the CSS class determining the font size as <code>hl-title__heading--size-6</code>.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">h6</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hl-title__heading hl-title__heading--size-6&quot;</span> 
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="na">data-testid</span><span class="o">=</span><span class="s">&quot;overline&quot;</span><span class="p">&gt;</span>${model.subtitle}<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
 </code></pre></div>
@@ -3250,7 +3242,7 @@ As you updated the model class, you can use its property now.</p>
 </div>
 <h3 id="update-functional-tests">Update functional tests</h3>
 <p>As functional tests fail due to the changes, you should adjust them. They are placed in file <code>tests/end-to-end/tests/lunatitle.cy.ts</code>. </p>
-<p>The first test checks the font size for the overline text. There are two component intances validated. Thus, you need to update assertions for both of them as follows.</p>
+<p>The first test checks the font size for the overline text. There are two component instances validated. Thus, you need to update assertions for both of them as follows.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">getByTestId</span><span class="p">(</span><span class="s1">&#39;component_title1&#39;</span><span class="p">)</span><span class="w"></span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">      </span><span class="p">.</span><span class="nx">findByTestId</span><span class="p">(</span><span class="s1">&#39;overline&#39;</span><span class="p">)</span><span class="w"></span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.css&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;font-size&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;25.008px&quot;</span><span class="p">)</span><span class="w"></span>
@@ -3282,7 +3274,7 @@ As you updated the model class, you can use its property now.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mvn -f tests/content/pom.xml clean install -P autoInstallPackage
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>npm run-script <span class="nb">test</span> --prefix tests/end-to-end
 </code></pre></div>
-<p>Both tests should passs this time. You should get a report like the one below.
+<p>Both tests should pass this time. You should get a report like the one below.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Running:  lunatitle.cy.ts                                                                 (1 of 1)
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
@@ -3312,7 +3304,7 @@ As you updated the model class, you can use its property now.</p>
 <li>set <em>Overline text</em> to <code>Meet our</code> </li>
 </ol>
 <p><img alt="Luna Title Dialog Properites" src="luna-title-dialog-properties.png" /></p>
-<p>Submit changes. The title should look like expected now. You can delete the orginal <em>Title</em> component to finalize the change.</p>
+<p>Submit changes. The title should look like expected now. You can delete the original <em>Title</em> component to finalize the change.</p>
 <p><img alt="Updated Luna Title" src="luna-title-updated.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Hint</p>
