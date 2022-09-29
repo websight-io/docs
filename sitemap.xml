@@ -121,6 +121,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://websight.io/docs/developers/create-and-develop-project/</loc>
+         <lastmod>2022-09-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://websight.io/docs/developers/dialogs/</loc>
          <lastmod>2022-09-29</lastmod>
          <changefreq>daily</changefreq>
