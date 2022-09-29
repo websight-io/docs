@@ -23,6 +23,36 @@ Example dialog structure definition can look like this:
         "label": "Description",
         "name": "description"
       }
+    },
+    "advanced": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Advanced",
+      "shadows": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "shadows",
+        "label": "Use shadows"
+      },
+      "style": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "label": "Style",
+        "name": "style",
+        "primary": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Primary",
+          "value": "primary"
+        },
+        "secondary": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Secondary",
+          "selected": true,
+          "value": "secondary"
+        },
+        "link": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Link",
+          "value": "link"
+        }
+      }
     }
   }
 }
@@ -30,7 +60,9 @@ Example dialog structure definition can look like this:
 
 It will result with following in UI dialog: 
 
-![Dialog example](dialog-example.png)
+![Dialog example tab1](dialog-example-tab1.png)
+
+![Dialog example tab2](dialog-example-tab2.png)
 Component renderer script in WebSight Resource Browser.
 
 Explore available fields and options.
