@@ -156,7 +156,7 @@ This is how the dialog definition structure looks and the same dialog displayed 
 ![Title component - dialog definition](title-component-dialog-definition.png)
 Component dialog resources structure in Resource Browser tool
 
-![Component dialog displayed after edit component action in pages editor](TBD.png)
+![Component dialog displayed after edit component action in pages editor](title-component-dialog.png)
 Component dialog displayed after edit component action in pages editor
 
 <!-- -->
