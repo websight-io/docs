@@ -28,7 +28,7 @@ All you need to start an adventure with WebSight CMS is Docker installed on your
 
 WebSight CMS Community Edition is free to use for everyone ([terms of use](/terms-of-use/)). To support us, you may follow the project at:
 
-* [github.com/websight-io/starter](https://github.com/websight-io/starter) (feel free to star the repository, open [issues](https://github.com/websight-io/starter/issues), and start [discussions](https://github.com/websight-io/starter/discussions)
+* [github.com/websight-io/starter](https://github.com/websight-io/starter) (feel free to star the repository, open [issues](https://github.com/websight-io/starter/issues), and start [discussions](https://github.com/websight-io/starter/discussions))
 * [linkedin.com/company/websight-io/](https://www.linkedin.com/company/websight-io/)
 * [twitter.com/websight_io](https://twitter.com/websight_io)
 
