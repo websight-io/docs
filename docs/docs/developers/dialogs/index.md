@@ -63,6 +63,5 @@ It will result with following in UI dialog:
 ![Dialog example tab1](dialog-example-tab1.png)
 
 ![Dialog example tab2](dialog-example-tab2.png)
-Component renderer script in WebSight Resource Browser.
 
 Explore available fields and options.
