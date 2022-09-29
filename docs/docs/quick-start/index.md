@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-Follow this guide to run the WebSight CMS local instance using Docker. You can use it to review our demo site _Luna_. You can use [Howlite](/docs/authors/component-libs/howlite/), our example components library, to create or update pages too. 
+Follow this guide to run the WebSight CMS local instance using Docker. You can use it to review our demo site _Luna_. You can use [Howlite](../authors/component-libs/howlite/index.md), our example components library, to create or update pages too. 
 
 If you want to develop custom components for WebSight CMS, complete this guide to learn foundations first. Then, read more details in [quick start for developers](../developers/quick-start/index.md).
 

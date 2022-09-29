@@ -73,7 +73,7 @@ plugins:
       redirect_maps:
           'docs/index.md': 'docs/quick-start/index.md'
           'docs/authors/index.md': 'docs/authors/component-libs/howlite/index.md'
-          'docs/authors/component-libs/index.md': '/docs/authors/component-libs/howlite/index.md'
+          'docs/authors/component-libs/index.md': 'docs/authors/component-libs/howlite/index.md'
 
           'getting-started/quick-start/index.md': 'docs/quick-start/index.md'
           'guides/authoring/howlite/index.md': 'docs/authors/component-libs/howlite/index.md'
