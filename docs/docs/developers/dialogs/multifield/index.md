@@ -25,48 +25,42 @@ Field used in multifield behaves the same as in plain dialog - e.g. hiding label
 
 Multifield with TextField:
 
-```
-1 <multifield  
-2       jcr:primaryType="nt:unstructured"  
-3       name="users"  
-4       label="users"  
-5       sling:resourceType="wcm/dialogs/components/multifield">  
-6    <textfield  
-7           jcr:primaryType="nt:unstructured"  
-8           sling:resourceType="wcm/dialogs/components/textfield"  
-9           name="name"  
-10          label="name">  
-11   </textfield>  
-12</multifield>`
+```json
+"users": {
+  "sling:resourceType": "wcm/dialogs/components/multifield",
+  "name": "users",
+  "label": "users",
+  "name": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "name",
+    "label": "name"
+  }
+}
 ```
 
 ![MultiField](multifield.png)
 
 Multifield with nested Multiefield
 
-```
-1<multifield  
-2           jcr:primaryType="nt:unstructured"  
-3           name="users"  
-4           label="Users"  
-5           sling:resourceType="wcm/dialogs/components/multifield">  
-6       <textfield  
-7               jcr:primaryType="nt:unstructured"  
-8               sling:resourceType="wcm/dialogs/components/textfield"  
-9               name="name"  
-10              label="Name">  
-11      </textfield>  
-12      <multifield  
-13          jcr:primaryType="nt:unstructured"  
-14          name="addresses"  
-15          label="Addresses"  
-16          sling:resourceType="wcm/dialogs/components/multifield">  
-17      <textfield  
-18              jcr:primaryType="nt:unstructured"  
-19              sling:resourceType="wcm/dialogs/components/textfield"  
-20              name="street"  
-21              label="Street">  
-22      </textfield>  
-23  </multifield> 
-24</multifield>
+```json
+"users": {
+  "sling:resourceType": "wcm/dialogs/components/multifield",
+  "name": "users",
+  "label": "Users",
+  "namefield": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "name",
+    "label": "Name"
+  },
+  "addresses": {
+    "sling:resourceType": "wcm/dialogs/components/multifield",
+    "name": "addresses",
+    "label": "Addresses",
+    "street": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "name": "street",
+      "label": "Street"
+    }
+  }
+}
 ```

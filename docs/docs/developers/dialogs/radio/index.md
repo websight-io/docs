@@ -46,24 +46,27 @@ Defines one of the available option.
 
 ## Example
 
-`
-1<headingLevel jcr:primaryType="nt:unstructured"
-2           sling:resourceType="wcm/dialogs/components/radio"
-3           name="level"
-4           label="Heading Level"
-5           required="true">
-6   <h1 jcr:primaryType="nt:unstructured"
-7       sling:resourceType="wcm/dialogs/components/radio/option"
-8       label="Heading 1"
-9       value="h1"/>
-10  <h2 jcr:primaryType="nt:unstructured"
-11      sling:resourceType="wcm/dialogs/components/radio/option"
-12      label="Heading 2"
-13      value="h2"
-14      selected="true"/>
-15  <h3 jcr:primaryType="nt:unstructured"
-16      sling:resourceType="wcm/dialogs/components/radio/option"
-17      label="Heading 3"
-18      value="h3"/>
-19 </headingLevel>
+```json
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "headingLevel",
+  "description": "HTML heading level help to communicate the organization and hierarchy of the content (for SEO and accessibility)",
+  "label": "Heading level",
+  "h1": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H1",
+    "value": "h1"
+  },
+  "h2": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H2",
+    "selected": true,
+    "value": "h2"
+  },
+  "h3": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H3",
+    "value": "h3"
+  }
+}
 ```

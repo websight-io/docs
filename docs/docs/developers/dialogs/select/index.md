@@ -43,46 +43,30 @@ Defines one of the available option.
 
 ## Example
 
-```
-1<headingLevel 
-2           jcr:primaryType="nt:unstructured" 
-3           sling:resourceType="wcm/dialogs/components/select" 
-4           name="level" 
-5           label="Heading Level" 
-6           required="true"> 
-7       <h1 
-8           jcr:primaryType="nt:unstructured" 
-9           sling:resourceType="wcm/dialogs/components/selectitem" 
-10          label="Heading 1" 
-11          value="h1"/> 
-12      <h2 
-13          jcr:primaryType="nt:unstructured" 
-14          sling:resourceType="wcm/dialogs/components/selectitem" 
-15          label="Heading 2" 
-16          value="h2"/> 
-17      <h3 
-18          jcr:primaryType="nt:unstructured" 
-19          sling:resourceType="wcm/dialogs/components/selectitem" 
-20          label="Heading 3" 
-21          value="h3"/> 
-22      <h4 
-23          jcr:primaryType="nt:unstructured" 
-24          sling:resourceType="wcm/dialogs/components/selectitem" 
-25          label="Heading 4" 
-26          value="h4"/> 
-27      <h5 
-28          jcr:primaryType="nt:unstructured" 
-29          sling:resourceType="wcm/dialogs/components/selectitem" 
-30          label="Heading 5" 
-31          value="h5"/> 
-32      <h6 
-33          jcr:primaryType="nt:unstructured" 
-34          sling:resourceType="wcm/dialogs/components/selectitem" 
-35          label="Heading 6" 
-36          value="h6"/> 
-37      <p 
-38          jcr:primaryType="nt:unstructured" 
-39          sling:resourceType="wcm/dialogs/components/selectitem" 
-40          label="Paragraph" 
-41          value="p"/> 42</headingLevel>`
+```json
+"icon": {
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "socialLinkIcon",
+  "label": "Social Link icon",
+  "linkedin": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "LinkedIn",
+    "value": "icon-linkedin"
+  },
+  "facebook": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Facebook",
+    "value": "icon-facebook"
+  },
+  "twitter": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Twitter",
+    "value": "icon-twitter"
+  },
+  "instagram": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Instagram",
+    "value": "icon-instagram"
+  }
+}
 ```

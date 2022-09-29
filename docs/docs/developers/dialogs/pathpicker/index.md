@@ -33,13 +33,12 @@ Path picker is an input that allows the user pick path of resource from reposito
 
 ## Example
 
-```
-1<pathPicker 
-2 jcr:primaryType="nt:unstructured" 
-3 sling:resourceType="wcm/dialogs/components/pathPicker" 
-4 name="pathToSomething" 
-5 label="Path Picker" 
-6 rootPath="/content" 
-7 forceRootPath="true" 
-8 required="true"/>
+```json
+"link": {
+  "sling:resourceType": "wcm/dialogs/components/pathpicker",
+  "rootPath": "/content",
+  "name": "link",
+  "label": "URL",
+  "forceRootPath": true
+}
 ```

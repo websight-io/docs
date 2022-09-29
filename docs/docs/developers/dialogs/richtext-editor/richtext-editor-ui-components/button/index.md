@@ -34,11 +34,11 @@ Component allows to add edit action as a button visible in menu bar. Button can 
 
 ## Example:
 
-```
-1<bold  jcr:primaryType="nt:unstructured"  
-2  sling:resourceType="wcm/dialogs/components/richtext/ui/button"  
-3  title="Bold"  
-4  icon="format_bold">  
-5  <plugin  jcr:primaryType="nt:unstructured"  
-6  sling:resourceType="wcm/dialogs/components/richtext/plugin/bold"/>  7</bold>
+```json
+"bold": {
+  "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+  "title": "Bold",
+  "icon": "format_bold",
+  "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/bold"}
+}
 ```

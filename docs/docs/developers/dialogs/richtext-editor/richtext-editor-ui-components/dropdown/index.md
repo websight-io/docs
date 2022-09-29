@@ -43,58 +43,64 @@ Component allows to add action to dropdown.
 
 ## Example
 
-```
-1<textstyle  
-2           jcr:primaryType="nt:unstructured"  
-3           sling:resourceType="wcm/dialogs/components/richtext/ui/dropdown"  
-4           title="Text Style">  
-5   <h1  jcr:primaryType="nt:unstructured"  
-6        sling:resourceType="wcm/dialogs/components/richtext/ui/dropdown/dropdownitem"  
-7           title="Heading 1">  
-8           <plugin  jcr:primaryType="nt:unstructured"  
-9               sling:resourceType="wcm/dialogs/components/richtext/plugin/heading"  
-10              level="1"/>  
-11  </h1>  
-12  <h2  jcr:primaryType="nt:unstructured"  
-13          sling:resourceType="wcm/dialogs/components/richtext/ui/dropdown/dropdownitem"  
-14          title="Heading 2">  
-15          <plugin  jcr:primaryType="nt:unstructured"  
-16              sling:resourceType="wcm/dialogs/components/richtext/plugin/heading"  
-17              level="2"/>  
-18  </h2>  
-19  <h3  jcr:primaryType="nt:unstructured"  
-20          sling:resourceType="wcm/dialogs/components/richtext/ui/dropdown/dropdownitem"  
-21          title="Heading 3">  
-22          <plugin  jcr:primaryType="nt:unstructured"  
-23              sling:resourceType="wcm/dialogs/components/richtext/plugin/heading"  
-24              level="3"/>  
-25  </h3>  
-26  <h4  jcr:primaryType="nt:unstructured"  
-27          sling:resourceType="wcm/dialogs/components/richtext/ui/dropdown/dropdownitem"  
-28          title="Heading 4">  
-29          <plugin  jcr:primaryType="nt:unstructured"  
-30              sling:resourceType="wcm/dialogs/components/richtext/plugin/heading"  
-31              level="4"/>  
-32  </h4>  
-33  <h5  jcr:primaryType="nt:unstructured"  
-34          sling:resourceType="wcm/dialogs/components/richtext/ui/dropdown/dropdownitem"  
-35          title="Heading 5">  
-36  <plugin  jcr:primaryType="nt:unstructured"  
-37          sling:resourceType="wcm/dialogs/components/richtext/plugin/heading"  
-38          level="5"/>  
-39  </h5>  
-40  <h6  jcr:primaryType="nt:unstructured"  
-41          sling:resourceType="wcm/dialogs/components/richtext/ui/dropdown/dropdownitem"  
-42          title="Heading 6">  
-43          <plugin  jcr:primaryType="nt:unstructured"  
-44              sling:resourceType="wcm/dialogs/components/richtext/plugin/heading"  
-45              level="6"/>  
-46  </h6>  
-47  <paragraph  jcr:primaryType="nt:unstructured"  
-48              sling:resourceType="wcm/dialogs/components/richtext/ui/dropdown/dropdownitem"  
-49  title="Paragraph">  
-50  <plugin  jcr:primaryType="nt:unstructured"  
-51  sling:resourceType="wcm/dialogs/components/richtext/plugin/paragraph"/>  
-52  </paragraph>    
-53</textstyle>
+```json
+"textstyle": {
+  "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown",
+  "title": "Text Style",
+  "h1": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+    "title": "Heading 1",
+    "plugin": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+      "level": 1
+    }
+  },
+  "h2": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+    "title": "Heading 2",
+    "plugin": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+      "level": 2
+    }
+  },
+  "h3": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+    "title": "Heading 3",
+    "plugin": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+      "level": 3
+    }
+  },
+  "h4": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+    "title": "Heading 4",
+    "plugin": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+      "level": 4
+    }
+  },
+  "h5": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+    "title": "Heading 5",
+    "plugin": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+      "level": 5
+    }
+  },
+  "h6": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+    "title": "Heading 6",
+    "plugin": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+      "level": 6
+    }
+  },
+  "paragraph": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+    "title": "Paragraph",
+    "plugin": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/paragraph"
+    }
+  }
+}
 ```

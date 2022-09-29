@@ -32,14 +32,13 @@ Allows user to enter numbers. If empty then respective property in JCR doesn’t
 
 ## Example
 
-```
-1<width 
-2 jcr:primaryType="nt:unstructured" 
-3 sling:resourceType="wcm/dialogs/components/numberfield" 
-4 name="width" 
-5 label="Width" 
-6 min="0" 
-7 max="1000" 
-8 step="0.01" 
-9 required="false"/>
+```json
+"width": {
+  "sling:resourceType": "wcm/dialogs/components/numberfield",
+  "name": "width",
+  "label": "Width",
+  "min": 0,
+  "max": 1000,
+  "step": 0.01
+}
 ```

@@ -14,12 +14,12 @@ Allows users to include other components. Typically used to avoid code duplicati
 - **namespace** - `string` (optional)  
     If we include the same component multiple times, then we will have name conflict. To avoid it, we can set the namespace property. The name properties' values will be prepended by this namespace. For example: if the included component’s name property is `authorName` and we set `book1` as namespace, then the name will be `book1/authorName` while reading and saving the dialog.
 
-```
-1<headingLevel 
-2   jcr:primaryType="nt:unstructured" 
-3   sling:resourceType="wcm/dialogs/components/include" 
-4   path="/apps/howlite/components/common/headingLevel" 
-5   namespace="secondsubtitle"/>
+```json
+"headingLevel": {
+  "sling:resourceType": "wcm/dialogs/components/include",
+  "path": "/libs/howlite/components/common/headinglevel",
+  "namespace": "secondsubtitle"
+}
 ```
 
 ## Customization
@@ -32,86 +32,80 @@ After `sling:resourceSuperType` is set up correctly, we can add properties to th
 
 #### Included component
 
-```
-1<headingLevel 
-2   jcr:primaryType="nt:unstructured" 
-3   sling:resourceType="wcm/dialogs/components/select" 
-4   label="Heading level" 
-5   name="headingLevel"> 
-6   <h1 
-7       jcr:primaryType="nt:unstructured" 
-8       sling:resourceType="wcm/dialogs/components/select/selectitem" 
-9       label="Heading1" 
-10      value="h1" 
-11     /> 
-12  <h2 
-13      jcr:primaryType="nt:unstructured" 
-14      sling:resourceType="wcm/dialogs/components/select/selectitem" 
-15      label="Heading2" 
-16      value="h2" 
-17     /> 
-18  <h3 
-19      jcr:primaryType="nt:unstructured" 
-20      sling:resourceType="wcm/dialogs/components/select/selectitem" 
-21      label="Heading3" 
-22      value="h3" 
-23     /> 
-24  </headingLevel>
+```json
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "headingLevel",
+  "description": "HTML heading level help to communicate the organization and hierarchy of the content (for SEO and accessibility)",
+  "label": "Heading level",
+  "h1": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H1",
+    "value": "h1"
+  },
+  "h2": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H2",
+    "selected": true,
+    "value": "h2"
+  },
+  "h3": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H3",
+    "value": "h3"
+  }
+}
 ```
 
 #### Include component
 
-```
-1<includedHeadingLevel 
-2   jcr:primaryType="nt:unstructured" 
-3   sling:resourceType="wcm/dialogs/components/include"> 
-4   <include 
-5           jcr:primaryType="nt:unstructured" 
-6           sling:resourceSuperType="<path to the component above>" 
-7           label="Custom label"> 
-8       <h1 
-9           jcr:primaryType="nt:unstructured" 
-10          sling:hideResource="true" 
-11      /> 
-12      <h2 
-13          jcr:primaryType="nt:unstructured" 
-14          selected="true" 
-15      /> 
-16      <h4 
-17          jcr:primaryType="nt:unstructured" 
-18          value="h4" 
-19          label="Heading4" 
-20      /> 
-21  </include> 
-22</includedHeadingLevel>
+```json
+"includedHeadingLevel": {
+  "sling:resourceType": "wcm/dialogs/components/include",
+  "include": {
+    "sling:resourceSuperType": "/libs/howlite/components/common/headinglevel",
+    "label": "Custom label",
+    "h1": {
+      "sling:hideResource": "true"
+    },
+    "h2": {
+      "selected": false
+    },
+    "h3": {
+      "selected": true
+    },
+    "h4": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "H4",
+      "value": "h4"
+    }
+  }
+}
 ```
 
 #### Result: (this will be included in the end)
 
-```
-1<headingLevel 
-2   jcr:primaryType="nt:unstructured" 
-3   sling:resourceType="wcm/dialogs/components/select" 
-4   name="headingLevel" 
-5   label="Custom label"> 
-6     <h2 
-7       jcr:primaryType="nt:unstructured" 
-8       sling:resourceType="wcm/dialogs/components/select/selectitem" 
-9       label="Heading2" 
-10      value="h2" 
-11      selected="true" 
-12    /> 
-13    <h3 
-14      jcr:primaryType="nt:unstructured" 
-15      sling:resourceType="wcm/dialogs/components/select/selectitem" 
-16      value="h3" 
-17      label="Heading3" 
-18    /> 
-19    <h4 
-20      jcr:primaryType="nt:unstructured" 
-21      sling:resourceType="wcm/dialogs/components/select/selectitem" 
-22      value="h4" 
-23      label="Heading4" 
-24    /> 
-25</headingLevel>
+```json
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "headingLevel",
+  "description": "HTML heading level help to communicate the organization and hierarchy of the content (for SEO and accessibility)",
+  "label": "Custom label",
+  "h2": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H2",
+    "value": "h2"
+  },
+  "h3": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H3",
+    "selected": true,
+    "value": "h3"
+  },
+  "h4": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H4",
+    "value": "h4"
+  }
+}
 ```
