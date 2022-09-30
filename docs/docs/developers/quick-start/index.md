@@ -333,3 +333,11 @@ If you don't need your environment anymore, you can delete it using a script.
 ```shell
 sh environment/delete.sh
 ```
+
+## The next steps
+
+You learned the foundation of components development for WebSight CMS. Now, we encourage you to explore more details on:
+
+- [Creating & developing projects](../create-and-develop-project/);
+- [Using components](../components/);
+- [Components definition](../components/definition/).
