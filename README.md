@@ -21,6 +21,18 @@ WebSight documentation created using [MkDocs Material](https://squidfunk.github.
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
+## Diagrams as code
+Diagrams could be created using [PlantUML](https://plantuml.com) - see files with `puml` extension.
+
+To create/update diagrams:
+Install PlantUML with required dependencies (on mac: `brew install plantuml`).
+
+Run
+```bash
+plantuml -Djava.awt.headless=true src/*puml -o ../generated/
+```
+
+from the parent directory of src (assuming src contains diagrams .puml files) to regenerate diagrams.
 
 ## Further reading
 - [MkDocs Material Site](https://squidfunk.github.io/mkdocs-material/getting-started/)
