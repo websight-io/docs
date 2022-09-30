@@ -1,13 +1,15 @@
+
+
 # RichText Editor Plugin Components
 Plugin Component is a resource which allow to register feature allows to edit text content.
 
 Plugin component should provide configuration in JSON format:
 
-```
-1{  
-2  "type": ...,  
-3  "configuration":  {...}  
-4}
+```json
+{  
+  "type": ...,  
+  "configuration":  {...}  
+}
 ```
 
 Where `type` should point script with plugin definition and `configuration` contains all aditional properties used by plugin.
@@ -16,24 +18,25 @@ RichText editor is based on [TipTap](https://tiptap.dev/ "https://tiptap.dev/") 
 
 Plugin defintinon should provide methods:
 
-```
-1const  Plugin  =  (configuration)  =>  {  
-2 
-3  return  {  
-4  getTipTapExtensions:  ()  =>  {  
-5  return  [...]  
-6  },  7  getAction:  (context)  =>  {  
-8  return  {  
-9  execute:  (state)  =>  {}  
-10  }  
-11  },  
-12  getState:  (context)  =>  {  
-13  return  {...}  
-14  }  
-15  }  
-16}  
-17 
-18export  default  Plugin;
+```js
+const  Plugin  =  (configuration)  =>  {  
+ 
+  return  {  
+    getTipTapExtensions:  ()  =>  {  
+      return  [...]  
+    },    
+    getAction:  (context)  =>  {  
+      return  {
+        execute:  (state)  =>  {}
+      }  
+    },  
+    getState:  (context)  =>  {  
+      return  {...}  
+    }  
+  }  
+}  
+
+export  default  Plugin;
 ```
 
 Where:
@@ -52,458 +55,20 @@ Where:
 
 # Available plugins
 
-   <table>
-  <tr>
-   <td><strong>Name</strong>
-   </td>
-   <td><strong>Path</strong>
-   </td>
-   <td><strong>Configuration</strong>
-   </td>
-   <td><strong>Interfaces</strong>
-   </td>
-   <td><strong>Example Usage</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Bold
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/bold</strong>
-   </td>
-   <td><code>{}</code>
-   </td>
-   <td>
-<ul>
-
-<li><br>getAction:<br><br>
-
-<li><code>1{ </code>
-
-<li><code>2  execute ({}) => {...}</code>
-
-<li><code>3}</code>
-
-<li>
-
-<li>getState:<br><br>
-
-<li><code>1{ </code>
-
-<li><code>2  isActive: ... // define if current part of text content has active plugin action.</code>
-
-<li><code>3}</code>
-
-<li>
-</li>
-</ul>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/bold"/></code>
-   </td>
-  </tr>
-  <tr>
-   <td>Italic
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/italic</strong>
-   </td>
-   <td>{}
-   </td>
-   <td><br>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:<br><br><code>1{ </code>
-<p>
-<code>2  isActive: ... // define if current part of text content has active plugin action.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/italic"/></code>
-   </td>
-  </tr>
-  <tr>
-   <td>Underline
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/underline</strong>
-   </td>
-   <td>{}
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:<br><br><code>1{ </code>
-<p>
-<code>2  isActive: ... // define if current part of text content has active plugin action.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/underline"/></code>
-   </td>
-  </tr>
-  <tr>
-   <td>Strikethrough
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/strikethrough</strong>
-   </td>
-   <td>{}
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:<br><br><code>1{ </code>
-<p>
-<code>2  isActive: ... // define if current part of text content has active plugin action.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/strikethrough"/></code>
-   </td>
-  </tr>
-  <tr>
-   <td>BulletList
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/bulletlist</strong>
-   </td>
-   <td>{}
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:<br><br><code>1{ </code>
-<p>
-<code>2  isActive: ... // define if current part of text content has active plugin action.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/bulletlist"/></code>
-<p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>OrderedList
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/orderedlist</strong>
-   </td>
-   <td>{}
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:<br><br><code>1{ </code>
-<p>
-<code>2  isActive: ... // define if current part of text content has active plugin action.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/orderedlist"/></code>
-<p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Paragraph
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/paragraph</strong>
-   </td>
-   <td>{}
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:<br><br><code>1{ </code>
-<p>
-<code>2  isActive: ... // define if current part of text content has active plugin action.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/paragraph"/></code>
-   </td>
-  </tr>
-  <tr>
-   <td>Heading
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/heading</strong>
-   </td>
-   <td><code>{ level }</code>
-<p>
-level - <code>number (default: 1)</code> - Heading level (1-6)
-   </td>
-   <td><br>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:
-<p>
-<code>1{ </code>
-<p>
-<code>2  isActive: ... // define if current part of text content is heading.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/heading"</code>
-<p>
-<code>3        level="3"/></code>
-   </td>
-  </tr>
-  <tr>
-   <td>Link
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/link</strong>
-   </td>
-   <td><code>{}</code>
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({ href, target }) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:
-<p>
-<code>1{ </code>
-<p>
-<code>2  isActive: ..., // define if current part of text content has link setted.</code>
-<p>
-<code>3  href: ..., // define link destination address</code>
-<p>
-<code>4  target: ... // specifies where to open the linked document. </code>
-<p>
-<code>5}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/link"/></code>
-   </td>
-  </tr>
-  <tr>
-   <td>UnsetLink
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/unsetlink</strong>
-   </td>
-   <td><code>{}</code>
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:
-<p>
-<code>1{ </code>
-<p>
-<code>2  isDisabled: ..., // define if current part of content has link setted and it can be removed.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/unsetlink"/></code>
-<p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>ClearFormatting
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/clearformatting</strong>
-   </td>
-   <td><code>{}</code>
-   </td>
-   <td><br>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:
-<p>
-<code>1{}</code>
-<p>
-
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/clearformatting"/></code>
-<p>
-
-<p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>HardBreak
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/hardbreak</strong>
-   </td>
-   <td>{}
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:
-<p>
-<code>1{}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/hardbreak"/></code>
-   </td>
-  </tr>
-  <tr>
-   <td>TextAlign
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/textalign</strong>
-   </td>
-   <td><code>{ alignment }</code>
-<p>
-level - <code>string (default: 'left')</code> - Text alignment ('left', ‘center', ‘right',  'justify')
-<p>
-
-   </td>
-   <td><br>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:
-<p>
-<code>1{ </code>
-<p>
-<code>2  isActive: ..., // define if current content has proper alignment.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/textalignment"</code>
-<p>
-<code>3        alignment="right"/></code>
-<p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Undo
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/undo</strong>
-   </td>
-   <td><code>{}</code>
-   </td>
-   <td><br>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:
-<p>
-<code>1{ </code>
-<p>
-<code>2  isDisabled: ..., // define if action can be run.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/undo"/></code>
-<p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Redo
-   </td>
-   <td><strong>wcm/dialogs/components/richtext/plugin/redo</strong>
-   </td>
-   <td>{}
-   </td>
-   <td>getAction:
-<p>
-<code>1{ </code>
-<p>
-<code>2  execute ({}) => {...}</code>
-<p>
-<code>3}</code>
-<p>
-getState:
-<p>
-<code>1{ </code>
-<p>
-<code>2  isDisabled: ..., // define if action can be run.</code>
-<p>
-<code>3}</code>
-   </td>
-   <td><code>1&lt;plugin jcr:primaryType="nt:unstructured"</code>
-<p>
-<code>2        sling:resourceType="wcm/dialogs/components/richtext/plugin/redo"/></code>
-<p>
-
-   </td>
-  </tr>
-</table>
+| Name            | Path                                                            | Configuration                                                                                                                                            | Interfaces                                                                                                                            | Example Usage                                                                                                        |
+|-----------------|-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| Bold            | **wcm/dialogs/components</br>/richtext/plugin/bold**            | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/bold"}```                                |
+| Italic          | **wcm/dialogs/components</br>/richtext/plugin/italic**          | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/italic"}```                              |
+| Underline       | **wcm/dialogs/components</br>/richtext/plugin/underline**       | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/underline"}```                           |
+| Strikethrough   | **wcm/dialogs/components</br>/richtext/plugin/strikethrough**   | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/strikethrough"}```                       |
+| BulletList      | **wcm/dialogs/components</br>/richtext/plugin/bulletlist**      | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/bulletlist"}```                          |
+| OrderedList     | **wcm/dialogs/components</br>/richtext/plugin/orderedlist**     | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/orderedlist"}```                         |
+| Paragraph       | **wcm/dialogs/components</br>/richtext/plugin/paragraph**       | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/paragraph"}```                           |
+| Heading         | **wcm/dialogs/components</br>/richtext/plugin/heading**         | `{ level }` </br> level </br> &emsp;&emsp;- `number` (default: 1) </br> &emsp;&emsp; - Heading level (1-6)                                               | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading", "level": "3"}```               |
+| Link            | **wcm/dialogs/components</br>/richtext/plugin/link**            | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({ href, target }) => {...} }``` </br> getState: </br> ``` { isActive: ..., href: ..., target: ... } ``` | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/link"}```                                |
+| UnsetLink       | **wcm/dialogs/components</br>/richtext/plugin/unsetlink**       | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isDisabled: ... } ```                                     | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/unsetlink"}```                           |
+| ClearFormatting | **wcm/dialogs/components</br>/richtext/plugin/clearformatting** | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` {} ```                                                      | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/clearformatting"}```                     |
+| HardBreak       | **wcm/dialogs/components</br>/richtext/plugin/hardbreak**       | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` {} ```                                                      | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/hardbreak"}```                           |
+| TextAlign       | **wcm/dialogs/components</br>/richtext/plugin/textalign**       | `{ alignment }` </br> alignment </br> &emsp;&emsp;- `string` (default: 'left') </br> &emsp;&emsp;- Text alignment ('left', ‘center', ‘right', 'justify') | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isActive: ... } ```                                       | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/textalignment", "alignment": "right"}``` |
+| Undo            | **wcm/dialogs/components</br>/richtext/plugin/undo**            | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isDisabled: ... } ```                                     | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/undo"}```                                |
+| Redo            | **wcm/dialogs/components</br>/richtext/plugin/redo**            | `{}`                                                                                                                                                     | getAction: </br> ```{ execute({}) => {...} }``` </br> getState: </br> ``` { isDisabled: ... } ```                                     | ```"plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/redo"}```                                |

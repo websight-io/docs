@@ -3,13 +3,13 @@ UI Component is a resource which will be used to resolve script for rendering co
 
 JSON object rendered by UI Component should follow format:
 
-```
-1{  
-2  "type": ...,  
-3  "configuration":  {...},  
-4  "children":  [...],  
-5  "plugin": ... 
-6}
+```json
+{
+  "type": ...,  
+  "configuration":  {...},  
+  "children":  [...],  
+  "plugin": ... 
+}
 ```
 
 Where:
@@ -34,11 +34,10 @@ Component gets properties:
 -   `children` - children components.
     
 
+```js
+const Component = ({ configuration, state, action, children }) => {
+  return (
+      <></>
+  ) 
+}
 ```
-1const Component = ({ configuration, state, action, children }) => { 
-    2 
-    3 return ( 
-        4 <></> 
-        5 ) 
-        6}
-        ```
