@@ -34,8 +34,6 @@ rectangle host as "Host" #line.dotted {
     }
 }
 
-cloud dockerHub as "Docker Hub"
-
 dev -[dashed]-> wscmsImage : [mvn clean install]
 dev -[dashed]-> nginxImage : [mvn clean install]
 dev -[dashed]-> dockerCLI : [docker compose up]
