@@ -84,7 +84,7 @@ Everything is combined by environment which is using Docker Compose to combine a
 
 This illustration shows the runtime environment and roles:
 
-![Runtime environment and roles](img01.png)
+![Runtime environment and roles](diagrams/generated/runtime-docker-compose.png)
 
 #### Application
 
