@@ -1,4 +1,4 @@
-# NumberField
+# Number Field
 
 **wcm/dialogs/components/numberfield**
 
