@@ -1,4 +1,4 @@
-# TextField
+# Text Field
 
 **wcm/dialogs/components/textfield**
 

@@ -1,4 +1,4 @@
-# RichText Editor
+# Rich Text Editor
 
 **wcm/dialogs/components/richtext**
 

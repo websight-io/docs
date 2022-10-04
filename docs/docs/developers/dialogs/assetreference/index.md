@@ -1,4 +1,4 @@
-# AssetReference
+# Asset Reference
 
 **wcm/dialogs/components/assetreference**
 

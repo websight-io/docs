@@ -1,4 +1,4 @@
-# TextArea
+# Text Area
 
 **wcm/dialogs/components/textarea**
 

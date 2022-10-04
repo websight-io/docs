@@ -1,4 +1,4 @@
-# DatePicker
+# Date Picker
 
 **wcm/dialogs/components/datepicker**
 
