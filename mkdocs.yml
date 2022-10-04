@@ -89,3 +89,11 @@ plugins:
           'guides/authoring/howlite/quote/index.md': 'docs/authors/component-libs/howlite/quote/index.md'
           'guides/authoring/howlite/rte/index.md': 'docs/authors/component-libs/howlite/rte/index.md'
           'guides/authoring/howlite/title/index.md': 'docs/authors/component-libs/howlite/title/index.md'
+
+          'docs/developers/dialogs/richtext-editor/richtext-editor-configuration/index.md' : docs/developers/dialogs/richtext-editor/configuration/index.md
+          'docs/developers/dialogs/richtext-editor/richtext-editor-plugin-components/index.md' : 'docs/developers/dialogs/richtext-editor/plugin-components/index.md'
+          'docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/index.md' : 'docs/developers/dialogs/richtext-editor/ui-components/index.md'
+          'docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/button/index.md' : 'docs/developers/dialogs/richtext-editor/ui-components/button/index.md'
+          'docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/button-dropdown/index.md' : 'docs/developers/dialogs/richtext-editor/ui-components/button-dropdown/index.md'
+          'docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/dropdown/index.md' : 'docs/developers/dialogs/richtext-editor/ui-components/dropdown/index.md'
+          'docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/link/index.md' : 'docs/developers/dialogs/richtext-editor/ui-components/link/index.md'

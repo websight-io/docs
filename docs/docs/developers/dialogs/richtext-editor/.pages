@@ -1,5 +1,5 @@
 nav :
  - ...
- - Configuration : richtext-editor-configuration
- - Plugin Components : richtext-editor-plugin-components
- - UI Components : richtext-editor-ui-components
+ - Configuration : configuration
+ - Plugin Components : plugin-components
+ - UI Components : ui-components
