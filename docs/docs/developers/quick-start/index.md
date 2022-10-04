@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Use this guide to learn how to update a simple Howlite component. We recommend completing the general [quick start guide](/docs/getting-started/quick-start/index.md) first to get familiar with basic concepts.
+Use this guide to learn how to update a simple Howlite component. We recommend completing the general [quick start guide](/docs/quick-start/) first to get familiar with basic concepts.
 
 The scenario utilizes a sample component library [Howlite](https://github.com/websight-io/howlite) and a demo site project _Luna_. For simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and prepared the _Luna Title_ component inside the demo project. 
 
@@ -48,7 +48,7 @@ Congratulations! Your local environment is ready. Open [http://localhost:8080/](
 ## Part C: Changing component
 
 !!! info "Hint"
-    If you need help to navigate inside WebSight, see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
+    If you need help to navigate inside WebSight, see the general [getting started](/docs/quick-start/) for details.
 
 ### Business requirement
 
@@ -288,7 +288,7 @@ Congratulations! You updated the component, and it passed tests.
 ## Part E: Use the new component
 
 !!! info "Hint"
-    If you need help to navigate inside WebSight, see the general [getting started](/docs/getting-started/quick-start/index.md) for details.
+    If you need help to navigate inside WebSight, see the general [getting started](/docs/quick-start/) for details.
 
 The page owner can use the updated component now. Let's check it too.
 
@@ -333,3 +333,11 @@ If you don't need your environment anymore, you can delete it using a script.
 ```shell
 sh environment/delete.sh
 ```
+
+## The next steps
+
+You learned the foundation of components development for WebSight CMS. Now, we encourage you to explore more details on:
+
+- [Creating & developing projects](../create-and-develop-project/);
+- [Using components](../components/);
+- [Components definition](../components/definition/).

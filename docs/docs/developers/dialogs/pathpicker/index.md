@@ -1,4 +1,4 @@
-# PathPicker
+# Path Picker
 
 **wcm/dialogs/components/pathpicker**
 

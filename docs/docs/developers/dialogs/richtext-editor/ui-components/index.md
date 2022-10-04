@@ -1,4 +1,4 @@
-# RichText Editor UI Components
+# Rich Text Editor UI Components
 UI Component is a resource which will be used to resolve script for rendering configuration node as JSON. UI Components are used as resource types of resources used to buid RTE tool bar.
 
 JSON object rendered by UI Component should follow format:

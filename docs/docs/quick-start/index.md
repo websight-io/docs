@@ -177,3 +177,10 @@ You updated the page. However, unpublished changes are not visible on the site y
 Congratulations! Your changes should be visible now at [http://localhost/Homepage.html](http://localhost/Homepage.html). 
 
 ![Publish page action](./quick-start-updated-page.png)
+
+## The next steps
+
+You learned the foundation of page editing with WebSight CMS. Now, we encourage you to explore more details:
+
+- [Howlite](../authors/component-libs/howlite/) library documentation to browse other components available in the distribution;
+- [Quick start tutorial for developers](../developers/quick-start/) to check how to implement custom components.

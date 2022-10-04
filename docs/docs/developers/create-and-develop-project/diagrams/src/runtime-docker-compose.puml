@@ -1,0 +1,52 @@
+'Dynamic Solutions WebSight
+'Copyright (C) 2013-2022 Dynamic Solutions
+'
+'This is a private, internal code. Using or copying as a
+'whole or in fragments disallowed without permission.
+
+'https://plantuml.com/deployment-diagram
+
+
+@startuml
+!include <tupadr3/devicons/docker>
+
+actor :Developer: as dev
+actor :Content Author: as contentAuthor
+actor :Site Visitor: as siteVisitor
+
+rectangle host as "Host" #line.dotted {
+    rectangle dockerCLI as "Docker CLI"
+    rectangle docker as "Docker Engine" #line.dotted {
+        rectangle dockerDeamon as "Docker Daemon"
+        rectangle  repository as "Docker Repository" #line.dotted {
+            file wscmsImage as "WebSight CMS CE - Project Image - includes application"
+            file nginxImage as "NGINX - Project Image - includes configuration"
+        }
+        frame containers as "Containers" #line.dotted {
+            node nginx as "<$docker>\n  NGINX + config" #royalblue;text:white
+            node mongo as "<$docker>\n  MongoDB" #royalblue;text:white
+            node wscmsce as "<$docker>\n   WS CMS CE + app" #royalblue;text:white
+        }
+        frame volumes as "Filesystem" #line.dotted {
+            database htmlVolume as "Html storage" #royalblue;text:white
+            database jcrVolume as "Content Repository" #royalblue;text:white
+        }
+    }
+}
+
+dev -[dashed]-> wscmsImage : [mvn clean install]
+dev -[dashed]-> nginxImage : [mvn clean install]
+dev -[dashed]-> dockerCLI : [docker compose up]
+dockerCLI -[dashed]-> dockerDeamon : [orchestrates]
+dockerDeamon -[dashed]-> containers : [manages]
+dockerDeamon -[dashed]-> volumes : [creates]
+repository -[dashed]-> dockerDeamon : [provides]
+
+siteVisitor --> nginx : [browses the page]
+contentAuthor --> wscmsce : [manages content]
+htmlVolume --> nginx : [provides HTMLs]
+wscmsce --> htmlVolume : [publishes HTMLs]
+wscmsce <--> mongo : [reads/writes content for authoring]
+mongo <--> jcrVolume : [reads/writes content for authoring]
+
+@enduml

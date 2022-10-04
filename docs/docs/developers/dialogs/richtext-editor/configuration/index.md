@@ -1,4 +1,4 @@
-# RichText Editor Configuration
+# Rich Text Editor Configuration
 
 Configuration defines RTE toolbar and functionalities
 

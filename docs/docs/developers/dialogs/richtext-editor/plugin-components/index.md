@@ -1,6 +1,4 @@
-
-
-# RichText Editor Plugin Components
+# Rich Text Editor Plugin Components
 Plugin Component is a resource which allow to register feature allows to edit text content.
 
 Plugin component should provide configuration in JSON format:
