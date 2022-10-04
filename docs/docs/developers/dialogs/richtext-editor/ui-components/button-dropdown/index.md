@@ -1,4 +1,4 @@
-# Button dropdown
+# Button Dropdown
 **wcm/dialogs/components/richtext/ui/buttondropdown**
 
 ![Button Dropdown](RTE-button-dropdown-1.png)
