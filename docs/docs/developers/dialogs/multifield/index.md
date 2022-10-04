@@ -1,4 +1,4 @@
-# MultiField
+# Multifield
 
 **wcm/dialogs/components/textfield**
 
