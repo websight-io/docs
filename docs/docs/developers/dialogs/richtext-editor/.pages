@@ -1,0 +1,4 @@
+nav :
+ - Configuration : richtext-editor-configuration
+ - Plugin Components : richtext-editor-plugin-components
+ - UI Components : richtext-editor-ui-components
