@@ -111,8 +111,6 @@ The goal of this post is to give the reader an overview of how the needs of the 
 
 In the next blogpost, I would like to introduce how our product - WebSight is designed to fit the demanding digital environment today. We will take a closer, more technical look into the features and architecture that is able to power the next generation of Customer Experience. 
 
-## References
-
 [1]: https://www.internetlivestats.com/total-number-of-websites/
 [2]: https://newsroom.accenture.com/news/consumers-welcome-personalized-offerings-but-businesses-are-struggling-to-deliver-finds-accenture-interactive-personalization-research.htm
 [3]: https://www.prnewswire.com/news-releases/digital-experience-platform-market-size-worth-15-80-billion-by-2025-grand-view-research-inc-300957088.html
