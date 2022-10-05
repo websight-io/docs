@@ -11,7 +11,7 @@ tags:
 ---
 
 *Published at: 06.10.2022 by [Michal Papciak](https://github.com/michup-ds)*
-
+<!--> https://pixabay.com/photos/human-evolution-reenactment-sunset-3801547/<-->
 ![Evolutiomn](human-evolution.jpg)
 
 > There are multiple articles on the internet that touch the definitions of CMS and DXP and attempt to draw a line between them. And of course the line can vary from one definition to another. 
