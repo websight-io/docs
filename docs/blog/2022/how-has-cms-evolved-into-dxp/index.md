@@ -61,7 +61,7 @@ Fast forward to the Web 2.0 era. This is when users started generating content. 
 
 Things became much trickier - your CMS then had to support some complex processes and integrate with a lot of different applications (think about all the Wordpress app-like plugins). And this is something it was not designed to do initially. 
 
-One more jump in time and we are in 2015 - 2017. [2017 is the first year when mobile traffic has overtaken the desktop](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide/#yearly-2011-2022). And it has remained so until now. The WWW users now expect a consistent experience between desktop and mobile. There are 1 billion websites in the world. Your CMS has become more of a platform that:
+One more jump in time and we are in 2015 - 2017. [2017 was the first year when mobile traffic has overtaken the desktop](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide/#yearly-2011-2022). And it has remained so until now. The WWW users now expect a consistent experience between desktop and mobile. There are 1 billion websites in the world. Your CMS has become more of a platform that:
 
 1. Supports all devices;
 1. Gathers data and customer intelligence;
@@ -82,10 +82,10 @@ I do not like definitions, so I will not quote Gartner Glossary here. Allow me t
 1. Using any tools you like. Due to the architecture of a DXP, you should not be subject to vendor - locking. Instead you are able to build the best digital marketing suite out of the tools and systems you feel are best. 
 
 You could argue that some of the same issues we were trying to solve as early as in 2016. And I would agree. **There is a major factor to consider here though, which is the volume**. 
-There is a fantastic book by Vaclav Smil called [_Numbers don’t lie_](https://www.amazon.pl/Numbers-dont-lie-things-about/dp/0241989698) (I’d recommend you give the entire book a read) and one of the chapters touches on the volume of data we produce. Some facts:
+There is a fantastic book by Vaclav Smil called [_Numbers don’t lie_](https://www.amazon.com/Numbers-dont-lie-things-about/dp/0241989698) (I’d recommend you give the entire book a read) and one of the chapters touches on the volume of data we produce. Some facts:
 
 1. In 2018 in the United States, the internet users have downloaded 97000 hours of movies and series from Netflix **every minute**. They watched 4.5 million Youtube movies and generally transferred a total of 3.1 petabytes of data (that is 3.1 x 10<sup>15</sup> bytes). Again that is **every minute**.
-1. In 2016, the pace in which we produced data was estimated to be 16 zettabytes a year, which is 16 * 10<sup>21</sup> bytes. To put that into perspective: you would have to download a 4k Braveheart movie about 400.000.000.000 times to generate the same volume.  
+1. In 2016, the pace in which we produced data was estimated to be 16 zettabytes a year, which is 16 * 10<sup>21</sup> bytes. To put that into perspective: you would have to download the 4k Braveheart movie about 400.000.000.000 times to generate the same volume.  
 1. It is estimated that by 2025 this number will be ten times higher - 160 zettabytes a year (which is 160 * 10<sup>21</sup> bytes). 
 1. Somewhere in all of this, is your digital estate and your CMS.
  
