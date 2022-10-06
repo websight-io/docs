@@ -61,7 +61,7 @@ Fast forward to the Web 2.0 era. This is when users started generating content. 
 
 Things became much trickier - your CMS then had to support some complex processes and integrate with a lot of different applications (think about all the Wordpress app-like plugins). And this is something it was not designed to do initially. 
 
-One more jump in time and we are in 2015 - 2017. [2017 was the first year when mobile traffic has overtaken the desktop](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide/#yearly-2011-2022). And it has remained so until now. The WWW users now expect a consistent experience between desktop and mobile. There are 1 billion websites in the world. Your CMS has become more of a platform that:
+One more jump in time and we are in 2015 - 2017. [2017 was the first year when mobile traffic overtook the desktop](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide/#yearly-2011-2022). And it has remained so until now. The WWW users now expect a consistent experience between desktop and mobile. There are 1 billion websites in the world. Your CMS has become more of a platform that:
 
 1. Supports all devices;
 1. Gathers data and customer intelligence;
