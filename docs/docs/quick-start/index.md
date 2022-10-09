@@ -20,63 +20,7 @@ If you want to develop custom components for WebSight CMS, complete this guide t
 Create `docker-compose.yml` file. Paste the content presented below and save the file on your hard drive.
 
 ``` yaml title="docker-compose.yml"
-
-version: "3.9"
-
-services:
-  cms:
-    image: ds/websight-cms-luna:latest
-    ports:
-      - "8080:8080"
-    environment:
-      WS_LUNA_LOG_LEVEL: "info"
-      WS_ADMIN_USERNAME: "wsadmin"
-      MONGODB_HOST: "mongo"
-      MONGODB_PORT: 27017
-      MONGODB_USERNAME: "mongoadmin"
-    volumes:
-      - cms_logs:/websight/logs
-      - site_repository:/websight/docroot
-    secrets:
-      - source: mongo_password
-        target: mongo.password
-    depends_on:
-      - mongo
-
-  mongo:
-    image: mongo:4.4.6
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 4096M
-    ports:
-      - "27017:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD_FILE=/run/secrets/mongo.password
-    volumes:
-      - mongo_repository:/data/db
-    secrets:
-      - source: mongo_password
-        target: mongo.password
-
-  nginx:
-    image: ds/nginx-luna:latest
-    ports:
-      - "80:80"
-    volumes:
-      - site_repository:/usr/share/nginx/html:ro
-
-volumes:
-  cms_logs:
-  mongo_repository:
-  site_repository:
-
-secrets:
-  mongo_password:
-    file: ./mongo_password.txt
-
+{% include '../../scripts/docker-compose.yml' %}
 ```
 
 ### 2. Run the local instance
