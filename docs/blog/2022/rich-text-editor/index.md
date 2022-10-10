@@ -223,7 +223,7 @@ Now you have to prepare two things:
 ### Formatting logic configuration
 
 It requires specifying `type` which is a path to formatting logic source code. Optionally you can define also a `configuration` object with all properties required by the designed formatting logic
-```json
+```html
 {
   "type": "/apps/myapp/web-resources/components/richtext/plugin/Plugin.js",
   "configuration": {}
@@ -231,7 +231,7 @@ It requires specifying `type` which is a path to formatting logic source code. O
 ```
 
 example configuration for headings:
-```json
+```html
 {
   "type": "/apps/websight-dialogs-view/web-resources/components/richtext/plugin/Heading.js",
   "configuration": {
