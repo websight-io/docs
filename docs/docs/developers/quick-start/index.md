@@ -35,7 +35,7 @@ Clone _Luna_ repository and build it.
 ```shell
 git clone https://github.com/websight-io/starter.git
 cd starter
-mvn clean install -P e2e
+./mvnw clean install -P e2e
 ```
 
 Run docker environment.
@@ -156,7 +156,7 @@ The above definition specifies the new `overlineSize` field. It is placed before
 ### Install changes 
 Run the following command to install the changes on your local environment.
 ```shell
-mvn -f luna/core/pom.xml clean install -P autoInstallBundle
+./mvnw -f luna/core/pom.xml clean install -P autoInstallBundle
 ```
 
 ## Part D: Functional tests
@@ -167,7 +167,7 @@ We enhance WebSight CMS by adding new features, improving UX, and fixing bugs. T
 
 We prepared two sample functional tests for the _Luna Title_ component. They are executed during maven build. You can run them using `npm` on your local environment too. However, you have to add a test content before. Use the following script to install it.
 ```shell
-mvn -f tests/content/pom.xml clean install -P autoInstallPackage
+./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
 ```
 
 Now, you can run the tests using the following command.
@@ -265,7 +265,7 @@ The second test validates the dialog for the component. Update the test to recog
 Now, you can execute the functional tests again.
 
 ```shell
-mvn -f tests/content/pom.xml clean install -P autoInstallPackage
+./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
 npm run-script test --prefix tests/end-to-end
 ```
 
