@@ -16,14 +16,14 @@ tags:
 # Rich text editors
 Rich text editors (RTE) are dialog fields that give a better, richer editing experience and usually are in the form of WYSIWYG (What You See Is What You Get), where you see right away how your text changes when you format it without having to deal with the whole HTML formatting. They offer more text editing and formatting options, like bold, italics, bullet points, heading levels, etc, than text editors.
 
-Apart from standard functionalities, WebSight RTE can be customized with UI and plugin components to fit your needs. In this article, we will discuss how to use and configure them.
+Apart from standard functionalities, WebSight RTE can be customized with UI components and formatting logic to fit your needs. In this article, we will discuss how to use and configure them.
 
 ## WebSight RTE formatting functionalities
 WebSight Rich Text Editor provides multiple content editing functionalities with the possibility to extend their functions. Each formatting functionality requires a definition of two elements
 - UI component, which defines UI elements added to the menu bar,
 - formatting logic, which provides formatting functionality.
 
-Thanks to the separation of UI and plugin components the toolbar can be adjusted to the author's needs. Some actions can be added as a separate button or one of the buttons grouped in a dropdown, or as part of a dropdown list. Users can also create dedicated UI components and build the whole toolbar using just them, or create a new plugin and add it to the toolbar using the existing UI components.
+Thanks to the separation of UI and formatting logic the toolbar can be adjusted to the author's needs. Some actions can be added as a separate button or one of the buttons grouped in a dropdown, or as part of a dropdown list. Users can also create dedicated UI components and build the whole toolbar using just them, or create a new formatting logic and add it to the toolbar using the existing UI components.
 
 ### UI components:
 - Button - action visible as a button in the menu, can be displayed as an icon or with a title.
@@ -283,7 +283,7 @@ You have to specify two files
 - type - should point script with UI component definition
 - configuration - contains properties required by the component to render properly
 - children - contains a list of subcomponents. It is used by components grouping other ones in some structure.
-- plugin - plugin component configuration.
+- plugin - formatting logic configuration.
 
 ```html
 {
@@ -389,3 +389,6 @@ Button.propTypes = {
 export default Button;
 
 ```
+
+# Summary
+WebSight Rich Text Editor is a versatile tool that gives a better editing experience to the authors. It provides multiple formatting functionalities and can be easily used with the default configuration. Additionally, thanks to the separation of UI and formatting logic it’s flexible and can be adjusted to the user’s needs. After reading this blog post you should know how to add RTE field to the component dialog, how to change the default configuration, and how to prepare a new one or change the existing configuration.
