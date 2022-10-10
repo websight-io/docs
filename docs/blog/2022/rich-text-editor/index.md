@@ -14,19 +14,19 @@ tags:
 >
 
 # Rich text editors
-Rich text editors (RTE) are dialog fields that give a better, richer editing experience and usually are in the form of WYSIWYG (What You See Is What You Get), where you see right away how your text changes when you format it without having to deal with the whole html formatting. They offer more text editing and formatting options, like bold, italics, bullet points, heading levels, etc, than text editors.
+Rich text editors (RTE) are dialog fields that give a better, richer editing experience and usually are in the form of WYSIWYG (What You See Is What You Get), where you see right away how your text changes when you format it without having to deal with the whole HTML formatting. They offer more text editing and formatting options, like bold, italics, bullet points, heading levels, etc, than text editors.
 
-Apart from standard functionalities, WebSight RTE can be customized with UI and plugin components to fit your needs. In this article we will discuss how to use and configure them.
+Apart from standard functionalities, WebSight RTE can be customized with UI and plugin components to fit your needs. In this article, we will discuss how to use and configure them.
 
 ## WebSight RTE formatting functionalities
-WebSight Rich Text Editor provides multiple content editing functionalities with a possibility to extend their functions. Each formatting functionality requires definition of two elements 
-- UI component, which define UI elements added to the menu bar,
-- formatting logic, which provides the formatting functionality.
+WebSight Rich Text Editor provides multiple content editing functionalities with the possibility to extend their functions. Each formatting functionality requires a definition of two elements
+- UI component, which defines UI elements added to the menu bar,
+- formatting logic, which provides formatting functionality.
 
-Thanks to separation of UI and plugin components the toolbar can be adjusted to the author's needs. Some actions can be added as a separate button or one of buttons grouped in a dropdown, or as part of a dropdown list. Users can also create dedicated UI components and build the whole toolbar using just them, or create a new plugin and add it to the toolbar using the existing UI components.
+Thanks to the separation of UI and plugin components the toolbar can be adjusted to the author's needs. Some actions can be added as a separate button or one of the buttons grouped in a dropdown, or as part of a dropdown list. Users can also create dedicated UI components and build the whole toolbar using just them, or create a new plugin and add it to the toolbar using the existing UI components.
 
 ### UI components:
-- Button - action visible as button in the menu, can be displayed as icon or with title.
+- Button - action visible as a button in the menu, can be displayed as an icon or with a title.
 - Button Dropdown - button group added to the toolbar
 - Dropdown - opens a list of actions added to the menu bar.
 - Link - opens a dialog in which the author can add a link and select the target type.
@@ -97,11 +97,11 @@ RTE field configuration is a set of formatting functionalities definitions. Each
 - properties used by UI Component, such as title or icon
 - `plugin` - formatting login definition with:
   - `sling:resourceType` - path to formatting logic
-  - properties used by UI Component, such as title or icon
+  - properties used by formatting logic
 - child UI components - other UI components defined instead of `plugin` definition
 
 #### Sample definitions:
-To add a bold button
+To add a button with bold functionality
 ![](rte-bold.png)
 you can use:
 ```json
@@ -115,7 +115,7 @@ you can use:
 }
 ```
 
-To add text align buttons
+To add buttons allow choosing text-align
 ![](rte-text-alignment.png)
 you can use:
 ```json
@@ -164,7 +164,7 @@ you can use:
 ### Sample configurations
 
 To prepare a configuration you have to set its resource type to `wcm/dialogs/components/richtext/configuration`
-and add all formatting functionalities you need. 
+and add all the formatting functionalities you need.
 ```json
 {
   "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
@@ -205,7 +205,7 @@ and add all formatting functionalities you need.
 
 ![](rte-configuration-new.png)
 
-If you need to add simple changes to existing configuration you don't have to write whole configuration from scratch. You can use [sling resource merger](https://sling.apache.org/documentation/bundles/resource-merger.html) mechanism. To do so, you have to point existing configuration in resource supertype property and define all the differences. 
+If you need to add simple changes to the existing configuration you don't have to write the whole configuration from scratch. You can use [sling resource merger](https://sling.apache.org/documentation/bundles/resource-merger.html) mechanism. To do so, you have to point existing configuration in the resource supertype property and define all the differences.
 ```json
 {
   "sling:resourceSuperType": "wcm/dialogs/components/richtext/configuration",
@@ -215,14 +215,14 @@ If you need to add simple changes to existing configuration you don't have to wr
 ![](rte-configuration-overriden.png)
 
 ## Custom formatting logic
-If you need some formatting logic that is not available in WebSight than you can provide it by yourself.
+If you need some formatting logic that is not available in WebSight then you can provide it yourself.
 
-First thing you have to know is that we are using [TipTap](https://tiptap.dev/) under our text editor. So you can easily use any of extension provided by TipTap.
+The first thing you have to know is that we are using [TipTap](https://tiptap.dev/) under our text editor. So you can easily use any of the extensions provided by TipTap.
 Now you have to prepare two things:
 
 ### Formatting logic configuration
 
-It requires to specify `type` which is a path to formatting logic source code. Optionally you can define also `configuration` object with all properties required by designed formatting logic
+It requires specifying `type` which is a path to formatting logic source code. Optionally you can define also a `configuration` object with all properties required by the designed formatting logic
 ```json
 {
   "type": "/apps/myapp/web-resources/components/richtext/plugin/Plugin.js",
@@ -242,7 +242,7 @@ example configuration for headings:
 
 ### Formatting logic source code
 
-It's a js function which should follow given interface:
+It's a js function that should follow the given interface:
 ```js
 const Plugin = (configuration) => ({
   getTipTapExtensions: () => [],
@@ -254,9 +254,9 @@ const Plugin = (configuration) => ({
 
 export  default  Plugin;
 ```
-- `getTipTapExtensions` should return all extensions required by formatting logic
-- `getAction` is a function which `context` parameter provides `editor` property. This property points to TipTap editor, so it allows to execute some TipTap action. `getAction` should return object with execute method which has `state` parameter. This parameter has same structure as returned from `getState` function  
-- `getState` should return an object with properties required to build proper state of UI Component. Object with this same structure is expected in execute method.
+- `getTipTapExtensions` should return all TipTap extensions required by formatting logic
+- `getAction` is a function which `context` parameter provides `editor` property. This property points to TipTap editor, so it allows executing some TipTap action. `getAction` should return an object with execute method which has a `state` parameter. This parameter has the same structure as returned from `getState` function
+- `getState` should return an object with properties required to build the proper state of the UI Component. Object with this same structure is expected in execute method.
 
 example for heading:
 ```js
@@ -274,15 +274,15 @@ export default Heading;
 ```
 
 ## Custom UI component
-If your project requires some specific UI component to handle formatting logic than you can also provide it by yourself.
+If your project requires some specific UI component to handle formatting logic then you can also provide it by yourself.
 
 You have to specify two files
 
 ### UI Component configuration
 
 - type - should point script with UI component definition
-- configuration - contains propeties required by component to render properly
-- children - contains list of subcomponents. It is used by components grouping another ones in some structure.
+- configuration - contains properties required by the component to render properly
+- children - contains a list of subcomponents. It is used by components grouping other ones in some structure.
 - plugin - plugin component configuration.
 
 ```html
@@ -331,9 +331,9 @@ example for button:
 ### UI Component source code:
 
 Component source code is a function that takes:
-- configuration - parameter in same structure as defined in Component configuration,
-- state - current state. It's get from plugin `getState` method
-- action - action run on event executed by component. It’s get from plugin `getAction` method
+- configuration - parameter in the same structure as defined in the Component configuration,
+- state - current state. It get from the plugin `getState` method
+- action - action run on event executed by component. It get from the plugin `getAction` method
 - children - children components
 
 ```js
