@@ -85,7 +85,7 @@ You can change RTE field configuration in two ways:
   "name": "content",
   "label": "Content",
   "configuration":  {
-    // configuration definition
+    ...
   }
 }
 ```
