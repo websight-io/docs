@@ -64,6 +64,7 @@ extra:
 plugins:
   - awesome-pages
   - search
+  - include-markdown
   - blogging:
       locale: en
       dirs:
