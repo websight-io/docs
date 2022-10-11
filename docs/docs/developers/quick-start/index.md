@@ -313,9 +313,6 @@ Submit changes. The title should look like expected now. You can delete the orig
 
 ![Updated Luna Title](luna-title-updated.png)
 
-!!! info "Hint"
-    If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache
-
 ## Part F: Clean-up
 
 ### Stop the environment

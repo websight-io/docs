@@ -422,9 +422,6 @@ This is how the new component definition looks in the codebase. Deploy the chang
 
 ![](img35.png)
 
-!!! Info "Note"
-        After redeployment and change of HTML the cache of the script needs to be cleaned manually via http://localhost:8080/system/console/scriptcache to see the changes, use the Clear Cache button at the bottom - this issue will be removed soon.
-
 New component is available now in editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the data-sly-test statement in the component renderer. If nothing is rendered by component the placeholder is displayed automatically in the editor. Edit action can be used to open dialog and use rich text dialog input to configure the text.
 
 ![](img36.png)
