@@ -21,8 +21,6 @@ openjdk 17.0.2 2022-01-18
 OpenJDK Runtime Environment Temurin-17.0.2+8 (build 17.0.2+8)
 OpenJDK 64-Bit Server VM Temurin-17.0.2+8 (build 17.0.2+8, mixed mode)
 ```
-1. Install Maven 3.8.5+
-
 1. Install Node.js and NPM
 
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
