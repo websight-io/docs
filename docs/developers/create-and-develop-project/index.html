@@ -376,6 +376,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2">
@@ -2487,6 +2489,86 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_1" type="checkbox" id="__nav_2_4_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../release-notes/websight-cms-ce/">WebSight CMS CE</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="WebSight CMS CE" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          WebSight CMS CE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -3132,8 +3214,10 @@
 <p>Open the command line at an empty folder and generate a project.</p>
 <p>Use <em>groupId</em>, <em>artifactId</em>, and version params to declare Maven artifacts for your project.
 Use <em>projectName</em>, <em>projectId</em> and package to define your project name used in UI, id used for technical needs (application resources paths, Docker images names) and root package for Java code.</p>
-<p>Replace <code>&lt;PUT ARCHETYPE VERSION HERE&gt;</code> with archetype version you want to use, for example: <code>-DarchetypeVersion=1.0</code></p>
-<p>You can check the latest version <a href="https://search.maven.org/search?q=a:websight-cms-ce-project-archetype">here</a>.</p>
+<p>Replace <code>&lt;PUT ARCHETYPE VERSION HERE&gt;</code> with archetype version you want to use, for example: <code>-DarchetypeVersion=1.0</code>
+You can check the latest version <a href="https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype">here</a>.</p>
+<p>Replace <code>&lt;PUT WEBSIGHT CMS VERSION HERE&gt;</code> with WebSight CMS version you want to use, for example: <code>-DcmsVersion=1.1</code>
+You can check the latest version in the <a href="../../release-notes">Release Notes</a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn archetype:generate                                     \
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  -DarchetypeGroupId=pl.ds.websight                        \
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
@@ -3143,7 +3227,8 @@ Use <em>projectName</em>, <em>projectId</em> and package to define your project 
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  -Dversion=1.0.0-SNAPSHOT                                 \
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  -DprojectName=&quot;Example Project&quot;                          \
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  -DprojectId=example-project                              \
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  -Dpackage=com.example.project
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  -Dpackage=com.example.project                            \
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  -DcmsVersion=&lt;PUT WEBSIGHT CMS VERSION HERE&gt;
 </code></pre></div>
 <p>Following structure should be created:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.
