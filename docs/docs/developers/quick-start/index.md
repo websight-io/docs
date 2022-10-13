@@ -21,8 +21,6 @@ openjdk 17.0.2 2022-01-18
 OpenJDK Runtime Environment Temurin-17.0.2+8 (build 17.0.2+8)
 OpenJDK 64-Bit Server VM Temurin-17.0.2+8 (build 17.0.2+8, mixed mode)
 ```
-1. Install Maven 3.8.5+
-
 1. Install Node.js and NPM
 
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
@@ -35,7 +33,7 @@ Clone _Luna_ repository and build it.
 ```shell
 git clone https://github.com/websight-io/starter.git
 cd starter
-mvn clean install -P e2e
+./mvnw clean install -P e2e
 ```
 
 Run docker environment.
@@ -156,7 +154,7 @@ The above definition specifies the new `overlineSize` field. It is placed before
 ### Install changes 
 Run the following command to install the changes on your local environment.
 ```shell
-mvn -f application/backend/pom.xml clean install -P autoInstallBundle
+./mvnw -f application/backend/pom.xml clean install -P autoInstallBundle
 ```
 
 ## Part D: Functional tests
@@ -167,7 +165,7 @@ We enhance WebSight CMS by adding new features, improving UX, and fixing bugs. T
 
 We prepared two sample functional tests for the _Luna Title_ component. They are executed during maven build. You can run them using `npm` on your local environment too. However, you have to add a test content before. Use the following script to install it.
 ```shell
-mvn -f tests/content/pom.xml clean install -P autoInstallPackage
+./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
 ```
 
 Now, you can run the tests using the following command.
@@ -265,7 +263,7 @@ The second test validates the dialog for the component. Update the test to recog
 Now, you can execute the functional tests again.
 
 ```shell
-mvn -f tests/content/pom.xml clean install -P autoInstallPackage
+./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
 npm run-script test --prefix tests/end-to-end
 ```
 
@@ -314,7 +312,8 @@ Submit changes. The title should look like expected now. You can delete the orig
 ![Updated Luna Title](luna-title-updated.png)
 
 !!! info "Hint"
-    If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache
+If you are using WebSight CMS version older than 1.1.0: If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache - this issue is fixed since WebSight CMS CE 1.1.0.
+
 
 ## Part F: Clean-up
 

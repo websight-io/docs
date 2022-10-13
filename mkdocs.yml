@@ -64,6 +64,7 @@ extra:
 plugins:
   - awesome-pages
   - search
+  - include-markdown
   - blogging:
       locale: en
       dirs:
@@ -74,6 +75,7 @@ plugins:
           'docs/index.md': 'docs/quick-start/index.md'
           'docs/authors/index.md': 'docs/authors/component-libs/howlite/index.md'
           'docs/authors/component-libs/index.md': 'docs/authors/component-libs/howlite/index.md'
+          'docs/release-notes/index.md': 'docs/release-notes/websight-cms-ce/index.md'
 
           'getting-started/quick-start/index.md': 'docs/quick-start/index.md'
           'guides/authoring/howlite/index.md': 'docs/authors/component-libs/howlite/index.md'

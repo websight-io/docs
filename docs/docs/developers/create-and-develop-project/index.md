@@ -23,8 +23,10 @@ Use _groupId_, _artifactId_, and version params to declare Maven artifacts for y
 Use _projectName_, _projectId_ and package to define your project name used in UI, id used for technical needs (application resources paths, Docker images names) and root package for Java code.
 
 Replace `<PUT ARCHETYPE VERSION HERE>` with archetype version you want to use, for example: `-DarchetypeVersion=1.0`
+You can check the latest version [here](https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype).
 
-You can check the latest version [here](https://search.maven.org/search?q=a:websight-cms-ce-project-archetype).
+Replace `<PUT WEBSIGHT CMS VERSION HERE>` with WebSight CMS version you want to use, for example: `-DcmsVersion=1.1`
+You can check the latest version in the [Release Notes](../../release-notes).
 
 ``` script
 mvn archetype:generate                                     \
@@ -36,7 +38,8 @@ mvn archetype:generate                                     \
   -Dversion=1.0.0-SNAPSHOT                                 \
   -DprojectName="Example Project"                          \
   -DprojectId=example-project                              \
-  -Dpackage=com.example.project
+  -Dpackage=com.example.project                            \
+  -DcmsVersion=<PUT WEBSIGHT CMS VERSION HERE>
 ```
 
 Following structure should be created:
@@ -423,7 +426,8 @@ This is how the new component definition looks in the codebase. Deploy the chang
 ![](img35.png)
 
 !!! Info "Note"
-        After redeployment and change of HTML the cache of the script needs to be cleaned manually via http://localhost:8080/system/console/scriptcache to see the changes, use the Clear Cache button at the bottom - this issue will be removed soon.
+If you are using WebSight CMS version older than 1.1.0: After redeployment and change of HTML the cache of the script needs to be cleaned manually via http://localhost:8080/system/console/scriptcache to see the changes, use the Clear Cache button at the bottom - this issue is fixed since WebSight CMS CE 1.1.0.
+
 
 New component is available now in editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the data-sly-test statement in the component renderer. If nothing is rendered by component the placeholder is displayed automatically in the editor. Edit action can be used to open dialog and use rich text dialog input to configure the text.
 
