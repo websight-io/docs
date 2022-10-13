@@ -11,4 +11,4 @@
 ## 1.0.0 <small>September 28, 2022</small>
 
 First public release of the WebSight CMS Community Edition.
-[See our blog post](https://www.websight.io/blog/2022/websight-cms-ce-1-0-0/)
+[See our blog post](../../../blog/2022/websight-cms-ce-1-0-0/)
