@@ -1,1 +1,0 @@
-# WebSight CMS Community Edition 1.1.0
