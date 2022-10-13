@@ -2,11 +2,11 @@
 
 ## 1.1.0 <small>October 11, 2022</small>
 
-- HTL cache cleanup after deployment of bundle delivering the HTL scripts
-- Publish/Unpublish assets action update - confirmation and including assets from sub-folders
-- Download asset fix
-- Pages and Assets actions top bar scrolling issue fix
-- Pages Editor component dragging indicator fix
+- Added HTL cache cleanup after deployment of bundles.
+- Improved assets publication. Publish and unpublish actions include assets in sub-folders. 
+- Fixed [#24](https://github.com/websight-io/starter/issues/24): assets download has no effect.
+- Fixed the hidden top bar with actions for pages and assets (when scrolling).
+- Fixed the component dragging indicator in the page editor.
 
 ## 1.0.0 <small>September 28, 2022</small>
 
