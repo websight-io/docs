@@ -38,7 +38,7 @@ cd starter
 
 Run docker environment.
 ```shell
-docker compose -f environment/docker-compose.yml up -d
+docker compose -f environment/local/docker-compose.yml up -d
 ```
 
 Congratulations! Your local environment is ready. Open [http://localhost:8080/](http://localhost:8080/) and log in using `wsadmin`/`wsadmin` credentials.
@@ -82,7 +82,7 @@ Your task is to enable the setting of the overline font size.
 
 Firstly, you need to add a new field `overlineSize` in the model class `LunaTitleComponent.java`. Let's define a default size `hl-title__heading--size-5` according to the received design too.
 
-```java title="luna/core/src/main/java/pl/ds/luna/compoennts/models/LunaTitleComponent.java"
+```java title="application/backend/src/main/java/pl/ds/luna/compoennts/models/LunaTitleComponent.java"
 package pl.ds.luna.components.models;
 
 import javax.inject.Inject;
@@ -114,14 +114,14 @@ Next, you need to update the component HTML template. The original one defines t
 ```
 As you updated the model class, you can use its property now.
 
-```html title="luna/core/src/main/resources/apps/luna/components/lunatitle/lunatitle.html"
+```html title="application/backend/src/main/resources/apps/luna/components/lunatitle/lunatitle.html"
 <h6 class="hl-title__heading ${model.overlineSize}" 
     data-testid="overline">${model.subtitle}</h6>
 ```
 
 The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new `dialog` directory and put `.content.json` file inside.
 
-```json title="luna/core/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json"
+```json title="application/backend/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json"
 {
   "tabs": {
     "generalTab": {
@@ -154,7 +154,7 @@ The above definition specifies the new `overlineSize` field. It is placed before
 ### Install changes 
 Run the following command to install the changes on your local environment.
 ```shell
-./mvnw -f luna/core/pom.xml clean install -P autoInstallBundle
+./mvnw -f application/backend/pom.xml clean install -P autoInstallBundle
 ```
 
 ## Part D: Functional tests
@@ -322,7 +322,7 @@ If you are using WebSight CMS version older than 1.1.0: If there are no visual c
 After all, you can stop your environment.
 
 ```shell
-docker compose -f environment/docker-compose.yml down
+docker compose -f environment/local/docker-compose.yml down
 ```
 
 ### Delete environment
@@ -330,7 +330,7 @@ docker compose -f environment/docker-compose.yml down
 If you don't need your environment anymore, you can delete it using a script.
 
 ```shell
-sh environment/delete.sh
+sh environment/local/delete.sh
 ```
 
 ## The next steps
