@@ -3231,7 +3231,7 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>./mvnw clean install -P e2e
 </code></pre></div>
 <p>Run docker environment.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker compose -f environment/docker-compose.yml up -d
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker compose -f environment/local/docker-compose.yml up -d
 </code></pre></div></p>
 <p>Congratulations! Your local environment is ready. Open <a href="http://localhost:8080/">http://localhost:8080/</a> and log in using <code>wsadmin</code>/<code>wsadmin</code> credentials.</p>
 <h2 id="part-c-changing-component">Part C: Changing component</h2>
@@ -3258,7 +3258,7 @@
 <h3 id="component-update">Component update</h3>
 <p>Your task is to enable the setting of the overline font size. </p>
 <p>Firstly, you need to add a new field <code>overlineSize</code> in the model class <code>LunaTitleComponent.java</code>. Let's define a default size <code>hl-title__heading--size-5</code> according to the received design too.</p>
-<div class="highlight"><span class="filename">luna/core/src/main/java/pl/ds/luna/compoennts/models/LunaTitleComponent.java</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">pl.ds.luna.components.models</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">application/backend/src/main/java/pl/ds/luna/compoennts/models/LunaTitleComponent.java</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">pl.ds.luna.components.models</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.inject.Inject</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.sling.api.resource.Resource</span><span class="p">;</span><span class="w"></span>
@@ -3284,11 +3284,11 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="na">data-testid</span><span class="o">=</span><span class="s">&quot;overline&quot;</span><span class="p">&gt;</span>${model.subtitle}<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
 </code></pre></div>
 As you updated the model class, you can use its property now.</p>
-<div class="highlight"><span class="filename">luna/core/src/main/resources/apps/luna/components/lunatitle/lunatitle.html</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">h6</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hl-title__heading ${model.overlineSize}&quot;</span> 
+<div class="highlight"><span class="filename">application/backend/src/main/resources/apps/luna/components/lunatitle/lunatitle.html</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">h6</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hl-title__heading ${model.overlineSize}&quot;</span> 
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="na">data-testid</span><span class="o">=</span><span class="s">&quot;overline&quot;</span><span class="p">&gt;</span>${model.subtitle}<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new <code>dialog</code> directory and put <code>.content.json</code> file inside.</p>
-<div class="highlight"><span class="filename">luna/core/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="w"></span>
+<div class="highlight"><span class="filename">application/backend/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;tabs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;generalTab&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">&quot;container&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -3317,7 +3317,7 @@ As you updated the model class, you can use its property now.</p>
 <p>The above definition specifies the new <code>overlineSize</code> field. It is placed before <code>overline</code> field and uses heading size definition from Howlite, but with <em>small</em> size selected by default.</p>
 <h3 id="install-changes">Install changes</h3>
 <p>Run the following command to install the changes on your local environment.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./mvnw -f luna/core/pom.xml clean install -P autoInstallBundle
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./mvnw -f application/backend/pom.xml clean install -P autoInstallBundle
 </code></pre></div></p>
 <h2 id="part-d-functional-tests">Part D: Functional tests</h2>
 <h3 id="run-functional-tests">Run functional tests</h3>
@@ -3444,11 +3444,11 @@ As you updated the model class, you can use its property now.</p>
 <h2 id="part-f-clean-up">Part F: Clean-up</h2>
 <h3 id="stop-the-environment">Stop the environment</h3>
 <p>After all, you can stop your environment.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker compose -f environment/docker-compose.yml down
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker compose -f environment/local/docker-compose.yml down
 </code></pre></div>
 <h3 id="delete-environment">Delete environment</h3>
 <p>If you don't need your environment anymore, you can delete it using a script.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sh environment/delete.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sh environment/local/delete.sh
 </code></pre></div>
 <h2 id="the-next-steps">The next steps</h2>
 <p>You learned the foundation of components development for WebSight CMS. Now, we encourage you to explore more details on:</p>
