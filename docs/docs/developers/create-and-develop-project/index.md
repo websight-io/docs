@@ -25,7 +25,7 @@ Use _projectName_, _projectId_ and package to define your project name used in U
 Replace `<PUT ARCHETYPE VERSION HERE>` with archetype version you want to use, for example: `-DarchetypeVersion=1.0`
 You can check the latest version [here](https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype).
 
-Replace `<PUT WEBSIGHT CMS VERSION HERE>` with WebSight CMS version you want to use, for example: `-DcmsVersion=1.1`
+Replace `<PUT WEBSIGHT CMS VERSION HERE>` with WebSight CMS version you want to use, for example: `-DcmsVersion=1.1.0`
 You can check the latest version in the [Release Notes](../../release-notes).
 
 ``` script
