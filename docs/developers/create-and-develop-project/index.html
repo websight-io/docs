@@ -3214,22 +3214,23 @@
 <p>Open the command line at an empty folder and generate a project.</p>
 <p>Use <em>groupId</em>, <em>artifactId</em>, and version params to declare Maven artifacts for your project.
 Use <em>projectName</em>, <em>projectId</em> and package to define your project name used in UI, id used for technical needs (application resources paths, Docker images names) and root package for Java code.</p>
-<p>Replace <code>&lt;PUT ARCHETYPE VERSION HERE&gt;</code> with archetype version you want to use, for example: <code>-DarchetypeVersion=1.0</code>
+<p>Use <em>archetypeVersion</em> parameter to set archetype version you want to use.
 You can check the latest version <a href="https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype">here</a>.</p>
-<p>Replace <code>&lt;PUT WEBSIGHT CMS VERSION HERE&gt;</code> with WebSight CMS version you want to use, for example: <code>-DcmsVersion=1.1.0</code>
+<p>Use <em>cmsVersion</em> parameter to set WebSight CMS version used by the generated project.
 You can check the latest version in the <a href="../../release-notes">Release Notes</a>.</p>
+<p>Example command:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn archetype:generate                                     \
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  -DarchetypeGroupId=pl.ds.websight                        \
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  -DarchetypeVersion=&lt;PUT ARCHETYPE VERSION HERE&gt;          \
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  -DarchetypeVersion=1.1                                   \
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  -DgroupId=my.groupId                                     \
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  -DartifactId=my-artifactId                               \
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  -Dversion=1.0.0-SNAPSHOT                                 \
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  -DprojectName=&quot;Example Project&quot;                          \
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  -DprojectId=example-project                              \
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  -Dpackage=com.example.project                            \
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  -DcmsVersion=&lt;PUT WEBSIGHT CMS VERSION HERE&gt;
-</code></pre></div>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  -DcmsVersion=1.1.0
+</code></pre></div></p>
 <p>Following structure should be created:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>└── my-artifactId
