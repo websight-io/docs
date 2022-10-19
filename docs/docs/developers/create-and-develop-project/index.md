@@ -22,24 +22,25 @@ Open the command line at an empty folder and generate a project.
 Use _groupId_, _artifactId_, and version params to declare Maven artifacts for your project.
 Use _projectName_, _projectId_ and package to define your project name used in UI, id used for technical needs (application resources paths, Docker images names) and root package for Java code.
 
-Replace `<PUT ARCHETYPE VERSION HERE>` with archetype version you want to use, for example: `-DarchetypeVersion=1.0`
+Use _archetypeVersion_ parameter to set archetype version you want to use.
 You can check the latest version [here](https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype).
 
-Replace `<PUT WEBSIGHT CMS VERSION HERE>` with WebSight CMS version you want to use, for example: `-DcmsVersion=1.1.0`
+Use _cmsVersion_ parameter to set WebSight CMS version used by the generated project.
 You can check the latest version in the [Release Notes](../../release-notes).
 
+Example command:
 ``` script
 mvn archetype:generate                                     \
   -DarchetypeGroupId=pl.ds.websight                        \
   -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
-  -DarchetypeVersion=<PUT ARCHETYPE VERSION HERE>          \
+  -DarchetypeVersion=1.1                                   \
   -DgroupId=my.groupId                                     \
   -DartifactId=my-artifactId                               \
   -Dversion=1.0.0-SNAPSHOT                                 \
   -DprojectName="Example Project"                          \
   -DprojectId=example-project                              \
   -Dpackage=com.example.project                            \
-  -DcmsVersion=<PUT WEBSIGHT CMS VERSION HERE>
+  -DcmsVersion=1.1.0
 ```
 
 Following structure should be created:
