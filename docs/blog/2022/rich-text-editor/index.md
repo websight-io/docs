@@ -1,5 +1,5 @@
 ---
-title: Rich Text Editor
+title: Customising Rich Text Editor in WebSight CMS
 description: Read the article to find out how to work with Rich Text Editor.
 author: WebSight Team
 publicationDate: 
@@ -14,30 +14,34 @@ tags:
 
 >
 
-# Rich text editors
-Rich text editors (RTE) are dialog fields that give a better, richer editing experience and usually are in the form of WYSIWYG (What You See Is What You Get), where you see right away how your text changes when you format it without having to deal with the whole HTML formatting. They offer more text editing and formatting options, like bold, italics, bullet points, heading levels, etc, than text editors.
+# Customising Rich Text Editor in WebSight CMS
 
-Apart from standard functionalities, WebSight RTE can be customized with UI components and formatting logic to fit your needs. In this article, we will discuss how to use and configure them.
+![WebSight RTE](websight-rte.png)
+
+> Ensuring site consistency is very important to provide an excellent experience for visitors. You can achieve the goal with page templates and components. They implement a structure that authors have to follow. However, a total lack of flexibility would require a lot of development effort to cover every case presented in designs. 
+
+> Rich Text Editor (RTE) can be a sweet spot. It is an input field that provides a rich editing experience and offers extra formatting options like bold, italic, or bullet points. Moreover, RTE can deliver additional functionalities for edited content, for example, link definition, undo/redo. Finally, you can customize and extend RTE to provide the desired level of flexibility. 
+
+> This article presents how to use and configure RTE in WebSight CMS. 
+
 
 ## WebSight RTE formatting functionalities
-WebSight Rich Text Editor provides multiple content editing functionalities with the possibility to extend their functions. Each formatting functionality requires a definition of two elements
 
-- UI component, which defines UI elements added to the menu bar,
-- formatting logic, which provides formatting functionality.
+WebSight Rich Text Editor provides multiple content editing functionalities with possibilities to adjust and extend them. Each functionality requires a definition of two elements:
 
-Thanks to the separation of UI and formatting logic the toolbar can be adjusted to the author's needs. Some actions can be added as a separate button or one of the buttons grouped in a dropdown, or as part of a dropdown list. Users can also create dedicated UI components and build the whole toolbar using just them, or create a new formatting logic and add it to the toolbar using the existing UI components.
+- UI component added to the menu bar;
+- a plugin component that implements various styling or content processing feature.
 
-### UI components:
+The above separation enables adjustment of the RTE toolbar according to the desired level of freedom. You can configure the editing options as separate buttons, group them in a dropdown or prepare a dropdown list. Moreover, you can extend the set of existing functionalities and create additional UI components or implement different plugins. Then, you can mix them all and include them in the toolbar to provide new options. 
 
-- Button - action visible as a button in the menu, can be displayed as an icon or with a title.
-- Button Dropdown - button group added to the toolbar
-- Dropdown - opens a list of actions added to the menu bar.
-- Link - opens a dialog in which the author can add a link and select the target type.
+WebSight CMS delivers the following UI components for the RTE toolbar:
 
-### Formatting logic
-Formatting logic allows users to register features to edit text content
+- Button with a caption or displayed as an icon (if provided);
+- Button Dropdown that groups several buttons in a dropdown;
+- Dropdown that contains a list of options;
+- Link that opens a dialog for a link setup.
 
-Available formatting logic:
+The list of available plugin components is as follows:
 
 - Bold
 - Italic
@@ -55,8 +59,9 @@ Available formatting logic:
 - Undo
 - Redo
 
-## Using RTE dialog field
-All you need to use RTE dialog field is to add its definition using RTE resource type:
+## Using RTE as a dialog field
+
+RTE is not a stand-alone content editor in WebSight CMS. You need to add it in a dialog definition for a component. Use `wcm/dialogs/components/richtext` as the resource type. Once completed, you can drag and drop the component on a page, open its dialog and enter the content.
 
 ```json
 "content": {
@@ -65,51 +70,24 @@ All you need to use RTE dialog field is to add its definition using RTE resource
   "label": "Content"
 }
 ```
-RTE field created that way uses its default configuration.
+RTE defined above uses a default configuration. See the regular options available in the tollbar on the image below.
 
 ![](default-rte.png)
 
-### RTE dialog field customization
 
-You can change RTE field configuration in two ways:
+!!! hint "Components development"
+    See our [component development guide](../../../docs/developers/components/) and documentation for [dialogs](../../../docs/developers/dialogs/) to learn more on how to use input fields and define dialogs for components.
 
-- by adding a property with a path to a custom configuration:
-```json
-"content": {
-  "sling:resourceType": "wcm/dialogs/components/richtext",
-  "name": "content",
-  "label": "Content",
-  "configuration": "/apps/myapp/components/rte/configuration"
-}
-```
+## RTE customization
 
-- by defining its configuration explicit under the field definition:
-```json
-"content": {
-  "sling:resourceType": "wcm/dialogs/components/richtext",
-  "name": "content",
-  "label": "Content",
-  "configuration":  {
-    ...
-  }
-}
-```
+### Configuration of components
 
+You can modify RTE by defining a custom configuration. Thus, let's review its structure first.
 
-### RTE configuration:
-RTE field configuration is a set of formatting functionalities definitions. Each of them has UI Component definition with:
+RTE configuration should include entries for all functionalities available in the editor. Each entry consists of UI component details, and the plugin runs when a user clicks the UI component.
 
-- `sling:resourceType` - path to [UI Component](/docs/developers/dialogs/richtext-editor/ui-components)
-- properties used by UI Component, such as title or icon
-- `plugin` - formatting login definition with:
-    - `sling:resourceType` - path to [formatting logic](/docs/developers/dialogs/richtext-editor/plugin-components)
-    - properties used by formatting logic
-- child UI components - other UI components defined instead of `plugin` definition
+See a sample configuration for `Bold` functionality below:
 
-#### Sample formatting functionality definitions:
-To add a button with bold functionality
-![](rte-bold.png)
-you can use:
 ```json
 {
   "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
@@ -121,9 +99,15 @@ you can use:
 }
 ```
 
-To add buttons allow choosing text-align
+The configuration contains a path to [UI Component](/docs/developers/dialogs/richtext-editor/ui-components), its title and icon, and a path to [plugin component](/docs/developers/dialogs/richtext-editor/plugin-components)
+
+See the result on the screen presented below.
+![](rte-bold.png)
+
+You may need to group buttons in a dropdown, for example, text alignment options. Let's assume the expected result is as follows.
 ![](rte-text-alignment.png)
-you can use:
+
+You can use the following configuration to implement it.
 ```json
 {
   "sling:resourceType": "wcm/dialogs/components/richtext/ui/buttondropdown",
@@ -167,11 +151,14 @@ you can use:
 }
 ```
 
-### Sample configurations
+The above scenario requires embedding `button` components in `buttondropdown`. Moreover, `textalign` plugin requires alignment type as a parameter. 
 
-To prepare a configuration you have to set its resource type to `wcm/dialogs/components/richtext/configuration`
-and add all the formatting functionalities you need.
-```json
+
+### Sample configuration file
+
+It is required to define a proper resource type for the RTE configuration. It should be `wcm/dialogs/components/richtext/configuration`. Additionally, the configuration should contain definitions for all components as described above.
+
+```json title="/apps/myapp/components/rte/configuration"
 {
   "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
   "bold": {
@@ -209,19 +196,38 @@ and add all the formatting functionalities you need.
 }
 ```
 
+The above configuration includes just four simple font styles. Its application results in the following RTE.
 ![](rte-configuration-new.png)
 
-If you need to add simple changes to the existing configuration you don't have to write the whole configuration from scratch. You can use [sling resource merger](https://sling.apache.org/documentation/bundles/resource-merger.html) mechanism. To do so, you have to point existing configuration in the resource supertype property and define all the differences.
+
+### Using custom configuration
+
+You can change the RTE configuration in two ways. 
+
+Firstly, by adding a property with a path to a custom configuration.
 ```json
-{
-  "sling:resourceSuperType": "wcm/dialogs/components/richtext/configuration",
-  "sling:hideChildren": ["bold", "italic", "underline", "strikethrough"]
+"content": {
+  "sling:resourceType": "wcm/dialogs/components/richtext",
+  "name": "content",
+  "label": "Content",
+  "configuration": "/apps/myapp/components/rte/configuration"
 }
 ```
-![](rte-configuration-overriden.png)
 
-## More customization
-If you need some formatting functionality that is not available in WebSight then you can provide it yourself. It is possible to add custom UI Components and formatting logic, but this article won’t describe it.
+Another option is to define the configuration explicitly under the field definition.
+```json
+"content": {
+  "sling:resourceType": "wcm/dialogs/components/richtext",
+  "name": "content",
+  "label": "Content",
+  "configuration":  {
+    ...
+  }
+}
+```
 
 # Summary
-WebSight Rich Text Editor is a versatile tool that gives a better editing experience to the authors. It provides multiple formatting functionalities and can be easily used with the default configuration. Additionally, thanks to the separation of UI and formatting logic it’s flexible and can be adjusted to the user’s needs. After reading this blog post you should know how to add RTE field to the component dialog, how to change the default configuration, and how to prepare a new one or change the existing configuration.
+
+Page templates may determine the overall layout of components. However, one of them can be RTE. It gives users some flexibility in the content authoring for a given area on the page. 
+
+I presented how to adjust the flexibility level granted to authors. You can use a collection of plugins to customize the functionalities of RTE. Moreover, you can implement your UI or plugin components as well. I will cover this advanced topic in one of my next blog posts. 
