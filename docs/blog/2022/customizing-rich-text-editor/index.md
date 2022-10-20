@@ -1,6 +1,6 @@
 ---
 title: Customising Rich Text Editor in WebSight CMS
-description: Read the article to find out how to work with Rich Text Editor.
+description: Read the article to find more on how to customize our Rich Text Editor and adjust content editing flexibility in a structure defined by templates and pre-defined components.
 author: WebSight Team
 publicationDate: 
 minReadTime: 5
@@ -10,7 +10,7 @@ tags:
   - Rich Text Editor
 ---
 
-*Published at: dd.mm.yyyy by [Author Name](https://github.com/author-git-slug)*
+*Published at: 20.10.2022 by [Pawel Jozwicki](https://github.com/paweljozwicki)*
 
 >
 
@@ -63,15 +63,18 @@ The list of available plugin components is as follows:
 
 RTE is not a stand-alone content editor in WebSight CMS. You need to add it in a dialog definition for a component. Use `wcm/dialogs/components/richtext` as the resource type. Once completed, you can drag and drop the component on a page, open its dialog and enter the content.
 
-```json
-"content": {
-  "sling:resourceType": "wcm/dialogs/components/richtext",
-  "name": "content",
-  "label": "Content"
-}
-```
-RTE defined above uses a default configuration. See the regular options available in the tollbar on the image below.
+```json title="/libs/howlite/components/richtext/dialog/.content.json"
+...
 
+"text": {
+  "sling:resourceType": "wcm/dialogs/components/richtext",
+  "name": "text",
+  "label": "Text"
+}
+
+...
+```
+RTE defined above uses a default configuration. See the regular options available in the toolbar on the image below. It presents an application in the [Rich text editor](../../../docs/authors/component-libs/howlite/rte/) component that is a part of the [Howlite](../../../docs/authors/component-libs/howlite/) library.
 ![](default-rte.png)
 
 
@@ -231,3 +234,5 @@ Another option is to define the configuration explicitly under the field definit
 Page templates may determine the overall layout of components. However, one of them can be RTE. It gives users some flexibility in the content authoring for a given area on the page. 
 
 I presented how to adjust the flexibility level granted to authors. You can use a collection of plugins to customize the functionalities of RTE. Moreover, you can implement your UI or plugin components as well. I will cover this advanced topic in one of my next blog posts. 
+
+You can find more details on RTE customization in our [documentation](../../../docs/developers/dialogs/richtext-editor/).
