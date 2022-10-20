@@ -10,7 +10,7 @@ tags:
   - Rich Text Editor
 ---
 
-*Published at: 20.10.2022 by [Pawel Jozwicki](https://github.com/paweljozwicki)*
+*Published at: 20.10.2022 by [Pawel Jozwicki](https://github.com/paweljozwicki), [Kamil Kwarciak](https://github.com/kamil-kwarciak)*
 
 >
 
@@ -233,6 +233,6 @@ Another option is to define the configuration explicitly under the field definit
 
 Page templates may determine the overall layout of components. However, one of them can be RTE. It gives users some flexibility in the content authoring for a given area on the page. 
 
-I presented how to adjust the flexibility level granted to authors. You can use a collection of plugins to customize the functionalities of RTE. Moreover, you can implement your UI or plugin components as well. I will cover this advanced topic in one of my next blog posts. 
+We presented how to adjust the flexibility level granted to authors. You can use a collection of plugins to customize the functionalities of RTE. Moreover, you can implement your UI or plugin components as well. We will cover this advanced topic in one of my next blog posts. 
 
 You can find more details on RTE customization in our [documentation](../../../docs/developers/dialogs/richtext-editor/).
