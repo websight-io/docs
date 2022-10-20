@@ -2,7 +2,7 @@
 title: Customising Rich Text Editor in WebSight CMS
 description: Read the article to find more on how to customize our Rich Text Editor and adjust content editing flexibility in a structure defined by templates and pre-defined components.
 author: Pawel Jozwicki, Kamil Kwarciak
-publicationDate: 
+publicationDate: 20.10.2022
 minReadTime: 5
 image: websight-rte.png
 tags:
