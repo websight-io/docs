@@ -3,12 +3,12 @@ The diagram below shows the WebSight CMS Community Edition high-level logical ar
 
 ![WebSight - logical architecture](logical-architecture.jpg)
 
-From the left, **site visitors** call the **HTTP server** for pages. The **HTTP server** gets static HTMLs / assets / JS / CSS scripts from the **pages storage**.
+**Content authors** use **CMS** to **create** experience by managing content, assets and pages (layout). Once the experience is ready to go public, authors push it (publish) to the **experience storage**. 
+
+On the other end, experience is **delivered** to the **site visitors**. They call the **web server** which pulls static HTMLs / assets / JS / CSS scripts from the **experience storage** and serves it immediately.
 
 !!! Info "Note" 
-        The pages storage has no access to CMS. If there is no page in the storage, then site visitor gets `404`.
-
-**Content authors** use **CMS** to manage pages and publish them (push) to the **pages storage**. Once your page is ready to go public, it is saved in the page storage and can be served immediately with easy-to-scale HTTP servers.
+        The experience storage has no access to CMS. E.g. if there is no page in the storage, then site visitor gets `404`.
 
 The above description is called a *push model* and assumes that the pages are prepared for the user in advance. Note that within this architecture, it is possible to switch off the CMS part, which has no impact on delivering pages.
 
@@ -24,8 +24,8 @@ We use containers to ship WebSight CMS on multiple environments, from the develo
 
 Once developers [create a WebSight project from the Maven archetype](https://www.websight.io/docs/developers/create-and-develop-project/), they produce the following Docker images:
 
-- `NGINX` image (HTTP server) with addtional project-specific configurations
-- customized CMS image with core WebSight CE / project-specific modules and configurations
+- `NGINX image` (web server) with addtional project-specific configurations
+- customized `CMS image` with core WebSight CE / project-specific modules and configurations
 
 ## Docker Compose
 With more than one container in the platform, we need a tool for defining and running multi-container Docker applications. With Compose, we can use the `Compose YAML` file model to:
@@ -40,13 +40,13 @@ The following diagram presents all WebSight CMS CE containers and volumes togeht
 
 The diagram above reflects the containers logical architecture. Docker Compose configuration specifies the following services:
 
-- `nginx` service (pages delivery)
+- `nginx` service (experience delivery)
 - `cms` service (content management and pages generation)
 - `mongo` service (content database)
 
 Services use volumes to save durable data outside the container (when container is destroyed and reloaded, all data on the container is lost). We specify the following  volumes:
 
-- `pages storage` volume is shared by NGINX (read) and WebSight CMS CE (write) containers
+- `experience storage` volume is shared by NGINX (read) and WebSight CMS CE (write) containers
 - `content` volume keeps content and assets
 - `logs` volume keeps all WebSight CMS CE application logs
 
