@@ -8,12 +8,13 @@ In this tutorial you will learn how to deploy an application created in the [Cre
 
 ## Prerequisites
 To complete this tutorial, you will need:
+
 - [Docker](https://docs.docker.com/get-docker/) installed and running on your local machine.
 - [AWS account](https://aws.amazon.com/console/) with [permissions for Docker Compose ECS integraion](https://docs.docker.com/cloud/ecs-integration/#run-an-application-on-ecs).
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) set up locally with your AWS credentials.
 - Java 17 (e.g. [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.
 
-## Step 1: AWS Configuration
+## Step 1: AWS configuration
 
 1. [Registering a new domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html#domain-register-procedure) with `Route53`.
 2. [Request a public certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html) using `AWS Certificate Manager`. 
@@ -22,11 +23,10 @@ To complete this tutorial, you will need:
     - Set the CMS image `Repository name` to `<your-project-name>-cms-ce`, e.g. `luna-cms-ce`.
     - Set the Nginx image `Repository name` to `<your-project-name>-nginx-ce`, e.g. `luna-nginx-ce`.
 
-## Step 2: Project Configuration
+## Step 2: Project configuration
 
 ### Docker
-!!! info "Note"
-    For simplicity, in this tutorial we set remote environment configuration in the same repository as the project.
+For simplicity, in this tutorial we set remote environment configuration in the same repository as the project.
 
 1. Create `environment/remote` directory.
 2. Create `environment/remote/admin_password.txt` and `environment/remote/mongo_password.txt` files and fill them with random password (both should be single-line documents).
@@ -141,7 +141,7 @@ x-aws-cloudformation:
         Port: 443
 ```
     - `CERTIFICATE_ARN` - replace with ARN of the certificate generated in [AWS Configuration](#step-1-aws-configuration) step.
-10. [Create AWS ECS context](https://docs.docker.com/cloud/ecs-integration/#create-aws-context) named `ws-ecs`:
+10. [Create Docker ECS context](https://docs.docker.com/cloud/ecs-integration/#create-aws-context) named `ws-ecs`:
     - `docker context create ecs ws-ecs`
 11. Update `distribution/src/main/docker/nginx/default.conf` Nginx config with additional health endpoint:
 ```apache
@@ -157,7 +157,7 @@ To find more information about using Docker Compose with AWS Elastic Container S
 ### Maven
 
 1. Update `io.fabric8:docker-maven-plugin` plugin configuration in `distribution/pom.xml`. 
-    - Add the following `buildx` extension to cms and nginx images `<build>` sections:
+    - Add the following `buildx` extension to _cms_ and _nginx_ images `<build>` sections:
 ```xml
                 <buildx>
                   <platforms>
@@ -178,13 +178,15 @@ To find more information about using Docker Compose with AWS Elastic Container S
 ```
 2. Add `<docker.skip.push>true</docker.skip.push>` property to the main `pom.xml`.
 
-## Step 3: Deployment
+Alternatively, you can check the above configuration in [WebSight Starter Distribution POM](https://github.com/websight-io/starter/blob/main/distribution/pom.xml) (where Maven profiles are used).
+
+## Step 3: Build and deployment
 
 1. [Log in to ECR](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html#cli-authenticate-registry).
 2. In the project root run `mvn clean install -D docker.cms-project.name=<CMS_ECR_IMAGE_URI> -D docker.nginx.name=<NGINX_ECR_IMAGE_URI> -D docker.skip.push=false`.
-3. Switch to ECS context `docker context use ws-ecs`.
-4. From `environment/remote` run `docker compose --project-name "websight-in-aws" up`. It may take a couple of minutes.
-5. Route your domain to Application Load Balancer by [creating a new Hosted Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html) that was created during previous step.
+3. Switch Docker context to ECS `docker context use ws-ecs`.
+4. From `environment/remote` run `docker compose --project-name "websight-in-aws" up`. It may take a couple of minutes to finish.
+5. Route your domain to Application Load Balancer (that was created by the Docker Compose in the previous step) by [creating a new Hosted Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html).
 
 ## Step 4: Verification
 
@@ -196,6 +198,6 @@ To stop incurring AWS costs, follow these steps:
 
 1. From `environment/remote` run `docker compose --project-name "websight-in-aws" down`. It may take a couple of minutes.
 2. [Delete EFS file systems](https://docs.aws.amazon.com/efs/latest/ug/delete-efs-fs.html) for `cms_logs` ,`mongo_repository`, and `site_repository` volumes.
-3. [Delete Route53 Hosted Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html) created in [Deployment](#step-3-deployment) step.
+3. [Delete Route53 Hosted Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html) created in [Deployment](#step-3-build-and-deployment) step.
 4. [Delete certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-delete.html) created in [AWS Configuration](#step-1-aws-configuration) step.
 5. [Delete ECR repositories](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-delete.html) created in [AWS Configuration](#step-1-aws-configuration) step.
