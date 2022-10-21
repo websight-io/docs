@@ -136,21 +136,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://websight.io/docs/developers/deployment/</loc>
-         <lastmod>2022-10-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://websight.io/docs/developers/deployment/aws/</loc>
-         <lastmod>2022-10-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://websight.io/docs/developers/deployment/aws/setup-guide/</loc>
-         <lastmod>2022-10-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://websight.io/docs/developers/dialogs/</loc>
          <lastmod>2022-10-21</lastmod>
          <changefreq>daily</changefreq>
@@ -282,6 +267,21 @@
     </url>
     <url>
          <loc>https://websight.io/docs/release-notes/websight-cms-ce/</loc>
+         <lastmod>2022-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://websight.io/docs/setup-deployment/</loc>
+         <lastmod>2022-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://websight.io/docs/setup-deployment/aws/</loc>
+         <lastmod>2022-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://websight.io/docs/setup-deployment/aws/setup-guide/</loc>
          <lastmod>2022-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
