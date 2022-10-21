@@ -26,7 +26,7 @@ Each service (`nginx`, `cms`, `mongo`) runs a single task launching a single con
 Read more about Amazon ECS [here](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html).
 
 ### Amazon Elastic File System
-Amazon Elastic File System (Amazon EFS) is fully managed, serverless file system with native AWS ECS integration. WebSight uses EFSs to store published pages, content and logs. Read more details about EFS [here](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html).
+Amazon Elastic File System (Amazon EFS) is fully managed, serverless file system with native AWS ECS integration. WebSight uses EFSs to store published experience, content and logs. Read more details about EFS [here](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html).
 
 ### Amazon Application Load Balancer
 Application Load Balancer handles all request from both site visitors (HTTPS on port `443`) and authors (HTTPS on port `8443`), and forward to `nginx` or `cms` ECS services. ALB also terminates HTTPS - all routing between ALB and ECS use HTTP (`80` / `8080`) because the connection is private. Read more details [here](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html).
