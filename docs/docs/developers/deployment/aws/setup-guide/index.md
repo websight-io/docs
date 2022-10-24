@@ -1,4 +1,4 @@
-# Setup guide
+# AWS Setup guide
 In this tutorial you will learn how to deploy an application created in the [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) to [Amazon Web Services](https://aws.amazon.com/) cloud using [Docker Compose](https://docs.docker.com/cloud/ecs-integration/).
 
 !!! warning "Notice"
@@ -6,13 +6,17 @@ In this tutorial you will learn how to deploy an application created in the [Cre
     Setting up the WebSight CMS CE environment in AWS presented in this tutorial is not in the AWS Free Tier. 
     If you run the instance according to this guide, the costs will incur (~3$/day).
 
-## Prerequisites
-To complete this tutorial, you will need:
+!!! abstract "Prerequisites"
 
-- [Docker](https://docs.docker.com/get-docker/) installed and running on your local machine.
-- [AWS account](https://aws.amazon.com/console/) with [permissions for Docker Compose ECS integraion](https://docs.docker.com/cloud/ecs-integration/#run-an-application-on-ecs).
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) set up locally with your AWS credentials.
-- Java 17 (e.g. [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.
+    After finishing [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) you should already have:
+    
+    - [Docker](https://docs.docker.com/get-docker/) installed and running on your local machine.
+    - Java 17 (e.g. [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.
+    
+    To complete this tutorial, you will additionally need:
+
+    - [AWS account](https://aws.amazon.com/console/) with [permissions for Docker Compose ECS integraion](https://docs.docker.com/cloud/ecs-integration/#run-an-application-on-ecs).
+    - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) set up locally with your AWS credentials.
 
 ## Step 1: AWS configuration
 
@@ -24,9 +28,10 @@ To complete this tutorial, you will need:
     - Set the Nginx image `Repository name` to `<your-project-name>-nginx-ce`, e.g. `luna-nginx-ce`.
 
 ## Step 2: Project configuration
+In this step, we will start from the project generated in the [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) and update Docker and Maven configuration files.
 
 ### Docker
-For simplicity, in this tutorial we set remote environment configuration in the same repository as the project.
+For simplicity, we set remote environment configuration in the same repository as the project.
 
 1. Create `environment/remote` directory.
 2. Create `environment/remote/admin_password.txt` and `environment/remote/mongo_password.txt` files and fill them with random password (both should be single-line documents).
