@@ -1,4 +1,4 @@
-# AWS Setup guide
+# AWS setup guide
 In this tutorial you will learn how to deploy an application created in the [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) to [Amazon Web Services](https://aws.amazon.com/) cloud using [Docker Compose](https://docs.docker.com/cloud/ecs-integration/).
 
 !!! warning "Notice"
