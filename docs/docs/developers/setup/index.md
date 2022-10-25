@@ -140,6 +140,15 @@ After build of the project to start a local instance go to the environment/local
 Local WebSight CMS with your application installed is running at [http://localhost:8080/](http://localhost:8080/) (login with wsadmin/wsadmin)
 Published content is available locally at [http://localhost/](http://localhost)
 
+!!! info "Building docker image fails with `/var/run/docker.sock` (issue on Mac)"
+    The issue leads to the following error message
+
+    ```bash
+    [ERROR] Failed to execute goal io.fabric8:docker-maven-plugin:0.40.1:build (build-docker-image) on project ws-linux-box-distribution: Execution build-docker-image of goal io.fabric8:docker-maven-plugin:0.40.1:build failed: No <dockerHost> given, no DOCKER_HOST environment variable, no read/writable '/var/run/docker.sock' or '//./pipe/docker_engine' and no external provider like Docker machine configured -> [Help 1]
+    ```
+
+    Follow the Docker Maven Plugin [issue](https://github.com/fabric8io/docker-maven-plugin/issues/1616) to check the current status and available workarounds.
+
 ### Instance overview
 
 After login you will be redirected to the Spaces list. In WebSight CMS content is organized in Spaces. More details in the next sections.
