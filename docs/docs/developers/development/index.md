@@ -74,7 +74,7 @@ And in Resources tree:
 [http://localhost:8080/apps/browser#/content/example-project/pages/homepage/jcr:content](http://localhost:8080/apps/browser#/content/example-project/pages/homepage/jcr:content)
 ![Resource tree](img16.png)
 
-### Backend Resources
+## Backend Resources
 
 Generated application/backend module contains in src/main/resources folder example application resources needed to work with Pages in WebSight CMS. 
 The resources structure starts at /apps/example-project path. This path is set in the proper OSGi bundle header to provide the information about resources delivered by the bundle.
