@@ -170,6 +170,6 @@ In the Right top corner there is the Admin tools menu with links for administrat
 
 You learned how to set up a new project for WebSight CMS. Now, we recommend exploring more details:
 
-- [Application development](../development/) 
+- [Application development](../development/)
 - [Components development](../development/components/)
 - [Dialogs](../development/dialogs/)
