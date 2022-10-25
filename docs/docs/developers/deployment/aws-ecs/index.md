@@ -1,5 +1,9 @@
-# AWS Setup guide
-In this tutorial you will learn how to deploy an application created in the [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) to [Amazon Web Services](https://aws.amazon.com/) cloud using [Docker Compose](https://docs.docker.com/cloud/ecs-integration/).
+# AWS ECS Setup Guide
+In this tutorial you will learn how to deploy an application created in the [setup guide](../../../developers/setup/) to [Amazon Web Services](https://aws.amazon.com/) cloud using [Docker Compose](https://docs.docker.com/cloud/ecs-integration/).
+
+The [Docker Compose CLI is fully integrated with Amazon Elastic Container Service (ECS)](https://docs.docker.com/cloud/ecs-integration/). It allows to create / manage the task definitions, tasks, services using Compose YAML configuration files. Docker Compose CLI relies on [CloudFormation](https://aws.amazon.com/cloudformation/) to manage AWS Resources. 
+
+Docker allows to define the platform in declarative way. Switching between local and ECS environments is as easy as switching [Docker Context](https://docs.docker.com/engine/context/working-with-contexts/) (any addtional AWS configurations exists in the Docker Compose YAML file).
 
 !!! warning "Notice"
 
@@ -28,7 +32,7 @@ In this tutorial you will learn how to deploy an application created in the [Cre
     - Set the Nginx image `Repository name` to `<your-project-name>-nginx-ce`, e.g. `luna-nginx-ce`.
 
 ## Step 2: Project configuration
-In this step, we will start from the project generated in the [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) and update Docker and Maven configuration files.
+In this step, we will start from the project generated in the [Setup guide](../../../developers/setup/) and update Docker and Maven configuration files.
 
 ### Docker
 For simplicity, we set remote environment configuration in the same repository as the project.
@@ -206,3 +210,45 @@ To stop incurring AWS costs, follow these steps:
 3. [Delete Route53 Hosted Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html) created in [Deployment](#step-3-build-and-deployment) step.
 4. [Delete certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-delete.html) created in [AWS Configuration](#step-1-aws-configuration) step.
 5. [Delete ECR repositories](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-delete.html) created in [AWS Configuration](#step-1-aws-configuration) step.
+
+## AWS best practices
+This section descirbes best practices for deploying WebSight CE DXP to AWS ECS.
+
+### Logs and monitoring
+It is always worth configuring logs and observing basic metrics for your instance.
+
+Thanks to the Docker Compose integration with AWS ECS, the [AWS CloudWatch Logs service is automatically configured for your containers](https://docs.docker.com/cloud/ecs-integration/#view-application-logs).
+
+Additionally, you can monitor basic metrics thanks to the [CloudWatch metrics for the Fargate](https://docs.aws.amazon.com/AmazonECS/latest/userguide/cloudwatch-metrics.html) launch type.
+
+### Secrets
+Use [Docker secrets](https://docs.docker.com/engine/swarm/secrets/) for storing any sensitive data (like passwords, tokens, etc.). Docker Compose integration with AWS ECS creates a new secret in the [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/) for each [secred defined in the compose configuration file](https://docs.docker.com/cloud/ecs-compose-features/#secrets). See the examples below.
+
+#### Custom CMS admin credentials
+WebSight CE CMS enables configuring a custom admin username and password. The default values for admin user username/password are `wsadmin/wsadmin`.
+
+You can configure a custom username with `WS_ADMIN_USERNAME` [environment variable](https://docs.docker.com/compose/environment-variables/).
+
+To configure a custom password use `admin.password` secret. You will need secret files available at deploy time next to the compose file:
+
+
+``` title="admin_password.txt"
+s33cretP@ssword
+```
+and reference it in the compose configuration:
+
+```yaml title="docker-compose.yml"
+service:
+  cms:
+    secrets:
+      - source: admin_password
+        target: admin.password
+secrets:
+  admin_password:
+    file: ./admin_password.txt
+```
+#### Custom MongoDB password
+
+By default, ECS Tasks configured by the Docker Compose integration have public IP assigned. 
+Therefore, you should consider securing MongoDB, which by default starts with no username/password configured.
+Read more about securing MongoDB containers [here](https://hub.docker.com/_/mongo).

@@ -1,4 +1,4 @@
-# Deployment
+# Architecture
 The diagram below shows the WebSight CMS Community Edition high-level logical architecture. 
 
 ![WebSight - logical architecture](logical-architecture.jpg)
@@ -22,7 +22,7 @@ Our CMS is a `Java`-based `OSGi` application (**WebSight CMS CE**) with a `NoSQL
 ## Containers
 We use containers to ship WebSight CMS on multiple environments, from the developer's local computers to clouds. Read our ["Why we decided to ship and develop the OSGi application in containers"](https://www.websight.io/blog/2022/shipping-and-developing-osgi-application-in-container/) article to understand benefits of containers in our stack.
 
-Once developers [create a WebSight project from the Maven archetype](https://www.websight.io/docs/developers/create-and-develop-project/), they produce the following Docker images:
+Once developers [create a WebSight project from the Maven archetype](../setup/), they produce the following Docker images:
 
 - `NGINX image` (web server) with addtional project-specific configurations
 - customized `CMS image` with core WebSight CE / project-specific modules and configurations
@@ -58,4 +58,4 @@ For example:
 
 When using Docker Compose, the same command is responsible for creating local and cloud instances (`docker compose up`). 
 
-Read more about [Docker Compose Amazon Elastic Container Service integration](./aws/).
+Read more about [Docker Compose Amazon Elastic Container Service integration](./aws-ecs/).
