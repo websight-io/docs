@@ -24,8 +24,6 @@ services:
       - site_repository:/usr/share/nginx/html:ro
   mongo:
     image: mongo:4.4.6
-    ports:
-      - "27017:27017"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=mongoadmin
       - MONGO_INITDB_ROOT_PASSWORD=mongoadmin
