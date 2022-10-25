@@ -312,7 +312,7 @@ Submit changes. The title should look like expected now. You can delete the orig
 ![Updated Luna Title](luna-title-updated.png)
 
 !!! info "Hint"
-If you are using WebSight CMS version older than 1.1.0: If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache - this issue is fixed since WebSight CMS CE 1.1.0.
+    If you are using WebSight CMS version older than 1.1.0: If there are no visual changes than probably HTL script was cached. You should go to [http://localhost:8080/system/console/scriptcache](http://localhost:8080/system/console/scriptcache) and clear cache - this issue is fixed since WebSight CMS CE 1.1.0.
 
 
 ## Part F: Clean-up
@@ -337,6 +337,7 @@ sh environment/local/delete.sh
 
 You learned the foundation of components development for WebSight CMS. Now, we encourage you to explore more details on:
 
-- [Creating & developing projects](../create-and-develop-project/);
-- [Using components](../components/);
-- [Components definition](../components/definition/).
+- [Project setup](../setup/)
+- [Application development](../development/)
+- [Components development](../development/components/)
+- [Dialogs](../development/dialogs/)
