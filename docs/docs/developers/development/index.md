@@ -1,164 +1,4 @@
-# Creating and developing WebSight CMS project
-
-This document describes the WebSight project’s initial setup, instance overview, and application development. We will generate a new project from Maven archetype, check what it contains and how to develop the application. All the screens and examples will be referring to the project generated during the guide.
-
-## Project setup
-In this section, we will set up the project. The generated structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
-
-### Generate project
-
-To initialize the project Maven archetype will be used. To continue you should have Maven installed. Check your Maven version. 
-
-``` script
-mvn --version
-Apache Maven 3.8.5 (3599d3414f046de2324203b78ddcf9b5e4388aa0)
-...
-```
-
-System requirements: Java 17, Mave 3.8.5 +
-
-Open the command line at an empty folder and generate a project.
-
-Use _groupId_, _artifactId_, and version params to declare Maven artifacts for your project.
-Use _projectName_, _projectId_ and package to define your project name used in UI, id used for technical needs (application resources paths, Docker images names) and root package for Java code.
-
-Use _archetypeVersion_ parameter to set archetype version you want to use.
-You can check the latest version [here](https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype).
-
-Use _cmsVersion_ parameter to set WebSight CMS version used by the generated project.
-You can check the latest version in the [Release Notes](../../release-notes).
-
-Example command:
-``` script
-mvn archetype:generate                                     \
-  -DarchetypeGroupId=pl.ds.websight                        \
-  -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
-  -DarchetypeVersion=1.1                                   \
-  -DgroupId=my.groupId                                     \
-  -DartifactId=my-artifactId                               \
-  -Dversion=1.0.0-SNAPSHOT                                 \
-  -DprojectName="Example Project"                          \
-  -DprojectId=example-project                              \
-  -Dpackage=com.example.project                            \
-  -DcmsVersion=1.1.0
-```
-
-Following structure should be created:
-```
-.
-└── my-artifactId
-    ├── README.md
-    ├── application
-    ├── content
-    ├── distribution
-    ├── environment
-    ├── pom.xml
-    └── tests
-```
-
-### Project structure
-The generated project structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
-
-Overview of the modules:
-
-- `application` - components related code and scripts
-    - `backend` - contains application elements (components, templates, etc.) and Java code
-    - `frontend` - contains application frontend
-- `content` - contains sample content created with use of application
-- `distribution` - builds a distribution of the project - instance feature model and docker images for runtime components
-- `environment` - contains scripts and files used to build environment
-    - `local` - starts local environment
-- `tests` - responsible for the automatic distribution validation
-    - `content` - contains content used for end to end tests
-    - `end-to-end` - end-to-end tests validating distribution
-
-#### Distribution and environment
-
-Important information is that the project also contains the server. Distribution module is responsible for building the Docker images delivering platform runtime. 
-Delivering a new version of an application is done by delivering new images of the runtime environment which will include the application. 
-During development it is possible to deploy application modules to running instances without rebuilding the Docker images. 
-Distribution module delivers Docker images with:
-
-- CMS - image with WebSight CMS with your application installed
-- Nginx - HTTP server serving published content
-
-Additionally raw MongoDB image is used - MongoDB is used as a data store for content like pages or assets created on CMS (but not for your application which is installed on the CMS instance as OSGi bundles - more details in chapter about developing application).
-
-Everything is combined by environment which is using Docker Compose to combine all the containers into one runtime environment. See environment/local module for details.
-
-This illustration shows the runtime environment and roles:
-
-![Runtime environment and roles](diagrams/generated/runtime-docker-compose.png)
-
-#### Application
-
-Application is delivered as OSGi bundles and installed on WebSight CMS instance image during building the project.
-Generated project contains 2 application modules
-
-- `backend` - contains application elements (components, templates, etc.) and Java code
-- `frontend` - webpack project containing application frontend
-
-The Test module is used for end-to-end validation of the distribution, and especially your application. Test ‘content’ module contains content assembled with use of the application for easier validation of all cases of the delivered functionality.
-
-‘Content’ module delivers content assembled with use of the application installed to WebSight CMS instance as starting point for the content structure.
-
-### Build and Run the instance
-
-To build the project use Maven command:
-
-``` script
-mvn clean install
-```
-
-Add e2e profile to execute end-to-end tests:
-
-``` script
-mvn clean install -P e2e
-``` 
-
-You should see successful end-to-end test execution in the log:
-![End-to-end test execution log](img02.png)
-
-Execution should end with successful build:
-![Successful build log](img03.png)
-
-To run the instance Docker is needed. 
-Check Docker installation by running in command line
-
-``` script
-docker --version
-Docker version 20.10.14
-```
-
-If you need you can download the Docker Desktop [here](https://www.docker.com/)
-
-See also README.md in environment and environment/local folders for the details about the running environment.
-
-After build of the project to start a local instance go to the environment/local folder and run:
-```docker compose up```
-
-Local WebSight CMS with your application installed is running at [http://localhost:8080/](http://localhost:8080/) (login with wsadmin/wsadmin)
-Published content is available locally at [http://localhost/](http://localhost)
-
-### Instance overview
-
-After login you will be redirected to the Spaces list. In WebSight CMS content is organized in Spaces. More details in the next sections.
-On the list you can see the Space created with use of the generated application and delivered in the ‘content’ module containing initial project content. 
-
-[http://localhost:8080/apps/websight/index.html/content::spaces](http://localhost:8080/apps/websight/index.html/content::spaces )
-![WebSight CMS - Spaces](img04.png)
-
-After clicking on the space name Pages dashboard is open with 1 page delivered in initial content. You can manage your pages here and navigate to Assets dashboard (to manage assets) or open Pages editor to edit page content.
-
-[http://localhost:8080/apps/websight/index.html/content/example-project/pages](http://localhost:8080/apps/websight/index.html/content/example-project/pages)
-![WebSight CMS - Pages](img05.png)
-
-In the Right top corner there is the Admin tools menu with links for administration tools. See also tools overview at tools page:
-
-[http://localhost:8080/apps/admin](http://localhost:8080/apps/admin)
-![WebSight CMS - Tools](img06.png)
-
-## Developing application
+# Development
 
 Before going through the WebSight CMS application development process it is worth to understand the instance runtime.
 
@@ -168,7 +8,7 @@ WebSight CMS is based on [Apache Sling](https://sling.apache.org/) which “is a
 What this means? 
 Two most important things coming from the technologies WebSight CMS is based on, needed to understand this guide, are OSGi bundles and Resources.
 
-### OSGi bundle
+## OSGi bundle
 
 OSGi bundle is a unit of modularization in OSGi specification - a bundle is comprised of Java classes and other resources, which together can provide functions to end users.
 Open [http://localhost:8080/system/console/bundles](http://localhost:8080/system/console/bundles) to see all the Bundles on the WebSight CMS instance and use the filter bar at the top to filter the list.
@@ -192,7 +32,7 @@ OSGi bundle is a unit of modularization in OSGi specification - a bundle is comp
 At the screen below it is highlighted that the my-artifactId-backend is exporting (making available to use for other bundles) some Java package (we will get back to this later) and is providing some resources.
 ![Bundles - my-artifactId-backend](img11.png)
 
-### Resources
+## Resources
 
 As already mentioned: WebSight CMS is based on [Apache Sling](https://sling.apache.org/) which “is a framework for RESTful web-applications based on an extensible content tree”.
 It is important to understand the concept of “extensible content tree”.
@@ -257,7 +97,7 @@ Following resources are defined:
 Application root should be under /apps resource and must contain property `sling:resourceType" = "ws:Application`.
 Folders containing components and templates must be named ‘components’ and ‘templates’ and be under the application root resource. Different relative paths could be set by providing ‘components’ or ‘templates’ properties with relative paths to components or templates folders located under application root resource - otherwise components and templates will not be available in authoring UI.
 
-### Pages Space template
+## Pages Space template
 
 In WebSight CMS content is organized in Spaces - areas where dedicated teams can work on content. WebSight CMS allows to create 2 types of spaces 
 
@@ -297,7 +137,7 @@ mvn clean install -P autoInstallBundle
 New Pages Space template will be available:
 ![New page template - space creation](img22.png)
 
-###  Page template
+##  Page template
 
 Pages spaces are for pages management. To create a new page, a page template is needed. Generated backend module provides example page template resource `/apps/example-project/templates/contentpage`
 
@@ -436,7 +276,7 @@ New component is available now in editor and can be added to the page. If text i
 
 ![](img37.png)
 
-### Frontend
+## Frontend
 
 Frontend scripts and resources are provided by frontend module - webpack project containing application frontend. During build the resources are embedded into a bundle which is also deployed to the instance.
 Generated module contains just a simple css class to center text used in the hello component.
@@ -456,7 +296,7 @@ The css file is included in the page component renderer to load the css.
 Add hello component to page to see the centered hello text
 ![](img41.png)
 
-### Publishing
+## Publishing
 
 Assembled content can be previewed in editor and published to make it available for end users.
 
@@ -468,7 +308,7 @@ Published page is served by Nginx container:
 [http://localhost/new-page.html](http://localhost/new-page.html)
 ![](img43.png)
 
-### End-to-end tests
+## End-to-end tests
 
 Test module contains content used during end-to-end tests execution to validate the application. See example test content and test script for hello component:
 ![](img44.png)

@@ -1,4 +1,4 @@
-# Deployment
+# Architecture
 The diagram below shows the WebSight CMS Community Edition high-level logical architecture. 
 
 ![WebSight - logical architecture](logical-architecture.jpg)
