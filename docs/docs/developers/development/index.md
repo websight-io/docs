@@ -216,7 +216,7 @@ New template is available to create in pages root:
 Page created from this template contains defined initial content:
 ![](img32.png)
 
-### Components
+## Components
 
 Content is assembled from components - elements rendering parts of content according to implemented functionality. To understand the Components concept see Components documentation.
 
