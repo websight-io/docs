@@ -1,5 +1,7 @@
 # Development
 
+This document describes application development for WebSight CMS. We assume you completed the [Setup Guide](../setup/) and generated a new project from the Maven archetype. All the screens and examples presented below refer to the project prepared in the previous step.
+
 Before going through the WebSight CMS application development process it is worth to understand the instance runtime.
 
 Note: You don’t need to read and understand all the linked content, basic concepts will be explained here.
@@ -312,6 +314,14 @@ Published page is served by Nginx container:
 
 Test module contains content used during end-to-end tests execution to validate the application. See example test content and test script for hello component:
 ![](img44.png)
+
+## The next steps
+
+You learned the application development process for WebSight CMS. Now, we recommend exploring more details:
+
+- [Components development](../development/components/)
+- [Dialogs](../development/dialogs/)
+- [Deployment in AWS](../deployment/aws/)
 
 
 

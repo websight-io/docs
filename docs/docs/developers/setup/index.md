@@ -2,10 +2,9 @@
 
 This document describes the WebSight project’s initial setup, instance overview, and application development. We will generate a new project from Maven archetype, check what it contains and how to develop the application. All the screens and examples will be referring to the project generated during the guide.
 
-## Project setup
-In this section, we will set up the project. The generated structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
+This document describes the WebSight project’s initial setup and instance overview. We will generate a new project from Maven archetype and check what it contains. The generated structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
 
-### Generate project
+## Generate project
 
 To initialize the project Maven archetype will be used. To continue you should have Maven installed. Check your Maven version. 
 
@@ -56,7 +55,7 @@ Following structure should be created:
     └── tests
 ```
 
-### Project structure
+## Project structure
 The generated project structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
 
 Overview of the modules:
@@ -72,7 +71,7 @@ Overview of the modules:
     - `content` - contains content used for end to end tests
     - `end-to-end` - end-to-end tests validating distribution
 
-#### Distribution and environment
+### Distribution and environment
 
 Important information is that the project also contains the server. Distribution module is responsible for building the Docker images delivering platform runtime. 
 Delivering a new version of an application is done by delivering new images of the runtime environment which will include the application. 
@@ -90,7 +89,7 @@ This illustration shows the runtime environment and roles:
 
 ![Runtime environment and roles](diagrams/generated/runtime-docker-compose.png)
 
-#### Application
+### Application
 
 Application is delivered as OSGi bundles and installed on WebSight CMS instance image during building the project.
 Generated project contains 2 application modules
@@ -102,7 +101,7 @@ The Test module is used for end-to-end validation of the distribution, and espec
 
 ‘Content’ module delivers content assembled with use of the application installed to WebSight CMS instance as starting point for the content structure.
 
-### Build and Run the instance
+## Build and Run the instance
 
 To build the project use Maven command:
 
@@ -149,7 +148,7 @@ Published content is available locally at [http://localhost/](http://localhost)
 
     Follow the Docker Maven Plugin [issue](https://github.com/fabric8io/docker-maven-plugin/issues/1616) to check the current status and available workarounds.
 
-### Instance overview
+## Instance overview
 
 After login you will be redirected to the Spaces list. In WebSight CMS content is organized in Spaces. More details in the next sections.
 On the list you can see the Space created with use of the generated application and delivered in the ‘content’ module containing initial project content. 
@@ -166,3 +165,11 @@ In the Right top corner there is the Admin tools menu with links for administrat
 
 [http://localhost:8080/apps/admin](http://localhost:8080/apps/admin)
 ![WebSight CMS - Tools](img06.png)
+
+## The next steps
+
+You learned how to set up a new project for WebSight CMS. Now, we recommend exploring more details:
+
+- [Application development](../development/) 
+- [Components development](../development/components/)
+- [Dialogs](../development/dialogs/)
