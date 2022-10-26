@@ -2641,6 +2641,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_3_5">
@@ -2686,6 +2688,49 @@
         <label class="md-nav__title" for="__nav_2_3_5_1">
           <span class="md-nav__icon md-icon"></span>
           Amazon ECS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_5_2" type="checkbox" id="__nav_2_3_5_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../developers/deployment/linux/">Linux Docker Compose</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Linux Docker Compose" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_3_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux Docker Compose
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3495,18 +3540,16 @@
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_repository:/usr/share/nginx/html:ro</span><span class="w"></span>
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span><span class="nt">mongo</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo:4.4.6</span><span class="w"></span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;27017:27017&quot;</span><span class="w"></span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MONGO_INITDB_ROOT_USERNAME=mongoadmin</span><span class="w"></span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MONGO_INITDB_ROOT_PASSWORD=mongoadmin</span><span class="w"></span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo_repository:/data/db</span><span class="w"></span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="nt">cms_logs</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="nt">mongo_repository</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">  </span><span class="nt">site_repository</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MONGO_INITDB_ROOT_USERNAME=mongoadmin</span><span class="w"></span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MONGO_INITDB_ROOT_PASSWORD=mongoadmin</span><span class="w"></span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo_repository:/data/db</span><span class="w"></span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">  </span><span class="nt">cms_logs</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">  </span><span class="nt">mongo_repository</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="nt">site_repository</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
 <h3 id="2-run-the-local-instance">2. Run the local instance</h3>
 <p>Open the terminal next to the <code>docker-compose.yml</code> file and run the following command:</p>
