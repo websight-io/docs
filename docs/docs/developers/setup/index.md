@@ -1,8 +1,8 @@
 # Project setup
 
-This document describes the WebSight project’s initial setup, instance overview, and application development. We will generate a new project from Maven archetype, check what it contains and how to develop the application. All the screens and examples will be referring to the project generated during the guide.
+This document describes the WebSight project’s initial setup, instance overview, and application development. We will generate a new project from the Maven archetype, describe what it contains and explain how to develop the application. All the screens and examples will be referring to the project generated during the guide.
 
-This document describes the WebSight project’s initial setup and instance overview. We will generate a new project from Maven archetype and check what it contains. The generated structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
+This document describes the WebSight project’s initial setup and instance overview. We will generate a new project from the Maven archetype and check what it contains. The generated structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
 
 ## Generate project
 
@@ -19,9 +19,9 @@ System requirements: Java 17, Mave 3.8.5 +
 Open the command line at an empty folder and generate a project.
 
 Use _groupId_, _artifactId_, and version params to declare Maven artifacts for your project.
-Use _projectName_, _projectId_ and package to define your project name used in UI, id used for technical needs (application resources paths, Docker images names) and root package for Java code.
+Use _projectName_, _projectId_ and package to define your project name used in UI, id used for technical needs (application resources paths, Docker images names), and root package for Java code.
 
-Use _archetypeVersion_ parameter to set archetype version you want to use.
+Use _archetypeVersion_ parameter to set the archetype version you want to use.
 You can check the latest version [here](https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype).
 
 Use _cmsVersion_ parameter to set WebSight CMS version used by the generated project.
@@ -42,7 +42,7 @@ mvn archetype:generate                                     \
   -DcmsVersion=1.2.0
 ```
 
-Following structure should be created:
+The following structure should be created:
 ```
 .
 └── my-artifactId
@@ -60,50 +60,43 @@ The generated project structure is an example starting point for projects which 
 
 Overview of the modules:
 
-- `application` - components related code and scripts
-    - `backend` - contains application elements (components, templates, etc.) and Java code
-    - `frontend` - contains application frontend
-- `content` - contains sample content created with use of application
-- `distribution` - builds a distribution of the project - instance feature model and docker images for runtime components
-- `environment` - contains scripts and files used to build environment
-    - `local` - starts local environment
-- `tests` - responsible for the automatic distribution validation
-    - `content` - contains content used for end to end tests
-    - `end-to-end` - end-to-end tests validating distribution
+- `application` - components code and scripts delivered as OSGi bundles
+    - `backend` - CMS elements (pages, templates, components etc.), Java models and services
+    - `frontend` - frontend project bundled by webpack
+- `content` - initial content as a JCR vault module (content_package)
+- `distribution` - project distribution - Sling feature model and Docker images
+- `environment` - scripts and files used to build environments
+    - `local` - local environment managed by Docker Compose
+- `tests` - tests used to validate the distribution
+    - `content` - content for end-to-end tests
+    - `end-to-end` - end-to-end tests
 
 ### Distribution and environment
 
-Important information is that the project also contains the server. Distribution module is responsible for building the Docker images delivering platform runtime. 
-Delivering a new version of an application is done by delivering new images of the runtime environment which will include the application. 
-During development it is possible to deploy application modules to running instances without rebuilding the Docker images. 
-Distribution module delivers Docker images with:
+The important note is that the project comes with servers definitions and configurations. `distribution` module is responsible for bundling the application with configurations and WebSight CMS modules using `Sling Feature Model`. 
+On top of that, it prepares the required Docker images the run the complete stack. Final project build artifacts are immutable Docker images that can be run on local, test, and production environments. 
+Environment-specific configurations can be handled by system variables injection.
 
-- CMS - image with WebSight CMS with your application installed
-- Nginx - HTTP server serving published content
+!!! Info "Note"
+     It is possible to deploy application modules to running containers without rebuilding the Docker images, but the changes will be lost after first container restart can be used only for local development.
 
-Additionally raw MongoDB image is used - MongoDB is used as a data store for content like pages or assets created on CMS (but not for your application which is installed on the CMS instance as OSGi bundles - more details in chapter about developing application).
 
-Everything is combined by environment which is using Docker Compose to combine all the containers into one runtime environment. See environment/local module for details.
+The `distribution` delivers two Docker images:
+
+- CMS - image with WebSight CMS bundled with your application
+- Nginx - HTTP server with the project-related configuration
+
+A third container runs MongoDB as a default data store for Jackrabbit OAK (persistence layer used by WebSight CMS). It's used to store content like pages or assets managed by the CMS.
+
+We use Docker compose to orchestrate containers in the local setup. See environment/local module for details.
 
 This illustration shows the runtime environment and roles:
 
 ![Runtime environment and roles](diagrams/generated/runtime-docker-compose.png)
 
-### Application
-
-Application is delivered as OSGi bundles and installed on WebSight CMS instance image during building the project.
-Generated project contains 2 application modules
-
-- `backend` - contains application elements (components, templates, etc.) and Java code
-- `frontend` - webpack project containing application frontend
-
-The Test module is used for end-to-end validation of the distribution, and especially your application. Test ‘content’ module contains content assembled with use of the application for easier validation of all cases of the delivered functionality.
-
-‘Content’ module delivers content assembled with use of the application installed to WebSight CMS instance as starting point for the content structure.
-
 ## Build and Run the instance
 
-To build the project use Maven command:
+To build the project use the Maven command:
 
 ``` script
 mvn clean install
@@ -118,7 +111,7 @@ mvn clean install -P e2e
 You should see successful end-to-end test execution in the log:
 ![End-to-end test execution log](img02.png)
 
-Execution should end with successful build:
+Execution should end with a successful build:
 ![Successful build log](img03.png)
 
 To run the instance Docker is needed. 
@@ -131,9 +124,9 @@ Docker version 20.10.14
 
 If you need you can download the Docker Desktop [here](https://www.docker.com/)
 
-See also README.md in environment and environment/local folders for the details about the running environment.
+See README.md in `environment` and `environment/local` folders for the details about the running environment.
 
-After build of the project to start a local instance go to the environment/local folder and run:
+After building the project to start a local instance go to the `environment/local` folder and run:
 ```docker compose up```
 
 Local WebSight CMS with your application installed is running at [http://localhost:8080/](http://localhost:8080/) (login with wsadmin/wsadmin)
@@ -150,18 +143,18 @@ Published content is available locally at [http://localhost/](http://localhost)
 
 ## Instance overview
 
-After login you will be redirected to the Spaces list. In WebSight CMS content is organized in Spaces. More details in the next sections.
-On the list you can see the Space created with use of the generated application and delivered in the ‘content’ module containing initial project content. 
+After login, you will be redirected to the Spaces list. In WebSight CMS content is organized in Spaces. More details are in the next sections.
+On the list, you can see the Space created with the use of the generated application and delivered in the ‘content’ module containing initial project content. 
 
 [http://localhost:8080/apps/websight/index.html/content::spaces](http://localhost:8080/apps/websight/index.html/content::spaces )
 ![WebSight CMS - Spaces](img04.png)
 
-After clicking on the space name Pages dashboard is open with 1 page delivered in initial content. You can manage your pages here and navigate to Assets dashboard (to manage assets) or open Pages editor to edit page content.
+After clicking on the space name Pages dashboard is open with 1 page delivered in initial content. You can manage your pages here and navigate to the Assets dashboard (to manage assets) or open the Page editor to edit page content.
 
 [http://localhost:8080/apps/websight/index.html/content/example-project/pages](http://localhost:8080/apps/websight/index.html/content/example-project/pages)
 ![WebSight CMS - Pages](img05.png)
 
-In the Right top corner there is the Admin tools menu with links for administration tools. See also tools overview at tools page:
+In the Right top corner, there is the Admin tools menu with links for administration tools. Administrator dashboard can be accessed using the following link:
 
 [http://localhost:8080/apps/admin](http://localhost:8080/apps/admin)
 ![WebSight CMS - Tools](img06.png)
