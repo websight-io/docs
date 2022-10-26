@@ -1,5 +1,13 @@
 # WebSight CMS Community Edition Release Notes
 
+## 1.2.0 <small>October 26, 2022</small>
+
+- Component restrictions - showing blueish placeholder if components are not droppable in the selected container
+- Improve asset publication modal UX
+- Remove the footer & the current system version from all places except for the login page
+- Fixed impossible-to-remove image (and save empty value) with Asset Reference
+- Fixed switching between spaces doesn’t trigger content tree re-rendering
+
 ## 1.1.0 <small>October 11, 2022</small>
 
 - Added HTL cache cleanup after deployment of bundles.
