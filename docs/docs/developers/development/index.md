@@ -319,8 +319,6 @@ Test module contains content used during end-to-end tests execution to validate 
 
 You learned the application development process for WebSight CMS. Now, we recommend exploring more details:
 
-- [Components development](../development/components/)
-- [Dialogs](../development/dialogs/)
 - [Deployment in AWS](../deployment/aws-ecs/)
 
 
