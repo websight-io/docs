@@ -41,7 +41,6 @@ if (window.location.hostname === "www.websight.io") {
                     title: 'WebSight.io',
                     save_settings_btn: 'Save settings',
                     accept_all_btn: 'Accept all',
-                    reject_all_btn: 'Reject all',
                     close_btn_label: 'Close',
                     cookie_table_headers: [
                         {col1: 'Name'},
