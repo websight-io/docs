@@ -1,4 +1,4 @@
-if (window.location.hostname === "www.websight.io") {
+if (true || window.location.hostname === "www.websight.io") {
     // obtain cookieconsent plugin
     var cc = initCookieConsent();
 
@@ -10,18 +10,31 @@ if (window.location.hostname === "www.websight.io") {
         theme_css: '/assets/stylesheets/cookieconsent.css',
         page_scripts: true,
         autoclear_cookies: true,
+        gui_options: {
+            consent_modal: {
+                layout: 'bar',               // box/cloud/bar
+                position: 'bottom center',     // bottom/middle/top + left/right/center
+                transition: 'slide',           // zoom/slide
+                swap_buttons: false            // enable to invert buttons
+            },
+            settings_modal: {
+                layout: 'bar',                 // box/bar
+                // position: 'left',           // left/right
+                transition: 'slide'            // zoom/slide
+            }
+        },
         languages: {
             'en': {
                 consent_modal: {
                     title: cookie + ' We use cookies!',
-                    description: 'Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent.<button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>',
+                    description: 'Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent.',
                     primary_btn: {
-                        text: 'Accept all',
+                        text: 'Accept',
                         role: 'accept_all'
                     },
                     secondary_btn: {
-                        text: 'Reject all',
-                        role: 'accept_necessary'
+                        text: 'Customize',
+                        role: 'c-settings'
                     }
                 },
                 settings_modal: {
