@@ -1,6 +1,6 @@
 nav:
 - Quick Start for Developers : quick-start
 - Architecture: architecture
-- Setup: setup
+- Project Setup: setup
 - Development: development
 - Deployment: deployment

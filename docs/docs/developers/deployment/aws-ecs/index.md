@@ -1,4 +1,4 @@
-# AWS ECS Setup Guide
+#  Deployment with Amazon ECS
 In this tutorial you will learn how to deploy an application created in the [setup guide](../../../developers/setup/) to [Amazon Web Services](https://aws.amazon.com/) cloud using [Docker Compose](https://docs.docker.com/cloud/ecs-integration/).
 
 The [Docker Compose CLI is fully integrated with Amazon Elastic Container Service (ECS)](https://docs.docker.com/cloud/ecs-integration/). It allows to create / manage the task definitions, tasks, services using Compose YAML configuration files. Docker Compose CLI relies on [CloudFormation](https://aws.amazon.com/cloudformation/) to manage AWS Resources. 
