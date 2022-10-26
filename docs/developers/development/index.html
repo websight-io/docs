@@ -3450,61 +3450,63 @@
 
 <h1 id="development">Development</h1>
 <p>This document describes application development for WebSight CMS. We assume you completed the <a href="../setup/">project setup guide</a> and generated a new project from the Maven archetype. All the screens and examples presented below refer to the project prepared in the previous step.</p>
-<p>Before going through the WebSight CMS application development process it is worth to understand the instance runtime.</p>
-<p>Note: You don’t need to read and understand all the linked content, basic concepts will be explained here.</p>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>You don’t need to read and understand all the linked content, basic concepts will be explained here.</p>
+</div>
 <p>WebSight CMS is based on <a href="https://sling.apache.org/">Apache Sling</a> which “is a framework for RESTful web-applications based on an extensible content tree”​​ and <a href="https://www.osgi.org/">OSGi specification</a> - “Java framework specification that supports the deployment of extensible and downloadable applications known as bundles”.
-What this means? 
-Two most important things coming from the technologies WebSight CMS is based on, needed to understand this guide, are OSGi bundles and Resources.</p>
+What does this mean? 
+The two most important things coming from the technologies WebSight CMS is based on, needed to understand this guide, are OSGi bundles and Resources.</p>
 <h2 id="osgi-bundle">OSGi bundle</h2>
 <p>OSGi bundle is a unit of modularization in OSGi specification - a bundle is comprised of Java classes and other resources, which together can provide functions to end users.
 Open <a href="http://localhost:8080/system/console/bundles">http://localhost:8080/system/console/bundles</a> to see all the Bundles on the WebSight CMS instance and use the filter bar at the top to filter the list.</p>
-<p>Some of the bundles are delivering the OSGi specification implementation (list filtered by org.apache.felix; Apache Felix is implementation of OSGi specification):
+<p>Some of the bundles are delivering the OSGi specification implementation (list filtered by org.apache.felix; Apache Felix is an implementation of the OSGi specification):
 <img alt="Bundles - OSGi secification implementation" src="img07.png" /></p>
 <p>Some of the bundles are delivering Apache Sling functionality (list filtered by org.apache.sling):
 <img alt="Bundles - Apache Sling functionality" src="img08.png" /></p>
-<p>Some of the bundles are delivering WebSight CMS functionality (list filtered by websight):
+<p>Some of the bundles are delivering WebSight CMS functionality (list filtered by WebSight):
 <img alt="Bundles - WebSight CMS functionality" src="img09.png" /></p>
-<p>And finally some of the bundles are delivering functionality of the application which was just generated from archetype (list filtered by my-artifactId which was used in example project generation at the beginning  of the guide):
+<p>And finally, some of the bundles are delivering the functionality of the application which was just generated from archetype (list filtered by my-artifactId which was used in example project generation at the beginning  of the guide):
 <img alt="Bundles - application functionality" src="img10.png" /></p>
-<p>Click on <code>my-artifactId-backend bundle</code> to open details. 
-At the beginning the bundle definitions was mentioned: 
+<p>Click on <code>my-artifactId-backend</code> bundle to open details. 
+At the beginning the bundle definitions were mentioned: 
 OSGi bundle is a unit of modularization in OSGi specification - a bundle is comprised of Java classes and other resources, which together can provide functions to end users.</p>
-<p>At the screen below it is highlighted that the my-artifactId-backend is exporting (making available to use for other bundles) some Java package (we will get back to this later) and is providing some resources.
+<p>At the screen below it is highlighted that the <code>my-artifactId-backend</code> is exporting (making it available to use for other bundles) some Java packages (we will get back to this later) and is providing some resources.
 <img alt="Bundles - my-artifactId-backend" src="img11.png" /></p>
 <h2 id="resources">Resources</h2>
-<p>As already mentioned: WebSight CMS is based on <a href="https://sling.apache.org/">Apache Sling</a> which “is a framework for RESTful web-applications based on an extensible content tree”.
-It is important to understand the concept of “extensible content tree”.</p>
-<p>WebSight CMS Resource Browser admin tool allows browsing all Resources available on the instance. Resources are organized in the tree and every resource has a path and properties. Resources are abstractions which represent objects which might be coming from different sources.
-Resource Browser provides an option to select ‘Providers’ (sources of Resources available in instance) used to display the presented Resources tree. We will focus on JCR and Bundle resources. </p>
+<p>As already mentioned: WebSight CMS is based on <a href="https://sling.apache.org/">Apache Sling</a> which “is a framework for RESTful web applications based on an extensible content tree”.
+It is important to understand the concept of an “extensible content tree”.</p>
+<p>WebSight CMS Resource Browser admin tool allows browsing all Resources available on the instance. Resources are organized in the tree and every resource has a path and properties. Resources are abstractions that represent objects which might be coming from different sources.
+Resource Browser provides an option to select ‘Providers’ (sources of Resources available in the instance) used to display the presented Resources tree. We will focus on JCR and Bundle resources. </p>
 <p><a href="http://localhost:8080/apps/browser#/">http://localhost:8080/apps/browser#/</a>
 <img alt="WebSight CMS - Resource Browser" src="img12.png" /></p>
-<p>JCR (Java Content Repository) is a database with tree structure consisting of nodes with properties. Nodes in JCR are reflected by the JCR Resource in Resources tree. 
-JCR is based on Java specification and implemented by Apache Jackrabbit which is also part of Sling and WebSight CMS (check bundles list mentioned in previous chapter and filter by org.apache.jackrabbit to see related bundles).
+<p>JCR (Java Content Repository) is a database with a tree structure consisting of nodes with properties. Nodes in JCR are reflected by the JCR Resource in the Resources tree. 
+JCR is based on Java specification and implemented by Apache Jackrabbit which is also part of Sling and WebSight CMS (check the bundles list mentioned in the previous chapter and filter by org.apache.jackrabbit to see related bundles).
 For technical details check the links (it is not needed for this guide, all you need to know is explained in this document):</p>
 <ul>
 <li><a href="https://sling.apache.org/documentation/the-sling-engine/resources.html">https://sling.apache.org/documentation/the-sling-engine/resources.html</a></li>
 <li><a href="https://jackrabbit.apache.org/jcr/jcr-api.html">https://jackrabbit.apache.org/jcr/jcr-api.html</a></li>
 <li><a href="https://developer.adobe.com/experience-manager/reference-materials/spec/jsr170/javadocs/jcr-1.0/">https://developer.adobe.com/experience-manager/reference-materials/spec/jsr170/javadocs/jcr-1.0/</a></li>
 </ul>
-<p>Content stored in JCR is represented by JCR Resources (provided to Resources tree by JCR Resource provider). WebSight CMS is storing JCR content in the MongDB (this is default setup and we will not go into other options here). JCR is used for all the content created during content authoring. Every created page and every added component is represented by nodes (with properties containing data) in the JCR and Resources tree.</p>
-<p>Resources could be also provided by OSGi Bundles. From the perspective of the Resources tree and Resource abstraction there is no difference between resources provided by bundles and JCR. However the bundle resources are read only so would not be suitable for authorable content, but are great for providing applications. The application resources provided by bundles are available as long as the bundle is available and are not stored in JCR - application data is not mixed with content data which is great from perspective of Blue-green deployments, CI/CD and Separation of concerns (but we will not go into details here).</p>
+<p>Content stored in JCR is represented by JCR Resources (provided to Resources tree by JCR Resource provider). WebSight CMS is storing JCR content in MongoDB (this is the default setup and we will not go into other options here). JCR is used for all the content created during content authoring. Every created page and every added component is represented by nodes (with properties containing data) in the JCR and Resources tree.</p>
+<p>Resources could be also provided by OSGi Bundles. From the perspective of the Resources tree and Resource abstraction, there is no difference between resources provided by bundles and JCR. However, the bundle resources are read-only so would not be suitable for authorable content but are great for providing applications. The application resources provided by bundles are available as long as the bundle is available and are not stored in JCR - application data is not mixed with content data which is great from the perspective of Blue-green deployments, CI/CD, and Separation of concerns (but we will not go into details here).</p>
 <p>For technical details check the link (it is not needed for this guide, all you need to know is explained in this document):
 <a href="https://sling.apache.org/documentation/bundles/bundle-resources-extensions-bundleresource.html">https://sling.apache.org/documentation/bundles/bundle-resources-extensions-bundleresource.html</a></p>
 <p>This is how bundle resources are provided in the generated project:
 <img alt="Bundle resources - generated project" src="img13.png" /></p>
-<p>and same resource in resource browser:
+<p>and the same resource in the resource browser:
 <a href="http://localhost:8080/apps/browser#/apps/example-project/components/hello">http://localhost:8080/apps/browser#/apps/example-project/components/hello</a>
 <img alt="Resource browser - generated project" src="img14.png" /></p>
-<p>This is how JCR resources are defined in codebase in content module:
+<p>This is how JCR resources are defined in the codebase in the content module:
 <img alt="JCR resources in codebase" src="img15.png" /></p>
-<p>And in Resources tree:
+<p>And in the Resources tree:
 <a href="http://localhost:8080/apps/browser#/content/example-project/pages/homepage/jcr:content">http://localhost:8080/apps/browser#/content/example-project/pages/homepage/jcr:content</a>
 <img alt="Resource tree" src="img16.png" /></p>
 <h2 id="backend-resources">Backend Resources</h2>
 <p>Generated application/backend module contains in src/main/resources folder example application resources needed to work with Pages in WebSight CMS. 
 The resources structure starts at /apps/example-project path. This path is set in the proper OSGi bundle header to provide the information about resources delivered by the bundle.</p>
 <p><img alt="Resource structure tree" src="img17.png" /></p>
-<p>Following resources are defined:</p>
+<p>The following resources are defined:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>.
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>└── apps
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    └── example-project             - application root &quot;sling:resourceType&quot;: &quot;ws:Application&quot;
@@ -3517,20 +3519,20 @@ The resources structure starts at /apps/example-project path. This path is set i
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            └── pagesspace          - example pages space template
 </code></pre></div>
 <p>Application root should be under /apps resource and must contain property <code>sling:resourceType" = "ws:Application</code>.
-Folders containing components and templates must be named ‘components’ and ‘templates’ and be under the application root resource. Different relative paths could be set by providing ‘components’ or ‘templates’ properties with relative paths to components or templates folders located under application root resource - otherwise components and templates will not be available in authoring UI.</p>
+Folders containing components and templates must be named ‘components’ and ‘templates’ and be under the application root resource. Different relative paths could be set by providing ‘components’ or ‘templates’ properties with relative paths to components or templates folders located under the application root resource - otherwise, components and templates will not be available in the authoring UI.</p>
 <h2 id="pages-space-template">Pages Space template</h2>
-<p>In WebSight CMS content is organized in Spaces - areas where dedicated teams can work on content. WebSight CMS allows to create 2 types of spaces </p>
+<p>In WebSight CMS content is organized in Spaces - areas where dedicated teams can work on content. WebSight CMS allows the creation of two types of spaces </p>
 <ul>
-<li>Assets (Digital Assets Manager) - allows to manage assets</li>
-<li>Pages - allows to manage pages and assets (includes same functionality as Assets Space and more</li>
+<li>Assets (Digital Assets Manager) - allows managing assets</li>
+<li>Pages - allows managing pages and assets (includes the same functionality as Assets Space and more)</li>
 </ul>
-<p>Content module in the project generated from archetype contains the Pages Space instance ‘Example project’ visible at the All Spaces view.
+<p>The content module in the project generated from the archetype contains the Pages Space instance ‘Example project’ visible in the All Spaces view.
 New space can be created from UI:</p>
 <p><img alt="Create space - type selection" src="img18.png" /></p>
 <p><img alt="Create space - pages configuration" src="img19.png" /></p>
-<p>In the second step the Space Template needs to be selected in case of Pages Space creation. 
-List contains the ‘Example Project Pages’ template defined at <code>/apps/example-project/templates/pagesspace</code> resource.
-Pages Space template resource must use <code>sling:resourceType</code> equals <code>ws:PagesTemplate</code> and should provide allowedChildren property defining list of allowed pages templates to create.</p>
+<p>In the second step, the Space Template needs to be selected in case of Pages Space creation. 
+The list contains the ‘Example Project Pages’ template defined at <code>/apps/example-project/templates/pagesspace</code> resource.
+Pages Space template resource must use <code>sling:resourceType</code> equals <code>ws:PagesTemplate</code> and should provide allowedChildren property defining the list of allowed pages templates to create.</p>
 <p><img alt="Page template - resource" src="img20.png" /></p>
 <p>Another Pages Space template could be defined in the application if needed. For example:</p>
 <div class="highlight"><span class="filename">/apps/example-project/templates/anotherpagesspace</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w"></span>
@@ -3539,18 +3541,18 @@ Pages Space template resource must use <code>sling:resourceType</code> equals <c
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w"> </span><span class="nt">&quot;allowedChildren&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/apps/example-project/templates/contentpage&quot;</span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>To deploy update bundle to running instance use command from the backend module folder:
+<p>To deploy the updated bundle to the running instance, use the command from the backend module folder:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn clean install -P autoInstallBundle
 </code></pre></div></p>
 <p><img alt="Page template - bundle instalation" src="img21.png" /></p>
 <p>New Pages Space template will be available:
 <img alt="New page template - space creation" src="img22.png" /></p>
 <h2 id="page-template">Page template</h2>
-<p>Pages spaces are for pages management. To create a new page, a page template is needed. Generated backend module provides example page template resource <code>/apps/example-project/templates/contentpage</code></p>
+<p>Pages spaces are for page management. To create a new page, a page template is needed. Generated backend module provides example page template resource <code>/apps/example-project/templates/contentpage</code></p>
 <ul>
 <li><code>sling:resourceType</code> property of the page template must be ws:PageTemplate.</li>
 <li>title and description properties are used in UI.</li>
-<li>allowedChildren property contains array of page tempaltes which can be created under pages created from this template. Content Page template allows to create subpages of the same type.</li>
+<li>allowedChildren property contains an array of page templates that can be created under pages created from this template. The content Page template allows to the creation of subpages of the same type.</li>
 </ul>
 <p><img alt="New page template - resources" src="img23.png" /></p>
 <p>The <code>/apps/example-project/templates/contentpage</code> was listed in <em>allowedChildren</em> property in the Pages Space template (<code>/apps/example-project/templates/pagesspace</code>
@@ -3562,11 +3564,11 @@ Pages Space template resource must use <code>sling:resourceType</code> equals <c
 <p>In the second step page properties can be set:
 <img alt="New page - dialog " src="img26.png" /></p>
 <p>The dialog displayed at this step is a dialog of the component defined in the initial content of the page template (<code>sling:resourceType": "example-project/components/page</code>). Read more about components and dialogs in Components documentation.</p>
-<p>Initial content of the page template is defined in a resource named ‘initial’ located under page template resource. The initial content is copied to initialize the created page and properties set via dialog are set on the copied page content.
+<p>The initial content of the page template is defined in a resource named ‘initial’ located under the page template resource. The initial content is copied to initialize the created page and properties set via dialog are set on the copied page content.
 Page is a node of type ws:Page. It contains a page content sub-node named jcr:content of type ws:PageContent. The nodes located under the page content node can be modified via authoring UI. All the Page properties including properties set via page dialog are set on the page content node.
 This is initial content of <code>/apps/example-project/templates/contentpage</code> page template:
 <img alt="Initial content for the template" src="img27.png" /></p>
-<p>This is how content node of the new created page looks:
+<p>This is how the content node of the newly created page looks:
 <img alt="Content node - resource browser" src="img28.png" /></p>
 <p>New page templates can be created in the application.
 <code>/apps/example-project/templates/examplpage</code> is a copy of  <code>/apps/example-project/templates/contentpage</code> with changed title, allowedChildren</p>
@@ -3600,19 +3602,19 @@ This is initial content of <code>/apps/example-project/templates/contentpage</co
 <p>To make it possible to create under pages root in the space it must be added to allowedChildren in pages space template <code>/apps/example-project/templates/pagesspace</code>:
 <img alt="" src="img30.png" /></p>
 <p>Deploy changes again with: <code>mvn clean install -P autoInstallBundle</code></p>
-<p>New template is available to create in pages root:
+<p>The new template is available to create in pages root:
 <img alt="New template available" src="img31.png" /></p>
 <p>Page created from this template contains defined initial content:
 <img alt="" src="img32.png" /></p>
 <h2 id="components">Components</h2>
-<p>Content is assembled from components - elements rendering parts of content according to implemented functionality. To understand the Components concept see Components documentation.</p>
+<p>Content is assembled from components - elements rendering parts of content according to implemented functionality. To understand the Components concept see the Components documentation.</p>
 <p>Generated backend module contains 3 example components located under <code>/apps/example-project/components</code></p>
 <ul>
 <li>page - component used to render page content node</li>
-<li>container - container component - allows to add child components via authoring UI</li>
+<li>container - container component - allows adding of the child components via authoring UI</li>
 <li>hello - component displaying hello text</li>
 </ul>
-<p>In the editor components list only the hello component is visible because other components are hidden because of group property value.
+<p>In the editor components list, only the hello component is visible because other components are hidden because of group property value.
 <img alt="" src="img33.png" /></p>
 <p><a href="http://localhost:8080/apps/websight/index.html/content/example-project/pages/new-page::editor">http://localhost:8080/apps/websight/index.html/content/example-project/pages/new-page::editor</a>
 <img alt="" src="img34.png" /></p>
@@ -3640,36 +3642,36 @@ Create new folder under <code>/apps/example-project/components</code> named rich
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">data-sly</span> <span class="na">data-sly-test</span><span class="o">=</span><span class="s">&quot;${properties.text &amp;&amp; properties.text != &#39;&lt;p&gt;&lt;/p&gt;&#39;}&quot;</span><span class="p">&gt;</span>${properties.text @ context=&#39;html&#39;}<span class="p">&lt;/</span><span class="nt">data-sly</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <p>See <a href="/docs/developers/components/">Components documentation</a> for more details.</p>
-<p>This is how the new component definition looks in the codebase. Deploy the change with command from backend module: <code>mvn clean install -P autoInstallBundle</code></p>
+<p>This is how the new component definition looks in the codebase. Deploy the change with the command from the backend module: <code>mvn clean install -P autoInstallBundle</code></p>
 <p><img alt="" src="img35.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Note</p>
 <p>If you are using WebSight CMS version older than 1.1.0: After redeployment and change of HTML the cache of the script needs to be cleaned manually via http://localhost:8080/system/console/scriptcache to see the changes, use the Clear Cache button at the bottom - this issue is fixed since WebSight CMS CE 1.1.0.</p>
 </div>
-<p>New component is available now in editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the data-sly-test statement in the component renderer. If nothing is rendered by component the placeholder is displayed automatically in the editor. Edit action can be used to open dialog and use rich text dialog input to configure the text.</p>
+<p>The new component is available now in the editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the data-sly-test statement in the component renderer. If nothing is rendered by the component the placeholder is displayed automatically in the editor. Edit action can be used to open dialog and use rich text dialog input to configure the text.</p>
 <p><img alt="" src="img36.png" /></p>
 <p><img alt="" src="img37.png" /></p>
 <h2 id="frontend">Frontend</h2>
-<p>Frontend scripts and resources are provided by frontend module - webpack project containing application frontend. During build the resources are embedded into a bundle which is also deployed to the instance.
-Generated module contains just a simple css class to center text used in the hello component.
-The css files are built into the main.css file by webpack and embedded into the OSGi bundle installed on the instance which makes the files available as resources (because of the Sling-Bundle-Resources header in the bundle header). 
+<p>Frontend scripts and resources are provided by the frontend module - webpack project containing the application frontend. During the build, the resources are embedded into a bundle which is also deployed to the instance.
+The generated module contains just a simple CSS class to center the text used in the hello component.
+The CSS files are built into the main.css file by webpack and embedded into the OSGi bundle installed on the instance which makes the files available as resources (because of the Sling-Bundle-Resources header in the bundle header). 
 Frontend resources are published automatically because of the WebSight-Apps-WebRoot bundle header (see next chapter about publishing).
-The css file is included in the page component renderer to load the css.</p>
+The CSS file is included in the page component renderer to load the CSS.</p>
 <p><img alt="" src="img38.png" /></p>
 <p><a href="http://localhost:8080/apps/browser#/apps/example-project/webroot/main.css">http://localhost:8080/apps/browser#/apps/example-project/webroot/main.css</a></p>
 <p><img alt="" src="img39.png" /></p>
 <p><img alt="" src="img40.png" /></p>
-<p>Add hello component to page to see the centered hello text
+<p>Add the <code>hello</code> component to the page to see the centered hello text
 <img alt="" src="img41.png" /></p>
 <h2 id="publishing">Publishing</h2>
-<p>Assembled content can be previewed in editor and published to make it available for end users.</p>
+<p>Assembled content can be previewed in the editor and published to make it available for end users.</p>
 <p><a href="http://localhost:8080/apps/websight/index.html/content/example-project/pages/new-page::editor">http://localhost:8080/apps/websight/index.html/content/example-project/pages/new-page::editor</a>
 <img alt="" src="img42.png" /></p>
-<p>Published page is served by Nginx container:</p>
+<p>The published page is served by the Nginx container:</p>
 <p><a href="http://localhost/new-page.html">http://localhost/new-page.html</a>
 <img alt="" src="img43.png" /></p>
 <h2 id="end-to-end-tests">End-to-end tests</h2>
-<p>Test module contains content used during end-to-end tests execution to validate the application. See example test content and test script for hello component:
+<p><code>Test</code> module contains content used during end-to-end tests execution to validate the application. See the example test content and test script for the hello component:
 <img alt="" src="img44.png" /></p>
 <h2 id="the-next-steps">The next steps</h2>
 <p>You learned the application development process for WebSight CMS. Now, we recommend exploring more details:</p>
