@@ -116,6 +116,7 @@
 
 :root {
   --md-parallax-perspective: 2.5rem;
+  --md-default-fg-color--light: #6a6a6a;
 }
 
 .mdx-parallax {
