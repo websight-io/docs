@@ -1,6 +1,6 @@
 # Development
 
-This document describes application development for WebSight CMS. We assume you completed the [setup guide](../setup/) and generated a new project from the Maven archetype. All the screens and examples presented below refer to the project prepared in the previous step.
+This document describes application development for WebSight CMS. We assume you completed the [project setup guide](../setup/) and generated a new project from the Maven archetype. All the screens and examples presented below refer to the project prepared in the previous step.
 
 Before going through the WebSight CMS application development process it is worth to understand the instance runtime.
 
