@@ -2,11 +2,12 @@
 
 ## 1.2.0 <small>October 26, 2022</small>
 
-- Component restrictions - showing blueish placeholder if components are not droppable in the selected container
-- Improve asset publication modal UX
-- Remove the footer & the current system version from all places except for the login page
-- Fixed impossible-to-remove image (and save empty value) with Asset Reference
-- Fixed switching between spaces doesn’t trigger content tree re-rendering
+- Improved UX for components drag & drop in the page editor - changing the color of the component frame if the drop is not allowed.
+- Improved messages for asset publication.
+- Removed the artificial footer for the admin tools (Resource Browser, Package Manager, User Manager, Groovy Console, Swagger Browser).
+- Fixed the issue for the [Asset Reference](../../developers/development/dialogs/assetreference/) input field - impossible to remove image and save empty value.
+- Fixed the page and assets tree refresh when the current space switched.
+
 
 ## 1.1.0 <small>October 11, 2022</small>
 
