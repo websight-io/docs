@@ -2,9 +2,9 @@
 
 ## 1.2.0 <small>October 26, 2022</small>
 
-- Improved UX for components drag & drop in the page editor - changing the color of the component frame if the drop is not allowed.
+- Improved UX for components drag & drop in the page editor - indicating if the drop is not allowed.
 - Improved messages for asset publication.
-- Removed the artificial footer for the admin tools (Resource Browser, Package Manager, User Manager, Groovy Console, Swagger Browser).
+- Removed the artificial footer for Package Manager, User Manager, Groovy Console, Swagger Browser.
 - Fixed the issue for the [Asset Reference](../../developers/development/dialogs/assetreference/) input field - impossible to remove image and save empty value.
 - Fixed the page and assets tree refresh when the current space switched.
 
