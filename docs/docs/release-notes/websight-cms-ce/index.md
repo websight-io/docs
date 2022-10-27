@@ -1,5 +1,14 @@
 # WebSight CMS Community Edition Release Notes
 
+## 1.2.0 <small>October 26, 2022</small>
+
+- Improved UX for components drag & drop in the page editor - indicating if the drop is not allowed.
+- Improved messages for asset publication.
+- Fixed [#14](https://github.com/websight-io/starter/issues/14) and [#16](https://github.com/websight-io/starter/issues/16) - removed the artificial footer for Package Manager, User Manager, Groovy Console and Swagger Browser.
+- Fixed the issue for the [Asset Reference](../../developers/development/dialogs/assetreference/) input field - impossible to remove image and save empty value.
+- Fixed the page and assets tree refresh when the current space switched.
+
+
 ## 1.1.0 <small>October 11, 2022</small>
 
 - Added HTL cache cleanup after deployment of bundles.
