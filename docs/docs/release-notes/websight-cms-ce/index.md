@@ -4,7 +4,7 @@
 
 - Improved UX for components drag & drop in the page editor - indicating if the drop is not allowed.
 - Improved messages for asset publication.
-- Fixed [#14](https://github.com/websight-io/starter/issues/14) and [#16](https://github.com/websight-io/starter/issues/16) - removed the artificial footer for Package Manager, User Manager, Groovy Console, Swagger Browser .
+- Fixed [#14](https://github.com/websight-io/starter/issues/14) and [#16](https://github.com/websight-io/starter/issues/16) - removed the artificial footer for Package Manager, User Manager, Groovy Console and Swagger Browser.
 - Fixed the issue for the [Asset Reference](../../developers/development/dialogs/assetreference/) input field - impossible to remove image and save empty value.
 - Fixed the page and assets tree refresh when the current space switched.
 
