@@ -33,7 +33,7 @@ mvn archetype:generate                                     \
   -DarchetypeGroupId=pl.ds.websight                        \
   -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
   -DarchetypeVersion=1.2                                   \
-  -DgroupId=my.groupId                                     \
+  -DgroupId=my-groupId                                     \
   -DartifactId=my-artifactId                               \
   -Dversion=1.0.0-SNAPSHOT                                 \
   -DprojectName="Example Project"                          \
