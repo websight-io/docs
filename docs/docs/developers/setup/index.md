@@ -14,7 +14,7 @@ Apache Maven 3.8.5 (3599d3414f046de2324203b78ddcf9b5e4388aa0)
 ...
 ```
 
-System requirements: Java 17, Mave 3.8.5 +
+System requirements: Java 17, Maven 3.8.5 +
 
 Open the command line at an empty folder and generate a project.
 
