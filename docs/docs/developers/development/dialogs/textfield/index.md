@@ -27,7 +27,7 @@ Allows user to enter any text.
 
 ```json
 "title": {
-  "sling:resourceType": "wcm/dialogs/components/textarea",
+  "sling:resourceType": "wcm/dialogs/components/textfield",
   "name": "title",
   "label": "Title"
 }
