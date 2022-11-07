@@ -133,3 +133,18 @@ img.image--inline {
   position: relative;
   top: 8px;
 }
+
+@media screen and (max-width: 76.1875em) {
+    img.image--layers {
+        width: 100%;
+        float: left;
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 76.1875em) {
+    img.image--layers {
+        width: 300px;
+        float: left;
+    }
+}
