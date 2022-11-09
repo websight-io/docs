@@ -31,7 +31,7 @@ Click on `my-artifactId-backend` bundle to open details.
 At the beginning the bundle definitions were mentioned: 
 OSGi bundle is a unit of modularization in OSGi specification - a bundle is comprised of Java classes and other resources, which together can provide functions to end users.
 
-At the screen below it is highlighted that the `my-artifactId-backend` is exporting (making it available to use for other bundles) some Java packages (we will get back to this later) and is providing some resources.
+At the screen below it is highlighted that the `my-artifactId-backend` is exporting (making it available to use for other bundles) some Java packages (with use of `Export-Package` standard OSGi bundle header - provided by `bnd-maven-plugin` in `pom.xml` and `package-info.java` files in the code base) and is providing some resources (with use of `Sling-Bundle-Resources` bundle header handled by Bundle Resources Provider).
 ![Bundles - my-artifactId-backend](img11.png)
 
 ## Resources
@@ -267,10 +267,6 @@ See [Components documentation](/docs/developers/components/) for more details.
 This is how the new component definition looks in the codebase. Deploy the change with the command from the backend module: `mvn clean install -P autoInstallBundle`
 
 ![](img35.png)
-
-!!! Info "Note"
-    If you are using WebSight CMS version older than 1.1.0: After redeployment and change of HTML the cache of the script needs to be cleaned manually via http://localhost:8080/system/console/scriptcache to see the changes, use the Clear Cache button at the bottom - this issue is fixed since WebSight CMS CE 1.1.0.
-
 
 The new component is available now in the editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the data-sly-test statement in the component renderer. If nothing is rendered by the component the placeholder is displayed automatically in the editor. Edit action can be used to open dialog and use rich text dialog input to configure the text.
 

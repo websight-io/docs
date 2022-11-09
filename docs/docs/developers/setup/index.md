@@ -1,7 +1,5 @@
 # Project setup
 
-This document describes the WebSight project’s initial setup, instance overview, and application development. We will generate a new project from the Maven archetype, describe what it contains and explain how to develop the application. All the screens and examples will be referring to the project generated during the guide.
-
 This document describes the WebSight project’s initial setup and instance overview. We will generate a new project from the Maven archetype and check what it contains. The generated structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
 
 ## Generate project
