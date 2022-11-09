@@ -1,5 +1,15 @@
 # WebSight CMS Community Edition Release Notes
 
+## 1.3.0 <small>November 09, 2022</small>
+
+- Improved Create Space Modal.
+- Improved UX of all modals in the system: handling keyboard shortcuts (Enter, Escape), closing using ‘X’ icon, closing when clicking outside of modal.
+- Fixed [#26](https://github.com/websight-io/starter/issues/26) - Asset preview dropdown is cut off and has no icons.
+- In Page Editor:
+    - Ensured proper handling of components included in other components
+    - Fixed the issue, when component couldn’t have been dropped on selected container.
+    - Improved error handling: blocked a possibility to include new WebSight CMS instance inside of Page Editor.
+
 ## 1.2.0 <small>October 26, 2022</small>
 
 - Improved UX for components drag & drop in the page editor - indicating if the drop is not allowed.
