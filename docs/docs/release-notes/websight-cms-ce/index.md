@@ -1,21 +1,56 @@
 # WebSight CMS Community Edition Release Notes
 
+## 1.3.0 <small>November 09, 2022</small>
+
+#### Page Editor
+
+- Fixed an issue with component drag & drop - in some cases component can't be dropped on a selected container.
+- Fixed an issue with the editor layout caused by a faulty component included on a page. 
+
+#### Page and Asset Management
+
+- Fixed [#26](https://github.com/websight-io/starter/issues/26) - asset preview dropdown is cut off and has no icons.
+
+#### Other
+
+- Improved UX for the Create Space modal.
+- Added keyboard shortcuts for all modals - submitting changes with _Enter_/_Return_ and cancelation with _Esc_, _X_ icon or clicking outside of the modal.
+
 ## 1.2.0 <small>October 26, 2022</small>
 
-- Improved UX for components drag & drop in the page editor - indicating if the drop is not allowed.
-- Improved messages for asset publication.
-- Fixed [#14](https://github.com/websight-io/starter/issues/14) and [#16](https://github.com/websight-io/starter/issues/16) - removed the artificial footer for Package Manager, User Manager, Groovy Console and Swagger Browser.
+#### Page Editor
+
+- Improved UX for components drag & drop - indicating if the drop is not allowed.
 - Fixed the issue for the [Asset Reference](../../developers/development/dialogs/assetreference/) input field - impossible to remove image and save empty value.
+
+#### Page and Asset Management
+
+- Improved messages for asset publication.
 - Fixed the page and assets tree refresh when the current space switched.
+
+#### Admin Tools
+
+- Fixed [#14](https://github.com/websight-io/starter/issues/14) and [#16](https://github.com/websight-io/starter/issues/16) - removed the artificial footer for Package Manager, User Manager, Groovy Console and Swagger Browser.
 
 
 ## 1.1.0 <small>October 11, 2022</small>
 
-- Added HTL cache cleanup after deployment of bundles.
+#### Page Editor
+
+- Fixed the component dragging indicator.
+
+#### Page and Asset Management
+
 - Improved assets publication. Publish and unpublish actions include assets in sub-folders. 
 - Fixed [#24](https://github.com/websight-io/starter/issues/24): assets download has no effect.
 - Fixed the hidden top bar with actions for pages and assets (when scrolling).
-- Fixed the component dragging indicator in the page editor.
+
+#### Other
+
+- Added HTL cache cleanup after deployment of bundles.
+
+
+
 
 ## 1.0.0 <small>September 28, 2022</small>
 

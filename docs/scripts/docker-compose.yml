@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   cms:
-    image: public.ecr.aws/ds/websight-cms-ce:luna-2.0.0
+    image: public.ecr.aws/ds/websight-cms-ce:luna-2.1.0
     ports:
       - "8080:8080"
     environment:
@@ -17,7 +17,7 @@ services:
     depends_on:
       - mongo
   nginx:
-    image: public.ecr.aws/ds/websight-nginx-ce:luna-2.0.0
+    image: public.ecr.aws/ds/websight-nginx-ce:luna-2.1.0
     ports:
       - "80:80"
     volumes:
