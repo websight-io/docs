@@ -3406,9 +3406,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#130-november-09-2022" class="md-nav__link">
+    1.3.0 November 09, 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.0 November 09, 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-editor" class="md-nav__link">
+    Page Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-and-asset-management" class="md-nav__link">
+    Page and Asset Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#120-october-26-2022" class="md-nav__link">
     1.2.0 October 26, 2022
   </a>
+  
+    <nav class="md-nav" aria-label="1.2.0 October 26, 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-editor_1" class="md-nav__link">
+    Page Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-and-asset-management_1" class="md-nav__link">
+    Page and Asset Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-tools" class="md-nav__link">
+    Admin Tools
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3416,6 +3477,33 @@
   <a href="#110-october-11-2022" class="md-nav__link">
     1.1.0 October 11, 2022
   </a>
+  
+    <nav class="md-nav" aria-label="1.1.0 October 11, 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-editor_2" class="md-nav__link">
+    Page Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-and-asset-management_2" class="md-nav__link">
+    Page and Asset Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other_1" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3445,21 +3533,50 @@
 
 
 <h1 id="websight-cms-community-edition-release-notes">WebSight CMS Community Edition Release Notes</h1>
-<h2 id="120-october-26-2022">1.2.0 <small>October 26, 2022</small></h2>
+<h2 id="130-november-09-2022">1.3.0 <small>November 09, 2022</small></h2>
+<h4 id="page-editor">Page Editor</h4>
 <ul>
-<li>Improved UX for components drag &amp; drop in the page editor - indicating if the drop is not allowed.</li>
-<li>Improved messages for asset publication.</li>
-<li>Fixed <a href="https://github.com/websight-io/starter/issues/14">#14</a> and <a href="https://github.com/websight-io/starter/issues/16">#16</a> - removed the artificial footer for Package Manager, User Manager, Groovy Console and Swagger Browser.</li>
+<li>Fixed an issue with component drag &amp; drop - in some cases component can't be dropped on a selected container.</li>
+<li>Fixed an issue with the editor layout caused by a faulty component included on a page. </li>
+</ul>
+<h4 id="page-and-asset-management">Page and Asset Management</h4>
+<ul>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/26">#26</a> - asset preview dropdown is cut off and has no icons.</li>
+</ul>
+<h4 id="other">Other</h4>
+<ul>
+<li>Improved UX for the Create Space modal.</li>
+<li>Added keyboard shortcuts for all modals - submitting changes with <em>Enter</em>/<em>Return</em> and cancelation with <em>Esc</em>, <em>X</em> icon or clicking outside of the modal.</li>
+</ul>
+<h2 id="120-october-26-2022">1.2.0 <small>October 26, 2022</small></h2>
+<h4 id="page-editor_1">Page Editor</h4>
+<ul>
+<li>Improved UX for components drag &amp; drop - indicating if the drop is not allowed.</li>
 <li>Fixed the issue for the <a href="../../developers/development/dialogs/assetreference/">Asset Reference</a> input field - impossible to remove image and save empty value.</li>
+</ul>
+<h4 id="page-and-asset-management_1">Page and Asset Management</h4>
+<ul>
+<li>Improved messages for asset publication.</li>
 <li>Fixed the page and assets tree refresh when the current space switched.</li>
 </ul>
-<h2 id="110-october-11-2022">1.1.0 <small>October 11, 2022</small></h2>
+<h4 id="admin-tools">Admin Tools</h4>
 <ul>
-<li>Added HTL cache cleanup after deployment of bundles.</li>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/14">#14</a> and <a href="https://github.com/websight-io/starter/issues/16">#16</a> - removed the artificial footer for Package Manager, User Manager, Groovy Console and Swagger Browser.</li>
+</ul>
+<h2 id="110-october-11-2022">1.1.0 <small>October 11, 2022</small></h2>
+<h4 id="page-editor_2">Page Editor</h4>
+<ul>
+<li>Fixed the component dragging indicator.</li>
+</ul>
+<h4 id="page-and-asset-management_2">Page and Asset Management</h4>
+<ul>
 <li>Improved assets publication. Publish and unpublish actions include assets in sub-folders. </li>
 <li>Fixed <a href="https://github.com/websight-io/starter/issues/24">#24</a>: assets download has no effect.</li>
 <li>Fixed the hidden top bar with actions for pages and assets (when scrolling).</li>
-<li>Fixed the component dragging indicator in the page editor.</li>
+</ul>
+<h4 id="other_1">Other</h4>
+<ul>
+<li>Added HTL cache cleanup after deployment of bundles.</li>
 </ul>
 <h2 id="100-september-28-2022">1.0.0 <small>September 28, 2022</small></h2>
 <p>First public release of the WebSight CMS Community Edition.
