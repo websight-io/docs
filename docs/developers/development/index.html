@@ -3516,7 +3516,7 @@ Open <a href="http://localhost:8080/system/console/bundles">http://localhost:808
 <p>Click on <code>my-artifactId-backend</code> bundle to open details. 
 At the beginning the bundle definitions were mentioned: 
 OSGi bundle is a unit of modularization in OSGi specification - a bundle is comprised of Java classes and other resources, which together can provide functions to end users.</p>
-<p>At the screen below it is highlighted that the <code>my-artifactId-backend</code> is exporting (making it available to use for other bundles) some Java packages (we will get back to this later) and is providing some resources.
+<p>At the screen below it is highlighted that the <code>my-artifactId-backend</code> is exporting (making it available to use for other bundles) some Java packages (with use of <code>Export-Package</code> standard OSGi bundle header - provided by <code>bnd-maven-plugin</code> in <code>pom.xml</code> and <code>package-info.java</code> files in the code base) and is providing some resources (with use of <code>Sling-Bundle-Resources</code> bundle header handled by Bundle Resources Provider).
 <img alt="Bundles - my-artifactId-backend" src="img11.png" /></p>
 <h2 id="resources">Resources</h2>
 <p>As already mentioned: WebSight CMS is based on <a href="https://sling.apache.org/">Apache Sling</a> which “is a framework for RESTful web applications based on an extensible content tree”.
@@ -3689,10 +3689,6 @@ Create new folder under <code>/apps/example-project/components</code> named rich
 <p>See <a href="/docs/developers/components/">Components documentation</a> for more details.</p>
 <p>This is how the new component definition looks in the codebase. Deploy the change with the command from the backend module: <code>mvn clean install -P autoInstallBundle</code></p>
 <p><img alt="" src="img35.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Note</p>
-<p>If you are using WebSight CMS version older than 1.1.0: After redeployment and change of HTML the cache of the script needs to be cleaned manually via http://localhost:8080/system/console/scriptcache to see the changes, use the Clear Cache button at the bottom - this issue is fixed since WebSight CMS CE 1.1.0.</p>
-</div>
 <p>The new component is available now in the editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the data-sly-test statement in the component renderer. If nothing is rendered by the component the placeholder is displayed automatically in the editor. Edit action can be used to open dialog and use rich text dialog input to configure the text.</p>
 <p><img alt="" src="img36.png" /></p>
 <p><img alt="" src="img37.png" /></p>
