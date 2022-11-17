@@ -2,17 +2,13 @@
 
 This document describes the WebSight project’s initial setup and instance overview. We will generate a new project from the Maven archetype and check what it contains. The generated structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.
 
+## Prerequisites
+
+1. Install [AdoptOpenJDK 17](https://adoptium.net/) with 'x64/aarch64' architecture (on mac use `brew install openjdk@17`):
+1. Install [Maven](https://maven.apache.org/) 3.8.5 +
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
 ## Generate project
-
-To initialize the project Maven archetype will be used. To continue you should have Maven installed. Check your Maven version. 
-
-``` script
-mvn --version
-Apache Maven 3.8.5 (3599d3414f046de2324203b78ddcf9b5e4388aa0)
-...
-```
-
-System requirements: Java 17, Maven 3.8.5 +
 
 Open the command line at an empty folder and generate a project.
 
@@ -111,16 +107,6 @@ You should see successful end-to-end test execution in the log:
 
 Execution should end with a successful build:
 ![Successful build log](img03.png)
-
-To run the instance Docker is needed. 
-Check Docker installation by running in command line
-
-``` script
-docker --version
-Docker version 20.10.14
-```
-
-If you need you can download the Docker Desktop [here](https://www.docker.com/)
 
 See README.md in `environment` and `environment/local` folders for the details about the running environment.
 
