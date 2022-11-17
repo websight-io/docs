@@ -12,7 +12,7 @@ Docker allows to define the platform in declarative way. Switching between local
 
 !!! abstract "Prerequisites"
 
-    After finishing [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) you should already have:
+    After finishing [Creating and developing WebSight CMS project guide](../../../developers/setup/) you should already have:
     
     - [Docker](https://docs.docker.com/get-docker/) installed and running on your local machine.
     - Java 17 (e.g. [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.
