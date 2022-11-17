@@ -17,7 +17,7 @@ Your task is to update the _Luna Title_ component and extend existing functional
 1. Install [AdoptOpenJDK 17](https://adoptium.net/) with 'x64/aarch64' architecture (on mac use `brew install openjdk@17`):
 1. Install Node.js and NPM
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
-1. Install [Git]
+1. Install [Git](https://git-scm.com/)
 
 ## Part B: Setup local environment
 
