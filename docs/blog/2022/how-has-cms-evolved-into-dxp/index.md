@@ -2,7 +2,7 @@
 title: How has CMS evolved into DXP? What is the difference? Should you care? 
 description: In this blogpost, I would like to look into how the web has changed from web 1.0 to what it is right now and how these changes and business needs have impacted the evolution of content management systems. 
 author: Michal Papciak
-publicationDate: 06.08.2022
+publicationDate: 06.10.2022
 minReadTime: 5
 image: human-evolution.jpg
 tags:
