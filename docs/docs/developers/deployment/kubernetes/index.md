@@ -129,5 +129,5 @@ In this tutorial you will learn how to deploy an application created in the [set
 
 ## Cleanup
 
-1. Delete Kubernetes cluster and Load Balancer.
-2. Delete volumes.
+1. [Delete Kubernetes cluster](https://docs.digitalocean.com/products/kubernetes/how-to/destroy-clusters/) along with Load Balancer and volumes.
+2. Delete Container Registry.
