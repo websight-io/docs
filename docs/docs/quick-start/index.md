@@ -23,6 +23,17 @@ Create `docker-compose.yml` file. Paste the content presented below and save the
 {% include '../../scripts/docker-compose.yml' %}
 ```
 
+Create `admin_password.txt` file. Paste the password presented below and save the file on your hard drive.
+``` text title="admin_password.txt"
+{% include '../../scripts/admin_password.txt' %}
+```
+
+!!! hint "Tip"
+
+    You can also type your password and use it to log in to WebSight instead of the default one.
+
+---
+
 ### 2. Run the local instance
 
 Open the terminal next to the `docker-compose.yml` file and run the following command:

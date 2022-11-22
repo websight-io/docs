@@ -7,13 +7,15 @@ services:
       - "8080:8080"
     environment:
       WS_ADMIN_USERNAME: "wsadmin"
-      WS_ADMIN_PASSWORD: "wsadmin"
       MONGODB_HOST: "mongo"
       MONGODB_PORT: 27017
       LEASE_CHECK_MODE: "LENIENT"
     volumes:
       - cms_logs:/websight/logs
       - site_repository:/websight/docroot
+    secrets:
+      - source: admin_password
+        target: admin.password
     depends_on:
       - mongo
   nginx:
@@ -34,3 +36,7 @@ volumes:
   cms_logs:
   mongo_repository:
   site_repository:
+
+secrets:
+  admin_password:
+    file: ./admin_password.txt

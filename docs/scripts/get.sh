@@ -6,6 +6,7 @@ if [ -x "$(command -v docker)" ]; then
     mkdir websight-cms-ce
     cd websight-cms-ce
     curl --silent https://www.websight.io/scripts/docker-compose.yml --output docker-compose.yml
+    curl --silent https://www.websight.io/scripts/admin_password.txt --output admin_password.txt
     curl --silent https://www.websight.io/scripts/logo.ascii.txt
     {
         sleep 5
