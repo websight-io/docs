@@ -47,7 +47,7 @@ Example command:
 mvn archetype:generate                                     \
   -DarchetypeGroupId=pl.ds.websight                        \
   -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
-  -DarchetypeVersion=1.2                                   \
+  -DarchetypeVersion=1.3                                   \
   -DgroupId=my.groupId                                     \
   -DartifactId=my-artifactId                               \
   -Dversion=1.0.0-SNAPSHOT                                 \
