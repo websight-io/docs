@@ -3451,8 +3451,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#generate-project" class="md-nav__link">
-    Generate project
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-a-project" class="md-nav__link">
+    Generate a project
   </a>
   
 </li>
@@ -3462,24 +3469,25 @@
     Project structure
   </a>
   
-    <nav class="md-nav" aria-label="Project structure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#distribution-and-environment" class="md-nav__link">
     Distribution and environment
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-instance" class="md-nav__link">
+    Build the instance
+  </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-and-run-the-instance" class="md-nav__link">
-    Build and Run the instance
+  <a href="#run-the-instance" class="md-nav__link">
+    Run the instance
   </a>
   
 </li>
@@ -3492,8 +3500,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-next-steps" class="md-nav__link">
-    The next steps
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -3517,51 +3525,63 @@
 
 
 <h1 id="project-setup">Project setup</h1>
-<p>This document describes the WebSight project’s initial setup and instance overview. We will generate a new project from the Maven archetype and check what it contains. The generated structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.</p>
-<h2 id="generate-project">Generate project</h2>
-<p>To initialize the project Maven archetype will be used. To continue you should have Maven installed. Check your Maven version. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mvn --version
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Apache Maven 3.8.5 (3599d3414f046de2324203b78ddcf9b5e4388aa0)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>...
+<p>This document provides an introduction to working with WebSight projects. It explains how to configure, build and run a new project using Maven Archetype and Docker. It also describes the contents of the project build and runtime files.</p>
+<p>Although the specific contents of your project may vary depending on your needs, the sample project described on this page is a useful starting-point for running Web applications using WebSight CMS.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To create and run a project, you will need <a href="https://adoptium.net/">Java 17</a> or later, <a href="https://maven.apache.org/">Maven</a> 3.8.5 or later and <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>.</p>
+<p>You can check your Java version in most environments with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>java -version
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>openjdk 17.0.2 2022-01-18
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>OpenJDK Runtime Environment Temurin-17.0.2+8 (build 17.0.2+8)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>OpenJDK 64-Bit Server VM Temurin-17.0.2+8 (build 17.0.2+8, mixed mode)
 </code></pre></div>
-<p>System requirements: Java 17, Maven 3.8.5 +</p>
-<p>Open the command line at an empty folder and generate a project.</p>
-<p>Use <em>groupId</em>, <em>artifactId</em>, and version params to declare Maven artifacts for your project.
-Use <em>projectName</em>, <em>projectId</em> and package to define your project name used in UI, id used for technical needs (application resources paths, Docker images names), and root package for Java code.</p>
-<p>Use <em>archetypeVersion</em> parameter to set the archetype version you want to use.
-You can check the latest version <a href="https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype">here</a>.</p>
-<p>Use <em>cmsVersion</em> parameter to set WebSight CMS version used by the generated project.
-You can check the latest version in the <a href="../../release-notes">Release Notes</a>.</p>
-<p>Example command:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn archetype:generate                                     \
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  -DarchetypeGroupId=pl.ds.websight                        \
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  -DarchetypeVersion=1.3                                   \
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  -DgroupId=my.groupId                                     \
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  -DartifactId=my-artifactId                               \
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  -Dversion=1.0.0-SNAPSHOT                                 \
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  -DprojectName=&quot;Example Project&quot;                          \
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  -DprojectId=example-project                              \
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  -Dpackage=com.example.project                            \
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  -DcmsVersion=1.3.0
-</code></pre></div></p>
-<p>The following structure should be created:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>└── my-artifactId
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    ├── README.md
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    ├── application
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    ├── content
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    ├── distribution
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    ├── environment
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    ├── pom.xml
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    └── tests
-</code></pre></div></p>
+<p>Check your Maven version with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn --version
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Apache Maven 3.8.5 (3599d3414f046de2324203b78ddcf9b5e4388aa0)
+</code></pre></div>
+<p>Check your Docker installation by running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker --version
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Docker version 20.10.14
+</code></pre></div>
+<h2 id="generate-a-project">Generate a project</h2>
+<p>To create a new project, first open a command prompt and cd to the directory where you want to store your project.</p>
+<p>Next, use a Maven command to create your project, being sure to declare the desired parameters properly.</p>
+<ul>
+<li>Use the <em>groupId</em>, <em>artifactId</em>, and version parameters to declare Maven artifacts for your project. </li>
+<li>Use <em>projectName</em>, <em>projectId</em> and <em>package</em> parameters to define technical requirements (such as application resources paths and Docker image names) and the root package for Java code.</li>
+<li>Use the <em>archetypeVersion</em> parameter to set the archetype version you want to use. You can check the latest version <a href="https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype">here</a>.</li>
+<li>Use the <em>cmsVersion</em> parameter to specify the WebSight CMS version that the project should use. Check the WebSight <a href="../../release-notes/">Release Notes</a> to find the latest available version.</li>
+</ul>
+<p>Example command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn archetype:generate                                     \
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  -DarchetypeGroupId=pl.ds.websight                        \
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  -DarchetypeVersion=1.3                                   \
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  -DgroupId=my.groupId                                     \
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  -DartifactId=my-artifactId                               \
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  -Dversion=1.0.0-SNAPSHOT                                 \
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  -DprojectName=&quot;Example Project&quot;                          \
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  -DprojectId=example-project                              \
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  -Dpackage=com.example.project                            \
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  -DcmsVersion=1.3.0
+</code></pre></div>
+<p>The above command creates a project with the following structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>└── my-artifactId
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    ├── README.md
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    ├── application
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    ├── content
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    ├── distribution
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    ├── environment
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    ├── pom.xml
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    └── tests
+</code></pre></div>
 <h2 id="project-structure">Project structure</h2>
-<p>The generated project structure is an example starting point for projects which is recommended and suitable for a typical web application based on WebSight CMS Community edition.</p>
-<p>Overview of the modules:</p>
+<p>The contents of the project structure we generated above are an example of what you'd typically include when creating a project for a Web application using WebSight CMS.</p>
+<p>Note in particular the following modules:</p>
 <ul>
 <li><code>application</code> - components code and scripts delivered as OSGi bundles<ul>
-<li><code>backend</code> - CMS elements (pages, templates, components etc.), Java models and services</li>
+<li><code>backend</code> - CMS elements (pages, templates, components, etc.), Java models and services</li>
 <li><code>frontend</code> - frontend project bundled by webpack</li>
 </ul>
 </li>
@@ -3577,65 +3597,63 @@ You can check the latest version in the <a href="../../release-notes">Release No
 </ul>
 </li>
 </ul>
-<h3 id="distribution-and-environment">Distribution and environment</h3>
-<p>The important note is that the project comes with servers definitions and configurations. <code>distribution</code> module is responsible for bundling the application with configurations and WebSight CMS modules using <code>Sling Feature Model</code>. 
-On top of that, it prepares the required Docker images the run the complete stack. Final project build artifacts are immutable Docker images that can be run on local, test, and production environments. 
-Environment-specific configurations can be handled by system variables injection.</p>
+<h2 id="distribution-and-environment">Distribution and environment</h2>
+<p>It is important to note that the project contains built-in server definitions and configurations. The <code>distribution</code> module is responsible for bundling the application based on the configurations and WebSight CMS modules using <code>Sling Feature Model</code>. It also prepares the required Docker images to run the complete stack. The finalized project build artifacts are immutable Docker images that can be run on local, test, and production environments. Environment-specific configurations can be implemented by injecting system variables.</p>
 <div class="admonition info">
-<p class="admonition-title">Note</p>
-<p>It is possible to deploy application modules to running containers without rebuilding the Docker images, but the changes will be lost after first container restart can be used only for local development.</p>
+<p class="admonition-title">Info</p>
+<p>It is possible to deploy application modules to running containers without rebuilding the Docker images, but the changes will be lost after each container restart and can be used only for local development.</p>
 </div>
 <p>The <code>distribution</code> delivers two Docker images:</p>
 <ul>
-<li>CMS - image with WebSight CMS bundled with your application</li>
-<li>Nginx - HTTP server with the project-related configuration</li>
+<li>CMS - Image that bundles WebSight CMS with your application</li>
+<li>Nginx - An HTTP server with your project's configuration</li>
 </ul>
-<p>A third container runs MongoDB as a default data store for Jackrabbit OAK (persistence layer used by WebSight CMS). It's used to store content like pages or assets managed by the CMS.</p>
-<p>We use Docker compose to orchestrate containers in the local setup. See environment/local module for details.</p>
+<p>A third container runs MongoDB as a default data store for Jackrabbit OAK (the persistence layer used by WebSight CMS). The data store stores content such as pages or assets managed by the CMS.</p>
+<p>We use Docker Compose to orchestrate containers during local setup. See the environment/local module for details.</p>
 <p>This illustration shows the runtime environment and roles:</p>
 <p><img alt="Runtime environment and roles" src="diagrams/generated/runtime-docker-compose.png" /></p>
-<h2 id="build-and-run-the-instance">Build and Run the instance</h2>
-<p>To build the project use the Maven command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn clean install
+<h2 id="build-the-instance">Build the instance</h2>
+<p>To build the project, use the Maven command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mvn clean install
 </code></pre></div>
 <p>Add e2e profile to execute end-to-end tests:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn clean install -P e2e
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mvn clean install -P e2e
 </code></pre></div>
-<p>You should see successful end-to-end test execution in the log:
-<img alt="End-to-end test execution log" src="img02.png" /></p>
-<p>Execution should end with a successful build:
-<img alt="Successful build log" src="img03.png" /></p>
-<p>To run the instance Docker is needed. 
-Check Docker installation by running in command line</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker --version
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Docker version 20.10.14
-</code></pre></div>
-<p>If you need you can download the Docker Desktop <a href="https://www.docker.com/">here</a></p>
-<p>See README.md in <code>environment</code> and <code>environment/local</code> folders for the details about the running environment.</p>
-<p>After building the project to start a local instance go to the <code>environment/local</code> folder and run:
-<code>docker compose up</code></p>
-<p>Local WebSight CMS with your application installed is running at <a href="http://localhost:8080/">http://localhost:8080/</a> (login with wsadmin/wsadmin)
-Published content is available locally at <a href="http://localhost">http://localhost/</a></p>
+<p>You should see successful end-to-end test execution in the log:</p>
+<p align="center" width="100%">
+    <img class="image--with-border" src="./img02.png" alt="End-to-end test execution log">
+</p>
+
+<p>Execution should end with a successful build message:</p>
+<p align="center" width="100%">
+    <img class="image--with-border" src="./img03.png" alt="Successful build log">
+</p>
+
 <div class="admonition info">
-<p class="admonition-title">Building docker image fails with <code>/var/run/docker.sock</code> (issue on Mac)</p>
-<p>The issue leads to the following error message</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span>ERROR<span class="o">]</span> Failed to execute goal io.fabric8:docker-maven-plugin:0.40.1:build <span class="o">(</span>build-docker-image<span class="o">)</span> on project ws-linux-box-distribution: Execution build-docker-image of goal io.fabric8:docker-maven-plugin:0.40.1:build failed: No &lt;dockerHost&gt; given, no DOCKER_HOST environment variable, no read/writable <span class="s1">&#39;/var/run/docker.sock&#39;</span> or <span class="s1">&#39;//./pipe/docker_engine&#39;</span> and no external provider like Docker machine configured -&gt; <span class="o">[</span>Help <span class="m">1</span><span class="o">]</span>
+<p class="admonition-title">Info<p>On some Mac systems, Docker builds may fail with the following error message</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">[</span>ERROR<span class="o">]</span> Failed to execute goal io.fabric8:docker-maven-plugin:0.40.1:build <span class="o">(</span>build-docker-image<span class="o">)</span> on project ws-linux-box-distribution: Execution build-docker-image of goal io.fabric8:docker-maven-plugin:0.40.1:build failed: No &lt;dockerHost&gt; given, no DOCKER_HOST environment variable, no read/writable <span class="s1">&#39;/var/run/docker.sock&#39;</span> or <span class="s1">&#39;//./pipe/docker_engine&#39;</span> and no external provider like Docker machine configured -&gt; <span class="o">[</span>Help <span class="m">1</span><span class="o">]</span>
 </code></pre></div>
-<p>Follow the Docker Maven Plugin <a href="https://github.com/fabric8io/docker-maven-plugin/issues/1616">issue</a> to check the current status and available workarounds.</p>
+<p>If this occurs, check the Docker Maven Plugin issue tracker <a href="https://github.com/fabric8io/docker-maven-plugin/issues/1616">issue</a> for details and available workarounds.</p>
+</p>
 </div>
+<h2 id="run-the-instance">Run the instance</h2>
+<p>Once your project build is complete, you can start a local instance by navigating to the <code>environment/local</code> folder and running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker compose up
+</code></pre></div>
+<p>The resulting instance runs WebSight CMS and your application at <a href="http://localhost:8080/">http://localhost:8080/</a> The default login is wsadmin/wsadmin. Published content is available locally at <a href="http://localhost/">http://localhost/</a></p>
+<p>See README.md in the <code>environment</code> and <code>environment/local</code> folders for additional details about the runtime environment.</p>
 <h2 id="instance-overview">Instance overview</h2>
-<p>After login, you will be redirected to the Spaces list. In WebSight CMS content is organized in Spaces. More details are in the next sections.
-On the list, you can see the Space created with the use of the generated application and delivered in the ‘content’ module containing initial project content. </p>
+<p>After login, you will be redirected to the Spaces list. In WebSight CMS content is organized in Spaces. The Spaces list shows you the generated application and its associated content using the <code>content</code> module:</p>
 <p><a href="http://localhost:8080/apps/websight/index.html/content::spaces">http://localhost:8080/apps/websight/index.html/content::spaces</a>
 <img alt="WebSight CMS - Spaces" src="img04.png" /></p>
-<p>After clicking on the space name Pages dashboard is open with 1 page delivered in initial content. You can manage your pages here and navigate to the Assets dashboard (to manage assets) or open the Page editor to edit page content.</p>
+<p>After clicking on the Space name, the Pages dashboard opens with one page delivered in the initial content. You can manage your pages here and navigate to the Assets dashboard (to manage Assets) or open the Page editor to edit page content from within the CMS:</p>
 <p><a href="http://localhost:8080/apps/websight/index.html/content/example-project/pages">http://localhost:8080/apps/websight/index.html/content/example-project/pages</a>
 <img alt="WebSight CMS - Pages" src="img05.png" /></p>
-<p>In the Right top corner, there is the Admin tools menu with links for administration tools. Administrator dashboard can be accessed using the following link:</p>
+<p>In the Right top corner, you will find an Admin tools menu with links to administration tools. Or, the Admin dashboard can be accessed directly using the following link:</p>
 <p><a href="http://localhost:8080/apps/admin">http://localhost:8080/apps/admin</a>
 <img alt="WebSight CMS - Tools" src="img06.png" /></p>
-<h2 id="the-next-steps">The next steps</h2>
-<p>You learned how to set up a new project for WebSight CMS. Now, we recommend exploring more details:</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Now that you know how to set up a new project using WebSight CMS, consider learning more about the following topics:</p>
 <ul>
 <li><a href="../development/">Application development</a></li>
 <li><a href="../development/components/">Components development</a></li>
