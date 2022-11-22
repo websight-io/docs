@@ -25,7 +25,7 @@ Create `docker-compose.yml` file. Paste the content presented below and save the
 
 !!! hint "Tip"
 
-    If you want to change default password, please read how to use [secret files](https://github.com/websight-io/starter/tree/main/environment#secret-files) .
+    Please read how to use [secret files](https://github.com/websight-io/starter/tree/main/environment#secret-files) if you would like to change the default password.
 
 ---
 
