@@ -77,7 +77,7 @@ Open list of _Pages_ using the left sidebar. Select all pages and use action _Pu
 
 ### 4. See the demo site
 
-Congratulations! The demo site is available at [http://localhost/Homepage.html](http://localhost/Homepage.html).
+Congratulations! The demo site is available at [http://luna.127.0.0.1.nip.io/](http://luna.127.0.0.1.nip.io/).
 
 ![Published demo page](./quick-start-published-page.png)
 
@@ -129,7 +129,7 @@ You updated the page. However, unpublished changes are not visible on the site y
 
 ### 5. See the updated page
 
-Congratulations! Your changes should be visible now at [http://localhost/Homepage.html](http://localhost/Homepage.html). 
+Congratulations! Your changes should be visible now at [http://luna.127.0.0.1.nip.io/](http://luna.127.0.0.1.nip.io/). 
 
 ![Publish page action](./quick-start-updated-page.png)
 
