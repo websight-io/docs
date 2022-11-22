@@ -23,6 +23,12 @@ Create `docker-compose.yml` file. Paste the content presented below and save the
 {% include '../../scripts/docker-compose.yml' %}
 ```
 
+!!! hint "Tip"
+
+    Default passwords are stored in secret files. You can find details how to change them [here](https://github.com/websight-io/starter/tree/main/environment#secret-files).
+
+---
+
 ### 2. Run the local instance
 
 Open the terminal next to the `docker-compose.yml` file and run the following command:
