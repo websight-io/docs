@@ -1,5 +1,20 @@
 # WebSight CMS Community Edition Release Notes
 
+## 1.4.0 <small>November 23, 2022</small>
+
+#### Page Editor
+- Improved authoring experience - organize content freely within the same row
+- Improved authoring experience - component list is filtered for what's possible to drop on the page
+- Improved authoring experience ([#22](https://github.com/websight-io/starter/issues/22)) -  clicking on an element in the content tree, scrolls to it in the page
+- Fixed an issue where the editor overlays were misaligned after a window resize
+
+#### Page and Asset Management
+- Extended actions in breadcrumb to Asset Management
+- Extended page actions in breadcrumb with **Edit** option
+
+#### Other
+- Improved UX for the Create Space modal.
+
 ## 1.3.0 <small>November 09, 2022</small>
 
 #### Page Editor
