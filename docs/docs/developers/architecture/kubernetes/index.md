@@ -1,5 +1,5 @@
 # Kubernetes Architecture
-Kubernetes (k8s) makes it easy to automate deployments and management of WebSight CMS components with the most popular cloud providers. This document describes what Kubernetes resources are required to run and scale WebSight.
+Kubernetes (k8s) makes it easy to automate deployments and management of WebSight CMS components with the most popular cloud providers. This document describes what Kubernetes resources are required to run and scale WebSight Community Edition.
 
 ## Kubernetes Resources
 
