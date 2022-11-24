@@ -3,17 +3,18 @@
 ## 1.4.0 <small>November 23, 2022</small>
 
 #### Page Editor
-- Improved authoring experience - organize content freely within the same row
-- Improved authoring experience - component list is filtered for what's possible to drop on the page
-- Improved authoring experience ([#22](https://github.com/websight-io/starter/issues/22)) -  clicking on an element in the content tree, scrolls to it in the page
-- Fixed an issue where the editor overlays were misaligned after a window resize
+- Improved UX - ability to drag and drop a component between others included in a container.
+- Improved UX - component list contains only items allowed for a given page (based on its template).
+- Improved UX [#22](https://github.com/websight-io/starter/issues/22) - scrolling the page to a component when the user clicks it in the content tree.
+- Fixed an issue with misaligned overlays when the window resized.
 
 #### Page and Asset Management
-- Extended actions in breadcrumb to Asset Management
-- Extended page actions in breadcrumb with **Edit** option
+- Added actions in the breadcrumb for assets.
+- Added _Edit_ action in the breadcrumb for pages.
+- Fixed an issue with page creation when the action was interrupted previously.
 
 #### Other
-- Improved UX for the Create Space modal.
+- Added loading indicator for the _Create Space_ modal.
 
 ## 1.3.0 <small>November 09, 2022</small>
 
