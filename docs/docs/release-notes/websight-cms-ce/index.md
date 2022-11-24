@@ -1,5 +1,21 @@
 # WebSight CMS Community Edition Release Notes
 
+## 1.4.0 <small>November 23, 2022</small>
+
+#### Page Editor
+- Added ability to drag and drop a component between others included in a container.
+- Added [#22](https://github.com/websight-io/starter/issues/22) - scrolling the page to a component when the user clicks it in the content tree.
+- Improved UX for the component list. It contains only items allowed for a given page (based on its template).
+- Fixed an issue with misaligned overlays when the user resized the window.
+
+#### Page and Asset Management
+- Added actions in the breadcrumb for assets.
+- Added _Edit_ action in the breadcrumb for pages.
+- Fixed an issue with page creation when the action was interrupted previously.
+
+#### Other
+- Added loading indicator for the _Create Space_ modal.
+
 ## 1.3.0 <small>November 09, 2022</small>
 
 #### Page Editor
