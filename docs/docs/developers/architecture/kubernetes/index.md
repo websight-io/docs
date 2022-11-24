@@ -4,7 +4,7 @@ Kubernetes (k8s) makes it easy to automate deployments and management of WebSigh
 ## Kubernetes Resources
 
 - `Ingress` is a set of rules defining how to route authors and site visitors requests. `Ingress Controller` processes these rules and exposes them to the load balancer provided by the cloud provider. WebSight supports multi-site management, so our Ingress contains rules for authors and site visitors from multiple domains (paths).
-- `CMS`service and pods that read/write content from/to MongoDB and create/delete (publish/unpublish) generated HTML pages/images/other assets in Public Storage
+- `CMS` service and pods that read/write content from/to MongoDB and create/delete (publish/unpublish) generated HTML pages/images/other assets in Public Storage
 - `MongoDB` service and pod that stores the content in a persistent volume
 - `Web Server` service and pods that read pre-generated HTML pages from Public Storage
 - `Public Storage` persistent volume share between CMS and Web Server pods
