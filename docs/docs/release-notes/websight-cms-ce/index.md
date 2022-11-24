@@ -3,10 +3,10 @@
 ## 1.4.0 <small>November 23, 2022</small>
 
 #### Page Editor
-- Improved UX - ability to drag and drop a component between others included in a container.
-- Improved UX - component list contains only items allowed for a given page (based on its template).
-- Improved UX [#22](https://github.com/websight-io/starter/issues/22) - scrolling the page to a component when the user clicks it in the content tree.
-- Fixed an issue with misaligned overlays when the window resized.
+- Added ability to drag and drop a component between others included in a container.
+- Added [#22](https://github.com/websight-io/starter/issues/22) - scrolling the page to a component when the user clicks it in the content tree.
+- Improved UX for the component list. It contains only items allowed for a given page (based on its template).
+- Fixed an issue with misaligned overlays when the user resized the window.
 
 #### Page and Asset Management
 - Added actions in the breadcrumb for assets.
