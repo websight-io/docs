@@ -77,6 +77,7 @@ plugins:
           'docs/authors/component-libs/index.md': 'docs/authors/component-libs/howlite/index.md'
           'docs/release-notes/index.md': 'docs/release-notes/websight-cms-ce/index.md'
 
+          'docs/developers/index.md': 'docs/developers/quick-start/index.md'
           'docs/developers/deployment/index.md': 'docs/developers/deployment/aws-ecs/index.md'
 
           'getting-started/quick-start/index.md': 'docs/quick-start/index.md'
