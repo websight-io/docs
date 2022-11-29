@@ -4,7 +4,7 @@
 
 ## Description:
 
-Component allows to group other elements. May be useful e.g. to show/hide group of components.
+Component allows to group other elements. May be useful e.g. to [show/hide group of components](../#showhide-dialog-fields).
 
 ## Example:
 
