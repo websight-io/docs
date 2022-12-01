@@ -1,6 +1,6 @@
 ---
 title: Develop WebSight with Codespaces
-description: GitHub Codespaces can be used to spin up fully configured dev environments in the cloud that start in seconds. It comes together with preconfigured tooling, like Docker and Java, and it's all what we need to start working with WebSight instantly.
+description: GitHub Codespaces can be used to spin up fully configured dev environments in the cloud that start in seconds. It comes together with preconfigured tooling, like Docker and Java, and it's all that we need to start working with WebSight instantly.
 author: Michał Cukierman
 publicationDate: 01.12.2022
 minReadTime: 10
@@ -14,7 +14,7 @@ tags:
 *Published at: 01.12.2022 by [Michał Cukierman](https://github.com/michalcukierman)*
 
 ## What is GitHub Codespaces
-GitHub Codespaces is a dev environment in the cloud. It looks very similar to Visual Studio Code and can spin up fully configured dev environments in the cloud that starts in seconds.
+GitHub Codespaces is a dev environment in the cloud. It looks very similar to Visual Studio Code and can be used to spin up fully configured dev environments in the cloud that starts in seconds.
 It comes together with preconfigured tooling, like Docker and Java, and it's all that we need to start working with WebSight instantly.
 
 ## Starting and running the project
@@ -42,7 +42,7 @@ mvn clean install
       <img class="image--with-border" src="./build-project-with-maven.png" alt="Build Codespace project">
  </p>
 
-- cd to `environment/local` and start WebSight with
+1. cd to `environment/local` and start WebSight with
 
 ```
 docker compose up
