@@ -1,5 +1,7 @@
 # WebSight CMS Community Edition Release Notes
 
+## 1.5.0
+
 ## 1.4.0 <small>November 23, 2022</small>
 
 #### Page Editor
