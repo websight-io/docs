@@ -21,19 +21,19 @@ It comes together with preconfigured tooling, like Docker and Java, and it's all
 
 The easiest way to set up the project and start Dockerized ephemeral environment is to follow the steps: 
 
- 1. Go to https://github.com/websight-io/starter and fork the project
+1. Go to https://github.com/websight-io/starter and fork the project
  <p align="center" width="100%">
      <img class="image--with-border" src="./fork-ws-starter.png" alt="Fork the CMS project">
  </p>
- 1. Create Codespace on `main` branch
+1. Create Codespace on `main` branch
   <p align="center" width="100%">
       <img class="image--with-border" src="./create-codespace.png" alt="Create Codespace for the project">
   </p>
- 1. The new window with the project on online IDE should open
+1. The new window with the project on online IDE should open
   <p align="center" width="100%">
        <img class="image--with-border" src="./websight-on-codespaces.png" alt="Project on Codespaces">
   </p>
- 1. Go to the terminal and build the project with
+1. Go to the terminal and build the project with
 
 ```
 mvn clean install
