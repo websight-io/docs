@@ -3614,11 +3614,20 @@ It comes together with preconfigured tooling, like Docker and Java, and it's all
 <br />
 <p align="center" width="100%">
        <img class="image--with-border" src="./websight-on-codespaces.png" alt="Project on Codespaces">
-  </p></p>
+  </p>
+</p>
+</li>
+<li>
+<p>Check the Java version installed on the container using the command:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>java --version
+</code></pre></div>
+and update to <code>Java 17</code> using <code>SDKMan</code> if needed
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sdk install java 
+</code></pre></div></p>
 </li>
 <li>
 <p>Go to the terminal and build the project with
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mvn clean install
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn clean install
 </code></pre></div>
  
 <p align="center" width="100%">
@@ -3628,7 +3637,7 @@ It comes together with preconfigured tooling, like Docker and Java, and it's all
 </li>
 <li>
 <p>cd to <code>environment/local</code> and start WebSight with
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker compose up
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose up
 </code></pre></div>
  
 <p align="center" width="100%">
