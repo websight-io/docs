@@ -14,7 +14,7 @@ tags:
 *Published at: 01.12.2022 by [Michał Cukierman](https://github.com/michalcukierman)*
 
 ## What is GitHub Codespaces
-GitHub Codespaces is a dev environment in the cloud. It looks very similar to Visual Studio Code and can be used to spin up fully configured dev environments in the cloud that start in seconds.
+GitHub Codespaces is a dev environment in the cloud. It looks very similar to Visual Studio Code and can spin up fully configured dev environments in the cloud that starts in seconds.
 It comes together with preconfigured tooling, like Docker and Java, and it's all that we need to start working with WebSight instantly.
 
 ## Starting and running the project
