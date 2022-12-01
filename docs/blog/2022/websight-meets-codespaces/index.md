@@ -25,15 +25,15 @@ The easiest way to set up the project and start Dockerized ephemeral environment
  <p align="center" width="100%">
      <img class="image--with-border" src="./fork-ws-starter.png" alt="Fork the CMS project">
  </p>
-1. Create Codespace on `main` branch
+2. Create Codespace on `main` branch
   <p align="center" width="100%">
       <img class="image--with-border" src="./create-codespace.png" alt="Create Codespace for the project">
   </p>
-1. The new window with the project on online IDE should open
+3. The new window with the project on online IDE should open
   <p align="center" width="100%">
        <img class="image--with-border" src="./websight-on-codespaces.png" alt="Project on Codespaces">
   </p>
-1. Go to the terminal and build the project with
+4. Go to the terminal and build the project with
 
 ```
 mvn clean install
@@ -42,7 +42,7 @@ mvn clean install
       <img class="image--with-border" src="./build-project-with-maven.png" alt="Build Codespace project">
  </p>
 
-1. cd to `environment/local` and start WebSight with
+5. cd to `environment/local` and start WebSight with
 
 ```
 docker compose up
