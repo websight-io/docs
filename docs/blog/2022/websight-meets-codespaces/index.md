@@ -86,4 +86,4 @@ After logging in you can use WebSight, edit and publish pages directly on GitHub
 
 ## Summary
 Containerization brings us new possibilities, and setting up dev environments in seconds is just one of them.
-I really like the way `Codespaces` works and I believe that it can be more popular in the future.
+I really like the way `Codespaces` works, and I believe it can gain more popularity in the future.
