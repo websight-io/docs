@@ -18,23 +18,23 @@ GitHub Codespaces is a dev environment in the cloud. It looks very similar to Vi
 It comes together with preconfigured tooling, like Docker and Java, and it's all that we need to start working with WebSight instantly.
 
 ## Starting and running the project
-
 The easiest way to set up the project and start Dockerized ephemeral environment is to follow the steps: 
 
 1. Go to https://github.com/websight-io/starter and fork the project
  <p align="center" width="100%">
      <img class="image--with-border" src="./fork-ws-starter.png" alt="Fork the CMS project">
  </p>
-2. Create Codespace on `main` branch
+ 
+1. Create Codespace on `main` branch
   <p align="center" width="100%">
       <img class="image--with-border" src="./create-codespace.png" alt="Create Codespace for the project">
   </p>
-3. The new window with the project on online IDE should open
+  
+1. The new window with the project on online IDE should open
   <p align="center" width="100%">
        <img class="image--with-border" src="./websight-on-codespaces.png" alt="Project on Codespaces">
   </p>
-4. Go to the terminal and build the project with
-
+1. Go to the terminal and build the project with
 ```
 mvn clean install
 ```
@@ -42,8 +42,7 @@ mvn clean install
       <img class="image--with-border" src="./build-project-with-maven.png" alt="Build Codespace project">
  </p>
 
-5. cd to `environment/local` and start WebSight with
-
+1. cd to `environment/local` and start WebSight with
 ```
 docker compose up
 ```
@@ -66,7 +65,6 @@ Codespaces automatically forwards declared ports using the generated domain. In 
  
  
 ## Usage
-
 To open WebSight CMS and Nginx hosted sites, navigate to `Ports` tab and click on the link you want to visit.
 Author link is the one next to `8080` port
  <p align="center" width="100%">
