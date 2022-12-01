@@ -34,6 +34,16 @@ The easiest way to set up the project and start Dockerized ephemeral environment
   <p align="center" width="100%">
        <img class="image--with-border" src="./websight-on-codespaces.png" alt="Project on Codespaces">
   </p>
+  
+1. Check the Java version installed on the container using the command:
+```
+java --version
+```
+and update to `Java 17` using `SDKMan` if needed
+```
+sdk install java 
+```
+
 1. Go to the terminal and build the project with
 ```
 mvn clean install
