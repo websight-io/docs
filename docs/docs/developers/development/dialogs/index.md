@@ -101,6 +101,7 @@ To show or hide a particular field depends on other fields’ state you can use 
 This node should contain children defining conditions to show the element. If the component has such a child node it’s hidden by default. It’s required to fulfill at least one condition to show the component.
 
 Each condition should have two properties:
+
 - sourceName - with the name of the component whose value would be checked
 - values - with one or more values. At least one of them should match the source field value to fulfill the condition.
 
