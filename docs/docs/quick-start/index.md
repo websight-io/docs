@@ -74,6 +74,12 @@ Open list of _Pages_ using the left sidebar. Select all pages and use action _Pu
 
 Congratulations! The demo site is available at [http://luna.127.0.0.1.nip.io/](http://luna.127.0.0.1.nip.io/).
 
+!!! hint "Tip"
+
+    Please notice that we use a [nip.io](https://nip.io). It helps with simulating a real production environment that uses subdomains without the necessity to edit the `hosts` file on local machines.
+
+---
+
 ![Published demo page](./quick-start-published-page.png)
 
 ## Part C: Update a page
