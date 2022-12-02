@@ -6,6 +6,7 @@ WebSight CMS delivers set of ready to use components, see subsections of this do
 
 ## Dialog structure
 Each dialog can be build out of two element types:
+
 - containers - used to achieve proper structure of fields in dialog, examples: container, tab, tabs, include
 - fields - used to input values via dialog, examples: textfield, numberfield, pathPicker
 
