@@ -76,7 +76,7 @@ All fields within the dialog have the `name` property, which defines the propert
 Validation in dialog fields is used to verify if the value meets the criteria of the particular field. There are two levels:
 
 ### FrontEnd validation
-Front End validation is done by Atlaskit by default, if the submitted value is obviously incorrect, like a non-number value in NumberField. For details please see: https://atlassian.design/components
+Front End validation is done by Atlaskit by default, if the submitted value is obviously incorrect, like a non-number value in NumberField. You can find more details [here](https://atlassian.design/components).
 ![](dialog-frontend-validation.png)
 
 ### BackEnd validation
