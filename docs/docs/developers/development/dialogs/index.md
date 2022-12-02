@@ -106,6 +106,7 @@ Each condition should have two properties:
 - values - with one or more values. At least one of them should match the source field value to fulfill the condition.
 
 Example conditions configurations:
+
 - with single value:
 ```json
 "ws:display": {
