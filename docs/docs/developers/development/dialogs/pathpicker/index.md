@@ -31,6 +31,9 @@ Path picker is an input that allows the user pick path of resource from reposito
 - **description** - `string`  
     Display description value as a tooltip
 
+- **placeholder** - `string`  
+    Override for the placeholder text that appears when the value is empty.
+
 ## Example
 
 ```json
