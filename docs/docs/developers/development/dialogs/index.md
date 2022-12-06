@@ -7,7 +7,7 @@ WebSight CMS delivers set of ready to use components, see subsections of this do
 ## Dialog structure
 Each dialog can be build out of two element types:
 
-- containers - used to achieve proper structure of fields in dialog, examples: container, tab, tabs, include
+- containers - used to achieve proper structure of fields in dialog, examples: container, tab, tabs
 - fields - used to input values via dialog, examples: textfield, numberfield, pathPicker
 
 Example dialog structure definition can look like this:
@@ -71,7 +71,44 @@ It will result with following in UI dialog:
 ![Dialog example tab2](dialog-example-tab2.png)
 
 ## Data structure
-All fields within the dialog have the `name` property, which defines the property’s name, under which values are saved in JCR. What is significant, the data is flattened, which means it does not matter if a particular field is in a nested structure (like tabs) or not. Properties are always saved under the same node.
+The data structure depends on the `name` property. 
+
+- In the simplest example property value is saved directly as a resource property. 
+```json
+"title": {
+  "sling:resourceType": "wcm/dialogs/components/textfield",
+  "label": "Title",
+  "name": "title"
+}
+```
+In above example, the `title` is added directly as a resource property.
+![Simple data property](dialog-data-simple.png)
+
+- There is also a possibility to manipulate data from other resources by using a path in the `name` property:
+```json
+"alt": {
+  "sling:resourceType": "wcm/dialogs/components/textfield",
+  "name": "image/alt",
+  "label": "Alt text"
+}
+```
+In above example, the `alt` property is saved as an image property from the header context.
+![Child resource property](dialog-data-path.png)
+
+- Another example of manipulating data from other resources is using a multifield. This dialog field `name` property defines a node under which are created other resources with properties defined in the multifield.
+```json
+"urls": {
+  "sling:resourceType": "wcm/dialogs/components/multifield",
+  "name": "urls",
+  "label": "Footer URLs",
+  "labelField": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "label",
+    "label": "Label"
+  }
+}
+```
+![Multifield resource property](dialog-data-multifield.png)
 
 ## Validation
 Validation in dialog fields is used to verify if the value meets the criteria of the particular field. There are two levels:
@@ -84,6 +121,65 @@ Front End validation is done by Atlaskit by default, if the submitted value is o
 WebSight supports the validation of dialog values on BackEnd side. If the value is incorrect, then it won’t be saved and the dialog can’t be submitted. The author will see a proper error message.
 ![](dialog-backend-validation.png)
 
+#### Custom validator
+To prepare a custom validator you have to extend an `AbstractValidator` form `websight-dialogs-service` as an OSGi `@Component(service = DialogValidator.class)`. 
+You can override the following methods:
+
+- `supportedResourceTypes()` - specify resource dialog field to validate
+- `propertiesUsed()` - specify dialog field properties to validate
+- `validate(Resource resource, Map propertiesToSave)` - put validation logic in here. In the case of:
+    - `error` - return String with a proper message, which will be displayed in Dialog
+    - `success` - return null
+
+!!! warning "Important"
+
+    The validator will be applied to a particular field within dialog ONLY when at least one property and resource type matches the configuration. Please see the below example.
+
+---
+
+
+Let's define number validator:
+```java
+@Component(service = DialogValidator.class)
+public class NumberValueValidator extends AbstractValidator {
+
+  @Override
+  public String[] supportedResourceTypes() {
+    return new String[]{"wcm/dialogs/components/numberfield"};
+  }
+  
+  @Override
+  public String[] supportedResourceTypes() {
+    return new String[]{"min", "max"};
+  }
+
+  @Override
+  public String validate(Resource resource,
+          Map<String, Object> propertiesToSave) {
+    //validate logic
+  }
+}
+```
+
+- For dialog field:
+```json
+"number": {
+  "sling:resourceType": "wcm/dialogs/components/numberfield",
+  "name": "number",
+  "label": "Some Number"
+}
+```
+The validator won't be applied because only resource type matches, but none of the properties.
+- For dialog field:
+```json
+"number": {
+  "sling:resourceType": "wcm/dialogs/components/numberfield",
+  "name": "number",
+  "label": "Some Number"
+}
+```
+The validator will be applied because the resource type and at least one of the properties match.
+
 ## Show/hide dialog fields
 By default, all dialog components are visible, but there is a possibility to hide them.
 
@@ -94,7 +190,7 @@ To show or hide a particular field depending on dialog context you can use a `ws
 "ws:disallowedContext": ["edit"]
 ```
 
-To hide an element in dialog, the request from Front-End which fetches it has to contain the additional parameter `context`. If the context value matches one of `ws:dissallowedContext` values, then the field won’t be rendered.
+To hide an element in dialog, the request from Front-End which fetches it has to contain the additional parameter `context`. If the context value matches one of `ws:dissallowedContext` values, then the field won’t be rendered. To check request details, go to the [Swagger documentation](http://localhost:8080/apps/apidocs#/apps/websight-dialogs-service/docs/api.html).
 
 ### Conditions
 To show or hide a particular field depends on other fields’ state you can use a `ws:display` node.
@@ -164,11 +260,56 @@ Example dialog definition:
   }
 }
 ```
-![](dialog-show-hide-1.png)
-![](dialog-show-hide-2.png)
-![](dialog-show-hide-3.png)
+
+
+- Initial dialog state:
+![Inital dialog](dialog-show-hide-1.png)
+
+
+- Hide all other elements checked
+![Dialog with hide all](dialog-show-hide-2.png)
+
+
+- Hide all other elements unchecked and show required field checked 
+![Dialog with show required field](dialog-show-hide-3.png)
 
 ## Default state
 Some components allow defining a default state. E.g. checkbox can be checked by default, and select can have the default option. It is significant to keep using those components with the same default state used in backend models.
+Example:
+- dialog definition:
+```json
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "headingLevel",
+  "label": "Heading level",
+  "h1": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H1",
+    "value": "h1"
+  },
+  "h2": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H2",
+    "selected": true,
+    "value": "h2"
+  },
+  "h3": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H3",
+    "value": "h3"
+  }
+}
+```
+- model class:
+```java 
+@Model(adaptables = Resource.class)
+public class TitleComponent {
 
-To achieve a similar effect you can use initial content if you add a new component. There is no easy solution to update all existing resources, so the initial content is useless if you extend the existing component. In that case, you need to use default states.
+  @Inject
+  @Default(values = "h2")
+  private String headingLevel;
+
+}
+```
+
+You can use [Component template](../components/definition/#template) to achieve a similar effect, but only if you add a new component. There is no easy solution to update all existing resources, so the initial content is useless if you extend the existing component. In that case, you need to use default states.
