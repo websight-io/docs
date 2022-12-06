@@ -263,20 +263,20 @@ Example dialog definition:
 
 
 - Initial dialog state:
-![Inital dialog](dialog-show-hide-1.png)
+![Inital dialog state](dialog-show-hide-1.png)
 
 
-- Hide all other elements checked
-![Dialog with hide all](dialog-show-hide-2.png)
+- Checking "Hide all other elements" hides the second field.
+![Dialog with "Hide all other elements" checked](dialog-show-hide-2.png)
 
 
-- Hide all other elements unchecked and show required field checked 
-![Dialog with show required field](dialog-show-hide-3.png)
+- Checking "Show required field" shows another field.
+![Dialog with "Show required field" checked](dialog-show-hide-3.png)
 
 ## Default state
 Some components allow defining a default state. E.g. checkbox can be checked by default, and select can have the default option. It is significant to keep using those components with the same default state used in backend models.
 Example:
-- dialog definition:
+- dialog field definition with h2 selected by default:
 ```json
 {
   "sling:resourceType": "wcm/dialogs/components/radio",
