@@ -276,6 +276,7 @@ Example dialog definition:
 ## Default state
 Some components allow defining a default state. E.g. checkbox can be checked by default, and select can have the default option. It is significant to keep using those components with the same default state used in backend models.
 Example:
+
 - dialog field definition with h2 selected by default:
 ```json
 {
