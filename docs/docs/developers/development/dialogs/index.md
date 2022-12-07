@@ -122,10 +122,10 @@ WebSight supports the validation of dialog values on BackEnd side. If the value 
 ![](dialog-backend-validation.png)
 
 #### Custom validator
-To prepare a custom validator you have to extend an `DialogValidator` form `websight-dialogs-service` as an OSGi `@Component(service = DialogValidator.class)`. 
-You have to override the following methods:
+To prepare a custom validator you have to extend an `pl.ds.websight.dialog.spi.DialogValidator` form `pl.ds.websight:websight-dialogs-service` as an OSGi `@Component(service = DialogValidator.class)`. 
+You have to implement the following methods:
 
-- `boolean supports(Resource resource)` - should return whether the dialog resource at the path is supported by this validator
+- `boolean supports(Resource resource)` - should return whether the dialog resource is supported by this validator - this check will be done for each resource representing dialog fields
 - `String validate(Resource resource, Map<String, Object> propertiesToSave)` - should return a validation result. In the case of:
     - `success` - return null
     - `error` - return String with a proper message, which will be displayed in Dialog
