@@ -122,63 +122,13 @@ WebSight supports the validation of dialog values on BackEnd side. If the value 
 ![](dialog-backend-validation.png)
 
 #### Custom validator
-To prepare a custom validator you have to extend an `AbstractValidator` form `websight-dialogs-service` as an OSGi `@Component(service = DialogValidator.class)`. 
-You can override the following methods:
+To prepare a custom validator you have to extend an `DialogValidator` form `websight-dialogs-service` as an OSGi `@Component(service = DialogValidator.class)`. 
+You have to override the following methods:
 
-- `supportedResourceTypes()` - specify resource dialog field to validate
-- `propertiesUsed()` - specify dialog field properties to validate
-- `validate(Resource resource, Map propertiesToSave)` - put validation logic in here. In the case of:
-    - `error` - return String with a proper message, which will be displayed in Dialog
+- `boolean supports(Resource resource)` - should return whether the dialog resource at the path is supported by this validator
+- `String validate(Resource resource, Map<String, Object> propertiesToSave)` - should return a validation result. In the case of:
     - `success` - return null
-
-!!! warning "Important"
-
-    The validator will be applied to a particular field within dialog ONLY when at least one property and resource type matches the configuration. Please see the below example.
-
----
-
-
-Let's define number validator:
-```java
-@Component(service = DialogValidator.class)
-public class NumberValueValidator extends AbstractValidator {
-
-  @Override
-  public String[] supportedResourceTypes() {
-    return new String[]{"wcm/dialogs/components/numberfield"};
-  }
-  
-  @Override
-  public String[] supportedResourceTypes() {
-    return new String[]{"min", "max"};
-  }
-
-  @Override
-  public String validate(Resource resource,
-          Map<String, Object> propertiesToSave) {
-    //validate logic
-  }
-}
-```
-
-- For dialog field:
-```json
-"number": {
-  "sling:resourceType": "wcm/dialogs/components/numberfield",
-  "name": "number",
-  "label": "Some Number"
-}
-```
-The validator won't be applied because only resource type matches, but none of the properties.
-- For dialog field:
-```json
-"number": {
-  "sling:resourceType": "wcm/dialogs/components/numberfield",
-  "name": "number",
-  "label": "Some Number"
-}
-```
-The validator will be applied because the resource type and at least one of the properties match.
+    - `error` - return String with a proper message, which will be displayed in Dialog
 
 ## Show/hide dialog fields
 By default, all dialog components are visible, but there is a possibility to hide them.
