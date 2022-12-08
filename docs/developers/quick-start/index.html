@@ -3636,8 +3636,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-changes" class="md-nav__link">
-    Install changes
+  <a href="#apply-changes" class="md-nav__link">
+    Apply changes
   </a>
   
 </li>
@@ -3716,8 +3716,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-next-steps" class="md-nav__link">
-    The next steps
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -3742,54 +3742,54 @@
 
 <h1 id="developers-quick-start-guide">Developers Quick Start Guide</h1>
 <h2 id="introduction">Introduction</h2>
-<p>Use this guide to learn how to update a simple Howlite component. We recommend completing the general <a href="/docs/quick-start/">quick start guide</a> first to get familiar with basic concepts.</p>
-<p>The scenario utilizes a sample component library <a href="https://github.com/websight-io/howlite">Howlite</a> and a demo site project <em>Luna</em>. For simplicity, we overrode the <em>Title</em> component included in the <a href="https://github.com/websight-io/howlite">Howlite</a> collection in advance and prepared the <em>Luna Title</em> component inside the demo project. </p>
-<p>Your task is to update the <em>Luna Title</em> component and extend existing functionality and tests. See more details in the sections below.</p>
+<p>This guide explains how to update a simple Howlite component. Before you complete this guide, we recommend completing the basic <a href="/docs/quick-start/">quick start guide</a> first so that you understand basic WebSight CMS concepts.</p>
+<p>For demonstration purposes, this guide uses a sample component library, <a href="https://github.com/websight-io/howlite">Howlite</a>, and a demo site project, <em>Luna</em>. For the sake of simplicity, we overrode the <em>Title</em> component included in the <a href="https://github.com/websight-io/howlite">Howlite</a> collection in advance and preconfigured the <em>Luna Title</em> component inside the demo project. </p>
+<p>Your task in completing this guide is to update the <em>Luna Title</em> component and extend existing functionality and tests. The sections below explain more detail.</p>
 <div class="admonition info">
 <p class="admonition-title">Important notice</p>
-<p>All scripts presented below are designed for Linux-based platforms. If you are a Windows user, please install and configure <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> (WSL).</p>
+<p>All scripts presented below are designed for Linux-based platforms. If you are a Windows user, please install and configure <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> (WSL) to use this guide.</p>
 </div>
 <h2 id="part-a-prerequisites">Part A: Prerequisites</h2>
 <ol>
-<li>Install <a href="https://adoptium.net/">AdoptOpenJDK 17</a> with 'x64/aarch64' architecture (on mac use <code>brew install openjdk@17</code>):</li>
+<li>Install <a href="https://adoptium.net/">AdoptOpenJDK 17</a> with 'x64/aarch64' architecture (on macOS use <code>brew install openjdk@17</code>):</li>
 <li>Install Node.js and NPM</li>
 <li>Install <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>.</li>
 <li>Install <a href="https://git-scm.com/">Git</a></li>
 </ol>
 <h2 id="part-b-setup-local-environment">Part B: Setup local environment</h2>
-<p>Clone <em>Luna</em> repository and build it.</p>
+<p>First, clone the <em>Luna</em> repository and build it within your local environment using the following commands:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/websight-io/starter.git
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span> starter
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>./mvnw clean install -P e2e
 </code></pre></div>
-<p>Run docker environment.
+<p>Then, start a Docker environment.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker compose -f environment/local/docker-compose.yml up -d
 </code></pre></div></p>
-<p>Congratulations! Your local environment is ready. Open <a href="http://localhost:8080/">http://localhost:8080/</a> and log in using <code>wsadmin</code>/<code>wsadmin</code> credentials.</p>
+<p>Congratulations! Your local environment is now ready. To view it, open <a href="http://localhost:8080/">http://localhost:8080/</a> in a Web browser and log in using the credentials <code>wsadmin</code>/<code>wsadmin</code>.</p>
 <h2 id="part-c-changing-component">Part C: Changing component</h2>
 <div class="admonition info">
 <p class="admonition-title">Hint</p>
-<p>If you need help to navigate inside WebSight, see the general <a href="/docs/quick-start/">getting started</a> for details.</p>
+<p>If you need help navigating inside WebSight, see the basic <a href="/docs/quick-start/">getting started</a> guide for details.</p>
 </div>
 <h3 id="business-requirement">Business requirement</h3>
-<p>Let's imagine the following scenario. Page owner wants to update the title of the new Grand Luxor Jewelry Collection.</p>
+<p>Let's imagine the following scenario: A page owner wants you to update the title of the page that describes the company's new Grand Luxor Jewelry Collection.</p>
 <p><img alt="The current title" src="the-current-title.png" /></p>
-<p>The ask is to keep the collection name in one line and decrease the font size for the text <code>Meet our</code>. The expected result is presented below.</p>
+<p>To fulfill this request, you are asked to keep the collection name on one line and decrease the font size for the text <code>Meet our</code>. The expected result is presented below.</p>
 <p><img alt="Expected result" src="the-expected-result.png" /></p>
 <h3 id="technical-scope">Technical scope</h3>
-<p>You need to extend the <em>Title</em> component included in the <a href="https://github.com/websight-io/howlite">Howlite</a> to implement the above requirement. However, let's check the orginal component first to identify the scope of changes. </p>
-<p>Run WebSight, open <em>Luna</em> space and edit home page. Find the <em>Title</em> having text <code>Meet our New Grand Luxor Jewelry Collection</code> and edit its properties. </p>
+<p>To do this, you need to extend the <em>Title</em> component included in the <a href="https://github.com/websight-io/howlite">Howlite</a> library. Before doing that, let's check the orginal component first to identify the scope of changes.</p>
+<p>Run WebSight, open the <em>Luna</em> space and edit the home page. Find the <em>Title</em> component that contains the text <code>Meet our New Grand Luxor Jewelry Collection</code> and edit its properties.</p>
 <p><img alt="Title dialog properties" src="title-dialog-properties.png" /></p>
-<p>Enable <code>Overline text</code> option, move <code>Meet our</code> from <code>Heading text</code> to <code>Overline text</code> and submit changes.</p>
+<p>Enable the <code>Overline text</code> option, move <code>Meet our</code> from <code>Heading text</code> to <code>Overline text</code> and submit changes.</p>
 <p><img alt="Updated title" src="title-updated.png" /></p>
-<p>The result is close to the expectation, but the font size of the overline text is too small. You could prepare a new version of the <em>Title</em> component having a different font size for the overline text. However, this is not a flexible solution. An additional input field to define the font size for the overline text is a better option. </p>
+<p>As you can see, the result comes close to meeting the expectation, but the font size of the overline text is too small. You could prepare a new version of the <em>Title</em> component with a different font size for the overline text. However, this is not a flexible solution. Creating an additional input field to define the font size for the overline text is a better option.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>For simplicity, we overrode the original component in advance and prepared the <em>Luna Title</em>. It is a part of the demo site project, but it is just a placeholder. It works exactly as the <em>Title</em>. The following sections guide you on how to implement the change.</p>
+<p>For simplicity, we overrode the original component in advance and prepared the <em>Luna Title</em> component. It is a part of the demo site project, but it is just a placeholder. It works exactly as the <em>Title</em>. The following sections guide you on how to implement the change.</p>
 </div>
 <h3 id="component-update">Component update</h3>
-<p>Your task is to enable the setting of the overline font size. </p>
-<p>Firstly, you need to add a new field <code>overlineSize</code> in the model class <code>LunaTitleComponent.java</code>. Let's define a default size <code>hl-title__heading--size-5</code> according to the received design too.</p>
+<p>Your task is to enable setup of the overline font size. </p>
+<p>To start, first you need to add a new field, <code>overlineSize</code>, to the model class <code>LunaTitleComponent.java</code>. Let's define a default size <code>hl-title__heading--size-5</code> according to the received design as well. The following Java code will do this:</p>
 <div class="highlight"><span class="filename">application/backend/src/main/java/pl/ds/luna/compoennts/models/LunaTitleComponent.java</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">pl.ds.luna.components.models</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.inject.Inject</span><span class="p">;</span><span class="w"></span>
@@ -3811,15 +3811,15 @@
 <a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
 <a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Next, you need to update the component HTML template. The original one defines the CSS class determining the font size as <code>hl-title__heading--size-6</code>.</p>
+<p>Next, you need to update the component HTML template. The original one defines the CSS class that determines the font size as <code>hl-title__heading--size-6</code>.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">h6</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hl-title__heading hl-title__heading--size-6&quot;</span> 
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="na">data-testid</span><span class="o">=</span><span class="s">&quot;overline&quot;</span><span class="p">&gt;</span>${model.subtitle}<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
 </code></pre></div>
-As you updated the model class, you can use its property now.</p>
+Because you updated the model class, you can use its property now.</p>
 <div class="highlight"><span class="filename">application/backend/src/main/resources/apps/luna/components/lunatitle/lunatitle.html</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">h6</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hl-title__heading ${model.overlineSize}&quot;</span> 
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="na">data-testid</span><span class="o">=</span><span class="s">&quot;overline&quot;</span><span class="p">&gt;</span>${model.subtitle}<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. You have to override the dialog definition from Howlite. Create a new <code>dialog</code> directory and put <code>.content.json</code> file inside.</p>
+<p>The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. To enable this, you have to override the dialog definition from Howlite. Do so by creating a new <code>dialog</code> directory and put <code>.content.json</code> file inside.</p>
 <div class="highlight"><span class="filename">application/backend/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;tabs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;generalTab&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -3846,21 +3846,21 @@ As you updated the model class, you can use its property now.</p>
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
 <a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>The above definition specifies the new <code>overlineSize</code> field. It is placed before <code>overline</code> field and uses heading size definition from Howlite, but with <em>small</em> size selected by default.</p>
-<h3 id="install-changes">Install changes</h3>
-<p>Run the following command to install the changes on your local environment.
+<p>The above definition specifies the new <code>overlineSize</code> field. It is placed before the <code>overline</code> field and uses a heading size definition from Howlite, but with <em>small</em> size selected by default.</p>
+<h3 id="apply-changes">Apply changes</h3>
+<p>Run the following command to apply the changes to your local environment.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./mvnw -f application/backend/pom.xml clean install -P autoInstallBundle
 </code></pre></div></p>
 <h2 id="part-d-functional-tests">Part D: Functional tests</h2>
 <h3 id="run-functional-tests">Run functional tests</h3>
-<p>We enhance WebSight CMS by adding new features, improving UX, and fixing bugs. Thus, we need confidence that implemented changes don't lead to any regression. We use <a href="https://www.cypress.io/">Cypress</a> for automated testing to ensure it. Moreover, this approach enables us to spend less time on manual testing and regression fixes. We can focus on developing new features and improvements as a result.</p>
-<p>We prepared two sample functional tests for the <em>Luna Title</em> component. They are executed during maven build. You can run them using <code>npm</code> on your local environment too. However, you have to add a test content before. Use the following script to install it.
+<p>We continuously improve WebSight CMS by adding new features, improving the UX, and fixing bugs. Thus, we need confidence that changes don't lead to any regression on websites. To provide this confidence, we use <a href="https://www.cypress.io/">Cypress</a> to enable automated testing of content. This approach enables us to spend less time on manual testing and regression fixes. We can focus on developing new features and improvements instead.</p>
+<p>To demonstrate automated functional testing, we prepared two sample functional tests for the <em>Luna Title</em> component. They are executed during the Maven build process. You can run them using <code>npm</code> on your local environment as well. However, you have to add test content before running the tests. Use the following script to set this up:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
-</code></pre></div></p>
-<p>Now, you can run the tests using the following command.
+</code></pre></div>
+<p>Now, you can run the tests using the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>npm run-script <span class="nb">test</span> --prefix tests/end-to-end
-</code></pre></div></p>
-<p>If you execute them, they detect your changes for the <em>Luna Title</em> and fail. You should get the following results.
+</code></pre></div>
+<p>If you execute the tests, they will detect your changes for the <em>Luna Title</em> and fail. You should get the following results:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Running:  lunatitle.cy.ts                                                                 (1 of 1)
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
@@ -3897,14 +3897,14 @@ As you updated the model class, you can use its property now.</p>
 <a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>       &#39;jcr:primaryType&#39;: &#39;nt:unstructured&#39;,
 <a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>       headingLevel: &#39;h1&#39;,
 <a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>       headingSize: &#39;hl-title__heading--size-2&#39; }
-</code></pre></div></p>
-<p>When a functional test fails, you should check why. It is expected in this case, as you implemented the new requirements. Firstly, you updated the default font size of the overline (to ensure consistency with the design). Secondly, you added a new property to the dialog for the component. The tests recognized both changes, and you should adjust them as well. The following section presents how to complete it.</p>
+</code></pre></div>
+<p>When a functional test fails, you should check why. It is expected in this case, as you implemented new requirements. Firstly, you updated the default font size of the overline component (to ensure consistency with the design). Secondly, you added a new property to the dialog for the component. The tests recognized both changes, and you should adjust them as well. The following section explains how to do so.</p>
 <div class="admonition info">
 <p class="admonition-title">Hint</p>
-<p>Even better is to start by changing a test, so it fails and then adjusting the implementation so that the test passes.</p>
+<p>A best practice is to start by changing a test so that it fails until you've made desired changes. Then, apply your changes so that the test passes.</p>
 </div>
 <h3 id="update-functional-tests">Update functional tests</h3>
-<p>As functional tests fail due to the changes, you should adjust them. They are placed in file <code>tests/end-to-end/tests/lunatitle.cy.ts</code>. </p>
+<p>When functional tests fail due to changes, you should adjust them. They are placed in file <code>tests/end-to-end/tests/lunatitle.cy.ts</code>. </p>
 <p>The first test checks the font size for the overline text. There are two component instances validated. Thus, you need to update assertions for both of them as follows.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">getByTestId</span><span class="p">(</span><span class="s1">&#39;component_title1&#39;</span><span class="p">)</span><span class="w"></span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">      </span><span class="p">.</span><span class="nx">findByTestId</span><span class="p">(</span><span class="s1">&#39;overline&#39;</span><span class="p">)</span><span class="w"></span>
@@ -3933,11 +3933,11 @@ As you updated the model class, you can use its property now.</p>
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">      </span><span class="p">});</span><span class="w"></span>
 </code></pre></div>
 <h3 id="run-functional-tests-again">Run functional tests again</h3>
-<p>Now, you can execute the functional tests again.</p>
+<p>Now, you can execute the updated functional tests:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>npm run-script <span class="nb">test</span> --prefix tests/end-to-end
 </code></pre></div>
-<p>Both tests should pass this time. You should get a report like the one below.
+<p>Both tests should pass this time. You should receive a report like the one below.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Running:  lunatitle.cy.ts                                                                 (1 of 1)
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
@@ -3947,16 +3947,16 @@ As you updated the model class, you can use its property now.</p>
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
 <a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>2 passing (4s)
-</code></pre></div></p>
+</code></pre></div>
 <p>Congratulations! You updated the component, and it passed tests.</p>
 <h2 id="part-e-use-the-new-component">Part E: Use the new component</h2>
 <div class="admonition info">
 <p class="admonition-title">Hint</p>
 <p>If you need help to navigate inside WebSight, see the general <a href="/docs/quick-start/">getting started</a> for details.</p>
 </div>
-<p>The page owner can use the updated component now. Let's check it too.</p>
-<p>Switch to WebSight CMS, open <em>Luna</em> space, and edit the home page. Find the <em>Title</em> with text <code>Meet our New Grand Luxor Jewelry Collection</code>. </p>
-<p>Find the <em>Luna Title</em> in the component tree on the left. Drag and drop the component on the page just below the orginal one. </p>
+<p>The page owner can use the updated component now. Let's verify by checking it out in the admin interface.</p>
+<p>Switch to WebSight CMS, open the <em>Luna</em> space, and edit the home page. Find the <em>Title</em> with text <code>Meet our New Grand Luxor Jewelry Collection</code>. </p>
+<p>Then, find the <em>Luna Title</em> in the component tree on the left. Drag and drop the component on the page just below the original one. </p>
 <p><img alt="Luna Title added" src="luna-title-component.png" /></p>
 <p>Edit properties of the <em>Luna Title</em>:</p>
 <ol>
@@ -3967,19 +3967,20 @@ As you updated the model class, you can use its property now.</p>
 <li>set <em>Overline text</em> to <code>Meet our</code> </li>
 </ol>
 <p><img alt="Luna Title Dialog Properites" src="luna-title-dialog-properties.png" /></p>
-<p>Submit changes. The title should look like expected now. You can delete the original <em>Title</em> component to finalize the change.</p>
+<p>Submit changes. The title should appear as expected now. You can delete the original <em>Title</em> component to finalize the change.</p>
 <p><img alt="Updated Luna Title" src="luna-title-updated.png" /></p>
 <h2 id="part-f-clean-up">Part F: Clean-up</h2>
 <h3 id="stop-the-environment">Stop the environment</h3>
-<p>After all, you can stop your environment.</p>
+<p>After completing this guide, you can stop your local environment using Docker:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker compose -f environment/local/docker-compose.yml down
 </code></pre></div>
+<p>The environment will still exist but will no longer be running.</p>
 <h3 id="delete-environment">Delete environment</h3>
-<p>If you don't need your environment anymore, you can delete it using a script.</p>
+<p>If you don't need your environment anymore, you can delete it permanently using a script.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sh environment/local/delete.sh
 </code></pre></div>
-<h2 id="the-next-steps">The next steps</h2>
-<p>You learned the foundation of components development for WebSight CMS. Now, we encourage you to explore more details on:</p>
+<h2 id="next-steps">Next steps</h2>
+<p>This guide walked thorugh the essentials of developing components for WebSight CMS. As a next step, we encourage you to explore additoinal details about the following:</p>
 <ul>
 <li><a href="../setup/">Project setup</a></li>
 <li><a href="../development/">Application development</a></li>
