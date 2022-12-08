@@ -3584,11 +3584,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-a-run-local-instance-using-docker" class="md-nav__link">
-    Part A: Run local instance using Docker
+  <a href="#part-a-run-a-local-instance-using-docker" class="md-nav__link">
+    Part A: Run a local instance using Docker
   </a>
   
-    <nav class="md-nav" aria-label="Part A: Run local instance using Docker">
+    <nav class="md-nav" aria-label="Part A: Run a local instance using Docker">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3640,8 +3640,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-see-the-demo-site" class="md-nav__link">
-    4. See the demo site
+  <a href="#4-view-the-demo-site" class="md-nav__link">
+    4. View the demo site
   </a>
   
 </li>
@@ -3688,8 +3688,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-see-the-updated-page" class="md-nav__link">
-    5. See the updated page
+  <a href="#5-view-the-updated-page" class="md-nav__link">
+    5. View the updated page
   </a>
   
 </li>
@@ -3700,8 +3700,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-next-steps" class="md-nav__link">
-    The next steps
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -3725,20 +3725,21 @@
 
 
 <h1 id="quick-start-guide">Quick Start Guide</h1>
-<p>Follow this guide to run the WebSight CMS local instance using Docker. You can use it to review our demo site <em>Luna</em>. You can use <a href="../authors/component-libs/howlite/">Howlite</a>, our example components library, to create or update pages too. </p>
-<p>If you want to develop custom components for WebSight CMS, complete this guide to learn foundations first. Then, read more details in <a href="../developers/quick-start/">quick start for developers</a>.</p>
+<p>Follow this guide to run a local instance of WebSight CMS using Docker. The local instance serves as a testing instance where you can check out our demo site <em>Luna</em>. You can also use <a href="../authors/component-libs/howlite/">Howlite</a>, our example components library, to create or update pages within the local instance. </p>
+<p>This guide is a starting-point for developing custom components for WebSight CMS. After you've mastered the concepts explained on this page, you can move onto our <a href="../developers/quick-start/">quick start for developers</a> for a deeper dive into technical components of WebSight CMS.</p>
 <div class="admonition info">
 <p class="admonition-title">Prerequisites</p>
-<p>Before going any further, please make sure you have <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> installed on your machine and running. </p>
+<p>Before going any further, please make sure you have <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> installed on your machine. Docker Desktop supports Windows, macOS and Linux.</p>
 </div>
-<h2 id="part-a-run-local-instance-using-docker">Part A: Run local instance using Docker</h2>
+<h2 id="part-a-run-a-local-instance-using-docker">Part A: Run a local instance using Docker</h2>
 <div class="admonition hint">
 <p class="admonition-title">Quick setup with <code>curl</code></p>
 <p>If you have <code>curl</code> installed, you can set up the local environment using the following command. Then, you can go directly to Part B below.</p>
 <p><code>curl https://www.websight.io/scripts/get.sh | sh</code></p>
 </div>
+<p>If this method doesn't work for you, following steps 1 and 2 below to set up the Docker instance manually.</p>
 <h3 id="1-create-docker-compose-manifest">1. Create Docker Compose manifest</h3>
-<p>Create <code>docker-compose.yml</code> file. Paste the content presented below and save the file on your hard drive.</p>
+<p>Create <code>docker-compose.yml</code> file. Paste the content below into a text editor and it as a file on your hard drive. Name the file docker-compose.yml.</p>
 <div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.9&quot;</span><span class="w"></span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">services</span><span class="p">:</span><span class="w"></span>
@@ -3777,63 +3778,63 @@
 </code></pre></div>
 <div class="admonition hint">
 <p class="admonition-title">Tip</p>
-<p>Default passwords are stored in secret files. You can find details how to change them <a href="https://github.com/websight-io/starter/tree/main/environment#secret-files">here</a>.</p>
+<p>Default passwords are stored in secret files. You can find details about how to change them <a href="https://github.com/websight-io/starter/tree/main/environment#secret-files">here</a>.</p>
 </div>
 <hr />
 <h3 id="2-run-the-local-instance">2. Run the local instance</h3>
-<p>Open the terminal next to the <code>docker-compose.yml</code> file and run the following command:</p>
+<p>Open the terminal, navigate to the location where you saved your <code>docker-compose.yml</code> file and run the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker compose up
 </code></pre></div>
-<p>The fresh WebSight instance will start in a couple of seconds. Now, you may enter <a href="http://localhost:8080/">http://localhost:8080/</a> to open the WebSight admin panel.
-Log in with <code>wsadmin</code> username and <code>wsadmin</code> as a password.</p>
+<p>A fresh WebSight instance will start within a couple of seconds. After it launches, you can open a Web browser to the URL <a href="http://localhost:8080/">http://localhost:8080/</a> to view the WebSight admin panel.
+Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the password.</p>
 <div class="admonition hint">
 <p class="admonition-title">Tip</p>
-<p>To stop the environment use <code>ctrl + c</code>. You may run it later exactly the same as it was started for the first time.</p>
+<p>To turn off the test environment, use the <code>ctrl + c</code> key combination in the terminal that you used to launch your Docker instance. You can restart the instance by repeating the steps you used to launch it initially.</p>
 </div>
 <hr />
 <h2 id="part-b-publish-demo-site">Part B: Publish demo site</h2>
-<p>Your local environment is running now. The next step is to publish a demo site included in the distribution. </p>
+<p>At this point, your local environment is running, but you still need to publish the demo site that is included in the distribution. Do this by following the steps below.</p>
 <h3 id="1-open-the-websight-admin-panel">1. Open the Websight admin panel</h3>
-<p>The WebSight admin panel runs at <a href="http://localhost:8080/">http://localhost:8080/</a>. Log in with <code>wsadmin</code> username and <code>wsadmin</code> as a password.</p>
+<p>In the test instance, the WebSight admin panel is accessible by navigating to <a href="http://localhost:8080/">http://localhost:8080/</a> in a Web browser. Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the password.</p>
 <h3 id="2-select-space-for-the-demo-site">2. Select space for the demo site</h3>
-<p>We use <em>Spaces</em> to organise content. Please open the space for the demo site <em>Luna</em>.</p>
+<p>We use <em>Spaces</em> to organise content. In the WebSight admin panel, open the space for the demo site <em>Luna</em>.</p>
 <p><img alt="Spaces" src="quick-start-spaces.png" /></p>
 <h3 id="3-publish-assets-and-the-demo-site">3. Publish assets and the demo site</h3>
-<p>Open list of <em>Assets</em> using the left sidebar. Go to folder <em>images</em>, select all subfolders and use action <em>Publish</em>.</p>
+<p>Open the list of <em>Assets</em> using the left sidebar. Go to the folder <em>images</em>, select all subfolders and then click <em>Publish</em>.</p>
 <p><img alt="Assets publication" src="quick-start-assets-publication.png" /></p>
-<p>Open list of <em>Pages</em> using the left sidebar. Select all pages and use action <em>Publish</em>.</p>
+<p>Open the list of <em>Pages</em> using the left sidebar. Select all pages and click <em>Publish</em>.</p>
 <p><img alt="Pages publication" src="quick-start-pages-publication.png" /></p>
-<h3 id="4-see-the-demo-site">4. See the demo site</h3>
-<p>Congratulations! The demo site is available at <a href="http://luna.127.0.0.1.nip.io/">http://luna.127.0.0.1.nip.io/</a>.</p>
+<h3 id="4-view-the-demo-site">4. View the demo site</h3>
+<p>Congratulations! The demo site is now available by navigating to <a href="http://luna.127.0.0.1.nip.io/">http://luna.127.0.0.1.nip.io/</a> in a Web browser.</p>
 <p><img alt="Published demo page" src="quick-start-published-page.png" /></p>
 <h2 id="part-c-update-a-page">Part C: Update a page</h2>
-<p>Now that your local demo site is published, we would like to guide you through basic page amendments. You will update the home page for the demo site delivered together with the WebSight.</p>
+<p>Now that your local demo site is published, you can experiment with making basic changes to pages. As an example, the following steps show how to update the home page for the demo site that is built into WebSight.</p>
 <h3 id="1-open-the-websight-admin-panel_1">1. Open the Websight admin panel</h3>
-<p>The WebSight admin panel runs at <a href="http://localhost:8080/">http://localhost:8080/</a>. Log in with <code>wsadmin</code> username and <code>wsadmin</code> as a password.</p>
+<p>The WebSight admin panel runs at <a href="http://localhost:8080/">http://localhost:8080/</a>. Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the password.</p>
 <h3 id="2-select-space-for-the-demo-site_1">2. Select space for the demo site</h3>
 <p>We use <em>Spaces</em> to organise content. Please open the space for the demo site <em>Luna</em>.</p>
 <p><img alt="Spaces" src="quick-start-spaces.png" /></p>
 <h3 id="3-edit-the-home-page">3. Edit the home page</h3>
-<p>Use <em>Pencil</em> icon to open <em>Page editor</em> for the home page. </p>
+<p>Use the <em>Pencil</em> icon to open the <em>Page editor</em> for the home page. </p>
 <p><img alt="Actions available for a page" src="quick-start-page-actions.png" /></p>
-<p>Scroll down the content to section <em>Custom Made Engagement Rings</em>.</p>
+<p>Scroll down the content to the section <em>Custom Made Engagement Rings</em>.</p>
 <p><img alt="Page section to be updated" src="quick-start-page-section.png" /></p>
-<p>Find <em>Rich text editor</em> on tab <em>Components</em> and use drag &amp; drop to place it just below the section title. </p>
+<p>Find the <em>Rich text editor</em> on the tab <em>Components</em> and use the drag-and-drop feature to place it just below the section title. </p>
 <p><img alt="Rich text editor available in component tree" src="quick-start-RTE-component.png" /></p>
-<p>Click on the new component to open available actions. Select <em>Pencil</em> icon to edit properties.</p>
+<p>Click on the new component to open available actions. Select the <em>Pencil</em> icon to edit properties.</p>
 <p><img alt="Actions available for RTE component" src="quick-start-RTE-editing.png" /></p>
-<p>Copy &amp; paste the following text on <em>General</em> tab of the modal.</p>
+<p>Copy &amp; paste the following text on the <em>General</em> tab.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Every couple is unique and we want to deliver an engagement ring that is unique too – taking the tastes of the couple into account. We love having couples visit the store and work with them to create a unique custom engagement ring according to their tastes.
 </code></pre></div>
 <p><img alt="RTE component properties" src="quick-start-RTE-properties.png" /></p>
 <h3 id="4-publish-changes">4. Publish changes</h3>
-<p>You updated the page. However, unpublished changes are not visible on the site yet. In the top right corner, open the dropdown and select action <em>Publish</em>.</p>
+<p>At this point, you've updated the page. However, unpublished changes are not visible on the site yet. To apply them, open the dropdown in the right corner of the admin interface and select action <em>Publish</em>.</p>
 <p><img alt="Publish page action" src="quick-start-publish-page.png" /></p>
-<h3 id="5-see-the-updated-page">5. See the updated page</h3>
+<h3 id="5-view-the-updated-page">5. View the updated page</h3>
 <p>Congratulations! Your changes should be visible now at <a href="http://luna.127.0.0.1.nip.io/">http://luna.127.0.0.1.nip.io/</a>. </p>
 <p><img alt="Publish page action" src="quick-start-updated-page.png" /></p>
-<h2 id="the-next-steps">The next steps</h2>
-<p>You learned the foundation of page editing with WebSight CMS. Now, we encourage you to explore more details:</p>
+<h2 id="next-steps">Next steps</h2>
+<p>This page demonstrated the basics of editing pages with WebSight CMS. As a next step, we encourage you to explore more technical details about WebSight:</p>
 <ul>
 <li><a href="../authors/component-libs/howlite/">Howlite</a> library documentation to browse other components available in the distribution;</li>
 <li><a href="../developers/quick-start/">Quick start tutorial for developers</a> to check how to implement custom components.</li>
