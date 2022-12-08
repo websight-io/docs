@@ -3613,20 +3613,21 @@
 
 
 <h1 id="kubernetes-architecture">Kubernetes Architecture</h1>
-<p>Kubernetes (k8s) makes it easy to automate deployments and management of WebSight CMS components with the most popular cloud providers. This document describes what Kubernetes resources are required to run and scale WebSight Community Edition.</p>
+<p>Kubernetes (k8s) makes it easy to automate deployments and management of WebSight CMS components on the most popular public cloud platforms. This document describes the Kubernetes resources that are required to run and scale WebSight Community Edition.</p>
 <h2 id="kubernetes-resources">Kubernetes Resources</h2>
+<p>Following is how Kubernetes resources map onto WebSight components:</p>
 <ul>
-<li><code>Ingress</code> is a set of rules defining how to route authors and site visitors requests. <code>Ingress Controller</code> processes these rules and exposes them to the load balancer provided by the cloud provider. WebSight supports multi-site management, so our Ingress contains rules for authors and site visitors from multiple domains (paths).</li>
-<li><code>CMS</code> service and pods that read/write content from/to MongoDB and create/delete (publish/unpublish) generated HTML pages/images/other assets in Public Storage</li>
-<li><code>MongoDB</code> service and pod that stores the content in a persistent volume</li>
-<li><code>Web Server</code> service and pods that read pre-generated HTML pages from Public Storage</li>
-<li><code>Public Storage</code> persistent volume share between CMS and Web Server pods</li>
+<li><code>Ingress</code> is a set of rules that define how to route requests from authors and site visitors. The <code>Ingress Controller</code> processes these rules and exposes them to the load balancer provided by the cloud platforms. WebSight supports multi-site management, so our Ingress contains rules for authors and site visitors from multiple domains (paths)</li>
+<li>The <code>CMS</code> service and pods read/write content to/from MongoDB and create/delete (publish/unpublish) generated HTML pages/images/other assets in Public Storage</li>
+<li>The <code>MongoDB</code> service and pod store the content in a persistent volume</li>
+<li>The <code>Web Server</code> service and pod read pre-generated HTML pages from Public Storage</li>
+<li>The <code>Public Storage</code> persistent volume shares data between the CMS and Web Server pods</li>
 </ul>
-<p>The following diagram presents the WebSight k8s architecture</p>
+<p>The following diagram represents the WebSight k8s architecture:</p>
 <p><img alt="WebSight - kubernetes architecture" src="kubernetes-architecture-overview.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Limitation</p>
-<p>WebSight Community Edition uses Public Storage persistent volume for all published assets (HTML pages, images, and JS / CSS scripts). As a consequence, CMS and Web Server pods need PersistanceVolumeClaims (PVCs) with the <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes">ReadWriteMany access mode</a> when more than one node worker in the cluster is configured.</p>
+<p>WebSight Community Edition uses Public Storage persistent volumes for all published assets (HTML pages, images, and JS / CSS scripts). As a consequence, CMS and Web Server pods need PersistanceVolumeClaims (PVCs) with the <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes">ReadWriteMany access mode</a> when more than one node worker in the cluster is configured.</p>
 </div>
 
               
