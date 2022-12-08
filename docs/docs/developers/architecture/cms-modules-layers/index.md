@@ -1,10 +1,10 @@
 # WebSight CMS Layers & Modules
 
-The diagram below presents the WebSight CMS layers and their responsibilities. 
+The diagram below represents the WebSight CMS layers and their responsibilities. 
 
 ![WebSight CMS - modules & layers](./cms-modules-layers.jpg)
 
-Layers consist of features (see Sling Feature Model for more details) which are more high-level logical units (like site management or assets management).
+Layers consist of features (see Sling Feature Model for more details), which are more high-level logical units (like site management or assets management).
 
 ## Layers details
 
@@ -16,11 +16,11 @@ Our platform supports multi-site management. Developers can configure site mappi
 
 <div style="width: 100%; float: left; margin-top: 50px">
 <img class="image--layers" src="./layers/cms-layer-2.jpg" alt="CMS Layer 2" />
-With the sites management feature, authors can drag & drop site components to manage web pages and control their layouts. Clients can reuse our component libraries (Howlite, Bulma) to optimise the time needed to enable site creation or create their custom ones.</div>
+With the sites management feature, authors can drag and drop site components to manage web pages and control their layouts. Clients can reuse our component libraries (Howlite, Bulma) to optimise the time needed to enable site creation or create custom ones.</div>
 
 <div style="width: 100%; float: left; margin-top: 50px">
 <img class="image--layers" src="./layers/cms-layer-3.jpg" alt="CMS Layer 3" />
-With OSGi pluggability and Sling Feature configurability, our platform is composed of multiple low-level modules (OSGi bundles) organized in more general functionalities called features. Despite core features such as sites and assets management, our clients can easily add custom features without modifications to the platform codebase. Moreover, plugins allow clients to extend a user interface of the core features with custom actions, panels or even dashboards.</div>
+With OSGi pluggability and Sling Feature configurability, our platform is composed of multiple low-level modules (OSGi bundles) organized into more general functionalities called features. While WebSight offers basic core features such as sites and assets management, our clients can also easily add custom features without making modifications to the platform codebase. Moreover, plugins allow clients to extend a user interface beyond the core features with custom actions, panels or even dashboards.</div>
 
 <div style="width: 100%; float: left; margin-top: 50px">
 <img class="image--layers" src="./layers/cms-layer-4.jpg" alt="CMS Layer 4" />
@@ -41,4 +41,4 @@ Built on top of the open-source Apache Software Foundation stack:
 
 <div style="width: 100%; float: left; margin-top: 50px; margin-bottom: 50px">
 <img class="image--layers" src="./layers/cms-layer-7.jpg" alt="CMS Layer 7" />
-We store the content and assets in MongoDB, a scalable and performant NoSQL database. Our clients can switch to other Oak store implementation based on TAR files to decrease costs.</div>
+We store the content and assets in MongoDB, a scalable and performant NoSQL database. Our clients can switch to other Oak store implementations based on TAR files to decrease costs.</div>
