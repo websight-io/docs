@@ -105,6 +105,11 @@ In above example, the `alt` property is saved as an image property from the head
     "sling:resourceType": "wcm/dialogs/components/textfield",
     "name": "label",
     "label": "Label"
+  },
+  "addressField": {
+    "sling:resourceType": "wcm/dialogs/components/pathpicker",
+    "name": "address",
+    "label": "URL"
   }
 }
 ```
@@ -112,10 +117,6 @@ In above example, the `alt` property is saved as an image property from the head
 
 ## Validation
 Validation in dialog fields is used to verify if the value meets the criteria of the particular field. There are two levels:
-
-### FrontEnd validation
-Front End validation is done by Atlaskit by default, if the submitted value is obviously incorrect, like a non-number value in NumberField. You can find more details [here](https://atlassian.design/components).
-![](dialog-frontend-validation.png)
 
 ### BackEnd validation
 WebSight supports the validation of dialog values on BackEnd side. If the value is incorrect, then it won’t be saved and the dialog can’t be submitted. The author will see a proper error message.
