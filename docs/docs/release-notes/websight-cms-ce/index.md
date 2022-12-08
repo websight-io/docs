@@ -1,4 +1,14 @@
-# WebSight CMS Community Edition Release Notes
+# WebSight CMS Release Notes
+
+## 1.5.0 <small>December 7, 2022</small>
+
+#### Page Editor
+- Improved the placeholder text for empty containers to guide users on how to add components.
+- Fixed issues with overlays for components.
+- [Path picker](/docs/developers/development/dialogs/pathpicker/) input field:
+    - updated placeholder text to guide on how to choose a path;
+    - added an arrow to expand the dropdown for selection;
+    - fixed an issue with the _rootPath_ property.
 
 ## 1.4.0 <small>November 23, 2022</small>
 
