@@ -5,10 +5,11 @@
 #### Page Editor
 - Improved the placeholder text for empty containers to guide users on how to add components.
 - Fixed issues with overlays for components.
+- Fixed [#33](https://github.com/websight-io/starter/issues/33) - reduced panel size leads to cropped images thumbnails.
 - [Path picker](/docs/developers/development/dialogs/pathpicker/) input field:
-    - updated placeholder text to guide on how to choose a path;
-    - added an arrow to expand the dropdown for selection;
-    - fixed an issue with the _rootPath_ property.
+    - Fixed [#19](https://github.com/websight-io/starter/issues/19) - updated placeholder text to guide on how to choose a path.
+    - Added an arrow to expand the dropdown for selection.
+    - Fixed an issue with the _rootPath_ property.
 
 ## 1.4.0 <small>November 23, 2022</small>
 
