@@ -20,16 +20,19 @@ Path picker is an input that allows the user pick path of resource from reposito
     Indicates if field value is mandatory
 
 - **rootPath** - `string`  
-    Root path of pathpicker
+    If set, suggestions are filtered to the given root path.
 
 - **forceRootPath** - `string` (if not defined `false`)  
-    Indicates whether the input value should start with the value defined in `rootPath` property
+    Indicates whether the input value should be validated to start with the given `rootPath` value.
 
 - **removeIfEmpty** - `string` (if not defined `false`)  
     Indicates if property in JCR will be removed, if contains empty String, or will be kept with that value
 
 - **description** - `string`  
     Display description value as a tooltip
+
+- **placeholder** - `string`  
+    Override for the placeholder text that appears when the value is empty.
 
 ## Example
 
