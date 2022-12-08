@@ -3625,51 +3625,51 @@
 
 
 <h1 id="architecture">Architecture</h1>
-<p>The diagram below shows the WebSight CMS Community Edition high-level logical architecture. </p>
+<p>The diagram below represents the WebSight CMS Community Edition high-level logical architecture. </p>
 <p><img alt="WebSight - logical architecture" src="logical-architecture.jpg" /></p>
-<p><strong>Content authors</strong> use <strong>CMS</strong> to <strong>create</strong> experience by managing content, assets and pages (layout). Once the experience is ready to go public, authors push it (publish) to the <strong>experience storage</strong>. </p>
-<p>On the other end, experience is <strong>delivered</strong> to the <strong>site visitors</strong>. They call the <strong>web server</strong> which pulls static HTMLs / assets / JS / CSS scripts from the <strong>experience storage</strong> and serves it immediately.</p>
+<p><strong>Content authors</strong> use <strong>CMS</strong> to <strong>create</strong> an experience by managing content, assets and pages (layout). Once the experience is ready to go public, authors push (in other words, publish) it to the backend <strong>experience storage</strong>.</p>
+<p>On the frontend, the experience is <strong>delivered</strong> to the <strong>site visitors</strong>. They call the <strong>web server</strong>, which pulls static HTML files/assets/JavaScript/ CSS scripts from the backened <strong>experience storage</strong> and serves them immediately.</p>
 <div class="admonition info">
-<p class="admonition-title">Note<p>The experience storage has no access to CMS. E.g. if there is no page in the storage, then site visitor gets <code>404</code>.</p>
+<p class="admonition-title">Note<p>The experience storage has no access to CMS. That means that if, for example, there is no page in the storage, then site visitors see a <code>404</code> message.</p>
 </p>
 </div>
 <p>The above description is called a <em>push model</em> and assumes that the pages are prepared for the user in advance. Note that within this architecture, it is possible to switch off the CMS part, which has no impact on delivering pages.</p>
-<p>Our CMS is a <code>Java</code>-based <code>OSGi</code> application (<strong>WebSight CMS CE</strong>) with a <code>NoSQL</code> database (<strong>MongoDB</strong>). WebSight CMS CE allows content management and generating static HTML pages. MongoDB database stores content and assets. </p>
+<p>Our CMS is a <code>Java</code>-based <code>OSGi</code> application (<strong>WebSight CMS CE</strong>) with a <code>NoSQL</code> database (<strong>MongoDB</strong>). WebSight CMS CE supports content management and the generation of static HTML pages. MongoDB database stores content and assets.</p>
 <p><img alt="WebSight - logical architecture with MongoDB" src="logical-architecture-detailed.jpg" /></p>
 <div class="admonition info">
-<p class="admonition-title">Note<p>Multiple instances of WebSight CMS CE can connect to MongoDB which supports online deployments and CMS scalability.</p>
+<p class="admonition-title">Note<p>Multiple instances of WebSight CMS CE can connect to MongoDB, which supports online deployments and enables CMS scalability.</p>
 </p>
 </div>
 <h2 id="containers">Containers</h2>
-<p>We use containers to ship WebSight CMS on multiple environments, from the developer's local computers to clouds. Read our <a href="https://www.websight.io/blog/2022/shipping-and-developing-osgi-application-in-container/">"Why we decided to ship and develop the OSGi application in containers"</a> article to understand benefits of containers in our stack.</p>
-<p>Once developers <a href="../setup/">create a WebSight project from the Maven archetype</a>, they produce the following Docker images:</p>
+<p>We use containers to ship WebSight CMS for deployment on multiple environments, from developers' local computers to public clouds. Read our <a href="https://www.websight.io/blog/2022/shipping-and-developing-osgi-application-in-container/">"Why we decided to ship and develop the OSGi application in containers"</a> article to understand the benefits of containers in our stack.</p>
+<p>Once developers <a href="../setup/">create a WebSight project using the Maven archetype</a>, they produce the following Docker images:</p>
 <ul>
-<li><code>NGINX image</code> (web server) with addtional project-specific configurations</li>
-<li>customized <code>CMS image</code> with core WebSight CE / project-specific modules and configurations</li>
+<li>An <code>NGINX image</code> (web server) with addtional project-specific configurations</li>
+<li>A customized <code>CMS image</code> with core WebSight Community Edition/project-specific modules and configurations</li>
 </ul>
 <h2 id="docker-compose">Docker Compose</h2>
 <p>With more than one container in the platform, we need a tool for defining and running multi-container Docker applications. With Compose, we can use the <code>Compose YAML</code> file model to:</p>
 <ul>
-<li>configure all platform components (<code>services</code>)</li>
-<li>enable communication between them</li>
-<li>handle data persistancy with <code>volumes</code></li>
+<li>Configure all platform components (<code>services</code>)</li>
+<li>Enable communication between them</li>
+<li>Handle data persistance with <code>volumes</code></li>
 </ul>
-<p>The following diagram presents all WebSight CMS CE containers and volumes togehter.</p>
+<p>The following diagram presents all WebSight CMS CE containers and volumes together.</p>
 <p><img alt="WebSight - logical architecture" src="logical-architecture-containers.jpg" /></p>
-<p>The diagram above reflects the containers logical architecture. Docker Compose configuration specifies the following services:</p>
+<p>The diagram above reflects the containers' logical architecture. Docker Compose configuration specifies the following services:</p>
 <ul>
-<li><code>nginx</code> service (experience delivery)</li>
-<li><code>cms</code> service (content management and pages generation)</li>
-<li><code>mongo</code> service (content database)</li>
+<li>The <code>nginx</code> service (experience delivery)</li>
+<li>The <code>cms</code> service (content management and pages generation)</li>
+<li>The <code>mongo</code> service (content database)</li>
 </ul>
-<p>Services use volumes to save durable data outside the container (when container is destroyed and reloaded, all data on the container is lost). We specify the following  volumes:</p>
+<p>Services use volumes to save durable data outside the container (note that this means that when the container is destroyed and reloaded, all data from the previous container instance is lost). We specify the following  volumes:</p>
 <ul>
-<li><code>experience storage</code> volume is shared by NGINX (read) and WebSight CMS CE (write) containers</li>
-<li><code>content</code> volume keeps content and assets</li>
-<li><code>logs</code> volume keeps all WebSight CMS CE application logs</li>
+<li>The <code>experience storage</code> volume is shared by NGINX (read) and WebSight CMS CE (write) containers</li>
+<li>The <code>content</code> volume keeps content and assets</li>
+<li>The <code>logs</code> volume keeps all WebSight CMS CE application logs</li>
 </ul>
 <h2 id="environments">Environments</h2>
-<p>Working with containers is a standard. With Docker, we can use the same tooling to work locally as well as deploy environments to the cloud.</p>
+<p>Working with containers enables consistency and standardization. With Docker, we can use the same tooling to work locally as well as to deploy production environments to the cloud.</p>
 <p>For example:</p>
 <p>When using Docker Compose, the same command is responsible for creating local and cloud instances (<code>docker compose up</code>). </p>
 <p>Read more about <a href="./aws-ecs/">Docker Compose Amazon Elastic Container Service integration</a>.</p>
