@@ -1,5 +1,5 @@
 # Kubernetes Architecture
-Kubernetes (k8s) makes it easy to automate deployments and management of WebSight CMS components on the most popular public cloud platforms. This document describes the Kubernetes resources that are required to run and scale WebSight Community Edition.
+Kubernetes (k8s) makes it easy to automate deployments and management of WebSight CMS components on the most popular public cloud platforms. This document describes the Kubernetes resources that are required to run and scale WebSight CMS.
 
 ## Kubernetes Resources
 
@@ -16,4 +16,4 @@ The following diagram represents the WebSight k8s architecture:
 ![WebSight - kubernetes architecture](kubernetes-architecture-overview.png)
 
 !!! Info "Limitation"
-    WebSight Community Edition uses Public Storage persistent volumes for all published assets (HTML pages, images, and JS / CSS scripts). As a consequence, CMS and Web Server pods need PersistanceVolumeClaims (PVCs) with the [ReadWriteMany access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) when more than one node worker in the cluster is configured.
+    WebSight CMS uses Public Storage persistent volume for all published assets (HTML pages, images, and JS / CSS scripts). As a consequence, CMS and Web Server pods need PersistanceVolumeClaims (PVCs) with the [ReadWriteMany access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) when more than one node worker in the cluster is configured.
