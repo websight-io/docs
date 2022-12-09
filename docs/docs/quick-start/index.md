@@ -2,7 +2,7 @@
 
 Follow this guide to run a local instance of WebSight CMS using Docker. The local instance serves as a testing instance where you can check out our demo site _Luna_. You can also use [Howlite](../authors/component-libs/howlite/index.md), our example components library, to create or update pages within the local instance. 
 
-This guide is a starting-point for developing custom components for WebSight CMS. After you've mastered the concepts explained on this page, you can move onto our [quick start for developers](../developers/quick-start/index.md) for a deeper dive into technical components of WebSight CMS.
+This guide is a starting-point for developing custom components for WebSight CMS. After you've mastered the concepts explained on this page, you can move onto our [quick start for developers](../developers/quick-start/index.md) for a deeper dive into components development for WebSight CMS.
 
 !!! info "Prerequisites"
 
@@ -19,7 +19,7 @@ If this method doesn't work for you, following steps 1 and 2 below to set up the
 
 ### 1. Create Docker Compose manifest
 
-Create `docker-compose.yml` file. Paste the content below into a text editor and it as a file on your hard drive. Name the file docker-compose.yml.
+Paste the content below into a text editor and save it as a file on your hard drive. Name the file `docker-compose.yml`.
 
 ``` yaml title="docker-compose.yml"
 {% include '../../scripts/docker-compose.yml' %}
@@ -44,7 +44,7 @@ Log in with `wsadmin` username and `wsadmin` as the password.
 
 !!! hint "Tip"
   
-    To turn off the test environment, use the `ctrl + c` key combination in the terminal that you used to launch your Docker instance. You can restart the instance by repeating the steps you used to launch it initially.
+    To turn off the local environment, use the `ctrl + c` key combination in the terminal that you used to launch your Docker instance. You can restart the instance by repeating the steps you used to launch it initially.
 
 ---
 
@@ -54,7 +54,7 @@ At this point, your local environment is running, but you still need to publish 
 
 ### 1. Open the Websight admin panel
 
-In the test instance, the WebSight admin panel is accessible by navigating to [http://localhost:8080/](http://localhost:8080/) in a Web browser. Log in with `wsadmin` username and `wsadmin` as the password.
+In the local instance, the WebSight admin panel is accessible by navigating to [http://localhost:8080/](http://localhost:8080/) in a Web browser. Log in with `wsadmin` username and `wsadmin` as the password.
 
 ### 2. Select space for the demo site
 
