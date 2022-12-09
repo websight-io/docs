@@ -3853,7 +3853,7 @@ Because you updated the model class, you can use its property now.</p>
 </code></pre></div></p>
 <h2 id="part-d-functional-tests">Part D: Functional tests</h2>
 <h3 id="run-functional-tests">Run functional tests</h3>
-<p>We continuously improve WebSight CMS by adding new features, improving the UX, and fixing bugs. Thus, we need confidence that changes don't lead to any regression on websites. To provide this confidence, we use <a href="https://www.cypress.io/">Cypress</a> to enable automated testing of content. This approach enables us to spend less time on manual testing and regression fixes. We can focus on developing new features and improvements instead.</p>
+<p>We continuously improve WebSight CMS by adding new features, improving the UX, and fixing bugs. Thus, we need confidence that changes don't lead to any regression on websites. To provide this confidence, we use <a href="https://www.cypress.io/">Cypress</a> to enable automated testing of components. This approach enables us to spend less time on manual testing and regression fixes. We can focus on developing new features and improvements instead.</p>
 <p>To demonstrate automated functional testing, we prepared two sample functional tests for the <em>Luna Title</em> component. They are executed during the Maven build process. You can run them using <code>npm</code> on your local environment as well. However, you have to add test content before running the tests. Use the following script to set this up:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
 </code></pre></div>

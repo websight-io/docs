@@ -3726,7 +3726,7 @@
 
 <h1 id="quick-start-guide">Quick Start Guide</h1>
 <p>Follow this guide to run a local instance of WebSight CMS using Docker. The local instance serves as a testing instance where you can check out our demo site <em>Luna</em>. You can also use <a href="../authors/component-libs/howlite/">Howlite</a>, our example components library, to create or update pages within the local instance. </p>
-<p>This guide is a starting-point for developing custom components for WebSight CMS. After you've mastered the concepts explained on this page, you can move onto our <a href="../developers/quick-start/">quick start for developers</a> for a deeper dive into technical components of WebSight CMS.</p>
+<p>This guide is a starting-point for developing custom components for WebSight CMS. After you've mastered the concepts explained on this page, you can move onto our <a href="../developers/quick-start/">quick start for developers</a> for a deeper dive into components development for WebSight CMS.</p>
 <div class="admonition info">
 <p class="admonition-title">Prerequisites</p>
 <p>Before going any further, please make sure you have <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> installed on your machine. Docker Desktop supports Windows, macOS and Linux.</p>
@@ -3739,7 +3739,7 @@
 </div>
 <p>If this method doesn't work for you, following steps 1 and 2 below to set up the Docker instance manually.</p>
 <h3 id="1-create-docker-compose-manifest">1. Create Docker Compose manifest</h3>
-<p>Create <code>docker-compose.yml</code> file. Paste the content below into a text editor and it as a file on your hard drive. Name the file docker-compose.yml.</p>
+<p>Paste the content below into a text editor and save it as a file on your hard drive. Name the file <code>docker-compose.yml</code>.</p>
 <div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.9&quot;</span><span class="w"></span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">services</span><span class="p">:</span><span class="w"></span>
@@ -3789,13 +3789,13 @@
 Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the password.</p>
 <div class="admonition hint">
 <p class="admonition-title">Tip</p>
-<p>To turn off the test environment, use the <code>ctrl + c</code> key combination in the terminal that you used to launch your Docker instance. You can restart the instance by repeating the steps you used to launch it initially.</p>
+<p>To turn off the local environment, use the <code>ctrl + c</code> key combination in the terminal that you used to launch your Docker instance. You can restart the instance by repeating the steps you used to launch it initially.</p>
 </div>
 <hr />
 <h2 id="part-b-publish-demo-site">Part B: Publish demo site</h2>
 <p>At this point, your local environment is running, but you still need to publish the demo site that is included in the distribution. Do this by following the steps below.</p>
 <h3 id="1-open-the-websight-admin-panel">1. Open the Websight admin panel</h3>
-<p>In the test instance, the WebSight admin panel is accessible by navigating to <a href="http://localhost:8080/">http://localhost:8080/</a> in a Web browser. Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the password.</p>
+<p>In the local instance, the WebSight admin panel is accessible by navigating to <a href="http://localhost:8080/">http://localhost:8080/</a> in a Web browser. Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the password.</p>
 <h3 id="2-select-space-for-the-demo-site">2. Select space for the demo site</h3>
 <p>We use <em>Spaces</em> to organise content. In the WebSight admin panel, open the space for the demo site <em>Luna</em>.</p>
 <p><img alt="Spaces" src="quick-start-spaces.png" /></p>
