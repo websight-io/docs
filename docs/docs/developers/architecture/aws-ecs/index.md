@@ -15,7 +15,7 @@ The following diagram presents the physical architecture of the WebSight CMS env
 ![WebSight - logical architecture](physical-architecture-with-aws-ecs.jpg)
 
 ### Amazon Elastic Container Service
-Amazon ECS is a fully managed container orchestration service. It uses such abstractions as `services`, `tasks`, `task definitions`, `containers`. In brief, these mean the following:
+Amazon ECS is a fully managed container orchestration service. It uses abstractions such as `services`, `tasks`, `task definitions`, `containers`. In brief, these mean the following:
 
 - Tasks are configured with task definitions and are used to launch containers
 - Services guarantee that the required number of tasks are runnning
