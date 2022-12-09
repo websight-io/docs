@@ -3640,7 +3640,7 @@
 
 
 <h1 id="amazon-ecs-websight-architecture">Amazon ECS WebSight Architecture</h1>
-<p>The container services available on AWS make it easy to manage WebSight CMS Community Eedition infrastructure and containers. For container orchestration, you can choose between <strong>Amazon Elastic Container Service (ECS)</strong> and <strong>Amazon Elastic Kubernetes Service (EKS)</strong>. For infrastructure provisioning, you can use <strong>Amazon Elastic Compute Cloud (EC2)</strong>, which provides full control over the compute environment, or <strong>Fargate</strong>, a serverless compute option in which the infrastructure provisioning is managed by AWS.</p>
+<p>The container services available on AWS make it easy to manage WebSight CMS infrastructure and containers. For container orchestration, you can choose between <strong>Amazon Elastic Container Service (ECS)</strong> and <strong>Amazon Elastic Kubernetes Service (EKS)</strong>. For infrastructure provisioning, you can use <strong>Amazon Elastic Compute Cloud (EC2)</strong>, which provides full control over the compute environment, or <strong>Fargate</strong>, a serverless compute option in which the infrastructure provisioning is managed by AWS.</p>
 <h2 id="physical-architecture-with-elastic-container-service">Physical architecture with Elastic Container Service</h2>
 <p>This document describes WebSight deployment with <strong>Amazon ECS</strong> and <strong>Fargate</strong>. These are the key principles for this tooling:</p>
 <ul>
@@ -3650,12 +3650,11 @@
 <li>ECS integrates natively with AWS services like <code>CloudTrail</code>, <code>CloudWatch</code>, <code>Elastic Container Registry</code>, and <code>Elastic File System</code></li>
 <li>With Fargate, developers do not have to worry about the underlying infrastructure. This enables a serverless experience, and you pay only for the vCPU and memory resources that your application requests</li>
 </ul>
-<p>The following diagram presents the physical architecture of the WebSight CMS CE environment in AWS.</p>
+<p>The following diagram presents the physical architecture of the WebSight CMS environment in AWS.</p>
 <p><img alt="WebSight - logical architecture" src="physical-architecture-with-aws-ecs.jpg" /></p>
 <h3 id="amazon-elastic-container-service">Amazon Elastic Container Service</h3>
-<p>Amazon ECS is a fully managed container orchestration service. It uses such abstractions such as <code>services</code>, <code>tasks</code>, <code>task definitions</code>, <code>containers</code>. In brief, these mean the following:</p>
+<p>Amazon ECS is a fully managed container orchestration service. It uses abstractions such as <code>services</code>, <code>tasks</code>, <code>task definitions</code>, <code>containers</code>. In brief, these mean the following:</p>
 <ul>
-<li>A task is a collection of one or more container configurations</li>
 <li>Tasks are configured with task definitions and are used to launch containers</li>
 <li>Services guarantee that the required number of tasks are runnning</li>
 </ul>

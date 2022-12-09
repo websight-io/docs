@@ -3613,7 +3613,7 @@
 
 
 <h1 id="kubernetes-architecture">Kubernetes Architecture</h1>
-<p>Kubernetes (k8s) makes it easy to automate deployments and management of WebSight CMS components on the most popular public cloud platforms. This document describes the Kubernetes resources that are required to run and scale WebSight Community Edition.</p>
+<p>Kubernetes (k8s) makes it easy to automate deployments and management of WebSight CMS components on the most popular public cloud platforms. This document describes the Kubernetes resources that are required to run and scale WebSight CMS.</p>
 <h2 id="kubernetes-resources">Kubernetes Resources</h2>
 <p>Following is how Kubernetes resources map onto WebSight components:</p>
 <ul>
@@ -3627,7 +3627,7 @@
 <p><img alt="WebSight - kubernetes architecture" src="kubernetes-architecture-overview.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Limitation</p>
-<p>WebSight Community Edition uses Public Storage persistent volumes for all published assets (HTML pages, images, and JS / CSS scripts). As a consequence, CMS and Web Server pods need PersistanceVolumeClaims (PVCs) with the <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes">ReadWriteMany access mode</a> when more than one node worker in the cluster is configured.</p>
+<p>WebSight CMS uses Public Storage persistent volume for all published assets (HTML pages, images, and JS / CSS scripts). As a consequence, CMS and Web Server pods need PersistanceVolumeClaims (PVCs) with the <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes">ReadWriteMany access mode</a> when more than one node worker in the cluster is configured.</p>
 </div>
 
               
