@@ -1,5 +1,5 @@
 # Architecture
-The diagram below represents the WebSight CMS Community Edition high-level logical architecture. 
+The diagram below represents the WebSight CMS high-level logical architecture. 
 
 ![WebSight - logical architecture](logical-architecture.jpg)
 
@@ -12,20 +12,20 @@ On the frontend, the experience is **delivered** to the **site visitors**. They 
 
 The above description is called a *push model* and assumes that the pages are prepared for the user in advance. Note that within this architecture, it is possible to switch off the CMS part, which has no impact on delivering pages.
 
-Our CMS is a `Java`-based `OSGi` application (**WebSight CMS CE**) with a `NoSQL` database (**MongoDB**). WebSight CMS CE supports content management and the generation of static HTML pages. MongoDB database stores content and assets.
+Our CMS is a `Java`-based `OSGi` application (**WebSight CMS CE**) with a `NoSQL` database (**MongoDB**). WebSight CMS supports content management and the generation of static HTML pages. MongoDB database stores content and assets.
 
 ![WebSight - logical architecture with MongoDB](logical-architecture-detailed.jpg)
 
 !!! Info "Note"
-        Multiple instances of WebSight CMS CE can connect to MongoDB, which supports online deployments and enables CMS scalability.
+        Multiple instances of WebSight CMS can connect to MongoDB, which supports online deployments and enables CMS scalability.
 
 ## Containers
-We use containers to ship WebSight CMS for deployment on multiple environments, from developers' local computers to public clouds. Read our ["Why we decided to ship and develop the OSGi application in containers"](https://www.websight.io/blog/2022/shipping-and-developing-osgi-application-in-container/) article to understand the benefits of containers in our stack.
+We use containers to ship WebSight CMS for deployment on multiple environments, from developers' local computers to public clouds. Read our ["Why we decided to ship and develop the OSGi application in containers"](/blog/2022/shipping-and-developing-osgi-application-in-container/) article to understand the benefits of containers in our stack.
 
 Once developers [create a WebSight project using the Maven archetype](../setup/), they produce the following Docker images:
 
 - An `NGINX image` (web server) with addtional project-specific configurations
-- A customized `CMS image` with core WebSight Community Edition/project-specific modules and configurations
+- A customized `CMS image` with core WebSight CMS and project-specific modules and configurations
 
 ## Docker Compose
 With more than one container in the platform, we need a tool for defining and running multi-container Docker applications. With Compose, we can use the `Compose YAML` file model to:
@@ -34,7 +34,7 @@ With more than one container in the platform, we need a tool for defining and ru
 - Enable communication between them
 - Handle data persistance with `volumes`
 
-The following diagram presents all WebSight CMS CE containers and volumes together.
+The following diagram presents all WebSight CMS containers and volumes together.
 
 ![WebSight - logical architecture](logical-architecture-containers.jpg)
 
@@ -46,9 +46,9 @@ The diagram above reflects the containers' logical architecture. Docker Compose 
 
 Services use volumes to save durable data outside the container (note that this means that when the container is destroyed and reloaded, all data from the previous container instance is lost). We specify the following  volumes:
 
-- The `experience storage` volume is shared by NGINX (read) and WebSight CMS CE (write) containers
+- The `experience storage` volume is shared by NGINX (read) and WebSight CMS (write) containers
 - The `content` volume keeps content and assets
-- The `logs` volume keeps all WebSight CMS CE application logs
+- The `logs` volume keeps all WebSight CMS application logs
 
 ## Environments
 
