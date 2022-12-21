@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://websight.io/blog/2022/configuration-application-data-in-websight-cms/</loc>
+         <lastmod>2022-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://websight.io/blog/2022/customizing-rich-text-editor/</loc>
          <lastmod>2022-12-21</lastmod>
          <changefreq>daily</changefreq>
