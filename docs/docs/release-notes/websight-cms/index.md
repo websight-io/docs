@@ -1,5 +1,19 @@
 # WebSight CMS Release Notes
 
+## 1.6.0 <small>December 21, 2022</small>
+
+#### Page Editor
+- Improved collapsing and expanding of the left side panel.
+- Fixed the lack of the scroll for page preview.
+- Fixed the lack of the indicatior when drag-and-drop of a component is not allowed.
+
+#### Admin Tools
+- Fixed [#13](https://github.com/websight-io/starter/issues/13) - updated keybord shortcut for script execution.
+
+#### Other
+- Improved UX for the list of spaces.
+- Improved UX for the modal to move/copy pages.
+
 ## 1.5.0 <small>December 7, 2022</small>
 
 #### Page Editor
