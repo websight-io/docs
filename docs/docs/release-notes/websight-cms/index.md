@@ -1,5 +1,19 @@
 # WebSight CMS Release Notes
 
+## 1.6.0 <small>December 21, 2022</small>
+
+#### Page Editor
+- Improved collapsing and expanding of the left side panel.
+- Fixed the lack of the scroll for page preview.
+- Fixed the missing indicator when drag-and-drop of a component is not allowed.
+
+#### Admin Tools
+- Fixed [#13](https://github.com/websight-io/starter/issues/13) - updated keyboard shortcut for script execution.
+
+#### Other
+- Improved UX for the list of spaces.
+- Improved UX for the modal to move/copy pages.
+
 ## 1.5.0 <small>December 7, 2022</small>
 
 #### Page Editor
@@ -14,7 +28,7 @@
 ## 1.4.0 <small>November 23, 2022</small>
 
 #### Page Editor
-- Added ability to drag and drop a component between others included in a container.
+- Added ability to drag-and-drop a component between others included in a container.
 - Added [#22](https://github.com/websight-io/starter/issues/22) - scrolling the page to a component when the user clicks it in the content tree.
 - Improved UX for the component list. It contains only items allowed for a given page (based on its template).
 - Fixed an issue with misaligned overlays when the user resized the window.
@@ -31,7 +45,7 @@
 
 #### Page Editor
 
-- Fixed an issue with component drag & drop - in some cases component can't be dropped on a selected container.
+- Fixed an issue with component drag-and-drop - in some cases component can't be dropped on a selected container.
 - Fixed an issue with the editor layout caused by a faulty component included on a page. 
 
 #### Page and Asset Management
@@ -47,7 +61,7 @@
 
 #### Page Editor
 
-- Improved UX for components drag & drop - indicating if the drop is not allowed.
+- Improved UX for components drag-and-drop - indicating if the drop is not allowed.
 - Fixed the issue for the [Asset Reference](../../developers/development/dialogs/assetreference/) input field - impossible to remove image and save empty value.
 
 #### Page and Asset Management
