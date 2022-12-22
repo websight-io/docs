@@ -27,7 +27,6 @@ Create `docker-compose.yml` file. Paste the content presented below and save the
 
     Default passwords are stored in secret files. You can find details how to change them [here](https://github.com/websight-io/starter/tree/main/environment#secret-files).
 
----
 
 ### 2. Run the local instance
 
@@ -44,7 +43,6 @@ Log in with `wsadmin` username and `wsadmin` as a password.
   
     To stop the environment use `ctrl + c`. You may run it later exactly the same as it was started for the first time.
 
----
 
 ## Part B: Publish demo site
 
@@ -74,11 +72,14 @@ Open list of _Pages_ using the left sidebar. Select all pages and use action _Pu
 
 Congratulations! The demo site is available at [http://luna.127.0.0.1.nip.io/](http://luna.127.0.0.1.nip.io/).
 
-!!! hint "Tip"
+!!! info "Additional sample sites "
 
-    Please notice that we use a [nip.io](https://nip.io). It helps with simulating a real production environment that uses subdomains without the necessity to edit the `hosts` file on local machines.
+    The distribution contains other demo sites. We used [nip.io](https://nip.io) to support their preview in a browser having just one local instance of WebSight CMS. After assets and pages publication, they are available at: 
+    
+    - [http://bulma.127.0.0.1.nip.io/](http://bulma.127.0.0.1.nip.io/) Bulma - Personal Template
+    - [http://no-code.luna.127.0.0.1.nip.io/](http://no-code.luna.127.0.0.1.nip.io/) No Code Luna
+    
 
----
 
 ![Published demo page](./quick-start-published-page.png)
 
@@ -140,3 +141,4 @@ You learned the foundation of page editing with WebSight CMS. Now, we encourage 
 
 - [Howlite](../authors/component-libs/howlite/) library documentation to browse other components available in the distribution;
 - [Quick start tutorial for developers](../developers/quick-start/) to check how to implement custom components.
+- Additional demo sites: _Bulma - Personal Template_ and _No Code Luna_. They use a library of [Bulma](https://bulma.io/) components implemented for the WebSight CMS. You can use the collection too and build your site without any code development.
