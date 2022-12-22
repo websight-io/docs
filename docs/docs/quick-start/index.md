@@ -29,7 +29,6 @@ Paste the content below into a text editor and save it as a file on your hard dr
 
     Default passwords are stored in secret files. You can find details about how to change them [here](https://github.com/websight-io/starter/tree/main/environment#secret-files).
 
----
 
 ### 2. Run the local instance
 
@@ -46,7 +45,6 @@ Log in with `wsadmin` username and `wsadmin` as the password.
   
     To turn off the local environment, use the `ctrl + c` key combination in the terminal that you used to launch your Docker instance. You can restart the instance by repeating the steps you used to launch it initially.
 
----
 
 ## Part B: Publish demo site
 
@@ -75,6 +73,15 @@ Open the list of _Pages_ using the left sidebar. Select all pages and click _Pub
 ### 4. View the demo site
 
 Congratulations! The demo site is now available by navigating to [http://luna.127.0.0.1.nip.io/](http://luna.127.0.0.1.nip.io/) in a Web browser.
+
+!!! info "Additional sample sites "
+
+    The distribution contains other demo sites. We used [nip.io](https://nip.io) to support their preview in a browser having just one local instance of WebSight CMS. After assets and pages publication, they are available at: 
+    
+    - [http://bulma.127.0.0.1.nip.io/](http://bulma.127.0.0.1.nip.io/) Bulma - Personal Template
+    - [http://no-code.luna.127.0.0.1.nip.io/](http://no-code.luna.127.0.0.1.nip.io/) No Code Luna
+    
+
 
 ![Published demo page](./quick-start-published-page.png)
 
@@ -136,3 +143,4 @@ This page demonstrated the basics of editing pages with WebSight CMS. As a next 
 
 - [Howlite](../authors/component-libs/howlite/) library documentation to browse other components available in the distribution;
 - [Quick start tutorial for developers](../developers/quick-start/) to check how to implement custom components.
+- Additional demo sites: _Bulma - Personal Template_ and _No Code Luna_. They use a library of [Bulma](https://bulma.io/) components implemented for the WebSight CMS. You can use the collection too and build your site without any code development.
