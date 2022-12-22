@@ -76,7 +76,7 @@ Congratulations! The demo site is now available by navigating to [http://luna.12
 
 !!! info "Additional sample sites "
 
-    The distribution contains other demo sites. We used [nip.io](https://nip.io) to support their preview in a browser having just one local instance of WebSight CMS. After assets and pages publication, they are available at: 
+    The distribution contains other demo sites. We used [nip.io](https://nip.io) to support their preview in a browser (having just one local instance of WebSight CMS). After assets and pages publication, they are available at: 
     
     - [http://bulma.127.0.0.1.nip.io/](http://bulma.127.0.0.1.nip.io/) Bulma - Personal Template
     - [http://no-code.luna.127.0.0.1.nip.io/](http://no-code.luna.127.0.0.1.nip.io/) No Code Luna
@@ -143,4 +143,4 @@ This page demonstrated the basics of editing pages with WebSight CMS. As a next 
 
 - [Howlite](../authors/component-libs/howlite/) library documentation to browse other components available in the distribution;
 - [Quick start tutorial for developers](../developers/quick-start/) to check how to implement custom components.
-- Additional demo sites: _Bulma - Personal Template_ and _No Code Luna_. They use a library of [Bulma](https://bulma.io/) components implemented for the WebSight CMS. You can use the collection too and build your site without any code development.
+- Additional demo sites: _Bulma - Personal Template_ and _No Code Luna_. They use a library of [Bulma](https://bulma.io/) components implemented for the WebSight CMS. You can use the collection and build your site without any code development.
