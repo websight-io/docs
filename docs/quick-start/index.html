@@ -3825,7 +3825,6 @@
 <p class="admonition-title">Tip</p>
 <p>Default passwords are stored in secret files. You can find details about how to change them <a href="https://github.com/websight-io/starter/tree/main/environment#secret-files">here</a>.</p>
 </div>
-<hr />
 <h3 id="2-run-the-local-instance">2. Run the local instance</h3>
 <p>Open the terminal, navigate to the location where you saved your <code>docker-compose.yml</code> file and run the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker compose up
@@ -3836,7 +3835,6 @@ Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the passwo
 <p class="admonition-title">Tip</p>
 <p>To turn off the local environment, use the <code>ctrl + c</code> key combination in the terminal that you used to launch your Docker instance. You can restart the instance by repeating the steps you used to launch it initially.</p>
 </div>
-<hr />
 <h2 id="part-b-publish-demo-site">Part B: Publish demo site</h2>
 <p>At this point, your local environment is running, but you still need to publish the demo site that is included in the distribution. Do this by following the steps below.</p>
 <h3 id="1-open-the-websight-admin-panel">1. Open the Websight admin panel</h3>
@@ -3851,6 +3849,14 @@ Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the passwo
 <p><img alt="Pages publication" src="quick-start-pages-publication.png" /></p>
 <h3 id="4-view-the-demo-site">4. View the demo site</h3>
 <p>Congratulations! The demo site is now available by navigating to <a href="http://luna.127.0.0.1.nip.io/">http://luna.127.0.0.1.nip.io/</a> in a Web browser.</p>
+<div class="admonition info">
+<p class="admonition-title">Additional sample sites </p>
+<p>The distribution contains other demo sites. We used <a href="https://nip.io">nip.io</a> to support their preview in a browser having just one local instance of WebSight CMS. After assets and pages publication, they are available at: </p>
+<ul>
+<li><a href="http://bulma.127.0.0.1.nip.io/">http://bulma.127.0.0.1.nip.io/</a> Bulma - Personal Template</li>
+<li><a href="http://no-code.luna.127.0.0.1.nip.io/">http://no-code.luna.127.0.0.1.nip.io/</a> No Code Luna</li>
+</ul>
+</div>
 <p><img alt="Published demo page" src="quick-start-published-page.png" /></p>
 <h2 id="part-c-update-a-page">Part C: Update a page</h2>
 <p>Now that your local demo site is published, you can experiment with making basic changes to pages. As an example, the following steps show how to update the home page for the demo site that is built into WebSight.</p>
@@ -3883,6 +3889,7 @@ Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the passwo
 <ul>
 <li><a href="../authors/component-libs/howlite/">Howlite</a> library documentation to browse other components available in the distribution;</li>
 <li><a href="../developers/quick-start/">Quick start tutorial for developers</a> to check how to implement custom components.</li>
+<li>Additional demo sites: <em>Bulma - Personal Template</em> and <em>No Code Luna</em>. They use a library of <a href="https://bulma.io/">Bulma</a> components implemented for the WebSight CMS. You can use the collection too and build your site without any code development.</li>
 </ul>
 
               
