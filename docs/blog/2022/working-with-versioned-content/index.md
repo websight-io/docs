@@ -98,7 +98,7 @@ It's also possible to read individual components from versioned pages:
 At the time of writing, content versioning is still on our [Roadmap](https://github.com/orgs/websight-io/projects/2/views/2). Nevertheless, we get most of the work done by the JCR and Sling projects, and as a result, the feature should be shipped relatively quickly.
 We can once again benefit from choosing a battle-tested platform to run our CMS.
 
-## References:
+## References
 
 [1] https://developer.adobe.com/experience-manager/reference-materials/spec/jcr/2.0/15_Versioning.html
 
