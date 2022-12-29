@@ -11,7 +11,6 @@ tags:
   - CMS
 ---
 
-
 *Published at: 29.12.2022 by [Michal Cukierman](https://github.com/michalcukierman)*
 
 ## Overview
@@ -32,11 +31,6 @@ for more information, see [this blog post](../configuration-application-data-in-
  
 
 To make a JCR Resource versionable, we need to add JCR `Mixin` to it. The easiest way to do it is to execute a script in the [Groovy Console](http://localhost:8080/apps/groovy): 
-
-
-
-
-
 
 ```groovy
 home = session.getNode("/content/ds-website/pages/home");
@@ -103,8 +97,6 @@ It's also possible to read individual components from versioned pages:
 ## Summary
 At the time of writing, content versioning is still on our [Roadmap](https://github.com/orgs/websight-io/projects/2/views/2). Nevertheless, we get most of the work done by the JCR and Sling projects, and as a result, the feature should be shipped relatively quickly.
 We can once again benefit from choosing a battle-tested platform to run our CMS.
-
-
 
 ## References:
 
