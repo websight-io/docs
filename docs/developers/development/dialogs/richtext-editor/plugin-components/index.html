@@ -3652,7 +3652,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w">  </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span><span class="w">  </span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">  </span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
 </code></pre></div>
 <p>Where <code>type</code> should point script with plugin definition and <code>configuration</code> contains all aditional properties used by plugin.</p>
 <p>RichText editor is based on <a href="https://tiptap.dev/" title="https://tiptap.dev/">TipTap</a> and plugins are responsible for interaction with TipTap Editor.</p>
@@ -3664,8 +3664,8 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="p">[...]</span><span class="w">  </span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">},</span><span class="w">    </span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nx">getAction</span><span class="o">:</span><span class="w">  </span><span class="p">(</span><span class="nx">context</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w">  </span><span class="p">{</span><span class="w">  </span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nx">execute</span><span class="o">:</span><span class="w">  </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w">  </span><span class="p">{}</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nx">execute</span><span class="o">:</span><span class="w">  </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w">  </span><span class="p">{}</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="p">}</span><span class="w">  </span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">},</span><span class="w">  </span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">getState</span><span class="o">:</span><span class="w">  </span><span class="p">(</span><span class="nx">context</span><span class="p">)</span><span class="w">  </span><span class="p">=&gt;</span><span class="w">  </span><span class="p">{</span><span class="w">  </span>
@@ -3674,7 +3674,7 @@
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="p">}</span><span class="w">  </span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="p">}</span><span class="w">  </span>
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">export</span><span class="w">  </span><span class="k">default</span><span class="w">  </span><span class="nx">Plugin</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">export</span><span class="w">  </span><span class="k">default</span><span class="w">  </span><span class="nx">Plugin</span><span class="p">;</span>
 </code></pre></div>
 <p>Where:</p>
 <ul>

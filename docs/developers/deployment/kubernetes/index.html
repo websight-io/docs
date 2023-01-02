@@ -3770,21 +3770,21 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 <ol>
 <li>Update <code>io.fabric8:docker-maven-plugin</code> plugin configuration in <code>distribution/pom.xml</code>. <ul>
 <li>Add the following <code>buildx</code> extension to <em>cms</em> and <em>nginx</em> images <code>&lt;build&gt;</code> sections:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>                <span class="nt">&lt;buildx&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                <span class="nt">&lt;platforms&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                    <span class="nt">&lt;platform&gt;</span>linux/amd64<span class="nt">&lt;/platform&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                    <span class="nt">&lt;platform&gt;</span>linux/arm64<span class="nt">&lt;/platform&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                <span class="nt">&lt;/platforms&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                <span class="nt">&lt;/buildx&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">                </span><span class="nt">&lt;buildx&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">                </span><span class="nt">&lt;platforms&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">                    </span><span class="nt">&lt;platform&gt;</span>linux/amd64<span class="nt">&lt;/platform&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">                    </span><span class="nt">&lt;platform&gt;</span>linux/arm64<span class="nt">&lt;/platform&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">                </span><span class="nt">&lt;/platforms&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">                </span><span class="nt">&lt;/buildx&gt;</span>
 </code></pre></div></li>
 <li>Add the following <code>execution</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        <span class="nt">&lt;execution&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>            <span class="nt">&lt;id&gt;</span>push-docker-image<span class="nt">&lt;/id&gt;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            <span class="nt">&lt;phase&gt;</span>package<span class="nt">&lt;/phase&gt;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            <span class="nt">&lt;goals&gt;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            <span class="nt">&lt;goal&gt;</span>push<span class="nt">&lt;/goal&gt;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            <span class="nt">&lt;/goals&gt;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="nt">&lt;/execution&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">        </span><span class="nt">&lt;execution&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">            </span><span class="nt">&lt;id&gt;</span>push-docker-image<span class="nt">&lt;/id&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">            </span><span class="nt">&lt;phase&gt;</span>package<span class="nt">&lt;/phase&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="nt">&lt;goals&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&lt;goal&gt;</span>push<span class="nt">&lt;/goal&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&lt;/goals&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&lt;/execution&gt;</span>
 </code></pre></div></li>
 </ul>
 </li>
@@ -3794,22 +3794,22 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 <ol>
 <li>
 <p>Create <code>values.yml</code> file in <code>environment/k8s</code> with the following content</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">cms</span><span class="p">:</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">cms</span><span class="p">:</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/cms</span><span class="w"></span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/cms</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">nginx</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">nginx</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/nginx</span><span class="w"></span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span><span class="w"></span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/nginx</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latest</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nt">ingress</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="nt">cms</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cms.&lt;YOUR_CLUSTER_IP&gt;.nip.io&quot;</span><span class="w"></span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nt">site</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;site.&lt;YOUR_CLUSTER_IP&gt;.nip.io&quot;</span><span class="w"></span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nt">hosts</span><span class="p">:</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="nt">cms</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cms.&lt;YOUR_CLUSTER_IP&gt;.nip.io&quot;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nt">site</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;site.&lt;YOUR_CLUSTER_IP&gt;.nip.io&quot;</span>
 </code></pre></div>
 - <code>YOUR_REGISTRY_NAME</code> - replace with Digital Ocean Container Registry name
 - <code>YOUR_CLUSTER_IP</code> - replace with Digital Ocean Load Balancer IP (you may obtain it by running <code>doctl compute load-balancer list</code>)</p>
@@ -3820,16 +3820,16 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 <ol>
 <li><a href="https://docs.digitalocean.com/products/container-registry/how-to/use-registry-docker-kubernetes/#docker-integration">Configure Docker to <code>push</code> to and <code>pull</code> from Container Registry</a>.</li>
 <li>In the project root run 
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn clean install <span class="se">\</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    -D docker.cms-project.name<span class="o">=</span>registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/cms <span class="se">\</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    -D docker.nginx.name<span class="o">=</span>registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/nginx <span class="se">\</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    -D docker.skip.push<span class="o">=</span><span class="nb">false</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-D<span class="w"> </span>docker.cms-project.name<span class="o">=</span>registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/cms<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>-D<span class="w"> </span>docker.nginx.name<span class="o">=</span>registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/nginx<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>-D<span class="w"> </span>docker.skip.push<span class="o">=</span><span class="nb">false</span>
 </code></pre></div></li>
 <li>Switch <code>kubectl</code> context to your cluster in Digital Ocean (<code>kubectl config use-context &lt;CONTEXT_NAME&gt;</code>)</li>
 <li>From <code>environment/k8s</code> run:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm repo add websight https://websight-io.github.io/websight-ce-helm
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>helm repo update websight
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>helm install my-websight websight/websight-ce -f values.yml
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>websight<span class="w"> </span>https://websight-io.github.io/websight-ce-helm
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span>websight
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>helm<span class="w"> </span>install<span class="w"> </span>my-websight<span class="w"> </span>websight/websight-ce<span class="w"> </span>-f<span class="w"> </span>values.yml
 </code></pre></div>
     Use <code>helm upgrade my-websight websight/websight-ce -f values.yml</code> for updating the installation.</li>
 </ol>
