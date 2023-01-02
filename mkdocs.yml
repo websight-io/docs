@@ -69,6 +69,7 @@ plugins:
       locale: en
       dirs:
         - blog/2022
+        - blog/2023
       template: theme/ws-blog.html
   - redirects:
       redirect_maps:
