@@ -69,6 +69,7 @@ plugins:
       locale: en
       dirs:
         - blog/2022
+        - blog/2023
       template: theme/ws-blog.html
   - redirects:
       redirect_maps:
@@ -96,7 +97,7 @@ plugins:
           'guides/authoring/howlite/rte/index.md': 'docs/authors/component-libs/howlite/rte/index.md'
           'guides/authoring/howlite/title/index.md': 'docs/authors/component-libs/howlite/title/index.md'
 
-          'docs/developers/dialogs/richtext-editor/richtext-editor-configuration/index.md' : docs/developers/development/dialogs/richtext-editor/configuration/index.md
+          'docs/developers/dialogs/richtext-editor/richtext-editor-configuration/index.md' : 'docs/developers/development/dialogs/richtext-editor/configuration/index.md'
           'docs/developers/dialogs/richtext-editor/richtext-editor-plugin-components/index.md' : 'docs/developers/development/dialogs/richtext-editor/plugin-components/index.md'
           'docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/index.md' : 'docs/developers/development/dialogs/richtext-editor/ui-components/index.md'
           'docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/button/index.md' : 'docs/developers/development/dialogs/richtext-editor/ui-components/button/index.md'
