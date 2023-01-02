@@ -69,7 +69,7 @@ There are multiple ways we can access the page versions.
 
 - Directly by accessing frozen node with .html extension.
 
-In my case, it's `http://localhost:8080/jcr:system/jcr:versionStorage/5f/2b/64/5f2b64d2-fdb9-4ed5-af8a-cd92a6971f66/1.1002/jcr:frozenNode/jcr:content.html`, but it will be unique on every system.
+In my case, it's `http://localhost:8080/jcr:system/jcr:versionStorage/5f/2b/64/5f2b64d2-fdb9-4ed5-af8a-cd92a6971f66/1.10/jcr:frozenNode/jcr:content.html`, but it will be unique on every system.
 
 - Programmatically by using JCR API [1]
 
