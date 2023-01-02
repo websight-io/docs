@@ -46,7 +46,7 @@ You can verify the result with the [Resource Browser](http://localhost:8080/apps
     New properties assigned the versioned resource
 </p>
 
-## Creating multiple page versions:
+## Creating multiple page versions
 Again, let's use Groovy script to create a couple of versions of a homepage:
 ```groovy
 home = session.getNode("/content/ds-website/pages/home");
