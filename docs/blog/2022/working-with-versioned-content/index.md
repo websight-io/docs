@@ -2,7 +2,7 @@
 title: Working with versioned content
 description: Content versioning is one of the essential features of a mature CMS. The ability to work with pages, compare and roll back when needed is a must in a collaborative environment. Luckily it’s also well supported by Apache Sling.
 author: Michal Cukierman
-publicationDate: 29.12.2022
+publicationDate: 02.01.2023
 minReadTime: 7
 image: versioned-pages.png
 tags:
