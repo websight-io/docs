@@ -6,27 +6,27 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Explore materials, tutorials and documentation to discover how to use WebSight effectively. Discover enterprise grade, web-scale content management system.">
+        <meta name="description" content="Content versioning is one of the essential features of a mature CMS. The ability to work with pages, compare and roll back when needed is a must in a collaborative environment. Luckily it’s also well supported by Apache Sling.">
       
       
-        <meta name="author" content="Dynamic Solutions">
+        <meta name="author" content="Michal Cukierman">
       
       
-        <link rel="canonical" href="https://websight.io/docs/authors/component-libs/howlite/image/">
+        <link rel="canonical" href="https://websight.io/blog/2023/working-with-versioned-content/">
       
-      <link rel="icon" href="../../../../../assets/images/favicon.ico">
+      <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.15">
     
     
       
-        <title>Image component - WebSight DXP</title>
+        <title>Working with versioned content - WebSight DXP</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -41,9 +41,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/websight.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/websight.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#image-component" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -129,9 +129,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="WebSight DXP" class="md-header__button md-logo" aria-label="WebSight DXP" data-md-component="logo">
+    <a href="../../.." title="WebSight DXP" class="md-header__button md-logo" aria-label="WebSight DXP" data-md-component="logo">
       
-  <img src="../../../../../assets/images/logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -147,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Image component
+              Working with versioned content
             
           </span>
         </div>
@@ -231,7 +231,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -239,8 +239,6 @@
       
         
   
-  
-    
   
 
 
@@ -253,7 +251,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../quick-start/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../docs/quick-start/" class="md-tabs__link">
         Docs
       </a>
     </li>
@@ -271,7 +269,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../community/" class="md-tabs__link">
+      <a href="../../../community/" class="md-tabs__link">
         Community
       </a>
     </li>
@@ -281,13 +279,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../blog/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Blog
       </a>
     </li>
@@ -315,9 +315,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="WebSight DXP" class="md-nav__button md-logo" aria-label="WebSight DXP" data-md-component="logo">
+    <a href="../../.." title="WebSight DXP" class="md-nav__button md-logo" aria-label="WebSight DXP" data-md-component="logo">
       
-  <img src="../../../../../assets/images/logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.svg" alt="logo">
 
     </a>
     WebSight DXP
@@ -345,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -358,14 +358,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -415,7 +413,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../quick-start/">Quick Start Guide</a>
+          <a href="../../../docs/quick-start/">Quick Start Guide</a>
           
         </div>
       
@@ -439,14 +437,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
@@ -471,14 +467,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" >
       
       
       
@@ -503,14 +497,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1" type="checkbox" id="__nav_2_2_1_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1" type="checkbox" id="__nav_2_2_1_1" >
       
       
       
@@ -530,7 +522,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Howlite</a>
+          <a href="../../../docs/authors/component-libs/howlite/">Howlite</a>
           
             <label for="__nav_2_2_1_1">
               <span class="md-nav__icon md-icon"></span>
@@ -551,14 +543,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2" type="checkbox" id="__nav_2_2_1_1_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2" type="checkbox" id="__nav_2_2_1_1_2" >
       
       
       
@@ -620,7 +610,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../accordion/">Accordion and Accordion Item</a>
+          <a href="../../../docs/authors/component-libs/howlite/accordion/">Accordion and Accordion Item</a>
           
         </div>
       
@@ -663,7 +653,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../cards-list/">Cards List and Card Item</a>
+          <a href="../../../docs/authors/component-libs/howlite/cards-list/">Cards List and Card Item</a>
           
         </div>
       
@@ -706,7 +696,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../container/">Container</a>
+          <a href="../../../docs/authors/component-libs/howlite/container/">Container</a>
           
         </div>
       
@@ -749,7 +739,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../cta/">CTA and CTAs List</a>
+          <a href="../../../docs/authors/component-libs/howlite/cta/">CTA and CTAs List</a>
           
         </div>
       
@@ -773,14 +763,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_5" type="checkbox" id="__nav_2_2_1_1_2_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1_1_2_5" type="checkbox" id="__nav_2_2_1_1_2_5" >
       
       
       
@@ -793,8 +781,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">Image</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../docs/authors/component-libs/howlite/image/">Image</a>
           
         </div>
       
@@ -837,7 +825,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../logo-cloud/">Logo Cloud</a>
+          <a href="../../../docs/authors/component-libs/howlite/logo-cloud/">Logo Cloud</a>
           
         </div>
       
@@ -880,7 +868,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../page-section/">Page Section</a>
+          <a href="../../../docs/authors/component-libs/howlite/page-section/">Page Section</a>
           
         </div>
       
@@ -923,7 +911,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../rte/">Rich Text Editor</a>
+          <a href="../../../docs/authors/component-libs/howlite/rte/">Rich Text Editor</a>
           
         </div>
       
@@ -966,7 +954,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../title/">Title</a>
+          <a href="../../../docs/authors/component-libs/howlite/title/">Title</a>
           
         </div>
       
@@ -1009,7 +997,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../quote/">Quote</a>
+          <a href="../../../docs/authors/component-libs/howlite/quote/">Quote</a>
           
         </div>
       
@@ -1059,7 +1047,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../layouts/">Layouts</a>
+          <a href="../../../docs/authors/component-libs/howlite/layouts/">Layouts</a>
           
         </div>
       
@@ -1132,7 +1120,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../grid/">Resize options and breakpoints</a>
+          <a href="../../../docs/authors/component-libs/howlite/grid/">Resize options and breakpoints</a>
           
         </div>
       
@@ -1241,7 +1229,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/quick-start/">Quick Start for Developers</a>
+          <a href="../../../docs/developers/quick-start/">Quick Start for Developers</a>
           
         </div>
       
@@ -1290,7 +1278,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/architecture/">Architecture</a>
+          <a href="../../../docs/developers/architecture/">Architecture</a>
           
             <label for="__nav_2_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1330,7 +1318,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/architecture/cms-modules-layers/">CMS Layers & Modules</a>
+          <a href="../../../docs/developers/architecture/cms-modules-layers/">CMS Layers & Modules</a>
           
         </div>
       
@@ -1373,7 +1361,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/architecture/aws-ecs/">AWS ECS</a>
+          <a href="../../../docs/developers/architecture/aws-ecs/">AWS ECS</a>
           
         </div>
       
@@ -1416,7 +1404,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/architecture/kubernetes/">Kubernetes</a>
+          <a href="../../../docs/developers/architecture/kubernetes/">Kubernetes</a>
           
         </div>
       
@@ -1466,7 +1454,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/setup/">Project Setup</a>
+          <a href="../../../docs/developers/setup/">Project Setup</a>
           
         </div>
       
@@ -1513,7 +1501,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/">Development</a>
+          <a href="../../../docs/developers/development/">Development</a>
           
             <label for="__nav_2_3_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1555,7 +1543,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/components/">Components</a>
+          <a href="../../../docs/developers/development/components/">Components</a>
           
             <label for="__nav_2_3_4_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1595,7 +1583,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/components/definition/">Definition</a>
+          <a href="../../../docs/developers/development/components/definition/">Definition</a>
           
         </div>
       
@@ -1675,7 +1663,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/">Dialogs</a>
+          <a href="../../../docs/developers/development/dialogs/">Dialogs</a>
           
             <label for="__nav_2_3_4_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1715,7 +1703,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/assetreference/">Asset Reference</a>
+          <a href="../../../docs/developers/development/dialogs/assetreference/">Asset Reference</a>
           
         </div>
       
@@ -1758,7 +1746,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/checkbox/">Checkbox</a>
+          <a href="../../../docs/developers/development/dialogs/checkbox/">Checkbox</a>
           
         </div>
       
@@ -1801,7 +1789,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/container/">Container</a>
+          <a href="../../../docs/developers/development/dialogs/container/">Container</a>
           
         </div>
       
@@ -1844,7 +1832,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/date-picker/">Date Picker</a>
+          <a href="../../../docs/developers/development/dialogs/date-picker/">Date Picker</a>
           
         </div>
       
@@ -1887,7 +1875,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/include/">Include</a>
+          <a href="../../../docs/developers/development/dialogs/include/">Include</a>
           
         </div>
       
@@ -1930,7 +1918,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/multifield/">Multifield</a>
+          <a href="../../../docs/developers/development/dialogs/multifield/">Multifield</a>
           
         </div>
       
@@ -1973,7 +1961,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/number-field/">Number Field</a>
+          <a href="../../../docs/developers/development/dialogs/number-field/">Number Field</a>
           
         </div>
       
@@ -2016,7 +2004,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/pathpicker/">Path Picker</a>
+          <a href="../../../docs/developers/development/dialogs/pathpicker/">Path Picker</a>
           
         </div>
       
@@ -2059,7 +2047,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/radio/">Radio</a>
+          <a href="../../../docs/developers/development/dialogs/radio/">Radio</a>
           
         </div>
       
@@ -2108,7 +2096,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/richtext-editor/">Rich Text Editor</a>
+          <a href="../../../docs/developers/development/dialogs/richtext-editor/">Rich Text Editor</a>
           
             <label for="__nav_2_3_4_3_11">
               <span class="md-nav__icon md-icon"></span>
@@ -2148,7 +2136,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/richtext-editor/configuration/">Configuration</a>
+          <a href="../../../docs/developers/development/dialogs/richtext-editor/configuration/">Configuration</a>
           
         </div>
       
@@ -2191,7 +2179,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/richtext-editor/plugin-components/">Plugin Components</a>
+          <a href="../../../docs/developers/development/dialogs/richtext-editor/plugin-components/">Plugin Components</a>
           
         </div>
       
@@ -2242,7 +2230,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/richtext-editor/ui-components/">UI Components</a>
+          <a href="../../../docs/developers/development/dialogs/richtext-editor/ui-components/">UI Components</a>
           
             <label for="__nav_2_3_4_3_11_4">
               <span class="md-nav__icon md-icon"></span>
@@ -2282,7 +2270,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/richtext-editor/ui-components/button/">Button</a>
+          <a href="../../../docs/developers/development/dialogs/richtext-editor/ui-components/button/">Button</a>
           
         </div>
       
@@ -2325,7 +2313,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/richtext-editor/ui-components/button-dropdown/">Button Dropdown</a>
+          <a href="../../../docs/developers/development/dialogs/richtext-editor/ui-components/button-dropdown/">Button Dropdown</a>
           
         </div>
       
@@ -2368,7 +2356,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/richtext-editor/ui-components/dropdown/">Dropdown</a>
+          <a href="../../../docs/developers/development/dialogs/richtext-editor/ui-components/dropdown/">Dropdown</a>
           
         </div>
       
@@ -2411,7 +2399,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/richtext-editor/ui-components/link/">Link</a>
+          <a href="../../../docs/developers/development/dialogs/richtext-editor/ui-components/link/">Link</a>
           
         </div>
       
@@ -2468,7 +2456,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/select/">Select</a>
+          <a href="../../../docs/developers/development/dialogs/select/">Select</a>
           
         </div>
       
@@ -2513,7 +2501,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/tabs/">Tabs</a>
+          <a href="../../../docs/developers/development/dialogs/tabs/">Tabs</a>
           
             <label for="__nav_2_3_4_3_13">
               <span class="md-nav__icon md-icon"></span>
@@ -2553,7 +2541,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/tabs/tab/">Tab</a>
+          <a href="../../../docs/developers/development/dialogs/tabs/tab/">Tab</a>
           
         </div>
       
@@ -2603,7 +2591,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/text-area/">Text Area</a>
+          <a href="../../../docs/developers/development/dialogs/text-area/">Text Area</a>
           
         </div>
       
@@ -2646,7 +2634,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/textfield/">Text Field</a>
+          <a href="../../../docs/developers/development/dialogs/textfield/">Text Field</a>
           
         </div>
       
@@ -2689,7 +2677,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/development/dialogs/toggle/">Toggle</a>
+          <a href="../../../docs/developers/development/dialogs/toggle/">Toggle</a>
           
         </div>
       
@@ -2780,7 +2768,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/deployment/aws-ecs/">Amazon ECS</a>
+          <a href="../../../docs/developers/deployment/aws-ecs/">Amazon ECS</a>
           
         </div>
       
@@ -2823,7 +2811,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/deployment/kubernetes/">Kubernetes</a>
+          <a href="../../../docs/developers/deployment/kubernetes/">Kubernetes</a>
           
         </div>
       
@@ -2866,7 +2854,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../developers/deployment/linux/">Linux Docker Compose</a>
+          <a href="../../../docs/developers/deployment/linux/">Linux Docker Compose</a>
           
         </div>
       
@@ -2953,7 +2941,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../release-notes/websight-cms/">WebSight CMS</a>
+          <a href="../../../docs/release-notes/websight-cms/">WebSight CMS</a>
           
         </div>
       
@@ -3011,7 +2999,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../community/">Community</a>
+          <a href="../../../community/">Community</a>
           
         </div>
       
@@ -3036,12 +3024,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -3059,7 +3049,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/">Blog</a>
+          <a href="../../">Blog</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -3149,7 +3139,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/achieving-quality-with-no-dedicated-qa-engineers/">Achieving quality with no dedicated QA Engineers</a>
+          <a href="../../2022/achieving-quality-with-no-dedicated-qa-engineers/">Achieving quality with no dedicated QA Engineers</a>
           
         </div>
       
@@ -3192,7 +3182,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/are-jcr-nodes-and-sling-resources-the-same-thing/">Are JCR Nodes and Sling Resources the same thing?</a>
+          <a href="../../2022/are-jcr-nodes-and-sling-resources-the-same-thing/">Are JCR Nodes and Sling Resources the same thing?</a>
           
         </div>
       
@@ -3235,7 +3225,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/building-osgi-apps-with-sling-feature-model/">Building OSGi applications with Sling Feature Model</a>
+          <a href="../../2022/building-osgi-apps-with-sling-feature-model/">Building OSGi applications with Sling Feature Model</a>
           
         </div>
       
@@ -3278,7 +3268,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/configuration-application-data-in-websight-cms/">Configuration, application, and data in WebSight CMS</a>
+          <a href="../../2022/configuration-application-data-in-websight-cms/">Configuration, application, and data in WebSight CMS</a>
           
         </div>
       
@@ -3321,7 +3311,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/customizing-rich-text-editor/">Customising Rich Text Editor in WebSight CMS</a>
+          <a href="../../2022/customizing-rich-text-editor/">Customising Rich Text Editor in WebSight CMS</a>
           
         </div>
       
@@ -3364,7 +3354,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/how-has-cms-evolved-into-dxp/">How has CMS evolved into DXP?</a>
+          <a href="../../2022/how-has-cms-evolved-into-dxp/">How has CMS evolved into DXP?</a>
           
         </div>
       
@@ -3407,7 +3397,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/on-the-road-to-the-perfect-dxp/">On the road to the perfect DXP</a>
+          <a href="../../2022/on-the-road-to-the-perfect-dxp/">On the road to the perfect DXP</a>
           
         </div>
       
@@ -3450,7 +3440,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/quality-transformation-in-websight/">Quality transformation in WebSight</a>
+          <a href="../../2022/quality-transformation-in-websight/">Quality transformation in WebSight</a>
           
         </div>
       
@@ -3493,7 +3483,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/shipping-and-developing-osgi-application-in-container/">Why we decided to ship and develop the OSGi application in containers</a>
+          <a href="../../2022/shipping-and-developing-osgi-application-in-container/">Why we decided to ship and develop the OSGi application in containers</a>
           
         </div>
       
@@ -3536,7 +3526,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/websight-cms-ce-1-0-0/">WebSight CMS Community Edition 1.0.0 Release</a>
+          <a href="../../2022/websight-cms-ce-1-0-0/">WebSight CMS Community Edition 1.0.0 Release</a>
           
         </div>
       
@@ -3579,7 +3569,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2022/websight-meets-codespaces/">Develop WebSight with Codespaces</a>
+          <a href="../../2022/websight-meets-codespaces/">Develop WebSight with Codespaces</a>
           
         </div>
       
@@ -3610,12 +3600,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
       
       
       
@@ -3640,12 +3632,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1" type="checkbox" id="__nav_4_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1" type="checkbox" id="__nav_4_3_1" checked>
       
       
       
@@ -3658,8 +3652,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../../blog/2023/working-with-versioned-content/">Working with versioned content</a>
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Working with versioned content</a>
           
         </div>
       
@@ -3709,8 +3703,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3719,29 +3711,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#authorable-properties" class="md-nav__link">
-    Authorable properties
+  <a href="#enabling-content-versioning" class="md-nav__link">
+    Enabling content versioning
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rendered-component" class="md-nav__link">
-    Rendered component
+  <a href="#creating-multiple-page-versions" class="md-nav__link">
+    Creating multiple page versions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-notes" class="md-nav__link">
-    Additional notes
+  <a href="#accessing-page-versions" class="md-nav__link">
+    Accessing page versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
   </a>
   
 </li>
@@ -3758,55 +3764,91 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/websight-io/docs/edit/main/docs/docs/authors/component-libs/howlite/image/index.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/websight-io/docs/edit/main/docs/blog/2023/working-with-versioned-content/index.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="image-component">Image component</h1>
-<p>Image components renders and <strong>img</strong> or <strong>picture</strong> html tag, with an optional link and alt attribute.</p>
-<h2 id="usage">Usage</h2>
-<p>Drag &amp; drop image component to a Page section. You will see a default image placeholder. (It is visible in edit mode only).</p>
+  <h1>Working with versioned content</h1>
+
+<p><em>Published at: 29.12.2022 by <a href="https://github.com/michalcukierman">Michal Cukierman</a></em></p>
+<h2 id="overview">Overview</h2>
+<p>Content versioning is one of the essential features of a mature CMS. The ability to work with pages, compare and roll back when needed is a must in a collaborative environment.
+Luckily it’s also well supported by Apache Sling. In this article, I will explain how to do basic operations using only JCR and Sling APIs.</p>
 <p align="center" width="100%">
-    <img class="image--with-border" src="./placeholder.jpg" alt="Image placeholder in edit mode">
+    <img class="image--with-border" src="versioned-pages.png" alt="Versioned Pages">
+    Comparing two versions of a single page on one system
 </p>
 
-<h2 id="authorable-properties">Authorable properties</h2>
-<p>Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) to see all <strong>Image</strong> component's properties:</p>
+<h2 id="enabling-content-versioning">Enabling content versioning</h2>
+<p>Sling supports versioning of JCR Resources. JCR Resources are used to represent the <code>content</code>, and as a consequence, it’s possible to version pages, assets, and tags. Unlike other Content Management Systems, we do not store scripts, configurations, and bundles in the JCR,
+for more information, see <a href="../configuration-application-data-in-websight-cms/">this blog post</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Before you start<p>Make sure to replace <code>/content/ds-website/pages/home</code> in the examples below with your page path.</p>
+</p>
+</div>
+<p>To make a JCR Resource versionable, we need to add JCR <code>Mixin</code> to it. The easiest way to do it is to execute a script in the <a href="http://localhost:8080/apps/groovy">Groovy Console</a>: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">home</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">session</span><span class="o">.</span><span class="na">getNode</span><span class="o">(</span><span class="s2">&quot;/content/ds-website/pages/home&quot;</span><span class="o">);</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">home</span><span class="o">.</span><span class="na">addMixin</span><span class="o">(</span><span class="s2">&quot;mix:versionable&quot;</span><span class="o">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// Save is required to get apply mixin</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">session</span><span class="o">.</span><span class="na">save</span><span class="o">();</span>
+</code></pre></div>
+<p>You can verify the result with the <a href="http://localhost:8080/apps/browser#/content/ds-website/pages/home">Resource Browser</a>. The resource should now contain new properties.</p>
+<p align="center" width="100%">
+    <img class="image--with-border" src="versioned-resource-properties.png" alt="Versioned Resource Properties">
+    New properties assigned the versioned resource
+</p>
+
+<h2 id="creating-multiple-page-versions">Creating multiple page versions</h2>
+<p>Again, let's use Groovy script to create a couple of versions of a homepage:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">home</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">session</span><span class="o">.</span><span class="na">getNode</span><span class="o">(</span><span class="s2">&quot;/content/ds-website/pages/home&quot;</span><span class="o">);</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">for</span><span class="w"> </span><span class="o">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="o">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="o">;</span><span class="w"> </span><span class="n">i</span><span class="o">++)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">home</span><span class="o">.</span><span class="na">checkout</span><span class="o">();</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="n">home</span><span class="o">.</span><span class="na">checkin</span><span class="o">();</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="o">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">println</span><span class="w"> </span><span class="n">home</span><span class="o">.</span><span class="na">getVersionHistory</span><span class="o">();</span>
+</code></pre></div></p>
+<p>The code above should create 10 versions of a page and print the complete history once done. Note that version creation is relatively expensive, so we should not overuse it.
+Each version of a resource is stored as a <code>jcr:fronzenNode</code> under <code>/jcr:system/jcr:versionStorage/&lt;generated hash&gt;</code>.</p>
+<p>In my case, the path is <code>/jcr:system/jcr:versionStorage/5f/2b/64/5f2b64d2-fdb9-4ed5-af8a-cd92a6971f66</code>.</p>
+<h2 id="accessing-page-versions">Accessing page versions</h2>
+<p>There are multiple ways we can access the page versions.</p>
 <ul>
 <li>
-<p>You can open the left <strong>assets panel</strong> and drag &amp; drop an image to the <strong>L breakpoint</strong> asset section. If only the <strong>L breakpoint</strong> asset is provided, an <strong>img</strong> html tag will be rendered with the provided image on all breakpoints. (See <a href="../grid#breakpoints-definition">breakpoints definition</a> for L, M, S breakpoints width)</p>
+<p>Directly by accessing frozen node with .html extension.</p>
+<ul>
+<li>In my case, it's <code>http://localhost:8080/jcr:system/jcr:versionStorage/5f/2b/64/5f2b64d2-fdb9-4ed5-af8a-cd92a6971f66/1.10/jcr:frozenNode/jcr:content.html</code>, but it will be unique on every system.</li>
+</ul>
 </li>
 <li>
-<p>If additionally the <strong>M breakpoint</strong> asset is provided, a <strong>picture</strong> html tag will be rendered and M asset will be used on M and S breakpoints.</p>
+<p>Programmatically by using JCR API [1]</p>
 </li>
-<li>If additionally the <strong>S breakpoint</strong> asset is provided, a <strong>picture</strong> html tag will be rendered and S asset will be used on S breakpoint</li>
-<li>Please note that only the <strong>L breakpoint</strong> is required for an image to be rendered on a published page. M and S assets are optional.</li>
-<li>You can additionally provide an alternative text (alt) to describe the image. Leave it blank only when the image is purely decorative.</li>
-<li>Optionally you can wrap the image in a link</li>
+<li>
+<p>Using Sling API for getting available versions and fetching versioned content [2]</p>
+</li>
 </ul>
+<p>Before using Sling version info, the configuration: <a href="http://localhost:8080/system/console/configMgr/org.apache.sling.servlets.get.impl.version.VersionInfoServlet">org.apache.sling.servlets.get.impl.version.VersionInfoServlet</a> has to be enabled with default values.
+Once it's done, the versions can be read by visiting the following URL: <code>http://localhost:8080/content/ds-website/pages/home.V.tidy.json</code>.</p>
 <p align="center" width="100%">
-    <img class="image--with-border" src="./dialog.jpg" alt="Image dialog">
+    <img class="image--with-border" src="sling-version-info.png" alt="Versioned Resource Properties">
+    JSON with homepage versions information
 </p>
 
-<h2 id="rendered-component">Rendered component</h2>
-<p>If you add an image that is wider than image container, it will have the container width and height respecting the asset ratio. You can see an example of an image with 12 columns width below:</p>
-<p align="center" width="100%">
-    <img class="image--with-border" src="./12-col-img.jpg" alt="Image: 12 cols example">
-</p>
-
-<p>You can resize the image container by using the grid options in the layout tab of authoring dialog (See <a href="../grid">grid</a> description for details).
-You can see an example of 2-columns-wide image below. Image is shrinked to 2 columns width, and it's height respects the orginal asset ratio.</p>
-<p align="center" width="100%">
-    <img class="image--with-border" src="./2-col-img.jpg" alt="Image: 2 cols example">
-</p>
-
-<h2 id="additional-notes">Additional notes</h2>
-<p>When an asset has been deleted and the path to image is no longer valid, a broken icon of an image will be displayed in editor:</p>
-<p align="center" width="100%">
-    <img class="image--with-border" src="./broken-path.jpg" alt="Broken path icon">
-</p>
+<p>It's relatively easy to compare two versions by comparing the output of requests to URLs:</p>
+<p><code>http://localhost:8080/content/ds-website/pages/home.tidy.5.json;v=1.10</code>
+and </p>
+<p><code>http://localhost:8080/content/ds-website/pages/home.tidy.5.json</code></p>
+<p>It's also possible to read individual components from versioned pages:</p>
+<p><code>http://localhost:8080/content/ds-website/pages/home/jcr:content/rootcontainer/header.tidy.5.json;v=1.10</code></p>
+<h2 id="summary">Summary</h2>
+<p>At the time of writing, content versioning is still on our <a href="https://github.com/orgs/websight-io/projects/2/views/2">Roadmap</a>. Nevertheless, we get most of the work done by the JCR and Sling projects, and as a result, the feature should be shipped relatively quickly.
+We can once again benefit from choosing a battle-tested platform to run our CMS.</p>
+<h2 id="references">References</h2>
+<p>[1] https://developer.adobe.com/experience-manager/reference-materials/spec/jcr/2.0/15_Versioning.html</p>
+<p>[2] https://sling.apache.org/documentation/bundles/rendering-content-default-get-servlets.html#jcr-versions-support-1</p>
 
               
             </article>
@@ -3820,7 +3862,7 @@ You can see an example of 2-columns-wide image below. Image is shrinked to 2 col
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../cta/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CTA &amp; CTAs List components" rel="prev">
+        <a href="../../2022/websight-meets-codespaces/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Develop WebSight with Codespaces" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3829,26 +3871,11 @@ You can see an example of 2-columns-wide image below. Image is shrinked to 2 col
               <span class="md-footer__direction">
                 Previous
               </span>
-              CTA & CTAs List components
+              Develop WebSight with Codespaces
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../logo-cloud/" class="md-footer__link md-footer__link--next" aria-label="Next: Logo Cloud component" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Logo Cloud component
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
@@ -3916,14 +3943,14 @@ You can see an example of 2-columns-wide image below. Image is shrinked to 2 col
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes"], "search": "../../../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
-        <script src="../../../../../assets/javascripts/cookieconsent.js"></script>
+        <script src="../../../assets/javascripts/cookieconsent.js"></script>
       
-        <script src="../../../../../assets/javascripts/cookieconsent_init.js"></script>
+        <script src="../../../assets/javascripts/cookieconsent_init.js"></script>
       
     
   </body>
