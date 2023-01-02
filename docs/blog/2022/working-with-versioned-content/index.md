@@ -64,7 +64,7 @@ Each version of a resource is stored as a `jcr:fronzenNode` under `/jcr:system/j
 
 In my case, the path is `/jcr:system/jcr:versionStorage/5f/2b/64/5f2b64d2-fdb9-4ed5-af8a-cd92a6971f66`.
 
-## Accessing page versions:
+## Accessing page versions
 There are multiple ways we can access the page versions.
 
 - Directly by accessing frozen node with .html extension.
