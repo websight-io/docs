@@ -98,7 +98,7 @@ In this tutorial you will learn how to deploy an application created in the [set
     - `YOUR_REGISTRY_NAME` - replace with Digital Ocean Container Registry name
     - `YOUR_CLUSTER_IP` - replace with Digital Ocean Load Balancer IP (you may obtain it by running `doctl compute load-balancer list`)
 
-    See [WebSight Helm chart documentation](https://github.com/websight-io/websight-ce-helm#parameters) for more details.
+    See [WebSight Helm chart documentation](https://github.com/websight-io/charts#parameters) for more details.
 
 ## Step 3: Build & deployment
 
@@ -113,13 +113,12 @@ In this tutorial you will learn how to deploy an application created in the [set
 3. Switch `kubectl` context to your cluster in Digital Ocean (`kubectl config use-context <CONTEXT_NAME>`)
 3. From `environment/k8s` run:
     ```bash
-    helm repo add websight https://websight-io.github.io/websight-ce-helm
+    helm repo add websight https://websight-io.github.io/charts
     helm repo update websight
-    helm install my-websight websight/websight-ce -f values.yml
+    helm install my-websight websight/websight-cms -f values.yml
     ```
-    Use `helm upgrade my-websight websight/websight-ce -f values.yml` for updating the installation.
-
- `docker compose --project-name "websight-in-aws" up`. It may take a couple of minutes to finish.
+    Use `helm upgrade my-websight websight/websight-cms -f values.yml` for updating the installation.
+    It may take a couple of minutes to finish.
 5. Route your domain to Application Load Balancer (that was created by the Docker Compose in the previous step) by [creating a new Hosted Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html).
 
 ## Step 4: Verification
