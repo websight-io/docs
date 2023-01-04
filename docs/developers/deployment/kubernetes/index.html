@@ -3895,7 +3895,7 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 </code></pre></div>
 - <code>YOUR_REGISTRY_NAME</code> - replace with Digital Ocean Container Registry name
 - <code>YOUR_CLUSTER_IP</code> - replace with Digital Ocean Load Balancer IP (you may obtain it by running <code>doctl compute load-balancer list</code>)</p>
-<p>See <a href="https://github.com/websight-io/websight-ce-helm#parameters">WebSight Helm chart documentation</a> for more details.</p>
+<p>See <a href="https://github.com/websight-io/charts#parameters">WebSight Helm chart documentation</a> for more details.</p>
 </li>
 </ol>
 <h2 id="step-3-build-deployment">Step 3: Build &amp; deployment</h2>
@@ -3909,14 +3909,14 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 </code></pre></div></li>
 <li>Switch <code>kubectl</code> context to your cluster in Digital Ocean (<code>kubectl config use-context &lt;CONTEXT_NAME&gt;</code>)</li>
 <li>From <code>environment/k8s</code> run:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>websight<span class="w"> </span>https://websight-io.github.io/websight-ce-helm
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>websight<span class="w"> </span>https://websight-io.github.io/charts
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span>websight
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>helm<span class="w"> </span>install<span class="w"> </span>my-websight<span class="w"> </span>websight/websight-ce<span class="w"> </span>-f<span class="w"> </span>values.yml
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>helm<span class="w"> </span>install<span class="w"> </span>my-websight<span class="w"> </span>websight/websight-cms<span class="w"> </span>-f<span class="w"> </span>values.yml
 </code></pre></div>
-    Use <code>helm upgrade my-websight websight/websight-ce -f values.yml</code> for updating the installation.</li>
+    Use <code>helm upgrade my-websight websight/websight-cms -f values.yml</code> for updating the installation.
+    It may take a couple of minutes to finish.</li>
+<li>Route your domain to Application Load Balancer (that was created by the Docker Compose in the previous step) by <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html">creating a new Hosted Zone</a>.</li>
 </ol>
-<p><code>docker compose --project-name "websight-in-aws" up</code>. It may take a couple of minutes to finish.
-5. Route your domain to Application Load Balancer (that was created by the Docker Compose in the previous step) by <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html">creating a new Hosted Zone</a>.</p>
 <h2 id="step-4-verification">Step 4: Verification</h2>
 <ol>
 <li>Check <a href="https://cloud.digitalocean.com/kubernetes/clusters">Kubernetes Dashboard</a> and see if all PODs are running.</li>
