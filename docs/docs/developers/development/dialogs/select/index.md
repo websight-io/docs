@@ -4,7 +4,7 @@
 
 ## Description
 
-Allows user choose one of the options.
+The Select component allows the user to choose one of multiple options.
 
 ## Properties
 
@@ -39,7 +39,7 @@ Defines one of the available option.
     Value of choosen option
 
 - **selected** - `string`  
-    Indicates if field is selected by default. By default, this option will not be saved in the properties unless the user selects an option manually. So in order to make things work perfectly, we should use the same default value in the backend side as well.
+    Indicates if field is selected by default. By default, this option will not be saved in the properties unless the user selects an option manually. In order to make things work smoothly, you should use the same default value here as in the backend.
 
 ## Example
 
