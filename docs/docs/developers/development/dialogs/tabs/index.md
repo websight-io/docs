@@ -4,7 +4,7 @@
 
 ## Description
 
-Allows user to add tab panel.
+The Tabs comonent allows the user to add a tab panel.
 
 ## Example
 
