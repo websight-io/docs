@@ -35,7 +35,7 @@ If developers created a component using the `height: 50vh;` style it would lead 
 <p align="center" width="100%">
     <img class="image--with-border" src="issue_simple.png" alt="Issue with viewport units - inconsistency in Page Editor">
    The issue with viewport units - inconsistency in the Page Editor
-
+</p>
 
 Suppose the edited page consists of a component with `height: 100vh;` and some other elements. In that case, it could even lead to an infinite loop, where the height of the component would be increased to match the page’s height but then the page’s height would be increased to match the component and its siblings. Take a look at the diagram below:
 <p align="center" width="100%">
