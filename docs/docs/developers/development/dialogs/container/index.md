@@ -4,7 +4,7 @@
 
 ## Description:
 
-Component allows to group other elements. May be useful e.g. to show/hide group of components.
+The Container component allows the user to group multiple elements into a container. It is useful for showing or hiding a group of components.
 
 ## Example:
 
