@@ -3776,6 +3776,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3814,29 +3828,25 @@
 <p align="center" width="100%">
     <img class="image--with-border" src="issue_simple.png" alt="Issue with viewport units - inconsistency in Page Editor">
    The issue with viewport units - inconsistency in the Page Editor
+</p>
 
-
-Suppose the edited page consists of a component with `height: 100vh;` and some other elements. In that case, it could even lead to an infinite loop, where the height of the component would be increased to match the page’s height but then the page’s height would be increased to match the component and its siblings. Take a look at the diagram below:
+<p>Suppose the edited page consists of a component with <code>height: 100vh;</code> and some other elements. In that case, it could even lead to an infinite loop, where the height of the component would be increased to match the page’s height but then the page’s height would be increased to match the component and its siblings. Take a look at the diagram below:</p>
 <p align="center" width="100%">
     <img class="image--with-border" src="issue_infinite_loop.png" alt="Issue with viewport units - infinite loop">
    The issue with viewport units - infinite loop
 </p>
 
-Component developers could solve these issues by avoiding using the `vh` units. They could resign from them altogether or conditionally avoid them just in the _edit mode_ of the Page Editor. They would have to do that every time they wanted to use viewport units to style their components.
-
-## Solution
-
-To improve the development experience and make sure the components provided to authors always work well in the Page Editor, we’ve decided to automatically fix such issues.
-
-We search for `vh` based styles in the edited page and substitute them in the _edit mode_ with `px` values calculated based on the workspace’s height. This way the components using viewport units are correctly displayed in the Page Editor and authors can see them, in the same way, they will appear on a published site:
+<p>Component developers could solve these issues by avoiding using the <code>vh</code> units. They could resign from them altogether or conditionally avoid them just in the <em>edit mode</em> of the Page Editor. They would have to do that every time they wanted to use viewport units to style their components.</p>
+<h2 id="solution">Solution</h2>
+<p>To improve the development experience and make sure the components provided to authors always work well in the Page Editor, we’ve decided to automatically fix such issues.</p>
+<p>We search for <code>vh</code> based styles in the edited page and substitute them in the <em>edit mode</em> with <code>px</code> values calculated based on the workspace’s height. This way the components using viewport units are correctly displayed in the Page Editor and authors can see them, in the same way, they will appear on a published site:</p>
 <p align="center" width="100%">
     <img class="image--with-border" src="publish_vs_page_editor.png" alt="Page editor consistent with a published site">
   Page editor consistent with a published site 
 </p>
 
-## Summary
-
-In WebSight, we value both the authoring and development experience. Thus, we not only take an extra effort to make creating components simple and robust but we also give a hand to developers to speed things up. Thanks to the solution we propose, the component’s developers don’t need to worry about using viewport units nor spend time on providing custom fixes for such cases. The authors are always getting robust, reliable components that work consistently both during authoring and after publication.
+<h2 id="summary">Summary</h2>
+<p>In WebSight, we value both the authoring and development experience. Thus, we not only take an extra effort to make creating components simple and robust but we also give a hand to developers to speed things up. Thanks to the solution we propose, the component’s developers don’t need to worry about using viewport units nor spend time on providing custom fixes for such cases. The authors are always getting robust, reliable components that work consistently both during authoring and after publication.</p>
 
               
             </article>
