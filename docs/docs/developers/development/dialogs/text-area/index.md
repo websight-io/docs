@@ -4,7 +4,7 @@
 
 ## Description
 
-Allows user to enter any text over multiple lines.
+The Text Area component allows the user to enter text over multiple lines.
 
 ## Properties
 
@@ -18,7 +18,7 @@ Allows user to enter any text over multiple lines.
     Indicates if field value is mandatory
 
 - **removeIfEmpty** - `string` (if not defined `false`)  
-    Indicates if the property in JCR will be removed, if contains an empty String, or will be kept with that value
+    Indicates if property in JCR will be removed if it contains empty String, or will be retained with that value
 
 - **description** - `string`  
     Display description value as a tooltip
