@@ -4,7 +4,7 @@ description: Providing authors with simple and intuitive tools to create pages i
 author: Marcin Piniarski
 publicationDate: 12.01.2023
 minReadTime: 9
-image: page_editor.png
+image: publish_vs_page_editor.png 
 tags:
   - Page Editor
   - CMS
