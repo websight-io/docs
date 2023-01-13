@@ -64,11 +64,16 @@ Example dialog structure definition can look like this:
 }
 ```
 
-It will result with following in UI dialog: 
+It will result in one of the two following UI representation (modal or side panel): 
 
+### Modal
 ![Dialog example tab1](dialog-example-tab1.png)
 
 ![Dialog example tab2](dialog-example-tab2.png)
+### Side panel
+![Dialog example side panel tab1](dialog-example-side-panel-tab1.png)
+
+![Dialog example side panel tab2](dialog-example-side-panel-tab2.png)
 
 ## Data structure
 The data structure depends on the `name` property. 
@@ -265,3 +270,148 @@ public class TitleComponent {
 ```
 
 You can use [Component template](../components/definition/#template) to achieve a similar effect, but only if you add a new component. There is no easy solution to update all existing resources, so the initial content is useless if you extend the existing component. In that case, you need to use default states.
+
+## Modal vs. side panel
+As shown earlier, a single dialog structure could be presented to the authors in two different ways: the modal and the side panel.
+By default, the single configuration will be used for both, so the same fields will appear in the same order and layout on both versions. 
+
+### Purposes
+In general, the modal is used to edit (almost) all the various properties with advanced cross-field validations.
+The side panel is a light-weight version of that. It's more suitable for quick edits that can be checked on the page content right away.
+
+### Hiding fields
+As the purposes might vary between the two, it's possible to decide field-by-field if it should appear on both or only on one of them.
+The mechanism used to achieve that is the `ws:disallowedContext` parameter (see more details [above](TODO link)). The two contexts that can be disabled are `modal` and `sidepanel`.
+
+#### Hiding a field in side panel
+```json
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "shadows": {
+    "sling:resourceType": "wcm/dialogs/components/toggle",
+    "name": "shadows",
+    "label": "Use shadows",
+    "ws:disallowedContext": ["sidepanel"]
+  },
+  "style": {
+    "sling:resourceType": "wcm/dialogs/components/select",
+    "label": "Style",
+    "name": "style",
+    "primary": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Primary",
+      "value": "primary"
+    },
+    "secondary": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Secondary",
+      "selected": true,
+      "value": "secondary"
+    },
+    "link": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Link",
+      "value": "link"
+    }
+  }
+}
+```
+![Dialog example hide on side panel (modal)](dialog-hide-on-side-panel-modal.png)
+
+![Dialog example hide on side panel (side panel)](dialog-hide-on-side-panel-side-panel.png)
+
+#### Hiding a field in modal
+```json
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "shadows": {
+    "sling:resourceType": "wcm/dialogs/components/toggle",
+    "name": "shadows",
+    "label": "Use shadows"
+  },
+  "style": {
+    "sling:resourceType": "wcm/dialogs/components/select",
+    "label": "Style",
+    "name": "style",
+    "ws:disallowedContext": ["modal"],
+    "primary": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Primary",
+      "value": "primary"
+    },
+    "secondary": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Secondary",
+      "selected": true,
+      "value": "secondary"
+    },
+    "link": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Link",
+      "value": "link"
+    }
+  }
+}
+```
+![Dialog example hide on modal (modal)](dialog-hide-on-modal-modal.png)
+
+![Dialog example hide on modal (side panel)](dialog-hide-on-modal-side-panel.png)
+
+### Different config for modal and side panel
+To achieve an even better authoring experience, it's also possible to define completely separate layout and order for the two ways of editing.
+
+```json
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "properties": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Properties",
+      "ws:disallowedContext": ["sidepanel"],
+      "headingLevel": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headinglevel"
+      },
+      "headingSize": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headingsize"
+      }
+    },
+    "styles": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Styles",
+      "ws:disallowedContext": ["sidepanel"],
+      "styleVariant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/stylevariant"
+      }
+    },
+    "sidepanel": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Properties",
+      "ws:disallowedContext": ["modal"],
+      "headingLevel": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headinglevel"
+      },
+      "headingSize": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headingsize"
+      },
+      "styleVariant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/stylevariant"
+      }
+    }
+  }
+}
+```
+In the example above, we create a configuration of three tabs. The first two will only appear on the modal, while the third will only appear on the side panel.
+The third tab includes all three fields that are available on the first two tabs, this way it allows the author to edit all the properties in the side panel in one tab, but define separation on the modal.
+
+![Dialog example different config (modal, first tab)](dialog-different-modal-tab-1.png)
+
+![Dialog example different config (modal, second tab)](dialog-different-modal-tab-2.png)
+
+![Dialog example different config (side panel)](dialog-different-side-panel.png)
