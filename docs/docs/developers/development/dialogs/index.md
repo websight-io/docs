@@ -136,9 +136,10 @@ By default, all dialog components are visible, but there is a possibility to hid
 
 ### Context
 To show or hide a particular field depending on dialog context you can use a `ws:disallowedContext` parameter.
+The default `context` value used for dialogs is `edit`. Depending on dialog usage different contexts might be used. For example during creating a page 'create' context is being used - this way some fields might be disabled during the page creation process.
 
 ```json
-"ws:disallowedContext": ["edit"]
+"ws:disallowedContext": ["create"]
 ```
 
 To hide an element in dialog, the request from Front-End which fetches it has to contain the additional parameter `context`. If the context value matches one of `ws:dissallowedContext` values, then the field won’t be rendered. To check request details, go to the [Swagger documentation](http://localhost:8080/apps/apidocs#/apps/websight-dialogs-service/docs/api.html).
