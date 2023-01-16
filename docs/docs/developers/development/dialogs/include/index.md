@@ -26,7 +26,7 @@ The Include component allows users to include other components within a parent c
 
 Sometimes it is not enough to include other components and use the default settings provided by the included component. We can easily customize it by creating a child node named `include`. If we do so, we have to set the `sling:resourceSuperType` property. Its value should be the path of the component that we want to include.
 
-After `sling:resourceSuperType` is set up correctly, we can add properties to the `include` node. Additionally we can create a subtree that is similar to the included component'ss subtree. We can also add or override properties on child nodes.
+After `sling:resourceSuperType` is set up correctly, we can add properties to the `include` node. Additionally, we can create a subtree that is similar to the included component's subtree. We can also add or override properties on child nodes.
 
 **Note:** under the hood, the Sling resource merger does this work for us. This means that we can use properties like `sling:hideResource` , `sling:orderBefore` , etc.
 
