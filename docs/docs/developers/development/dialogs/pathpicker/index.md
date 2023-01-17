@@ -34,6 +34,9 @@ Path picker is an input that allows the user pick path of resource from reposito
 - **placeholder** - `string`  
     Override for the placeholder text that appears when the value is empty.
 
+- **types** - `Array<string>`  
+  Filter autosuggestion path by `jcr:primaryType`
+
 ## Example
 
 ```json
@@ -42,6 +45,7 @@ Path picker is an input that allows the user pick path of resource from reposito
   "rootPath": "/content",
   "name": "link",
   "label": "URL",
-  "forceRootPath": true
+  "forceRootPath": true,
+  "types": ["ws:PagesSpace","ws:Pages","ws:Page"]
 }
 ```
