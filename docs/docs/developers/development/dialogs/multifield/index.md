@@ -4,9 +4,9 @@
 
 ## Description
 
-The Multifield component allows users to add, reorder or remove multiple instances of a field.
+The Multifield component allows users to add, reorder or remove multiple instances of a field (or fields).
 
-In a simple case, this creates a basic form input field (e.g., TextField, TextArea). However, it can also create a complex component that acts as an aggregate of multiple subcomponents (such as address entries).
+In a simple case, Multifield can be used with a single field (e.g., TextField, see example below). However, it can also create a complex component that acts as an aggregate of multiple subcomponents (such as address entries in example below) or use nested Multifield (such as address inside of the users is same example).
 
 The field used in Multifield components behaves the same as it does within a plain dialog (e.g., when hiding labels).
 
@@ -40,7 +40,7 @@ Multifield with TextField:
 
 ![MultiField](multifield.png)
 
-Multifield with nested Multiefield
+Multifield with nested Multiefield containing 2 fields.
 
 ```json
 "users": {
@@ -60,6 +60,11 @@ Multifield with nested Multiefield
       "sling:resourceType": "wcm/dialogs/components/textfield",
       "name": "street",
       "label": "Street"
+    },
+    "city": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "name": "city",
+      "label": "City"
     }
   }
 }
