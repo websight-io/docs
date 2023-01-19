@@ -5,7 +5,7 @@
 ## Description
 
 Provides many functionalities allows authors to edit text content.  
-Component requires [configuration](./richtext-editor-configuration.md/) which defines what functionalities should be available and how menu bar should looks like.
+Component requires [configuration](./configuration/index.md) which defines what functionalities should be available and how menu bar should looks like.
 
 ## Properties
 
@@ -25,7 +25,7 @@ Component requires [configuration](./richtext-editor-configuration.md/) which de
     Display description value as tooltip
 
 - **configuration** - `string` (optional, default `/apps/wcm/dialogs/components/richtext/configuration`)  
-    absolute path to configuration node; configuration can be also defined inline, see [RichText Editor - configuration](./richtext-editor-configuration.md/)
+    absolute path to configuration node; configuration can be also defined inline, see [RichText Editor - configuration](./configuration/index.md)
 
 Example:
 
