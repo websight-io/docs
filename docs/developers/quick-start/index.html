@@ -4123,7 +4123,7 @@ Because you updated the model class, you can use its property now.</p>
 </code></pre></div>
 <p>The second test validates the dialog for the component. Update the test to recognize the new input field.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">      </span><span class="s1">&#39;/content/luna-test/pages/LunaTitle/jcr:content/rootcontainer/maincontainer/pagesection/title.json&#39;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">      </span><span class="s1">&#39;/content/starter-test/pages/LunaTitle/jcr:content/rootcontainer/maincontainer/pagesection/title.json&#39;</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="p">)</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">      </span><span class="p">.</span><span class="nx">its</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">      </span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;deep.eq&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
