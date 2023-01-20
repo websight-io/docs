@@ -4,7 +4,7 @@
 
 ## Description:
 
-The Container dialog field allows the user to group multiple elements into a container. It is useful for showing or hiding a group of dialog fields.
+The Container dialog field allows the user to group multiple elements into a container. For example, it is useful for showing or hiding a group of dialog fields.
 
 ## Example:
 
