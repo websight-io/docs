@@ -4,7 +4,7 @@
 
 ## Description
 
-The Toggle component allows the user to enable or disable a state.
+The Toggle dialog field allows the user to enable or disable a state.
 
 ## Properties
 
