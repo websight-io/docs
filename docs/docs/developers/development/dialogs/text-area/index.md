@@ -4,7 +4,7 @@
 
 ## Description
 
-The Text Area component allows the user to enter text over multiple lines.
+The Text Area dialog field allows the user to enter text over multiple lines.
 
 ## Properties
 
