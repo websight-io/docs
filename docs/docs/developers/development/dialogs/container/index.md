@@ -4,7 +4,7 @@
 
 ## Description:
 
-Component allows to group other elements. May be useful e.g. to [show/hide group of components](../#showhide-dialog-fields).
+The Container dialog field allows the user to group multiple elements into a container. For example, it is useful for [showing or hiding a group of dialog fields]((../#showhide-dialog-fields)).
 
 ## Example:
 

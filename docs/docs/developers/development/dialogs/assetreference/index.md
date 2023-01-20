@@ -4,7 +4,7 @@
 
 ## Description
 
-Asset reference is an input that allows the user to pick an asset from the space by dragging it from the assets tab on the left sidebar. It will only allow dropping assets that match the mime type of the field’s configuration
+The Asset Reference dialog field is an input that allows the user to pick an asset from the space by dragging it from the assets tab on the left sidebar. It will only allow for dropping assets that match the MIME type of the field's configuration
 
 ![AssetReference](./assetreference.png)
 
