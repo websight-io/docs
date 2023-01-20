@@ -4,7 +4,7 @@
 
 ## Description
 
-The Date Picker component allows the user to pick a date, time or datetime.
+The Date Picker dialog field allows the user to pick a date, time or datetime.
 
 ## Properties
 
