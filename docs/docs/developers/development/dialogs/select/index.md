@@ -4,7 +4,7 @@
 
 ## Description
 
-The Select component allows the user to choose one of multiple options.
+The Select dialog field allows the user to choose one of multiple options.
 
 ## Properties
 
