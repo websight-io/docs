@@ -4,7 +4,7 @@
 
 ## Description
 
-The Checkbox component allows the user to selection an option from a list of checkboxes.
+The Checkbox dialog field allows the user to selection an option from a list of checkboxes.
 
 ## Properties
 
