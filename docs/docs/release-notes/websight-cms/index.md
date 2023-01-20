@@ -1,5 +1,30 @@
 # WebSight CMS Release Notes
 
+## 1.7.0 <small>January 18, 2023</small>
+
+#### Page Editor
+- Added ability to refresh the workspace on component changes.
+- Fixed the issues with misaligned overlays on component changes.
+- Fixed the issues with `vh` styles in the _edit mode_.
+- Fixed the issue with additional space generated at the end of the workspace after zoom-in and zoom-out.
+
+#### Page and Asset Management
+
+- Fixed [#25] - SVG files are displayed properly now.
+
+### Dialogs
+
+- Fixed the issue for the [Date Picker](../../developers/development/dialogs/date-picker/) input field - presented a wrong value.
+- Fixed the issue on pressing _enter_ - didn't close a modal in some cases.
+
+
+#### Admin Tools
+- Fixed [#12] -  updated layout of the landing page for Admin Tools.
+
+#### Other
+- Unified UX for the left side panel for all views.
+
+
 ## 1.6.0 <small>December 21, 2022</small>
 
 #### Page Editor
