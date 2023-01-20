@@ -4,7 +4,7 @@
 
 ## Description
 
-The Text Field component allows users to enter text.
+The Text Field dialog field allows users to enter text.
 
 ## Properties
 
