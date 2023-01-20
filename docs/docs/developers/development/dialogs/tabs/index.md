@@ -4,7 +4,7 @@
 
 ## Description
 
-The Tabs comonent allows the user to add a tab panel.
+The Tabs dialog field allows the user to add a tab panel.
 
 ## Example
 
