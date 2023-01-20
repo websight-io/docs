@@ -4,7 +4,7 @@
 
 ## Description
 
-The Include component allows users to include other components within a parent component. It is typically used to avoid code duplication. When you have a component (e.g., a Select component for heading levels) that is used in multiple places, you can extract it to a common place and include it in multiple locations rather than duplicating it within each one.
+The Include dialog field allows users to include other components within a parent component. It is typically used to avoid code duplication. When you have a dialog field (e.g., a Select dialog field for heading levels) that is used in multiple places, you can extract it to a common place and include it in multiple locations rather than duplicating it within each one.
 
 ## Properties
 
