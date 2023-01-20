@@ -3841,7 +3841,7 @@
 <h1 id="radio">Radio</h1>
 <p><strong>wcm/dialogs/components/radio</strong></p>
 <h2 id="description">Description</h2>
-<p>Allows user to pick exactly one from many available options.</p>
+<p>The Radio component allows users to select exactly one from multiple available options.</p>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
@@ -3862,14 +3862,14 @@
 </li>
 <li>
 <p><strong>removeIfEmpty</strong> - <code>string</code> (if not defined <code>false</code>)<br />
-    Indicates if property in JCR will be removed, if contains empty String, or will be kept with that value</p>
+    Indicates if property in JCR will be removed if it contains empty String, or will be retained with that value</p>
 </li>
 </ul>
-<p>It should contain child nodes with options. One of this options will be checked by default. If none option will be marked as selected than first one will be chosen. If more than one option will be marked as selected than first ot them will be chosen.</p>
+<p>It should contain child nodes with options. One of these options will be checked by default. If no option is selected to be checked by default, the first one will be automatically chosen. If more than one option is selected to be checked by default, only the first will be chosen.</p>
 <h1 id="option">Option</h1>
 <p><strong>wcm/dialogs/components/radio/option</strong></p>
 <h2 id="description_1">Description</h2>
-<p>Defines one of the available option.</p>
+<p>Defines one of the available options.</p>
 <h2 id="properties_1">Properties</h2>
 <ul>
 <li>
@@ -3882,7 +3882,7 @@
 </li>
 <li>
 <p><strong>selected</strong> - <code>string</code><br />
-    Indicates if field is selected by default. By default, this option will not be saved in the properties unless the user selects an option manually. So in order to make things work perfectly, we should use the same default value in the backend side as well.</p>
+    Indicates if field is selected by default. By default, this option will not be saved in the properties unless the user selects an option manually. In order to make things work smoothly, you should use the same default value here as in the backend.</p>
 </li>
 </ul>
 <h2 id="example">Example</h2>

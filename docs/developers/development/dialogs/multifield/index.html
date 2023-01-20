@@ -3848,9 +3848,9 @@
 <h1 id="multifield">Multifield</h1>
 <p><strong>wcm/dialogs/components/textfield</strong></p>
 <h2 id="description">Description</h2>
-<p>Multifield component allows to add/reorder/remove multiple instances of a field.</p>
-<p>In the simplest case, this is a simple form input field (e.g. TextField, TextArea) but it can also be a complex component acting as an aggregate of multiple subcomponents (e.g. address entry).</p>
-<p>Field used in multifield behaves the same as in plain dialog - e.g. hiding labels.</p>
+<p>The Multifield component allows users to add, reorder or remove multiple instances of a field (or fields).</p>
+<p>In a simple case, Multifield can be used with a single field (e.g., TextField, see example below). However, it can also create a complex component that acts as an aggregate of multiple subcomponents (such as address entries in example below) or use nested Multifield (such as address inside of the users is same example).</p>
+<p>The field used in Multifield components behaves the same as it does within a plain dialog (e.g., when hiding labels).</p>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
@@ -3880,7 +3880,7 @@
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
 </code></pre></div>
 <p><img alt="MultiField" src="multifield.png" /></p>
-<p>Multifield with nested Multiefield</p>
+<p>Multifield with nested Multiefield containing 2 fields.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/multifield&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;users&quot;</span><span class="p">,</span>
@@ -3898,9 +3898,14 @@
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/textfield&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;street&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Street&quot;</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">}</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">      </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/textfield&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;city&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;City&quot;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="p">}</span>
 </code></pre></div>
 
               
