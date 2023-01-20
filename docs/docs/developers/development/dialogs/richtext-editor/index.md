@@ -4,9 +4,10 @@
 
 ## Description
 
-The Rich Text Editor component provides many features that allow authors to edit text content.  
 
-This component requires a [configuration](./richtext-editor-configuration.md/), which defines which features should be available and how the menu bar be displayed.
+The Rich Text Editor dialog field provides many features that allow authors to edit text content.  
+
+This dialog field requires a [configuration](./richtext-editor-configuration.md/), which defines which features should be available and how the menu bar be displayed.
 
 ## Properties
 

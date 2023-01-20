@@ -236,7 +236,7 @@ The second test validates the dialog for the component. Update the test to recog
 
 ```typescript
     cy.request(
-      '/content/luna-test/pages/LunaTitle/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
+      '/content/starter-test/pages/LunaTitle/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
     )
       .its('body')
       .should('deep.eq', {
