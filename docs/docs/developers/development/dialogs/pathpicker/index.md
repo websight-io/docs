@@ -34,6 +34,9 @@ The Path Picker component is an input that allows the user to select the path of
 - **placeholder** - `string`  
     Override the placeholder text that appears when the value is empty.
 
+- **types** - `Array<string>`  
+  Filter autosuggestion path by `jcr:primaryType`
+
 ## Example
 
 ```json
@@ -42,6 +45,7 @@ The Path Picker component is an input that allows the user to select the path of
   "rootPath": "/content",
   "name": "link",
   "label": "URL",
-  "forceRootPath": true
+  "forceRootPath": true,
+  "types": ["ws:PagesSpace","ws:Pages","ws:Page"]
 }
 ```
