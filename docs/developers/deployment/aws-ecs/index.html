@@ -3925,61 +3925,60 @@
 
 
 <h1 id="deployment-with-amazon-ecs">Deployment with Amazon ECS</h1>
-<p>In this tutorial you will learn how to deploy an application created in the <a href="../../../developers/setup/">setup guide</a> to <a href="https://aws.amazon.com/">Amazon Web Services</a> cloud using <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose</a>.</p>
-<p>The <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose CLI is fully integrated with Amazon Elastic Container Service (ECS)</a>. It allows to create / manage the task definitions, tasks, services using Compose YAML configuration files. Docker Compose CLI relies on <a href="https://aws.amazon.com/cloudformation/">CloudFormation</a> to manage AWS Resources. </p>
-<p>Docker allows to define the platform in declarative way. Switching between local and ECS environments is as easy as switching <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Context</a> (any addtional AWS configurations exists in the Docker Compose YAML file).</p>
+<p>This tutorial explains how to deploy an application created in the <a href="../../../developers/setup/">setup guide</a> to the <a href="https://aws.amazon.com/">Amazon Web Services</a> cloud using <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose</a>.</p>
+<p>The <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose CLI fully integrates with the Amazon Elastic Container Service (ECS)</a>. It allows you to create and manage the task definitions, tasks and services using Compose YAML configuration files. The Docker Compose CLI relies on <a href="https://aws.amazon.com/cloudformation/">CloudFormation</a> to manage AWS Resources.</p>
+<p>Docker allows users to define environments in a declarative way. As a result, switching between local environments and ECS environments is as easy as switching your <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Context</a> (Any AWS-specific configurations is stored in the Docker Compose YAML file.)</p>
 <div class="admonition warning">
 <p class="admonition-title">Notice</p>
-<p>Setting up the WebSight CMS CE environment in AWS presented in this tutorial is not in the AWS Free Tier. 
-If you run the instance according to this guide, the costs will incur (~3$/day).</p>
+<p>If you set up the WebSight CMS CE environment on AWS presented by following the steps in this tutorial, you will incur AWS fees of approximately 3 dollars per day, because these steps are not compatible with the AWS free tier.</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Prerequisites</p>
-<p>After finishing <a href="../../../developers/setup/">Creating and developing WebSight CMS project guide</a> you should already have:</p>
+<p>After completing the <a href="../../../developers/setup/">Creating and developing WebSight CMS project guide</a> you should have:</p>
 <ul>
 <li><a href="https://docs.docker.com/get-docker/">Docker</a> installed and running on your local machine.</li>
 <li>Java 17 (e.g. <a href="https://adoptium.net/">AdoptOpenJDK 17</a>) and <a href="https://maven.apache.org/download.cgi">Maven</a> installed on your local machine.</li>
 </ul>
-<p>To complete this tutorial, you will additionally need:</p>
+<p>To complete this tutorial, you will also need:</p>
 <ul>
-<li><a href="https://aws.amazon.com/console/">AWS account</a> with <a href="https://docs.docker.com/cloud/ecs-integration/#run-an-application-on-ecs">permissions for Docker Compose ECS integraion</a>.</li>
-<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a> set up locally with your AWS credentials.</li>
+<li>An <a href="https://aws.amazon.com/console/">AWS account</a> with <a href="https://docs.docker.com/cloud/ecs-integration/#run-an-application-on-ecs">permissions for Docker Compose ECS integraion</a>.</li>
+<li>The <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a> set up on your local machine and configured with your AWS credentials.</li>
 </ul>
 </div>
 <h2 id="step-1-aws-configuration">Step 1: AWS configuration</h2>
 <ol>
-<li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html#domain-register-procedure">Registering a new domain</a> with <code>Route53</code>.</li>
+<li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html#domain-register-procedure">Register a new domain</a> with <code>Route53</code>.</li>
 <li><a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> using <code>AWS Certificate Manager</code>. </li>
 <li><a href="https://docs.aws.amazon.com/acm/latest/userguide/domain-ownership-validation.html">Validate domain ownership</a> for the created public certificate.</li>
 <li><a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html">Create two private image repositories</a>:<ul>
 <li>Set the CMS image <code>Repository name</code> to <code>&lt;your-project-name&gt;-cms-ce</code>, e.g. <code>luna-cms-ce</code>.</li>
-<li>Set the Nginx image <code>Repository name</code> to <code>&lt;your-project-name&gt;-nginx-ce</code>, e.g. <code>luna-nginx-ce</code>.</li>
+<li>Set the NGINX image <code>Repository name</code> to <code>&lt;your-project-name&gt;-nginx-ce</code>, e.g. <code>luna-nginx-ce</code>.</li>
 </ul>
 </li>
 </ol>
 <h2 id="step-2-project-configuration">Step 2: Project configuration</h2>
-<p>In this step, we will start from the project generated in the <a href="../../../developers/setup/">Setup guide</a> and update Docker and Maven configuration files.</p>
+<p>In this step, we will start with the project generated in the <a href="../../../developers/setup/">Setup guide</a> and update our Docker and Maven configuration files as needed.</p>
 <h3 id="docker">Docker</h3>
-<p>For simplicity, we set remote environment configuration in the same repository as the project.</p>
+<p>For the sake of simplicity, we set the remote environment configuration in the same repository as the project.</p>
 <ol>
-<li>Create <code>environment/remote</code> directory.</li>
-<li>Create <code>environment/remote/admin_password.txt</code> and <code>environment/remote/mongo_password.txt</code> files and fill them with random password (both should be single-line documents).</li>
+<li>Create an <code>environment/remote</code> directory.</li>
+<li>Create <code>environment/remote/admin_password.txt</code> and <code>environment/remote/mongo_password.txt</code> files and fill them with random passwords (both should be single-line documents).</li>
 <li>Copy <code>environment/local/docker-compose.yml</code> to <code>environment/remote</code>.</li>
-<li>Add <code>secrets</code> section in <code>environment/local/docker-compose.yml</code>:
+<li>Add a <code>secrets</code> section in <code>environment/local/docker-compose.yml</code>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">secrets</span><span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">admin_password</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./admin_password.txt</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">mongo_password</span><span class="p">:</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./mongo_password.txt</span>
 </code></pre></div></li>
-<li>Replace <code>volumes</code> section to:
+<li>Replace the <code>volumes</code> section with:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">volumes</span><span class="p">:</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">cms_logs</span><span class="p">:</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">mongo_repository</span><span class="p">:</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">site_repository</span><span class="p">:</span>
 </code></pre></div></li>
 <li>
-<p>Change <code>cms</code> service definition to:
+<p>Change the <code>cms</code> service definition to:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span><span class="nt">cms</span><span class="p">:</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;CMS_ECR_IMAGE_URI&gt;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">deploy</span><span class="p">:</span>
@@ -4008,12 +4007,12 @@ If you run the instance according to this guide, the costs will incur (~3$/day).
 <a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo</span>
 </code></pre></div></p>
 <ul>
-<li><code>CMS_ECR_IMAGE_URI</code> - replace with CMS repository URI from <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-info.html">AWS ECR dashboard</a></li>
-<li><code>x-aws-protocol</code> - configuration for AWS ALB, read more <a href="https://docs.docker.com/cloud/ecs-compose-examples/#service">here</a></li>
+<li><code>CMS_ECR_IMAGE_URI</code> - replace with the appropriate CMS repository URI from the <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-info.html">AWS ECR dashboard</a></li>
+<li><code>x-aws-protocol</code> - configure according to your setup for AWS ALB; read more <a href="https://docs.docker.com/cloud/ecs-compose-examples/#service">here</a></li>
 </ul>
 </li>
 <li>
-<p>Change <code>mongo</code> service definition to:
+<p>Change the <code>mongo</code> service definition to:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">  </span><span class="nt">mongo</span><span class="p">:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo:4.4.6</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">deploy</span><span class="p">:</span>
@@ -4031,7 +4030,8 @@ If you run the instance according to this guide, the costs will incur (~3$/day).
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo.password</span>
 </code></pre></div></p>
 </li>
-<li>Change <code>nginx</code> service definition to:
+<li>
+<p>Change the <code>nginx</code> service definition to:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="nt">nginx</span><span class="p">:</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;NGINX_ECR_IMAGE_URI&gt;</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
@@ -4040,12 +4040,14 @@ If you run the instance according to this guide, the costs will incur (~3$/day).
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="nt">x-aws-protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_repository:/usr/share/nginx/html:ro</span>
-</code></pre></div><ul>
-<li><code>NGINX_ECR_IMAGE_URI</code> - replace with Nignx repository URI from <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-info.html">AWS ECR dashboard</a></li>
-<li><code>x-aws-protocol</code> - configuration for AWS ALB, read more <a href="https://docs.docker.com/cloud/ecs-compose-examples/#service">here</a></li>
+</code></pre></div></p>
+<ul>
+<li><code>NGINX_ECR_IMAGE_URI</code> - replace with the NGINX repository URI from <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-info.html">AWS ECR dashboard</a></li>
+<li><code>x-aws-protocol</code> -  configure according to your setup for AWS ALB; read more <a href="https://docs.docker.com/cloud/ecs-compose-examples/#service">here</a></li>
 </ul>
 </li>
-<li>Add <code>x-aws-cloudformation</code> section with Load Balancer configuration:
+<li>
+<p>Add an <code>x-aws-cloudformation</code> section with a Load Balancer configuration:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">x-aws-cloudformation</span><span class="p">:</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">Resources</span><span class="p">:</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">Cms8080TargetGroup</span><span class="p">:</span>
@@ -4074,15 +4076,16 @@ If you run the instance according to this guide, the costs will incur (~3$/day).
 <a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">CertificateArn</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;CERTIFICATE_ARN&gt;&quot;</span>
 <a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span><span class="nt">Protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPS</span>
 <a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">        </span><span class="nt">Port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span>
-</code></pre></div><ul>
-<li><code>CERTIFICATE_ARN</code> - replace with ARN of the certificate generated in <a href="#step-1-aws-configuration">AWS Configuration</a> step.</li>
+</code></pre></div></p>
+<ul>
+<li><code>CERTIFICATE_ARN</code> - replace with the ARN of the certificate generated in the <a href="#step-1-aws-configuration">AWS Configuration</a> step.</li>
 </ul>
 </li>
 <li><a href="https://docs.docker.com/cloud/ecs-integration/#create-aws-context">Create Docker ECS context</a> named <code>ws-ecs</code>:<ul>
 <li><code>docker context create ecs ws-ecs</code></li>
 </ul>
 </li>
-<li>Update <code>distribution/src/main/docker/nginx/default.conf</code> Nginx config with additional health endpoint:
+<li>Update the <code>distribution/src/main/docker/nginx/default.conf</code> NGINX configuration with additional health endpoint settings:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="nb">location</span><span class="w"> </span><span class="sx">/health</span><span class="w"> </span>{
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span><span class="nb">access_log</span><span class="w"> </span><span class="k">off</span>;
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nb">add_header</span><span class="w">  </span>Content-Type<span class="w">    </span>text/html;
@@ -4093,7 +4096,7 @@ If you run the instance according to this guide, the costs will incur (~3$/day).
 <p>To find more information about using Docker Compose with AWS Elastic Container Service, please read <a href="https://docs.docker.com/cloud/ecs-integration/">Deploying Docker containers on ECS</a>.</p>
 <h3 id="maven">Maven</h3>
 <ol>
-<li>Update <code>io.fabric8:docker-maven-plugin</code> plugin configuration in <code>distribution/pom.xml</code>. <ul>
+<li>Update the <code>io.fabric8:docker-maven-plugin</code> plugin configuration in <code>distribution/pom.xml</code>. <ul>
 <li>Add the following <code>buildx</code> extension to <em>cms</em> and <em>nginx</em> images <code>&lt;build&gt;</code> sections:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">                </span><span class="nt">&lt;buildx&gt;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">                  </span><span class="nt">&lt;platforms&gt;</span>
@@ -4113,46 +4116,46 @@ If you run the instance according to this guide, the costs will incur (~3$/day).
 </code></pre></div></li>
 </ul>
 </li>
-<li>Add <code>&lt;docker.skip.push&gt;true&lt;/docker.skip.push&gt;</code> property to the main <code>pom.xml</code>.</li>
+<li>Add the <code>&lt;docker.skip.push&gt;true&lt;/docker.skip.push&gt;</code> property to the main <code>pom.xml</code>.</li>
 </ol>
-<p>Alternatively, you can check the above configuration in <a href="https://github.com/websight-io/starter/blob/main/distribution/pom.xml">WebSight Starter Distribution POM</a> (where Maven profiles are used).</p>
+<p>Alternatively, you can refer to the above configuration in <a href="https://github.com/websight-io/starter/blob/main/distribution/pom.xml">WebSight Starter Distribution POM</a> (where Maven profiles are used).</p>
 <h2 id="step-3-build-and-deployment">Step 3: Build and deployment</h2>
 <ol>
 <li><a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html#cli-authenticate-registry">Log in to ECR</a>.</li>
 <li>In the project root run <code>mvn clean install -D docker.cms-project.name=&lt;CMS_ECR_IMAGE_URI&gt; -D docker.nginx.name=&lt;NGINX_ECR_IMAGE_URI&gt; -D docker.skip.push=false</code>.</li>
-<li>Switch Docker context to ECS <code>docker context use ws-ecs</code>.</li>
+<li>Switch the Docker context to ECS <code>docker context use ws-ecs</code>.</li>
 <li>From <code>environment/remote</code> run <code>docker compose --project-name "websight-in-aws" up</code>. It may take a couple of minutes to finish.</li>
-<li>Route your domain to Application Load Balancer (that was created by the Docker Compose in the previous step) by <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html">creating a new Hosted Zone</a>.</li>
+<li>Route your domain to the Application Load Balancer that was created by Docker Compose in the previous step by <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html">creating a new Hosted Zone</a>.</li>
 </ol>
 <h2 id="step-4-verification">Step 4: Verification</h2>
 <ol>
-<li>Check <a href="https://console.aws.amazon.com/ecs">ECS Console</a> and see if all cluster services are running.</li>
-<li>Open WebSight CMS CE admin panel on <code>&lt;your-domain&gt;:8443</code>. Use the <code>wsadmin</code> as login and content of <code>environment/remote/admin_password.txt</code> as password.</li>
+<li>Check the <a href="https://console.aws.amazon.com/ecs">ECS Console</a> to verify that all cluster services are running.</li>
+<li>Open the WebSight CMS CE admin panel by navigating to <code>&lt;your-domain&gt;:8443</code> in a browser. Use <code>wsadmin</code> as the login name. The password is the password you configured in <code>environment/remote/admin_password.txt</code>.</li>
 </ol>
 <h2 id="cleaning-up">Cleaning up</h2>
-<p>To stop incurring AWS costs, follow these steps:</p>
+<p>To shut down your environment on AWS (and stop incurring AWS costs), follow these steps:</p>
 <ol>
-<li>From <code>environment/remote</code> run <code>docker compose --project-name "websight-in-aws" down</code>. It may take a couple of minutes.</li>
-<li><a href="https://docs.aws.amazon.com/efs/latest/ug/delete-efs-fs.html">Delete EFS file systems</a> for <code>cms_logs</code> ,<code>mongo_repository</code>, and <code>site_repository</code> volumes.</li>
-<li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Delete Route53 Hosted Zone</a> created in <a href="#step-3-build-and-deployment">Deployment</a> step.</li>
-<li><a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-delete.html">Delete certificate</a> created in <a href="#step-1-aws-configuration">AWS Configuration</a> step.</li>
-<li><a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-delete.html">Delete ECR repositories</a> created in <a href="#step-1-aws-configuration">AWS Configuration</a> step.</li>
+<li>From <code>environment/remote</code> run <code>docker compose --project-name "websight-in-aws" down</code>. It may take a couple of minutes to complete.</li>
+<li><a href="https://docs.aws.amazon.com/efs/latest/ug/delete-efs-fs.html">Delete the EFS file systems</a> for <code>cms_logs</code> ,<code>mongo_repository</code>, and <code>site_repository</code> volumes.</li>
+<li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Delete the Route53 Hosted Zone</a> created in the <a href="#step-3-build-and-deployment">Deployment</a> step.</li>
+<li><a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-delete.html">Delete the certificate</a> created in the <a href="#step-1-aws-configuration">AWS Configuration</a> step.</li>
+<li><a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-delete.html">Delete the ECR repositories</a> created in the <a href="#step-1-aws-configuration">AWS Configuration</a> step.</li>
 </ol>
 <h2 id="aws-best-practices">AWS best practices</h2>
 <p>This section descirbes best practices for deploying WebSight CE DXP to AWS ECS.</p>
 <h3 id="logs-and-monitoring">Logs and monitoring</h3>
-<p>It is always worth configuring logs and observing basic metrics for your instance.</p>
+<p>It's always a good idea to configure logs and observability metrics for your instance.</p>
 <p>Thanks to the Docker Compose integration with AWS ECS, the <a href="https://docs.docker.com/cloud/ecs-integration/#view-application-logs">AWS CloudWatch Logs service is automatically configured for your containers</a>.</p>
-<p>Additionally, you can monitor basic metrics thanks to the <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/cloudwatch-metrics.html">CloudWatch metrics for the Fargate</a> launch type.</p>
+<p>Additionally, you can monitor basic metrics using the <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/cloudwatch-metrics.html">CloudWatch metrics for the Fargate</a> launch type.</p>
 <h3 id="secrets">Secrets</h3>
-<p>Use <a href="https://docs.docker.com/engine/swarm/secrets/">Docker secrets</a> for storing any sensitive data (like passwords, tokens, etc.). Docker Compose integration with AWS ECS creates a new secret in the <a href="https://docs.aws.amazon.com/secretsmanager/">AWS Secrets Manager</a> for each <a href="https://docs.docker.com/cloud/ecs-compose-features/#secrets">secred defined in the compose configuration file</a>. See the examples below.</p>
+<p>Use <a href="https://docs.docker.com/engine/swarm/secrets/">Docker secrets</a> for storing any sensitive data (like passwords, tokens, etc.) within your environment. The Docker Compose integration with AWS ECS creates a new secret in the <a href="https://docs.aws.amazon.com/secretsmanager/">AWS Secrets Manager</a> for each <a href="https://docs.docker.com/cloud/ecs-compose-features/#secrets">secret defined in the Compose configuration file</a>. See the examples below.</p>
 <h4 id="custom-cms-admin-credentials">Custom CMS admin credentials</h4>
-<p>WebSight CE CMS enables configuring a custom admin username and password. The default values for admin user username/password are <code>wsadmin/wsadmin</code>.</p>
-<p>You can configure a custom username with <code>WS_ADMIN_USERNAME</code> <a href="https://docs.docker.com/compose/environment-variables/">environment variable</a>.</p>
-<p>To configure a custom password use <code>admin.password</code> secret. You will need secret files available at deploy time next to the compose file:</p>
+<p>WebSight CE CMS enables configuration of a custom admin username and password. The default values for the admin user's username/password are <code>wsadmin/wsadmin</code>.</p>
+<p>You can configure a custom username by setting the <code>WS_ADMIN_USERNAME</code> <a href="https://docs.docker.com/compose/environment-variables/">environment variable</a>.</p>
+<p>To configure a custom password use the <code>admin.password</code> secret. To do this, first create a secrets file that is readable by Compose during deployment:</p>
 <p><div class="highlight"><span class="filename">admin_password.txt</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>s33cretP@ssword
 </code></pre></div>
-and reference it in the compose configuration:</p>
+Then, reference the file in the Compose configuration:</p>
 <div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">service</span><span class="p">:</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">cms</span><span class="p">:</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
@@ -4163,7 +4166,7 @@ and reference it in the compose configuration:</p>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./admin_password.txt</span>
 </code></pre></div>
 <h4 id="custom-mongodb-password">Custom MongoDB password</h4>
-<p>By default, ECS Tasks configured by the Docker Compose integration have public IP assigned. 
+<p>By default, ECS Tasks configured by the Docker Compose integration have public IP addresses assigned to them.
 Therefore, you should consider securing MongoDB, which by default starts with no username/password configured.
 Read more about securing MongoDB containers <a href="https://hub.docker.com/_/mongo">here</a>.</p>
 
