@@ -23,7 +23,7 @@ Docker allows users to define environments in a declarative way. As a result, sw
 
 ## Step 1: AWS configuration
 
-1. [Regist a new domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html#domain-register-procedure) with `Route53`.
+1. [Register a new domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html#domain-register-procedure) with `Route53`.
 2. [Request a public certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html) using `AWS Certificate Manager`. 
 3. [Validate domain ownership](https://docs.aws.amazon.com/acm/latest/userguide/domain-ownership-validation.html) for the created public certificate.
 4. [Create two private image repositories](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-create.html):
