@@ -1,31 +1,31 @@
-# Deployment with Linux Docker Compose
+# Deployment to Linux using Docker Compose
 
-This guide describes an inexpensive setup with predictable monthly pricing. We will use a single Ubuntu server with Docker Compose running containers.
+This guide describes a way to deploy WebSight CMS inexpensively and with predictable monthly pricing. We will run the platform on a single Ubuntu server, using containers that are configured via Docker Compose.
 
 !!! Warning "Notice"
-        This setup does not focus on reliability (e.g. backups, recovery), scalability and monitoring aspects. For the production environments, we recommend using the managed container services. See the [AWS ECS deployment guide](../aws-ecs/) for more details.
+        This setup does not address reliability (e.g., backups and recovery), scalability or monitoring considerations. For a production environment, we recommend using a managed container service. Learn more about deploying on a managed container service in our [AWS ECS deployment guide](../aws-ecs/).
 
 
 !!! abstract "Prerequisites"
-    After finishing [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) you should already have:
+    After completing the [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) you should have:
     
     - [Docker](https://docs.docker.com/get-docker/) installed and running on your local machine.
-    - Java 17 (e.g. [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.
+    - Java 17 (e.g., [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.
     
-    To complete this tutorial, you will additionally need:
+    To complete this tutorial, you will also need:
 
-    - virtual machine (min 2CPUs / 4GB RAM) with Ubuntu 22.x installed
-    - container registry for your project images
+    - A virtual machine (minimum 2CPUs / 4GB RAM) with Ubuntu 22.x installed
+    - A container registry for your project images
 
-In this guide we will use `DigitalOcean` cloud to:
+In this guide we will use the `DigitalOcean` cloud to:
 
-- set up a virtual machine (Droplet)
-- configure private container registry
+- set up a virtual machine (which is known as a Droplet on Digital Ocean)
+- configure a private container registry
 
 ## Step 1: Droplet Setup
 
 !!! info "Notice"
-        If you have your own vitual machine with Ubuntu installed, you can skip this step and go directly to [step 2](#step-2-install-docker).
+        If you have your own virtual machine with Ubuntu installed and want to run WebSight CMS there, you don't need to set up a Droplet. Instead, skip this step and go directly to [step 2](#step-2-install-docker).
 
 [Create a Droplet](https://docs.digitalocean.com/products/droplets/how-to/create/) with the following specification:
 
@@ -33,16 +33,16 @@ In this guide we will use `DigitalOcean` cloud to:
   - Size: `Basic: 2 Intel CPUs / 4GB RAM / 80GB NVMe SSDs`
   - [choose SSH keys authentication](https://docs.digitalocean.com/products/droplets/how-to/create/#authentication) and add your SSH public key to Droplet
 
-At the time of writing this guide the cost of the Droplet is **$24.00/month**.
+At the time of writing this guide the cost of for this Droplet configuration is **$24.00/month**.
 
 ## Step 2: Install Docker
 
-On your virtual machine install Docker Engine & Plugins according to the [Ubuntu installation docs](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
+On your virtual machine, install Docker Engine and plugins by following the [Ubuntu Docker installation documentation](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
 
 ## Step 3: Container Registry Setup
 
 !!! info "Notice"
-        If you have already Docker Registry, you can skip this step and go directly to [step 4](#step-4-push-images-to-docker-registry).
+        If you already have a Docker Registry set up, you can skip this step and go directly to [step 4](#step-4-push-images-to-docker-registry).
 
 [Create a basic private Container Registry in DigitalOcean](https://docs.digitalocean.com/products/container-registry/quickstart/).
 
@@ -50,9 +50,9 @@ At the time of writing this guide the cost of the Basic Container Registry is **
 
 ## Step 4: Push images to Docker Registry
 
-In this step, we will start from the project generated in the [Setup guide](../../../developers/setup/) and update the Maven configuration file.
+In this step, we will start with the project generated in the [Setup guide](../../../developers/setup/) and update the Maven configuration file.
 
-1. Update the `io.fabric8:docker-maven-plugin` plugin configuration in `distribution/pom.xml`. 
+1. Update the `io.fabric8:docker-maven-plugin` plugin configuration in `distribution/pom.xml` as follows: 
     - Add the following `buildx` extension to _cms_ and _nginx_ images `<build>` sections:
 ```xml
                 <buildx>
@@ -73,7 +73,7 @@ In this step, we will start from the project generated in the [Setup guide](../.
           </execution>
 ```
 
-2. [Login to the container registry](https://docs.digitalocean.com/products/container-registry/how-to/use-registry-docker-kubernetes/#docker-integration) with
+2. [Log in to the container registry](https://docs.digitalocean.com/products/container-registry/how-to/use-registry-docker-kubernetes/#docker-integration) with:
 ```bash
 docker login registry.digitalocean.com
 ```
@@ -89,18 +89,18 @@ where `DO_REGISTRY_NAME` is your configured container registry name
 
 ## Step 5: Deploy Containers
 
-From the Droplet console run:
+From the Droplet console perform the following:
 
-1. Download Docker Compose file
+1. Download Docker Compose file:
 ```bash
 wget https://www.websight.io/scripts/docker-compose.yml
 ```
 
-2. Update the downloaded `docker-compose.yml` file and replace:
+2. Update the downloaded `docker-compose.yml` file and replace these values as follows:
     - `public.ecr.aws/ds/websight-cms-ce:luna-1.1.0` -> `registry.digitalocean.com/DO_REGISTRY_NAME/websight-cms-linux-box`
     - `public.ecr.aws/ds/websight-nginx-ce:luna-1.1.0` -> `registry.digitalocean.com/DO_REGISTRY_NAME/nginx-linux-box`
 
-3. Login to the container registry
+3. Log in to the container registry
 ```bash
 docker login registry.digitalocean.com
 ```
