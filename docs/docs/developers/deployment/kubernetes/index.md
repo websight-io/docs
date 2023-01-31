@@ -15,8 +15,8 @@ This tutorial explains how to deploy an application created in the [setup guide]
     
     To complete this tutorial, you will also need:
 
-    -A [Digital Ocean account](https://cloud.digitalocean.com/)
-    -The [Digital Ocean CLI](https://docs.digitalocean.com/reference/doctl/) installed
+    - A [Digital Ocean account](https://cloud.digitalocean.com/)
+    - The [Digital Ocean CLI](https://docs.digitalocean.com/reference/doctl/) installed
     - [`kubectl`](https://kubernetes.io/docs/tasks/tools/) installed (if you use [Docker Desktop, kubectl should already be installed](https://docs.docker.com/desktop/kubernetes/#use-the-kubectl-command))
     - [`helm`](https://helm.sh/) installed
 
