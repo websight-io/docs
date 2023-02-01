@@ -25,7 +25,7 @@ In this tutorial you will learn how to deploy an application created in the [set
 
 !!! info ""
 
-    Digital Ocean does **not** support `persistent volumes` with `ReadWriteMany` access mode. For simplicity sake, we create a single node Kubernetes cluster to work with `ReadWiteOnce` access mode.
+    Digital Ocean does **not** support `persistent volumes` with `ReadWriteMany` access mode. For simplicity sake, we create a single node Kubernetes cluster to work with `ReadWriteOnce` access mode.
 
 1. [Authenticate `doctl` with an API token](https://docs.digitalocean.com/reference/doctl/how-to/install/)
     - API token scopes: `Read` and `Write`
