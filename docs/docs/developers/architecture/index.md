@@ -44,7 +44,7 @@ The diagram above reflects the containers' logical architecture. Docker Compose 
 - The `cms` service (content management and pages generation)
 - The `mongo` service (content database)
 
-Services use volumes to save durable data outside the container (note that this means that when the container is destroyed and reloaded, all data from the previous container instance is lost). We specify the following  volumes:
+Services use volumes (external storage) to save durable data outside the container to separate the lifecycle of containers that use it from the data itself. When Docker Compose destroys a container (e.g., on crash or re-deploy), all data from its internal storage is lost. We specify the following volumes:
 
 - The `experience storage` volume is shared by NGINX (read) and WebSight CMS (write) containers
 - The `content` volume keeps content and assets
