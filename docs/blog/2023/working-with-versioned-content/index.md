@@ -11,7 +11,7 @@ tags:
   - CMS
 ---
 
-*Published at: 29.12.2022 by [Michal Cukierman](https://github.com/michalcukierman)*
+*Published at: 02.01.2023 by [Michal Cukierman](https://github.com/michalcukierman)*
 
 ## Overview
 Content versioning is one of the essential features of a mature CMS. The ability to work with pages, compare and roll back when needed is a must in a collaborative environment.
