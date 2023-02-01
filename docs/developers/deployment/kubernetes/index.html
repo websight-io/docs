@@ -3846,8 +3846,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-build-deployment" class="md-nav__link">
-    Step 3: Build &amp; deployment
+  <a href="#step-3-build-and-deployment" class="md-nav__link">
+    Step 3: Build and deployment
   </a>
   
 </li>
@@ -3885,11 +3885,10 @@
 
 
 <h1 id="deployment-with-kubernetes">Deployment with Kubernetes</h1>
-<p>In this tutorial you will learn how to deploy an application created in the <a href="../../../developers/setup/">setup guide</a> to <a href="https://kubernetes.io/">Kubernetes</a> using the <a href="https://www.digitalocean.com/products/kubernetes">Digital Ocean Managed Kubernetes clusters</a>.</p>
+<p>This tutorial explains how to deploy an application created in the <a href="../../../developers/setup/">setup guide</a> to <a href="https://kubernetes.io/">Kubernetes</a> using a <a href="https://www.digitalocean.com/products/kubernetes">Digital Ocean Managed Kubernetes cluster</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Notice</p>
-<p>Setting up the WebSight CMS in Digital Ocean presented in this tutorial is not free. 
-If you run the instance according to this guide, the costs will incur (~2$/day).</p>
+<p>Setting up WebSight CMS on Digital Ocean via the steps presented in this tutorial will incur Digital Ocean hosting costs of approximately 2 dollars per day.</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Prerequisites</p>
@@ -3898,25 +3897,22 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 <li><a href="https://docs.docker.com/get-docker/">Docker</a> installed and running on your local machine.</li>
 <li>Java 17 (e.g. <a href="https://adoptium.net/">AdoptOpenJDK 17</a>) and <a href="https://maven.apache.org/download.cgi">Maven</a> installed on your local machine.</li>
 </ul>
-<p>To complete this tutorial, you will additionally need:</p>
+<p>To complete this tutorial, you will also need:</p>
 <ul>
-<li><a href="https://cloud.digitalocean.com/">Digital Ocean account</a></li>
-<li><a href="https://docs.digitalocean.com/reference/doctl/">Digital Ocean CLI</a> installed</li>
-<li><a href="https://kubernetes.io/docs/tasks/tools/"><code>kubectl</code></a> installed (with <a href="https://docs.docker.com/desktop/kubernetes/#use-the-kubectl-command">Docker Desktop kubectl should be installed</a>)</li>
+<li>A <a href="https://cloud.digitalocean.com/">Digital Ocean account</a></li>
+<li>The <a href="https://docs.digitalocean.com/reference/doctl/">Digital Ocean CLI</a> installed</li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/"><code>kubectl</code></a> installed (if you use <a href="https://docs.docker.com/desktop/kubernetes/#use-the-kubectl-command">Docker Desktop, kubectl should already be installed</a>)</li>
 <li><a href="https://helm.sh/"><code>helm</code></a> installed</li>
 </ul>
 </div>
 <h2 id="step-1-digital-ocean-configuration">Step 1: Digital Ocean configuration</h2>
 <div class="admonition info">
-<p>Digital Ocean does <strong>not</strong> support <code>persistent volumes</code> with <code>ReadWriteMany</code> access mode. For simplicity sake, we create a single node Kubernetes cluster to work with <code>ReadWiteOnce</code> access mode.</p>
+<p>Digital Ocean does <strong>not</strong> support <code>persistent volumes</code> with the <code>ReadWriteMany</code> access mode. For purposes of simplicity, we'll create a single-node Kubernetes cluster to work with the <code>ReadWiteOnce</code> access mode.</p>
 </div>
 <ol>
-<li><a href="https://docs.digitalocean.com/reference/doctl/how-to/install/">Authenticate <code>doctl</code> with an API token</a><ul>
-<li>API token scopes: <code>Read</code> and <code>Write</code></li>
-</ul>
-</li>
+<li>Start by <a href="https://docs.digitalocean.com/reference/doctl/how-to/install/">Authenticating <code>doctl</code> with an API token</a>. Set API token scopes as follows: <code>Read</code> and <code>Write</code></li>
 <li>
-<p><a href="https://docs.digitalocean.com/products/kubernetes/how-to/create-clusters/">Create Kubernetes cluster</a> using the Control Panel</p>
+<p><a href="https://docs.digitalocean.com/products/kubernetes/how-to/create-clusters/">Create a Kubernetes cluster</a> using the Control Panel with the following options:</p>
 <ul>
 <li>scaling type: <code>Fixed size</code></li>
 <li>machine type: <code>Basic nodes</code></li>
@@ -3925,23 +3921,20 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 </ul>
 </li>
 <li>
-<p><a href="https://docs.digitalocean.com/products/kubernetes/how-to/connect-to-cluster/#doctl">Configure <code>kubectl</code> context for the new cluster</a></p>
+<p><a href="https://docs.digitalocean.com/products/kubernetes/how-to/connect-to-cluster/#doctl">Configure your <code>kubectl</code> context for the new cluster</a></p>
 </li>
-<li><a href="https://docs.digitalocean.com/products/container-registry/quickstart/">Create Container Registry</a><ul>
-<li>plan: <code>Basic</code></li>
-</ul>
-</li>
+<li><a href="https://docs.digitalocean.com/products/container-registry/quickstart/">Create a Container Registry</a>. The <code>Basic</code> plan is sufficient.</li>
 </ol>
 <h2 id="step-2-kubernetes-cluster-configuration">Step 2: Kubernetes cluster configuration</h2>
 <ol>
-<li><a href="https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean">Set up Nginx Ingress Controller</a></li>
-<li><a href="https://docs.digitalocean.com/products/container-registry/how-to/use-registry-docker-kubernetes/#kubernetes-integration">Integrate Container Registry with Kubernetes cluster</a></li>
+<li><a href="https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean">Set up an NGINX Ingress Controller</a></li>
+<li><a href="https://docs.digitalocean.com/products/container-registry/how-to/use-registry-docker-kubernetes/#kubernetes-integration">Integrate the Container Registry with your Kubernetes cluster</a></li>
 </ol>
 <h2 id="step-2-project-configuration">Step 2: Project configuration</h2>
 <h3 id="maven">Maven</h3>
 <ol>
-<li>Update <code>io.fabric8:docker-maven-plugin</code> plugin configuration in <code>distribution/pom.xml</code>. <ul>
-<li>Add the following <code>buildx</code> extension to <em>cms</em> and <em>nginx</em> images <code>&lt;build&gt;</code> sections:
+<li>Update the <code>io.fabric8:docker-maven-plugin</code> plugin configuration in <code>distribution/pom.xml</code> as follows. <ul>
+<li>Add the following <code>buildx</code> extension to the <em>cms</em> and <em>nginx</em> images <code>&lt;build&gt;</code> sections:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">                </span><span class="nt">&lt;buildx&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">                </span><span class="nt">&lt;platforms&gt;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">                    </span><span class="nt">&lt;platform&gt;</span>linux/amd64<span class="nt">&lt;/platform&gt;</span>
@@ -3965,7 +3958,7 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 <h3 id="environment">Environment</h3>
 <ol>
 <li>
-<p>Create <code>values.yml</code> file in <code>environment/k8s</code> with the following content</p>
+<p>Create a <code>values.yml</code> file in the <code>environment/k8s</code> directory with the following content:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">cms</span><span class="p">:</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/cms</span>
@@ -3984,20 +3977,20 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nt">site</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;site.&lt;YOUR_CLUSTER_IP&gt;.nip.io&quot;</span>
 </code></pre></div>
 - <code>YOUR_REGISTRY_NAME</code> - replace with Digital Ocean Container Registry name
-- <code>YOUR_CLUSTER_IP</code> - replace with Digital Ocean Load Balancer IP (you may obtain it by running <code>doctl compute load-balancer list</code>)</p>
+- <code>YOUR_CLUSTER_IP</code> - replace with Digital Ocean Load Balancer IP (you can obtain it by running <code>doctl compute load-balancer list</code>)</p>
 <p>See <a href="https://github.com/websight-io/charts#parameters">WebSight Helm chart documentation</a> for more details.</p>
 </li>
 </ol>
-<h2 id="step-3-build-deployment">Step 3: Build &amp; deployment</h2>
+<h2 id="step-3-build-and-deployment">Step 3: Build and deployment</h2>
 <ol>
 <li><a href="https://docs.digitalocean.com/products/container-registry/how-to/use-registry-docker-kubernetes/#docker-integration">Configure Docker to <code>push</code> to and <code>pull</code> from Container Registry</a>.</li>
-<li>In the project root run 
+<li>In the project root run:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>-D<span class="w"> </span>docker.cms-project.name<span class="o">=</span>registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/cms<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>-D<span class="w"> </span>docker.nginx.name<span class="o">=</span>registry.digitalocean.com/&lt;YOUR_REGISTRY_NAME&gt;/nginx<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>-D<span class="w"> </span>docker.skip.push<span class="o">=</span><span class="nb">false</span>
 </code></pre></div></li>
-<li>Switch <code>kubectl</code> context to your cluster in Digital Ocean (<code>kubectl config use-context &lt;CONTEXT_NAME&gt;</code>)</li>
+<li>Switch the <code>kubectl</code> context to your cluster in Digital Ocean (<code>kubectl config use-context &lt;CONTEXT_NAME&gt;</code>)</li>
 <li>From <code>environment/k8s</code> run:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>websight<span class="w"> </span>https://websight-io.github.io/charts
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span>websight
@@ -4005,17 +3998,17 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
 </code></pre></div>
     Use <code>helm upgrade my-websight websight/websight-cms -f values.yml</code> for updating the installation.
     It may take a couple of minutes to finish.</li>
-<li>Route your domain to Application Load Balancer (that was created by the Docker Compose in the previous step) by <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html">creating a new Hosted Zone</a>.</li>
+<li>Route your domain to the Application Load Balancer (which you created using Docker Compose in the previous step) by <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html">creating a new Hosted Zone</a>.</li>
 </ol>
 <h2 id="step-4-verification">Step 4: Verification</h2>
 <ol>
-<li>Check <a href="https://cloud.digitalocean.com/kubernetes/clusters">Kubernetes Dashboard</a> and see if all PODs are running.</li>
-<li>Open WebSight CMS admin panel on <code>https://cms.&lt;YOUR_CLUSTER_IP&gt;.nip.io/</code> (SSL is not covered in this guide). Use the <code>wsadmin</code>/<code>wsadmin</code> to login.</li>
+<li>Check the <a href="https://cloud.digitalocean.com/kubernetes/clusters">Kubernetes Dashboard</a> to verify that all pods are running.</li>
+<li>Open the WebSight CMS admin panel on <code>https://cms.&lt;YOUR_CLUSTER_IP&gt;.nip.io/</code> (SSL is not covered in this guide). Use the credentials <code>wsadmin</code>/<code>wsadmin</code> to log in.</li>
 </ol>
 <h2 id="cleanup">Cleanup</h2>
 <ol>
-<li><a href="https://docs.digitalocean.com/products/kubernetes/how-to/destroy-clusters/">Delete Kubernetes cluster</a> along with Load Balancer and volumes.</li>
-<li>Delete Container Registry.</li>
+<li>When finished, you can <a href="https://docs.digitalocean.com/products/kubernetes/how-to/destroy-clusters/">delete your Kubernetes cluster</a> along with the Load Balancer and volumes.</li>
+<li>You may also delete your Container Registry.</li>
 </ol>
 
               
@@ -4046,13 +4039,13 @@ If you run the instance according to this guide, the costs will incur (~2$/day).
       
       
         
-        <a href="../linux/" class="md-footer__link md-footer__link--next" aria-label="Next: Deployment with Linux Docker Compose" rel="next">
+        <a href="../linux/" class="md-footer__link md-footer__link--next" aria-label="Next: Deployment to Linux using Docker Compose" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Deployment with Linux Docker Compose
+              Deployment to Linux using Docker Compose
             </div>
           </div>
           <div class="md-footer__button md-icon">

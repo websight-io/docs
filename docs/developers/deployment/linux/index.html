@@ -19,7 +19,7 @@
     
     
       
-        <title>Deployment with Linux Docker Compose - WebSight DXP</title>
+        <title>Deployment to Linux using Docker Compose - WebSight DXP</title>
       
     
     
@@ -115,7 +115,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deployment-with-linux-docker-compose" class="md-skip">
+        <a href="#deployment-to-linux-using-docker-compose" class="md-skip">
           Skip to content
         </a>
       
@@ -147,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment with Linux Docker Compose
+              Deployment to Linux using Docker Compose
             
           </span>
         </div>
@@ -3864,33 +3864,33 @@
 
 
 
-<h1 id="deployment-with-linux-docker-compose">Deployment with Linux Docker Compose</h1>
-<p>This guide describes an inexpensive setup with predictable monthly pricing. We will use a single Ubuntu server with Docker Compose running containers.</p>
+<h1 id="deployment-to-linux-using-docker-compose">Deployment to Linux using Docker Compose</h1>
+<p>This guide describes a way to deploy WebSight CMS inexpensively and with predictable monthly pricing. We will run the platform on a single Ubuntu server, using containers that are configured via Docker Compose.</p>
 <div class="admonition warning">
-<p class="admonition-title">Notice<p>This setup does not focus on reliability (e.g. backups, recovery), scalability and monitoring aspects. For the production environments, we recommend using the managed container services. See the <a href="../aws-ecs/">AWS ECS deployment guide</a> for more details.</p>
+<p class="admonition-title">Notice<p>This setup does not address reliability (e.g., backups and recovery), scalability or monitoring considerations. For a production environment, we recommend using a managed container service. Learn more about deploying on a managed container service in our <a href="../aws-ecs/">AWS ECS deployment guide</a>.</p>
 </p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Prerequisites</p>
-<p>After finishing <a href="../../../developers/create-and-develop-project/">Creating and developing WebSight CMS project guide</a> you should already have:</p>
+<p>After completing the <a href="../../../developers/create-and-develop-project/">Creating and developing WebSight CMS project guide</a> you should have:</p>
 <ul>
 <li><a href="https://docs.docker.com/get-docker/">Docker</a> installed and running on your local machine.</li>
-<li>Java 17 (e.g. <a href="https://adoptium.net/">AdoptOpenJDK 17</a>) and <a href="https://maven.apache.org/download.cgi">Maven</a> installed on your local machine.</li>
+<li>Java 17 (e.g., <a href="https://adoptium.net/">AdoptOpenJDK 17</a>) and <a href="https://maven.apache.org/download.cgi">Maven</a> installed on your local machine.</li>
 </ul>
-<p>To complete this tutorial, you will additionally need:</p>
+<p>To complete this tutorial, you will also need:</p>
 <ul>
-<li>virtual machine (min 2CPUs / 4GB RAM) with Ubuntu 22.x installed</li>
-<li>container registry for your project images</li>
+<li>A virtual machine (minimum 2CPUs / 4GB RAM) with Ubuntu 22.x installed</li>
+<li>A container registry for your project images</li>
 </ul>
 </div>
-<p>In this guide we will use <code>DigitalOcean</code> cloud to:</p>
+<p>In this guide we will use the <code>DigitalOcean</code> cloud to:</p>
 <ul>
-<li>set up a virtual machine (Droplet)</li>
-<li>configure private container registry</li>
+<li>set up a virtual machine (which is known as a Droplet on Digital Ocean)</li>
+<li>configure a private container registry</li>
 </ul>
 <h2 id="step-1-droplet-setup">Step 1: Droplet Setup</h2>
 <div class="admonition info">
-<p class="admonition-title">Notice<p>If you have your own vitual machine with Ubuntu installed, you can skip this step and go directly to <a href="#step-2-install-docker">step 2</a>.</p>
+<p class="admonition-title">Notice<p>If you have your own virtual machine with Ubuntu installed and want to run WebSight CMS there, you don't need to set up a Droplet. Instead, skip this step and go directly to <a href="#step-2-install-docker">step 2</a>.</p>
 </p>
 </div>
 <p><a href="https://docs.digitalocean.com/products/droplets/how-to/create/">Create a Droplet</a> with the following specification:</p>
@@ -3899,21 +3899,21 @@
 <li>Size: <code>Basic: 2 Intel CPUs / 4GB RAM / 80GB NVMe SSDs</code></li>
 <li><a href="https://docs.digitalocean.com/products/droplets/how-to/create/#authentication">choose SSH keys authentication</a> and add your SSH public key to Droplet</li>
 </ul>
-<p>At the time of writing this guide the cost of the Droplet is <strong>$24.00/month</strong>.</p>
+<p>At the time of writing this guide the cost of for this Droplet configuration is <strong>$24.00/month</strong>.</p>
 <h2 id="step-2-install-docker">Step 2: Install Docker</h2>
-<p>On your virtual machine install Docker Engine &amp; Plugins according to the <a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">Ubuntu installation docs</a>.</p>
+<p>On your virtual machine, install Docker Engine and plugins by following the <a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">Ubuntu Docker installation documentation</a>.</p>
 <h2 id="step-3-container-registry-setup">Step 3: Container Registry Setup</h2>
 <div class="admonition info">
-<p class="admonition-title">Notice<p>If you have already Docker Registry, you can skip this step and go directly to <a href="#step-4-push-images-to-docker-registry">step 4</a>.</p>
+<p class="admonition-title">Notice<p>If you already have a Docker Registry set up, you can skip this step and go directly to <a href="#step-4-push-images-to-docker-registry">step 4</a>.</p>
 </p>
 </div>
 <p><a href="https://docs.digitalocean.com/products/container-registry/quickstart/">Create a basic private Container Registry in DigitalOcean</a>.</p>
 <p>At the time of writing this guide the cost of the Basic Container Registry is <strong>$5.00/month</strong>.</p>
 <h2 id="step-4-push-images-to-docker-registry">Step 4: Push images to Docker Registry</h2>
-<p>In this step, we will start from the project generated in the <a href="../../../developers/setup/">Setup guide</a> and update the Maven configuration file.</p>
+<p>In this step, we will start with the project generated in the <a href="../../../developers/setup/">Setup guide</a> and update the Maven configuration file.</p>
 <ol>
 <li>
-<p>Update the <code>io.fabric8:docker-maven-plugin</code> plugin configuration in <code>distribution/pom.xml</code>. </p>
+<p>Update the <code>io.fabric8:docker-maven-plugin</code> plugin configuration in <code>distribution/pom.xml</code> as follows: </p>
 <ul>
 <li>Add the following <code>buildx</code> extension to <em>cms</em> and <em>nginx</em> images <code>&lt;build&gt;</code> sections:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">                </span><span class="nt">&lt;buildx&gt;</span>
@@ -3935,7 +3935,7 @@
 </ul>
 </li>
 <li>
-<p><a href="https://docs.digitalocean.com/products/container-registry/how-to/use-registry-docker-kubernetes/#docker-integration">Login to the container registry</a> with
+<p><a href="https://docs.digitalocean.com/products/container-registry/how-to/use-registry-docker-kubernetes/#docker-integration">Log in to the container registry</a> with:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>login<span class="w"> </span>registry.digitalocean.com
 </code></pre></div>
 and provide your DigitalOcean API token.</p>
@@ -3950,22 +3950,22 @@ where <code>DO_REGISTRY_NAME</code> is your configured container registry name</
 </li>
 </ol>
 <h2 id="step-5-deploy-containers">Step 5: Deploy Containers</h2>
-<p>From the Droplet console run:</p>
+<p>From the Droplet console perform the following:</p>
 <ol>
 <li>
-<p>Download Docker Compose file
+<p>Download Docker Compose file:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>wget<span class="w"> </span>https://www.websight.io/scripts/docker-compose.yml
 </code></pre></div></p>
 </li>
 <li>
-<p>Update the downloaded <code>docker-compose.yml</code> file and replace:</p>
+<p>Update the downloaded <code>docker-compose.yml</code> file and replace these values as follows:</p>
 <ul>
 <li><code>public.ecr.aws/ds/websight-cms-ce:luna-1.1.0</code> -&gt; <code>registry.digitalocean.com/DO_REGISTRY_NAME/websight-cms-linux-box</code></li>
 <li><code>public.ecr.aws/ds/websight-nginx-ce:luna-1.1.0</code> -&gt; <code>registry.digitalocean.com/DO_REGISTRY_NAME/nginx-linux-box</code></li>
 </ul>
 </li>
 <li>
-<p>Login to the container registry
+<p>Log in to the container registry
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>login<span class="w"> </span>registry.digitalocean.com
 </code></pre></div>
 and provide your DigitalOcean API token.</p>
