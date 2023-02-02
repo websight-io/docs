@@ -116,13 +116,10 @@ In above example, the `alt` property is saved as an image property from the head
 ![Multifield resource property](dialog-data-multifield.png)
 
 ## Validation
-Validation in dialog fields is used to verify if the value meets the criteria of the particular field. There are two levels:
-
-### BackEnd validation
 WebSight supports the validation of dialog values on BackEnd side. If the value is incorrect, then it won’t be saved and the dialog can’t be submitted. The author will see a proper error message.
 ![](dialog-backend-validation.png)
 
-#### Custom validator
+### Custom validator
 To prepare a custom validator you have to extend an `pl.ds.websight.dialog.spi.DialogValidator` form `pl.ds.websight:websight-dialogs-service` as an OSGi `@Component(service = DialogValidator.class)`. 
 You have to implement the following methods:
 
