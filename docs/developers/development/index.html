@@ -4081,7 +4081,7 @@ Create new folder under <code>/apps/example-project/components</code> named rich
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
 </code></pre></div></p>
 <p>Define rendering script richtext.html (name must be matching component resource name + .html):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">data-sly</span> <span class="na">data-sly-test</span><span class="o">=</span><span class="s">&quot;${properties.text &amp;&amp; properties.text != &#39;&lt;p&gt;&lt;/p&gt;&#39;}&quot;</span><span class="p">&gt;</span>${properties.text @ context=&#39;html&#39;}<span class="p">&lt;/</span><span class="nt">data-sly</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">sly</span> <span class="na">data-sly-test</span><span class="o">=</span><span class="s">&quot;${properties.text &amp;&amp; properties.text != &#39;&lt;p&gt;&lt;/p&gt;&#39;}&quot;</span><span class="p">&gt;</span>${properties.text @ context=&#39;html&#39;}<span class="p">&lt;/</span><span class="nt">sly</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <p>See <a href="/docs/developers/components/">Components documentation</a> for more details.</p>
 <p>This is how the new component definition looks in the codebase. Deploy the change with the command from the backend module: <code>mvn clean install -P autoInstallBundle</code></p>

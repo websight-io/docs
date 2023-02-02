@@ -3907,7 +3907,7 @@
 </div>
 <h2 id="step-1-digital-ocean-configuration">Step 1: Digital Ocean configuration</h2>
 <div class="admonition info">
-<p>Digital Ocean does <strong>not</strong> support <code>persistent volumes</code> with the <code>ReadWriteMany</code> access mode. For purposes of simplicity, we'll create a single-node Kubernetes cluster to work with the <code>ReadWiteOnce</code> access mode.</p>
+<p>Digital Ocean does <strong>not</strong> support <code>persistent volumes</code> with <code>ReadWriteMany</code> access mode. For simplicity sake, we create a single node Kubernetes cluster to work with <code>ReadWriteOnce</code> access mode.</p>
 </div>
 <ol>
 <li>Start by <a href="https://docs.digitalocean.com/reference/doctl/how-to/install/">Authenticating <code>doctl</code> with an API token</a>. Set API token scopes as follows: <code>Read</code> and <code>Write</code></li>
