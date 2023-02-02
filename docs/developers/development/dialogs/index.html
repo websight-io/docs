@@ -3827,22 +3827,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#backend-validation" class="md-nav__link">
-    BackEnd validation
-  </a>
-  
-    <nav class="md-nav" aria-label="BackEnd validation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#custom-validator" class="md-nav__link">
     Custom validator
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -4014,11 +4001,9 @@ In above example, the <code>alt</code> property is saved as an image property fr
 </li>
 </ul>
 <h2 id="validation">Validation</h2>
-<p>Validation in dialog fields is used to verify if the value meets the criteria of the particular field. There are two levels:</p>
-<h3 id="backend-validation">BackEnd validation</h3>
 <p>WebSight supports the validation of dialog values on BackEnd side. If the value is incorrect, then it won’t be saved and the dialog can’t be submitted. The author will see a proper error message.
 <img alt="" src="dialog-backend-validation.png" /></p>
-<h4 id="custom-validator">Custom validator</h4>
+<h3 id="custom-validator">Custom validator</h3>
 <p>To prepare a custom validator you have to extend an <code>pl.ds.websight.dialog.spi.DialogValidator</code> form <code>pl.ds.websight:websight-dialogs-service</code> as an OSGi <code>@Component(service = DialogValidator.class)</code>. 
 You have to implement the following methods:</p>
 <ul>
