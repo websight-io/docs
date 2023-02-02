@@ -259,7 +259,7 @@ Define dialog resource:
 
 Define rendering script richtext.html (name must be matching component resource name + .html):
 ``` html
-<data-sly data-sly-test="${properties.text && properties.text != '<p></p>'}">${properties.text @ context='html'}</data-sly>
+<sly data-sly-test="${properties.text && properties.text != '<p></p>'}">${properties.text @ context='html'}</sly>
 ```
 
 See [Components documentation](/docs/developers/components/) for more details.

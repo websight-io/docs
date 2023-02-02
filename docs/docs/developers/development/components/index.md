@@ -50,29 +50,29 @@ WebSight CMS page editor lists all available components which can be used to bui
 Components definitions listed in WebSight CMS page editor
 
 Page content structure can be checked in the page editor content tree tab. This view presents the components tree under page content.
-This example page for now contains just the Page Section component - this is the only component present currently in page content of this example page.
+This example page for now contains just the _Page Section_ component - this is the only component present currently in page content of this example page.
 
 ![Page content tree in editor](page-editor-content-tree.png){: style="width:350px"}
 
 Page content tree in editor
 
-The Page Section component is a container, so it allows adding other components via the authoring interface. In the page editor content section it is displayed as a box with plus icon (empty container placeholder).
+The _Page Section_ component is a container. It allows adding other components via the authoring interface. The page editor content section displays an empty _Page Section_ component as a box containing a placeholder text "Drag components here".
 
-After drag and drop of Title and Rich Text components the page content tree is updated with new nodes. The nodes visible in the content tree are the instances of components. 
-Title and Rich Text components are not containers so other components cannot be added as their child components. During dragging other components from components list the new items can be added just next to those components as other children on the Page Section component.
+After drag-and-drop of _Title_ and _Rich Text_ components the page content tree is updated with new nodes. The nodes visible in the content tree are the instances of components. 
+_Title_ and _Rich Text_ components are not containers so other components cannot be added as their child components. During dragging other components from components list the new items can be added just next to those components as other children on the _Page Section_ component.
 
 
 ![RTE component](RTE-component.png)
 
-After adding a component to the page, edit action can be used to edit selected component instance. The dialog which is displayed is a part of component definition. It is defined by the developer implementing a given component with use of set given dialog fields (see more in Dialogs documentation). Properties set via the dialog are saved at edited component instances and used by the component to render the part of content according to the implemented functionality - for example Title component is rendering the `Heading text` field value in HTML `<h>` tag and allows to set `<h>` tag level and styling.
+After adding a component to the page, edit action can be used to edit selected component instance. The dialog which is displayed is a part of component definition. It is defined by the developer implementing a given component with use of set given dialog fields (see more in [Dialogs](../dialogs/) documentation). Properties set via the dialog are saved at edited component instances and used by the component to render the part of content according to the implemented functionality - for example _Title_ component is rendering the `Heading text` field value in HTML `<h>` tag and allows to set `<h>` tag level and styling.
 
 
 ![Title component - dialog](title-component-dialog.png)
 
-Components are reusable. Another title component can be added to the page and configured with its own data.
-After the second title, the Cards List component is added now. This component is a container but implemented to work with specific type of child components - only Card Item components can be added inside (this behavior is part of Cards List component definition).
-Cards List component defines initial content added to the page when adding component. The initial content contains 3 child Card Item components (to save work during authoring and present the component in initialized state). 
-In the content tree it’s visible that Card Item components are child components of Cards List component.
+Components are reusable. Another _Title_ component can be added to the page and configured with its own data.
+After the second title, the _Cards List_ component is added now. This component is a container but implemented to work with specific type of child components - only _Card Item_ components can be added inside (this behavior is part of _Cards List_ component definition).
+_Cards List_ component defines initial content added to the page when adding component. The initial content contains 3 child _Card Item_ components (to save work during authoring and present the component in initialized state). 
+In the content tree it’s visible that _Card Item_ components are child components of _Cards List_ component.
 
 ![Card List component](card-list-component-rendition.png)
 
