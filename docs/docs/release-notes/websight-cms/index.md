@@ -4,7 +4,7 @@
 ## 1.8.0 <small>February 1, 2023</small>
 
 #### Page Editor
-- Fixed the misaligned cursor and component during drag-and-drop (Chrome)
+- Fixed the misaligned cursor and component during drag-and-drop (Chrome).
 
 #### Other
 - Updated paddings for the lists of spaces, pages, and assets.
