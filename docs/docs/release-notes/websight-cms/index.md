@@ -1,5 +1,16 @@
 # WebSight CMS Release Notes
 
+
+## 1.8.0 <small>February 1, 2023</small>
+
+#### Page Editor
+- Fixed the misaligned cursor and component during drag-and-drop (Chrome)
+
+#### Other
+- Updated paddings for the lists of spaces, pages, and assets.
+- Fixed the scroll for the list of pages and assets - always visible even when there was no need.
+- Improved stability of front-end tests (Cypress).
+
 ## 1.7.0 <small>January 18, 2023</small>
 
 #### Page Editor
@@ -12,7 +23,7 @@
 
 - Fixed [#25] - SVG files are displayed properly now.
 
-### Dialogs
+#### Dialogs
 
 - Fixed the issue for the [Date Picker](../../developers/development/dialogs/date-picker/) input field - presented a wrong value.
 - Fixed the issue on pressing _enter_ - didn't close a modal in some cases.
