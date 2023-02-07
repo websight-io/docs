@@ -24,7 +24,7 @@ Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> 
 </p>
 
 - you can drag & drop an image from the left assets panel, to add a **background image** (for each [breakpoint](../grid#breakpoints-definition) separately).
-    - each breakpoint's asset will be rendered on this breakpoint only. For example, if you leave M breakpoint image blank, nothing will be rendered on tablet resolutions.
+- each breakpoint's asset will be rendered on this breakpoint only. For example, if you leave M breakpoint image blank, nothing will be rendered on tablet resolutions.
 
 ## Page Section variants
 Check the **Style** tab in the authoring dialog to see the available style variants for the Page Section component. 
