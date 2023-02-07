@@ -1,0 +1,75 @@
+# Extending Page Editor
+
+## Overview
+
+Developers may need to extend functionality of _Page editor_. It can be done by providing _Editor extension_.
+_Editor extension_ is delivered as JavaScript and use _Page editor_ API.
+
+!!! Info "Note"
+Detailed specification of _Page editor_ API will be provided together with next versions of WebSight CMS.
+
+## Registering extension
+
+To define the _Editor extension_ JavaScript file which will be loaded in _Page editor_ the _Web Fragments_ mechanism must be used.
+
+The _Web Fragments_ mechanism allows to register JavaScript files which will be imported using
+[dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) in application runtime.
+The _Web Fragments_ scripts should provide [default export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+delivering object, function, etc. depending on the given case and _Web Fragments_ key that given fragment is related too.
+In number parts of application _Web Fragments_ with particular keys are imported allowing to extend the WebSight CMS.
+
+To register the fragment provide the OSGi components implementing `pl.ds.websight.fragments.registry.WebFragment` interface 
+providing information about the fragment key and location of the JavaScript file.
+
+The key of _Web Fragments_ loaded by _Page editor_ to get extensions is `websight.editor.spi.extension`.
+Expected default export should provide object with `init` function with single argument which will be _Page editor_ object.
+
+Required Maven dependency:
+```xml
+<dependency>
+  <groupId>pl.ds.websight</groupId>
+  <artifactId>websight-fragments-registry</artifactId>
+  <version>1.0.3</version>
+  <scope>provided</scope>
+</dependency>
+```
+
+Example `WebFragment`:
+```java
+package com.myapp.fragments;
+
+import org.osgi.service.component.annotations.Component;
+import pl.ds.websight.fragments.registry.WebFragment;
+
+@Component
+public class ExamplePageEditorExtensionWebFragment implements WebFragment {
+
+  @Override
+  public String getKey() {
+    return "websight.editor.spi.extension";
+  }
+
+  @Override
+  public String getFragment() {
+    return "/app/myapp/author/editor/extensions/ExampleExtension.js";
+  }
+
+  @Override
+  public int getRanking() {
+    return 100;
+  }
+}
+```
+
+The JavaScript file returned by `getFragment` method could be bundle resource and must be available in runtime.
+Example content:
+```
+export default {
+  init: (editor) => {
+    // Use editor object here.
+  }
+}
+```
+
+## Using Page editor extensions
+
