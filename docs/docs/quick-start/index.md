@@ -6,7 +6,7 @@ This guide is a starting-point for developing custom components for WebSight CMS
 
 !!! info "Prerequisites"
 
-    Before going any further, please make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine. Docker Desktop supports Windows, macOS and Linux.
+    Before going any further, please ensure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and launched on your machine. Docker Desktop supports Windows, macOS, and Linux.
 
 ## Part A: Run a local instance using Docker
 
@@ -56,13 +56,13 @@ In the local instance, the WebSight admin panel is accessible by navigating to [
 
 ### 2. Select space for the demo site
 
-We use _Spaces_ to organise content. In the WebSight admin panel, open the space for the demo site _Luna_.
+We use _Spaces_ to organise content. In the WebSight admin panel, open the space for the demo site _Luna - custom code_.
 
 ![Spaces](./quick-start-spaces.png)
 
 ### 3. Publish assets and the demo site
 
-Open the list of _Assets_ using the left sidebar. Go to the folder _images_, select all subfolders and then click _Publish_.
+Open the list of _Assets_ using the left sidebar. Select the folder _images_ and then click _Publish_.
 
 ![Assets publication](./quick-start-assets-publication.png)
 
@@ -78,8 +78,9 @@ Congratulations! The demo site is now available by navigating to [http://luna.12
 
     The distribution contains other demo sites. We used [nip.io](https://nip.io) to support their preview in a browser (having just one local instance of WebSight CMS). After assets and pages publication, they are available at: 
     
-    - [http://bulma.127.0.0.1.nip.io/](http://bulma.127.0.0.1.nip.io/) Bulma - Personal Template
-    - [http://no-code.luna.127.0.0.1.nip.io/](http://no-code.luna.127.0.0.1.nip.io/) No Code Luna
+    - [http://bulma-personal-template.127.0.0.1.nip.io/](http://bulma-personal-template.127.0.0.1.nip.io/) Bulma - personal template
+    - [http://luna-low-code.127.0.0.1.nip.io/](http://luna-low-code.127.0.0.1.nip.io/) Luna - low code
+    - [http://luna-no-code.127.0.0.1.nip.io/](http://luna-no-code.127.0.0.1.nip.io/) Luna - no code
     
 
 
@@ -95,7 +96,7 @@ The WebSight admin panel runs at [http://localhost:8080/](http://localhost:8080/
 
 ### 2. Select space for the demo site
 
-We use _Spaces_ to organise content. Please open the space for the demo site _Luna_.
+We use _Spaces_ to organise content. Please open the space for the demo site _Luna - custom code_.
 
 ![Spaces](./quick-start-spaces.png)
 
@@ -113,7 +114,7 @@ Find the _Rich text editor_ on the tab _Components_ and use the drag-and-drop fe
 
 ![Rich text editor available in component tree](./quick-start-RTE-component.png)
 
-Click on the new component to open available actions. Select the _Pencil_ icon to edit properties.
+Click on the new component to open available actions. Select the _Gear_ icon to edit properties.
 
 ![Actions available for RTE component](./quick-start-RTE-editing.png)
 
@@ -141,6 +142,12 @@ Congratulations! Your changes should be visible now at [http://luna.127.0.0.1.ni
 
 This page demonstrated the basics of editing pages with WebSight CMS. As a next step, we encourage you to explore more technical details about WebSight:
 
-- [Howlite](../authors/component-libs/howlite/) library documentation to browse other components available in the distribution;
+- [Howlite](../authors/component-libs/howlite/) documentation to browse other components available in the library.
+- [Bulma](https://github.com/websight-io/bulma/) components implemented for the WebSight CMS. You can use the collection and build your site without any code development. 
 - [Quick start tutorial for developers](../developers/quick-start/) to check how to implement custom components.
-- Additional demo sites: _Bulma - Personal Template_ and _No Code Luna_. They use a library of [Bulma](https://bulma.io/) components implemented for the WebSight CMS. You can use the collection and build your site without any code development.
+
+We recommend exploring other demo sites included in the distribution too. Before you open the following links, visit the [admin panel](http://localhost:8080/), and publish pages and assets for a given space.
+
+- [_Bulma - personal template_](http://bulma-personal-template.127.0.0.1.nip.io/). It is a sample inspired by the [Portfolio page](https://bulmatemplates.github.io/bulma-templates/templates/personal.html). We created it using the [Bulma](https://github.com/websight-io/bulma/) components.
+- [_Luna - no code_](http://luna-no-code.127.0.0.1.nip.io/). We authored the _Luna_ site with the [Bulma](https://github.com/websight-io/bulma/) components without additional custom code or development.
+- [_Luna - low code_](http://luna-low-code.127.0.0.1.nip.io/). We added some custom styling and implemented only components missing in the [Bulma](https://github.com/websight-io/bulma/) library.
