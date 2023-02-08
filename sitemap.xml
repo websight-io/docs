@@ -66,6 +66,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://websight.io/blog/2023/new-publishing-framework/</loc>
+         <lastmod>2023-02-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://websight.io/blog/2023/support-for-viewport-units-styles-in-the-page-editor/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
