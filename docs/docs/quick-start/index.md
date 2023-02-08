@@ -142,12 +142,12 @@ Congratulations! Your changes should be visible now at [http://luna.127.0.0.1.ni
 
 This page demonstrated the basics of editing pages with WebSight CMS. As a next step, we encourage you to explore more technical details about WebSight:
 
-- [Howlite](../authors/component-libs/howlite/) documentation to browse other components available in the library.
-- [Bulma](https://github.com/websight-io/bulma/) components implemented for the WebSight CMS. You can use the collection and build your site without any code development. 
+- [Howlite documentation](../authors/component-libs/howlite/) to browse components available in the library we used to create the _Luna_ site,
+- [Bulma components for the WebSight CMS](https://github.com/websight-io/bulma/). It is a general set ot components implementing [Bulma](https://bulma.io/) framework. You can use the collection and build your site without any code development,
 - [Quick start tutorial for developers](../developers/quick-start/) to check how to implement custom components.
 
-We recommend exploring other demo sites included in the distribution too. Before you open the following links, visit the [admin panel](http://localhost:8080/), and publish pages and assets for a given space.
+The _Luna_ site (i.e., _Luna - custom code_) you looked through utilizes the [Howlite](../authors/component-libs/howlite/) components library. However, the distribution contains other demo sites, and we recommend exploring them too. Before you open the following links, visit the [admin panel](http://localhost:8080/), and publish pages and assets for a given space.
 
-- [_Bulma - personal template_](http://bulma-personal-template.127.0.0.1.nip.io/). It is a sample inspired by the [Portfolio page](https://bulmatemplates.github.io/bulma-templates/templates/personal.html). We created it using the [Bulma](https://github.com/websight-io/bulma/) components.
-- [_Luna - no code_](http://luna-no-code.127.0.0.1.nip.io/). We authored the _Luna_ site with the [Bulma](https://github.com/websight-io/bulma/) components without additional custom code or development.
+- [_Bulma - personal template_](http://bulma-personal-template.127.0.0.1.nip.io/). It is a sample inspired by the [Portfolio page](https://bulmatemplates.github.io/bulma-templates/templates/personal.html). We created it using the [Bulma components](https://github.com/websight-io/bulma/).
+- [_Luna - no code_](http://luna-no-code.127.0.0.1.nip.io/). We authored the _Luna_ site with the [Bulma components](https://github.com/websight-io/bulma/) without additional custom code or development.
 - [_Luna - low code_](http://luna-low-code.127.0.0.1.nip.io/). We added some custom styling and implemented only components missing in the [Bulma](https://github.com/websight-io/bulma/) library.
