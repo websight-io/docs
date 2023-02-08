@@ -1,10 +1,10 @@
 ---
 title: New publishing framework
-description: WebSight CMS and WebSight DXP are two different products, and we want to ensure each has its unique role. CMS is designed to provide the best authoring experience, while DXP will concentrate on distributing the experiences and delivering them efficiently. We want CMS to be usable on its own. To make this possible, we plan to include response-reply publishing and move SSG module to DXP.
+description: Read more on the new publishing framework for WebSight CMS and why we need it.
 author: Michał Cukierman
 publicationDate: 08.02.2023
 minReadTime: 9
-image: cms-architecture-push-model.jpeg
+image: cms-architecture-request-reply-model.jpeg
 tags:
   - DXP
   - CMS
@@ -14,24 +14,25 @@ tags:
 
 <p align="center" width="100%">
     <img class="image" src="dxp-architecture.jpeg" alt="CMS as a part of complete DXP platform">
-   WebSight CMS as a part of a complete DXP platform
 </p>
+
+> We will introduce a new publishing framework for WebSight CMS. In this post, I present why we need this change. The new approach requires a different CMS architecture. Thus, I describe the current and target architecture in the following sections. Finally, you can find a brief scope of the change and some design decisions we made. 
 
 ## Motivation
 
-WebSight CMS and WebSight DXP are two different products, and we want to ensure each has its unique role. CMS is designed to provide the best authoring experience, while DXP will concentrate on distributing the experiences and delivering them efficiently. We want CMS to be usable on its own. To make this possible, we plan to include response-reply publishing and move SSG module to DXP. With the new Publishing framework, we will:
+Firstly, let me explain our motivation. WebSight CMS and WebSight DXP are two different products, and we want to ensure each has its unique role. CMS design provides the best authoring experience, while DXP will concentrate on distributing the experiences and delivering them efficiently. CMS should be usable on its own. To make this possible, we plan to include response-reply publishing and move the SSG module to DXP. With the new Publishing framework, we will:
 
-- Make CMS more accessible to existing AEM, Drupal, Sitecore, and WordPress users.
-- Be able to create a scalable publishing farm.
-- Stop using NFS, which is expensive and causes a performance issue.
-- Eliminate point-to-point integrations (e.g. CMS-Nginx, CMS-Solr) and use the DXP messaging system for communication in complex systems.
-- Event-driven content generation (pre-generation) will be the responsibility of DXP.
+- Make CMS more accessible to existing AEM, Drupal, Sitecore, and WordPress users,
+- Be able to create a scalable publishing farm,
+- Stop using NFS, which is expensive and causes performance issues,
+- Eliminate point-to-point integrations (e.g., CMS-Nginx, CMS-Solr) and use the DXP messaging system for communication in complex systems,
+- Move the responsibility for the event-driven content generation (pre-generation) to DXP.
 
 Another reason is the need to determine the state of published experiences. Currently, we can only define the published version of a page, but to display the page, we require the entire context including assets, other pages, and configurations. For instance, to accurately render navigation links with the correct titles, we usually need to know the state of the entire published tree.
 
 To fulfill this requirement, we need to maintain published data in a separate location, either in a different database or sub-path.
 
-## Current design
+## Current CMS architecture
 
 Right now, CMS uses a push model where pages are rendered and stored on a shared disk that Nginx or Quarkus can access. This approach has advantages such as excellent performance and stability. However, this approach has limitations such as point-to-point integrations, limited throughput on the shared drive, and the incapacity to connect multiple CMS systems or add new destinations. That is why we have decided to move Static Site Generation (SSG) to DXP.
 
@@ -41,7 +42,7 @@ Right now, CMS uses a push model where pages are rendered and stored on a shared
 </p>
 
 
-## Expected design
+## Target CMS architecture
 
 Without the push model, the architecture of CMS becomes simplified to a standard request-reply setup. To boost performance and security, MongoDB can be set up with the master and read-only replicas. Renderers can be stripped of unnecessary modules, to guarantee faster startup times. Kubernetes autoscaling should be utilized to activate renderers only as needed.
 
@@ -54,11 +55,13 @@ Without the push model, the architecture of CMS becomes simplified to a standard
 
 ## Required changes
 
+The new approach requires a few changes. They are described below briefly.
+
 ### Apps activator decommission
 
 Both unpublished and published front-end assets come from bundle resources. We need to ensure that:
 
-- The document root is available for anonymous users.
+- The document root is available for anonymous users,
 - Pulsar is notified about required FE libraries/assets to be published. This will be the scope of DXP.
 
 ### Simplifying publishing framework
@@ -80,8 +83,8 @@ We need to ensure that the new status check algorithm is efficient, as it will b
 
 We consider the following ideas related to the new algorithm: 
 
-- Space synchronization before publishing.
-- It’s possible to publish a Page/Asset even if the parent elements are not published.
+- Space synchronization before publishing,
+- It’s possible to publish a Page/Asset even if the parent elements are not published,  
 - ACL needs to be set in the repository init configuration.
 
 ### _Ghost_ detection
@@ -95,6 +98,8 @@ After implementing the new publishing, we need to introduce _ghost_ detection. A
 
 
 ## Design decisions
+
+The new approach and architecture triggered a lot of discussion in our team. We have still a few open questions. However, we agreed so far on the following items.
 
 - The publishing framework should be implemented using JCR API, because spaces, pages, and assets are supported only with JCR. API should be optimized for performance. 
 - CMS doesn't implement static site generation (SSG). This feature will be supported by DXP.
