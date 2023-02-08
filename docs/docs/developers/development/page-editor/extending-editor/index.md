@@ -16,13 +16,14 @@ The _Web Fragments_ mechanism allows to register JavaScript files which will be 
 [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) in application runtime.
 The _Web Fragments_ scripts should provide [default export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 delivering object, function, etc. depending on the given case and _Web Fragments_ key that given fragment is related too.
+Expected type of default export should be checked in specification of given extension point.
 In number parts of application _Web Fragments_ with particular keys are imported allowing to extend the WebSight CMS.
-
-To register the fragment provide the OSGi components implementing `pl.ds.websight.fragments.registry.WebFragment` interface 
-providing information about the fragment key and location of the JavaScript file.
 
 The key of _Web Fragments_ loaded by _Page editor_ to get extensions is `websight.editor.spi.extension`.
 Expected default export should provide object with `init` function with single argument which will be _Page editor_ object.
+
+To register the fragment provide the OSGi components implementing `pl.ds.websight.fragments.registry.WebFragment` interface
+providing information about the fragment key and location of the JavaScript file.
 
 Required Maven dependency:
 ```xml
@@ -61,7 +62,8 @@ public class ExamplePageEditorExtensionWebFragment implements WebFragment {
 }
 ```
 
-The JavaScript file returned by `getFragment` method could be bundle resource and must be available in runtime.
+The JavaScript file returned by `getFragment` method should be bundle resource provided by your
+application and must be available in CMS authoring runtime (accessible for content author browser requests).
 Example content:
 ```
 export default {
@@ -73,3 +75,35 @@ export default {
 
 ## Using Page editor extensions
 
+Here you can find cases of Page editor extensions usage.
+
+### Editor events
+
+_Page editor_ overs API for working with event - you can register handler for events used in _Page editor_.
+To register event listener use `editor.addEventListener` and pass event type and listener function
+(you can use event data object parameter if needed).
+
+<table>
+    <tr>
+        <th>Event type</th>
+        <th>Description</th>
+        <th>Event data</th>
+   </tr>
+   <tr>
+        <td>component-dom-updated</td>
+        <td>This event is thrown after component's dom is updated.</td>
+        <td>`target` - component</td>
+   </tr>
+</table>
+
+Example extension registering the event listener:
+```
+export default {
+  init: (editor) => {
+    editor.addEventListener('component-dom-updated', () => {
+      // React to DOM update, for example reload edited document:
+      editor.componentTree.get().parentDocument.location.reload();
+    });
+  }
+}
+```
