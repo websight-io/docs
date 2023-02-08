@@ -1,6 +1,8 @@
 nav:
   - Quick Start Guide: quick-start
-  - Authors: authors
-  - Developers : developers
+  - Authoring: authors
+  - Architecture: architecture
+  - Development: developers
+  - Deployment: deployment
   - Release Notes: release-notes
 
