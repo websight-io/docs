@@ -22,7 +22,7 @@ In number parts of application the _Web Fragments_ with particular keys are impo
 The key of _Web Fragments_ loaded by _Page editor_ to get extensions is `websight.editor.spi.extension`.
 Expected default export should provide object with `init` function with single argument which will be _Page editor_ object.
 
-To register the fragment provide the OSGi components implementing `pl.ds.websight.fragments.registry.WebFragment` interface
+To register the fragment, provide the OSGi components implementing `pl.ds.websight.fragments.registry.WebFragment` interface
 providing information about the fragment key, location of the JavaScript file and ranking used to order imports.
 
 Required Maven dependency (see the version of `websight-fragments-registry` bundle used in your system in
