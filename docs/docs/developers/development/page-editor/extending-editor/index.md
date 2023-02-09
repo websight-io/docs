@@ -6,26 +6,27 @@ Developers may need to extend functionality of _Page editor_. It can be done by 
 _Editor extension_ is delivered as JavaScript and use _Page editor_ API.
 
 !!! Info "Note"
-Detailed specification of _Page editor_ API will be provided together with next versions of WebSight CMS.
+        Detailed specification of _Page editor_ API will be provided together with next versions of WebSight CMS.
 
 ## Registering extension
 
-To define the _Editor extension_ JavaScript file which will be loaded in _Page editor_ the _Web Fragments_ mechanism must be used.
+To define the _Editor extension_ you must create JavaScript file which will be loaded in  the_Page editor_ by the _Web Fragments_.
 
-The _Web Fragments_ mechanism allows to register JavaScript files which will be imported using
-[dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) in application runtime.
+The _Web Fragments_ allows to register JavaScript files which will be imported using
+[dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) in the application runtime.
 The _Web Fragments_ scripts should provide [default export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
-delivering object, function, etc. depending on the given case and _Web Fragments_ key that given fragment is related too.
+delivering object, function, etc. depending on the given case - _Web Fragments_ key that given fragment is related too.
 Expected type of default export should be checked in specification of given extension point.
-In number parts of application _Web Fragments_ with particular keys are imported allowing to extend the WebSight CMS.
+In number parts of application the _Web Fragments_ with particular keys are imported allowing to extend the WebSight CMS.
 
 The key of _Web Fragments_ loaded by _Page editor_ to get extensions is `websight.editor.spi.extension`.
 Expected default export should provide object with `init` function with single argument which will be _Page editor_ object.
 
 To register the fragment provide the OSGi components implementing `pl.ds.websight.fragments.registry.WebFragment` interface
-providing information about the fragment key and location of the JavaScript file.
+providing information about the fragment key, location of the JavaScript file and ranking used to order imports.
 
-Required Maven dependency:
+Required Maven dependency (see the version of `websight-fragments-registry` bundle used in your system in
+[Apache Felix Web Console in your local instance](http://localhost:8080/system/console/bundles):
 ```xml
 <dependency>
   <groupId>pl.ds.websight</groupId>
@@ -35,7 +36,7 @@ Required Maven dependency:
 </dependency>
 ```
 
-Example `WebFragment`:
+Example component:
 ```java
 package com.myapp.fragments;
 
