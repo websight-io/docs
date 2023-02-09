@@ -12,7 +12,7 @@ _Editor extension_ is delivered as JavaScript and use _Page editor_ API.
 
 To define the _Editor extension_ you must create JavaScript file which will be loaded in  the_Page editor_ by the _Web Fragments_.
 
-The _Web Fragments_ allows to register JavaScript files which will be imported using
+The _Web Fragments_ allows to register JavaScript files (JavaScript module) which will be imported using
 [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) in the application runtime.
 The _Web Fragments_ scripts should provide [default export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 delivering object, function, etc. depending on the given case - _Web Fragments_ key that given fragment is related too.
@@ -48,16 +48,22 @@ public class ExamplePageEditorExtensionWebFragment implements WebFragment {
 
   @Override
   public String getKey() {
+    // Web Fragment key - different extension points use different keys.
+    // This key is used for Page editor extensions, so script file specified in getFragment
+    // method will be imported by Page editor and used as Page editor extensions.
     return "websight.editor.spi.extension";
   }
 
   @Override
   public String getFragment() {
+    // JavaScript module to import. Must provide default export in format expected by the
+    // extension point related to the related Web Fragment key.
     return "/app/myapp/author/editor/extensions/ExampleExtension.js";
   }
 
   @Override
   public int getRanking() {
+    // Web Fragments are imported in order according to the ranking value - lower first.
     return 100;
   }
 }
