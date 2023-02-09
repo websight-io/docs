@@ -10,7 +10,7 @@ _Editor extension_ is delivered as JavaScript and use _Page editor_ API.
 
 ## Registering extension
 
-To define the _Editor extension_ you must create JavaScript file which will be loaded in  the_Page editor_ by the _Web Fragments_.
+To define the _Editor extension_ you must create JavaScript file which will be loaded in  the _Page editor_ by the _Web Fragments_.
 
 The _Web Fragments_ allows to register JavaScript files (JavaScript module) which will be imported using
 [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) in the application runtime.
