@@ -2,7 +2,7 @@
 
 ## Overview
 
-Developers may need to extend functionality of _Page editor_. It can be done by providing _Editor extension_.
+Developers may need to extend the functionality of _Page editor_. You can provide _Editor extension_ to achieve it. 
 _Editor extension_ is delivered as JavaScript and use _Page editor_ API.
 
 !!! Info "Note"
