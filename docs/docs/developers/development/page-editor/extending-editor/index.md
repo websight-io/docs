@@ -6,8 +6,7 @@ Developers may need to extend the functionality of _Page editor_. You can provid
 _Editor extension_ is delivered as JavaScript and use _Page editor_ API.
 
 !!! Info "Note"
-        Detailed specification of _Page editor_ API will be provided together with next versions of WebSight CMS.
-
+        _Page editor_ API in work and detailed specifications will be provided in the future.
 ## Registering extension
 
 To define the _Editor extension_ you must create JavaScript file which will be loaded in  the _Page editor_ by the _Web Fragments_.
