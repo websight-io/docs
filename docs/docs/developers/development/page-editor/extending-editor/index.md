@@ -50,14 +50,14 @@ public class ExamplePageEditorExtensionWebFragment implements WebFragment {
   public String getKey() {
     // Web Fragment key - different extension points use different keys.
     // This key is used for Page editor extensions, so script file specified in getFragment
-    // method will be imported by Page editor and used as Page editor extensions.
+    // method will be imported by Page editor and used as Page editor extension.
     return "websight.editor.spi.extension";
   }
 
   @Override
   public String getFragment() {
     // JavaScript module to import. Must provide default export in format expected by the
-    // extension point related to the related Web Fragment key.
+    // extension point related to the used Web Fragment key.
     return "/app/myapp/author/editor/extensions/ExampleExtension.js";
   }
 
