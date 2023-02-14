@@ -4,7 +4,7 @@ A Rich Text Editor allows editors to create text content (paragraphs with headin
 
 ## Usage
 
-Drag & drop RTE component to a Page Section. A simple paragraph with "lorem ipsum" content will be rendered on a page:
+Drag & drop RTE component to a Page Section. A simple paragraph with _lorem ipsum_ content will be rendered on a page:
 
 <p align="center" width="100%">
     <img class="image--with-border" src="./rte-edit.jpg" alt="Rich Text Editor">
@@ -12,7 +12,7 @@ Drag & drop RTE component to a Page Section. A simple paragraph with "lorem ipsu
 
 
 ## Authorable properties
-Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> ("Edit" icon) on the **RTE** component to see its properties:
+Click <img class="image--inline" src="../images/edit-icon.jpg" alt="Edit icon"> (_Edit_ icon) on the **RTE** component to see its properties:
 
 On the **General** tab, you can add:
   
@@ -21,8 +21,8 @@ On the **General** tab, you can add:
       - select some words and make it bold / italic / underlined or crossed.
       - add a link
       - create bullet points or ordered list
-      - align text to the left / center / right or with "justify" option.
-      - add a new line (__br__ html tag). Please note that pressing "Enter" tab in RTE results in a new paragraph. If you click "New Line" Icon - new line will be added inside the same paragraph.
+      - align text to the left / center / right or with _justify_ option.
+      - add a new line (__br__ html tag). Please note that pressing _Enter_ button in RTE results in a new paragraph. If you click _New Line_ icon - new line will be added inside the same paragraph.
       - clear formatting
 
 <p align="center" width="100%">

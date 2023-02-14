@@ -1,7 +1,7 @@
 ---
 title: Develop WebSight with Codespaces
 description: GitHub Codespaces can be used to spin up fully configured dev environments in the cloud that start in seconds. It comes together with preconfigured tooling, like Docker and Java, and it's all that we need to start working with WebSight instantly.
-author: Michał Cukierman
+author: Michal Cukierman
 publicationDate: 01.12.2022
 minReadTime: 10
 image: websight-on-codespaces.png

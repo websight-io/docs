@@ -4,8 +4,10 @@
 
 ## Description
 
-Provides many functionalities allows authors to edit text content.  
-Component requires [configuration](./richtext-editor-configuration.md/) which defines what functionalities should be available and how menu bar should looks like.
+
+The Rich Text Editor dialog field provides many features that allow authors to edit text content.  
+
+This dialog field requires a [configuration](./richtext-editor-configuration.md/), which defines which features should be available and how the menu bar be displayed.
 
 ## Properties
 
@@ -19,13 +21,13 @@ Component requires [configuration](./richtext-editor-configuration.md/) which de
     Indicates if field value is mandatory
 
 - **removeIfEmpty** - `string` (optional, default `false`)  
-    Indicates if the property in JCR will be removed, if contains an empty String, or will be kept with that value
+    Indicates if property in JCR will be removed if it contains empty String, or will be retained with that value
 
 - **description** - `string` (optional)  
     Display description value as tooltip
 
 - **configuration** - `string` (optional, default `/apps/wcm/dialogs/components/richtext/configuration`)  
-    absolute path to configuration node; configuration can be also defined inline, see [RichText Editor - configuration](./richtext-editor-configuration.md/)
+    Absolute path to configuration node. The configuration can be also defined inline; see [RichText Editor - configuration](./richtext-editor-configuration.md/) for details
 
 Example:
 

@@ -14,7 +14,7 @@ All components that are added on a page with a given layout can be modified, mov
 
 ## Type of Layouts in Howlite
 
-In howlite therea are 2 groups of layouts:
+ There are two groups of layouts in Howlite:
 
 - **Empty Sections** - used to define 1-4 empty columns (containers within a page section):
 - **Filled Sections** - more complex page sections with some content inside, for example:
