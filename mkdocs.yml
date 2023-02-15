@@ -73,6 +73,7 @@ plugins:
       template: theme/ws-blog.html
   - redirects:
       redirect_maps:
+          'simulator': 'https://architectures-load-simulator-pk7p5jx36a-lm.a.run.app'
           'docs/index.md': 'docs/quick-start/index.md'
           'docs/authors/index.md': 'docs/authors/component-libs/howlite/index.md'
           'docs/authors/component-libs/index.md': 'docs/authors/component-libs/howlite/index.md'
