@@ -1,6 +1,6 @@
 # WebSight CMS Release Notes
 
-## 1.9.0 <small>February 15, 2023</small>
+## 1.9.1 <small>February 15, 2023</small>
 
 #### Page Editor
 - Improved the style for the page publication status dropdown.
