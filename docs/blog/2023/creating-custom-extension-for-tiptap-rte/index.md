@@ -336,6 +336,7 @@ window.addEventListener('load', () => {
 
 ## Summary
 
-First of all, we created new entries in the richtext JSON configuration file, then we added proper json files with paths corresponding to actual scripts. After creating and extending the existing component we could add sa imple script for decoding emails on our page. 
+First of all, we created new entries in the richtext JSON configuration file, then we added proper JSON files with paths corresponding to actual scripts. After creating and extending the existing component we could add a simple script for decoding emails on our page.
+ 
 As we can see, Rich Text Editor can be easily extended by any functionality we want, due to the flexible architecture model used in Websight CMS. Furthermore, creating an extension with the TipTap library offers broad possibilities, as well as creating a new UI component within CMS. 
 
