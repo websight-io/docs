@@ -186,7 +186,7 @@ const CustomEmail = Mark.create({
 
 export default CustomEmail;
 ```
-TipTap library is built on the top of the [ProseMirror](https://prosemirror.net/) package but almost every functionality can be done without any knowledge of it, as tiptap is handling it under the hood. However, for handling some events we need to add the `addProseMirrorPlugins()` method and inside it create prosemirror plugins in case to handle these special event-based behavior. As the Link component has these neat features, I decided to make the email component no worse than that. Here is an [example usage of ProseMirror API](https://tiptap.dev/guide/custom-extensions/#access-the-prosemirror-api), so the helper file would look like something like this:
+TipTap library is built on the top of the [ProseMirror](https://prosemirror.net/) package but almost every functionality can be done without any knowledge of it, as tiptap is handling it under the hood. However, for handling some events we need to add the `addProseMirrorPlugins()` method and inside it create prosemirror plugins in case to handle this special event-based behavior. Here is an [example usage of ProseMirror API](https://tiptap.dev/guide/custom-extensions/#access-the-prosemirror-api), so the helper file would look like something like this:
 
 ```ts helpers/pasteHandler.ts
 
