@@ -1,10 +1,10 @@
 ---
 title: Creating custom extension for TipTap Rich Text Editor
-description: RTE can be extended by additional fields, which provide new formatting options for users. However, list of available plugins may not be sufficient for demanding client. Let’s create completely new component for RTE toolbar, using TipTap library which lies underneath Rich Text Editor component.
+description: RTE can be extended by additional fields, which provide new formatting options for users. However, the list of available plugins may not be sufficient for demanding clients. Let’s create a completely new component for the RTE toolbar, using the TipTap library which lies underneath the Rich Text Editor component.
 author: Martyna Szeszko
 image: feature-image.jpg
 publicationDate: 16.02.2023
-minReadTime: 5
+minReadTime: 8
 tags:
   - WebSight
 ---
@@ -15,32 +15,32 @@ tags:
     <img class="image" src="ws-and-tiptap.jpg" alt="Extension for tiptap rich text editor in websight CMS">
 </p>
 
-> As written in related article [Customizing Rich Text Editor in WebSight CMS](https://www.websight.io/blog/2022/customizing-rich-text-editor/) RTE can be extended by additional fields, which provide new formatting options for users. However, list of available plugins may not be sufficient for demanding client. Let’s create completely new component for RTE toolbar, using [TipTap library](https://tiptap.dev/introduction) which lies underneath Rich Text Editor component.
+> As written in a related article [Customizing Rich Text Editor in WebSight CMS](https://www.websight.io/blog/2022/customizing-rich-text-editor/) RTE can be extended by additional fields, which provide new formatting options for users. However, the list of available plugins may not be sufficient for demanding clients. Let’s create a completely new component for the RTE toolbar, using [TipTap library](https://tiptap.dev/introduction) which lies underneath the Rich Text Editor component.
 
 ## New component requirements
 
-New component is supposed to add masked email address in case to prevent spam messages. Anchor tag should not contain plain, easy to read email address, instead can use data attributes for storing email parts. After page is loaded, script should convert these data-parts to whole email address, like in regular link with `mailto:` prefix. 
+The new component is supposed to add a masked email address in case it prevents spam messages. An anchor tag should not contain a plain, easy-to-read email address, instead can use data attributes for storing email parts. After a page is loaded, the script should convert these data parts to the whole email address, like in a regular link with `mailto:` prefix. 
 
-From user perspective, RTE should have dedicated button where after click there is possibility to input email address, and the rest is happening under the hood.
+From a user perspective, RTE should have a dedicated button where after clicking there is a possibility to input an email address, and the rest is happening under the hood.
 
 !!! tip Available plugins
-    Websight CMS already provides list of useful RTE extensions. The guide [in mentioned article](https://www.websight.io/blog/2022/customizing-rich-text-editor/) might be helfpul to understand some steps covered throughout article
+    Websight CMS already provides a list of useful RTE extensions. The guide [in the mentioned article](https://www.websight.io/blog/2022/customizing-rich-text-editor/) might be helpful to understand some steps covered throughout the article
 
 ## Technical overview
 
-Component specifity implies the work can be split into two parts:
-- CMS part, where adding/editing/deleting and encrypting email address is happening within Rich Text Editor
+Component specifciity implies the work can be split into two parts:
+- CMS part, where adding/editing/deleting and encrypting email addresses is happening within Rich Text Editor
 - page part, where email decoding happens 
 
-Therefore, **component must be used with script provided within page**, otherwise email links won’t be decoded.
+Therefore, **the component must be used with the script provided within page**, otherwise, email links won’t be decoded.
 
-As the decoding email script will be the last step, let’s focus on the main issue here – extending RTE editor. Such editor component, as mentioned in related article, is made up from two parts: the plugin element and the ui element. The plugin part is responsible for the plugin behavior and it is directly related with ui part, which is providing UI for plugin itself. In Websight CMS for plugins is responsible @tiptap library, and for UI - separate module which is a part of Websight CMS. As for plugin, we can either extend Link or create new extension. But what with ui element for this plugin? Any of these (button, button dropdown, list dropdown, link) don't match requirements, because we need dropdown with one input (link UI has input and select with `target` attribute selection). So we need new UI as well.
+As the decoding email script will be the last step, let’s focus on the main issue here – extending the RTE editor. Such an editor component is made up of two parts: the plugin element and the UI element. The plugin part is responsible for the plugin behavior and it is directly related to the UI part, which is providing UI for the plugin itself. In Websight CMS, the @tiptap library is responsible for plugins, and for UI - a separate module that is a part of Websight CMS. As for the plugin, we can either extend Link or create a new extension. But what about the UI element for this plugin? Any of these (button, button dropdown, list dropdown, link) don't match the requirements, because we need a dropdown with one input (link UI has input and select with `target` attribute selection). So we need a new UI as well.
 
-Our new plugin will affect another plugin which is already in default version in RTE - Link. **We need to exlude email handling from Link plugin**, as we will cover that in email plugin. And that means, we need also to modify Link plugin by creating custom link plugin.
+Our new plugin will affect another plugin that is already in the default version in RTE - Link. **We need to exclude email handling from the Link plugin**, as we will cover that in the email plugin. And that means we need also to modify the Link plugin by creating a custom link plugin.
 
 ## Page part - configuration
 
-We can start by adding proper fields in json file with richtext configuration. Under `"configuration"` property we want to inherit all others components, so we can make use of `"sling:resourceSuperType"` property and type our default path to richtext configuration `wcm/dialogs/components/richtext/configuration`. Afterwards we can add any plugin and in our case `link` will be overwritten and `email` will be added as new. To not confuse and overcomplicate, let's keep simple titles and plugin/UI names. To keep both UI next to each other, let's use `"sling:orderBefore"` property.
+We can start by adding proper fields in the JSON file with richtext configuration. Under the `"configuration"` property we want to inherit all other components, so we can make use of the `"sling:resourceSuperType"` property and type our default path to richtext configuration `wcm/dialogs/components/richtext/configuration`. Afterward, we can add any plugin we want and in our case, `link` will be overwritten and `email` will be added as new. To not confuse and overcomplicate, let's keep simple titles and plugin/UI names. To keep both UI next to each other, let's use the `"sling:orderBefore"` property.
 
 ```json title=".../application/backend/src/main/resources/apps/wcm/dialogs/components/richtext/configuration/.content.json"
 {
@@ -65,20 +65,20 @@ We can start by adding proper fields in json file with richtext configuration. U
 }
 ```
 !!! note Available icons
-    Icons are provided from [Google font page](https://fonts.google.com/icons), but keep in mind, that not all icons listed on google page can be available in CMS due to update time differences
+    Icons are provided from [Google font page](https://fonts.google.com/icons), but keep in mind, that not all icons listed on the google page can be available in CMS due to update time differences
 
 ## CMS part - new plugin
 
-In case to connect our json configuration above to actual scripts, create following files with path pointing to our script:
+In case to connect our JSON configuration above to actual scripts, create the following files with a path pointing to our script:
 
 ```json websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/plugin/email/email.json.html
 {
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/plugin/Email/Email.js"
 }
 ```
-Same file need to be created for link file, as we overwrite plugin only.
+A similar file needs to be created for the link.
 
-And for UI element (only email plugin):
+And for UI element:
 ```json websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/ui/email/email.json.html
 {
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/ui/EmailDialog.js",
@@ -95,35 +95,16 @@ And for UI element (only email plugin):
 ```
 ### TipTap
 
-There is very supportive [tiptap documentation on how to build such custom extensions](https://tiptap.dev/guide/custom-extensions), also in our case we can just base our code on [Link docs](https://tiptap.dev/api/marks/link) and [Link code](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-link/src/link.ts). With this knowledge, writing our plugin is not really a struggle. 
+There is very supportive [tiptap documentation on how to build such custom extensions](https://tiptap.dev/guide/custom-extensions), also in our case we can just base our code on [Link docs](https://tiptap.dev/api/marks/link) and [Link code](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-link/src/link.ts).
 
-**Extend or create from scratch?**
+**Extend or write from scratch?**
 
-Extending existing component result in less code writing, as we can only replace particular methods. The obvious component in this case would be Link component, as the behavior would be very similar. But the differences are significant, too. Fortunately, it is no need to decide now, as we can switch from extending to creating in a simple way. And actually it is exactly what I did at some point of writing email component.
+Extending existing component result in less code writing, as we can only replace particular methods. The obvious component, in this case, would be the Link component, as the behavior would be very similar. But the differences are significant, too. Fortunately, it is no need to decide now, as we can simply switch from extending to creating.
 
-I came out with following result:
+I came out with the following result:
 
 ```ts extension-email.ts
-import { markPasteRule, mergeAttributes, Mark } from '@tiptap/core';
-import { autolink } from './helpers/autolink.js';
-import { pasteHandler } from './helpers/pasteHandler.js';
-import { find, reset } from 'linkifyjs';
-import { Plugin } from '@tiptap/pm/state';
-import { splitEmail } from './helpers/splitEmail.js';
-declare module '@tiptap/core' {
-  interface Commands<ReturnType> {
-    email: {
-      setEmail: (attributes: 
-        { 'data-part1': string | null, 'data-part2': string | null, 'data-part3': string | null }
-        ) => ReturnType,
-      toggleEmail: (attributes: 
-        { 'data-part1': string | null, 'data-part2': string | null, 'data-part3': string | null }
-        ) => ReturnType,
-      unsetEmail: () => ReturnType,
-    }
-  }
-}
-
+...
 const CustomEmail = Mark.create({
   name: 'email',
   priority: 1000,
@@ -250,9 +231,52 @@ const CustomEmail = Mark.create({
 
 export default CustomEmail;
 ```
+TipTap library is built on the top of the [ProseMirror](https://prosemirror.net/) package but almost every functionality can be done without any knowledge of it, as tiptap is handling it under the hood. However, for handling some events we need to add the `addProseMirrorPlugins()` method and inside it create prosemirror plugins in case to handle these special event-based behavior. As the Link component has these neat features, I decided to make the email component no worse than that. Here is an [example usage of ProseMirror API](https://tiptap.dev/guide/custom-extensions/#access-the-prosemirror-api), and here is my paste event handling (for automatic email adding):
 
+```ts helpers/pasteHandler.ts
+import { Editor } from '@tiptap/core';
+import { MarkType } from 'prosemirror-model';
+import { Plugin, PluginKey } from 'prosemirror-state';
+import { find } from 'linkifyjs';
+import { splitEmail } from './splitEmail.js';
 
-Finally, we can create `Email.ts` file, component which loads previously registered plugin:
+export function pasteHandler(options: PasteHandlerOptions): Plugin {
+  return new Plugin({
+    key: new PluginKey('handlePasteEmail'),
+    props: {
+      handlePaste: (view, event, slice) => {
+        const { state } = view;
+        const { selection } = state;
+        const { empty } = selection;
+
+        if (empty) {
+          return false;
+        }
+
+        let textContent = '';
+
+        slice.content.forEach(node => {
+          textContent += node.textContent;
+        });
+
+        const email = find(textContent, 'email').find(item => 
+            item.isLink && 
+            item.value === textContent);
+
+        if (!textContent || !email) {
+          return false;
+        }
+
+        options.editor.commands.setMark(options.type, splitEmail(email.href));
+
+        return true;
+      },
+    },
+  });
+}
+```
+
+Finally, we can create an `Email.ts` file with component which loads the previously registered plugin:
 ```ts /apps/websight-rte-extensions/web-resources/components/richtext/plugin/Email/Email.ts
 import CustomEmail from "./extension-email.js";
 import { splitEmail } from "./helpers/splitEmail.js";
@@ -284,15 +308,18 @@ const Email = () => ({
 
 export default Email;
 ```
-- `getTipTapExtension` method is doing exactly what its name indicate, as well as making possible to switch off/on some plugin features
-- `execute` runs when user click submit button after filling the input
-- `getState` is passing current editor state
+- `getTipTapExtension` method is doing exactly what its name indicates, as well as making it possible to switch off/on some plugin features
+- `execute` runs when the user click submit button
+- `getState` is passing the current editor state
 
-Basically what is done here is just combine our UI and plugin into one component.
+<p align="center" width="100%">
+    <img class="image" src="email-extension.png" alt="Extension for tiptap rich text editor in websight CMS - result">
+    Result
+</p>
 
 ## Page part once again - decoding script
 
-Script for decoding is quite simple, as it is scanning page and convert three data parts to proper email:
+Script for decoding is quite simple, as it is scanning the page and converting three data parts to proper email:
 
 ```js
 window.addEventListener('load', () => {
@@ -309,6 +336,6 @@ window.addEventListener('load', () => {
 
 ## Summary
 
-
-
+First of all, we created new entries in the richtext JSON configuration file, then we added proper json files with paths corresponding to actual scripts. After creating and extending the existing component we could add sa imple script for decoding emails on our page. 
+As we can see, Rich Text Editor can be easily extended by any functionality we want, due to the flexible architecture model used in Websight CMS. Furthermore, creating an extension with the TipTap library offers broad possibilities, as well as creating a new UI component within CMS. 
 
