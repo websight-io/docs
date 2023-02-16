@@ -34,9 +34,11 @@ The Date Picker dialog field allows the user to pick a date, time or datetime.
 
 - **after** - `string`  
     Comma separated values of other datepickers. These datepickers' values should be lower than the selected date.
+    (This validation should be used in pair with `before` on the reference field.)
 
 - **before** - `string`  
     Comma separated values of other datepickers. These datepickers' values should be higher the selected date.
+    (This validation should be used in pair with `after` on the reference field.)
 
 ## Example
 
