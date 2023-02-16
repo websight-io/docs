@@ -1,5 +1,21 @@
 # WebSight CMS Release Notes
 
+## 1.9.1 <small>February 15, 2023</small>
+
+#### Page Editor
+- Improved the style for the page publication status dropdown.
+
+#### Page and Asset Management
+
+- Fixed the lack of scroll when returning from the page editor.
+
+#### Admin tools
+- Fixed the issue with renaming nodes in the resource browser.
+- Fixed the issue with saving changes in the resource browser. 
+- Unified action buttons order for dialogs.
+
+#### Other
+- Fixed the issue with entering _Title_ and _Name_ for a new space - changing the value moves the cursor to the end of the fields.
 
 ## 1.8.0 <small>February 1, 2023</small>
 
