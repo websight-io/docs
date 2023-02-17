@@ -57,8 +57,8 @@ In this example, we're showcasing how to hide a field on dialog and another one 
 ```
 
 #### Result
-![Modal without the style field that's disallowed in this context](../images/page-editor-side-panel-diff-modal.png)
-![Side panel without the shadow field that's disallowed in this context](../images/page-editor-side-panel-diff-panel.png)
+![Modal without the style field that's disallowed in this context](./images/side-panel-diff-modal.png)
+![Side panel without the shadow field that's disallowed in this context](./images/side-panel-diff-panel.png)
 
 ### Example 2
 In this example, we're defining a completely separate layout and order for the two ways of editing to achieve an even better authoring experience.
@@ -117,9 +117,9 @@ on the other two tabs. It allows the author to edit all the properties in the si
 but defines separation for the fields on the modal.
 
 #### Result
-![First tab of modal with different layout based on context](../images/page-editor-side-panel-layout-modal-1.png)
-![Second tab of modal with different layout based on context](../images/page-editor-side-panel-layout-modal-2.png)
-![Side panel with different layout based on context](../images/page-editor-side-panel-layout-panel.png)
+![First tab of modal with different layout based on context](./images/side-panel-layout-modal-1.png)
+![Second tab of modal with different layout based on context](./images/side-panel-layout-modal-2.png)
+![Side panel with different layout based on context](./images/side-panel-layout-panel.png)
 
 ## Saving and error handling
 
