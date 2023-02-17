@@ -51,6 +51,7 @@ extra:
   analytics:
     provider: google
     property: G-FV5Y0B6W17
+    gtm: GTM-M2B8LK4
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/websight-io
