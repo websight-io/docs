@@ -135,11 +135,8 @@ they need to be handled. In case of any errors during saving, the side panel res
 latest stable state (either the initial one or the last successfully saved one). This is to ensure that
 the author always sees valid and up-to-date information on the side panel.
 
-## Limitations
+## Validations
 
-The purpose of the side panel also causes limitations in terms of fields and validation.
-Simple validations are completely supported for the fields in the side panel, however, keep in mind that if the validation fails,
-the author will lose the changes they tried to make to the field.
-
-Complex validations (especially cross-field ones) are not supported on the side panel,
-so assertions like before and after dates on the date picker (see details [here](../../../development/dialogs/date-picker/#properties)) won't work. These fields should remain to be edited on the modal.
+Since the purpose of the side panel is to provide a lightweight solution for simple editing, it has some limitations compared to the regular modal.
+Fields that are validated are not recommended to be displayed and edited on the side panel.
+Editing such fields with a value that breaks a validation rule will result in an error message and the field will be reset (as described above).
