@@ -2,14 +2,14 @@
 
 <!-- Determine analytics property -->
 {% if config.extra.analytics %}
-{% set gtm = config.extra.analytics.gtm | d("", true) %}
+{% set property = config.extra.analytics.property | d("", true) %}
 {% endif %}
 
 {% block header %}
 
-{% if gtm.startswith("GTM-") %}
+{% if property.startswith("GTM-") %}
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ gtm }}"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ property }}"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 {% endif %}
