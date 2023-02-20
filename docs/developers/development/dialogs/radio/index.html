@@ -55,43 +55,6 @@
 
 
 
-<!-- Google Analytics 4 (G-XXXXXXXXXX) -->
-
-<script type="text/plain" data-cookiecategory="analytics">
-    window.dataLayer = window.dataLayer || []
-    function gtag() { dataLayer.push(arguments) }
-
-    /* Set up integration and send page view */
-    gtag("js", new Date())
-    gtag("config", "G-FV5Y0B6W17")
-
-    /* Register event handlers after documented loaded */
-    document.addEventListener("DOMContentLoaded", function() {
-        if (document.forms.search) {
-            var query = document.forms.search.query
-            query.addEventListener("blur", function() {
-                if (this.value)
-                    gtag("event", "search", { search_term: this.value })
-            })
-        }
-
-        /* Send page view on location change */
-        if (typeof location$ !== "undefined")
-            location$.subscribe(function(url) {
-                gtag("config", "G-FV5Y0B6W17", {
-                    page_path: url.pathname
-                })
-            })
-    })
-</script>
-<script type="text/plain" data-cookiecategory="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-FV5Y0B6W17">
-</script>
-
-<!-- Google Analytics (UA-XXXXXXXX-X) -->
-
-
-
-
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
