@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   cms:
-    image: public.ecr.aws/ds/websight-cms-starter:1.9.1
+    image: public.ecr.aws/ds/websight-cms-starter:1.10.0
     ports:
       - "8080:8080"
     environment:
@@ -16,7 +16,7 @@ services:
     depends_on:
       - mongo
   nginx:
-    image: public.ecr.aws/ds/websight-nginx-starter:1.9.1
+    image: public.ecr.aws/ds/websight-nginx-starter:1.10.0
     ports:
       - "80:80"
     volumes:
