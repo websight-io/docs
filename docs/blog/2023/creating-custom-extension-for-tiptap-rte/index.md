@@ -29,6 +29,7 @@ From a user perspective, RTE should have a dedicated button where after clicking
 ## Technical overview
 
 Due to component specifcity, the work can be split into two parts:
+
 - CMS part, where adding/editing/deleting and encrypting email addresses is happening within Rich Text Editor
 - page part, where email decoding happens 
 
@@ -71,7 +72,7 @@ We can start by adding proper fields in the JSON file with richtext configuratio
 
 In case to connect our JSON configuration above to actual scripts, create the following files with a path pointing to our script:
 
-```json websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/plugin/email/email.json.html
+```json title="websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/plugin/email/email.json.html"
 {
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/plugin/Email/Email.js"
 }
@@ -79,7 +80,7 @@ In case to connect our JSON configuration above to actual scripts, create the fo
 A similar file needs to be created for the link.
 
 And for UI element:
-```json websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/ui/email/email.json.html
+```json title="websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/ui/email/email.json.html"
 {
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/ui/EmailDialog.js",
     "configuration": {
@@ -102,7 +103,7 @@ There is very supportive [tiptap documentation on how to build such custom exten
 Extending existing component result in less code writing, as we can only replace particular methods. The obvious component, in this case, would be the Link component, as the behavior would be very similar. But the differences are significant, too. Fortunately, it is no need to decide now, as we can simply switch from extending to creating.
 
 Some chosen methods from component:
-```ts extension-email.ts
+```typescript title="extension-email.ts"
 ...
 const CustomEmail = Mark.create({
   name: 'email',
@@ -186,9 +187,10 @@ const CustomEmail = Mark.create({
 
 export default CustomEmail;
 ```
-TipTap library is built on the top of the [ProseMirror](https://prosemirror.net/) package but almost every functionality can be done without any knowledge of it, as tiptap is handling it under the hood. However, for handling some events we need to add the `addProseMirrorPlugins()` method and inside it create prosemirror plugins in case to handle this special event-based behavior. Here is an [example usage of ProseMirror API](https://tiptap.dev/guide/custom-extensions/#access-the-prosemirror-api), so the helper file would look like something like this:
 
-```ts helpers/pasteHandler.ts
+TipTap library is built on the top of the [ProseMirror](https://prosemirror.net/) package but almost every functionality can be done without any knowledge of it, as TipTap is handling it under the hood. However, for handling some events we need to add the `addProseMirrorPlugins()` method and inside it create prosemirror plugins in case to handle this special event-based behavior. Here is an [example usage of ProseMirror API](https://tiptap.dev/guide/custom-extensions/#access-the-prosemirror-api), so the helper file would look like something like this:
+
+```typescript title=" helpers/pasteHandler.ts"
 
 export function pasteHandler(options: PasteHandlerOptions): Plugin {
   return new Plugin({
@@ -203,7 +205,8 @@ export function pasteHandler(options: PasteHandlerOptions): Plugin {
 ```
 
 Finally, we can create an `Email.ts` file with component which loads the previously registered plugin:
-```ts /apps/websight-rte-extensions/web-resources/components/richtext/plugin/Email/Email.ts
+
+```typescript title="/apps/websight-rte-extensions/web-resources/components/richtext/plugin/Email/Email.ts"
 import CustomEmail from "./extension-email.js";
 import { splitEmail } from "./helpers/splitEmail.js";
 import { validateEmail } from "./helpers/validateEmail.js";
