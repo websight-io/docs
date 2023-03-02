@@ -2,9 +2,6 @@
 
 ## 1.10.0 <small>March 1, 2023</small>
 
-#### Page Editor
-- Fixed an issue with loading the manifest file by a browser.
-
 #### Page and Asset Management
 - Fixed crash when a user uploads multiple assets at the same time.
 - Fixed broken list of pages for a space when its first node in the resource browser contains an object other than pages, for example, policies.
@@ -23,6 +20,7 @@
 
 #### Other
 - Fixed inconsistency of a new space name generated from the title.
+- Fixed an issue with loading the manifest file by a browser.
 
 ## 1.9.1 <small>February 15, 2023</small>
 
