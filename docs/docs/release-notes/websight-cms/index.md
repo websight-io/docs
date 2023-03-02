@@ -1,5 +1,29 @@
 # WebSight CMS Release Notes
 
+## 1.10.0 <small>March 1, 2023</small>
+
+#### Page Editor
+- Fixed an issue with loading the manifest file by a browser.
+
+#### Page and Asset Management
+- Fixed crash when a user uploads multiple assets at the same time.
+- Fixed broken list of pages for a space when its first node in the resource browser contains an object other than pages, for example, policies.
+- Fixed blinking space dropdown when a user removed a space, and not available anymore.
+- Fixed [#133] - page name generated from the tile is lowercase now.
+- Improved [#15] - clicking a page name opens the page editor now.
+- Improved the expandable panel with the tree on the left - added icons for pages and folders.
+- Improved the preview of assets containing white objects on a transparent background (changed preview background to grey).
+
+#### Admin tools
+- Fixed page reordering in the resource browser.
+- Fixed the missing icon for the _deny_ permission in the user manager. 
+
+#### Dialogs
+- Fixed an issue with closing the [Button Dropdown](/docs/developers/development/dialogs/richtext-editor/ui-components/button-dropdown/) for the [Rich Text Editor](/docs/developers/development/dialogs/richtext-editor/).
+
+#### Other
+- Fixed inconsistency of a new space name generated from the title.
+
 ## 1.9.1 <small>February 15, 2023</small>
 
 #### Page Editor
