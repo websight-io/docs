@@ -6,8 +6,8 @@
 - Fixed crash when a user uploads multiple assets at the same time.
 - Fixed broken list of pages for a space when its first node in the resource browser contains an object other than pages, for example, policies.
 - Fixed blinking space dropdown when a user removed a space, and not available anymore.
-- Fixed [#133] - page name generated from the tile is lowercase now.
-- Improved [#15] - clicking a page name opens the page editor now.
+- Fixed [#133](https://github.com/websight-io/starter/issues/133) - page name generated from the tile is lowercase now.
+- Improved [#15](https://github.com/websight-io/starter/issues/15) - clicking a page name opens the page editor now.
 - Improved the expandable panel with the tree on the left - added icons for pages and folders.
 - Improved the preview of assets containing white objects on a transparent background (changed preview background to grey).
 
@@ -59,7 +59,7 @@
 
 #### Page and Asset Management
 
-- Fixed [#25] - SVG files are displayed properly now.
+- Fixed [#25](https://github.com/websight-io/starter/issues/25) - SVG files are displayed properly now.
 
 #### Dialogs
 
@@ -68,7 +68,7 @@
 
 
 #### Admin Tools
-- Fixed [#12] -  updated layout of the landing page for Admin Tools.
+- Fixed [#12](https://github.com/websight-io/starter/issues/12) -  updated layout of the landing page for Admin Tools.
 
 #### Other
 - Unified UX for the left side panel for all views.
