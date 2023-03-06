@@ -4,7 +4,7 @@ description: RTE can be extended by additional fields, which provide new formatt
 author: Martyna Szeszko
 image: feature-image.jpg
 publicationDate: 16.02.2023
-minReadTime: 9
+minReadTime: 12
 tags:
   - WebSight
 ---
@@ -38,6 +38,7 @@ From a user perspective, RTE should have a dedicated button where after clicking
 ## Technical overview
 
 Due to component specifcity, the work can be split into two parts:
+
 - CMS part - where adding/editing/deleting and encrypting email addresses is happening within Rich Text Editor
 - page part - where RTE configuration and email decoding happens 
 
