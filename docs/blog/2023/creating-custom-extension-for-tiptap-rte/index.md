@@ -4,7 +4,7 @@ description: RTE can be extended by additional fields, which provide new formatt
 author: Martyna Szeszko
 image: feature-image.jpg
 publicationDate: 16.02.2023
-minReadTime: 8
+minReadTime: 9
 tags:
   - WebSight
 ---
@@ -15,23 +15,31 @@ tags:
     <img class="image" src="ws-and-tiptap.jpg" alt="Extension for tiptap rich text editor in websight CMS">
 </p>
 
-> As written in a related article [Customizing Rich Text Editor in WebSight CMS](https://www.websight.io/blog/2022/customizing-rich-text-editor/) RTE can be extended by additional fields, which provide new formatting options for users. However, the list of available plugins may not be sufficient for demanding clients. Let’s create a completely new component for the RTE toolbar, using [TipTap library](https://tiptap.dev/introduction) which lies underneath the Rich Text Editor component.
+> There was a need to add plugin, which should be masking e-mail addresses inside Rich Text Editor in case to prevent spam messages. This new RTE plugin was created as a custom, written from scratch, fully customizable component for [ds.pl](https://ds.pl) website. Let's follow the process of creation such a component, with a little help of [TipTap library](https://tiptap.dev/introduction), which lies underneath the Rich Text Editor.
+
+See our other article about [Customizing Rich Text Editor in WebSight CMS](https://www.websight.io/blog/2022/customizing-rich-text-editor/), where you can read more about RTE configuration and learn how to create plugin from predefined components.
 
 ## New component requirements
 
-The new component is supposed to add a masked email address in case it prevents spam messages. An anchor tag should not contain a plain, easy-to-read email address, instead can use data attributes for storing email parts. After the page is loaded, the script should convert these data parts to the whole email address, like in a regular link with `mailto:` prefix. 
+The new component is supposed to add a masked email address in case it prevents spam messages. An anchor tag should not contain a plain, easy-to-read email address, instead can use data attributes for storing email parts. Example of pretected email address could look like this:
 
-From a user perspective, RTE should have a dedicated button where after clicking there is a possibility to input an email address, and the rest is happening under the hood.
+```<a href="" data-part1="info" data-part2="ds" data-part3="pl" ... >Contact Us</a>```
 
-!!! tip Available plugins
-    Websight CMS already provides a list of useful RTE extensions. The guide [in the mentioned article](https://www.websight.io/blog/2022/customizing-rich-text-editor/) might be helpful to understand some steps covered throughout the article
+After the page is loaded, the script should convert these data parts to the whole email address, like in a regular link with `mailto:` prefix: 
+
+```<a href="mailto:info@ds.pl" ... >Contact Us</a>```
+
+From a user perspective, RTE should have a dedicated button where after clicking there is a possibility to input an email address, and the rest is happening under the hood. The button could be placed next to Link button. This is how RTE component looks like now:
+
+<p align="center" width="100%">
+    <img class="image" src="before-email-extension.png" alt="Extension for tiptap rich text editor in websight CMS">
+</p>
 
 ## Technical overview
 
 Due to component specifcity, the work can be split into two parts:
-
-- CMS part, where adding/editing/deleting and encrypting email addresses is happening within Rich Text Editor
-- page part, where email decoding happens 
+- CMS part - where adding/editing/deleting and encrypting email addresses is happening within Rich Text Editor
+- page part - where RTE configuration and email decoding happens 
 
 Therefore, **the component must be used with the script provided within page**, otherwise, email links won’t be decoded.
 
@@ -66,7 +74,7 @@ We can start by adding proper fields in the JSON file with richtext configuratio
 }
 ```
 !!! note Available icons
-    Icons are provided from [Google font page](https://fonts.google.com/icons), but keep in mind, that not all icons listed on the google page can be available in CMS due to update time differences
+    Icons are provided by [Google font page](https://fonts.google.com/icons)
 
 ## CMS part - new plugin
 
@@ -77,7 +85,12 @@ In case to connect our JSON configuration above to actual scripts, create the fo
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/plugin/Email/Email.js"
 }
 ```
-A similar file needs to be created for the link.
+A similar file needs to be created for the link:
+```json websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/plugin/link/link.json.html
+{
+    "type": "/apps/websight-rte-extensions/web-resources/components/richtext/plugin/Link/Link.js"
+}
+```
 
 And for UI element:
 ```json title="websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/ui/email/email.json.html"
@@ -241,11 +254,6 @@ export default Email;
 - `execute` runs when the user click submit button
 - `getState` is passing the current editor state
 
-<p align="center" width="100%">
-    <img class="image" src="email-extension.png" alt="Extension for tiptap rich text editor in websight CMS - result">
-    Result
-</p>
-
 ## Page part once again - decoding script
 
 Script for decoding is quite simple, as it is scanning the page and converting three data parts to proper email:
@@ -262,6 +270,10 @@ window.addEventListener('load', () => {
     }
 });
 ```
+<p align="center" width="100%">
+    <img class="image" src="email-extension.png" alt="Extension for tiptap rich text editor in websight CMS - result">
+    Result
+</p>
 
 ## Summary
 
