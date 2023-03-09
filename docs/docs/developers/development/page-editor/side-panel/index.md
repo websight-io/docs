@@ -20,7 +20,7 @@ The mechanism used to achieve that is the `ws:disallowedContext` parameter (see 
 The two contexts that can be disabled are `edit:dialog` and `edit:panel`.
 
 ### Example 1
-In this example, we're showcasing how to hide a field on dialog and another one on the side panel.
+In this example, we're showcasing how to hide a `select` on the dialog and a `toggle` on the side panel.
 
 ```json
 {
@@ -61,7 +61,12 @@ In this example, we're showcasing how to hide a field on dialog and another one 
 ![Side panel without the shadow field that's disallowed in this context](./images/side-panel-diff-panel.png)
 
 ### Example 2
-In this example, we're defining a completely separate layout and order for the two ways of editing to achieve an even better authoring experience.
+In this example, we're defining a completely separate layout and order for the two ways of editing to achieve an even better authoring experience. 
+
+To accomplish this, we create a configuration of three tabs. The first two will only appear on the modal,
+while the third one will only appear on the side panel. The third tab includes all three fields that are available
+on the other two tabs. It allows the author to edit all the properties in the side panel in one tab
+but defines separation for the fields on the modal.
 
 ```json
 {
@@ -111,11 +116,6 @@ In this example, we're defining a completely separate layout and order for the t
 }
 ```
 
-In the example above, we create a configuration of three tabs. The first two will only appear on the modal,
-while the third will only appear on the side panel. The third tab includes all three fields that are available
-on the other two tabs. It allows the author to edit all the properties in the side panel in one tab
-but defines separation for the fields on the modal.
-
 #### Result
 ![First tab of modal with different layout based on context](./images/side-panel-layout-modal-1.png)
 ![Second tab of modal with different layout based on context](./images/side-panel-layout-modal-2.png)
@@ -123,12 +123,10 @@ but defines separation for the fields on the modal.
 
 ## Saving and error handling
 
-The saving of the fields works automatically, without pressing a submit button.
-Field types that can be edited with a mouse click are saved right away after the change,
-so the updated page content can be checked almost instantly.
-Other field types where the value is changed via typing are saved in a debounced manner.
-It means that the value is saved at the moment when the author stops for a bit during typing.
-This reduces the number of content updates that would cause noticeable jumps on the page during editing.
+The saving of the fields works automatically. There is no need to press a submit button. Some field values are changed with a mouse click,
+for example, the toggle. The side panel saves them immediately, and the results are visible almost instantly. Other fields, for example,
+the text field or the path picker, require typing a new value. It is stored when an author stops typing (debounce manner).
+The approach reduces the number of content updates that would cause page flickering.
 
 No matter if errors happen during the regular editing experience (e.g. validations) or are caused by technical problems,
 they need to be handled. In case of any errors during saving, the side panel resets the modified field to the
