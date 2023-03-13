@@ -35,7 +35,8 @@ From a user perspective, RTE should have a dedicated button where after clicking
     <img class="image" src="before-email-extension.png" alt="Extension for tiptap rich text editor in websight CMS">
 </p>
 
-Please keep in mind it is only a very basic method of email link obfuscation, chosen as one from many other ways of encoding link content. Surely it will not protect from all spambots or harvesters, but should be enough for our current needs.
+!!! warning "Email link obfuscation"
+    Please keep in mind it is only a very basic method of email link obfuscation, chosen as one from many other ways of encoding link content. Surely it will not protect from all spambots or harvesters, but should be enough for our current needs.
 
 ## Technical overview
 
