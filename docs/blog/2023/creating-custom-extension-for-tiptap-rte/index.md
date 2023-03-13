@@ -90,7 +90,7 @@ In case to connect our JSON configuration above to actual scripts, create the fo
 }
 ```
 A similar file needs to be created for the link:
-```json websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/plugin/link/link.json.html
+```json title="websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/plugin/link/link.json.html"
 {
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/plugin/Link/Link.js"
 }
