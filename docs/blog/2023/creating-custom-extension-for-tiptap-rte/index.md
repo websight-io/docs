@@ -2,7 +2,7 @@
 title: Creating custom extension for TipTap Rich Text Editor
 description: RTE can be extended by additional fields, which provide new formatting options for users. However, the list of available plugins may not be sufficient for demanding clients. Let’s create a completely new component for the RTE toolbar, using the TipTap library which lies underneath the Rich Text Editor component.
 author: Martyna Szeszko
-image: feature-image.jpg
+image: WS-and-tiptap.jpg
 publicationDate: 16.02.2023
 minReadTime: 12
 tags:
@@ -12,7 +12,7 @@ tags:
 *Published at: 16.02.2023 by [Martyna Szeszko](https://github.com/martyna-ds)*
 
 <p align="center" width="100%">
-    <img class="image" src="ws-and-tiptap.jpg" alt="Extension for tiptap rich text editor in websight CMS">
+    <img class="image" src="WS-and-tiptap.jpg" alt="Extension for tiptap rich text editor in websight CMS">
 </p>
 
 > There was a need to add plugin, which should be masking e-mail addresses inside Rich Text Editor in case to prevent spam messages. This new RTE plugin was created as a custom, written from scratch, fully customizable component for [ds.pl](https://ds.pl) website. Let's follow the process of creation such a component, with a little help of [TipTap library](https://tiptap.dev/introduction), which lies underneath the Rich Text Editor.
@@ -49,11 +49,8 @@ Therefore, **the component must be used with the script provided within page**, 
 
 As the decoding email script will be the last step, let’s focus on the main issue here – extending the RTE editor. Such an editor component is made up of two parts: the plugin element and the UI element. The plugin part is responsible for the plugin behavior and it is directly related to the UI part, which is providing UI for the plugin itself. In Websight CMS, the tiptap library is responsible for plugins, and for UI - a separate module that is a part of Websight CMS. As for the plugin, we can either extend or create a new extension. But what about the UI element for this plugin? Any of these (button, button dropdown, list dropdown, link) don't match the requirements, because we need a dropdown with one input (link UI has input and select with `target` attribute selection). So we need a new UI as well.
 
-Our new plugin will affect another plugin that is already in the default version in RTE - Link. **We need to exclude email handling from the Link plugin**, as we will cover that in the email plugin. And that means we need also to modify the Link plugin by creating a custom link plugin.
-
 ## Page part - configuration
-
-We can start by adding proper fields in the JSON file with richtext configuration. Under the `"configuration"` property we want to inherit all other components, so we can make use of the `"sling:resourceSuperType"` property and type our default path to richtext configuration `wcm/dialogs/components/richtext/configuration`. Afterward, we can add any plugin we want and in our case, `link` will be overwritten and `email` will be added as new. To not confuse and overcomplicate, let's keep simple titles and plugin/UI names. To keep both UI next to each other, let's use the `"sling:orderBefore"` property.
+Let's start by preparing an extended configuration according to [the documentation](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#extending-and-overriding-configuration). The example path for an extended configuration could be `/apps/rte/extended/configuration/.content.json`. After that we can use this new configuration in our components, just like in the another part of [the documentation - Using configuration](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#using-configuration).
 
 ```json title=".../application/backend/src/main/resources/apps/wcm/dialogs/components/richtext/configuration/.content.json"
 {
@@ -89,14 +86,17 @@ In case to connect our JSON configuration above to actual scripts, create the fo
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/plugin/Email/Email.js"
 }
 ```
-A similar file needs to be created for the link:
+
+Our new plugin will affect another plugin that is already in the default version in RTE - Link. **We need to exclude email handling from the Link plugin**, as we will cover that in the email plugin. And that means we need also to modify the Link plugin by creating a custom link plugin.
+
+So a similar file needs to be created for the link:
 ```json title="websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/plugin/link/link.json.html"
 {
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/plugin/Link/Link.js"
 }
 ```
 
-And for UI element:
+Then let's create UI element for e-mail:
 ```json title="websight-rte-extensions/src/main/resources/libs/extensions/dialogs/components/richtext/ui/email/email.json.html"
 {
     "type": "/apps/websight-rte-extensions/web-resources/components/richtext/ui/EmailDialog.js",
