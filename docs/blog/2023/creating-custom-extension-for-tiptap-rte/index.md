@@ -77,7 +77,7 @@ We can start by adding proper fields in the JSON file with richtext configuratio
   }
 }
 ```
-!!! note Available icons
+!!! note "Available icons"
     Icons are provided by [Google font page](https://fonts.google.com/icons)
 
 ## CMS part - new plugin
