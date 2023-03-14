@@ -61,7 +61,7 @@ if (window.location.hostname === "www.websight.io") {
                                 readonly: true
                             }
                         }, {
-                            title: 'Performance and Analytics cookies',
+                            title: 'Performance, Analytics and Targeting cookies',
                             description: 'These cookies allow the website to remember the choices you have made in the past',
                             toggle: {
                                 value: 'analytics',
@@ -81,6 +81,60 @@ if (window.location.hostname === "www.websight.io") {
                                     col2: 'google.com',
                                     col3: '1 day',
                                     col4: 'Analytics cookies',
+                                },
+                                {
+                                    col1: 'bcookie',
+                                    col2: 'www.linkedin.com',
+                                    col3: '2 years',
+                                    col4: 'Stores browser details',
+                                },
+                                {
+                                    col1: 'li-oatml',
+                                    col2: 'www.linkedin.com',
+                                    col3: '1 month',
+                                    col4: 'Provides ad delivery or retargeting',
+                                },
+                                {
+                                    col1: 'BizographicsOptOut',
+                                    col2: 'www.linkedin.com',
+                                    col3: '10 years',
+                                    col4: 'Stores privacy preferences',
+                                },
+                                {
+                                    col1: 'li_sugr',
+                                    col2: 'www.linkedin.com',
+                                    col3: '3 months',
+                                    col4: 'Stores browser details',
+                                },
+                                {
+                                    col1: 'UserMatchHistory',
+                                    col2: 'www.linkedin.com',
+                                    col3: '30 days',
+                                    col4: 'Provides ad delivery or retargeting',
+                                },
+                                {
+                                    col1: 'linkedin_oauth_',
+                                    col2: 'www.linkedin.com',
+                                    col3: 'session',
+                                    col4: 'Provides functions across pages',
+                                },
+                                {
+                                    col1: 'lidc',
+                                    col2: 'www.linkedin.com',
+                                    col3: '1 day',
+                                    col4: 'Stores performed actions on the website',
+                                },
+                                {
+                                    col1: 'bscookie',
+                                    col2: 'www.linkedin.com',
+                                    col3: '2 years',
+                                    col4: 'Stores performed actions on the website',
+                                },
+                                {
+                                    col1: 'X-LI-IDC',
+                                    col2: 'www.linkedin.com',
+                                    col3: 'session',
+                                    col4: 'Provides functions across pages',
                                 }
                             ]
                         }, {
