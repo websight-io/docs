@@ -2,17 +2,17 @@
 
 ## Overview
 
-Web Content Management mode is information related to requests about how the requested content
+Web Content Management mode (WCM mode) is information related to requests about how the requested content
 will be used - mode of using the content.
 
 Available modes are:
 
-- disabled - in this mode response for the client request is rendered
-- edit - in this mode response for the content editor is rendered
-- preview - in this mode response for the content editor preview is rendered
+- disabled - response for the end users requests
+- edit - response for the content editors
+- preview - response for the content editors preview
 
-To set the WCM mode, the request parameter `wcmmode` can be added
-to URL referencing any resource under the `/content/*` path,
+To set the WCM mode, add the request parameter `wcmmode`
+to URL pointing to any resource under the `/content/*` path,
 like `/content/test/pages/some-page.html?wcmmode=disabled`.
 
 The default mode is `disabled`.
@@ -23,9 +23,7 @@ It is possible to test the current WCM mode, to respond depending on the mode va
 
 ### HTL
 
-In Sling Scripting, including HTL, WCM mode can be tested by using the object provided at `wcmmode` key.
-
-The object allows testing if the current mode is the given mode.
+In Sling Scripting, including HTL, WCM mode flags are available - can be used to evaluate conditions, i.e. in `data-sly-test`.
 
 ```
 <sly data-sly-test="${wcmmode.disabled}">
@@ -52,8 +50,8 @@ the WCM mode from the request during request processing. The mode can be tested 
 
 ## Forcing WCM mode in HTL
 
-While including resources in HTL using `data-sly-resource` or `data-sly-include` the WCM mode can be changed 
-to specific mode using the `requestAttributes` option and `wcmmode` object available in HTL.
+While including resources or scripts in HTL using `data-sly-resource` or `data-sly-include` the WCM mode can be set 
+to specific value using the `requestAttributes` option and `wcmmode` object available in HTL.
 
 See more about `data-sly-resource` and `data-sly-include` [here](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1).
 
