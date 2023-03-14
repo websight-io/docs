@@ -7,9 +7,9 @@ will be used - mode of using the content.
 
 Available modes are:
 
-- disabled - response for the end users requests
-- edit - response for the content editors
-- preview - response for the content editors preview
+- disabled - for the end users requests
+- edit - for the content editing
+- preview - for the preview of content editing
 
 To set the WCM mode, add the request parameter `wcmmode`
 to URL pointing to any resource under the `/content/*` path,
