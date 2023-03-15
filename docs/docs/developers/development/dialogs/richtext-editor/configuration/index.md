@@ -4,7 +4,7 @@ Configuration defines RTE toolbar and functionalities
 
 # Using configuration
 
-RTE provides default configuration at `/apps/wcm/dialogs/components/richtext/configuration`.
+RTE provides default configuration at `/libs/wcm/dialogs/components/richtext/configuration`.
 
 Configuration can be referenced by path or defined inline. If inline configuration is defined then referenced configuration is ignored.
 
