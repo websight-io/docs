@@ -55,9 +55,9 @@ To fulfill this request, you are asked to keep the collection name on one line a
 
 To do this, you need to extend the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) library. Before doing that, let's check the orginal component first to identify the scope of changes.
 
-Run WebSight, open the _Luna_ space and edit the home page. Find the _Title_ component that contains the text `Meet our New Grand Luxor Jewelry Collection` and edit its properties.
+Run WebSight, open the _Luna_ space and edit the home page. Find the _Title_ component that contains the text `Meet our New Grand Luxor Jewelry Collection` and edit its properties on the sidepanel.
 
-![Title dialog properties](title-dialog-properties.png)
+![Title panel properties](title-panel-properties.png)
 
 Enable the `Overline text` option, move `Meet our` from `Heading text` to `Overline text` and submit changes.
 
@@ -291,7 +291,7 @@ Then, find the _Luna Title_ in the component tree on the left. Drag and drop the
 ![Luna Title added](luna-title-component.png)
 
 
-Edit properties of the _Luna Title_:
+Edit properties of the _Luna Title_ on the side panel:
 
 1. set _Heading size_ to `XL`
 1. set _Heading text_ to `New Grand Luxor Jewelry Collection`
@@ -299,9 +299,9 @@ Edit properties of the _Luna Title_:
 1. set _Overline size_ to `L`
 1. set _Overline text_ to `Meet our` 
 
-![Luna Title Dialog Properites](luna-title-dialog-properties.png)
+![Luna Title Panel Properites](luna-title-panel-properties.png)
 
-Submit changes. The title should appear as expected now. You can delete the original _Title_ component to finalize the change.
+The title should appear as expected now. You can delete the original _Title_ component to finalize the change.
 
 ![Updated Luna Title](luna-title-updated.png)
 
