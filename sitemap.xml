@@ -331,6 +331,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://websight.io/docs/developers/development/page-editor/side-panel/</loc>
+         <lastmod>2023-03-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://websight.io/docs/developers/development/wcm-mode/</loc>
          <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>

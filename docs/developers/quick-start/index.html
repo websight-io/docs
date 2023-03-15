@@ -2718,6 +2718,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
           
         
+          
+        
       
       
         
@@ -2771,6 +2773,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <label class="md-nav__title" for="__nav_2_3_4_4_2">
           <span class="md-nav__icon md-icon"></span>
           Extending editor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4_4_3" type="checkbox" id="__nav_2_3_4_4_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../development/page-editor/side-panel/">Side panel</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Side panel" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_3_4_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Side panel
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -4118,9 +4163,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><img alt="Expected result" src="the-expected-result.png" /></p>
 <h3 id="technical-scope">Technical scope</h3>
 <p>To do this, you need to extend the <em>Title</em> component included in the <a href="https://github.com/websight-io/howlite">Howlite</a> library. Before doing that, let's check the orginal component first to identify the scope of changes.</p>
-<p>Run WebSight, open the <em>Luna</em> space and edit the home page. Find the <em>Title</em> component that contains the text <code>Meet our New Grand Luxor Jewelry Collection</code> and edit its properties.</p>
-<p><img alt="Title dialog properties" src="title-dialog-properties.png" /></p>
-<p>Enable the <code>Overline text</code> option, move <code>Meet our</code> from <code>Heading text</code> to <code>Overline text</code> and submit changes.</p>
+<p>Run WebSight, open the <em>Luna</em> space and edit the home page. Find the <em>Title</em> component that contains the text <code>Meet our New Grand Luxor Jewelry Collection</code> and edit its properties on the sidepanel.</p>
+<p><img alt="Title panel properties" src="title-panel-properties.png" /></p>
+<p>Enable the <code>Overline text</code> option, move <code>Meet our</code> from <code>Heading text</code> to <code>Overline text</code>.</p>
 <p><img alt="Updated title" src="title-updated.png" /></p>
 <p>As you can see, the result comes close to meeting the expectation, but the font size of the overline text is too small. You could prepare a new version of the <em>Title</em> component with a different font size for the overline text. However, this is not a flexible solution. Creating an additional input field to define the font size for the overline text is a better option.</p>
 <div class="admonition info">
@@ -4298,16 +4343,17 @@ Because you updated the model class, you can use its property now.</p>
 <p>Switch to WebSight CMS, open the <em>Luna</em> space, and edit the home page. Find the <em>Title</em> with text <code>Meet our New Grand Luxor Jewelry Collection</code>. </p>
 <p>Then, find the <em>Luna Title</em> in the component tree on the left. Drag and drop the component on the page just below the original one. </p>
 <p><img alt="Luna Title added" src="luna-title-component.png" /></p>
-<p>Edit properties of the <em>Luna Title</em>:</p>
+<p>Edit properties of the <em>Luna Title</em> on the side panel:</p>
 <ol>
+<li>set <em>Heading level</em> to <code>H2</code> </li>
 <li>set <em>Heading size</em> to <code>XL</code></li>
 <li>set <em>Heading text</em> to <code>New Grand Luxor Jewelry Collection</code></li>
 <li>enable overline text</li>
 <li>set <em>Overline size</em> to <code>L</code></li>
 <li>set <em>Overline text</em> to <code>Meet our</code> </li>
 </ol>
-<p><img alt="Luna Title Dialog Properites" src="luna-title-dialog-properties.png" /></p>
-<p>Submit changes. The title should appear as expected now. You can delete the original <em>Title</em> component to finalize the change.</p>
+<p><img alt="Luna Title Panel Properites" src="luna-title-panel-properties.png" /></p>
+<p>The title should appear as expected now. You can delete the original <em>Title</em> component to finalize the change.</p>
 <p><img alt="Updated Luna Title" src="luna-title-updated.png" /></p>
 <h2 id="part-f-clean-up">Part F: Clean-up</h2>
 <h3 id="stop-the-environment">Stop the environment</h3>
