@@ -26,8 +26,8 @@ This dialog field requires a [configuration](./richtext-editor-configuration.md/
 - **description** - `string` (optional)  
     Display description value as tooltip
 
-- **configuration** - `string` (optional, default `/apps/wcm/dialogs/components/richtext/configuration`)  
-    Absolute path to configuration node. The configuration can be also defined inline; see [RichText Editor - configuration](./richtext-editor-configuration.md/) for details
+- **configuration** - `string` (optional, default `/libs/wcm/dialogs/components/richtext/configuration`)  
+    Absolute path to configuration node. The configuration can be also defined inline; see [RichText Editor - configuration](./configuration) for details
 
 Example:
 
