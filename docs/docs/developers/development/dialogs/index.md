@@ -4,6 +4,12 @@ The Dialogs framework in WebSight CMS allows users to define dialog field compon
 
 WebSight CMS delivers a set of ready-to-use components. These are detailed in the subsections of this documentation page.
 
+!!! info "Rendering dialogs"
+
+    In this documentation, we present dialogs configurations in a modal, which is the default dialog rendering.
+    However, dialogs can be rendered in other ways, for example as a [side panel](../page-editor/side-panel). 
+
+
 ## Dialog structure
 Each dialog can be build out of two element types:
 

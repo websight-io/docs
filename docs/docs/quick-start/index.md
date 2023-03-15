@@ -114,17 +114,17 @@ Find the _Rich text editor_ on the tab _Components_ and use the drag-and-drop fe
 
 ![Rich text editor available in component tree](./quick-start-RTE-component.png)
 
-Click on the new component to open available actions. Select the _Gear_ icon to edit properties.
+Click on the new component to check its properties on the side panel on the right.
 
-![Actions available for RTE component](./quick-start-RTE-editing.png)
+![Actions available for RTE component](./quick-start-RTE-panel.png)
 
-Copy & paste the following text on the _General_ tab.
+Copy & paste the following text into the _Text_ field on the _General_ tab.
 
 ```
 Every couple is unique and we want to deliver an engagement ring that is unique too – taking the tastes of the couple into account. We love having couples visit the store and work with them to create a unique custom engagement ring according to their tastes.
 ```
 
-![RTE component properties](./quick-start-RTE-properties.png)
+![RTE component properties](./quick-start-RTE-panel-updated.png)
 
 ### 4. Publish changes
 
