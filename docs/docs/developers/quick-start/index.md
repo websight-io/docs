@@ -293,6 +293,7 @@ Then, find the _Luna Title_ in the component tree on the left. Drag and drop the
 
 Edit properties of the _Luna Title_ on the side panel:
 
+1. set _Heading level_ to `H2` 
 1. set _Heading size_ to `XL`
 1. set _Heading text_ to `New Grand Luxor Jewelry Collection`
 1. enable overline text
