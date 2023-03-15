@@ -2,8 +2,8 @@
 
 ## Overview
 
-Web Content Management mode (WCM mode) is information related to requests about how the requested content
-will be used - mode of using the content.
+Web Content Management mode (WCM mode) is information related to requests about how the content
+is requested - mode of using the content.
 
 Available modes are:
 
