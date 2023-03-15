@@ -59,7 +59,7 @@ Run WebSight, open the _Luna_ space and edit the home page. Find the _Title_ com
 
 ![Title panel properties](title-panel-properties.png)
 
-Enable the `Overline text` option, move `Meet our` from `Heading text` to `Overline text` and submit changes.
+Enable the `Overline text` option, move `Meet our` from `Heading text` to `Overline text`.
 
 ![Updated title](title-updated.png)
 
