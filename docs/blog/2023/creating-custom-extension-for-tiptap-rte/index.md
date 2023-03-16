@@ -17,8 +17,6 @@ tags:
 
 > There was a need to add plugin, which should be masking e-mail addresses inside Rich Text Editor in case to prevent spam messages. This new RTE plugin was created as a custom, written from scratch, fully customizable component for [ds.pl](https://ds.pl) website. Let's follow the process of creation such a component, with a little help of [TipTap library](https://tiptap.dev/introduction), which lies underneath the Rich Text Editor.
 
-See our other article about [Customizing Rich Text Editor in WebSight CMS](https://www.websight.io/blog/2022/customizing-rich-text-editor/), where you can read more about RTE configuration and learn how to create plugin from predefined components.
-
 ## New component requirements
 
 The new component is supposed to add a masked email address in case it prevents spam messages. An anchor tag should not contain a plain, easy-to-read email address, instead can use data attributes for storing email parts. Example of pretected email address could look like this:
@@ -48,6 +46,9 @@ Due to component specifcity, the work can be split into two parts:
 Therefore, **the component must be used with the script provided within page**, otherwise, email links won’t be decoded.
 
 As the decoding email script will be the last step, let’s focus on the main issue here – extending the RTE editor. Such an editor component is made up of two parts: the plugin element and the UI element. The plugin part is responsible for the plugin behavior and it is directly related to the UI part, which is providing UI for the plugin itself. In Websight CMS, the tiptap library is responsible for plugins, and for UI - a separate module that is a part of Websight CMS. As for the plugin, we can either extend or create a new extension. But what about the UI element for this plugin? Any of these (button, button dropdown, list dropdown, link) don't match the requirements, because we need a dropdown with one input (link UI has input and select with `target` attribute selection). So we need a new UI as well.
+
+!!! Hint
+    See our other article about [Customizing Rich Text Editor in WebSight CMS](https://www.websight.io/blog/2022/customizing-rich-text-editor/), where you can read more about RTE configuration and learn how to create plugin from predefined components.
 
 ## Page part - configuration
 Let's start by preparing an extended configuration according to [the documentation](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#extending-and-overriding-configuration). The example path for an extended configuration could be `/apps/rte/extended/configuration/.content.json`. After that we can use this new configuration in our components, just like in the another part of [the documentation - Using configuration](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#using-configuration).
