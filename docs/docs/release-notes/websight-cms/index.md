@@ -1,6 +1,6 @@
 # WebSight CMS Release Notes
 
-## 1.11.0 <small>March 1, 2023</small>
+## 1.11.0 <small>March 15, 2023</small>
 
 #### Page Editor
 - New feature from roadmap [#2](https://github.com/websight-io/roadmap/issues/2) - added the side panel with component properties.
