@@ -1,15 +1,14 @@
---- 
-title: Creating a custom extension for TipTap Rich Text Editor
-description: RTE can be extended with additional fields, which provide new formatting options for users. However, the list of available plugins
-may not be sufficient for demanding clients. Let's create a completely new component for the RTE toolbar, using the TipTap library which lies
-underneath the Rich Text Editor component. 
-author: Martyna Szeszko
-image: WS-and-tiptap.jpg 
-publicationDate: 16.02.2023 
-minReadTime: 12
-tags:  
- - WebSight 
 ---
+title: Creating a custom extension for Rich Text Editor using TipTap
+description: The WebSight Rich Text Editor can be extended to include additional fields that provide new formatting options. However, sometimes the list of available plugins is not enough. Learn how to create a new component for the RTE toolbar using the TipTap library as a foundation.
+author: Martyna Szeszko
+publicationDate: 20.03.2023
+minReadTime: 12
+image: email-extension.png
+tags:
+  - WebSight
+---
+
 
 *Published at: 16.02.2023 by [Martyna Szeszko](https://github.com/martyna-ds)*
 
@@ -60,7 +59,7 @@ with one input (link UI has input and select with `target` attribute selection).
     See our other article about [Customizing Rich Text Editor in WebSight CMS](https://www.websight.io/blog/2022/customizing-rich-text-editor/), where you can read more about RTE configuration and learn how to create a plugin from predefined components.
 
 ## Page part - configuration
-Let's start by preparing an extended configuration according to [the documentation](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#extending-and-overriding-configuration). The example path for an extended configuration could be `/apps/rte/extended/configuration/.content.json`. After that we can use this new configuration in our components, just like in the another part of [the documentation - Using configuration](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#using-configuration).
+Let's start by preparing an extended configuration according to [the documentation](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#extending-and-overriding-configuration). The example path for an extended configuration could be `/apps/rte/extended/configuration/.content.json`. After that we can use this new configuration in our components, just like described [here](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#using-configuration).
 
 ```json title=".../application/backend/src/main/resources/apps/wcm/dialogs/components/richtext/configuration/.content.json"
 {
@@ -264,6 +263,7 @@ const Email = () => ({
 
 export default Email;
 ```
+
 - `getTipTapExtension` method is doing exactly what its name indicates, as well as making it possible to switch off/on some plugin features 
 - `execute` runs when the user clicks the submit button 
 - `getState` is passing the current editor state
@@ -284,9 +284,12 @@ window.addEventListener('load', () => {
     }
 });
 ```
+
+## Result
+
+The implemented extension for RTE is presented below.
 <p align="center" width="100%">
     <img class="image" src="email-extension.png" alt="Extension for tiptap rich text editor in websight CMS - result">
-    Result
 </p>
 
 ## Summary
