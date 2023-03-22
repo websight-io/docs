@@ -10,7 +10,7 @@ tags:
 ---
 
 
-*Published at: 16.02.2023 by [Martyna Szeszko](https://github.com/martyna-ds)*
+*Published at: 20.03.2023 by [Martyna Szeszko](https://github.com/martyna-ds)*
 
 <p align="center" width="100%">
     <img class="image" src="WS-and-tiptap.jpg" alt="Extension for tiptap rich text editor in websight CMS">
