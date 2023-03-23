@@ -1,5 +1,15 @@
 # WebSight CMS Release Notes
 
+## 1.11.1 <small>March 21, 2023</small>
+
+#### Page Editor
+- Fixed blinking component selection and toolbar after changing component properties in the side panel.
+- Improved selected component loading state after changing component properties in the side panel.
+- Fixed the lack of component selection after changing component properties in the modal.
+
+#### Dialogs
+- Fixed [#63](https://github.com/websight-io/starter/issues/63) - [toggle](/docs/developers/development/dialogs/toggle/), [checkbox](/docs/developers/development/dialogs/checkbox/), [radio](/docs/developers/development/dialogs/radio/), [rich text editor](/docs/developers/development/dialogs/richtext-editor/), and [text area](/docs/developers/development/dialogs/text-area/) work right in the [multifield](/docs/developers/development/dialogs/multifield/) now.
+
 ## 1.11.0 <small>March 15, 2023</small>
 
 #### Page Editor
