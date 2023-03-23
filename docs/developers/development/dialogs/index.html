@@ -4104,7 +4104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <h1 id="dialogs">Dialogs</h1>
-<p>The Dialogs framework in WebSight CMS allows users to define dialog field components. They can use these components to build dialogs for submitting the data that is saved in content resources.</p>
+<p>The Dialogs framework in WebSight CMS allows users to define dialog field components. They can use these components to build dialogs for submitting data that is saved in content resources.</p>
 <p>WebSight CMS delivers a set of ready-to-use components. These are detailed in the subsections of this documentation page.</p>
 <div class="admonition info">
 <p class="admonition-title">Rendering dialogs</p>
@@ -4112,10 +4112,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 However, dialogs can be rendered in other ways, for example as a <a href="../page-editor/side-panel">side panel</a>. </p>
 </div>
 <h2 id="dialog-structure">Dialog structure</h2>
-<p>Each dialog can be build out of two element types:</p>
+<p>Each dialog can be built using two element types:</p>
 <ul>
-<li>containers - used to achieve proper structure of fields in dialog, examples: container, tab, tabs</li>
-<li>fields - used to input values via dialog, examples: textfield, numberfield, pathPicker</li>
+<li>containers - used to achieve proper structure of fields in a dialog. Examples: container, tab, tabs</li>
+<li>fields - used to input values via dialogs. Examples: textfield, numberfield, pathPicker</li>
 </ul>
 <p>An example dialog structure definition:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
@@ -4169,36 +4169,36 @@ However, dialogs can be rendered in other ways, for example as a <a href="../pag
 <a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="p">}</span>
 </code></pre></div></p>
-<p>This will result with following in UI dialog: </p>
+<p>This will result in the following within the UI dialog: </p>
 <p><img alt="Dialog example tab1" src="dialog-example-tab1.png" /></p>
 <p><img alt="Dialog example tab2" src="dialog-example-tab2.png" /></p>
 <h2 id="data-structure">Data structure</h2>
 <p>The data structure depends on the <code>name</code> property. </p>
 <ul>
 <li>
-<p>In the simplest example property value is saved directly as a resource property. 
+<p>In a simple example, a property value is saved directly as a resource property. 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/textfield&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Title&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;title&quot;</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
 </code></pre></div>
-In above example, the <code>title</code> is added directly as a resource property.
+In the above example, the <code>title</code> is added directly as a resource property.
 <img alt="Simple data property" src="dialog-data-simple.png" /></p>
 </li>
 <li>
-<p>There is also a possibility to manipulate data from other resources by using a path in the <code>name</code> property:
+<p>You can also manipulate data from other resources by using a path in the <code>name</code> property:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;alt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/textfield&quot;</span><span class="p">,</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/alt&quot;</span><span class="p">,</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alt text&quot;</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
 </code></pre></div>
-In above example, the <code>alt</code> property is saved as an image property from the header context.
+In the above example, the <code>alt</code> property is saved as an image property from the header context.
 <img alt="Child resource property" src="dialog-data-path.png" /></p>
 </li>
 <li>
-<p>Another example of manipulating data from other resources is using a multifield. This dialog field <code>name</code> property defines a node under which are created other resources with properties defined in the multifield.
+<p>You can also manipulate data from other resources using a multifield. The following dialog field <code>name</code> property defines a node, under which we create other resources with properties defined in the multifield property.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;urls&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/multifield&quot;</span><span class="p">,</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urls&quot;</span><span class="p">,</span>
@@ -4219,34 +4219,34 @@ In above example, the <code>alt</code> property is saved as an image property fr
 </li>
 </ul>
 <h2 id="validation">Validation</h2>
-<p>WebSight supports the validation of dialog values on BackEnd side. If the value is incorrect, then it won’t be saved and the dialog can’t be submitted. The author will see a proper error message.
+<p>WebSight supports the validation of dialog values on the backend side. If the value is incorrect, it won't be saved and the dialog can't be submitted. The author will see an error message:
 <img alt="" src="dialog-backend-validation.png" /></p>
 <h3 id="custom-validator">Custom validator</h3>
-<p>To prepare a custom validator you have to extend an <code>pl.ds.websight.dialog.spi.DialogValidator</code> form <code>pl.ds.websight:websight-dialogs-service</code> as an OSGi <code>@Component(service = DialogValidator.class)</code>. 
-You have to implement the following methods:</p>
+<p>To prepare a custom validator you have to extend <code>pl.ds.websight.dialog.spi.DialogValidator</code> from <code>pl.ds.websight:websight-dialogs-service</code> as an OSGi <code>@Component(service = DialogValidator.class)</code>.</p>
+<p>You must implement the following methods:</p>
 <ul>
-<li><code>boolean supports(Resource resource)</code> - should return whether the dialog resource is supported by this validator - this check will be done for each resource representing dialog fields</li>
-<li><code>String validate(Resource resource, Map&lt;String, Object&gt; propertiesToSave)</code> - should return a validation result. In the case of:<ul>
+<li><code>boolean supports(Resource resource)</code> - should return whether the dialog resource is supported by this validator. This check will be done for each resource that represents dialog fields</li>
+<li><code>String validate(Resource resource, Map&lt;String, Object&gt; propertiesToSave)</code> - should return a validation result as follows:<ul>
 <li><code>success</code> - return null</li>
-<li><code>error</code> - return String with a proper message, which will be displayed in Dialog</li>
+<li><code>error</code> - return String with an error message, which will be displayed in the dialog</li>
 </ul>
 </li>
 </ul>
 <h2 id="showhide-dialog-fields">Show/hide dialog fields</h2>
-<p>By default, all dialog components are visible, but there is a possibility to hide them.</p>
+<p>By default, all dialog components are visible, but you can hide them if you wish.</p>
 <h3 id="context">Context</h3>
-<p>To show or hide a particular field depending on dialog context you can use a <code>ws:disallowedContext</code> parameter.
-The default <code>context</code> value used for dialogs is <code>edit</code>. Depending on dialog usage different contexts might be used. For example during creating a page 'create' context is being used - this way some fields might be disabled during the page creation process.</p>
+<p>To show or hide a particular field depending on dialog context you can use the <code>ws:disallowedContext</code> parameter.
+The default <code>context</code> value used for dialogs is <code>edit</code>. Depending on dialog usage, different contexts might be used. For example, when creating a page, the 'create' context is used. This waym some fields might be disabled during the page creation process.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;ws:disallowedContext&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;create&quot;</span><span class="p">]</span>
 </code></pre></div>
-<p>To hide an element in dialog, the request from Front-End which fetches it has to contain the additional parameter <code>context</code>. If the context value matches one of <code>ws:dissallowedContext</code> values, then the field won’t be rendered. To check request details, go to the <a href="http://localhost:8080/apps/apidocs#/apps/websight-dialogs-service/docs/api.html">Swagger documentation</a>.</p>
+<p>To hide an element in dialog, the request from the front-end that fetches it must contain the additional parameter <code>context</code>. If the context value matches one of the <code>ws:dissallowedContext</code> values, then the field won't be rendered. To check request details, refer to the <a href="http://localhost:8080/apps/apidocs#/apps/websight-dialogs-service/docs/api.html">Swagger documentation</a>.</p>
 <h3 id="conditions">Conditions</h3>
-<p>To show or hide a particular field depends on other fields’ state you can use a <code>ws:display</code> node.
-This node should contain children defining conditions to show the element. If the component has such a child node it’s hidden by default. It’s required to fulfill at least one condition to show the component.</p>
+<p>To show or hide a particular field based on other fields' state, you can use a <code>ws:display</code> node.
+This node should contain children that define the conditions that determine whether the element is displayed. If the component has this child node, it's hidden by default. It must fulfill at least one of the defined conditions to show the component.</p>
 <p>Each condition should have two properties:</p>
 <ul>
-<li>sourceName - with the name of the component whose value would be checked</li>
-<li>values - with one or more values. At least one of them should match the source field value to fulfill the condition.</li>
+<li>sourceName - the name of the component whose value would be checked</li>
+<li>values - one or more values. At least one of them should match the source field value to fulfill the condition.</li>
 </ul>
 <p>Example conditions configurations:</p>
 <ul>
@@ -4318,8 +4318,8 @@ This node should contain children defining conditions to show the element. If th
 </li>
 </ul>
 <h2 id="default-state">Default state</h2>
-<p>Some components allow defining a default state. E.g. checkbox can be checked by default, and select can have the default option. It is significant to keep using those components with the same default state used in backend models.
-Example:</p>
+<p>Some components allow you to define a default state. For exmaple, a checkbox can be checked by default, and selecting it can use the default option. It is important to keep using those components with the same default state that is used in backend models.</p>
+<p>Example:</p>
 <ul>
 <li>dialog field definition with h2 selected by default:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
