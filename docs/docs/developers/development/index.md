@@ -41,7 +41,7 @@ As we mentioned, WebSight CMS is based on [Apache Sling](https://sling.apache.or
 It is important to understand the concept of an “extensible content tree,” so let's discuss in a bit more detail.
 
 The WebSight CMS Resource Browser admin tool allows developers to browse all Resources available on the instance. Resources are organized in the tree and every resource has a path and properties. Resources are abstractions that represent objects that might come from different sources.
-The Resource Browser provides an option to select ‘Providers’ (sources of Resources available in the instance) used to display the presented Resources tree. We will focus on JCR and Bundle resources. 
+The Resource Browser provides an option to select _Providers_ (sources of Resources available in the instance) used to display the presented Resources tree. We will focus on JCR and Bundle resources. 
 
 [http://localhost:8080/apps/browser#/](http://localhost:8080/apps/browser#/)
 ![WebSight CMS - Resource Browser](img12.png)
@@ -79,9 +79,9 @@ And in the Resources tree:
 
 ## Backend Resources
 
-The generated application/backend module contains (in the src/main/resources folder) some example application resources needed to work with Pages in WebSight CMS.
+The generated application/backend module contains (in the `src/main/resources` folder) some example application resources needed to work with Pages in WebSight CMS.
 
-The resources structure starts at the /apps/example-project path. This path is set in the proper OSGi bundle header to provide information about resources delivered by the bundle.
+The resources structure starts at the `/apps/example-project` path. This path is set in the proper OSGi bundle header to provide information about resources delivered by the bundle.
 
 ![Resource structure tree](img17.png)
 
@@ -100,8 +100,8 @@ The following resources are defined:
             └── pagesspace          - example pages space template
 ```
 
-The application root should be under the /apps resource and must contain the property `sling:resourceType" = "ws:Application`.
-Folders containing components and templates must be named ‘components’ and ‘templates’ and be under the application root resource. Different relative paths could be set by providing ‘components’ or ‘templates’ properties with relative paths to components or templates folders located under the application root resource. Otherwise, components and templates will not be available in the authoring UI.
+The application root should be under the `/apps` resource and must contain the property `sling:resourceType" = "ws:Application`.
+Folders containing components and templates must be named `components` and `templates` and be under the application root resource. Different relative paths could be set by providing `components` or `templates` properties with relative paths to components or templates folders located under the application root resource. Otherwise, components and templates will not be available in the authoring UI.
 
 ## Pages Space template
 
@@ -110,7 +110,7 @@ In WebSight CMS, content is organized in Spaces. Spaces are areas where dedicate
 - Assets (Digital Assets Manager) - allows managing assets
 - Pages - allows managing pages and assets (includes the same functionality as Assets Space and more)
 
-The content module in the project generated from the archetype contains the Pages Space instance ‘Example project’, which is visible in the All Spaces view.
+The content module in the project generated from the archetype contains the Pages Space instance _Example project_, which is visible in the _All Spaces_ view.
 
 A new Space can be created from the UI:
 
@@ -119,8 +119,8 @@ A new Space can be created from the UI:
 ![Create space - pages configuration](img19.png)
 
 In the second step, the Space template needs to be selected for Pages Space creation. 
-The list contains the ‘Example Project Pages’ template defined using the `/apps/example-project/templates/pagesspace` resource.
-The Pages Space template resource must have `sling:resourceType` set to `ws:PagesTemplate` and should provide the allowedChildren property (which defines the list of allowed pages templates to create).
+The list contains the _Example Project Pages_ template defined using the `/apps/example-project/templates/pagesspace` resource.
+The Pages Space template resource must have `sling:resourceType` set to `ws:PagesTemplate` and should provide the `allowedChildren` property (which defines the list of allowed pages templates to create).
 
 ![Page template - resource](img20.png)
 
@@ -148,16 +148,16 @@ A new Pages Space template will be available:
 
 Pages spaces are for page management. To create a new page, a page template is needed. The generated backend module provides an example page template resource `/apps/example-project/templates/contentpage`
 
-- `sling:resourceType` property of the page template must be ws:PageTemplate.
+- `sling:resourceType` property of the page template must be `ws:PageTemplate`.
 - title and description properties are used in UI.
-- the allowedChildren property contains an array of page templates that can be created under pages created from this template. The content Page template allows for the creation of subpages of the same type.
+- the `allowedChildren` property contains an array of page templates that can be created under pages created from this template. The _Content Page_ template allows for the creation of subpages of the same type.
 
 ![New page template - resources](img23.png)
 
-The `/apps/example-project/templates/contentpage` was listed in _allowedChildren_ property in the Pages Space template (`/apps/example-project/templates/pagesspace`). This is a templates of the Example Project space:
+The `/apps/example-project/templates/contentpage` was listed in `allowedChildren` property in the _Pages Space_ template (`/apps/example-project/templates/pagesspace`). This is a template of the _Example Project_ space:
 ![New page template - resource browser](img24.png)
 
-This means that the page template /apps/example-project/templates/contentpage can be created under the page's root in the space:
+This means that the page template `/apps/example-project/templates/contentpage` can be created under the page's root in the space:
 [http://localhost:8080/apps/websight/index.html/content/example-project/pages](http://localhost:8080/apps/websight/index.html/content/example-project/pages ) (click Create Page button)
 ![New page - template selection ](img25.png)
 
@@ -166,9 +166,9 @@ In the second step, page properties can be set:
 
 The dialog displayed at this step is a dialog of the component defined in the initial content of the page template (`sling:resourceType": "example-project/components/page`). Read more about components and dialogs in the [Components section](/docs/developers/components/) of the WebSight CMS documentation.
 
-The initial content of the page template is defined in a resource named ‘initial’, which is located under the page template resource. The initial content is copied to initialize the created page. Properties are set via a dialog on the copied page content.
+The initial content of the page template is defined in a resource named `initial`, which is located under the page template resource. The initial content is copied to initialize the created page. Properties are set via a dialog on the copied page content.
 
-Page is a node of type ws:Page. It contains a page content sub-node named jcr:content of the type ws:PageContent. The nodes located under the page content node can be modified via the authoring UI. All the Page properties (including properties set via the page dialog) are set on the page content node.
+Page is a node of type `ws:Page`. It contains a page content sub-node named `jcr:content` of the type `ws:PageContent`. The nodes located under the page content node can be modified via the authoring UI. All the Page properties (including properties set via the page dialog) are set on the page content node.
 
 This is the initial content of the `/apps/example-project/templates/contentpage` page template:
 ![Initial content for the template](img27.png)
@@ -177,7 +177,7 @@ This is how the content node of the newly created page appears:
 ![Content node - resource browser](img28.png)
 
 New page templates can be created in the application.
-`/apps/example-project/templates/examplpage` is a copy of  `/apps/example-project/templates/contentpage` with changed title, allowedChildren
+`/apps/example-project/templates/examplpage` is a copy of  `/apps/example-project/templates/contentpage` with changed title, `allowedChildren`
 
 ``` json title="/apps/example-project/templates/examplpage"
 {
@@ -210,7 +210,7 @@ and initial content:
 ```
 ![](img29.png)
 
-To make it possible to create under the pages' root in the space, you must add it to allowedChildren in the pages space template `/apps/example-project/templates/pagesspace`:
+To make it possible to create under the pages' root in the space, you must add it to `allowedChildren` in the pages space template `/apps/example-project/templates/pagesspace`:
 ![](img30.png)
 
 Deploy changes again with: `mvn clean install -P autoInstallBundle`
@@ -288,7 +288,7 @@ Frontend scripts and resources are provided by the frontend module, which is a w
 
 The generated module contains a simple CSS class to center the text used in the hello component.
 
-The CSS files are built into the main.css file by webpack and embedded into the OSGi bundle installed on the instance, which makes the files available as resources (because of the Sling-Bundle-Resources header in the bundle header).
+The CSS files are built into the `main.css` file by webpack and embedded into the OSGi bundle installed on the instance, which makes the files available as resources (because of the Sling-Bundle-Resources header in the bundle header).
 
 Frontend resources are published automatically via the WebSight-Apps-WebRoot bundle header (see next chapter about publishing).
 The CSS file is included in the page component renderer to load the CSS.
