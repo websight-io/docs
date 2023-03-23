@@ -140,7 +140,7 @@ By default, all dialog components are visible, but you can hide them if you wish
 
 ### Context
 To show or hide a particular field depending on dialog context you can use the `ws:disallowedContext` parameter.
-The default `context` value used for dialogs is `edit`. Depending on dialog usage, different contexts might be used. For example, when creating a page, the 'create' context is used. This waym some fields might be disabled during the page creation process.
+The default `context` value used for dialogs is `edit`. Depending on dialog usage, different contexts might be used. For example, when creating a page, the 'create' context is used. This way some fields might be disabled during the page creation process.
 
 ```json
 "ws:disallowedContext": ["create"]
