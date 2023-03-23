@@ -5,6 +5,9 @@
 #### Page Editor
 - Fixed the lack of refresh for the side panel with component properties after the user updated them in the modal.
 
+#### Dialogs
+- Fixed modal closing with _ESC_ button after changing a tab.
+
 ## 1.11.1 <small>March 21, 2023</small>
 
 #### Page Editor
