@@ -8,7 +8,8 @@
 - Fixed the lack of component selection after changing component properties in the modal.
 
 #### Dialogs
-- Fixed [#63](https://github.com/websight-io/starter/issues/63) - [toggle](/docs/developers/development/dialogs/toggle/), [checkbox](/docs/developers/development/dialogs/checkbox/), [radio](/docs/developers/development/dialogs/radio/), [rich text editor](/docs/developers/development/dialogs/richtext-editor/), and [text area](/docs/developers/development/dialogs/text-area/) work right in the [multifield](/docs/developers/development/dialogs/multifield/) now.
+- Fixed [#63](https://github.com/websight-io/starter/issues/63) and [#149](https://github.com/websight-io/starter/issues/149) - [toggle](/docs/developers/development/dialogs/toggle/), [select](/docs/developers/development/dialogs/select/), [checkbox](/docs/developers/development/dialogs/checkbox/), [radio](/docs/developers/development/dialogs/radio/), [rich text editor](/docs/developers/development/dialogs/richtext-editor/), and [text area](/docs/developers/development/dialogs/text-area/) work right in the [multifield](/docs/developers/development/dialogs/multifield/) now. Additionally, the description for the input field included in the multifield is presented on hover.
+
 
 ## 1.11.0 <small>March 15, 2023</small>
 
