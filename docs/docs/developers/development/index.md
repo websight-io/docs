@@ -100,8 +100,8 @@ The following resources are defined:
             └── pagesspace          - example pages space template
 ```
 
-The application root should be under the `/apps` resource and must contain the property `sling:resourceType" = "ws:Application`.
-Folders containing components and templates must be named `components` and `templates` and be under the application root resource. Different relative paths could be set by providing `components` or `templates` properties with relative paths to components or templates folders located under the application root resource. Otherwise, components and templates will not be available in the authoring UI.
+The application root should be under the `/apps` or `/libs` resource and must contain the property `sling:resourceType" = "ws:Application`.
+Folders containing components and templates must be named `components` and `templates` and be under the application root resource. Different relative paths could be set by providing `components` or `templates` properties with relative paths (relative to application root resource) to components or templates folders located under the application root resource. Otherwise, components and templates will not be available in the authoring UI.
 
 ## Pages Space template
 
