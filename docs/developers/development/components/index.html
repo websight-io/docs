@@ -4058,61 +4058,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="components">Components</h1>
 <h2 id="overview">Overview</h2>
-<p>This document describes the components concept and shows the components usage from WebSight CMS authoring interface.</p>
-<p>In this documentation we will be referring to:</p>
+<p>This document describes the components concept. It also shows how to use components in the WebSight CMS authoring interface.</p>
+<p>In this documentation we use the follow terms:</p>
 <ul>
-<li>WebSight CMS pages editor - UI for authoring pages content</li>
-<li>WebSight Resource Browse - administration tool allowing to see resources (data and application) available on the WebSight CMS instance</li>
+<li>WebSight CMS pages editor: Refers to the UI for authoring page content</li>
+<li>WebSight Resource Browse: Refers to the administration tool that allows users to see the resources (data and application) that are available on the WebSight CMS instance</li>
 </ul>
-<p>Both views can be open from WebSight UI:</p>
+<p>Both views can be opened from the WebSight UI:</p>
 <p><img alt="WebSight - page editing &amp; opening Resource Browser" src="websight-page-edit-resource-browser.png" /></p>
-<p>Check WebSight project setup documentation to see more details about</p>
+<p>Check the WebSight project setup documentation to see more details about:</p>
 <ul>
-<li>what is WebSight CMS and what it gives you</li>
+<li>what WebSight CMS is, and what it gives you</li>
 <li>implementing applications for WebSight CMS Community Edition</li>
-<li>OSGi, OSGi bundles, Sling Resources, JCR, and more</li>
+<li>the role of OSGi, OSGi bundles, Sling Resources, JCR and more in WebSight CMS</li>
 </ul>
 <h2 id="what-is-component">What is component</h2>
 <p>Components are:</p>
 <ul>
-<li>elements rendering parts of content according to implemented functionality</li>
+<li>elements that render parts of content according to implemented functionality</li>
 <li>used to assemble content (like pages)</li>
-<li>available in WebSigh CMS authoring interface</li>
+<li>available in the WebSight CMS authoring interface</li>
 <li>reusable</li>
 <li>configurable by editing properties on created components instances</li>
 <li>implemented by developers</li>
-<li>shipped in OSGi bundles deployed to WebSight CMS instance</li>
+<li>shipped in OSGi bundles that are deployed to a WebSight CMS instance</li>
 </ul>
 <p>Components can:</p>
 <ul>
 <li>include (embed) other components</li>
 <li>extend other components</li>
 <li>deliver initial content</li>
-<li>define dialog used to edit properties on component instance</li>
-<li>be containers (allow to add child components during authoring)</li>
-<li>define allowed child components (in case of containers)</li>
+<li>define dialogs, which are used to edit properties on component instances</li>
+<li>be containers (allowing you to add child components during authoring)</li>
+<li>define allowed child components (in the case of containers)</li>
 </ul>
 <h2 id="using-components">Using components</h2>
-<p>Let’s make the statements about what the component is clear by looking at the authoring interface and content data structure.</p>
-<p>WebSight CMS page editor lists all available components which can be used to build pages at a given WebSight instance (depending on OSGi bundles delivering components installed on the instance). Those components can be added to the page by dragging them to the page content view at the center of the screen.</p>
+<p>To provide more context on components, let's look at the authoring interface and content data structure.</p>
+<p>The WebSight CMS page editor lists all available components that can be used to build pages on a given WebSight instance. Available components depend on the OSGi bundles that delivering components installed on the instance. Those components can be added to the page by dragging them to the page content view at the center of the screen.</p>
 <p><img alt="Components definitions listed in WebSight CMS page editor" src="page-editor-components.png" />
-Components definitions listed in WebSight CMS page editor</p>
-<p>Page content structure can be checked in the page editor content tree tab. This view presents the components tree under page content.
-This example page for now contains just the <em>Page Section</em> component - this is the only component present currently in page content of this example page.</p>
+Components definitions listed in the WebSight CMS page editor</p>
+<p>You can check the page content structure in the page editor content tree tab. This view presents the components tree under page content.
+This example page contains just the <em>Page Section</em> component, which is the only component present currently in the page content of this example page.</p>
 <p><img alt="Page content tree in editor" src="page-editor-content-tree.png" style="width:350px" /></p>
 <p>Page content tree in editor</p>
-<p>The <em>Page Section</em> component is a container. It allows adding other components via the authoring interface. The page editor content section displays an empty <em>Page Section</em> component as a box containing a placeholder text "Drag components here".</p>
-<p>After drag-and-drop of <em>Title</em> and <em>Rich Text</em> components the page content tree is updated with new nodes. The nodes visible in the content tree are the instances of components. 
-<em>Title</em> and <em>Rich Text</em> components are not containers so other components cannot be added as their child components. During dragging other components from components list the new items can be added just next to those components as other children on the <em>Page Section</em> component.</p>
+<p>The <em>Page Section</em> component is a container. It allows you to add other components via the authoring interface. The page editor content section displays an empty <em>Page Section</em> component as a box containing the placeholder text "Drag components here."</p>
+<p>After dragging and dropping the <em>Title</em> and <em>Rich Text</em> components, the page content tree is updated with new nodes. The nodes visible in the content tree are the instances of components.</p>
+<p><em>Title</em> and <em>Rich Text</em> components are not containers, so other components cannot be added as their child components. While dragging other components from the components list, the new items can be added next to those components as other children on the <em>Page Section</em> component.</p>
 <p><img alt="RTE component" src="RTE-component.png" /></p>
-<p>After adding a component to the page, edit action can be used to edit selected component instance. The dialog which is displayed is a part of component definition. It is defined by the developer implementing a given component with use of set given dialog fields (see more in <a href="../dialogs/">Dialogs</a> documentation). Properties set via the dialog are saved at edited component instances and used by the component to render the part of content according to the implemented functionality - for example <em>Title</em> component is rendering the <code>Heading text</code> field value in HTML <code>&lt;h&gt;</code> tag and allows to set <code>&lt;h&gt;</code> tag level and styling.</p>
+<p>After adding a component to the page, the edit action can be used to edit the selected component instance. The dialog that is displayed is a part of the component definition. It is defined by the developer implementing a given component by setting the proper dialog fields (see more in the <a href="../dialogs/">Dialogs</a> documentation). Properties set via the dialog are saved at edited component instances, and are used by the component to render the appropriate part of content based on the implemented functionality. For example, the <em>Title</em> component renders the <code>Heading text</code> field value in the HTML <code>&lt;h&gt;</code> tag and allows you to set <code>&lt;h&gt;</code> tag level and styling.</p>
 <p><img alt="Title component - dialog" src="title-component-dialog.png" /></p>
-<p>Components are reusable. Another <em>Title</em> component can be added to the page and configured with its own data.
-After the second title, the <em>Cards List</em> component is added now. This component is a container but implemented to work with specific type of child components - only <em>Card Item</em> components can be added inside (this behavior is part of <em>Cards List</em> component definition).
-<em>Cards List</em> component defines initial content added to the page when adding component. The initial content contains 3 child <em>Card Item</em> components (to save work during authoring and present the component in initialized state). 
-In the content tree it’s visible that <em>Card Item</em> components are child components of <em>Cards List</em> component.</p>
+<p>Components are reusable. Another <em>Title</em> component can be added to the page and configured with its own data.</p>
+<p>After the second title, the <em>Cards List</em> component is added now. This component is a container but implemented to work with specific type of child components: Only <em>Card Item</em> components can be added inside (this behavior is part of the <em>Cards List</em> component definition).</p>
+<p>The <em>Cards List</em> component defines initial content that is added to the page when adding a component. The initial content contains 3 child <em>Card Item</em> components (to save work during authoring and present the component in an initialized state).</p>
+<p>In the content tree , you can see that the <em>Card Item</em> components are child components of the <em>Cards List</em> component.</p>
 <p><img alt="Card List component" src="card-list-component-rendition.png" /></p>
-<p>Assembling and configuration of the page content can be continued this way with the use of available components.</p>
+<p>You can continue with assembling and configuring page content based on the available components.</p>
 
               
             </article>
