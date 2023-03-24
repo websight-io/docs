@@ -46,15 +46,18 @@ To provide more context on components, let's look at the authoring interface and
 
 The WebSight CMS page editor lists all available components that can be used to build pages on a given WebSight instance. Available components depend on the OSGi bundles that delivering components installed on the instance. Those components can be added to the page by dragging them to the page content view at the center of the screen.
 
-![Components definitions listed in WebSight CMS page editor](page-editor-components.png)
-Components definitions listed in the WebSight CMS page editor
+<p align="center" width="100%">
+    <img src="./page-editor-components.png" alt="Components definitions listed in the WebSight CMS page editor">
+    Components definitions listed in the WebSight CMS page editor.
+</p>
 
 You can check the page content structure in the page editor content tree tab. This view presents the components tree under page content.
 This example page contains just the _Page Section_ component, which is the only component present currently in the page content of this example page.
 
-![Page content tree in editor](page-editor-content-tree.png){: style="width:350px"}
-
-Page content tree in editor
+<p align="center" width="100%">
+    <img style="width:350px" src="./page-editor-content-tree.png" alt="Page content tree in the editor"> <br>
+    Page content tree in the editor.
+</p>
 
 The _Page Section_ component is a container. It allows you to add other components via the authoring interface. The page editor content section displays an empty _Page Section_ component as a box containing the placeholder text "Drag components here."
 
@@ -67,10 +70,10 @@ _Title_ and _Rich Text_ components are not containers, so other components canno
 
 After adding a component to the page, the edit action can be used to edit the selected component instance. The dialog that is displayed is a part of the component definition. It is defined by the developer implementing a given component by setting the proper dialog fields (see more in the [Dialogs](../dialogs/) documentation). Properties set via the dialog are saved at edited component instances, and are used by the component to render the appropriate part of content based on the implemented functionality. For example, the _Title_ component renders the `Heading text` field value in the HTML `<h>` tag and allows you to set `<h>` tag level and styling.
 
-
-![Title component - dialog](title-component-dialog.png)
-
-Components are reusable. Another _Title_ component can be added to the page and configured with its own data.
+<p align="center" width="100%">
+    <img src="./title-component-dialog.png" alt="Title component - dialog">
+    Components are reusable. Another <em>Title</em> component can be added to the page and configured with its own data.
+</p>
 
 After the second title, the _Cards List_ component is added now. This component is a container but implemented to work with specific type of child components: Only _Card Item_ components can be added inside (this behavior is part of the _Cards List_ component definition).
 
