@@ -4095,19 +4095,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="using-components">Using components</h2>
 <p>To provide more context on components, let's look at the authoring interface and content data structure.</p>
 <p>The WebSight CMS page editor lists all available components that can be used to build pages on a given WebSight instance. Available components depend on the OSGi bundles that delivering components installed on the instance. Those components can be added to the page by dragging them to the page content view at the center of the screen.</p>
-<p><img alt="Components definitions listed in WebSight CMS page editor" src="page-editor-components.png" />
-Components definitions listed in the WebSight CMS page editor</p>
+<p align="center" width="100%">
+    <img src="./page-editor-components.png" alt="Components definitions listed in the WebSight CMS page editor">
+    Components definitions listed in the WebSight CMS page editor.
+</p>
+
 <p>You can check the page content structure in the page editor content tree tab. This view presents the components tree under page content.
 This example page contains just the <em>Page Section</em> component, which is the only component present currently in the page content of this example page.</p>
-<p><img alt="Page content tree in editor" src="page-editor-content-tree.png" style="width:350px" /></p>
-<p>Page content tree in editor</p>
+<p align="center" width="100%">
+    <img style="width:350px" src="./page-editor-content-tree.png" alt="Page content tree in the editor"> <br>
+    Page content tree in the editor.
+</p>
+
 <p>The <em>Page Section</em> component is a container. It allows you to add other components via the authoring interface. The page editor content section displays an empty <em>Page Section</em> component as a box containing the placeholder text "Drag components here."</p>
 <p>After dragging and dropping the <em>Title</em> and <em>Rich Text</em> components, the page content tree is updated with new nodes. The nodes visible in the content tree are the instances of components.</p>
 <p><em>Title</em> and <em>Rich Text</em> components are not containers, so other components cannot be added as their child components. While dragging other components from the components list, the new items can be added next to those components as other children on the <em>Page Section</em> component.</p>
 <p><img alt="RTE component" src="RTE-component.png" /></p>
 <p>After adding a component to the page, the edit action can be used to edit the selected component instance. The dialog that is displayed is a part of the component definition. It is defined by the developer implementing a given component by setting the proper dialog fields (see more in the <a href="../dialogs/">Dialogs</a> documentation). Properties set via the dialog are saved at edited component instances, and are used by the component to render the appropriate part of content based on the implemented functionality. For example, the <em>Title</em> component renders the <code>Heading text</code> field value in the HTML <code>&lt;h&gt;</code> tag and allows you to set <code>&lt;h&gt;</code> tag level and styling.</p>
-<p><img alt="Title component - dialog" src="title-component-dialog.png" /></p>
-<p>Components are reusable. Another <em>Title</em> component can be added to the page and configured with its own data.</p>
+<p align="center" width="100%">
+    <img src="./title-component-dialog.png" alt="Title component - dialog">
+    Components are reusable. Another <em>Title</em> component can be added to the page and configured with its own data.
+</p>
+
 <p>After the second title, the <em>Cards List</em> component is added now. This component is a container but implemented to work with specific type of child components: Only <em>Card Item</em> components can be added inside (this behavior is part of the <em>Cards List</em> component definition).</p>
 <p>The <em>Cards List</em> component defines initial content that is added to the page when adding a component. The initial content contains 3 child <em>Card Item</em> components (to save work during authoring and present the component in an initialized state).</p>
 <p>In the content tree, you can see that the <em>Card Item</em> components are child components of the <em>Cards List</em> component.</p>

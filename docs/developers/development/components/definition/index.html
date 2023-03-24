@@ -4084,19 +4084,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><code>title</code> = <code>Say Hello</code> which is the title of the component visible in the authoring UI</li>
 <li><code>group</code> = <code>Example group</code> which is a group name visible in the authoring UI</li>
 </ul>
-<p><img alt="Example component definition in WebSight Resource Browser" src="example-component-definition.png" />
-Example component definition in WebSight Resource Browser</p>
+<p align="center" width="100%">
+    <img src="./example-component-definition.png" alt="Example component definition in the WebSight Resource Browser">
+    Example component definition in the WebSight Resource Browser.
+</p>
+
 <p>The component is visible in the WebSight CMS page editor. After adding it to the page, it renders ‘Hello World!’ text.</p>
 <p><img alt="Example component with default text - rendition" src="example-component-with-default-text-rendition.png" /></p>
 <p>Because the Say Hello component was added to the edited page, the corresponding node was created in the page content:</p>
-<p><img alt="Sample component content in WebSight Resource Browser" src="example-component-used-on-page.png" /></p>
+<p><img alt="Sample component content in the WebSight Resource Browser" src="example-component-used-on-page.png" /></p>
 <p>The <code>Hello World!</code> text is rendered in the view because of the <code>hello.html</code> resource defined under the component definition resource that contains the script used to render the content node. The script renders the <code>helloText</code> property value -- or <code>Hello World!</code>, if the property value is empty (it's empty for now, so we see the fallback text).</p>
-<p><img alt="Example component renderer in WebSight Resource Browser" src="example-component-renderer.png" />
-Example component renderer in WebSight Resource Browser.</p>
+<p align="center" width="100%">
+    <img src="./example-component-renderer.png" alt="Example component renderer in the WebSight Resource Browser">
+    Example component renderer in the WebSight Resource Browser.
+</p>
+
 <p>The second resource under the component definition is the <code>dialog</code> resource. This is the dialog definition resource. It contains a<code>sling:resourceType</code> = <code>wcm/dialogs/dialog</code> property, which defines how the dialog should be displayed (see more details in below) and it has sub-node called <code>helloText</code> that defines the text field (<code>sling:resourceType</code> = <code>wcm/dialogs/textfield</code>) input with the label <code>Hello Text</code>.</p>
-<p><img alt="Example component dialog resources in WebSight Resource Browser" src="example-component-dialog-definition.png" /></p>
-<p><img alt="Example component - text field definition for dialog" src="example-component-dialog-text-field-definition.png" />
-Example component dialog resources in WebSight Resource Browser.</p>
+<p align="center" width="100%">
+    <img src="./example-component-dialog-definition.png" alt="Example component dialog resources in the WebSight Resource Browser">
+    <img src="./example-component-dialog-text-field-definition.png" alt="Example component - text field definition for dialog">
+    Example component dialog resources in the WebSight Resource Browser.
+</p>
+
 <p>Because the dialog is defined, the edit action in the editor allows you to open the dialog as a set value of the text field.</p>
 <p><img alt="Say hello component with Hello text - dialog" src="example-component-with-hello-text-dialog.png" /></p>
 <p>The property value is set on the content node of this <em>Say Hello</em> component instance at the <code>helloText</code> property (according to the <code>name</code> property value at the text field node in the dialog definition):</p>
@@ -4124,31 +4133,37 @@ Use the following resource properties to define the component:</p>
         <td>sling:resourceSuperType</td>
         <td>No</td>
         <td>super resource type</td>
-        <td>Set this property to make your component extend another component. That way, the extended component elements can be reused in the extending components. Example value: "wcm/core/components/page"</td>
+        <td>Set this property to make your component extend another component. That way, the extended component elements can be reused in the extending components. <br> <br> Example value: <code>wcm/core/components/page</code></td>
     </tr>
     <tr>
         <td>title</td>
         <td>Yes</td>
         <td>string</td>
-        <td>Component name visible in UI. Example value: ‘Title’</td>
+        <td>Component name visible in UI. <br> <br> Example value: <code>Title</code></td>
     </tr>
     <tr>
         <td>group</td>
         <td>Yes</td>
         <td>string</td>
-        <td>Component group name. Allows us to present related components in the UI. Used while defining allowedComponents. Use the value ‘.hidden’ to make the component definition not visible in the UI. Example value: ‘General’ </td>
+        <td>Component group name. Allows us to present related components in the UI. Used while defining allowedComponents. Use the value <code>.hidden</code> to make the component definition not visible in the UI. <br> <br> Example value: <code>General</code> </td>
     </tr>
     <tr>
         <td>isContainer</td>
         <td>No</td>
         <td>boolean, false by default</td>
-        <td>Defines the component as a container. Containers are components that contain child components that can be added, removed and reordered using the authoring interface. If true, the allowedComponents property is required too.</td>
+        <td>Defines the component as a container. Containers are components that contain child components that can be added, removed and reordered using the authoring interface. If true, the <code>allowedComponents</code> property is required too.</td>
     </tr>
     <tr>        
         <td>allowedComponents</td>
         <td>No*</td>
         <td>array of strings. Values are absolute component paths and group names. No default value; by default nothing is allowed.</td>
-        <td>*required if isContainer=”true”; Array listing allowed child component absolute paths or groups that can be added to the container. Example value: [ "/apps/my-app/components/component1", "/apps/my-app/components/component2", "Content", "Blog" ] </td>
+        <td>
+            Array listing allowed child component absolute paths or groups that can be added to the container. 
+            <br> <br>
+            *Required if <code>isContainer=”true”</code>.
+            <br> <br>
+            Example value: <code>[ "/apps/my-app/components/component1", "/apps/my-app/components/component2", "Content", "Blog" ]</code> 
+        </td>
     </tr>
     <tr>
         <td>isLayout</td>
@@ -4157,7 +4172,7 @@ Use the following resource properties to define the component:</p>
         <td>Defines the component as a layout component.
             Layout components are displayed in a separate section in the WebSight CMS pages editor from components that are not layout components. <br> <br>
 
-            It’s up to the component developer to set isLayout=true, but the guideline is to use it for components that: <br> 
+            It’s up to the component developer to set <code>isLayout=true</code>, but the guideline is to use it for components that: <br> 
             - are used to define page layout <br>
             - must contain other components to be usable <br> 
             - contain no logic (other than logic related to layout calculation) <br> 
@@ -4186,13 +4201,13 @@ Use the following resource properties to define the component:</p>
 
         For example: <br>
 
-        ‘Section’ layout component contains an embedded Title component and is a container that renders child components below the Title. If the authoring section with four columns needs to be created, then the ‘Section’ component needs to be added with four containers inside that are configured to be displayed as columns. <br><br>
+        The <em>Section</em> layout component contains an embedded <em>Title</em> component and is a container that renders child components below the <em>Title</em>. If the authoring section with four columns needs to be created, then the <em>Section</em> component needs to be added with four containers inside that are configured to be displayed as columns. <br><br>
 
         If this page layout is commonly used during content authoring then a new layout component could be implemented to simplify the process.<br><br>
 
-        The ‘section with four columns’ layout component could be added. The instanceResourceType property should be set to the ‘Section’ component resource type and initial content should provide the same structure as was created manually before (a section plus four configured child containers). This way, after dropping ‘Section with four columns’ on the page, the commonly used content structure will be ready to use immediately.<br><br>
+        A <em>Section with four columns</em> layout component could be added. The <code>instanceResourceType</code> property should be set to the <em>Section</em> component resource type and initial content should provide the same structure as was created manually before (a section plus four configured child containers). This way, after dropping <em>Section with four columns</em> on the page, the commonly used content structure will be ready to use immediately.<br><br>
 
-        Example value: "my-app/components/section"
+        Example value: <code>my-app/components/section</code>
 
    </td>
 </table>
@@ -4201,30 +4216,43 @@ Use the following resource properties to define the component:</p>
 <p>Dialog is the form with inputs that allows you to set data on component instances in content.
 The form layout, fields and behavior are described by resources starting at a resource named <code>dialog</code> defined under the component definition resource. If the <code>dialog</code> resource is not defined, then the edit component properties action is not available in the editor.</p>
 <p>This is what the dialog definition structure looks like with the same dialog displayed in the editor:</p>
-<p><img alt="Title component - dialog definition" src="title-component-dialog-definition.png" />
-Component dialog resources structure in Resource Browser tool</p>
-<p><img alt="Component dialog displayed after edit component action in pages editor" src="title-component-dialog.png" />
-Component dialog displayed after edit component action in pages editor</p>
-<!-- -->
-<p>Read more in the Dialogs documentation.</p>
+<p align="center" width="100%">
+    <img src="./title-component-dialog-definition.png" alt="Title component - dialog definition">
+    Component dialog resources structure in Resource Browser tool.
+</p>
+
+<p align="center" width="100%">
+    <img src="./title-component-dialog.png" alt="Component dialog displayed after edit component action in pages editor">
+    Component dialog displayed after edit component action in pages editor.
+</p>
+
+<p>Read more in the <a href="/docs/developers/dialogs/">Dialogs documentation</a>.</p>
 <h2 id="rendering-script">Rendering script</h2>
-<p>To render components, the rendering script file resource is needed. The file resource name should be the same as the component name with the <code>.html</code> extension (the recommended and supported scripting language in WebSight CMS is the HTML Templating Language, or HTL). See the HTL specification <a href="https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md">here</a></p>
-<p>If Java support is needed in the HTL, the recommended solution is to use ot Models and the HTL Use-API. See details:</p>
+<p>To render components, the rendering script file resource is needed. The file resource name should be the same as the component name with the <code>.html</code> extension (the recommended and supported scripting language in the WebSight CMS is the HTML Templating Language, or HTL). See the HTL specification <a href="https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md">here</a></p>
+<p>If Java support is needed in the HTL, the recommended solution is to use the Sling Models and the HTL Use-API. See details:</p>
 <ul>
 <li><a href="https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#221-use"><em>use</em> block statement</a></li>
 <li><a href="https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#4-use-api">Use-API</a></li>
 <li><a href="https://sling.apache.org/documentation/bundles/models.html">Sling Models</a></li>
 </ul>
-<p><img alt="Component renderer script in WebSight Resource Browser" src="example-component-renderer-script.png" />
-Component renderer script in the WebSight Resource Browser.</p>
+<p align="center" width="100%">
+    <img src="./example-component-renderer-script.png" alt="Component renderer script in the WebSight Resource Browser">
+    Component renderer script in the WebSight Resource Browser.
+</p>
+
 <h2 id="template">Template</h2>
 <p>Component template is a resource that gets copied when creating a new component instance and adding it to a page. In other words, it is the initial content of the component. It is used to set default values or prepare necessary content structure. It could also be used to save work during content authoring.</p>
 <p>The component template resource is a component definition sub-node with the name <code>template</code>.
 The template resource is optional. If it's not present, a new empty node will be created.</p>
-<p><img alt="Component template resources structure" src="component-template-resources-structure.png" />
-Component template resources structure (view from the WebSight Resource Browser tool).</p>
-<p><img alt="Component instance added to the page content initialized from template" src="component-from-template-on-page.png" />
-Component instance added to the page content initialized from template (view from the WebSight Resource Browser tool).</p>
+<p align="center" width="100%">
+    <img src="./component-template-resources-structure.png" alt="Component template resources structure">
+    Component template resources structure (view from the WebSight Resource Browser tool).
+</p>
+
+<p align="center" width="100%">
+    <img src="./component-from-template-on-page.png" alt="Component instance added to the page content initialized from template">
+    Component instance added to the page content initialized from template <BR> (view from the WebSight Resource Browser tool).
+</p>
 
               
             </article>
