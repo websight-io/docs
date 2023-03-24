@@ -1,4 +1,4 @@
-# Developers Quick Start Guide
+# Developers quick start guide
 
 ## Introduction
 

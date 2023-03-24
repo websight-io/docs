@@ -1,4 +1,4 @@
-# Quick Start Guide
+# Quick start guide
 
 Follow this guide to run a local instance of WebSight CMS using Docker. The local instance serves as a testing instance where you can check out our demo site _Luna_. You can also use [Howlite](../authors/component-libs/howlite/index.md), our example components library, to create or update pages within the local instance. 
 

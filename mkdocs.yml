@@ -134,3 +134,23 @@ plugins:
           'docs/developers/dialogs/text-area/index.md': 'docs/developers/development/dialogs/text-area/index.md'
           'docs/developers/dialogs/textfield/index.md': 'docs/developers/development/dialogs/textfield/index.md'
           'docs/developers/dialogs/toggle/index.md': 'docs/developers/development/dialogs/toggle/index.md'
+
+          'docs/developers/architecture/index.md': 'docs/architecture/index.md'
+          'docs/developers/architecture/cms-modules-layers/index.md': 'docs/architecture/cms-modules-layers/index.md'
+          'docs/developers/architecture/aws-ecs/index.md': 'docs/architecture/aws-ecs/index.md'
+          'docs/developers/architecture/kubernetes/index.md': 'docs/architecture/kubernetes/index.md'
+
+          'docs/developers/deployment/aws-ecs/index.md': 'docs/deployment/aws-ecs/index.md'
+          'docs/developers/deployment/kubernetes/index.md': 'docs/deployment/kubernetes/index.md'
+          'docs/developers/deployment/linux/index.md': 'docs/deployment/linux/index.md'
+
+          'docs/developers/development/index.md': 'docs/developers/app-development/index.md'
+          'docs/developers/development/components/index.md': 'docs/developers/components/index.md'
+          'docs/developers/development/components/definition/index.md': 'docs/developers/components/definition/index.md'
+          'docs/developers/development/dialogs/index.md': 'docs/developers/dialogs/index.md'
+          'docs/developers/development/page-editor/index.md': 'docs/developers/page-editor/index.md'
+          'docs/developers/development/page-editor/extending-editor/index.md': 'docs/developers/page-editor/extending-editor/index.md'
+          'docs/developers/development/page-editor/side-panel/index.md': 'docs/developers/page-editor/side-panel/index.md'
+          'docs/developers/development/wcm-mode/index.md': 'docs/developers/wcm-mode/index.md'
+
+          

@@ -10,20 +10,20 @@
 
 Component allows to add actions group to menu bar. Each action should be defined as a DropdownItem child.
 
-### Configuration
+## Configuration
 
 - **title** -  `string` (required)  
     Group title. It’s displayed as a tooltip.
 
-### Children
+## Children
 
 - DropdownItem - Nodes defining available actions.
 
-# DropdownItem
+## DropdownItem
 
 **wcm/dialogs/components/richtext/ui/dropdown/dropdownitem**
 
-## Description
+### Description
 
 Component allows to add action to dropdown.
 

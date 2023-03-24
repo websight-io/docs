@@ -1,4 +1,4 @@
-# WebSight CMS Release Notes
+# WebSight CMS release notes
 
 ## 1.11.2 <small>March 23, 2023</small>
 

@@ -2,7 +2,7 @@
 
 Configuration defines RTE toolbar and functionalities
 
-# Using configuration
+## Using configuration
 
 RTE provides default configuration at `/libs/wcm/dialogs/components/richtext/configuration`.
 
@@ -72,7 +72,7 @@ Configuration (referenced or inline) can extend other configuration by using `sl
 }
 ```
 
-# Building configuration
+## Building configuration
 
 Configuration is prepared by two kinds of components:
 
@@ -191,16 +191,14 @@ Configuration examples:
 
 ## Available Components
 
-### Available UI components
+Available UI components:
 
-- Button
-- Button Dropdown
-- Dropdown
-- Link
+- [Button](/docs/developers/dialogs/richtext-editor/ui-components/button/)
+- [Button Dropdown](/docs/developers/dialogs/richtext-editor/ui-components/button-dropdown/)
+- [Dropdown](/docs/developers/dialogs/richtext-editor/ui-components/dropdown/)
+- [Link](/docs/developers/dialogs/richtext-editor/ui-components/link/)
 
-### Available plugin components
-
-Available plugin components are described in Plugin Configuration
+Available plugin components are described [here](/docs/developers/dialogs/richtext-editor/plugin-components/).
 
 ## Custom Components
 
