@@ -13,7 +13,7 @@ Both views can be opened from the WebSight UI:
 
 ![WebSight - page editing & opening Resource Browser](websight-page-edit-resource-browser.png)
 
-Check the WebSight project setup documentation to see more details about:
+Check the WebSight [project setup documentation](/docs/developers/setup/) to see more details about:
 
 - what WebSight CMS is, and what it gives you
 - implementing applications for WebSight CMS Community Edition
@@ -76,7 +76,7 @@ After the second title, the _Cards List_ component is added now. This component 
 
 The _Cards List_ component defines initial content that is added to the page when adding a component. The initial content contains 3 child _Card Item_ components (to save work during authoring and present the component in an initialized state).
 
-In the content tree , you can see that the _Card Item_ components are child components of the _Cards List_ component.
+In the content tree, you can see that the _Card Item_ components are child components of the _Cards List_ component.
 
 ![Card List component](card-list-component-rendition.png)
 
