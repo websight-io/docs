@@ -16,7 +16,7 @@
 - Fixed the lack of component selection after changing component properties in the modal.
 
 #### Dialogs
-- Fixed [#63](https://github.com/websight-io/starter/issues/63) and [#149](https://github.com/websight-io/starter/issues/149) - [toggle](/docs/developers/development/dialogs/toggle/), [select](/docs/developers/development/dialogs/select/), [checkbox](/docs/developers/development/dialogs/checkbox/), [radio](/docs/developers/development/dialogs/radio/), [rich text editor](/docs/developers/development/dialogs/richtext-editor/), and [text area](/docs/developers/development/dialogs/text-area/) work right in the [multifield](/docs/developers/development/dialogs/multifield/) now. Additionally, the description for the input field included in the multifield is presented on hover.
+- Fixed [#63](https://github.com/websight-io/starter/issues/63) and [#149](https://github.com/websight-io/starter/issues/149) - [toggle](/docs/developers/dialogs/toggle/), [select](/docs/developers/dialogs/select/), [checkbox](/docs/developers/dialogs/checkbox/), [radio](/docs/developers/dialogs/radio/), [rich text editor](/docs/developers/dialogs/richtext-editor/), and [text area](/docs/developers/dialogs/text-area/) work right in the [multifield](/docs/developers/dialogs/multifield/) now. Additionally, the description for the input field included in the multifield is presented on hover.
 
 
 ## 1.11.0 <small>March 15, 2023</small>
@@ -43,7 +43,7 @@
 - Fixed the missing icon for the _deny_ permission in the user manager. 
 
 #### Dialogs
-- Fixed an issue with closing the [Button Dropdown](/docs/developers/development/dialogs/richtext-editor/ui-components/button-dropdown/) for the [Rich Text Editor](/docs/developers/development/dialogs/richtext-editor/).
+- Fixed an issue with closing the [Button Dropdown](/docs/developers/dialogs/richtext-editor/ui-components/button-dropdown/) for the [Rich Text Editor](/docs/developers/dialogs/richtext-editor/).
 
 #### Other
 - Fixed inconsistency of a new space name generated from the title.
@@ -90,7 +90,7 @@
 
 #### Dialogs
 
-- Fixed the issue for the [Date Picker](../../developers/development/dialogs/date-picker/) input field - presented a wrong value.
+- Fixed the issue for the [Date Picker](../../developers/dialogs/date-picker/) input field - presented a wrong value.
 - Fixed the issue on pressing _enter_ - didn't close a modal in some cases.
 
 
@@ -121,7 +121,7 @@
 - Improved the placeholder text for empty containers to guide users on how to add components.
 - Fixed issues with overlays for components.
 - Fixed [#33](https://github.com/websight-io/starter/issues/33) - reduced panel size leads to cropped images thumbnails.
-- [Path picker](/docs/developers/development/dialogs/pathpicker/) input field:
+- [Path picker](/docs/developers/dialogs/pathpicker/) input field:
     - Fixed [#19](https://github.com/websight-io/starter/issues/19) - updated placeholder text to guide on how to choose a path.
     - Added an arrow to expand the dropdown for selection.
     - Fixed an issue with the _rootPath_ property.
@@ -163,7 +163,7 @@
 #### Page Editor
 
 - Improved UX for components drag-and-drop - indicating if the drop is not allowed.
-- Fixed the issue for the [Asset Reference](../../developers/development/dialogs/assetreference/) input field - impossible to remove image and save empty value.
+- Fixed the issue for the [Asset Reference](../../developers/dialogs/assetreference/) input field - impossible to remove image and save empty value.
 
 #### Page and Asset Management
 
