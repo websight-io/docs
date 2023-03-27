@@ -79,7 +79,7 @@ plugins:
           'docs/authors/component-libs/index.md': 'docs/authors/component-libs/howlite/index.md'
           'docs/release-notes/index.md': 'docs/release-notes/websight-cms-ce/index.md'
 
-          'docs/developers/deployment/index.md': 'docs/developers/deployment/aws-ecs/index.md'
+          'docs/developers/deployment/index.md': 'docs/deployment/aws-ecs/index.md'
 
           'docs/release-notes/websight-cms-ce/index.md' : 'docs/release-notes/websight-cms/index.md'
 
@@ -107,10 +107,8 @@ plugins:
           'docs/developers/dialogs/richtext-editor/richtext-editor-ui-components/link/index.md' : 'docs/developers/development/dialogs/richtext-editor/ui-components/link/index.md'
 
           'docs/developers/create-and-develop-project/index.md' : 'docs/developers/setup/index.md'
-          'docs/developers/components/index.md': 'docs/developers/development/components/index.md'
           'docs/developers/components/definition/index.md': 'docs/developers/components/index.md'
-          
-          'docs/developers/dialogs/index.md': 'docs/developers/development/dialogs/index.md'
+
           'docs/developers/dialogs/assetreference/index.md': 'docs/developers/development/dialogs/assetreference/index.md'
           'docs/developers/dialogs/checkbox/index.md': 'docs/developers/development/dialogs/checkbox/index.md'
           'docs/developers/dialogs/container/index.md': 'docs/developers/development/dialogs/container/index.md'
