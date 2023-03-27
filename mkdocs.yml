@@ -108,7 +108,7 @@ plugins:
 
           'docs/developers/create-and-develop-project/index.md' : 'docs/developers/setup/index.md'
           'docs/developers/components/index.md': 'docs/developers/development/components/index.md'
-          'docs/developers/components/definition/index.md': 'docs/developers/development/components/definition/index.md'
+          'docs/developers/components/definition/index.md': 'docs/developers/components/index.md'
           
           'docs/developers/dialogs/index.md': 'docs/developers/development/dialogs/index.md'
           'docs/developers/dialogs/assetreference/index.md': 'docs/developers/development/dialogs/assetreference/index.md'
@@ -146,7 +146,7 @@ plugins:
 
           'docs/developers/development/index.md': 'docs/developers/app-development/index.md'
           'docs/developers/development/components/index.md': 'docs/developers/components/index.md'
-          'docs/developers/development/components/definition/index.md': 'docs/developers/components/definition/index.md'
+          'docs/developers/development/components/definition/index.md': 'docs/developers/components/index.md'
           'docs/developers/development/dialogs/index.md': 'docs/developers/dialogs/index.md'
           'docs/developers/development/page-editor/index.md': 'docs/developers/page-editor/index.md'
           'docs/developers/development/page-editor/extending-editor/index.md': 'docs/developers/page-editor/extending-editor/index.md'
