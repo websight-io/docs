@@ -183,6 +183,7 @@ In the Right top corner, you will find an Admin tools menu with links to adminis
 ## Next steps
 Now that you know how to set up a new project using WebSight CMS, consider learning more about the following topics:
 
-* [Application development](../development/)
-* [Components development](../development/components/)
-* [Dialogs](../development/dialogs/)
+- [Application development](../app-development/)
+- [Components development](../components/)
+- [Dialogs](../dialogs/)
+- [Page editor](../page-editor/)

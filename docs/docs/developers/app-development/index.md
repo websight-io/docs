@@ -1,4 +1,4 @@
-# Development
+# Application development
 
 This document describes application development for WebSight CMS. It assumes you have completed the [project setup guide](../setup/) and generated a new project from the Maven archetype. All the screens and examples presented below refer to the project prepared in these previous steps.
 
@@ -326,4 +326,6 @@ The `test` module contains content used during end-to-end test execution to vali
 
 Congratulations! You've learned the application development process for WebSight CMS. Now, we recommend exploring details about deployment:
 
-- [Deployment in AWS](../deployment/aws-ecs/)
+- [Deployment in AWS](/docs/deployment/aws-ecs/)
+- [Deployment with Kubernetes](/docs/deployment/kubernetes/)
+- [Deployment to Linux using Docker Compose](/docs/deployment/linux/)

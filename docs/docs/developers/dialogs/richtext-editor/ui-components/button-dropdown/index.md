@@ -9,7 +9,7 @@ Description:
 
 Component allows to add buttons group to menu bar. Buttons should be added as a children.
 
-### Configuration:
+## Configuration
 
 -   **title** - `string` (required)  
     Group title. It’s displayed as a tooltip.
@@ -21,12 +21,12 @@ Component allows to add buttons group to menu bar. Buttons should be added as a 
     If true means that button will be presented as active if any action under it is active.
     
 
-### Children:
+## Children
 
 -   Button - Nodes defining available actions.
     
 
-## Example:
+## Example
 
 ```json
 "textalign": {

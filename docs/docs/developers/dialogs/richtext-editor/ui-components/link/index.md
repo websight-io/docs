@@ -12,7 +12,7 @@ It provides `href` and `target` properties to execute method.
 
 It expects also both `href` and `target` properties returning from plugin getState method.
 
-### Configuration
+## Configuration
 
 - **title** -  `string` (required)  
     Action title. It will be visible in a tooltip. It also will be shown on button in case of lack of icon property
@@ -20,7 +20,7 @@ It expects also both `href` and `target` properties returning from plugin getSta
 - **icon** - `string`  
     Icon name. If set then button will be visible with defined icon. Available icons can be found in Material Icons font.
 
-### State
+## State
 
 - **isActive** - `boolean`  
     Defines if button should be checked as active.
@@ -31,7 +31,7 @@ It expects also both `href` and `target` properties returning from plugin getSta
 - **target** - `string`  
     Specifies where to open the linked document.
 
-### Children
+## Children
 
 - plugin- node defines edit action caused by a button.
 

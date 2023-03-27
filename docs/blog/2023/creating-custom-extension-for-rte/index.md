@@ -56,10 +56,10 @@ the UI element for this plugin? None of these (button, button dropdown, list dro
 with one input (link UI has input and select with `target` attribute selection). So we need a new UI as well.
 
 !!! Hint
-    See our other article about [Customizing Rich Text Editor in WebSight CMS](https://www.websight.io/blog/2022/customizing-rich-text-editor/), where you can read more about RTE configuration and learn how to create a plugin from predefined components.
+    See our other article about [Customizing Rich Text Editor in WebSight CMS](/blog/2022/customizing-rich-text-editor/), where you can read more about RTE configuration and learn how to create a plugin from predefined components.
 
 ## Page part - configuration
-Let's start by preparing an extended configuration according to [the documentation](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#extending-and-overriding-configuration). The example path for an extended configuration could be `/apps/rte/extended/configuration/.content.json`. After that we can use this new configuration in our components, just like described [here](https://www.websight.io/docs/developers/development/dialogs/richtext-editor/configuration/#using-configuration).
+Let's start by preparing an extended configuration according to [the documentation](/docs/developers/dialogs/richtext-editor/configuration/#extending-and-overriding-configuration). The example path for an extended configuration could be `/apps/rte/extended/configuration/.content.json`. After that we can use this new configuration in our components, just like described [here](/docs/developers/dialogs/richtext-editor/configuration/#using-configuration).
 
 ```json title=".../application/backend/src/main/resources/apps/wcm/dialogs/components/richtext/configuration/.content.json"
 {

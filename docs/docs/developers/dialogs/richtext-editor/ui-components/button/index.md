@@ -5,11 +5,11 @@
 
 ![Button](button2.png)
 
-## Description:
+## Description
 
 Component allows to add edit action as a button visible in menu bar. Button can be displayed with title or icon.
 
-### Configuration:
+## Configuration
 
 -   **title** -  `string` (required)  
     Action title. It will be visible in a tooltip. It also will be shown on button in case of lack of icon property
@@ -18,7 +18,7 @@ Component allows to add edit action as a button visible in menu bar. Button can 
     Icon name. If set then button will be visible with defined icon. Available icons can be found in Material Icons font.
     
 
-### State:
+## State
 
 -   **isActive** - `boolean`  
     Defines if button should be checked as active.
@@ -27,12 +27,12 @@ Component allows to add edit action as a button visible in menu bar. Button can 
     Defines if button should be disabled.
     
 
-### Children:
+## Children
 
 -   plugin - node defines edit action caused by a button.
     
 
-## Example:
+## Example
 
 ```json
 "bold": {

@@ -1,10 +1,97 @@
-# Component definition
+# Components
+
+## Overview
+
+This document describes the components concept. It also shows how to use components in the WebSight CMS authoring interface.
+
+In this documentation we use the follow terms:
+
+- WebSight CMS pages editor: Refers to the UI for authoring page content
+- WebSight Resource Browse: Refers to the administration tool that allows users to see the resources (data and application) that are available on the WebSight CMS instance
+
+Both views can be opened from the WebSight UI:
+
+![WebSight - page editing & opening Resource Browser](websight-page-edit-resource-browser.png)
+
+Check the WebSight [project setup documentation](/docs/developers/setup/) to see more details about:
+
+- what WebSight CMS is, and what it gives you
+- implementing applications for WebSight CMS Community Edition
+- the role of OSGi, OSGi bundles, Sling Resources, JCR and more in WebSight CMS
+
+## What is component
+
+Components are:
+
+- elements that render parts of content according to implemented functionality
+- used to assemble content (like pages)
+- available in the WebSight CMS authoring interface
+- reusable
+- configurable by editing properties on created components instances
+- implemented by developers
+- shipped in OSGi bundles that are deployed to a WebSight CMS instance
+
+Components can:
+
+- include (embed) other components
+- extend other components
+- deliver initial content
+- define dialogs, which are used to edit properties on component instances
+- be containers (allowing you to add child components during authoring)
+- define allowed child components (in the case of containers)
+
+## Using components
+
+To provide more context on components, let's look at the authoring interface and content data structure.
+
+The WebSight CMS page editor lists all available components that can be used to build pages on a given WebSight instance. Available components depend on the OSGi bundles that delivering components installed on the instance. Those components can be added to the page by dragging them to the page content view at the center of the screen.
+
+<p align="center" width="100%">
+    <img src="./page-editor-components.png" alt="Components definitions listed in the WebSight CMS page editor">
+    Components definitions listed in the WebSight CMS page editor.
+</p>
+
+You can check the page content structure in the page editor content tree tab. This view presents the components tree under page content.
+This example page contains just the _Page Section_ component, which is the only component present currently in the page content of this example page.
+
+<p align="center" width="100%">
+    <img style="width:350px" src="./page-editor-content-tree.png" alt="Page content tree in the editor"> <br>
+    Page content tree in the editor.
+</p>
+
+The _Page Section_ component is a container. It allows you to add other components via the authoring interface. The page editor content section displays an empty _Page Section_ component as a box containing the placeholder text "Drag components here."
+
+After dragging and dropping the _Title_ and _Rich Text_ components, the page content tree is updated with new nodes. The nodes visible in the content tree are the instances of components.
+
+_Title_ and _Rich Text_ components are not containers, so other components cannot be added as their child components. While dragging other components from the components list, the new items can be added next to those components as other children on the _Page Section_ component.
+
+
+![RTE component](RTE-component.png)
+
+After adding a component to the page, the edit action can be used to edit the selected component instance. The dialog that is displayed is a part of the component definition. It is defined by the developer implementing a given component by setting the proper dialog fields (see more in the [Dialogs](../dialogs/) documentation). Properties set via the dialog are saved at edited component instances, and are used by the component to render the appropriate part of content based on the implemented functionality. For example, the _Title_ component renders the `Heading text` field value in the HTML `<h>` tag and allows you to set `<h>` tag level and styling.
+
+<p align="center" width="100%">
+    <img src="./title-component-dialog.png" alt="Title component - dialog">
+    Components are reusable. Another <em>Title</em> component can be added to the page and configured with its own data.
+</p>
+
+After the second title, the _Cards List_ component is added now. This component is a container but implemented to work with specific type of child components: Only _Card Item_ components can be added inside (this behavior is part of the _Cards List_ component definition).
+
+The _Cards List_ component defines initial content that is added to the page when adding a component. The initial content contains 3 child _Card Item_ components (to save work during authoring and present the component in an initialized state).
+
+In the content tree, you can see that the _Card Item_ components are child components of the _Cards List_ component.
+
+![Card List component](card-list-component-rendition.png)
+
+You can continue with assembling and configuring page content based on the available components.
+
+## Component definition
 
 Components are implemented by developers and delivered as resources following a defined structure. The resources should be provided in the OSGi bundle. See the project setup documentation for more details.
 
 In this section we will see how the component definition resources structure should look.
 
-## Simple component definition example
+### Simple component definition example
 Let's see what a simple component definition looks like.
 
 We see a component named _Say Hello_. It provides dialog with one text field, which can be used in the authoring interface to set the hello text rendered on the page using the `<p>` HTML tag. If the property is not set, `Hello World!` text will be used. 
@@ -56,7 +143,7 @@ And now the component renderer script will display the property value instead of
 
 Let's explore all the options and details of the component definition.
 
-## Component definition properties
+### Component definition properties
 
 The component definition is a Sling Resource with resource type `ws:Component`. 
 Use the following resource properties to define the component:
@@ -157,7 +244,7 @@ Use the following resource properties to define the component:
    </td>
 </table>
 
-## Dialog
+### Dialog
 
 Dialog is the form with inputs that allows you to set data on component instances in content.
 The form layout, fields and behavior are described by resources starting at a resource named `dialog` defined under the component definition resource. If the `dialog` resource is not defined, then the edit component properties action is not available in the editor.
@@ -176,7 +263,7 @@ This is what the dialog definition structure looks like with the same dialog dis
 
 Read more in the [Dialogs documentation](/docs/developers/dialogs/).
 
-## Rendering script
+### Rendering script
 
 To render components, the rendering script file resource is needed. The file resource name should be the same as the component name with the `.html` extension (the recommended and supported scripting language in the WebSight CMS is the HTML Templating Language, or HTL). See the HTL specification [here](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md)
 
@@ -191,7 +278,7 @@ If Java support is needed in the HTL, the recommended solution is to use the Sli
     Component renderer script in the WebSight Resource Browser.
 </p>
 
-## Template
+### Template
 
 Component template is a resource that gets copied when creating a new component instance and adding it to a page. In other words, it is the initial content of the component. It is used to set default values or prepare necessary content structure. It could also be used to save work during content authoring.
 

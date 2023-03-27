@@ -16,7 +16,7 @@ it is possible to differentiate between the fields & layout for the regular moda
 The configuration allows developers to decide field-by-field if it should appear in both
 or only in one of the two contexts.
 
-The mechanism used to achieve that is the `ws:disallowedContext` parameter (see more details about the mechanism [here](../../../development/dialogs/#context)).
+The mechanism used to achieve that is the `ws:disallowedContext` parameter (see more details about the mechanism [here](/docs/developers/dialogs#context)).
 The two contexts that can be disabled are `edit:dialog` and `edit:panel`.
 
 ### Example 1

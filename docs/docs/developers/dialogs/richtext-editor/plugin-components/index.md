@@ -51,7 +51,7 @@ Where:
 
 - `state` - Object with same structure as returned by `getState`
 
-# Available plugins
+## Available plugins
 
 | Plugin                                                                              | Example Usage                                                                                                                                                                                                                                                                                      |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -71,7 +71,7 @@ Where:
 | Undo</br>**wcm/dialogs/components</br>/richtext/plugin/undo**                       | **"plugin": {</br>&emsp;&emsp;"sling:resourceType": "wcm/dialogs/components/richtext/plugin/undo"</br>}**                                                                                                                                                                                          |
 | Redo</br>**wcm/dialogs/components</br>/richtext/plugin/redo**                       | **"plugin": {</br>&emsp;&emsp;"sling:resourceType": "wcm/dialogs/components/richtext/plugin/redo"</br>}**                                                                                                                                                                                          |
 
-# Interfaces
+## Interfaces
 All the plugins provides some interfaces that should be met by UI components:
 
 | Plugin                                                                                                                      | getAction                                    | getState                                        |

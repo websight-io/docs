@@ -2,7 +2,7 @@
 
 ## Overview
 
-_Page editor_ is a core part of WebSight CMS and an essential tool for content authors.
+_Page Editor_ is a core part of WebSight CMS and an essential tool for content authors.
 It allows the content authors to build pages using [_components_](../components) in a WYSIWYG way.
 They can work with _components_ on a page using intuitive drag-and-drop functionality and provide
 content and configuration to the _components_.
