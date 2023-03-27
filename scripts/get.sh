@@ -2,6 +2,11 @@
 MAX_RETRIES=100;
 counter=1;
 if [ -x "$(command -v docker)" ]; then
+    if command -v docker-compose &> /dev/null; then
+        dccmd='docker-compose'
+    else
+        dccmd='docker compose'
+    fi
     rm -rf websight-cms-ce/
     mkdir websight-cms-ce
     cd websight-cms-ce
@@ -21,7 +26,7 @@ if [ -x "$(command -v docker)" ]; then
         echo "***WebSight Launcher*** WebSight is ready. Launching the browser"
         open http://localhost:8080
     }&
-    docker compose up
+    $dccmd up
 else
     echo "Docker is not found on the system"
 fi
