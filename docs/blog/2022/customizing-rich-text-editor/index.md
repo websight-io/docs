@@ -159,11 +159,11 @@ The above scenario requires embedding `button` components in `buttondropdown`. M
 
 ### Sample configuration file
 
-It is required to define a proper resource type for the RTE configuration. It should be `wcm/dialogs/components/richtext/configuration`. Additionally, the configuration should contain definitions for all components as described above.
+It is required to define a proper resource type for the RTE configuration. It should be `wcm/dialogs/components/richtext/configurations/default`. Additionally, the configuration should contain definitions for all components as described above.
 
 ```json title="/apps/myapp/components/rte/configuration"
 {
-  "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
+  "sling:resourceType": "wcm/dialogs/components/richtext/configurations/default",
   "bold": {
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Bold",
