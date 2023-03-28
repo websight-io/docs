@@ -9,6 +9,49 @@ content and configuration to the _components_.
 
 ![Page Editor](images/page-editor-overview.png)
 
+## Component actions
+
+When a component is selected the list of available actions is presented in the toolbar.
+Available actions list:
+
+<table>
+     <tr>
+        <th>Title</th>
+        <th>Name - technical id</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Properties</td>
+        <td>edit-component-properties</td>
+        <td>Opens dialog to edit properties</td>
+    </tr>
+    <tr>
+        <td>Copy</td>
+        <td>copy</td>
+        <td>Copy component</td>
+    </tr>
+    <tr>
+        <td>Cut</td>
+        <td>cut</td>
+        <td>Cut component</td>
+    </tr>
+    <tr>
+        <td>Paste</td>
+        <td>paste</td>
+        <td>Paste component after copy or cut</td>
+    </tr>
+    <tr>
+        <td>Select parent</td>
+        <td>select-parent</td>
+        <td>Change active component to parent component</td>
+    </tr>
+    <tr>
+        <td>Delete</td>
+        <td>delete</td>
+        <td>Removes the component</td>
+   </tr>
+</table>
+
 ## Technical details
 
 ### Edit Mode
