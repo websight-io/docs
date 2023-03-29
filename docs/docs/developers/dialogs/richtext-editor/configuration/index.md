@@ -4,7 +4,10 @@ Configuration defines RTE toolbar and functionalities
 
 ## Using configuration
 
-RTE provides default configuration at `/libs/wcm/dialogs/components/richtext/configuration`.
+RTE provides configurations which can be used and customized:
+
+- `/libs/wcm/dialogs/components/richtext/configurations/default` - default configuration; dedicated for views with big width, like modals
+- `/libs/wcm/dialogs/components/richtext/configurations/compact` - configuration with reduced toolbar - might be used in narrow views, like [Side Panel](../../../page-editor/side-panel/)
 
 Configuration can be referenced by path or defined inline. If inline configuration is defined then referenced configuration is ignored.
 
@@ -61,7 +64,7 @@ Configuration (referenced or inline) can extend other configuration by using `sl
 
 ```json
 "configuration": {
-  "sling:resourceSuperType": "wcm/dialogs/components/richtext/configuration",
+  "sling:resourceSuperType": "wcm/dialogs/components/richtext/configurations/default",
   "sling:hideChildren": "[italic]",
   "bold": {
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",

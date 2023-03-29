@@ -61,9 +61,9 @@ with one input (link UI has input and select with `target` attribute selection).
 ## Page part - configuration
 Let's start by preparing an extended configuration according to [the documentation](/docs/developers/dialogs/richtext-editor/configuration/#extending-and-overriding-configuration). The example path for an extended configuration could be `/apps/rte/extended/configuration/.content.json`. After that we can use this new configuration in our components, just like described [here](/docs/developers/dialogs/richtext-editor/configuration/#using-configuration).
 
-```json title=".../application/backend/src/main/resources/apps/wcm/dialogs/components/richtext/configuration/.content.json"
+```json title=".../application/backend/src/main/resources/apps/rte/extended/configuration/.content.json"
 {
-  "sling:resourceSuperType": "/libs/wcm/dialogs/components/richtext/configuration",
+  "sling:resourceSuperType": "wcm/dialogs/components/richtext/configurations/default",
   "link": {
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/link",
     "title": "Link",
