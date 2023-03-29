@@ -163,7 +163,7 @@ It is required to define a proper resource type for the RTE configuration. It sh
 
 ```json title="/apps/myapp/components/rte/configuration"
 {
-  "sling:resourceType": "wcm/dialogs/components/richtext/configurations/default",
+  "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
   "bold": {
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Bold",
