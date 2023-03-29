@@ -295,3 +295,37 @@ The template resource is optional. If it's not present, a new empty node will be
     <img src="./component-from-template-on-page.png" alt="Component instance added to the page content initialized from template">
     Component instance added to the page content initialized from template <BR> (view from the WebSight Resource Browser tool).
 </p>
+
+### Edit configuration
+
+A component may provide an optional resource named `editConfig` providing configuration customizing component behavior in the [Page editor](../page-editor/).
+
+#### Reload on update
+
+Edit config property named `reloadOnUpdate` defines what should be refreshed on the component update, for example after editing. Options:
+
+- `self` - default behaviour - only updated component is refreshed
+- `parent` - parent component is refreshed
+- `page` - edited page is refreshed
+- `browser` - reload of the Editor in the browser
+
+```json title="Example 'editConfig' with 'reloadOnUpdate' property"
+{
+  "reloadOnUpdate": "page"
+}
+```
+
+#### Hide actions
+
+Edit config property named `hideActions` can provide an array of _Page editor_ actions names
+(see list of the component actions with names in the [Page editor](../page-editor/#component-actions))
+that should not be available for the component.
+
+```json title="Example 'editConfig' with 'hideActions' property"
+{
+  "hideActions": [
+    "edit-component-properties", "delete"
+  ]
+}
+```
+
