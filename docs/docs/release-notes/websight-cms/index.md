@@ -1,5 +1,20 @@
 # WebSight CMS release notes
 
+## 1.12.0 <small>March 23, 2023</small>
+
+#### Page Editor
+- Added keyboard shortcuts to copy, cut and paste components.
+
+#### Components
+- Added the [ability to define items reloaded after a component is updated by the author](/docs/developers/components/#reload-on-update).
+
+#### Dialogs
+- Changed and extended _Rich Text Editor_ [configuration options](/docs/developers/dialogs/richtext-editor/configuration/#using-configuration).
+
+#### Other
+- Fixed the blinking space icons and space types on load.
+- Fixed the size of the clickable area for item selection on the list of pages and assets.
+
 ## 1.11.2 <small>March 23, 2023</small>
 
 #### Page Editor
@@ -40,6 +55,7 @@
 
 #### Admin tools
 - Fixed page reordering in the resource browser.
+- Fixed the broken order of pages after re-creating the content from JCR vault package in the _Package Manager_.
 - Fixed the missing icon for the _deny_ permission in the user manager. 
 
 #### Dialogs
