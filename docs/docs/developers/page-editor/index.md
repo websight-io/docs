@@ -12,16 +12,17 @@ content and configuration to the _components_.
 ## Component actions
 
 When a component is selected the list of available actions is presented in the toolbar.
-Available actions list:
+Action name is the technical identifier used for example in the [Edit configuration](../components/#edit-configuration).
+List of actions available by default:
 
-| Title         | Name (technical ID)               | Description                                      |
-|---------------|-----------------------------------|--------------------------------------------------|
-| Properties    | `edit-component-properties`       | Opens dialog to edit a component properties.     |
-| Copy          | `copy`                            | Copy the component.                              |
-| Cut           | `cut`                             | Cut the component.                               |
-| Paste         | `paste`                           | Paste component after copy or cut.               |
-| Select parent | `select-parent`                   | Change active component to the parent component. |
-| Delete        | `delete`                          | Removes the component.                           |
+| Title         | Name                        | Description                                        |
+|---------------|-----------------------------|----------------------------------------------------|
+| Properties    | `edit-component-properties` | Opens a dialog to edit a component properties.     |
+| Copy          | `copy`                      | Copies the component.                              |
+| Cut           | `cut`                       | Cuts the component.                                |
+| Paste         | `paste`                     | Pastes the component after copy or cut.            |
+| Select parent | `select-parent`             | Changes active component to the parent component.  |
+| Delete        | `delete`                    | Deletes the component.                             |
 
 ## Technical details
 
