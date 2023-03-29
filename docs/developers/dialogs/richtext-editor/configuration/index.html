@@ -4036,7 +4036,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h1 id="rich-text-editor-configuration">Rich Text Editor Configuration</h1>
 <p>Configuration defines RTE toolbar and functionalities</p>
 <h2 id="using-configuration">Using configuration</h2>
-<p>RTE provides default configuration at <code>/libs/wcm/dialogs/components/richtext/configuration</code>.</p>
+<p>RTE provides configurations which can be used and customized:</p>
+<ul>
+<li><code>/libs/wcm/dialogs/components/richtext/configurations/default</code> - default configuration; dedicated for views with big width, like modals</li>
+<li><code>/libs/wcm/dialogs/components/richtext/configurations/compact</code> - configuration with reduced toolbar - might be used in narrow views, like <a href="../../../page-editor/side-panel/">Side Panel</a></li>
+</ul>
 <p>Configuration can be referenced by path or defined inline. If inline configuration is defined then referenced configuration is ignored.</p>
 <p>Example using default configuration defined by RTE:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -4075,7 +4079,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="extending-and-overriding-configuration">Extending and overriding configuration</h2>
 <p>Configuration (referenced or inline) can extend other configuration by using <code>sling:resourceSuperType</code>, see <a href="https://sling.apache.org/documentation/bundles/resource-merger.html" title="https://sling.apache.org/documentation/bundles/resource-merger.html">Sling Resource Merger</a> (/mnt/override) and customize it with options comming from Resource Merger, like <code>sling:hideChildren</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;configuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceSuperType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/configuration&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;sling:resourceSuperType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/configurations/default&quot;</span><span class="p">,</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;sling:hideChildren&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[italic]&quot;</span><span class="p">,</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;bold&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;sling:resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wcm/dialogs/components/richtext/ui/button&quot;</span><span class="p">,</span>
