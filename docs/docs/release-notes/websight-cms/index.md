@@ -1,6 +1,6 @@
 # WebSight CMS release notes
 
-## 1.12.0 <small>March 23, 2023</small>
+## 1.12.0 <small>March 29, 2023</small>
 
 #### Page Editor
 - Added keyboard shortcuts to copy, cut and paste components.
