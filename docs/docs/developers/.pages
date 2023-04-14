@@ -4,5 +4,6 @@ nav:
 - App development: app-development
 - Components: components
 - Dialogs: dialogs
+- Inline editing: inline-editing
 - Page Editor: page-editor
 - WCM mode: wcm-mode
