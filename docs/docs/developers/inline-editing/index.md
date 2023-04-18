@@ -106,6 +106,8 @@ The ID of the editor is `rich-text`.
 }
 ```
 
+![Rich text inline editor](images/rich-text-inline-editor.png)
+
 To specify the [rich text configuration](/docs/developers/dialogs/richtext-editor/configuration) add
 `editorConfiguration` with the `rteConfiguration` property of containing path to the configuration.
 
@@ -122,3 +124,5 @@ To specify the [rich text configuration](/docs/developers/dialogs/richtext-edito
   }
 }
 ```
+
+![Rich text inline editor with configuration](images/rich-text-inline-editor-with-configuration.png)

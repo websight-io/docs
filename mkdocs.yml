@@ -80,7 +80,7 @@ plugins:
           'docs/index.md': 'docs/quick-start/index.md'
           'docs/authors/index.md': 'docs/authors/component-libs/howlite/index.md'
           'docs/authors/component-libs/index.md': 'docs/authors/component-libs/howlite/index.md'
-          'docs/release-notes/index.md': 'docs/release-notes/websight-cms-ce/index.md'
+          'docs/release-notes/index.md': 'docs/release-notes/websight-cms/index.md'
 
           'docs/developers/deployment/index.md': 'docs/deployment/aws-ecs/index.md'
 
