@@ -95,3 +95,30 @@ The WebSight text editor allows single line, plain text editing. The ID of the e
 The WebSight rich text editor allows rich text editing in the same way as the [dialogs rich text](/docs/developers/dialogs/richtext-editor).
 The ID of the editor is `rich-text`.
 
+```json title="Example component edit config enabling rich text inline editing"
+{
+  "inlineEditing": {
+    "config": {
+      "property": "text",
+      "editor": "rich-text"
+    }
+  }
+}
+```
+
+To specify the [rich text configuration](/docs/developers/dialogs/richtext-editor/configuration) add
+`editorConfiguration` with the `rteConfiguration` property of containing path to the configuration.
+
+```json title="Example component edit config enabling rich text inline editing and specified configuration"
+{
+  "inlineEditing": {
+    "config": {
+      "property": "text",
+      "editor": "rich-text",
+      "editorConfiguration": {
+        "rteConfiguration": "/libs/wcm/dialogs/components/richtext/configurations/compact"
+      }
+    }
+  }
+}
+```
