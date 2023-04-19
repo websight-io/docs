@@ -321,6 +321,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://websight.io/docs/developers/inline-editing/</loc>
+         <lastmod>2023-04-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://websight.io/docs/developers/page-editor/</loc>
          <lastmod>2023-04-19</lastmod>
          <changefreq>daily</changefreq>

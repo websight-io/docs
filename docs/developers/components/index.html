@@ -1370,6 +1370,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2_4">
@@ -2670,6 +2672,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
           
         
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../inline-editing/">Inline editing</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Inline editing" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Inline editing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_7" type="checkbox" id="__nav_2_4_7" >
+      
+      
+      
+        
+          
+            
+          
+        
           
         
           
@@ -2681,14 +2726,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="md-nav__link md-nav__link--index ">
           <a href="../page-editor/">Page Editor</a>
           
-            <label for="__nav_2_4_6">
+            <label for="__nav_2_4_7">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
       <nav class="md-nav" aria-label="Page Editor" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_4_6">
+        <label class="md-nav__title" for="__nav_2_4_7">
           <span class="md-nav__icon md-icon"></span>
           Page Editor
         </label>
@@ -2705,7 +2750,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_6_2" type="checkbox" id="__nav_2_4_6_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_7_2" type="checkbox" id="__nav_2_4_7_2" >
       
       
       
@@ -2724,7 +2769,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       
       <nav class="md-nav" aria-label="Extending editor" data-md-level="4">
-        <label class="md-nav__title" for="__nav_2_4_6_2">
+        <label class="md-nav__title" for="__nav_2_4_7_2">
           <span class="md-nav__icon md-icon"></span>
           Extending editor
         </label>
@@ -2748,7 +2793,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_6_3" type="checkbox" id="__nav_2_4_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_7_3" type="checkbox" id="__nav_2_4_7_3" >
       
       
       
@@ -2767,7 +2812,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       
       <nav class="md-nav" aria-label="Side panel" data-md-level="4">
-        <label class="md-nav__title" for="__nav_2_4_6_3">
+        <label class="md-nav__title" for="__nav_2_4_7_3">
           <span class="md-nav__icon md-icon"></span>
           Side panel
         </label>
@@ -2798,7 +2843,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_7" type="checkbox" id="__nav_2_4_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_8" type="checkbox" id="__nav_2_4_8" >
       
       
       
@@ -2817,7 +2862,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       
       <nav class="md-nav" aria-label="WCM mode" data-md-level="3">
-        <label class="md-nav__title" for="__nav_2_4_7">
+        <label class="md-nav__title" for="__nav_2_4_8">
           <span class="md-nav__icon md-icon"></span>
           WCM mode
         </label>
@@ -4296,7 +4341,9 @@ The form layout, fields and behavior are described by resources starting at a re
     Component dialog displayed after edit component action in pages editor.
 </p>
 
-<p>Read more in the <a href="/docs/developers/dialogs/">Dialogs documentation</a>.</p>
+<p>Dialog for editing component properties is opened in <code>edit:dialog</code> <em>context</em> - the <em>context</em>
+can be used to disable some fields depending on the dialog usage. Read more about <em>context</em> and other
+aspects of the dialogs in the <a href="/docs/developers/dialogs/">Dialogs documentation</a>.</p>
 <h3 id="rendering-script">Rendering script</h3>
 <p>To render components, the rendering script file resource is needed. The file resource name should be the same as the component name with the <code>.html</code> extension (the recommended and supported scripting language in the WebSight CMS is the HTML Templating Language, or HTL). See the HTL specification <a href="https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md">here</a></p>
 <p>If Java support is needed in the HTL, the recommended solution is to use the Sling Models and the HTL Use-API. See details:</p>
@@ -4344,7 +4391,7 @@ The template resource is optional. If it's not present, a new empty node will be
 that should not be available for the component.</p>
 <div class="highlight"><span class="filename">Example 'editConfig' with 'hideActions' property</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;hideActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="s2">&quot;edit-component-properties&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;delete&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="s2">&quot;edit-properties&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;delete&quot;</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="p">]</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
 </code></pre></div>
