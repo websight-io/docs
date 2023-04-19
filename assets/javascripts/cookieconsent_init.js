@@ -84,57 +84,111 @@ if (window.location.hostname === "www.websight.io") {
                                 },
                                 {
                                     col1: 'bcookie',
-                                    col2: 'www.linkedin.com',
-                                    col3: '2 years',
+                                    col2: 'linkedin.com',
+                                    col3: '1 year',
                                     col4: 'Stores browser details',
-                                },
-                                {
-                                    col1: 'li-oatml',
-                                    col2: 'www.linkedin.com',
-                                    col3: '1 month',
-                                    col4: 'Provides ad delivery or retargeting',
-                                },
-                                {
-                                    col1: 'BizographicsOptOut',
-                                    col2: 'www.linkedin.com',
-                                    col3: '10 years',
-                                    col4: 'Stores privacy preferences',
-                                },
-                                {
-                                    col1: 'li_sugr',
-                                    col2: 'www.linkedin.com',
-                                    col3: '3 months',
-                                    col4: 'Stores browser details',
-                                },
-                                {
-                                    col1: 'UserMatchHistory',
-                                    col2: 'www.linkedin.com',
-                                    col3: '30 days',
-                                    col4: 'Provides ad delivery or retargeting',
-                                },
-                                {
-                                    col1: 'linkedin_oauth_',
-                                    col2: 'www.linkedin.com',
-                                    col3: 'session',
-                                    col4: 'Provides functions across pages',
-                                },
-                                {
-                                    col1: 'lidc',
-                                    col2: 'www.linkedin.com',
-                                    col3: '1 day',
-                                    col4: 'Stores performed actions on the website',
                                 },
                                 {
                                     col1: 'bscookie',
                                     col2: 'www.linkedin.com',
-                                    col3: '2 years',
+                                    col3: '1 year',
                                     col4: 'Stores performed actions on the website',
                                 },
                                 {
-                                    col1: 'X-LI-IDC',
+                                    col1: 'JSESSIONID',
                                     col2: 'www.linkedin.com',
                                     col3: 'session',
-                                    col4: 'Provides functions across pages',
+                                    col4: 'Protects Cross Site Request Forgery (CSRF) and validates URL signature',
+                                },
+                                {
+                                    col1: 'lang',
+                                    col2: 'linkedin.com',
+                                    col3: 'session',
+                                    col4: 'User\'s language setting',
+                                },
+                                {
+                                    col1: 'lidc',
+                                    col2: 'linkedin.com',
+                                    col3: '1 day',
+                                    col4: 'Stores performed actions on the website',
+                                },
+                                {
+                                    col1: 'sdsc',
+                                    col2: 'linkedin.com',
+                                    col3: 'session',
+                                    col4: 'Ensure consistency across all databases when a change is made'
+                                },
+                                {
+                                    col1: 'li_gc',
+                                    col2: 'linkedin.com',
+                                    col3: '6 months',
+                                    col4: 'Stores consent of guests regarding the use of cookies for non-essential purposes'
+                                },
+                                {
+                                    col1: 'li_mc',
+                                    col2: 'linkedin.com',
+                                    col3: '6 months',
+                                    col4: 'Temporary cache to avoid database lookups for a member\'s consent'
+                                },
+                                {
+                                    col1: 'AnalyticsSyncHistory',
+                                    col2: 'linkedin.com',
+                                    col3: '30 days',
+                                    col4: 'Stores information about the time a sync took place with the lms_analytics cookie'
+                                },
+                                {
+                                    col1: 'lms_analytics',
+                                    col2: 'linkedin.com',
+                                    col3: '30 days',
+                                    col4: 'Identifies LinkedIn Members off LinkedIn for analytics'
+                                },
+                                {
+                                    col1: 'UID',
+                                    col2: 'scorecardresearch.com',
+                                    col3: '720 days',
+                                    col4: 'Used for market and user research',
+                                },
+                                {
+                                    col1: 'UserMatchHistory',
+                                    col2: 'linkedin.com',
+                                    col3: '30 days',
+                                    col4: 'LinkedIn Ads ID syncing',
+                                },
+                                {
+                                    col1: 'lms_ads',
+                                    col2: '.linkedin.com',
+                                    col3: '30 days',
+                                    col4: 'Identifies LinkedIn Members off LinkedIn for advertising',
+                                },
+                                {
+                                    col1: 'li_fat_id',
+                                    col2: 'first party domain',
+                                    col3: '30 days',
+                                    col4: 'Member indirect identifier for Members for conversion tracking, retargeting, analytics',
+                                },
+                                {
+                                    col1: 'li_sugr',
+                                    col2: '.linkedin.com',
+                                    col3: '90 days',
+                                    col4: 'Stores browser details',
+                                },
+                                {
+                                    col1: '_guid',
+                                    col2: 'linkedin.com',
+                                    col3: '90 days',
+                                    col4: 'Identifies a LinkedIn Member for advertising through Google Ads',
+                                },
+                                {
+                                    col1: 'BizographicsOptOut',
+                                    col2: '.linkedin.com',
+                                    col3: '10 years',
+                                    col4: 'Stores privacy preferences',
+                                },
+                                {
+                                    col1: 'li_giant',
+                                    col2: 'first party domain',
+                                    col3: '7 days',
+                                    col4: 'Indirect indentifier for groups of LinkedIn Members used for conversion tracking',
                                 }
                             ]
                         }, {
