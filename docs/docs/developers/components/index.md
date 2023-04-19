@@ -261,7 +261,9 @@ This is what the dialog definition structure looks like with the same dialog dis
     Component dialog displayed after edit component action in pages editor.
 </p>
 
-Read more in the [Dialogs documentation](/docs/developers/dialogs/).
+Dialog for editing component properties is opened in `edit:dialog` _context_ - the _context_
+can be used to disable some fields depending on the dialog usage. Read more about _context_ and other
+aspects of the dialogs in the [Dialogs documentation](/docs/developers/dialogs/).
 
 ### Rendering script
 
@@ -324,7 +326,7 @@ that should not be available for the component.
 ```json title="Example 'editConfig' with 'hideActions' property"
 {
   "hideActions": [
-    "edit-component-properties", "delete"
+    "edit-properties", "delete"
   ]
 }
 ```
