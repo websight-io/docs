@@ -1,5 +1,11 @@
 # WebSight CMS release notes
 
+## 1.13.0 <small>April 19, 2023</small>
+
+#### Page Editor
+- New feature from the roadmap [#1](https://github.com/websight-io/roadmap/issues/1) - added inline editing for text input fields.
+- Improved UX for keyboard shortcuts to copy and paste components - selection keeps the focus on the workspace (no autofocus on the first editable field in the right side panel).
+
 ## 1.12.0 <small>March 29, 2023</small>
 
 #### Page Editor
@@ -37,7 +43,7 @@
 ## 1.11.0 <small>March 15, 2023</small>
 
 #### Page Editor
-- New feature from roadmap [#2](https://github.com/websight-io/roadmap/issues/2) - added the side panel with component properties.
+- New feature from the roadmap [#2](https://github.com/websight-io/roadmap/issues/2) - added the side panel with component properties.
 - Improved workspace refresh after edit action  - only the updated component is reloaded now.
 - Added [#140](https://github.com/websight-io/starter/issues/140) - the ability to set WCM mode in HTL.
 - Improved UX for concurrent assets management - opening the list of assets from the assets panel in the page editor. 
