@@ -331,3 +331,19 @@ that should not be available for the component.
 }
 ```
 
+#### Default action
+
+Edit config property named `defaultAction` can provide a name of a _Page editor_ action
+(see list of the component actions with names in the [Page editor](../page-editor/#component-actions))
+that should be executed if the author *double-clicks* on the component.
+
+If not provided, the `inline-editing` action (see [Inline editing](../inline-editing)) is executed
+if the component is configured to support it, otherwise the `edit-properties` action is executed
+if the component has a dialog configuration (see [Dialogs](../dialogs)).
+
+```json title="Example 'editConfig' with 'defaultAction' property"
+{
+  "defaultAction": "delete"
+}
+```
+
