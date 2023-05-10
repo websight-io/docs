@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://websight.io/docs/developers/components/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.2.15">
     
     
       
@@ -4093,6 +4093,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#default-action" class="md-nav__link">
+    Default action
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4394,6 +4401,17 @@ that should not be available for the component.</p>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="s2">&quot;edit-properties&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;delete&quot;</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="p">]</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="default-action">Default action</h4>
+<p>Edit config property named <code>defaultAction</code> can provide a name of a <em>Page editor</em> action
+(see list of the component actions with names in the <a href="../page-editor/#component-actions">Page editor</a>)
+that should be executed if the author <em>double-clicks</em> on the component.</p>
+<p>If not provided, the <code>inline-editing</code> action (see <a href="../inline-editing">Inline editing</a>) is executed
+if the component is configured to support it, otherwise the <code>edit-properties</code> action is executed
+if the component has a dialog configuration (see <a href="../dialogs">Dialogs</a>).</p>
+<div class="highlight"><span class="filename">Example 'editConfig' with 'defaultAction' property</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;defaultAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;delete&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
 </code></pre></div>
 
               
