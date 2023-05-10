@@ -1,5 +1,20 @@
 # WebSight CMS release notes
 
+## 1.14.0 <small>May 10, 2023</small>
+
+#### Page Editor
+- Improved UX for inline editing. Authors can start the action using double-click (if [configured](/docs/developers/components/#default-action) for a given component).
+- Added a skeleton screen for the workspace while it is loading. 
+
+#### Dialogs
+- Fixed [#159](https://github.com/websight-io/starter/issues/159) - saving a multifield by a modal and the side panel leads to conflicts.
+
+#### Admin tools
+- Fixed the issue with providing a resource name while creating a new item.
+
+#### Other
+- Updated [Howlite](/docs/authors/component-libs/howlite/) components (RTE, Title, Quote, CTA) - removed the mandatoriness of fields having an initial content.
+
 ## 1.13.0 <small>April 19, 2023</small>
 
 #### Page Editor
