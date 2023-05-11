@@ -4068,22 +4068,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="wcm-mode">WCM mode</h1>
 <h2 id="overview">Overview</h2>
-<p>Web Content Management mode (WCM mode) is information related to requests about how the content
-is requested - mode of using the content.</p>
+<p>Web Content Management (WCM) mode configures information related to how content
+is requested. In other words, it refers to the mode through which content is to be used.</p>
 <p>Available modes are:</p>
 <ul>
-<li>disabled - for the end users requests</li>
-<li>edit - for the content editing</li>
-<li>preview - for the preview of content editing</li>
+<li>disabled - for end-user requests</li>
+<li>edit - for content editing</li>
+<li>preview - for previews of content editing</li>
 </ul>
 <p>To set the WCM mode, add the request parameter <code>wcmmode</code>
-to URL pointing to any resource under the <code>/content/*</code> path,
-like <code>/content/test/pages/some-page.html?wcmmode=disabled</code>.</p>
+to the URL that points to any resource under the <code>/content/*</code> path.
+For example: <code>/content/test/pages/some-page.html?wcmmode=disabled</code>.</p>
 <p>The default mode is <code>disabled</code>.</p>
 <h2 id="checking-wcm-mode">Checking WCM mode</h2>
-<p>It is possible to test the current WCM mode, to respond depending on the mode value.</p>
+<p>It is possible to test the current WCM mode and respond depending on the mode value. You can achieve this using both HTL and the Java API.</p>
 <h3 id="htl">HTL</h3>
-<p>In Sling Scripting, including HTL, WCM mode flags are available - can be used to evaluate conditions, i.e. in <code>data-sly-test</code>.</p>
+<p>In Sling Scripting, including HTL, WCM mode flags are available. They can be used to evaluate conditions via, for example, a <code>data-sly-test</code>.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;sly data-sly-test=&quot;${wcmmode.disabled}&quot;&gt;
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    This will be printed only if the current mode is &#39;disabled&#39;.
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&lt;/sly&gt;
@@ -4097,14 +4097,14 @@ like <code>/content/test/pages/some-page.html?wcmmode=disabled</code>.</p>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&lt;/sly&gt;
 </code></pre></div></p>
 <h3 id="java-api">Java API</h3>
-<p>In Java API the WCM mode is represented by <code>pl.ds.websight.pages.foundation.WcmMode</code> enum delivered 
+<p>In the Java API, the WCM mode is represented by the <code>pl.ds.websight.pages.foundation.WcmMode</code> enum and delivered 
 by <code>pl.ds.websight:websight-pages-foundation-bundle</code>.
-The enum value is set at request attribute <code>WcmMode.REQUEST_ATTRIBUTE_NAME</code> and used to resolve
+The enum value is set within the request attribute <code>WcmMode.REQUEST_ATTRIBUTE_NAME</code> and is used to resolve
 the WCM mode from the request during request processing. The mode can be tested using the <code>WcmMode</code> enum methods.</p>
 <h2 id="forcing-wcm-mode-in-htl">Forcing WCM mode in HTL</h2>
-<p>While including resources or scripts in HTL using <code>data-sly-resource</code> or <code>data-sly-include</code> the WCM mode can be set 
-to specific value using the <code>requestAttributes</code> option and <code>wcmmode</code> object available in HTL.</p>
-<p>See more about <code>data-sly-resource</code> and <code>data-sly-include</code> <a href="https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1">here</a>.</p>
+<p>If you include resources or scripts in HTL using <code>data-sly-resource</code> or <code>data-sly-include</code>, you can set the WCM mode 
+to a specific value using the <code>requestAttributes</code> option and the <code>wcmmode</code> object available in HTL.</p>
+<p>Read more about <code>data-sly-resource</code> and <code>data-sly-include</code> <a href="https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1">here</a>.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;sly data-sly-resource=&quot;${&#39;title&#39; @ requestAttributes = wcmmode.disabledModeAttribute}&quot;&gt;&lt;/sly&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;sly data-sly-resource=&quot;${&#39;title&#39; @ requestAttributes = wcmmode.editModeAttribute}&quot;&gt;&lt;/sly&gt;

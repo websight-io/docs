@@ -4063,25 +4063,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="extending-page-editor">Extending Page Editor</h1>
 <h2 id="overview">Overview</h2>
-<p>Developers may need to extend the functionality of <em>Page editor</em>. You can provide <em>Editor extension</em> to achieve it. 
-<em>Editor extension</em> is delivered as JavaScript and use <em>Page editor</em> API.</p>
+<p>Developers may need to extend the functionality of the <em>Page editor</em>. You can provide the <em>Editor extension</em> to achieve this. 
+The <em>Editor extension</em> is delivered as JavaScript and uses the <em>Page editor</em> API.</p>
 <div class="admonition info">
-<p class="admonition-title">Note<p><em>Page editor</em> API in work and detailed specifications will be provided in the future.</p>
-</p>
+<p class="admonition-title">Note</p>
+<p>The <em>Page editor</em> API remains under development. Detailed specifications will be provided in the future.</p>
 </div>
 <h2 id="registering-extension">Registering extension</h2>
-<p>To define the <em>Editor extension</em> you must create JavaScript file which will be loaded in  the <em>Page editor</em> by the <em>Web Fragments</em>.</p>
-<p>The <em>Web Fragments</em> allows to register JavaScript files (JavaScript module) which will be imported using
+<p>To define the <em>Editor extension</em> you must create a JavaScript file, which will be loaded in the <em>Page editor</em> by <em>Web Fragments</em>.</p>
+<p><em>Web Fragments</em> allows you to register JavaScript files (JavaScript module) that will be imported using
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import">dynamic import</a> in the application runtime.
-The <em>Web Fragments</em> scripts should provide <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export">default export</a>
-delivering object, function, etc. depending on the given case - <em>Web Fragments</em> key that given fragment is related too.
-Expected type of default export should be checked in specification of given extension point.
-In number parts of application the <em>Web Fragments</em> with particular keys are imported allowing to extend the WebSight CMS.</p>
+The <em>Web Fragments</em> scripts should provide <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export">default export</a> to
+deliver object, function and so on, depending on the given case. <em>Web Fragments</em> defines the key that a given fragment is related to.
+The expected type of default export should be checked in the specification of a given extension point.
+In numerous parts of the application, <em>Web Fragments</em> with particular keys are imported, making it possible to extend WebSight CMS.</p>
 <p>The key of <em>Web Fragments</em> loaded by <em>Page editor</em> to get extensions is <code>websight.editor.spi.extension</code>.
-Expected default export should provide object with <code>init</code> function with single argument which will be <em>Page editor</em> object.</p>
-<p>To register the fragment, provide the OSGi components implementing <code>pl.ds.websight.fragments.registry.WebFragment</code> interface
-providing information about the fragment key, location of the JavaScript file and ranking used to order imports.</p>
-<p>Required Maven dependency (see the version of <code>websight-fragments-registry</code> bundle used in your system in
+The expected default export should provide an object with the <code>init</code> function with a single argument, which will be the <em>Page editor</em> object.</p>
+<p>To register the fragment, provide the OSGi components that implement the <code>pl.ds.websight.fragments.registry.WebFragment</code> interface to
+provide information about the fragment key, the location of the JavaScript file and the ranking used to order imports.</p>
+<p>There is a required Maven dependency (see the version of the <code>websight-fragments-registry</code> bundle used in your system in
 <a href="http://localhost:8080/system/console/bundles">Apache Felix Web Console in your local instance</a>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;dependency&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;groupId&gt;</span>pl.ds.websight<span class="nt">&lt;/groupId&gt;</span>
@@ -4102,27 +4102,27 @@ providing information about the fragment key, location of the JavaScript file an
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nd">@Override</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getKey</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="c1">// Web Fragment key - different extension points use different keys.</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// This key is used for Page editor extensions, so script file specified in getFragment</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="c1">// method will be imported by Page editor and used as Page editor extension.</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// This key is used for Page editor extensions, so the script file specified in the getFragment</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="c1">// method will be imported by the Page editor and used as a Page editor extension.</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;websight.editor.spi.extension&quot;</span><span class="p">;</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="nd">@Override</span>
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getFragment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="c1">// JavaScript module to import. Must provide default export in format expected by the</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="c1">// extension point related to the used Web Fragment key.</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="c1">// extension point related to the Web Fragment key in use.</span>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;/app/myapp/author/editor/extensions/ExampleExtension.js&quot;</span><span class="p">;</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">  </span><span class="nd">@Override</span>
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRanking</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="c1">// Web Fragments are imported in order according to the ranking value - lower first.</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="c1">// Web Fragments are imported in order according to the ranking value, starting with the lowest.</span>
 <a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
 <a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="p">}</span>
 </code></pre></div></p>
-<p>The JavaScript file returned by <code>getFragment</code> method should be bundle resource provided by your
-application and must be available in CMS authoring runtime (accessible for content author browser requests).
+<p>The JavaScript file returned by the <code>getFragment</code> method should be a bundle resource provided by your
+application and must be available in the CMS authoring runtime (specifically, it must be accessible for content author browser requests).
 Example content:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>export default {
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  init: (editor) =&gt; {
@@ -4131,11 +4131,11 @@ Example content:
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>}
 </code></pre></div></p>
 <h2 id="using-page-editor-extensions">Using Page editor extensions</h2>
-<p>Here you can find cases of Page editor extensions usage.</p>
+<p>Below you can find examples of Page editor extensions usage.</p>
 <h3 id="editor-events">Editor events</h3>
-<p><em>Page editor</em> overs API for working with event - you can register handler for events used in <em>Page editor</em>.
-To register event listener use <code>editor.addEventListener</code> and pass event type and listener function
-(you can use event data object parameter if needed).</p>
+<p><em>Page editor</em> uses an API for working with events. You can register a handler for events used in <em>Page editor</em>.
+To register an event listener use <code>editor.addEventListener</code> and pass the event type and listener function
+(you can use the event data object parameter if needed).</p>
 <table>
     <tr>
         <th>Event type</th>
