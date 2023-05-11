@@ -3,7 +3,7 @@
 ## 1.14.0 <small>May 10, 2023</small>
 
 #### Page Editor
-- Improved UX for inline editing. Authors can start the action using double-click (if [configured](/docs/developers/components/#default-action) for a given component).
+- Improved UX for inline editing. Authors can start the action using double-click (if configured as a [default action](/docs/developers/components/#default-action) for a given component).
 - Added a skeleton screen for the workspace while it is loading. 
 
 #### Dialogs
