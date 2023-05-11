@@ -6,6 +6,7 @@
 - Improved UX for inline editing. Authors can start the action using double-click (if configured as a [default action](/docs/developers/components/#default-action) for a given component).
 - Added a skeleton screen for the workspace while it is loading.                                            
 
+
 #### Dialogs
 - Fixed [#159](https://github.com/websight-io/starter/issues/159) - saving a multifield by a modal and the side panel leads to conflicts.
 
