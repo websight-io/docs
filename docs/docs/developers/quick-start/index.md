@@ -328,7 +328,7 @@ sh environment/local/delete.sh
 
 ## Next steps
 
-This guide walked thorugh the essentials of developing components for WebSight CMS. As a next step, we encourage you to explore additoinal details about the following:
+This guide walked through the essentials of developing components for WebSight CMS. As a next step, we encourage you to explore additional details about the following:
 
 - [Project setup](../setup/)
 - [Application development](../app-development/)
