@@ -74,7 +74,7 @@ Your task is to enable setup of the overline font size.
 
 To start, first you need to add a new field, `overlineSize`, to the model class `LunaTitleComponent.java`. Let's define a default size `hl-title__heading--size-5` according to the received design as well. The following Java code will do this:
 
-```java title="application/backend/src/main/java/pl/ds/luna/compoennts/models/LunaTitleComponent.java"
+```java title="application/backend/src/main/java/pl/ds/luna/components/models/LunaTitleComponent.java"
 package pl.ds.luna.components.models;
 
 import javax.inject.Inject;
