@@ -2,20 +2,24 @@
 
 ## 1.15.0 <small>May 30, 2023</small>
 
-#### Content Management
-- Changed implementation of [the publishing framework](../../../blog/2023/new-publishing-framework).
-- Fixed the issues with the information about publication status.
+#### Page and Asset Management
+- Fixed the publication status for new pages created as a copy.
+- Removed the publication status for folders.
 
 #### Page Editor
-- Added an action to edit the page properties.
-- Improved UX/UI of the side panel loading state.
+- Added an ability to update the page properties directly in the editor.
+- Improved the loading state for the side panel when a user selects a component for the first time.
 
 #### Dialogs
-- Fixed selecting default value for the select component.
+- Fixed the visibility of fields that depend on a default value of the select input field.
 
 #### Admin tools
-- Fixed the issue with inserting empty resource name while creating a new item.
-- Fixed the issue with the resource path input.
+- Fixed the issue with inserting an empty resource name while creating a new item.
+- Fixed the issue for creating new items in the Resource Browser - the resource name can't be empty now. 
+- Fixed [#158](https://github.com/websight-io/starter/issues/158) - the issue with the resource path input.
+
+#### Other
+- Changed implementation of [the publishing framework](../../../blog/2023/new-publishing-framework).
 
 ## 1.14.0 <small>May 10, 2023</small>
 
