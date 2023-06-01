@@ -1,5 +1,22 @@
 # WebSight CMS release notes
 
+## 1.15.0 <small>May 30, 2023</small>
+
+#### Content Management
+- Changed implementation of [the publishing framework](../../../blog/2023/new-publishing-framework).
+- Fixed the issues with the information about publication status.
+
+#### Page Editor
+- Added an action to edit the page properties.
+- Improved UX/UI of the side panel loading state.
+
+#### Dialogs
+- Fixed selecting default value for the select component.
+
+#### Admin tools
+- Fixed the issue with inserting empty resource name while creating a new item.
+- Fixed the issue with the resource path input.
+
 ## 1.14.0 <small>May 10, 2023</small>
 
 #### Page Editor
