@@ -19,7 +19,7 @@
 - Fixed [#158](https://github.com/websight-io/starter/issues/158) - the issue with the resource path input.
 
 #### Other
-- Changed implementation of [the publishing framework](../../../blog/2023/new-publishing-framework).
+-  Changed the API and implementation of the publishing framework. Pushing the published content to the file system works as before but will be changed to [a request-replay approach](/docs/blog/2023/new-publishing-framework/) in the next release.
 
 ## 1.14.0 <small>May 10, 2023</small>
 
