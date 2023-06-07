@@ -72,6 +72,7 @@ plugins:
           # Redirects for empty nodes
 
           'index.md': 'cms/intro/index.md'
+          'cms/index.md': 'cms/intro/index.md'
 
           # 'docs/index.md': 'docs/quick-start/index.md'
           # 'docs/authors/index.md': 'docs/authors/component-libs/howlite/index.md'
