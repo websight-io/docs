@@ -65,12 +65,6 @@ plugins:
   - awesome-pages
   - search
   - include-markdown
-  - blogging:
-      locale: en
-      dirs:
-        - blog/2022
-        - blog/2023
-      template: theme/ws-blog.html
   - redirects:
       redirect_maps:
           'simulator': 'https://architectures-load-simulator-pk7p5jx36a-lm.a.run.app'
