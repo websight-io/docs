@@ -22,7 +22,9 @@ The Radio component allows users to select exactly one from multiple available o
 
 - **removeIfEmpty** - `string` (if not defined `false`)  
     Indicates if property in JCR will be removed if it contains empty String, or will be retained with that value
-    
+
+To preselect value see the [Default state](../../dialogs#default_state) section
+
 It should contain child nodes with options. One of these options will be checked by default. If no option is selected to be checked by default, the first one will be automatically chosen. If more than one option is selected to be checked by default, only the first will be chosen.
 
 # Option
@@ -40,9 +42,6 @@ Defines one of the available options.
 
 - **value** - `string`(required)  
     Value of choosen option
-
-- **selected** - `string`  
-    Indicates if field is selected by default. By default, this option will not be saved in the properties unless the user selects an option manually. In order to make things work smoothly, you should use the same default value here as in the backend.
 
 ## Example
 

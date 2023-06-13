@@ -38,8 +38,7 @@ Defines one of the available option.
 - **value** - `string`(required)  
     Value of choosen option
 
-- **selected** - `string`  
-    Indicates if field is selected by default. By default, this option will not be saved in the properties unless the user selects an option manually. In order to make things work smoothly, you should use the same default value here as in the backend.
+To preselect value see the [Default state](../../dialogs#default_state) section
 
 ## Example
 
