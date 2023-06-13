@@ -1,4 +1,5 @@
 nav:
+  - Intro: intro
   - Quick start guide: quick-start
   - Authoring: authors
   - Architecture: architecture

@@ -1,5 +1,2 @@
 nav:
-  - Home: index.md
-  - Docs: docs
-  - Community: community
-  - Blog: blog
+  - Docs: cms
