@@ -23,7 +23,7 @@ The Radio component allows users to select exactly one from multiple available o
 - **removeIfEmpty** - `string` (if not defined `false`)  
     Indicates if property in JCR will be removed if it contains empty String, or will be retained with that value
 
-To preselect value see the [Default state](../../dialogs#default_state) section
+To preselect value see the [Default state](../../dialogs#default-state) section
 
 It should contain child nodes with options. One of these options will be checked by default. If no option is selected to be checked by default, the first one will be automatically chosen. If more than one option is selected to be checked by default, only the first will be chosen.
 

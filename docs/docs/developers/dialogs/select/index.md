@@ -38,7 +38,7 @@ Defines one of the available option.
 - **value** - `string`(required)  
     Value of choosen option
 
-To preselect value see the [Default state](../../dialogs#default_state) section
+To preselect value see the [Default state](../../dialogs#default-state) section
 
 ## Example
 

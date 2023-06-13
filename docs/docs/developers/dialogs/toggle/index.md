@@ -23,7 +23,7 @@ Define what value will be saved in JCR if the checkbox is _not_ checked. Default
 - **description** - `string`  
 Display description value as a tooltip
 
-To set the default value see the [Default state](../../dialogs#default_state) section
+To set the default value see the [Default state](../../dialogs#default-state) section
 
 ## Example
 

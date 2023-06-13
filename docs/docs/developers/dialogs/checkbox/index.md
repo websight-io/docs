@@ -23,7 +23,7 @@ The Checkbox dialog field allows the user to selection an option from a list of 
 - **description** - `string`  
     Display description value as a tooltip
 
-To set the default value see the [Default state](../../dialogs#default_state) section
+To set the default value see the [Default state](../../dialogs#default-state) section
 
 ## Example
 
