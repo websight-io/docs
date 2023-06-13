@@ -14,9 +14,6 @@ The Checkbox dialog field allows the user to selection an option from a list of 
 - **label** - `string`(required)  
     Display label value
 
-- **checkedByDefault** - `string`  
-    Indicates if field should be checked by default. Default: “false”.
-
 - **checkedValue** - `string`  
     Define what value will be saved in JCR if the checkbox is checked. Default: “true” String
 
@@ -26,13 +23,14 @@ The Checkbox dialog field allows the user to selection an option from a list of 
 - **description** - `string`  
     Display description value as a tooltip
 
+To set the default value see the [Default state](../../dialogs#default-state) section
+
 ## Example
 
 ```json
 "isSlider": {
   "sling:resourceType": "wcm/dialogs/components/checkbox",
   "name": "isSlider",
-  "label": "Display as a slider",
-  "checkedByDefault": "true"
+  "label": "Display as a slider"
 }
 ```

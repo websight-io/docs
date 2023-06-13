@@ -217,6 +217,16 @@ Example dialog definition:
 }
 ```
 
+To correctly handle all display conditions the component should also have initial field values set. 
+`template/content.json` file for this example.
+```json
+{
+  "jcr:primaryType": "nt:unstructured",
+  "hideall": false
+}
+
+```
+
 
 - Initial dialog state:
 ![Inital dialog state](dialog-show-hide-1.png)
@@ -230,35 +240,16 @@ Example dialog definition:
 ![Dialog with "Show required field" checked](dialog-show-hide-3.png)
 
 ## Default state
-Some components allow you to define a default state. For exmaple, a checkbox can be checked by default, and selecting it can use the default option. It is important to keep using those components with the same default state that is used in backend models.
+It's important to keep what that author sees consistent with state stored on backend. 
+All visibility conditions on dialog are checked both on backend and frontend.
+Use the [Component template](../components#template) to initialize the values when component is fist added on a page. 
+To add default values on new fields on existing components you can: 
 
-Example:
+- Change the content manually (when is managed in git repository)
 
-- dialog field definition with h2 selected by default:
-```json
-{
-  "sling:resourceType": "wcm/dialogs/components/radio",
-  "name": "headingLevel",
-  "label": "Heading level",
-  "h1": {
-    "sling:resourceType": "wcm/dialogs/components/radio/option",
-    "label": "H1",
-    "value": "h1"
-  },
-  "h2": {
-    "sling:resourceType": "wcm/dialogs/components/radio/option",
-    "label": "H2",
-    "selected": true,
-    "value": "h2"
-  },
-  "h3": {
-    "sling:resourceType": "wcm/dialogs/components/radio/option",
-    "label": "H3",
-    "value": "h3"
-  }
-}
-```
-- model class:
+- Use [Groovy Console](http://localhost:8080/apps/groovy) to prepare script migrating the existing content
+
+- You can also use @Default annotation on Model field. But be aware that it's only setting this value in the context of model class. The values on dialogs and visibility conditions are not affected by this.
 ```java 
 @Model(adaptables = Resource.class)
 public class TitleComponent {
@@ -269,5 +260,3 @@ public class TitleComponent {
 
 }
 ```
-
-You can use [Component template](../components/definition/#template) to achieve a similar effect, but only if you add a new component. There is no easy solution to update all existing resources, so the initial content is useless if you extend the existing component. In that case, you need to use default states.
