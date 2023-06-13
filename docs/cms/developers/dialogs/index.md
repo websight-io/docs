@@ -244,8 +244,11 @@ It's important to keep what that author sees consistent with state stored on bac
 All visibility conditions on dialog are checked both on backend and frontend.
 Use the [Component template](../components#template) to initialize the values when component is fist added on a page. 
 To add default values on new fields on existing components you can: 
+
 - Change the content manually (when is managed in git repository)
+
 - Use [Groovy Console](http://localhost:8080/apps/groovy) to prepare script migrating the existing content
+
 - You can also use @Default annotation on Model field. But be aware that it's only setting this value in the context of model class. The values on dialogs and visibility conditions are not affected by this.
 ```java 
 @Model(adaptables = Resource.class)
