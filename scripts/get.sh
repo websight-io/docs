@@ -10,8 +10,8 @@ if [ -x "$(command -v docker)" ]; then
     rm -rf websight-cms-ce/
     mkdir websight-cms-ce
     cd websight-cms-ce
-    curl --silent https://www.websight.io/scripts/docker-compose.yml --output docker-compose.yml
-    curl --silent https://www.websight.io/scripts/logo.ascii.txt
+    curl --silent https://docs.websight.io/scripts/docker-compose.yml --output docker-compose.yml
+    curl --silent https://docs.websight.io/scripts/logo.ascii.txt
     {
         sleep 5
         until curl --output /dev/null --silent --head --fail "http://localhost:8080/system/health"; do
