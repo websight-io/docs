@@ -16,7 +16,7 @@ it is possible to differentiate between the fields and layout for the regular mo
 This configuration allows developers to decide field-by-field if it should appear in both
 of the two contexts, or only in one.
 
-The mechanism used to achieve this is the `ws:disallowedContext` parameter (see more details about the mechanism [here](/docs/developers/dialogs#context)).
+The mechanism used to achieve this is the `ws:disallowedContext` parameter (see more details about the mechanism [here](/cms/developers/dialogs#context)).
 The two contexts that can be disabled are `edit:dialog` and `edit:panel`.
 
 ### Example 1

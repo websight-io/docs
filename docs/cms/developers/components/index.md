@@ -13,7 +13,7 @@ Both views can be opened from the WebSight UI:
 
 ![WebSight - page editing & opening Resource Browser](websight-page-edit-resource-browser.png)
 
-Check the WebSight [project setup documentation](/docs/developers/setup/) to see more details about:
+Check the WebSight [project setup documentation](/cms/developers/setup/) to see more details about:
 
 - what WebSight CMS is, and what it gives you
 - implementing applications for WebSight CMS Community Edition
@@ -263,7 +263,7 @@ This is what the dialog definition structure looks like with the same dialog dis
 
 Dialog for editing component properties is opened in `edit:dialog` _context_ - the _context_
 can be used to disable some fields depending on the dialog usage. Read more about _context_ and other
-aspects of the dialogs in the [Dialogs documentation](/docs/developers/dialogs/).
+aspects of the dialogs in the [Dialogs documentation](/cms/developers/dialogs/).
 
 ### Rendering script
 

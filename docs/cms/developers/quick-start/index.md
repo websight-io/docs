@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This guide explains how to update a simple Howlite component. Before you complete this guide, we recommend completing the basic [quick start guide](/docs/quick-start/) first so that you understand basic WebSight CMS concepts.
+This guide explains how to update a simple Howlite component. Before you complete this guide, we recommend completing the basic [quick start guide](/cms/quick-start/) first so that you understand basic WebSight CMS concepts.
 
 For demonstration purposes, this guide uses a sample component library, [Howlite](https://github.com/websight-io/howlite), and a demo site project, _Luna_. For the sake of simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and preconfigured the _Luna Title_ component inside the demo project. 
 
@@ -39,7 +39,7 @@ Congratulations! Your local environment is now ready. To view it, open [http://l
 ## Part C: Changing component
 
 !!! info "Hint"
-    If you need help navigating inside WebSight, see the basic [getting started](/docs/quick-start/) guide for details.
+    If you need help navigating inside WebSight, see the basic [getting started](/cms/quick-start/) guide for details.
 
 ### Business requirement
 
@@ -280,7 +280,7 @@ Congratulations! You updated the component, and it passed tests.
 ## Part E: Use the new component
 
 !!! info "Hint"
-    If you need help to navigate inside WebSight, see the general [getting started](/docs/quick-start/) for details.
+    If you need help to navigate inside WebSight, see the general [getting started](/cms/quick-start/) for details.
 
 The page owner can use the updated component now. Let's verify by checking it out in the admin interface.
 

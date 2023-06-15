@@ -93,7 +93,7 @@ From the Droplet console perform the following:
 
 1. Download Docker Compose file:
 ```bash
-wget https://www.websight.io/scripts/docker-compose.yml
+wget https://docs.websight.io/scripts/docker-compose.yml
 ```
 
 2. Update the downloaded `docker-compose.yml` file and replace these values as follows:
