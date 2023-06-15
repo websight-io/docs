@@ -13,7 +13,7 @@ This guide is a starting-point for developing custom components for WebSight CMS
 !!! hint "Quick setup with `curl`"
     If you have `curl` installed, you can set up the local environment using the following command. Then, you can go directly to Part B below.
 
-    `curl https://www.websight.io/scripts/get.sh | sh`
+    `curl https://docs.websight.io/scripts/get.sh | sh`
 
 If this method doesn't work for you, following steps 1 and 2 below to set up the Docker instance manually.
 
