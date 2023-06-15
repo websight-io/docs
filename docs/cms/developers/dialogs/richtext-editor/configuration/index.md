@@ -196,12 +196,12 @@ Configuration examples:
 
 Available UI components:
 
-- [Button](/docs/developers/dialogs/richtext-editor/ui-components/button/)
-- [Button Dropdown](/docs/developers/dialogs/richtext-editor/ui-components/button-dropdown/)
-- [Dropdown](/docs/developers/dialogs/richtext-editor/ui-components/dropdown/)
-- [Link](/docs/developers/dialogs/richtext-editor/ui-components/link/)
+- [Button](/cms/developers/dialogs/richtext-editor/ui-components/button/)
+- [Button Dropdown](/cms/developers/dialogs/richtext-editor/ui-components/button-dropdown/)
+- [Dropdown](/cms/developers/dialogs/richtext-editor/ui-components/dropdown/)
+- [Link](/cms/developers/dialogs/richtext-editor/ui-components/link/)
 
-Available plugin components are described [here](/docs/developers/dialogs/richtext-editor/plugin-components/).
+Available plugin components are described [here](/cms/developers/dialogs/richtext-editor/plugin-components/).
 
 ## Custom Components
 

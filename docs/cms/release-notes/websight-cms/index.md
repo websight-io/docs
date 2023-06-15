@@ -19,12 +19,12 @@
 - Fixed [#158](https://github.com/websight-io/starter/issues/158) - the issue with the resource path input.
 
 #### Other
--  Changed the API and implementation of the publishing framework. Pushing the published content to the file system works as before but will be changed to [a request-replay approach](/docs/blog/2023/new-publishing-framework/) in the next release.
+-  Changed the API and implementation of the publishing framework. Pushing the published content to the file system works as before but will be changed to [a request-replay approach](https://www.websight.io/blog/2023/new-publishing-framework.html) in the next release.
 
 ## 1.14.0 <small>May 10, 2023</small>
 
 #### Page Editor
-- Improved UX for inline editing. Authors can start the action using double-click (if configured as a [default action](/docs/developers/components/#default-action) for a given component).
+- Improved UX for inline editing. Authors can start the action using double-click (if configured as a [default action](/cms/developers/components/#default-action) for a given component).
 - Added a skeleton screen for the workspace while it is loading.                                            
 
 
@@ -35,7 +35,7 @@
 - Fixed the issue with providing a resource name while creating a new item.
 
 #### Other
-- Updated [Howlite](/docs/authors/component-libs/howlite/) components (RTE, Title, Quote, CTA) - removed the mandatoriness of fields having an initial content.
+- Updated [Howlite](/cms/authors/component-libs/howlite/) components (RTE, Title, Quote, CTA) - removed the mandatoriness of fields having an initial content.
 
 ## 1.13.0 <small>April 19, 2023</small>
 
@@ -49,10 +49,10 @@
 - Added keyboard shortcuts to copy, cut and paste components.
 
 #### Components
-- Added the [ability to define items reloaded after a component is updated by the author](/docs/developers/components/#reload-on-update).
+- Added the [ability to define items reloaded after a component is updated by the author](/cms/developers/components/#reload-on-update).
 
 #### Dialogs
-- Changed and extended _Rich Text Editor_ [configuration options](/docs/developers/dialogs/richtext-editor/configuration/#using-configuration).
+- Changed and extended _Rich Text Editor_ [configuration options](/cms/developers/dialogs/richtext-editor/configuration/#using-configuration).
 
 #### Other
 - Fixed the blinking space icons and space types on load.
@@ -74,7 +74,7 @@
 - Fixed the lack of component selection after changing component properties in the modal.
 
 #### Dialogs
-- Fixed [#63](https://github.com/websight-io/starter/issues/63) and [#149](https://github.com/websight-io/starter/issues/149) - [toggle](/docs/developers/dialogs/toggle/), [select](/docs/developers/dialogs/select/), [checkbox](/docs/developers/dialogs/checkbox/), [radio](/docs/developers/dialogs/radio/), [rich text editor](/docs/developers/dialogs/richtext-editor/), and [text area](/docs/developers/dialogs/text-area/) work right in the [multifield](/docs/developers/dialogs/multifield/) now. Additionally, the description for the input field included in the multifield is presented on hover.
+- Fixed [#63](https://github.com/websight-io/starter/issues/63) and [#149](https://github.com/websight-io/starter/issues/149) - [toggle](/cms/developers/dialogs/toggle/), [select](/cms/developers/dialogs/select/), [checkbox](/cms/developers/dialogs/checkbox/), [radio](/cms/developers/dialogs/radio/), [rich text editor](/cms/developers/dialogs/richtext-editor/), and [text area](/cms/developers/dialogs/text-area/) work right in the [multifield](/cms/developers/dialogs/multifield/) now. Additionally, the description for the input field included in the multifield is presented on hover.
 
 
 ## 1.11.0 <small>March 15, 2023</small>
@@ -102,7 +102,7 @@
 - Fixed the missing icon for the _deny_ permission in the user manager. 
 
 #### Dialogs
-- Fixed an issue with closing the [Button Dropdown](/docs/developers/dialogs/richtext-editor/ui-components/button-dropdown/) for the [Rich Text Editor](/docs/developers/dialogs/richtext-editor/).
+- Fixed an issue with closing the [Button Dropdown](/cms/developers/dialogs/richtext-editor/ui-components/button-dropdown/) for the [Rich Text Editor](/docs/developers/dialogs/richtext-editor/).
 
 #### Other
 - Fixed inconsistency of a new space name generated from the title.
@@ -180,7 +180,7 @@
 - Improved the placeholder text for empty containers to guide users on how to add components.
 - Fixed issues with overlays for components.
 - Fixed [#33](https://github.com/websight-io/starter/issues/33) - reduced panel size leads to cropped images thumbnails.
-- [Path picker](/docs/developers/dialogs/pathpicker/) input field:
+- [Path picker](/cms/developers/dialogs/pathpicker/) input field:
     - Fixed [#19](https://github.com/websight-io/starter/issues/19) - updated placeholder text to guide on how to choose a path.
     - Added an arrow to expand the dropdown for selection.
     - Fixed an issue with the _rootPath_ property.

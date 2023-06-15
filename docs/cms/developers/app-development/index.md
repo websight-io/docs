@@ -164,7 +164,7 @@ This means that the page template `/apps/example-project/templates/contentpage` 
 In the second step, page properties can be set:
 ![New page - dialog ](img26.png)
 
-The dialog displayed at this step is a dialog of the component defined in the initial content of the page template (`sling:resourceType": "example-project/components/page`). Read more about components and dialogs in the [Components section](/docs/developers/components/) of the WebSight CMS documentation.
+The dialog displayed at this step is a dialog of the component defined in the initial content of the page template (`sling:resourceType": "example-project/components/page`). Read more about components and dialogs in the [Components section](/cms/developers/components/) of the WebSight CMS documentation.
 
 The initial content of the page template is defined in a resource named `initial`, which is located under the page template resource. The initial content is copied to initialize the created page. Properties are set via a dialog on the copied page content.
 
@@ -224,7 +224,7 @@ Page created from this template contains defined initial content:
 
 ## Components
 
-Content is assembled from components. Components are elements that render parts of content according to implemented functionality. To understand the components concept see the [Components section](/docs/developers/components/) of the WebSight CMS documentation.
+Content is assembled from components. Components are elements that render parts of content according to implemented functionality. To understand the components concept see the [Components section](/cms/developers/components/) of the WebSight CMS documentation.
 
 The generated backend module contains three example components, located under `/apps/example-project/components`
 
@@ -270,7 +270,7 @@ Define also the rendering script richtext.html (name must be matching component 
 <sly data-sly-test="${properties.text && properties.text != '<p></p>'}">${properties.text @ context='html'}</sly>
 ```
 
-See the [Components documentation](/docs/developers/components/) for more details.
+See the [Components documentation](/cms/developers/components/) for more details.
 
 This is how the new component definition looks in the codebase. Deploy the change with the command from the backend module: `mvn clean install -P autoInstallBundle`
 
@@ -326,6 +326,6 @@ The `test` module contains content used during end-to-end test execution to vali
 
 Congratulations! You've learned the application development process for WebSight CMS. Now, we recommend exploring details about deployment:
 
-- [Deployment in AWS](/docs/deployment/aws-ecs/)
-- [Deployment with Kubernetes](/docs/deployment/kubernetes/)
-- [Deployment to Linux using Docker Compose](/docs/deployment/linux/)
+- [Deployment in AWS](/cms/deployment/aws-ecs/)
+- [Deployment with Kubernetes](/cms/deployment/kubernetes/)
+- [Deployment to Linux using Docker Compose](/cms/deployment/linux/)

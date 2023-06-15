@@ -37,9 +37,9 @@ The values can be just a property name which will be saved on the component cont
 may contain sub-nodes on the component node, for example `"property": "node1/node2/title"`.
 
 The value of property must correspond to a field defined in the component dialog - if the field is
-not needed in the dialog it can be disabled using dialogs _context_, see [component dialog documentation](/docs/developers/components/#dialog).
+not needed in the dialog it can be disabled using dialogs _context_, see [component dialog documentation](/cms/developers/components/#dialog).
 
-It is recommended to avoid inline editing of fields using [validation](/docs/developers/dialogs/#validation) for better content 
+It is recommended to avoid inline editing of fields using [validation](/cms/developers/dialogs/#validation) for better content 
 authoring experience - the validation error will be reported as notification and value will not be updated.
 
 ### DOM selectors
@@ -92,7 +92,7 @@ The WebSight text editor allows single line, plain text editing. The ID of the e
 
 ### Rich text editor
 
-The WebSight rich text editor allows rich text editing in the same way as the [dialogs rich text](/docs/developers/dialogs/richtext-editor).
+The WebSight rich text editor allows rich text editing in the same way as the [dialogs rich text](/cms/developers/dialogs/richtext-editor).
 The ID of the editor is `rich-text`.
 
 ```json title="Example component edit config enabling rich text inline editing"
@@ -108,7 +108,7 @@ The ID of the editor is `rich-text`.
 
 ![Rich text inline editor](images/rich-text-inline-editor.png)
 
-To specify the [rich text configuration](/docs/developers/dialogs/richtext-editor/configuration) add
+To specify the [rich text configuration](/cms/developers/dialogs/richtext-editor/configuration) add
 `editorConfiguration` with the `rteConfiguration` property of containing path to the configuration.
 
 ```json title="Example component edit config enabling rich text inline editing and specified configuration"
