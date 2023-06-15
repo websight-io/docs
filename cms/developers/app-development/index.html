@@ -3475,7 +3475,7 @@ The Pages Space template resource must have <code>sling:resourceType</code> set 
 <img alt="New page - template selection " src="img25.png" /></p>
 <p>In the second step, page properties can be set:
 <img alt="New page - dialog " src="img26.png" /></p>
-<p>The dialog displayed at this step is a dialog of the component defined in the initial content of the page template (<code>sling:resourceType": "example-project/components/page</code>). Read more about components and dialogs in the <a href="/docs/developers/components/">Components section</a> of the WebSight CMS documentation.</p>
+<p>The dialog displayed at this step is a dialog of the component defined in the initial content of the page template (<code>sling:resourceType": "example-project/components/page</code>). Read more about components and dialogs in the <a href="/cms/developers/components/">Components section</a> of the WebSight CMS documentation.</p>
 <p>The initial content of the page template is defined in a resource named <code>initial</code>, which is located under the page template resource. The initial content is copied to initialize the created page. Properties are set via a dialog on the copied page content.</p>
 <p>Page is a node of type <code>ws:Page</code>. It contains a page content sub-node named <code>jcr:content</code> of the type <code>ws:PageContent</code>. The nodes located under the page content node can be modified via the authoring UI. All the Page properties (including properties set via the page dialog) are set on the page content node.</p>
 <p>This is the initial content of the <code>/apps/example-project/templates/contentpage</code> page template:
@@ -3519,7 +3519,7 @@ The Pages Space template resource must have <code>sling:resourceType</code> set 
 <p>Page created from this template contains defined initial content:
 <img alt="" src="img32.png" /></p>
 <h2 id="components">Components</h2>
-<p>Content is assembled from components. Components are elements that render parts of content according to implemented functionality. To understand the components concept see the <a href="/docs/developers/components/">Components section</a> of the WebSight CMS documentation.</p>
+<p>Content is assembled from components. Components are elements that render parts of content according to implemented functionality. To understand the components concept see the <a href="/cms/developers/components/">Components section</a> of the WebSight CMS documentation.</p>
 <p>The generated backend module contains three example components, located under <code>/apps/example-project/components</code></p>
 <ul>
 <li>page - component used to render page content node</li>
@@ -3553,7 +3553,7 @@ The Pages Space template resource must have <code>sling:resourceType</code> set 
 <p>Define also the rendering script richtext.html (name must be matching component resource name + .html):
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">sly</span> <span class="na">data-sly-test</span><span class="o">=</span><span class="s">&quot;${properties.text &amp;&amp; properties.text != &#39;&lt;p&gt;&lt;/p&gt;&#39;}&quot;</span><span class="p">&gt;</span>${properties.text @ context=&#39;html&#39;}<span class="p">&lt;/</span><span class="nt">sly</span><span class="p">&gt;</span>
 </code></pre></div></p>
-<p>See the <a href="/docs/developers/components/">Components documentation</a> for more details.</p>
+<p>See the <a href="/cms/developers/components/">Components documentation</a> for more details.</p>
 <p>This is how the new component definition looks in the codebase. Deploy the change with the command from the backend module: <code>mvn clean install -P autoInstallBundle</code></p>
 <p><img alt="" src="img35.png" /></p>
 <p>The new component is available now in the editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the data-sly-test statement in the component renderer. If nothing is rendered by the component the placeholder is displayed automatically in the editor. The edit action can be used to open dialog, and you can use the rich text dialog input to configure the text.</p>
@@ -3584,9 +3584,9 @@ The CSS file is included in the page component renderer to load the CSS.</p>
 <h2 id="next-steps">Next steps</h2>
 <p>Congratulations! You've learned the application development process for WebSight CMS. Now, we recommend exploring details about deployment:</p>
 <ul>
-<li><a href="/docs/deployment/aws-ecs/">Deployment in AWS</a></li>
-<li><a href="/docs/deployment/kubernetes/">Deployment with Kubernetes</a></li>
-<li><a href="/docs/deployment/linux/">Deployment to Linux using Docker Compose</a></li>
+<li><a href="/cms/deployment/aws-ecs/">Deployment in AWS</a></li>
+<li><a href="/cms/deployment/kubernetes/">Deployment with Kubernetes</a></li>
+<li><a href="/cms/deployment/linux/">Deployment to Linux using Docker Compose</a></li>
 </ul>
 
               

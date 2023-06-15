@@ -3384,8 +3384,8 @@ for the component then action triggering the editing is available.</p>
 The values can be just a property name which will be saved on the component content nod, for example <code>"property": "title"</code> or
 may contain sub-nodes on the component node, for example <code>"property": "node1/node2/title"</code>.</p>
 <p>The value of property must correspond to a field defined in the component dialog - if the field is
-not needed in the dialog it can be disabled using dialogs <em>context</em>, see <a href="/docs/developers/components/#dialog">component dialog documentation</a>.</p>
-<p>It is recommended to avoid inline editing of fields using <a href="/docs/developers/dialogs/#validation">validation</a> for better content 
+not needed in the dialog it can be disabled using dialogs <em>context</em>, see <a href="/cms/developers/components/#dialog">component dialog documentation</a>.</p>
+<p>It is recommended to avoid inline editing of fields using <a href="/cms/developers/dialogs/#validation">validation</a> for better content 
 authoring experience - the validation error will be reported as notification and value will not be updated.</p>
 <h3 id="dom-selectors">DOM selectors</h3>
 <p>The <code>domSelectors</code> are used to find DOM element the inline editing should be done on.
@@ -3422,7 +3422,7 @@ See the provided editors below.</p>
 </code></pre></div>
 <p><img alt="Text inline editor" src="images/text-editor.png" /></p>
 <h3 id="rich-text-editor">Rich text editor</h3>
-<p>The WebSight rich text editor allows rich text editing in the same way as the <a href="/docs/developers/dialogs/richtext-editor">dialogs rich text</a>.
+<p>The WebSight rich text editor allows rich text editing in the same way as the <a href="/cms/developers/dialogs/richtext-editor">dialogs rich text</a>.
 The ID of the editor is <code>rich-text</code>.</p>
 <div class="highlight"><span class="filename">Example component edit config enabling rich text inline editing</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;inlineEditing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3434,7 +3434,7 @@ The ID of the editor is <code>rich-text</code>.</p>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
 </code></pre></div>
 <p><img alt="Rich text inline editor" src="images/rich-text-inline-editor.png" /></p>
-<p>To specify the <a href="/docs/developers/dialogs/richtext-editor/configuration">rich text configuration</a> add
+<p>To specify the <a href="/cms/developers/dialogs/richtext-editor/configuration">rich text configuration</a> add
 <code>editorConfiguration</code> with the <code>rteConfiguration</code> property of containing path to the configuration.</p>
 <div class="highlight"><span class="filename">Example component edit config enabling rich text inline editing and specified configuration</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;inlineEditing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
