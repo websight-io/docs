@@ -3427,7 +3427,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <h1 id="deployment-with-amazon-ecs">Deployment with Amazon ECS</h1>
-<p>This tutorial explains how to deploy an application created in the <a href="../../../developers/setup/">setup guide</a> to the <a href="https://aws.amazon.com/">Amazon Web Services</a> cloud using <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose</a>.</p>
+<p>This tutorial explains how to deploy an application created in the <a href="/cms/developers/setup/">setup guide</a> to the <a href="https://aws.amazon.com/">Amazon Web Services</a> cloud using <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose</a>.</p>
 <p>The <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose CLI fully integrates with the Amazon Elastic Container Service (ECS)</a>. It allows you to create and manage the task definitions, tasks and services using Compose YAML configuration files. The Docker Compose CLI relies on <a href="https://aws.amazon.com/cloudformation/">CloudFormation</a> to manage AWS Resources.</p>
 <p>Docker allows users to define environments in a declarative way. As a result, switching between local environments and ECS environments is as easy as switching your <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Context</a> (Any AWS-specific configurations is stored in the Docker Compose YAML file.)</p>
 <div class="admonition warning">
@@ -3436,7 +3436,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Prerequisites</p>
-<p>After completing the <a href="../../../developers/setup/">Creating and developing WebSight CMS project guide</a> you should have:</p>
+<p>After completing the <a href="/cms/developers/setup/">Creating and developing WebSight CMS project guide</a> you should have:</p>
 <ul>
 <li><a href="https://docs.docker.com/get-docker/">Docker</a> installed and running on your local machine.</li>
 <li>Java 17 (e.g. <a href="https://adoptium.net/">AdoptOpenJDK 17</a>) and <a href="https://maven.apache.org/download.cgi">Maven</a> installed on your local machine.</li>
@@ -3459,7 +3459,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 </ol>
 <h2 id="step-2-project-configuration">Step 2: Project configuration</h2>
-<p>In this step, we will start with the project generated in the <a href="../../../developers/setup/">Setup guide</a> and update our Docker and Maven configuration files as needed.</p>
+<p>In this step, we will start with the project generated in the <a href="/cms/developers/setup/">Setup guide</a> and update our Docker and Maven configuration files as needed.</p>
 <h3 id="docker">Docker</h3>
 <p>For the sake of simplicity, we set the remote environment configuration in the same repository as the project.</p>
 <ol>
