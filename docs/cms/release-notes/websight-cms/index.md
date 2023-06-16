@@ -102,7 +102,7 @@
 - Fixed the missing icon for the _deny_ permission in the user manager. 
 
 #### Dialogs
-- Fixed an issue with closing the [Button Dropdown](/cms/developers/dialogs/richtext-editor/ui-components/button-dropdown/) for the [Rich Text Editor](/docs/developers/dialogs/richtext-editor/).
+- Fixed an issue with closing the [Button Dropdown](/cms/developers/dialogs/richtext-editor/ui-components/button-dropdown/) for the [Rich Text Editor](/cms/developers/dialogs/richtext-editor/).
 
 #### Other
 - Fixed inconsistency of a new space name generated from the title.
@@ -256,4 +256,4 @@
 ## 1.0.0 <small>September 28, 2022</small>
 
 First public release of the WebSight CMS Community Edition.
-[See our blog post](../../../blog/2022/websight-cms-ce-1-0-0/)
+[See our blog post](https://www.websight.io/blog/2022/websight-cms-community-edition-100-release.html)

@@ -1,5 +1,5 @@
 #  Deployment with Amazon ECS
-This tutorial explains how to deploy an application created in the [setup guide](../../../developers/setup/) to the [Amazon Web Services](https://aws.amazon.com/) cloud using [Docker Compose](https://docs.docker.com/cloud/ecs-integration/).
+This tutorial explains how to deploy an application created in the [setup guide](/cms/developers/setup/) to the [Amazon Web Services](https://aws.amazon.com/) cloud using [Docker Compose](https://docs.docker.com/cloud/ecs-integration/).
 
 The [Docker Compose CLI fully integrates with the Amazon Elastic Container Service (ECS)](https://docs.docker.com/cloud/ecs-integration/). It allows you to create and manage the task definitions, tasks and services using Compose YAML configuration files. The Docker Compose CLI relies on [CloudFormation](https://aws.amazon.com/cloudformation/) to manage AWS Resources.
 
@@ -11,7 +11,7 @@ Docker allows users to define environments in a declarative way. As a result, sw
 
 !!! abstract "Prerequisites"
 
-    After completing the [Creating and developing WebSight CMS project guide](../../../developers/setup/) you should have:
+    After completing the [Creating and developing WebSight CMS project guide](/cms/developers/setup/) you should have:
     
     - [Docker](https://docs.docker.com/get-docker/) installed and running on your local machine.
     - Java 17 (e.g. [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.
@@ -31,7 +31,7 @@ Docker allows users to define environments in a declarative way. As a result, sw
     - Set the NGINX image `Repository name` to `<your-project-name>-nginx-ce`, e.g. `luna-nginx-ce`.
 
 ## Step 2: Project configuration
-In this step, we will start with the project generated in the [Setup guide](../../../developers/setup/) and update our Docker and Maven configuration files as needed.
+In this step, we will start with the project generated in the [Setup guide](/cms/developers/setup/) and update our Docker and Maven configuration files as needed.
 
 ### Docker
 For the sake of simplicity, we set the remote environment configuration in the same repository as the project.

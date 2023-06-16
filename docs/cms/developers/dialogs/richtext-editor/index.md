@@ -7,7 +7,7 @@
 
 The Rich Text Editor dialog field provides many features that allow authors to edit text content.  
 
-This dialog field requires a [configuration](./richtext-editor-configuration.md/), which defines which features should be available and how the menu bar be displayed.
+This dialog field requires a [configuration](./configuration/), which defines which features should be available and how the menu bar be displayed.
 
 ## Properties
 

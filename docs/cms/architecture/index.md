@@ -20,9 +20,9 @@ Our CMS is a `Java`-based `OSGi` application (**WebSight CMS CE**) with a `NoSQL
         Multiple instances of WebSight CMS can connect to MongoDB, which supports online deployments and enables CMS scalability.
 
 ## Containers
-We use containers to ship WebSight CMS for deployment on multiple environments, from developers' local computers to public clouds. Read our ["Why we decided to ship and develop the OSGi application in containers"](/blog/2022/shipping-and-developing-osgi-application-in-container/) article to understand the benefits of containers in our stack.
+We use containers to ship WebSight CMS for deployment on multiple environments, from developers' local computers to public clouds. Read our ["Why we decided to ship and develop the OSGi application in containers"](https://www.websight.io/blog/2022/why-we-decided-to-ship-and-develop-the-osgi-application-in-containers.html) article to understand the benefits of containers in our stack.
 
-Once developers [create a WebSight project using the Maven archetype](../setup/), they produce the following Docker images:
+Once developers [create a WebSight project using the Maven archetype](/cms/developers/setup/), they produce the following Docker images:
 
 - An `NGINX image` (web server) with addtional project-specific configurations
 - A customized `CMS image` with core WebSight CMS and project-specific modules and configurations
