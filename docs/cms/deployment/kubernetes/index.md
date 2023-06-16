@@ -1,5 +1,5 @@
 #  Deployment with Kubernetes
-This tutorial explains how to deploy an application created in the [setup guide](../../../developers/setup/) to [Kubernetes](https://kubernetes.io/) using a [Digital Ocean Managed Kubernetes cluster](https://www.digitalocean.com/products/kubernetes).
+This tutorial explains how to deploy an application created in the [setup guide](/cms/developers/setup/) to [Kubernetes](https://kubernetes.io/) using a [Digital Ocean Managed Kubernetes cluster](https://www.digitalocean.com/products/kubernetes).
 
 !!! warning "Notice"
 
@@ -8,7 +8,7 @@ This tutorial explains how to deploy an application created in the [setup guide]
 
 !!! abstract "Prerequisites"
 
-    After finishing [Creating and developing WebSight CMS project guide](../../../developers/setup/) you should already have:
+    After finishing [Creating and developing WebSight CMS project guide](/cms/developers/setup/) you should already have:
     
     - [Docker](https://docs.docker.com/get-docker/) installed and running on your local machine.
     - Java 17 (e.g. [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.

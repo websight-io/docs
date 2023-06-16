@@ -7,7 +7,7 @@ This guide describes a way to deploy WebSight CMS inexpensively and with predict
 
 
 !!! abstract "Prerequisites"
-    After completing the [Creating and developing WebSight CMS project guide](../../../developers/create-and-develop-project/) you should have:
+    After completing the [Creating and developing WebSight CMS project guide](/cms/developers/setup/) you should have:
     
     - [Docker](https://docs.docker.com/get-docker/) installed and running on your local machine.
     - Java 17 (e.g., [AdoptOpenJDK 17](https://adoptium.net/)) and [Maven](https://maven.apache.org/download.cgi) installed on your local machine.
@@ -50,7 +50,7 @@ At the time of writing this guide the cost of the Basic Container Registry is **
 
 ## Step 4: Push images to Docker Registry
 
-In this step, we will start with the project generated in the [Setup guide](../../../developers/setup/) and update the Maven configuration file.
+In this step, we will start with the project generated in the [Setup guide](/cms/developers/setup/) and update the Maven configuration file.
 
 1. Update the `io.fabric8:docker-maven-plugin` plugin configuration in `distribution/pom.xml` as follows: 
     - Add the following `buildx` extension to _cms_ and _nginx_ images `<build>` sections:

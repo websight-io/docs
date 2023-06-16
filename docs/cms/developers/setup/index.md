@@ -39,7 +39,7 @@ Next, use a Maven command to create your project, being sure to declare the desi
 - Use the _groupId_, _artifactId_, and version parameters to declare Maven artifacts for your project. 
 - Use _projectName_, _projectId_ and _package_ parameters to define technical requirements (such as application resources paths and Docker image names) and the root package for Java code.
 - Use the _archetypeVersion_ parameter to set the archetype version you want to use. You can check the latest version [here](https://search.maven.org/search?q=g:pl.ds.websight%20a:websight-cms-ce-project-archetype).
-- Use the _cmsVersion_ parameter to specify the WebSight CMS version that the project should use. Check the WebSight [Release Notes](../../release-notes/) to find the latest available version.
+- Use the _cmsVersion_ parameter to specify the WebSight CMS version that the project should use. Check the WebSight [Release Notes](/cms/release-notes/websight-cms/) to find the latest available version.
 
 Example command:
 
