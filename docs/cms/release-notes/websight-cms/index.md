@@ -1,5 +1,16 @@
 # WebSight CMS release notes
 
+## 1.16.0 <small>Jun 14, 2023</small>
+
+#### Page and Asset Management
+- Fixed asset types presented on the list of assets.
+- Improved the loading state for the list of pages. 
+- Improved refreshing of the list of pages after action execution.
+
+#### Page Editor
+- Fixed additional corner cases for the issue with `vh` styles in the _edit mode_. 
+- Fixed an issue with shifted workspace when an author expands a dropdown in the side panel.
+
 ## 1.15.0 <small>May 30, 2023</small>
 
 #### Page and Asset Management
