@@ -209,8 +209,7 @@ Use the following resource properties to define the component:
             - create components instances in specific layout and initial setup <br>
             - must contain other components to be usable <br> 
             - contain no logic (other than logic related to layout calculation) <br> 
-            - interact only on page resize (no other “user actions” allowed) <br> 
-            - have no visible UI elements (like texts) <br>
+            - interact only on page resize (no other “user actions” allowed) <br>
             - have no visible UI elements (like texts)<br> <br>
 
             To implement a building block component use the <code>instanceResourceType</code> component definition property and define the component template. <br> <br>
