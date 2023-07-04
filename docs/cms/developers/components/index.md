@@ -222,7 +222,7 @@ Use the following resource properties to define the component:
             - Section with title, image, text and CTA (container including components) <br>
             
             Example of components that are not building blocks: <br>
-            - 2-columns, 3-columens, empty section, empty containers setup, etc - containers and sections should contain components allowing to set content to be useful building block - components like that which are also using <code>instanceResourceType</code> component definition and define the component template, without own rendering script should not be marked as building block and should be present in Editor components section <br>
+            - 2-columns, 3-columns, empty section, empty containers setup, etc - containers and sections should contain components allowing to set content to be useful building block - components like that which are also using <code>instanceResourceType</code> component definition and define the component template, without own rendering script should not be marked as building block and should be present in Editor components section <br>
             - image, title or CTA, all of which have visible UI elements (like texts) <br>
             - logo cloud, which contain very specific CSS logic and should not be used to create generic page layouts) <br>
             - Accordion, which contains logic not related to layout calculation <br>
