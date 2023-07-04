@@ -219,7 +219,7 @@ Use the following resource properties to define the component:
             - 4 columns paragraph (container including title and containers for 4 columns with title + RTE in each) <br>
             - Section with title, image, text and CTA (container including components) <br> <br>
 
-            Example of components that are not Layouts: <br>
+            Example of components that are not building block: <br>
             - 2-columns, 3-columens, empty section, empty containers setup, etc - containers and sections should contain components allowing to set content to be useful building block <br>
             - image, title or CTA, all of which have visible UI elements (like texts) <br>
             - logo cloud, which contain very specific CSS logic and should not be used to create generic page layouts) <br>
