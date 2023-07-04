@@ -206,7 +206,7 @@ Use the following resource properties to define the component:
 
             It’s up to the component developer to set <code>isBuildingBlock=true</code>, but the guideline is to use it for components that: <br>
             - are used to speed up page content creation process <br>
-            - create components instances in specific layout and initial setup <br>
+            - create components instances allowing to set the content in specific layout and initial setup <br>
             - must contain other components to be usable <br> 
             - contain no logic (other than logic related to layout calculation) <br> 
             - interact only on page resize (no other “user actions” allowed) <br>
