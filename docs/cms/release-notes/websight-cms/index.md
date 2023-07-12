@@ -1,5 +1,40 @@
 # WebSight CMS release notes
 
+## 1.17.0 <small>Jul 11, 2023</small>
+
+#### Page Versioning
+- Added page versioning feature to the Page editor
+  - Added possibility to create page version manually
+  - Added functionality to create page version automatically on page publishing
+  - Added possibility to drop unpublished changes
+
+#### Spaces
+- Added possibility to edit space properties
+- Fixed issue related to breaking dashboard layout when description is too long
+
+#### Assets Management and Page Management
+- Added loading states for topbar and table actions
+- Fixed scalability for dashboards
+- Fixed validation error message if folder or page already exists
+- Fixed loading tree when editor closed by back button in the browser
+
+#### Page Management
+- Fixed taking into account allowed children restrictions when coping and moving pages
+
+#### Page Editor
+- Added blocking when action is in progress
+
+#### Groovy Console
+- Fixed code snippets in the help panel
+
+#### Dialogs
+- Fixed red highlight on the tab when contains validation error
+- Removed support for default values
+
+#### Platform
+- Fixed error notifications: removed technical details
+- Fixed redirect to login page after session expiration
+
 ## 1.16.0 <small>Jun 14, 2023</small>
 
 #### Page and Asset Management
