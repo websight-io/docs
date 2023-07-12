@@ -17,23 +17,19 @@
 - Fixed scalability for dashboards
 - Fixed validation error message if folder or page already exists
 - Fixed loading tree when editor closed by back button in the browser
-
+  
 #### Page Management
-- Fixed taking into account allowed children restrictions when coping and moving pages
+- Fixed taking into account allowed children restrictions when copying and moving pages
 
 #### Page Editor
 - Added blocking when action is in progress
 
 #### Groovy Console
 - Fixed code snippets in the help panel
-
+  
 #### Dialogs
-- Fixed red highlight on the tab when contains validation error
+- Added red highlight on the tab when contains validation error
 - Removed support for default values
-
-#### Platform
-- Fixed error notifications: removed technical details
-- Fixed redirect to login page after session expiration
 
 ## 1.16.0 <small>Jun 14, 2023</small>
 
