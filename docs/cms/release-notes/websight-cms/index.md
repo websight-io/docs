@@ -1,5 +1,41 @@
 # WebSight CMS release notes
 
+## 1.18.0 <small>Aug 2, 2023</small>
+
+#### Page and Asset Management
+- Removed the information about the size for the selected folder(s) as it is unavailable.
+- Added an ability to copy a JCR path(s) for selected pages and assets.
+- Improved UX for filtering - an action execution doesn't clear user-defined criteria.
+- Fixed visibility of the last row actions when a table has a lot of items.
+- Fixed an issue with page creation when a user doesn't provide a unique name.
+- Fixed the "Cannot get actions" warning when a user deleted or moved a page using the top bar actions.
+- Fixed the return to template selection when creating a new page and providing its properties.
+- Fixed the name generation for a new page when a user adjusted the name for a previous page.
+- Improved updating of the last modification date for pages and assets.
+
+
+#### Page versioning
+- Added confirmation message before restoring a page version.
+- Added time to creation date presented in the versions table.
+
+#### Page Editor
+- Added loading states for
+    - the workspace, when its content requires refreshing,
+    - starting inline editing for the [Rich Text Editor](/cms/developers/dialogs/richtext-editor/),
+    - the publication status dropdown.
+- Added workspace refresh after page properties updates.
+- Fixed drag-and-drop of a component close to the left border of a container.
+- Fixed disappearing "Drag components here" placeholder for containers included in many page sections.
+
+#### Admin tools
+- Fixed UI issues in the package manager when a user selects advanced options during installation.
+- Fixed text overlap issues in the resource browser when a user expands a property with a long value.
+- Fixed the cursor landing at the end of the text when editing a property in the resource browser.
+- Fixed paths presented in the swagger view.
+
+#### Dialogs
+- Fixed the position of the date picker modal when it is the first input field in a dialog.
+
 ## 1.17.0 <small>Jul 11, 2023</small>
 
 #### Page Versioning
