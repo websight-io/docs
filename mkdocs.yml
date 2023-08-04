@@ -12,7 +12,7 @@ theme:
   features:
     # - navigation.tracking
     # - navigation.tabs
-    # - navigation.indexes
+    - navigation.indexes
   palette:
     - scheme: default
       primary: white
