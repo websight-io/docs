@@ -172,42 +172,25 @@ If you execute the tests, they will detect your changes for the _Luna Title_ and
 Running:  lunatitle.cy.ts                                                                 (1 of 1)
 
 
-Luna Title component
-  1) renders correctly in preview mode
-  2) renders correctly in edit mode
+  Luna Title component
+    1) renders correctly in preview mode
+    ✓ renders correctly in edit mode (3529ms)
 
 
-0 passing (8s)
-2 failing
+  1 passing (14s)
+  1 failing
 
-1) Luna Title component
-     renders correctly in preview mode:
+  1) Luna Title component
+       renders correctly in preview mode:
 
-    AssertionError: expected '<h6.hl-title__heading.hl-title__heading--size-5>' to have CSS property 'font-size' with the value '20px', but the value was '25.008px'
-    + expected - actual
+      Timed out retrying after 10000ms
+      + expected - actual
 
-    -'25.008px'
-    +'20px'
-    
-    ...
-
-2) Luna Title component
-     renders correctly in edit mode:
-
-    Timed out retrying after 4000ms
-    + expected - actual
-
-    { 'sling:resourceType': 'luna/components/lunatitle',
-       title: 'New heading',
-       showSubtitle: 'true',
-    -  overlineSize: 'hl-title__heading--size-5',
-       subtitle: 'New overline text',
-       'jcr:primaryType': 'nt:unstructured',
-       headingLevel: 'h1',
-       headingSize: 'hl-title__heading--size-2' }
+      -'25.008px'
+      +'20px'
 ```
 
-When a functional test fails, you should check why. It is expected in this case, as you implemented new requirements. Firstly, you updated the default font size of the overline component (to ensure consistency with the design). Secondly, you added a new property to the dialog for the component. The tests recognized both changes, and you should adjust them as well. The following section explains how to do so.
+When a functional test fails, you should check why. It is expected in this case, as you implemented new requirements. You updated the default font size of the overline component (to ensure consistency with the design). The tests recognized the change, and you should adjust them as well. The following section explains how to do so.
 
 
 !!! info "Hint"
@@ -216,7 +199,7 @@ When a functional test fails, you should check why. It is expected in this case,
 ### Update functional tests
 When functional tests fail due to changes, you should adjust them. They are placed in file `tests/end-to-end/tests/lunatitle.cy.ts`. 
 
-The first test checks the font size for the overline text. There are two component instances validated. Thus, you need to update assertions for both of them as follows.
+The test checks the font size for the overline text. There are two component instances validated. Thus, you need to update assertions for both of them as follows.
 
 ```typescript
     cy.getByTestId('component_title1')
@@ -230,25 +213,6 @@ The first test checks the font size for the overline text. There are two compone
       .findByTestId('overline')
       .should('have.css', "font-size", "25.008px")
       .should('have.text', 'Resized to 6 cols on L breakpoint')
-```
-
-The second test validates the dialog for the component. Update the test to recognize the new input field.
-
-```typescript
-    cy.request(
-      '/content/starter-test/pages/LunaTitle/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
-    )
-      .its('body')
-      .should('deep.eq', {
-        'sling:resourceType': 'luna/components/lunatitle',
-        title: 'New heading',
-        showSubtitle: 'true',
-        overlineSize: 'hl-title__heading--size-5',
-        subtitle: 'New overline text',
-        'jcr:primaryType': 'nt:unstructured',
-        headingLevel: 'h1',
-        headingSize: 'hl-title__heading--size-2'
-      });
 ```
 
 ### Run functional tests again
