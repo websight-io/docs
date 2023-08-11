@@ -3440,48 +3440,31 @@ Because you updated the model class, you can use its property now.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Running:  lunatitle.cy.ts                                                                 (1 of 1)
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Luna Title component
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  1) renders correctly in preview mode
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  2) renders correctly in edit mode
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  Luna Title component
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    1) renders correctly in preview mode
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    ✓ renders correctly in edit mode (3529ms)
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>0 passing (8s)
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>2 failing
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  1 passing (14s)
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  1 failing
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>1) Luna Title component
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>     renders correctly in preview mode:
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>  1) Luna Title component
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>       renders correctly in preview mode:
 <a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    AssertionError: expected &#39;&lt;h6.hl-title__heading.hl-title__heading--size-5&gt;&#39; to have CSS property &#39;font-size&#39; with the value &#39;20px&#39;, but the value was &#39;25.008px&#39;
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    + expected - actual
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>      Timed out retrying after 10000ms
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>      + expected - actual
 <a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    -&#39;25.008px&#39;
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    +&#39;20px&#39;
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    ...
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>2) Luna Title component
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>     renders correctly in edit mode:
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    Timed out retrying after 4000ms
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    + expected - actual
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>    { &#39;sling:resourceType&#39;: &#39;luna/components/lunatitle&#39;,
-<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>       title: &#39;New heading&#39;,
-<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>       showSubtitle: &#39;true&#39;,
-<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>    -  overlineSize: &#39;hl-title__heading--size-5&#39;,
-<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>       subtitle: &#39;New overline text&#39;,
-<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>       &#39;jcr:primaryType&#39;: &#39;nt:unstructured&#39;,
-<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>       headingLevel: &#39;h1&#39;,
-<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>       headingSize: &#39;hl-title__heading--size-2&#39; }
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>      -&#39;25.008px&#39;
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>      +&#39;20px&#39;
 </code></pre></div>
-<p>When a functional test fails, you should check why. It is expected in this case, as you implemented new requirements. Firstly, you updated the default font size of the overline component (to ensure consistency with the design). Secondly, you added a new property to the dialog for the component. The tests recognized both changes, and you should adjust them as well. The following section explains how to do so.</p>
+<p>When a functional test fails, you should check why. It is expected in this case, as you implemented new requirements. You updated the default font size of the overline component (to ensure consistency with the design). The tests recognized the change, and you should adjust them as well. The following section explains how to do so.</p>
 <div class="admonition info">
 <p class="admonition-title">Hint</p>
 <p>A best practice is to start by changing a test so that it fails until you've made desired changes. Then, apply your changes so that the test passes.</p>
 </div>
 <h3 id="update-functional-tests">Update functional tests</h3>
 <p>When functional tests fail due to changes, you should adjust them. They are placed in file <code>tests/end-to-end/tests/lunatitle.cy.ts</code>. </p>
-<p>The first test checks the font size for the overline text. There are two component instances validated. Thus, you need to update assertions for both of them as follows.</p>
+<p>The test checks the font size for the overline text. There are two component instances validated. Thus, you need to update assertions for both of them as follows.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">getByTestId</span><span class="p">(</span><span class="s1">&#39;component_title1&#39;</span><span class="p">)</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">      </span><span class="p">.</span><span class="nx">findByTestId</span><span class="p">(</span><span class="s1">&#39;overline&#39;</span><span class="p">)</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.css&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;font-size&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;25.008px&quot;</span><span class="p">)</span>
@@ -3492,37 +3475,21 @@ Because you updated the model class, you can use its property now.</p>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.css&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;font-size&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;25.008px&quot;</span><span class="p">)</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">      </span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;have.text&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Resized to 6 cols on L breakpoint&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p>The second test validates the dialog for the component. Update the test to recognize the new input field.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">    </span><span class="nx">cy</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">      </span><span class="s1">&#39;/content/starter-test/pages/LunaTitle/jcr:content/rootcontainer/maincontainer/pagesection/title.json&#39;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="p">)</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">      </span><span class="p">.</span><span class="nx">its</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">      </span><span class="p">.</span><span class="nx">should</span><span class="p">(</span><span class="s1">&#39;deep.eq&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="s1">&#39;sling:resourceType&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;luna/components/lunatitle&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;New heading&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="nx">showSubtitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">        </span><span class="nx">overlineSize</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hl-title__heading--size-5&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">        </span><span class="nx">subtitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;New overline text&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="s1">&#39;jcr:primaryType&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;nt:unstructured&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="nx">headingLevel</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;h1&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="nx">headingSize</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hl-title__heading--size-2&#39;</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">      </span><span class="p">});</span>
-</code></pre></div>
 <h3 id="run-functional-tests-again">Run functional tests again</h3>
 <p>Now, you can execute the updated functional tests:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>./mvnw<span class="w"> </span>-f<span class="w"> </span>tests/content/pom.xml<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-P<span class="w"> </span>autoInstallPackage
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>npm<span class="w"> </span>run-script<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--prefix<span class="w"> </span>tests/end-to-end
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./mvnw<span class="w"> </span>-f<span class="w"> </span>tests/content/pom.xml<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-P<span class="w"> </span>autoInstallPackage
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>npm<span class="w"> </span>run-script<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--prefix<span class="w"> </span>tests/end-to-end
 </code></pre></div>
 <p>Both tests should pass this time. You should receive a report like the one below.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Running:  lunatitle.cy.ts                                                                 (1 of 1)
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Luna Title component
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>  ✓ renders correctly in preview mode (1030ms)
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  ✓ renders correctly in edit mode (2774ms)
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>2 passing (4s)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Running:  lunatitle.cy.ts                                                                 (1 of 1)
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Luna Title component
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  ✓ renders correctly in preview mode (1030ms)
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>  ✓ renders correctly in edit mode (2774ms)
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>2 passing (4s)
 </code></pre></div>
 <p>Congratulations! You updated the component, and it passed tests.</p>
 <h2 id="part-e-use-the-new-component">Part E: Use the new component</h2>
@@ -3549,12 +3516,12 @@ Because you updated the model class, you can use its property now.</p>
 <h2 id="part-f-clean-up">Part F: Clean-up</h2>
 <h3 id="stop-the-environment">Stop the environment</h3>
 <p>After completing this guide, you can stop your local environment using Docker:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>environment/local/docker-compose.yml<span class="w"> </span>down
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>environment/local/docker-compose.yml<span class="w"> </span>down
 </code></pre></div>
 <p>The environment will still exist but will no longer be running.</p>
 <h3 id="delete-environment">Delete environment</h3>
 <p>If you don't need your environment anymore, you can delete it permanently using a script.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sh<span class="w"> </span>environment/local/delete.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sh<span class="w"> </span>environment/local/delete.sh
 </code></pre></div>
 <h2 id="next-steps">Next steps</h2>
 <p>This guide walked through the essentials of developing components for WebSight CMS. As a next step, we encourage you to explore additional details about the following:</p>
