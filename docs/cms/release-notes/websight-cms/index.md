@@ -1,5 +1,29 @@
 # WebSight CMS release notes
 
+## 1.19.0 <small>Aug 23, 2023</small>
+
+#### Page and Asset Management
+- Added skeleton for the general tab.
+- Added clearing the section in the dashboard table by escape button.
+
+#### Page Management
+- Added the possibility to see "ghost" pages.
+- Added the possibility to unpublish "ghost" pages.
+
+#### Groovy Console
+- Fixed help content: presenting content with code examples.
+
+#### Page Editor
+- Improved listing available components:
+  - overlayed components (with the same resource type) are listed just once,
+  - components with the same name but different types have additional information about type.
+  
+#### Package Manager
+- Fixed uninstalling packages.
+
+#### Resource Browser
+- Fixed saving many resources positions changes at once.
+
 ## 1.18.0 <small>Aug 2, 2023</small>
 
 #### Page and Asset Management
