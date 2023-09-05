@@ -19,7 +19,7 @@
     
     
       
-        <title>Deployment with Amazon ECS - WebSight CMS</title>
+        <title>Index - WebSight CMS</title>
       
     
     
@@ -129,7 +129,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment with Amazon ECS
+              Index
             
           </span>
         </div>
@@ -3281,6 +3281,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+<div class="admonition warning">
+<p class="admonition-title">Notice</p>
+<p>Docker Compose’s integration for ECS and ACI will be retired in November 2023. Learn more: <a href="https://docs.docker.com/go/compose-ecs-eol/">here</a>.</p>
+<p>We recommend following the <a href="/cms/deployment/kubernetes/">kubernetes setup guide</a> instead.</p>
+</div>
 <h1 id="deployment-with-amazon-ecs">Deployment with Amazon ECS</h1>
 <p>This tutorial explains how to deploy an application created in the <a href="/cms/developers/setup/">setup guide</a> to the <a href="https://aws.amazon.com/">Amazon Web Services</a> cloud using <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose</a>.</p>
 <p>The <a href="https://docs.docker.com/cloud/ecs-integration/">Docker Compose CLI fully integrates with the Amazon Elastic Container Service (ECS)</a>. It allows you to create and manage the task definitions, tasks and services using Compose YAML configuration files. The Docker Compose CLI relies on <a href="https://aws.amazon.com/cloudformation/">CloudFormation</a> to manage AWS Resources.</p>
