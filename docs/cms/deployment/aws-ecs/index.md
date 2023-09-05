@@ -1,3 +1,9 @@
+!!! warning "Notice"
+
+    Docker Compose’s integration for ECS and ACI will be retired in November 2023. Learn more: [here](https://docs.docker.com/go/compose-ecs-eol/).
+    
+    We recommend following the [kubernetes setup guide](/cms/deployment/kubernetes/) instead.
+
 #  Deployment with Amazon ECS
 This tutorial explains how to deploy an application created in the [setup guide](/cms/developers/setup/) to the [Amazon Web Services](https://aws.amazon.com/) cloud using [Docker Compose](https://docs.docker.com/cloud/ecs-integration/).
 
