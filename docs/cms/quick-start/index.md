@@ -78,7 +78,7 @@ Congratulations! The demo site is now available by navigating to [http://luna.12
 
     The distribution contains other demo sites. We used [nip.io](https://nip.io) to support their preview in a browser (having just one local instance of WebSight CMS). After assets and pages publication, they are available at: 
     
-    - [http://bulma-personal-template.127.0.0.1.nip.io/](http://bulma-personal-template.127.0.0.1.nip.io/) Bulma - personal template
+    - [http://kyanite-personal-template.127.0.0.1.nip.io/](http://kyanite-personal-template.127.0.0.1.nip.io/) Personal page created with the Kyanite components library
     - [http://luna-low-code.127.0.0.1.nip.io/](http://luna-low-code.127.0.0.1.nip.io/) Luna - low code
     - [http://luna-no-code.127.0.0.1.nip.io/](http://luna-no-code.127.0.0.1.nip.io/) Luna - no code
     
