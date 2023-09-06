@@ -149,5 +149,5 @@ This page demonstrated the basics of editing pages with WebSight CMS. As a next 
 The _Luna_ site (i.e., _Luna - custom code_) you looked through utilizes the [Howlite](../authors/component-libs/howlite/) components library. However, the distribution contains other demo sites, and we recommend exploring them too. Before you open the following links, visit the [admin panel](http://localhost:8080/), and publish pages and assets for a given space.
 
 - [_Kyanite_ - personal template](http://kyanite-personal-template.127.0.0.1.nip.io/). It is a sample inspired by the [Portfolio page](https://bulmatemplates.github.io/bulma-templates/templates/personal.html). We created it using the [Kyanite components](https://github.com/websight-io/kyanite/).
-- [_Luna - no code_](http://luna-no-code.127.0.0.1.nip.io/). We authored the _Luna_ site with the [Bulma components](https://github.com/websight-io/bulma/) without additional custom code or development.
-- [_Luna - low code_](http://luna-low-code.127.0.0.1.nip.io/). We added some custom styling and implemented only components missing in the [Bulma](https://github.com/websight-io/bulma/) library.
+- [_Luna - no code_](http://luna-no-code.127.0.0.1.nip.io/). We authored the _Luna_ site with the [Kyanite components](https://github.com/websight-io/kyanite/) without additional custom code or development.
+- [_Luna - low code_](http://luna-low-code.127.0.0.1.nip.io/). We added some custom styling and implemented only components missing in the [Kyanite](https://github.com/websight-io/kyanite/) library.
