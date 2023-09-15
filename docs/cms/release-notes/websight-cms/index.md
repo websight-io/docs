@@ -1,5 +1,23 @@
 # WebSight CMS release notes
 
+## 1.20.0 <small>Sep 13, 2023</small>
+
+#### Page and Asset Management
+- Added an action to view a page as published before its publication.
+- Improved the move action - added a step to rename a page, an asset, or a folder as a part of the action.
+- Added loading states for the page tree and the asset tree.
+- Added drag-and-drop support for asset upload.
+- Improved UX for uploading the same assets again - simplified dialog options.
+
+#### Page Editor
+- Added an ability to view a page as published before its publication [#98](https://github.com/websight-io/starter/issues/98).
+- Fixed the right-side panel refresh after a user clears a property in a dialog.
+- Fixed missing trailing new lines in the rich text editor input field in the right side panel.
+
+#### Admin tools
+- Fixed the ability to re-upload a package in the package manager when the override option is not selected.
+- Fixed the download link for binary JCR properties in the resource browser.
+
 ## 1.19.0 <small>Aug 23, 2023</small>
 
 #### Page and Asset Management
