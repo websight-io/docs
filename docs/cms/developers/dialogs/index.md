@@ -148,6 +148,14 @@ The default `context` value used for dialogs is `edit`. Depending on dialog usag
 
 To hide an element in dialog, the request from the front-end that fetches it must contain the additional parameter `context`. If the context value matches one of the `ws:dissallowedContext` values, then the field won't be rendered. To check request details, refer to the [Swagger documentation](http://localhost:8080/apps/apidocs#/apps/websight-dialogs-service/docs/api.html).
 
+In some cases, context values are more specific. These can contain both the action name and the place of usage separated by `:`, for example `edit:dialog` or `edit:panel`. It is possible to disable fields by action name. In this case, every context that matches the action will be disabled. For example, to disable both `edit:dialog` and `edit:panel` there is no need to disable them one by one. It can be simplified to:
+
+```json
+
+"ws:disallowedContext": ["edit"]
+
+```
+
 ### Conditions
 To show or hide a particular field based on other fields' state, you can use a `ws:display` node.
 This node should contain children that define the conditions that determine whether the element is displayed. If the component has this child node, it's hidden by default. It must fulfill at least one of the defined conditions to show the component.
