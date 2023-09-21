@@ -1,5 +1,14 @@
 # WebSight CMS release notes
 
+## 1.20.1 <small>Sep 21, 2023</small>
+
+#### Page and Asset Management
+- Fixed [#179] - the broken preview of a selected asset.
+- Fixed the lack of an icon for the page action _view as published_.
+
+#### Page Editor
+- Improved UX for version management - added a dedicated icon on the top bar.
+
 ## 1.20.0 <small>Sep 13, 2023</small>
 
 **Page and Asset Management**
