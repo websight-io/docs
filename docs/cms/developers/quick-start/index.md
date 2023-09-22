@@ -154,7 +154,7 @@ Run the following command to apply the changes to your local environment.
 
 We continuously improve WebSight CMS by adding new features, improving the UX, and fixing bugs. Thus, we need confidence that changes don't lead to any regression on websites. To provide this confidence, we use [Cypress](https://www.cypress.io/) to enable automated testing of components. This approach enables us to spend less time on manual testing and regression fixes. We can focus on developing new features and improvements instead.
 
-To demonstrate automated functional testing, we prepared two sample functional tests for the _Luna Title_ component. They are executed during the Maven build process. You can run them using `npm` on your local environment as well. However, you have to add test content before running the tests. Use the following script to set this up:
+To demonstrate automated functional testing, we prepared two sample functional tests for the _Luna Title_ component. They are executed during the Maven build process. You can run them on your local environment as well. However, you have to add test content before running the tests. Use the following script to set this up:
 
 ```shell
 ./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
@@ -163,7 +163,7 @@ To demonstrate automated functional testing, we prepared two sample functional t
 Now, you can run the tests using the following command:
 
 ```shell
-npm run-script test --prefix tests/end-to-end
+./mvnw -f tests/end-to-end/pom.xml integration-test -Pe2e-functional -Dcms.port=8080
 ```
 
 If you execute the tests, they will detect your changes for the _Luna Title_ and fail. You should get the following results:
@@ -221,7 +221,7 @@ Now, you can execute the updated functional tests:
 
 ```shell
 ./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
-npm run-script test --prefix tests/end-to-end
+./mvnw -f tests/end-to-end/pom.xml integration-test -Pe2e-functional -Dcms.port=8080
 ```
 
 Both tests should pass this time. You should receive a report like the one below.
