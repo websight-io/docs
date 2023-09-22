@@ -3,7 +3,7 @@
 ## 1.20.1 <small>Sep 21, 2023</small>
 
 #### Page and Asset Management
-- Fixed [#179] - the broken preview of a selected asset.
+- Fixed [#179](https://github.com/websight-io/starter/issues/179) - the broken preview of a selected asset.
 - Fixed the lack of an icon for the page action _view as published_.
 
 #### Page Editor
