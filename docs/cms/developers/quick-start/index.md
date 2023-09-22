@@ -26,7 +26,7 @@ First, clone the _Luna_ repository and build it within your local environment us
 ```shell
 git clone https://github.com/websight-io/starter.git
 cd starter
-./mvnw clean install -P e2e
+./mvnw clean install -P e2e-functional
 ```
 
 Then, start a Docker environment.
