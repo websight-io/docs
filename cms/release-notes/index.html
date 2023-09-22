@@ -3328,191 +3328,295 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Added drag-and-drop support for asset upload.</li>
 <li>Improved UX for uploading the same assets again - simplified dialog options.</li>
 </ul>
-<p><strong>Page Editor</strong>
-- Added an ability to view a page as published before its publication <a href="https://github.com/websight-io/starter/issues/98">#98</a>.
-- Fixed the right-side panel refresh after a user clears a property in a dialog.
-- Fixed missing trailing new lines in the rich text editor input field in the right side panel.</p>
-<p><strong>Admin tools</strong>
-- Fixed the ability to re-upload a package in the package manager when the override option is not selected.
-- Fixed the download link for binary JCR properties in the resource browser.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Added an ability to view a page as published before its publication <a href="https://github.com/websight-io/starter/issues/98">#98</a>.</li>
+<li>Fixed the right-side panel refresh after a user clears a property in a dialog.</li>
+<li>Fixed missing trailing new lines in the rich text editor input field in the right side panel.</li>
+</ul>
+<p><strong>Admin tools</strong></p>
+<ul>
+<li>Fixed the ability to re-upload a package in the package manager when the override option is not selected.</li>
+<li>Fixed the download link for binary JCR properties in the resource browser.</li>
+</ul>
 <h2 id="1190-aug-23-2023">1.19.0 <small>Aug 23, 2023</small></h2>
-<p><strong>Page and Asset Management</strong>
-- Added skeleton for the general tab.
-- Added clearing the section in the dashboard table by escape button.</p>
-<p><strong>Page Management</strong>
-- Added the possibility to see "ghost" pages.
-- Added the possibility to unpublish "ghost" pages.</p>
-<p><strong>Groovy Console</strong>
-- Fixed help content: presenting content with code examples.</p>
-<p><strong>Page Editor</strong>
-- Improved listing available components:
-  - overlayed components (with the same resource type) are listed just once,
-  - components with the same name but different types have additional information about type.</p>
-<p><strong>Package Manager</strong>
-- Fixed uninstalling packages.</p>
-<p><strong>Resource Browser</strong>
-- Fixed saving many resources positions changes at once.</p>
+<p><strong>Page and Asset Management</strong></p>
+<ul>
+<li>Added skeleton for the general tab.</li>
+<li>Added clearing the section in the dashboard table by escape button.</li>
+</ul>
+<p><strong>Page Management</strong></p>
+<ul>
+<li>Added the possibility to see "ghost" pages.</li>
+<li>Added the possibility to unpublish "ghost" pages.</li>
+</ul>
+<p><strong>Groovy Console</strong></p>
+<ul>
+<li>Fixed help content: presenting content with code examples.</li>
+</ul>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Improved listing available components:</li>
+<li>overlayed components (with the same resource type) are listed just once,</li>
+<li>components with the same name but different types have additional information about type.</li>
+</ul>
+<p><strong>Package Manager</strong></p>
+<ul>
+<li>Fixed uninstalling packages.</li>
+</ul>
+<p><strong>Resource Browser</strong></p>
+<ul>
+<li>Fixed saving many resources positions changes at once.</li>
+</ul>
 <h2 id="1180-aug-2-2023">1.18.0 <small>Aug 2, 2023</small></h2>
-<p><strong>Page and Asset Management</strong>
-- Removed the information about the size for the selected folder(s) as it is unavailable.
-- Added an ability to copy a JCR path(s) for selected pages and assets.
-- Improved UX for filtering - an action execution doesn't clear user-defined criteria.
-- Fixed visibility of the last row actions when a table has a lot of items.
-- Fixed an issue with page creation when a user doesn't provide a unique name.
-- Fixed the "Cannot get actions" warning when a user deleted or moved a page using the top bar actions.
-- Fixed the return to template selection when creating a new page and providing its properties.
-- Fixed the name generation for a new page when a user adjusted the name for a previous page.
-- Improved updating of the last modification date for pages and assets.</p>
-<p><strong>Page versioning</strong>
-- Added confirmation message before restoring a page version.
-- Added time to creation date presented in the versions table.</p>
-<p><strong>Page Editor</strong>
-- Added loading states for
-    - the workspace, when its content requires refreshing,
-    - starting inline editing for the <a href="/cms/developers/dialogs/richtext-editor/">Rich Text Editor</a>,
-    - the publication status dropdown.
-- Added workspace refresh after page properties updates.
-- Fixed drag-and-drop of a component close to the left border of a container.
-- Fixed disappearing "Drag components here" placeholder for containers included in many page sections.</p>
-<p><strong>Admin tools</strong>
-- Fixed UI issues in the package manager when a user selects advanced options during installation.
-- Fixed text overlap issues in the resource browser when a user expands a property with a long value.
-- Fixed the cursor landing at the end of the text when editing a property in the resource browser.
-- Fixed paths presented in the swagger view.</p>
-<p><strong>Dialogs</strong>
-- Fixed the position of the date picker modal when it is the first input field in a dialog.</p>
+<p><strong>Page and Asset Management</strong></p>
+<ul>
+<li>Removed the information about the size for the selected folder(s) as it is unavailable.</li>
+<li>Added an ability to copy a JCR path(s) for selected pages and assets.</li>
+<li>Improved UX for filtering - an action execution doesn't clear user-defined criteria.</li>
+<li>Fixed visibility of the last row actions when a table has a lot of items.</li>
+<li>Fixed an issue with page creation when a user doesn't provide a unique name.</li>
+<li>Fixed the "Cannot get actions" warning when a user deleted or moved a page using the top bar actions.</li>
+<li>Fixed the return to template selection when creating a new page and providing its properties.</li>
+<li>Fixed the name generation for a new page when a user adjusted the name for a previous page.</li>
+<li>Improved updating of the last modification date for pages and assets.</li>
+</ul>
+<p><strong>Page versioning</strong></p>
+<ul>
+<li>Added confirmation message before restoring a page version.</li>
+<li>Added time to creation date presented in the versions table.</li>
+</ul>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Added loading states for<ul>
+<li>the workspace, when its content requires refreshing,</li>
+<li>starting inline editing for the <a href="/cms/developers/dialogs/richtext-editor/">Rich Text Editor</a>,</li>
+<li>the publication status dropdown.</li>
+</ul>
+</li>
+<li>Added workspace refresh after page properties updates.</li>
+<li>Fixed drag-and-drop of a component close to the left border of a container.</li>
+<li>Fixed disappearing "Drag components here" placeholder for containers included in many page sections.</li>
+</ul>
+<p><strong>Admin tools</strong></p>
+<ul>
+<li>Fixed UI issues in the package manager when a user selects advanced options during installation.</li>
+<li>Fixed text overlap issues in the resource browser when a user expands a property with a long value.</li>
+<li>Fixed the cursor landing at the end of the text when editing a property in the resource browser.</li>
+<li>Fixed paths presented in the swagger view.</li>
+</ul>
+<p><strong>Dialogs</strong></p>
+<ul>
+<li>Fixed the position of the date picker modal when it is the first input field in a dialog.</li>
+</ul>
 <h2 id="1170-jul-11-2023">1.17.0 <small>Jul 11, 2023</small></h2>
-<p><strong>Page Versioning</strong>
-- Added page versioning feature to the Page editor
-  - Added possibility to create page version manually
-  - Added functionality to create page version automatically on page publishing
-  - Added possibility to drop unpublished changes</p>
-<p><strong>Spaces</strong>
-- Added possibility to edit space properties
-- Fixed issue related to breaking dashboard layout when description is too long</p>
-<p><strong>Page and Asset Management</strong>
-- Added loading states for topbar and table actions
-- Fixed scalability for dashboards
-- Fixed validation error message if folder or page already exists
-- Fixed loading tree when editor closed by back button in the browser</p>
-<p><strong>Page Management</strong>
-- Fixed taking into account allowed children restrictions when copying and moving pages</p>
-<p><strong>Page Editor</strong>
-- Added blocking when action is in progress</p>
-<p><strong>Groovy Console</strong>
-- Fixed code snippets in the help panel</p>
-<p><strong>Dialogs</strong>
-- Added red highlight on the tab when contains validation error
-- Removed support for default values</p>
+<p><strong>Page Versioning</strong></p>
+<ul>
+<li>Added page versioning feature to the Page editor</li>
+<li>Added possibility to create page version manually</li>
+<li>Added functionality to create page version automatically on page publishing</li>
+<li>Added possibility to drop unpublished changes</li>
+</ul>
+<p><strong>Spaces</strong></p>
+<ul>
+<li>Added possibility to edit space properties</li>
+<li>Fixed issue related to breaking dashboard layout when description is too long</li>
+</ul>
+<p><strong>Page and Asset Management</strong></p>
+<ul>
+<li>Added loading states for topbar and table actions</li>
+<li>Fixed scalability for dashboards</li>
+<li>Fixed validation error message if folder or page already exists</li>
+<li>Fixed loading tree when editor closed by back button in the browser</li>
+</ul>
+<p><strong>Page Management</strong></p>
+<ul>
+<li>Fixed taking into account allowed children restrictions when copying and moving pages</li>
+</ul>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Added blocking when action is in progress</li>
+</ul>
+<p><strong>Groovy Console</strong></p>
+<ul>
+<li>Fixed code snippets in the help panel</li>
+</ul>
+<p><strong>Dialogs</strong></p>
+<ul>
+<li>Added red highlight on the tab when contains validation error</li>
+<li>Removed support for default values</li>
+</ul>
 <h2 id="1160-jun-14-2023">1.16.0 <small>Jun 14, 2023</small></h2>
-<p><strong>Page and Asset Management</strong>
-- Fixed asset types presented on the list of assets.
-- Improved the loading state for the list of pages. 
-- Improved refreshing of the list of pages after action execution.</p>
-<p><strong>Page Editor</strong>
-- Fixed additional corner cases for the issue with <code>vh</code> styles in the <em>edit mode</em>. 
-- Fixed an issue with shifted workspace when an author expands a dropdown in the side panel.</p>
+<p><strong>Page and Asset Management</strong></p>
+<ul>
+<li>Fixed asset types presented on the list of assets.</li>
+<li>Improved the loading state for the list of pages. </li>
+<li>Improved refreshing of the list of pages after action execution.</li>
+</ul>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Fixed additional corner cases for the issue with <code>vh</code> styles in the <em>edit mode</em>. </li>
+<li>Fixed an issue with shifted workspace when an author expands a dropdown in the side panel.</li>
+</ul>
 <h2 id="1150-may-30-2023">1.15.0 <small>May 30, 2023</small></h2>
-<p><strong>Page and Asset Management</strong>
-- Fixed the publication status for new pages created as a copy.
-- Removed the publication status for folders.</p>
-<p><strong>Page Editor</strong>
-- Added an ability to update the page properties directly in the editor.
-- Improved the loading state for the side panel when a user selects a component for the first time.</p>
-<p><strong>Dialogs</strong>
-- Fixed the visibility of fields that depend on a default value of the select input field.</p>
-<p><strong>Admin tools</strong>
-- Fixed the issue with inserting an empty resource name while creating a new item.
-- Fixed the issue for creating new items in the Resource Browser - the resource name can't be empty now. 
-- Fixed <a href="https://github.com/websight-io/starter/issues/158">#158</a> - the issue with the resource path input.</p>
-<p><strong>Other</strong>
--  Changed the API and implementation of the publishing framework. Pushing the published content to the file system works as before but will be changed to <a href="https://www.websight.io/blog/2023/new-publishing-framework.html">a request-replay approach</a> in the next release.</p>
+<p><strong>Page and Asset Management</strong></p>
+<ul>
+<li>Fixed the publication status for new pages created as a copy.</li>
+<li>Removed the publication status for folders.</li>
+</ul>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Added an ability to update the page properties directly in the editor.</li>
+<li>Improved the loading state for the side panel when a user selects a component for the first time.</li>
+</ul>
+<p><strong>Dialogs</strong></p>
+<ul>
+<li>Fixed the visibility of fields that depend on a default value of the select input field.</li>
+</ul>
+<p><strong>Admin tools</strong></p>
+<ul>
+<li>Fixed the issue with inserting an empty resource name while creating a new item.</li>
+<li>Fixed the issue for creating new items in the Resource Browser - the resource name can't be empty now. </li>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/158">#158</a> - the issue with the resource path input.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Changed the API and implementation of the publishing framework. Pushing the published content to the file system works as before but will be changed to <a href="https://www.websight.io/blog/2023/new-publishing-framework.html">a request-replay approach</a> in the next release.</li>
+</ul>
 <h2 id="1140-may-10-2023">1.14.0 <small>May 10, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- Improved UX for inline editing. Authors can start the action using double-click (if configured as a <a href="/cms/developers/components/#default-action">default action</a> for a given component).
-- Added a skeleton screen for the workspace while it is loading.                                            </p>
-<p><strong>Dialogs</strong>
-- Fixed <a href="https://github.com/websight-io/starter/issues/159">#159</a> - saving a multifield by a modal and the side panel leads to conflicts.</p>
-<p><strong>Admin tools</strong>
-- Fixed the issue with providing a resource name while creating a new item.</p>
-<p><strong>Other</strong>
-- Updated <a href="/cms/authors/component-libs/howlite/">Howlite</a> components (RTE, Title, Quote, CTA) - removed the mandatoriness of fields having an initial content.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Improved UX for inline editing. Authors can start the action using double-click (if configured as a <a href="/cms/developers/components/#default-action">default action</a> for a given component).</li>
+<li>Added a skeleton screen for the workspace while it is loading.                                            </li>
+</ul>
+<p><strong>Dialogs</strong></p>
+<ul>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/159">#159</a> - saving a multifield by a modal and the side panel leads to conflicts.</li>
+</ul>
+<p><strong>Admin tools</strong></p>
+<ul>
+<li>Fixed the issue with providing a resource name while creating a new item.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Updated <a href="/cms/authors/component-libs/howlite/">Howlite</a> components (RTE, Title, Quote, CTA) - removed the mandatoriness of fields having an initial content.</li>
+</ul>
 <h2 id="1130-april-19-2023">1.13.0 <small>April 19, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- New feature from the roadmap <a href="https://github.com/websight-io/roadmap/issues/1">#1</a> - added inline editing for text input fields.
-- Improved UX for keyboard shortcuts to copy and paste components - selection keeps the focus on the workspace (no autofocus on the first editable field in the right side panel).</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>New feature from the roadmap <a href="https://github.com/websight-io/roadmap/issues/1">#1</a> - added inline editing for text input fields.</li>
+<li>Improved UX for keyboard shortcuts to copy and paste components - selection keeps the focus on the workspace (no autofocus on the first editable field in the right side panel).</li>
+</ul>
 <h2 id="1120-march-29-2023">1.12.0 <small>March 29, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- Added keyboard shortcuts to copy, cut and paste components.</p>
-<p><strong>Components</strong>
-- Added the <a href="/cms/developers/components/#reload-on-update">ability to define items reloaded after a component is updated by the author</a>.</p>
-<p><strong>Dialogs</strong>
-- Changed and extended <em>Rich Text Editor</em> <a href="/cms/developers/dialogs/richtext-editor/configuration/#using-configuration">configuration options</a>.</p>
-<p><strong>Other</strong>
-- Fixed the blinking space icons and space types on load.
-- Fixed the size of the clickable area for item selection on the list of pages and assets.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Added keyboard shortcuts to copy, cut and paste components.</li>
+</ul>
+<p><strong>Components</strong></p>
+<ul>
+<li>Added the <a href="/cms/developers/components/#reload-on-update">ability to define items reloaded after a component is updated by the author</a>.</li>
+</ul>
+<p><strong>Dialogs</strong></p>
+<ul>
+<li>Changed and extended <em>Rich Text Editor</em> <a href="/cms/developers/dialogs/richtext-editor/configuration/#using-configuration">configuration options</a>.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Fixed the blinking space icons and space types on load.</li>
+<li>Fixed the size of the clickable area for item selection on the list of pages and assets.</li>
+</ul>
 <h2 id="1112-march-23-2023">1.11.2 <small>March 23, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- Fixed the lack of refresh for the side panel with component properties after the user updated them in the modal.</p>
-<p><strong>Dialogs</strong>
-- Fixed modal closing with <em>ESC</em> button after changing a tab.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Fixed the lack of refresh for the side panel with component properties after the user updated them in the modal.</li>
+</ul>
+<p><strong>Dialogs</strong></p>
+<ul>
+<li>Fixed modal closing with <em>ESC</em> button after changing a tab.</li>
+</ul>
 <h2 id="1111-march-21-2023">1.11.1 <small>March 21, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- Fixed blinking component selection and toolbar after changing component properties in the side panel.
-- Improved selected component loading state after changing component properties in the side panel.
-- Fixed the lack of component selection after changing component properties in the modal.</p>
-<p><strong>Dialogs</strong>
-- Fixed <a href="https://github.com/websight-io/starter/issues/63">#63</a> and <a href="https://github.com/websight-io/starter/issues/149">#149</a> - <a href="/cms/developers/dialogs/toggle/">toggle</a>, <a href="/cms/developers/dialogs/select/">select</a>, <a href="/cms/developers/dialogs/checkbox/">checkbox</a>, <a href="/cms/developers/dialogs/radio/">radio</a>, <a href="/cms/developers/dialogs/richtext-editor/">rich text editor</a>, and <a href="/cms/developers/dialogs/text-area/">text area</a> work right in the <a href="/cms/developers/dialogs/multifield/">multifield</a> now. Additionally, the description for the input field included in the multifield is presented on hover.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Fixed blinking component selection and toolbar after changing component properties in the side panel.</li>
+<li>Improved selected component loading state after changing component properties in the side panel.</li>
+<li>Fixed the lack of component selection after changing component properties in the modal.</li>
+</ul>
+<p><strong>Dialogs</strong></p>
+<ul>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/63">#63</a> and <a href="https://github.com/websight-io/starter/issues/149">#149</a> - <a href="/cms/developers/dialogs/toggle/">toggle</a>, <a href="/cms/developers/dialogs/select/">select</a>, <a href="/cms/developers/dialogs/checkbox/">checkbox</a>, <a href="/cms/developers/dialogs/radio/">radio</a>, <a href="/cms/developers/dialogs/richtext-editor/">rich text editor</a>, and <a href="/cms/developers/dialogs/text-area/">text area</a> work right in the <a href="/cms/developers/dialogs/multifield/">multifield</a> now. Additionally, the description for the input field included in the multifield is presented on hover.</li>
+</ul>
 <h2 id="1110-march-15-2023">1.11.0 <small>March 15, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- New feature from the roadmap <a href="https://github.com/websight-io/roadmap/issues/2">#2</a> - added the side panel with component properties.
-- Improved workspace refresh after edit action  - only the updated component is reloaded now.
-- Added <a href="https://github.com/websight-io/starter/issues/140">#140</a> - the ability to set WCM mode in HTL.
-- Improved UX for concurrent assets management - opening the list of assets from the assets panel in the page editor. </p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>New feature from the roadmap <a href="https://github.com/websight-io/roadmap/issues/2">#2</a> - added the side panel with component properties.</li>
+<li>Improved workspace refresh after edit action  - only the updated component is reloaded now.</li>
+<li>Added <a href="https://github.com/websight-io/starter/issues/140">#140</a> - the ability to set WCM mode in HTL.</li>
+<li>Improved UX for concurrent assets management - opening the list of assets from the assets panel in the page editor. </li>
+</ul>
 <h2 id="1100-march-1-2023">1.10.0 <small>March 1, 2023</small></h2>
-<p><strong>Page and Asset Management</strong>
-- Fixed crash when a user uploads multiple assets at the same time.
-- Fixed broken list of pages for a space when its first node in the resource browser contains an object other than pages, for example, policies.
-- Fixed blinking space dropdown when a user removed a space, and not available anymore.
-- Fixed <a href="https://github.com/websight-io/starter/issues/133">#133</a> - page name generated from the tile is lowercase now.
-- Improved <a href="https://github.com/websight-io/starter/issues/15">#15</a> - clicking a page name opens the page editor now.
-- Improved the expandable panel with the tree on the left - added icons for pages and folders.
-- Improved the preview of assets containing white objects on a transparent background (changed preview background to grey).</p>
-<p><strong>Admin tools</strong>
-- Fixed page reordering in the resource browser.
-- Fixed the broken order of pages after re-creating the content from JCR vault package in the <em>Package Manager</em>.
-- Fixed the missing icon for the <em>deny</em> permission in the user manager. </p>
-<p><strong>Dialogs</strong>
-- Fixed an issue with closing the <a href="/cms/developers/dialogs/richtext-editor/ui-components/button-dropdown/">Button Dropdown</a> for the <a href="/cms/developers/dialogs/richtext-editor/">Rich Text Editor</a>.</p>
-<p><strong>Other</strong>
-- Fixed inconsistency of a new space name generated from the title.
-- Fixed an issue with loading the manifest file by a browser.</p>
+<p><strong>Page and Asset Management</strong></p>
+<ul>
+<li>Fixed crash when a user uploads multiple assets at the same time.</li>
+<li>Fixed broken list of pages for a space when its first node in the resource browser contains an object other than pages, for example, policies.</li>
+<li>Fixed blinking space dropdown when a user removed a space, and not available anymore.</li>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/133">#133</a> - page name generated from the tile is lowercase now.</li>
+<li>Improved <a href="https://github.com/websight-io/starter/issues/15">#15</a> - clicking a page name opens the page editor now.</li>
+<li>Improved the expandable panel with the tree on the left - added icons for pages and folders.</li>
+<li>Improved the preview of assets containing white objects on a transparent background (changed preview background to grey).</li>
+</ul>
+<p><strong>Admin tools</strong></p>
+<ul>
+<li>Fixed page reordering in the resource browser.</li>
+<li>Fixed the broken order of pages after re-creating the content from JCR vault package in the <em>Package Manager</em>.</li>
+<li>Fixed the missing icon for the <em>deny</em> permission in the user manager. </li>
+</ul>
+<p><strong>Dialogs</strong></p>
+<ul>
+<li>Fixed an issue with closing the <a href="/cms/developers/dialogs/richtext-editor/ui-components/button-dropdown/">Button Dropdown</a> for the <a href="/cms/developers/dialogs/richtext-editor/">Rich Text Editor</a>.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Fixed inconsistency of a new space name generated from the title.</li>
+<li>Fixed an issue with loading the manifest file by a browser.</li>
+</ul>
 <h2 id="191-february-15-2023">1.9.1 <small>February 15, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- Improved the style for the page publication status dropdown.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Improved the style for the page publication status dropdown.</li>
+</ul>
 <p><strong>Page and Asset Management</strong></p>
 <ul>
 <li>Fixed the lack of scroll when returning from the page editor.</li>
 </ul>
-<p><strong>Admin tools</strong>
-- Fixed the issue with renaming nodes in the resource browser.
-- Fixed the issue with saving changes in the resource browser. 
-- Unified action buttons order for dialogs.</p>
-<p><strong>Other</strong>
-- Fixed the issue with entering <em>Title</em> and <em>Name</em> for a new space - changing the value moves the cursor to the end of the fields.</p>
+<p><strong>Admin tools</strong></p>
+<ul>
+<li>Fixed the issue with renaming nodes in the resource browser.</li>
+<li>Fixed the issue with saving changes in the resource browser. </li>
+<li>Unified action buttons order for dialogs.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Fixed the issue with entering <em>Title</em> and <em>Name</em> for a new space - changing the value moves the cursor to the end of the fields.</li>
+</ul>
 <h2 id="180-february-1-2023">1.8.0 <small>February 1, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- Fixed the misaligned cursor and component during drag-and-drop (Chrome).</p>
-<p><strong>Other</strong>
-- Updated paddings for the lists of spaces, pages, and assets.
-- Fixed the scroll for the list of pages and assets - always visible even when there was no need.
-- Improved stability of front-end tests (Cypress).</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Fixed the misaligned cursor and component during drag-and-drop (Chrome).</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Updated paddings for the lists of spaces, pages, and assets.</li>
+<li>Fixed the scroll for the list of pages and assets - always visible even when there was no need.</li>
+<li>Improved stability of front-end tests (Cypress).</li>
+</ul>
 <h2 id="170-january-18-2023">1.7.0 <small>January 18, 2023</small></h2>
-<p><strong>Page Editor</strong>
-- Added ability to refresh the workspace on component changes.
-- Fixed the issues with misaligned overlays on component changes.
-- Fixed the issues with <code>vh</code> styles in the <em>edit mode</em>.
-- Fixed the issue with additional space generated at the end of the workspace after zoom-in and zoom-out.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Added ability to refresh the workspace on component changes.</li>
+<li>Fixed the issues with misaligned overlays on component changes.</li>
+<li>Fixed the issues with <code>vh</code> styles in the <em>edit mode</em>.</li>
+<li>Fixed the issue with additional space generated at the end of the workspace after zoom-in and zoom-out.</li>
+</ul>
 <p><strong>Page and Asset Management</strong></p>
 <ul>
 <li>Fixed <a href="https://github.com/websight-io/starter/issues/25">#25</a> - SVG files are displayed properly now.</li>
@@ -3522,41 +3626,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Fixed the issue for the <a href="../../developers/dialogs/date-picker/">Date Picker</a> input field - presented a wrong value.</li>
 <li>Fixed the issue on pressing <em>enter</em> - didn't close a modal in some cases.</li>
 </ul>
-<p><strong>Admin Tools</strong>
-- Fixed <a href="https://github.com/websight-io/starter/issues/12">#12</a> -  updated layout of the landing page for Admin Tools.</p>
-<p><strong>Other</strong>
-- Unified UX for the left side panel for all views.</p>
+<p><strong>Admin Tools</strong></p>
+<ul>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/12">#12</a> -  updated layout of the landing page for Admin Tools.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Unified UX for the left side panel for all views.</li>
+</ul>
 <h2 id="160-december-21-2022">1.6.0 <small>December 21, 2022</small></h2>
-<p><strong>Page Editor</strong>
-- Improved collapsing and expanding of the left side panel.
-- Fixed the lack of the scroll for page preview.
-- Fixed the missing indicator when drag-and-drop of a component is not allowed.</p>
-<p><strong>Admin Tools</strong>
-- Fixed <a href="https://github.com/websight-io/starter/issues/13">#13</a> - updated keyboard shortcut for script execution.</p>
-<p><strong>Other</strong>
-- Improved UX for the list of spaces.
-- Improved UX for the modal to move/copy pages.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Improved collapsing and expanding of the left side panel.</li>
+<li>Fixed the lack of the scroll for page preview.</li>
+<li>Fixed the missing indicator when drag-and-drop of a component is not allowed.</li>
+</ul>
+<p><strong>Admin Tools</strong></p>
+<ul>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/13">#13</a> - updated keyboard shortcut for script execution.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Improved UX for the list of spaces.</li>
+<li>Improved UX for the modal to move/copy pages.</li>
+</ul>
 <h2 id="150-december-7-2022">1.5.0 <small>December 7, 2022</small></h2>
-<p><strong>Page Editor</strong>
-- Improved the placeholder text for empty containers to guide users on how to add components.
-- Fixed issues with overlays for components.
-- Fixed <a href="https://github.com/websight-io/starter/issues/33">#33</a> - reduced panel size leads to cropped images thumbnails.
-- <a href="/cms/developers/dialogs/pathpicker/">Path picker</a> input field:
-    - Fixed <a href="https://github.com/websight-io/starter/issues/19">#19</a> - updated placeholder text to guide on how to choose a path.
-    - Added an arrow to expand the dropdown for selection.
-    - Fixed an issue with the <em>rootPath</em> property.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Improved the placeholder text for empty containers to guide users on how to add components.</li>
+<li>Fixed issues with overlays for components.</li>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/33">#33</a> - reduced panel size leads to cropped images thumbnails.</li>
+<li><a href="/cms/developers/dialogs/pathpicker/">Path picker</a> input field:<ul>
+<li>Fixed <a href="https://github.com/websight-io/starter/issues/19">#19</a> - updated placeholder text to guide on how to choose a path.</li>
+<li>Added an arrow to expand the dropdown for selection.</li>
+<li>Fixed an issue with the <em>rootPath</em> property.</li>
+</ul>
+</li>
+</ul>
 <h2 id="140-november-23-2022">1.4.0 <small>November 23, 2022</small></h2>
-<p><strong>Page Editor</strong>
-- Added ability to drag-and-drop a component between others included in a container.
-- Added <a href="https://github.com/websight-io/starter/issues/22">#22</a> - scrolling the page to a component when the user clicks it in the content tree.
-- Improved UX for the component list. It contains only items allowed for a given page (based on its template).
-- Fixed an issue with misaligned overlays when the user resized the window.</p>
-<p><strong>Page and Asset Management</strong>
-- Added actions in the breadcrumb for assets.
-- Added <em>Edit</em> action in the breadcrumb for pages.
-- Fixed an issue with page creation when the action was interrupted previously.</p>
-<p><strong>Other</strong>
-- Added loading indicator for the <em>Create Space</em> modal.</p>
+<p><strong>Page Editor</strong></p>
+<ul>
+<li>Added ability to drag-and-drop a component between others included in a container.</li>
+<li>Added <a href="https://github.com/websight-io/starter/issues/22">#22</a> - scrolling the page to a component when the user clicks it in the content tree.</li>
+<li>Improved UX for the component list. It contains only items allowed for a given page (based on its template).</li>
+<li>Fixed an issue with misaligned overlays when the user resized the window.</li>
+</ul>
+<p><strong>Page and Asset Management</strong></p>
+<ul>
+<li>Added actions in the breadcrumb for assets.</li>
+<li>Added <em>Edit</em> action in the breadcrumb for pages.</li>
+<li>Fixed an issue with page creation when the action was interrupted previously.</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul>
+<li>Added loading indicator for the <em>Create Space</em> modal.</li>
+</ul>
 <h2 id="130-november-09-2022">1.3.0 <small>November 09, 2022</small></h2>
 <p><strong>Page Editor</strong></p>
 <ul>
