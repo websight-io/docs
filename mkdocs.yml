@@ -73,6 +73,15 @@ plugins:
 
           'index.md': 'cms/intro/index.md'
           'cms/index.md': 'cms/intro/index.md'
+          'cms/developers/index.md': 'cms/developers/quick-start/index.md'
+          'cms/authors/index.md': 'cms/authors/component-libs/howlite/index.md'
+          'cms/authors/component-libs/index.md': 'cms/authors/component-libs/howlite/index.md'
+          'cms/deployment/index.md': 'cms/deployment/kubernetes/index.md'
+          'cms/release-notes/index.md': 'cms/release-notes/websight-cms/index.md'
+
+          # legacy URL / moved pages
+          'cms/release-notes/websight-cms/index.md': 'cms/release-notes/index.md'
+
 
           # 'docs/index.md': 'docs/quick-start/index.md'
           # 'docs/authors/index.md': 'docs/authors/component-libs/howlite/index.md'
