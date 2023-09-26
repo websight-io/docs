@@ -2,17 +2,17 @@
 
 ## Overview
 
-When content (like pages or assets) is published from actions available in the authoring UI, it is getting copied from `/content` to `/published` content tree.
+When content (such as pages or assets) is published via actions available in the authoring UI, it is copied from `/content` to `/published` within the content tree.
 
-Content references (paths save in JCR) are updated (in same way as when pages are copied/moved) automatically during publishing.
-So published content reference other published content items after publishing.
+Content references (paths saved in JCR) are automatically updated (just as they would be when pages are copied or moved) during publishing.
+This means that published content references other published content items after publishing.
 
-Publishing API allows to get information about status of content and publish/unpublish the content.
-SPI interfaces allows to take actions before/after publishing/unpublishing and customize published content if needed.
+The publishing API allows you to get information about the status of content and to publish/unpublish content.
+SPI interfaces allow you to take actions before publishing, after publishing and during unpublishing. You can also customize published content if needed.
 
-CMS by default contains bundle `pl.ds.websight:websight-content-push-filesystem` providing `PublishingPostprocessor` SPI implementation saving published 
-content to file system for the backward compatibility with previous approach for the content publishing. The saved files can be served for end users via HTTP server.
-OSGi configurations for services `FileSystemService` and `ContentPushConfigurationService` can be used to change the published content files in file system.
+By default, the CMS contains the bundle `pl.ds.websight:websight-content-push-filesystem` which provides the `PublishingPostprocessor` SPI implementation for saving published 
+content to the file system for backwards compatibility with the previous approach to content publishing. The saved files can be served to end users via an HTTP server.
+OSGi configurations for the services `FileSystemService` and `ContentPushConfigurationService` can be used to change the published content files in the file system.
 
 See [the blog post about publishing](https://www.websight.io/blog/2023/new-publishing-framework.html).
 
@@ -30,7 +30,7 @@ Dependency:
 
 ### API
 
-API allows to use the publishing framework.
+The API allows you to use the publishing framework.
 
 #### PublishService
 
@@ -44,22 +44,22 @@ import org.apache.sling.api.resource.Resource;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Provides operations for publishing of resources based on copying the resources from
+ * Provides operations for publishing of resources by copying the resources from
  * {@value CONTENT_ROOT} to {@value PUBLISHED_ROOT}. Only JCR resources are supported.
  * <br><br>
  * It is assumed that read access to {@value PUBLISHED_ROOT} is granted for everyone. Rights for
- * modification of {@value PUBLISHED_ROOT} nodes by client session is not required - only
+ * modification of {@value PUBLISHED_ROOT} nodes by client session is not required; only
  * {@value PUBLISH_PRIVILEGE} on corresponding {@value CONTENT_ROOT} path is required.
  * <br><br>
- * Publication logic utilize Node Types Primary Item. If published node use type having primary item
- * then publication (recursive copying to {@value PUBLISHED_ROOT}) is done on the primary item. In
- * case of publishing node using type not defining primary item only the published resource will be
+ * Publication logic uses Node Types Primary Item. If a published node use type has a primary item,
+ * publication (recursive copying to {@value PUBLISHED_ROOT}) is done on the primary item. If the
+ * publishing node uses a type that is not defined as a primary item, only the published resource will be
  * copied.
  * <p>
  * see {@link javax.jcr.Node#getPrimaryItem()} and {@link NodeTypeDefinition#getPrimaryItemName()}
  * </p>
  * <br><br>
- * Parents of published node are created with original primary types and required properties only.
+ * Parents of published nodes are created with original primary types and required properties only.
  */
 public interface PublishService {
 
@@ -88,15 +88,15 @@ public interface PublishService {
   boolean hasPublishRights(@NotNull Resource resource) throws PublishException;
 
   /**
-   * Publishes a single resource. Implementation has to ensure that all the preconditions are met.
+   * Publishes a single resource. Implementation must ensure that all the preconditions are met.
    *
-   * @param resource a resource to be published
+   * @param a resource to be published
    * @throws PublishException may be thrown if an error occurs trying to publish a resource
    */
   void publish(@NotNull Resource resource) throws PublishException;
 
   /**
-   * Optimized publish method for multiple resources. Implementation has to ensure that all the
+   * Optimized publish method for multiple resources. Implementation must ensure that all the
    * preconditions are met.
    *
    * @param resources a resource to be published
@@ -105,7 +105,7 @@ public interface PublishService {
   void publish(@NotNull List<Resource> resources) throws PublishException;
 
   /**
-   * Unpublishes a single resource. Implementation has to ensure that all the preconditions are
+   * Unpublishes a single resource. Implementation must ensure that all the preconditions are
    * met.
    *
    * @param resource a resource to be unpublished
@@ -114,10 +114,10 @@ public interface PublishService {
   void unpublish(@NotNull Resource resource) throws PublishException;
 
   /**
-   * Optimized unpublish method for multiple resources. Implementation has to ensure that all the
+   * Optimized unpublish method for multiple resources. Implementation must ensure that all the
    * preconditions are met.
    *
-   * @param resources a resource to be unpublished
+   * @param a resource to be unpublished
    * @throws PublishException may be thrown if an error occurs trying to unpublish resources
    */
   void unpublish(@NotNull List<Resource> resources) throws PublishException;
