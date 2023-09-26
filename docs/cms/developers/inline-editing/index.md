@@ -2,10 +2,10 @@
 
 ## Overview
 
-Inline editing allows updating components directly in page content while using [Page Editor](../page-editor).
+Inline editing makes it possible to update components directly within a page's content using the [Page Editor](../page-editor).
 
 Currently, inline editing supports editing of single component properties. When inline editing is enabled 
-for the component then action triggering the editing is available.
+for the component, the action triggering the editing is available.
 
 ![Action staring inline editing](images/component-action.png)
 
@@ -13,10 +13,10 @@ for the component then action triggering the editing is available.
 
 ## Enabling inline editing for component
 
-Inline editing can be enabled for a component by the update of the [Edit configuration](../components/#edit-configuration).
+Inline editing can be enabled for a component by updating the [Edit configuration](../components/#edit-configuration).
 
-To enable the inline editing add `inlineEditing` and `config` nodes to the component edit config.
-`config` node contains configuration related to editing of single component property.
+To enable the editing add the `inlineEditing` and `config` nodes to the component edit config.
+The `config` node contains configuration related to editing of a single component property.
 
 ```json title="Example component edit config enabling inline editing"
 {
@@ -33,27 +33,26 @@ To enable the inline editing add `inlineEditing` and `config` nodes to the compo
 ### Property
 
 `property` contains the relative path of the component property where the edited value will be saved in the content.
-The values can be just a property name which will be saved on the component content nod, for example `"property": "title"` or
-may contain sub-nodes on the component node, for example `"property": "node1/node2/title"`.
+The values can be a property name that will be saved on the component content node (for example: `"property": "title"`). It
+may also contain sub-nodes on the component node (for example: `"property": "node1/node2/title"`).
 
-The value of property must correspond to a field defined in the component dialog - if the field is
-not needed in the dialog it can be disabled using dialogs _context_, see [component dialog documentation](/cms/developers/components/#dialog).
+The value of `property` must correspond to a field defined in the component dialog. If the field is
+not needed in the dialog it can be disabled using dialogs _context_. See [component dialog documentation](/cms/developers/components/#dialog) for more information.
 
-It is recommended to avoid inline editing of fields using [validation](/cms/developers/dialogs/#validation) for better content 
-authoring experience - the validation error will be reported as notification and value will not be updated.
+For the best content authoring experience, it is recommended to avoid inline editing of fields using [validation](/cms/developers/dialogs/#validation). Validation errors will be reported as notifications and the values will not be updated.
 
 ### DOM selectors
 
-The `domSelectors` are used to find DOM element the inline editing should be done on.
-Selectors will be evaluated in order on all Component DOM nodes till finding the first result.
-If not provided or empty, then the first Component DOM node is used.
+The `domSelectors` are used to find the DOM element for which the inline editing should take place.
+Selectors will be evaluated one-by-one on all Component DOM nodes until the first result is found.
+If a DOM selector value is not provided or is empty, then the first Component DOM node is used.
 
 ### Inline editor
 
-The `editor` property contains the ID of the inline editor implementation which will be used for editing.
+The `editor` property contains the ID of the inline editor implementation, which will be used for editing.
 See the provided editors below.
 
-Depending on the editor implementation additional `editorConfiguration` object can be provided.
+Depending on the editor implementation, an additional `editorConfiguration` object may be provided.
 
 ```json title="Example component edit config using inline editor configuration"
 {
@@ -71,11 +70,11 @@ Depending on the editor implementation additional `editorConfiguration` object c
 
 ## Provided inline editors
 
-WebSight CMS provides inline editors available to use only by updating component edit configuration as described.
+WebSight CMS provides inline editors, which are available to use only by updating the edit configuration for the component as described below.
 
 ### Text editor
 
-The WebSight text editor allows single line, plain text editing. The ID of the editor is `text`.
+The WebSight text editor allows single-line plain text editing. The ID of the editor is `text`.
 
 ```json title="Example component edit config enabling text inline editing"
 {
@@ -108,8 +107,8 @@ The ID of the editor is `rich-text`.
 
 ![Rich text inline editor](images/rich-text-inline-editor.png)
 
-To specify the [rich text configuration](/cms/developers/dialogs/richtext-editor/configuration) add
-`editorConfiguration` with the `rteConfiguration` property of containing path to the configuration.
+To specify the [rich text configuration](/cms/developers/dialogs/richtext-editor/configuration), add
+`editorConfiguration` and define the path to the configuration via `rteConfiguration`.
 
 ```json title="Example component edit config enabling rich text inline editing and specified configuration"
 {
