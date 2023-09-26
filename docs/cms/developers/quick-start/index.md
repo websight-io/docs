@@ -53,7 +53,7 @@ To fulfill this request, you are asked to keep the collection name on one line a
 
 ### Technical scope
 
-To do this, you need to extend the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) library. Before doing that, let's check the orginal component first to identify the scope of changes.
+To do this, you need to extend the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) library. Before doing that, let's check the original component first to identify the scope of changes.
 
 Run WebSight, open the _Luna_ space and edit the home page. Find the _Title_ component that contains the text `Meet our New Grand Luxor Jewelry Collection` and edit its properties on the sidepanel.
 
