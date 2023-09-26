@@ -264,8 +264,6 @@ Edit properties of the _Luna Title_ on the side panel:
 1. set _Overline size_ to `L`
 1. set _Overline text_ to `Meet our` 
 
-![Luna Title Panel Properites](luna-title-panel-properties.png)
-
 The title should appear as expected now. You can delete the original _Title_ component to finalize the change.
 
 ![Updated Luna Title](luna-title-updated.png)
