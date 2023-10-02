@@ -1,4 +1,4 @@
-if (window.location.hostname === "www.websight.io") {
+if (window.location.hostname === "docs.websight.io") {
     // obtain cookieconsent plugin
     var cc = initCookieConsent();
 
