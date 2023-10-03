@@ -50,7 +50,7 @@ watch:
 extra:
   analytics:
     provider: gtm
-    property: GTM-MGSHM7TT
+    property: GTM-M2B8LK4
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/websight-io
