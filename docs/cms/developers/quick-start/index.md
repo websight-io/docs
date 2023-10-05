@@ -6,7 +6,7 @@ This guide explains how to update a simple Howlite component. Before you complet
 
 For demonstration purposes, this guide uses a sample component library, [Howlite](https://github.com/websight-io/howlite), and a demo site project, _Luna_. For the sake of simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and preconfigured the _Luna Title_ component inside the demo project. 
 
-Your task in completing this guide is to update the _Luna Title_ component and extend existing functionality and tests. The sections below explain more detail.
+Your task in completing this guide is to update the _Luna Title_ component and extend existing functionality. The sections below explain more detail.
 
 !!! info "Important notice"
 
@@ -148,100 +148,7 @@ Run the following command to apply the changes to your local environment.
 ./mvnw -f application/backend/pom.xml clean install -P autoInstallBundle
 ```
 
-## Part D: Functional tests
-
-### Run functional tests
-
-We continuously improve WebSight CMS by adding new features, improving the UX, and fixing bugs. Thus, we need confidence that changes don't lead to any regression on websites. To provide this confidence, we use [Cypress](https://www.cypress.io/) to enable automated testing of components. This approach enables us to spend less time on manual testing and regression fixes. We can focus on developing new features and improvements instead.
-
-To demonstrate automated functional testing, we prepared two sample functional tests for the _Luna Title_ component. They are executed during the Maven build process. You can run them using `npm` on your local environment as well. However, you have to add test content before running the tests. Use the following script to set this up:
-
-```shell
-./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
-```
-
-Now, you can run the tests using the following command:
-
-```shell
-npm run-script test --prefix tests/end-to-end
-```
-
-If you execute the tests, they will detect your changes for the _Luna Title_ and fail. You should get the following results:
-
-```
-Running:  lunatitle.cy.ts                                                                 (1 of 1)
-
-
-  Luna Title component
-    1) renders correctly in preview mode
-    ✓ renders correctly in edit mode (3529ms)
-
-
-  1 passing (14s)
-  1 failing
-
-  1) Luna Title component
-       renders correctly in preview mode:
-
-      Timed out retrying after 10000ms
-      + expected - actual
-
-      -'25.008px'
-      +'20px'
-```
-
-When a functional test fails, you should check why. It is expected in this case, as you implemented new requirements. You updated the default font size of the overline component (to ensure consistency with the design). The tests recognized the change, and you should adjust them as well. The following section explains how to do so.
-
-
-!!! info "Hint"
-    A best practice is to start by changing a test so that it fails until you've made desired changes. Then, apply your changes so that the test passes.
-
-### Update functional tests
-When functional tests fail due to changes, you should adjust them. They are placed in file `tests/end-to-end/tests/lunatitle.cy.ts`. 
-
-The test checks the font size for the overline text. There are two component instances validated. Thus, you need to update assertions for both of them as follows.
-
-```typescript
-    cy.getByTestId('component_title1')
-      .findByTestId('overline')
-      .should('have.css', "font-size", "25.008px")
-      .should('have.text', 'Additional overline text filled')
-```
-
-```typescript
-    cy.getByTestId('component_title2')
-      .findByTestId('overline')
-      .should('have.css', "font-size", "25.008px")
-      .should('have.text', 'Resized to 6 cols on L breakpoint')
-```
-
-### Run functional tests again
-
-Now, you can execute the updated functional tests:
-
-```shell
-./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
-npm run-script test --prefix tests/end-to-end
-```
-
-Both tests should pass this time. You should receive a report like the one below.
-
-```
-Running:  lunatitle.cy.ts                                                                 (1 of 1)
- 
- 
-Luna Title component
-  ✓ renders correctly in preview mode (1030ms)
-  ✓ renders correctly in edit mode (2774ms)
-
-
-2 passing (4s)
-
-```
-
-Congratulations! You updated the component, and it passed tests.
-
-## Part E: Use the new component
+## Part D: Use updated component
 
 !!! info "Hint"
     If you need help to navigate inside WebSight, see the general [getting started](/cms/quick-start/) for details.
@@ -268,7 +175,7 @@ The title should appear as expected now. You can delete the original _Title_ com
 
 ![Updated Luna Title](luna-title-updated.png)
 
-## Part F: Clean-up
+## Part E: Clean-up
 
 ### Stop the environment
 
@@ -297,3 +204,4 @@ This guide walked through the essentials of developing components for WebSight C
 - [Components development](../components/)
 - [Dialogs](../dialogs/)
 - [Page editor](../page-editor/)
+- [End-to-end-testing](../e2e-testing)
