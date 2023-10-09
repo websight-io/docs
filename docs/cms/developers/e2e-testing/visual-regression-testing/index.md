@@ -51,13 +51,17 @@ You can use BackstopJS locally in the following way:
     ```
 
 2. Make some changes in the code (i.e. via switching to a different branch in Git).
-3. Run the command below to to capture again screenshots of all pages and compare them with reference screenshots:
+3. Apply the changes by running:
+    ```shell
+    mvn clean install -P autoInstallBundle
+    ```
+4. Run the command below to capture again screenshots of all pages and compare them with reference screenshots:
 
     ```shell
     mvn clean verify -P e2e-visual-check
     ```
 
-4. Open BackstopJS report which is located here:
+5. Open BackstopJS report which is located here:
 
     `tests/end-to-end/backstop_data/html_report/index.html`
 
@@ -65,7 +69,7 @@ You can use BackstopJS locally in the following way:
 
     ![BackstopJS report](backstopjs-report.png)
 
-5. Review visual changes in failed tests.
+6. Review visual changes.
 
 ## Using BackstopJS on CI server
 
