@@ -26,9 +26,15 @@ To run them, you need to start your docker instance:
 docker compose -f environment/local/docker-compose.yml up -d
 ```
 
-Then run the commands below:
+Then add test content located in `/tests/content` folder by executing this script:
 
-```bash
+```shell
+./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
+```
+
+Finally run the commands below:
+
+```shell
 cd tests/end-to-end
 npm run dev
 ```
