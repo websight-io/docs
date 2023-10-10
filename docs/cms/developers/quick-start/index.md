@@ -31,7 +31,7 @@ cd starter
 
 Then, start a Docker environment.
 ```shell
-docker compose -f environment/local/docker-compose.yml up -d
+docker compose -f environment/local-mongo/docker-compose.yml up -d
 ```
 
 Congratulations! Your local environment is now ready. To view it, open [http://localhost:8080/](http://localhost:8080/) in a Web browser and log in using the credentials `wsadmin`/`wsadmin`.
@@ -275,7 +275,7 @@ The title should appear as expected now. You can delete the original _Title_ com
 After completing this guide, you can stop your local environment using Docker:
 
 ```shell
-docker compose -f environment/local/docker-compose.yml down
+docker compose -f environment/local-mongo/docker-compose.yml down
 ```
 
 The environment will still exist but will no longer be running.
@@ -285,7 +285,7 @@ The environment will still exist but will no longer be running.
 If you don't need your environment anymore, you can delete it permanently using a script.
 
 ```shell
-sh environment/local/delete.sh
+sh environment/local-mongo/delete.sh
 ```
 
 ## Next steps
