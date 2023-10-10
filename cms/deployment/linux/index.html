@@ -3187,8 +3187,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h1 id="deployment-to-linux-using-docker-compose">Deployment to Linux using Docker Compose</h1>
 <p>This guide describes a way to deploy WebSight CMS inexpensively and with predictable monthly pricing. We will run the platform on a single Ubuntu server, using containers that are configured via Docker Compose.</p>
 <div class="admonition warning">
-<p class="admonition-title">Notice<p>This setup does not address reliability (e.g., backups and recovery), scalability or monitoring considerations. For a production environment, we recommend using a managed container service. Learn more about deploying on a managed container service in our <a href="../aws-ecs/">AWS ECS deployment guide</a>.</p>
-</p>
+<p class="admonition-title">Notice</p>
+<div class="highlight"><pre><span></span><code>This setup does not address reliability (e.g., backups and recovery), scalability or monitoring considerations. For a production environment, we recommend using a managed container service. Learn more about deploying on a managed container service in our [AWS ECS deployment guide](../aws-ecs/).
+</code></pre></div>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Prerequisites</p>
@@ -3210,8 +3211,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 <h2 id="step-1-droplet-setup">Step 1: Droplet Setup</h2>
 <div class="admonition info">
-<p class="admonition-title">Notice<p>If you have your own virtual machine with Ubuntu installed and want to run WebSight CMS there, you don't need to set up a Droplet. Instead, skip this step and go directly to <a href="#step-2-install-docker">step 2</a>.</p>
-</p>
+<p class="admonition-title">Notice</p>
+<div class="highlight"><pre><span></span><code>If you have your own virtual machine with Ubuntu installed and want to run WebSight CMS there, you don&#39;t need to set up a Droplet. Instead, skip this step and go directly to [step 2](#step-2-install-docker).
+</code></pre></div>
 </div>
 <p><a href="https://docs.digitalocean.com/products/droplets/how-to/create/">Create a Droplet</a> with the following specification:</p>
 <ul>
@@ -3224,8 +3226,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>On your virtual machine, install Docker Engine and plugins by following the <a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">Ubuntu Docker installation documentation</a>.</p>
 <h2 id="step-3-container-registry-setup">Step 3: Container Registry Setup</h2>
 <div class="admonition info">
-<p class="admonition-title">Notice<p>If you already have a Docker Registry set up, you can skip this step and go directly to <a href="#step-4-push-images-to-docker-registry">step 4</a>.</p>
-</p>
+<p class="admonition-title">Notice</p>
+<div class="highlight"><pre><span></span><code>If you already have a Docker Registry set up, you can skip this step and go directly to [step 4](#step-4-push-images-to-docker-registry).
+</code></pre></div>
 </div>
 <p><a href="https://docs.digitalocean.com/products/container-registry/quickstart/">Create a basic private Container Registry in DigitalOcean</a>.</p>
 <p>At the time of writing this guide the cost of the Basic Container Registry is <strong>$5.00/month</strong>.</p>
