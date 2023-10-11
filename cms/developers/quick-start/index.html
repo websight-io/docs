@@ -3302,7 +3302,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>./mvnw<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-P<span class="w"> </span>e2e-functional
 </code></pre></div>
 <p>Then, start a Docker environment.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>environment/local/docker-compose.yml<span class="w"> </span>up<span class="w"> </span>-d
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>environment/local-mongo/docker-compose.yml<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div></p>
 <p>Congratulations! Your local environment is now ready. To view it, open <a href="http://localhost:8080/">http://localhost:8080/</a> in a Web browser and log in using the credentials <code>wsadmin</code>/<code>wsadmin</code>.</p>
 <h2 id="part-c-changing-component">Part C: Changing component</h2>
@@ -3478,12 +3478,12 @@ Because you updated the model class, you can use its property now.</p>
 <h2 id="part-f-clean-up">Part F: Clean-up</h2>
 <h3 id="stop-the-environment">Stop the environment</h3>
 <p>After completing this guide, you can stop your local environment using Docker:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>environment/local/docker-compose.yml<span class="w"> </span>down
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>environment/local-mongo/docker-compose.yml<span class="w"> </span>down
 </code></pre></div>
 <p>The environment will still exist but will no longer be running.</p>
 <h3 id="delete-environment">Delete environment</h3>
 <p>If you don't need your environment anymore, you can delete it permanently using a script.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sh<span class="w"> </span>environment/local/delete.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sh<span class="w"> </span>environment/local-mongo/delete.sh
 </code></pre></div>
 <h2 id="next-steps">Next steps</h2>
 <p>This guide walked through the essentials of developing components for WebSight CMS. As a next step, we encourage you to explore additional details about the following:</p>
