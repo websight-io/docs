@@ -54,7 +54,7 @@ mvn archetype:generate                                     \
   -DprojectName="Example Project"                          \
   -DprojectId=example-project                              \
   -Dpackage=com.example.project                            \
-  -DcmsVersion=1.21.1
+  -DcmsVersion=1.20.1
 ```
 
 The above command creates a project with the following structure:
