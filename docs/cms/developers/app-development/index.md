@@ -16,15 +16,19 @@ An OSGi bundle is a unit of modularization in the OSGi specification. It's a bun
 Open [http://localhost:8080/system/console/bundles](http://localhost:8080/system/console/bundles) to see all the Bundles on the WebSight CMS instance and use the filter bar at the top to filter the list.
 
 Some of the bundles deliver the OSGi specification implementation (note that the list is filtered by org.apache.felix and that Apache Felix is an implementation of the OSGi specification):
+
 ![Bundles - OSGi secification implementation](img07.png)
 
 Some of the bundles deliver Apache Sling functionality (list filtered by org.apache.sling):
+
 ![Bundles - Apache Sling functionality](img08.png)
 
 Some of the bundles deliver WebSight CMS functionality (list filtered by WebSight):
+
 ![Bundles - WebSight CMS functionality](img09.png)
 
 And finally, some of the bundles deliver the functionality of the application which was just generated from the archetype (list filtered by my-artifactId which was used in example project generation at the beginning of our tutorial guide):
+
 ![Bundles - application functionality](img10.png)
 
 Click on `my-artifactId-backend` bundle to open details. 
@@ -32,6 +36,7 @@ At the beginning the bundle definitions were mentioned:
 OSGi bundle is a unit of modularization in the OSGi specification. Again, a bundle is comprised of Java classes and other resources, which together can provide functions to end users.
 
 The screen below highlights that the `my-artifactId-backend` is exporting (in other words, making available to other bundles) some Java packages (with use of the `Export-Package` standard OSGi bundle header provided by `bnd-maven-plugin` in `pom.xml` and `package-info.java` files in the code base) and is providing some resources (with use of `Sling-Bundle-Resources` bundle header handled by Bundle Resources Provider).
+
 ![Bundles - my-artifactId-backend](img11.png)
 
 ## Resources
@@ -44,6 +49,7 @@ The WebSight CMS Resource Browser admin tool allows developers to browse all Res
 The Resource Browser provides an option to select _Providers_ (sources of Resources available in the instance) used to display the presented Resources tree. We will focus on JCR and Bundle resources. 
 
 [http://localhost:8080/apps/browser#/](http://localhost:8080/apps/browser#/)
+
 ![WebSight CMS - Resource Browser](img12.png)
 
 JCR (Java Content Repository) is a database with a tree structure consisting of nodes with properties. Nodes in JCR are reflected by the JCR Resource in the Resources tree.
@@ -64,17 +70,21 @@ For additional technical details check out this link:
 [https://sling.apache.org/documentation/bundles/bundle-resources-extensions-bundleresource.html](https://sling.apache.org/documentation/bundles/bundle-resources-extensions-bundleresource.html)
 
 This is how bundle resources are provided in the generated project:
+
 ![Bundle resources - generated project](img13.png)
 
 And the same resource in the resource browser:
 [http://localhost:8080/apps/browser#/apps/example-project/components/hello](http://localhost:8080/apps/browser#/apps/example-project/components/hello)
+
 ![Resource browser - generated project](img14.png)
 
 This is how JCR resources are defined in the codebase in the content module:
+
 ![JCR resources in codebase](img15.png)
 
 And in the Resources tree:
 [http://localhost:8080/apps/browser#/content/example-project/pages/homepage/jcr:content](http://localhost:8080/apps/browser#/content/example-project/pages/homepage/jcr:content)
+
 ![Resource tree](img16.png)
 
 ## Backend Resources
@@ -142,6 +152,7 @@ mvn clean install -P autoInstallBundle
 ![Page template - bundle instalation](img21.png)
 
 A new Pages Space template will be available:
+
 ![New page template - space creation](img22.png)
 
 ##  Page template
@@ -159,9 +170,11 @@ The `/apps/example-project/templates/contentpage` was listed in `allowedChildren
 
 This means that the page template `/apps/example-project/templates/contentpage` can be created under the page's root in the space:
 [http://localhost:8080/apps/websight/index.html/content/example-project/pages](http://localhost:8080/apps/websight/index.html/content/example-project/pages ) (click Create Page button)
+
 ![New page - template selection ](img25.png)
 
 In the second step, page properties can be set:
+
 ![New page - dialog ](img26.png)
 
 The dialog displayed at this step is a dialog of the component defined in the initial content of the page template (`sling:resourceType": "example-project/components/page`). Read more about components and dialogs in the [Components section](/cms/developers/components/) of the WebSight CMS documentation.
@@ -171,13 +184,15 @@ The initial content of the page template is defined in a resource named `initial
 Page is a node of type `ws:Page`. It contains a page content sub-node named `jcr:content` of the type `ws:PageContent`. The nodes located under the page content node can be modified via the authoring UI. All the Page properties (including properties set via the page dialog) are set on the page content node.
 
 This is the initial content of the `/apps/example-project/templates/contentpage` page template:
+
 ![Initial content for the template](img27.png)
 
 This is how the content node of the newly created page appears:
+
 ![Content node - resource browser](img28.png)
 
 New page templates can be created in the application.
-`/apps/example-project/templates/examplpage` is a copy of  `/apps/example-project/templates/contentpage` with changed title, `allowedChildren`
+`/apps/example-project/templates/examplepage` is a copy of  `/apps/example-project/templates/contentpage` with changed `title`, `allowedChildren`
 
 ``` json title="/apps/example-project/templates/examplpage"
 {
@@ -211,15 +226,18 @@ and initial content:
 ![](img29.png)
 
 To make it possible to create under the pages' root in the space, you must add it to `allowedChildren` in the pages space template `/apps/example-project/templates/pagesspace`:
+
 ![](img30.png)
 
 Deploy changes again with: `mvn clean install -P autoInstallBundle`
 
 The new template is available to create in the pages' root:
+
 ![New template available](img31.png)
 
 
 Page created from this template contains defined initial content:
+
 ![](img32.png)
 
 ## Components
@@ -233,9 +251,11 @@ The generated backend module contains three example components, located under `/
 - hello - component that displays hello text
 
 In the editor components list, only the hello component is visible because other components are hidden via the group property value.
+
 ![](img33.png)
 
 [http://localhost:8080/apps/websight/index.html/content/example-project/pages/new-page::editor](http://localhost:8080/apps/websight/index.html/content/example-project/pages/new-page::editor)
+
 ![](img34.png)
 
 
@@ -243,7 +263,7 @@ New components can be defined to deliver application functionality.
 
 As an example, we will add a new component named Rich Text, which allows for advanced text editing.
 
-First, create new folder under `/apps/example-project/components` named richtext with content:
+First, create new folder under `/apps/example-project/components` named `richtext` with content:
 ``` json
 {
  "sling:resourceType": "ws:Component",
@@ -265,7 +285,7 @@ Then, define the dialog resource:
 }
 ```
 
-Define also the rendering script richtext.html (name must be matching component resource name + .html):
+Define also the rendering script `richtext.html` (name must be matching component resource name + .html):
 ``` html
 <sly data-sly-test="${properties.text && properties.text != '<p></p>'}">${properties.text @ context='html'}</sly>
 ```
@@ -276,7 +296,7 @@ This is how the new component definition looks in the codebase. Deploy the chang
 
 ![](img35.png)
 
-The new component is available now in the editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the data-sly-test statement in the component renderer. If nothing is rendered by the component the placeholder is displayed automatically in the editor. The edit action can be used to open dialog, and you can use the rich text dialog input to configure the text.
+The new component is available now in the editor and can be added to the page. If text is not configured via dialog, nothing is rendered because of the `data-sly-test` statement in the component renderer. If nothing is rendered by the component the placeholder is displayed automatically in the editor. The edit action can be used to open dialog, and you can use the rich text dialog input to configure the text.
 
 ![](img36.png)
 
@@ -288,9 +308,9 @@ Frontend scripts and resources are provided by the frontend module, which is a w
 
 The generated module contains a simple CSS class to center the text used in the hello component.
 
-The CSS files are built into the `main.css` file by webpack and embedded into the OSGi bundle installed on the instance, which makes the files available as resources (because of the Sling-Bundle-Resources header in the bundle header).
+The CSS files are built into the `main.css` file by webpack and embedded into the OSGi bundle installed on the instance, which makes the files available as resources (because of the `Sling-Bundle-Resources` header in the bundle header).
 
-Frontend resources are published automatically via the WebSight-Apps-WebRoot bundle header (see next chapter about publishing).
+Frontend resources are published automatically via the `WebSight-Apps-WebRoot` bundle header (see next chapter about publishing).
 The CSS file is included in the page component renderer to load the CSS.
 
 ![](img38.png)
@@ -302,7 +322,8 @@ The CSS file is included in the page component renderer to load the CSS.
 ![](img40.png)
 
 
-Add the `hello` component to the page to see the centered hello text
+Add the `hello` component to the page to see the centered "Hello World!" text
+
 ![](img41.png)
 
 ## Publishing
@@ -310,16 +331,19 @@ Add the `hello` component to the page to see the centered hello text
 Assembled content can be previewed in the editor and published to make it available for end users.
 
 [http://localhost:8080/apps/websight/index.html/content/example-project/pages/new-page::editor](http://localhost:8080/apps/websight/index.html/content/example-project/pages/new-page::editor )
+
 ![](img42.png)
 
 The published page is served by an NGINX Web server container:
 
 [http://localhost/new-page.html](http://localhost/new-page.html)
+
 ![](img43.png)
 
 ## End-to-end tests
 
 The `test` module contains content used during end-to-end test execution to validate the application. See the example test content and test script for the hello component:
+
 ![](img44.png)
 
 ## Next steps
