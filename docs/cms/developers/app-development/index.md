@@ -336,7 +336,7 @@ Assembled content can be previewed in the editor and published to make it availa
 
 The published page is served by an NGINX Web server container:
 
-[http://localhost/new-page.html](http://localhost/new-page.html)
+[http://localhost:8080/published/example-project/pages/new-page.html](http://localhost:8080/published/example-project/pages/new-page.html)
 
 ![](img43.png)
 
