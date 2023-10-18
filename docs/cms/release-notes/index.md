@@ -1,5 +1,42 @@
 # WebSight CMS release notes
 
+## 1.21.2 <small>Oct 13, 2023</small>
+
+**Page Editor**
+
+- Fixed component drag-and-drop performance issues.
+
+## 1.21.1 <small>Oct 10, 2023</small>
+
+**Page Editor**
+
+- Fixed page scrolling to the top after any update.
+
+## 1.21.0 <small>Oct 4, 2023</small>
+
+**Page and Asset Management**
+
+- Fixed the invisible last-row actions when the table has many items.  
+- Fixed flickering loading state in the page and assets trees.
+
+**Page Editor**
+
+- Added direct component reordering in the content tree.
+- Improved drag-and-drop for containers.
+- Improved switching between edit and preview modes - page position in the workspace remains the same now.
+- Fixed the _unexpected error_ notification after changing page properties in the preview mode.
+- Fixed the outdated publication status after inline editing.
+
+**Admin tools**
+
+- Added advanced options for package installation during upload.
+
+**Other**
+
+- Fixed broken link to the terms of use on the login page.
+- Removed browser-based field validation messages as they duplicate the ones from CMS.
+
+
 ## 1.20.1 <small>Sep 21, 2023</small>
 
 **Page and Asset Management**
