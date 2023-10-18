@@ -2,9 +2,19 @@
 
 ## Introduction
 
-This guide explains how to update a simple Howlite component. Before you complete this guide, we recommend completing the basic [quick start guide](/cms/quick-start/) first so that you understand basic WebSight CMS concepts.
+!!! info "Important notice"
 
-For demonstration purposes, this guide uses a sample component library, [Howlite](https://github.com/websight-io/howlite), and a demo site project, _Luna_. For the sake of simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and preconfigured the _Luna Title_ component inside the demo project. 
+    Before you complete this guide, we recommend completing the basic [quick start guide](/cms/quick-start/) first so that you understand basic WebSight CMS concepts.
+
+This guide uses [starter](https://github.com/websight-io/starter) - our official project which demonstrates variuous functionality of Websight CMS and pre-configures for you the following features:
+
+- Demo site project _Luna_
+- Integration with [Howlite](https://github.com/websight-io/howlite) library
+- [End-to-end testing](/cms/developers/e2e-testing)
+
+We will walk through the process of updating a simple Howlite component. 
+
+In [starter](https://github.com/websight-io/starter) for the sake of simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and created the _Luna Title_ component inside the demo project. 
 
 Your task in completing this guide is to update the _Luna Title_ component and extend existing functionality. The sections below explain more detail.
 

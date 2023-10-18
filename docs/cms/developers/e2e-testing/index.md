@@ -1,13 +1,17 @@
 # End-to-end testing
 
-## Introduction
+## Overview
 
-**End-to-end testing (E2E testing)** checks if the software is working correctly from the end user point of view. It verifies all the flows and actions which the user may perform when using the application. E2E tests should be executed in a real-world environment like a web browser to ensure that the testing closely resembles the actual user experience.
+End-to-end testing (E2E testing) checks if the software is working correctly from the end user point of view. It verifies all the flows and actions which the user may perform when using the application. E2E tests should be executed in a real-world environment like a web browser to ensure that the testing closely resembles the actual user experience.
 
 While you can write your own E2E tests using your favorite tools you can also leverage our solution from [starter](https://github.com/websight-io/starter). In this project we implemented the following types of E2E tests:
 
 - [Functional tests with Cypress](/cms/developers/e2e-testing/functional-testing)
 - [Visual regression tests with BackstopJS](/cms/developers/e2e-testing/visual-regression-testing)
+
+!!! info "Important notice"
+
+    For more information about [starter](https://github.com/websight-io/starter) project see [Quick start for developers](/cms/developers/quick-start).
 
 ## Test content
 

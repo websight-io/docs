@@ -4,12 +4,16 @@
 
 ## Introduction
 
-**Visual regression testing** is used to detect unintended visual changes in web application. It involves capturing screenshots of web pages or components at different points in time and comparing them to detect any differences. These differences needs to be reviewed if they are expected or not.
+Visual regression testing is used to detect unintended visual changes in web application. It involves capturing screenshots of web pages or components at different points in time and comparing them to detect any differences. These differences needs to be reviewed if they are expected or not.
 
 In [starter](https://github.com/websight-io/starter) you can check how use BackstopJS to perform visual regression testing. BackstopJS is a free and open-source tool that automates the process of capturing and comparing screenshots to identify any visual differences that may occur due to code changes, CSS updates, or other modifications.
 
 BackstopJS official documentation can be found here:
 [https://github.com/garris/BackstopJS](https://github.com/garris/BackstopJS)
+
+!!! info "Important notice"
+
+    For more information about [starter](https://github.com/websight-io/starter) project see [Quick start for developers](/cms/developers/quick-start).
 
 ## Configuration
 
