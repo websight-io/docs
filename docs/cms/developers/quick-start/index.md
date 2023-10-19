@@ -6,10 +6,10 @@
 
     Before you complete this guide, we recommend completing the basic [quick start guide](/cms/quick-start/) first so that you understand basic WebSight CMS concepts.
 
-This guide uses [starter](https://github.com/websight-io/starter) - our official project which demonstrates variuous functionality of Websight CMS and pre-configures for you the following features:
+This guide uses [starter](https://github.com/websight-io/starter) - our sample project which demonstrates various functionality of Websight CMS and pre-configures for you the following features:
 
 - Demo site project _Luna_
-- Integration with [Howlite](https://github.com/websight-io/howlite) library
+- [Howlite](https://github.com/websight-io/howlite) components library
 - [End-to-end testing](/cms/developers/e2e-testing)
 
 We will walk through the process of updating a simple Howlite component. 
