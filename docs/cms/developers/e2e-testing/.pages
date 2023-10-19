@@ -1,0 +1,4 @@
+nav:
+ - ...
+ - Functional testing : functional-testing
+ - Visual regression testing : visual-regression-testing
