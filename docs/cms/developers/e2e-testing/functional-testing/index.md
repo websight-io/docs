@@ -27,7 +27,7 @@ Cypress tests are located in `tests/end-to-end/tests` folder.
 To run them, you need to start your docker instance:
 
 ```shell
-docker compose -f environment/local/docker-compose.yml up -d
+docker compose -f environment/local-mongo/docker-compose.yml up -d
 ```
 
 Then add test content located in `/tests/content` folder by executing this script:
