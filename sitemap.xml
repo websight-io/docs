@@ -2,322 +2,322 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.websight.io/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/architecture/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/architecture/aws-ecs/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/architecture/cms-modules-layers/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/architecture/kubernetes/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/accordion/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/cards-list/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/container/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/cta/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/grid/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/image/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/layouts/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/logo-cloud/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/page-section/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/quote/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/rte/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/authors/component-libs/howlite/title/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/deployment/aws-ecs/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/deployment/kubernetes/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/deployment/linux/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/app-development/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/components/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/assetreference/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/checkbox/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/container/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/date-picker/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/include/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/multifield/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/number-field/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/pathpicker/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/radio/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/richtext-editor/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/richtext-editor/configuration/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/richtext-editor/plugin-components/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/richtext-editor/ui-components/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/richtext-editor/ui-components/button/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/richtext-editor/ui-components/button-dropdown/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/richtext-editor/ui-components/dropdown/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/richtext-editor/ui-components/link/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/select/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/tabs/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/tabs/tab/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/text-area/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/textfield/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/dialogs/toggle/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/e2e-testing/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/e2e-testing/functional-testing/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/e2e-testing/visual-regression-testing/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/inline-editing/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/page-editor/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/page-editor/extending-editor/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/page-editor/side-panel/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/publishing/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/quick-start/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/setup/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/developers/wcm-mode/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/intro/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/quick-start/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/cms/release-notes/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/product/cla/corporate/v1/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/product/cla/individual/v1/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.websight.io/terms-of-use/</loc>
-         <lastmod>2023-10-19</lastmod>
+         <lastmod>2023-10-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

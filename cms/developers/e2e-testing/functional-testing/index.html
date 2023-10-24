@@ -3327,7 +3327,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="using-cypress-locally">Using Cypress locally</h2>
 <p>Cypress tests are located in <code>tests/end-to-end/tests</code> folder.</p>
 <p>To run them, you need to start your docker instance:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>environment/local/docker-compose.yml<span class="w"> </span>up<span class="w"> </span>-d
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>environment/local-mongo/docker-compose.yml<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 <p>Then add test content located in <code>/tests/content</code> folder by executing this script:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./mvnw<span class="w"> </span>-f<span class="w"> </span>tests/content/pom.xml<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-P<span class="w"> </span>autoInstallPackage

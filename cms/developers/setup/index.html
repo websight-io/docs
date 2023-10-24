@@ -3285,15 +3285,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#distribution-and-environment" class="md-nav__link">
-    Distribution and environment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-the-instance" class="md-nav__link">
-    Build the instance
+  <a href="#build-the-application" class="md-nav__link">
+    Build the application
   </a>
   
 </li>
@@ -3338,10 +3331,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <h1 id="project-setup">Project setup</h1>
-<p>This document provides an introduction to working with WebSight projects. It explains how to configure, build and run a new project using Maven Archetype and Docker. It also describes the contents of the project build and runtime files.</p>
+<p>This document provides an introduction to working with WebSight projects. It explains how to configure, build and run a new project using Maven Archetype. It also describes the contents of the project build and runtime files.</p>
 <p>Although the specific contents of your project may vary depending on your needs, the sample project described on this page is a useful starting-point for running Web applications using WebSight CMS.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>To create and run a project, you will need <a href="https://adoptium.net/">Java 17</a> or later, <a href="https://maven.apache.org/">Maven</a> 3.8.5 or later and <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>.</p>
+<p>To create and run a project, you will need <a href="https://adoptium.net/">Java 17</a> or later, <a href="https://maven.apache.org/">Maven</a> 3.8.5 or later.</p>
 <p>You can check your Java version in most environments with:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>java -version
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>openjdk 17.0.2 2022-01-18
@@ -3351,10 +3344,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Check your Maven version with:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn --version
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Apache Maven 3.8.5 (3599d3414f046de2324203b78ddcf9b5e4388aa0)
-</code></pre></div>
-<p>Check your Docker installation by running:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker --version
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Docker version 20.10.14
 </code></pre></div>
 <h2 id="generate-a-project">Generate a project</h2>
 <p>To create a new project, first open a command prompt and cd to the directory where you want to store your project.</p>
@@ -3366,28 +3355,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Use the <em>cmsVersion</em> parameter to specify the WebSight CMS version that the project should use. Check the WebSight <a href="/cms/release-notes/websight-cms/">Release Notes</a> to find the latest available version.</li>
 </ul>
 <p>Example command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn archetype:generate                                     \
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  -DarchetypeGroupId=pl.ds.websight                        \
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  -DarchetypeVersion=1.7                                   \
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  -DgroupId=my.groupId                                     \
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  -DartifactId=my-artifactId                               \
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  -Dversion=1.0.0-SNAPSHOT                                 \
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  -DprojectName=&quot;Example Project&quot;                          \
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  -DprojectId=example-project                              \
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  -Dpackage=com.example.project                            \
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  -DcmsVersion=1.21.2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn archetype:generate                                     \
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  -DarchetypeGroupId=pl.ds.websight                        \
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  -DarchetypeVersion=2                                     \
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  -DgroupId=my.groupId                                     \
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  -DartifactId=my-artifactId                               \
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  -Dversion=1.0.0-SNAPSHOT                                 \
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  -DprojectName=&quot;Example Project&quot;                          \
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  -DprojectId=example-project                              \
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  -Dpackage=com.example.project                            \
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  -DcmsVersion=1.21.2
 </code></pre></div>
 <p>The above command creates a project with the following structure:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>└── my-artifactId
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    ├── README.md
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    ├── application
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    ├── content
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    ├── distribution
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    ├── environment
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    ├── pom.xml
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    └── tests
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>└── my-artifactId
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    ├── README.md
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    ├── application
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    ├── content
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    ├── distribution
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    ├── pom.xml
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    └── tests
 </code></pre></div>
 <h2 id="project-structure">Project structure</h2>
 <p>The contents of the project structure we generated above are an example of what you'd typically include when creating a project for a Web application using WebSight CMS.</p>
@@ -3399,38 +3387,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li><code>content</code> - initial content as a JCR vault module (content_package)</li>
-<li><code>distribution</code> - project distribution - Sling feature model and Docker images</li>
-<li><code>environment</code> - scripts and files used to build environments<ul>
-<li><code>local</code> - local environment managed by Docker Compose</li>
-</ul>
-</li>
+<li><code>distribution</code> - project distribution - Sling feature model and optionally Docker images</li>
 <li><code>tests</code> - tests used to validate the distribution<ul>
 <li><code>content</code> - content for end-to-end tests</li>
 <li><code>end-to-end</code> - end-to-end tests</li>
 </ul>
 </li>
 </ul>
-<h2 id="distribution-and-environment">Distribution and environment</h2>
-<p>It is important to note that the project contains built-in server definitions and configurations. The <code>distribution</code> module is responsible for bundling the application based on the configurations and WebSight CMS modules using <code>Sling Feature Model</code>. It also prepares the required Docker images to run the complete stack. The finalized project build artifacts are immutable Docker images that can be run on local, test, and production environments. Environment-specific configurations can be implemented by injecting system variables.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>It is possible to deploy application modules to running containers without rebuilding the Docker images, but the changes will be lost after each container restart and can be used only for local development.</p>
-</div>
-<p>The <code>distribution</code> delivers two Docker images:</p>
-<ul>
-<li>CMS - Image that bundles WebSight CMS with your application</li>
-<li>Nginx - An HTTP server with your project's configuration</li>
-</ul>
-<p>A third container runs MongoDB as a default data store for Jackrabbit OAK (the persistence layer used by WebSight CMS). The data store stores content such as pages or assets managed by the CMS.</p>
-<p>We use Docker Compose to orchestrate containers during local setup. See the environment/local module for details.</p>
-<p>This illustration shows the runtime environment and roles:</p>
-<p><img alt="Runtime environment and roles" src="diagrams/generated/runtime-docker-compose.png" /></p>
-<h2 id="build-the-instance">Build the instance</h2>
+<p>It is important to note that the project contains built-in server definitions and configurations. The <code>distribution</code> module is responsible for bundling the application based on the configurations and WebSight CMS modules using <a href="https://sling.apache.org/documentation/development/feature-model.html"><code>Sling Feature Model</code></a>. Optionally it also prepares the Docker images (however, Docker is out of scope of this guide).</p>
+<h2 id="build-the-application">Build the application</h2>
 <p>To build the project, use the Maven command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mvn clean install
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
 </code></pre></div>
 <p>Add e2e profile to execute end-to-end tests:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mvn clean install -P e2e
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>verify<span class="w"> </span>-P<span class="w"> </span>e2e
 </code></pre></div>
 <p>You should see successful end-to-end test execution in the log:</p>
 <p align="center" width="100%">
@@ -3442,23 +3412,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <img class="image--with-border" src="./img03.png" alt="Successful build log">
 </p>
 
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<div class="highlight"><pre><span></span><code>On some Mac systems, Docker builds may fail with the following error message
-
-```bash
-[ERROR] Failed to execute goal io.fabric8:docker-maven-plugin:0.40.1:build (build-docker-image) on project ws-linux-box-distribution: Execution build-docker-image of goal io.fabric8:docker-maven-plugin:0.40.1:build failed: No &lt;dockerHost&gt; given, no DOCKER_HOST environment variable, no read/writable &#39;/var/run/docker.sock&#39; or &#39;//./pipe/docker_engine&#39; and no external provider like Docker machine configured -&gt; [Help 1]
-```
-
-If this occurs, check the Docker Maven Plugin issue tracker [issue](https://github.com/fabric8io/docker-maven-plugin/issues/1616) for details and available workarounds.
-</code></pre></div>
-</div>
 <h2 id="run-the-instance">Run the instance</h2>
-<p>Once your project build is complete, you can start a local instance by navigating to the <code>environment/local</code> folder and running:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker compose up
+<p>Once your project build is complete, you can start a local instance by running the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>java<span class="w"> </span>--add-opens<span class="w"> </span>java.base/java.lang<span class="o">=</span>ALL-UNNAMED<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>-jar<span class="w"> </span>distribution/target/dependency/org.apache.sling.feature.launcher.jar<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>-f<span class="w"> </span>distribution/target/slingfeature-tmp/feature-websight-cms-example-project-tar.json
 </code></pre></div>
-<p>The resulting instance runs WebSight CMS and your application at <a href="http://localhost:8080/">http://localhost:8080/</a> The default login is wsadmin/wsadmin. Published content is available locally at <a href="http://localhost/">http://localhost/</a></p>
-<p>See README.md in the <code>environment</code> and <code>environment/local</code> folders for additional details about the runtime environment.</p>
+<p>The resulting instance runs WebSight CMS with your application at <a href="http://localhost:8080/">localhost:8080</a>. The default login is <code>wsadmin</code>/<code>wsadmin</code>. Published content is available locally at <a href="http://localhost:8080/published/">localhost:8080/published</a>.</p>
+<p>See <code>README.md</code> for additional details about the runtime environment.</p>
 <h2 id="instance-overview">Instance overview</h2>
 <p>After login, you will be redirected to the Spaces list. In WebSight CMS content is organized in Spaces. The Spaces list shows you the generated application and its associated content using the <code>content</code> module:</p>
 <p><a href="http://localhost:8080/apps/websight/index.html/content::spaces">http://localhost:8080/apps/websight/index.html/content::spaces</a>
