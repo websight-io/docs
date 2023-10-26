@@ -15,138 +15,58 @@ Cloud Run is a serverless platform that allows you to run `stateless` HTTP conta
 
 ## Run environment
 
-1. Save the following file to `cms-service.yaml` file:
-
-    ```yaml
-    apiVersion: serving.knative.dev/v1
-    kind: Service
-    metadata:
-      annotations:
-        run.googleapis.com/launch-stage: BETA
-        run.googleapis.com/ingress: all
-        run.googleapis.com/ingress-status: all
-      name: websight-cms
-    spec:
-      template:
-        metadata:
-          annotations:
-            autoscaling.knative.dev/maxScale: '1'
-            autoscaling.knative.dev/minScale: '1'
-            run.googleapis.com/client-name: cloud-console
-            run.googleapis.com/cpu-throttling: 'false'
-            run.googleapis.com/startup-cpu-boost: 'true'
-          labels:
-            run.googleapis.com/startupProbeType: Custom
-        spec:
-          containers:
-          - args:
-              - websight-cms-starter-tar
-            image: europe-docker.pkg.dev/websight-io/public/websight-cms-starter:<IMAGE_TAG>
-            livenessProbe:
-              failureThreshold: 3
-              httpGet:
-                path: /system/health
-                port: 8080
-              initialDelaySeconds: 60
-              periodSeconds: 10
-              timeoutSeconds: 1
-            ports:
-            - containerPort: 8080
-              name: http1
-            resources:
-              limits:
-                cpu: 2000m
-                memory: 4Gi
-            startupProbe:
-              failureThreshold: 3
-              httpGet:
-                path: /system/health
-                port: 8080
-              initialDelaySeconds: 60
-              periodSeconds: 10
-              timeoutSeconds: 1
-            volumeMounts:
-            - mountPath: /websight/repository
-              name: repository-volume
-          timeoutSeconds: 300
-          volumes:
-          - name: repository-volume
-            emptyDir:
-              sizeLimit: 2Gi
-              medium: Memory
-      traffic:
-      - latestRevision: true
-        percent: 100
-    ```
-
-2. Replace the `<IMAGE_TAG>` with `websight-cms-starter` image tag. You can list available tags with the following command:
+1. See the available `websight-cms-starter` image tags with the following command:
     ```bash
-    gcloud container images list-tags europe-docker.pkg.dev/websight-io/public/websight-cms-starter --format json | jq -r '.[] | .tags[]'
+    gcloud artifacts docker tags list \
+      europe-docker.pkg.dev/websight-io/public/websight-cms-starter --format="table(tag)"
     ```
-
-3. Start the service with the following command:
+2. Use one of the tags to deploy the CMS to Cloud Run by replacing `<IMAGE_TAG>` and simply run:
     ```bash
-    gcloud run services replace --region=europe-west1 cms-service.yaml
+    gcloud run deploy websight-cms-starter \
+      --image=europe-docker.pkg.dev/websight-io/public/websight-cms-starter:<IMAGE_TAG> \
+      --cpu=2 --memory=2Gi --no-cpu-throttling \
+      --min-instances=1 --max-instances=1 --region=europe-west1 \
+      --args=websight-cms-starter-tar
     ```
-    and then open the URL printed in the console (it will be not available publicly yet).
+    Follow the instructions on the screen.
+      - Reply with `y` when asked whether to allow unauthenticated invocations to make your CMS instance publicly available.
+3. The successfull deployment will finish with a message similar to the following:
 
-4. To make your environment publicly available, run the following command:
-    ```bash
-    gcloud run services add-iam-policy-binding websight-cms \
-        --member="allUsers" \
-        --role="roles/run.invoker" \
-        --region=europe-west1
     ```
-5. Refresh the page and login with username `wsadmin` and password `wsadmin`.
+    Service [websight-cms-starter] revision [websight-cms-starter-00001-rlm] has been 
+    deployed and is serving 100 percent of traffic. 
+    Service URL: https://websight-cms-starter-tkcqcyf6ca-ew.a.run.app
+    ```
+    
+    CMS might need additional 20 seconds to start after the message above. Open the url and login with username `wsadmin` and password `wsadmin`.
 
 ## _[Optional]_ Customize CMS admin password
 By default, CMS starts with the `wsadmin` user with the `wsadmin` password. To change the password, follow the steps below:
 
-1. Create a secret with the password in Google Secrets Manager:
-    ```bash
-    mkdir -p .secrets && echo -n "$(openssl rand -base64 12)" > .secrets/admin-password
-    gcloud secrets create websight-admin-password --data-file=.secrets/admin-password
-    ```
+1. Create a secret with the password in Google Secrets Manager following [this instruction](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets).
+    - use `websight-admin-password` as the secret name
 2. Configure Cloud Run to access `websight-admin-password` secret following the [instructions](https://cloud.google.com/run/docs/configuring/services/secrets#access-secret).
-    Use the following email in the `New principal` textbox:
+    Use the default Compute Engine service account email in the `New principal` textbox:
     ```bash
-    gcloud iam service-accounts list --format json | jq -r '.[] | select(.displayName | contains("Compute")) | .email'
+    gcloud iam service-accounts list --format="table(email)" \
+      --filter="displayName:Compute Engine"
     ```
-3. Add the following sections to the `cms-service.yaml` file:
-    - a new `volumeMounts` entry under the `containers` CMS entry section:
-    ```yaml
-    # ...
-            volumeMounts:
-            - mountPath: /run/secrets
-              name: websight-admin-password-volume
-              readOnly: true
-    # ...
-    ```
-    - a new `volumes` entry:
-    ```yaml
-    # ...
-          volumes:
-          - name: websight-admin-password-volume
-            secret:
-              items:
-              - key: latest
-                path: admin.password
-              secretName: websight-admin-password
-    # ...
-    ```
-    As a reference you may check our `starter` repository [ephemeral environment manifest](https://github.com/websight-io/starter/blob/main/environment/remote-gcp-cloudrun/service.tmpl.yaml).
-4. Save the changes and run the following command to redeploy the CMS (note that all your content changes will be lost):
+3. Update the CMS service by running (note that **all your content changes will be lost**):
     ```bash
-    gcloud run services replace --region=europe-west1 cms-service.yaml
+    gcloud run deploy websight-cms-starter \
+      --update-secrets=/run/secrets/admin.password=websight-admin-password:1 \
+      --image=europe-docker.pkg.dev/websight-io/public/websight-cms-starter:<IMAGE_TAG> \
+      --cpu=2 --memory=2Gi --no-cpu-throttling \
+      --min-instances=1 --max-instances=1 --region=europe-west1 \
+      --args=websight-cms-starter-tar
     ```
-5. Login to the CMS with the new password from the secret (`.secrets/admin-password` file).
-
+4. Login to the CMS with the new password from the secret.
 
 ## Clean up
 
 To delete the environment and the secret, run the following commands:
 
 ```bash
-gcloud run services delete websight-cms --region=europe-west1
+gcloud run services delete websight-cms-starter --region=europe-west1
 gcloud secrets delete websight-admin-password
 ```
