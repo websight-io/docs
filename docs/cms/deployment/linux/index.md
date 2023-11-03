@@ -3,7 +3,7 @@
 This guide describes a way to deploy WebSight CMS inexpensively and with predictable monthly pricing. We will run the platform on a single Ubuntu server, using containers that are configured via Docker Compose.
 
 !!! Warning "Notice"
-        This setup does not address reliability (e.g., backups and recovery), scalability or monitoring considerations. For a production environment, we recommend using a managed container service. Learn more about deploying on a managed container service in our [AWS ECS deployment guide](../aws-ecs/).
+    This setup does not address reliability (e.g., backups and recovery), scalability or monitoring considerations. For a production environment we recommend using [Kubernetes](../kubernetes/) deployment.
 
 
 !!! abstract "Prerequisites"
