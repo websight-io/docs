@@ -96,6 +96,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.websight.io/cms/deployment/gcp-cloud-run/</loc>
+         <lastmod>2023-11-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.websight.io/cms/deployment/kubernetes/</loc>
          <lastmod>2023-11-06</lastmod>
          <changefreq>daily</changefreq>

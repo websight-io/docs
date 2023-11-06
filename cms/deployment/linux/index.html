@@ -3036,6 +3036,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_1_6">
@@ -3116,12 +3118,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         
         <div class="md-nav__link md-nav__link--index ">
+          <a href="../gcp-cloud-run/">Google Cloud Run</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Google Cloud Run" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Google Cloud Run
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6_3" type="checkbox" id="__nav_1_6_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
           <a href="../kubernetes/">Kubernetes</a>
           
         </div>
       
       <nav class="md-nav" aria-label="Kubernetes" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_6_2">
+        <label class="md-nav__title" for="__nav_1_6_3">
           <span class="md-nav__icon md-icon"></span>
           Kubernetes
         </label>
@@ -3147,7 +3192,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6_3" type="checkbox" id="__nav_1_6_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6_4" type="checkbox" id="__nav_1_6_4" checked>
       
       
       
@@ -3166,7 +3211,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       
       <nav class="md-nav" aria-label="Linux Docker Compose" data-md-level="3">
-        <label class="md-nav__title" for="__nav_1_6_3">
+        <label class="md-nav__title" for="__nav_1_6_4">
           <span class="md-nav__icon md-icon"></span>
           Linux Docker Compose
         </label>
@@ -3327,8 +3372,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This guide describes a way to deploy WebSight CMS inexpensively and with predictable monthly pricing. We will run the platform on a single Ubuntu server, using containers that are configured via Docker Compose.</p>
 <div class="admonition warning">
 <p class="admonition-title">Notice</p>
-<div class="highlight"><pre><span></span><code>This setup does not address reliability (e.g., backups and recovery), scalability or monitoring considerations. For a production environment, we recommend using a managed container service. Learn more about deploying on a managed container service in our [AWS ECS deployment guide](../aws-ecs/).
-</code></pre></div>
+<p>This setup does not address reliability (e.g., backups and recovery), scalability or monitoring considerations. For a production environment we recommend using <a href="../kubernetes/">Kubernetes</a> deployment.</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Prerequisites</p>
