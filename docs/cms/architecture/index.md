@@ -1,61 +1,35 @@
 # Architecture
-The diagram below represents the WebSight CMS high-level logical architecture. 
+WebSight CMS is a `Java`-based [Apache Sling](https://sling.apache.org/) content-centric application built on top of a `Java Content Repository (JCR)`. It uses `Apache Jackrabbit Oak` as the JCR implementation supporting various Node Storages (e.g Segment Tar, Document Storage). The application runtime is based on the `Apache Felix (OSGi)` framework. WebSight CMS is delivered as a single [Sling Feature Model](https://sling.apache.org/documentation/development/feature-model.html) aggregating all its dependencies and configurations. It can be easily extended and packaged into a container image.
 
-![WebSight - logical architecture](logical-architecture.jpg)
+![WebSight CMS with Node Storage](websight-cms.png)
 
-**Content authors** use **CMS** to **create** an experience by managing content, assets and pages (layout). Once the experience is ready to go public, authors push (in other words, publish) it to the backend **experience storage**.
+!!! note "Node Storage"
+    Document Storage is designed for scalability and reliability. It is a good choice for clustered deployments. Segment Tar storage is designed for performance and is a good choice for standalone deployments. WebSight CMS supports both options. MongoDB is a recommended Document Storage implementation for production environments. Segment Tar is a recommended option for development and testing purposes.
 
-On the frontend, the experience is **delivered** to the **site visitors**. They call the **web server**, which pulls static HTML files/assets/JavaScript/ CSS scripts from the backened **experience storage** and serves them immediately.
+## Project
+Developers can easily extend the WebSight CMS with custom code. New functionalities can be added as a top-level Sling Feature (`Site Feature`), defining the dependencies and configurations. Combined with CMS Feature, it can be easily assembled into a single distributable unit:
 
-!!! Info "Note" 
-        The experience storage has no access to CMS. That means that if, for example, there is no page in the storage, then site visitors see a `404` message.
+![WebSight CMS project](websight-cms-project.png)
 
-The above description is called a *push model* and assumes that the pages are prepared for the user in advance. Note that within this architecture, it is possible to switch off the CMS part, which has no impact on delivering pages.
-
-Our CMS is a `Java`-based `OSGi` application (**WebSight CMS CE**) with a `NoSQL` database (**MongoDB**). WebSight CMS supports content management and the generation of static HTML pages. MongoDB database stores content and assets.
-
-![WebSight - logical architecture with MongoDB](logical-architecture-detailed.jpg)
-
-!!! Info "Note"
-        Multiple instances of WebSight CMS can connect to MongoDB, which supports online deployments and enables CMS scalability.
+!!! note "Sample project"
+    Check the [WebSight Starter](https://github.com/websight-io/starter) sample project to see how the custom project can be structured and assembled.
 
 ## Containers
-We use containers to ship WebSight CMS for deployment on multiple environments, from developers' local computers to public clouds. Read our ["Why we decided to ship and develop the OSGi application in containers"](https://www.websight.io/blog/2022/why-we-decided-to-ship-and-develop-the-osgi-application-in-containers.html) article to understand the benefits of containers in our stack.
+Once we have a distributable unit, it is easy to package it into a container image. Working with containers enables consistency and standardization. With Docker, we can use the same tooling to work locally as well as to deploy production environments to the cloud.
 
-Once developers [create a WebSight project using the Maven archetype](/cms/developers/setup/), they produce the following Docker images:
+![WebSight CMS project container](websight-cms-project-container.png)
 
-- An `NGINX image` (web server) with addtional project-specific configurations
-- A customized `CMS image` with core WebSight CMS and project-specific modules and configurations
+## Deployment
+WebSight CMS is used both by content authors and site visitors. Authors use the CMS application to manage and publish content. Visitors browse the published pages rendered on request.
 
-## Docker Compose
-With more than one container in the platform, we need a tool for defining and running multi-container Docker applications. With Compose, we can use the `Compose YAML` file model to:
+![WebSight CMS deployment](websight-cms-deployment.png)
 
-- Configure all platform components (`services`)
-- Enable communication between them
-- Handle data persistance with `volumes`
+WebSight CMS uses Kubernetes as the target platform and comes with a [Helm chart](https://github.com/websight-io/charts) to simplify the deployment process. You can learn more about the available deployment options in the [Deployment](../deployment/) section.
 
-The following diagram presents all WebSight CMS containers and volumes together.
+## Next steps
 
-![WebSight - logical architecture](logical-architecture-containers.jpg)
+As a next step, we encourage you to explore more details about WebSight architecture principles:
 
-The diagram above reflects the containers' logical architecture. Docker Compose configuration specifies the following services:
-
-- The `nginx` service (experience delivery)
-- The `cms` service (content management and pages generation)
-- The `mongo` service (content database)
-
-Services use volumes (external storage) to save durable data outside the container to separate the lifecycle of containers that use it from the data itself. When Docker Compose destroys a container (e.g., on crash or re-deploy), all data from its internal storage is lost. We specify the following volumes:
-
-- The `experience storage` volume is shared by NGINX (read) and WebSight CMS (write) containers
-- The `content` volume keeps content and assets
-- The `logs` volume keeps all WebSight CMS application logs
-
-## Environments
-
-Working with containers enables consistency and standardization. With Docker, we can use the same tooling to work locally as well as to deploy production environments to the cloud.
-
-For example:
-
-When using Docker Compose, the same command is responsible for creating local and cloud instances (`docker compose up`). 
-
-Read more about [Docker Compose Amazon Elastic Container Service integration](./aws-ecs/).
+- ["Building OSGi applications with Sling Feature Model"](https://www.websight.io/blog/2022/building-osgi-applications-with-sling-feature-model.html)
+- ["Why we decided to ship and develop the OSGi application in containers"](https://www.websight.io/blog/2022/why-we-decided-to-ship-and-develop-the-osgi-application-in-containers.html)
+- [CMS Layers and Modules](./cms-modules-layers/)
