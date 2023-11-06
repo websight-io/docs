@@ -15,34 +15,23 @@ This guide is a starting-point for developing custom components for WebSight CMS
 
     `curl https://docs.websight.io/scripts/get.sh | sh`
 
-If this method doesn't work for you, following steps 1 and 2 below to set up the Docker instance manually.
+If this method doesn't work for you, follow the step (1) below to set up the WebSight CMS instance manually.
 
-### 1. Create Docker Compose manifest
+### 1. Create Docker container environment
 
-Paste the content below into a text editor and save it as a file on your hard drive. Name the file `docker-compose.yml`.
+Run the following command to start a Docker container with WebSight CMS:
 
-``` yaml title="docker-compose.yml"
-{% include '../../scripts/docker-compose.yml' %}
-```
-
-!!! hint "Tip"
-
-    Default passwords are stored in secret files. You can find details about how to change them [here](https://github.com/websight-io/starter/tree/main/environment#secret-files).
-
-
-### 2. Run the local instance
-
-Open the terminal, navigate to the location where you saved your `docker-compose.yml` file and run the following command:
-
-```
-docker compose up
+```bash
+docker run -p 8080:8080 --name websight-cms-ce --rm \
+  --mount source=tar-repo,target=/websight/repository \
+  europe-docker.pkg.dev/websight-io/public/websight-cms-starter:1.22.0 \
+  websight-cms-starter-tar
 ```
 
 A fresh WebSight instance will start within a couple of seconds. After it launches, you can open a Web browser to the URL [http://localhost:8080/](http://localhost:8080/) to view the WebSight admin panel.
 Log in with `wsadmin` username and `wsadmin` as the password.
 
 !!! hint "Tip"
-  
     To turn off the local environment, use the `ctrl + c` key combination in the terminal that you used to launch your Docker instance. You can restart the instance by repeating the steps you used to launch it initially.
 
 
@@ -72,17 +61,15 @@ Open the list of _Pages_ using the left sidebar. Select all pages and click _Pub
 
 ### 4. View the demo site
 
-Congratulations! The demo site is now available by navigating to [http://luna.127.0.0.1.nip.io/](http://luna.127.0.0.1.nip.io/) in a Web browser.
+Congratulations! The demo site is now available by navigating to [http://localhost:8080/published/luna/pages/Homepage.html](http://localhost:8080/published/luna/pages/Homepage.html) in a Web browser.
 
 !!! info "Additional sample sites "
 
-    The distribution contains other demo sites. We used [nip.io](https://nip.io) to support their preview in a browser (having just one local instance of WebSight CMS). After assets and pages publication, they are available at: 
+    The distribution contains other demo sites. After assets and pages publication, they are available at: 
     
-    - [http://kyanite-personal-template.127.0.0.1.nip.io/](http://kyanite-personal-template.127.0.0.1.nip.io/) Personal page created with the Kyanite components library
-    - [http://luna-low-code.127.0.0.1.nip.io/](http://luna-low-code.127.0.0.1.nip.io/) Luna - low code
-    - [http://luna-no-code.127.0.0.1.nip.io/](http://luna-no-code.127.0.0.1.nip.io/) Luna - no code
-    
-
+    - [http://localhost:8080/published/kyanite/pages/Personal.html](http://localhost:8080/published/kyanite/pages/Personal.html)  Personal page created with the Kyanite components library
+    - [http://localhost:8080/lowcodeluna/pages/Homepage.html](http://localhost:8080/lowcodeluna/pages/Homepage.html)  Luna - low code
+    - [http://localhost:8080/published/nocodeluna/pages/Homepage.html](http://localhost:8080/published/nocodeluna/pages/Homepage.html) Luna - no code
 
 ![Published demo page](./quick-start-published-page.png)
 
@@ -134,7 +121,7 @@ At this point, you've updated the page. However, unpublished changes are not vis
 
 ### 5. View the updated page
 
-Congratulations! Your changes should be visible now at [http://luna.127.0.0.1.nip.io/](http://luna.127.0.0.1.nip.io/). 
+Congratulations! Your changes should be visible now at [http://localhost:8080/published/luna/pages/Homepage.html](http://localhost:8080/published/luna/pages/Homepage.html). 
 
 ![Publish page action](./quick-start-updated-page.png)
 
@@ -148,6 +135,6 @@ This page demonstrated the basics of editing pages with WebSight CMS. As a next 
 
 The _Luna_ site (i.e., _Luna - custom code_) you looked through utilizes the [Howlite](../authors/component-libs/howlite/) components library. However, the distribution contains other demo sites, and we recommend exploring them too. Before you open the following links, visit the [admin panel](http://localhost:8080/), and publish pages and assets for a given space.
 
-- [_Kyanite_ - personal template](http://kyanite-personal-template.127.0.0.1.nip.io/). It is a sample inspired by the [Portfolio page](https://bulmatemplates.github.io/bulma-templates/templates/personal.html). We created it using the [Kyanite components](https://github.com/websight-io/kyanite/).
-- [_Luna - no code_](http://luna-no-code.127.0.0.1.nip.io/). We authored the _Luna_ site with the [Kyanite components](https://github.com/websight-io/kyanite/) without additional custom code or development.
-- [_Luna - low code_](http://luna-low-code.127.0.0.1.nip.io/). We added some custom styling and implemented only components missing in the [Kyanite](https://github.com/websight-io/kyanite/) library.
+- [_Kyanite_ - personal template](http://localhost:8080/published/kyanite/pages/Personal.html). It is a sample inspired by the [Portfolio page](https://bulmatemplates.github.io/bulma-templates/templates/personal.html). We created it using the [Kyanite components](https://github.com/websight-io/kyanite/).
+- [_Luna - no code_](http://localhost:8080/published/nocodeluna/pages/Homepage.html). We authored the _Luna_ site with the [Kyanite components](https://github.com/websight-io/kyanite/) without additional custom code or development.
+- [_Luna - low code_](http://localhost:8080/lowcodeluna/pages/Homepage.html). We added some custom styling and implemented only components missing in the [Kyanite](https://github.com/websight-io/kyanite/) library.
