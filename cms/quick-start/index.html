@@ -3315,15 +3315,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-docker-compose-manifest" class="md-nav__link">
-    1. Create Docker Compose manifest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-run-the-local-instance" class="md-nav__link">
-    2. Run the local instance
+  <a href="#1-create-docker-container-environment" class="md-nav__link">
+    1. Create Docker container environment
   </a>
   
 </li>
@@ -3460,52 +3453,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>If you have <code>curl</code> installed, you can set up the local environment using the following command. Then, you can go directly to Part B below.</p>
 <p><code>curl https://docs.websight.io/scripts/get.sh | sh</code></p>
 </div>
-<p>If this method doesn't work for you, following steps 1 and 2 below to set up the Docker instance manually.</p>
-<h3 id="1-create-docker-compose-manifest">1. Create Docker Compose manifest</h3>
-<p>Paste the content below into a text editor and save it as a file on your hard drive. Name the file <code>docker-compose.yml</code>.</p>
-<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.9&quot;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">services</span><span class="p">:</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">cms</span><span class="p">:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public.ecr.aws/ds/websight-cms-starter:1.22.0</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:8080&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">WS_ADMIN_USERNAME</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;wsadmin&quot;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">MONGODB_HOST</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mongo&quot;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">MONGODB_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">27017</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">LEASE_CHECK_MODE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;LENIENT&quot;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cms_logs:/websight/logs</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_repository:/websight/docroot</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="nt">nginx</span><span class="p">:</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public.ecr.aws/ds/websight-nginx-starter:1.22.0</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;80:80&quot;</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">site_repository:/usr/share/nginx/html:ro</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nt">mongo</span><span class="p">:</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo:4.4.6</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MONGO_INITDB_ROOT_USERNAME=mongoadmin</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MONGO_INITDB_ROOT_PASSWORD=mongoadmin</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo_repository:/data/db</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="nt">volumes</span><span class="p">:</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="nt">cms_logs</span><span class="p">:</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">  </span><span class="nt">mongo_repository</span><span class="p">:</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">  </span><span class="nt">site_repository</span><span class="p">:</span>
-</code></pre></div>
-<div class="admonition hint">
-<p class="admonition-title">Tip</p>
-<p>Default passwords are stored in secret files. You can find details about how to change them <a href="https://github.com/websight-io/starter/tree/main/environment#secret-files">here</a>.</p>
-</div>
-<h3 id="2-run-the-local-instance">2. Run the local instance</h3>
-<p>Open the terminal, navigate to the location where you saved your <code>docker-compose.yml</code> file and run the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker compose up
+<p>If this method doesn't work for you, follow the step (1) below to set up the WebSight CMS instance manually.</p>
+<h3 id="1-create-docker-container-environment">1. Create Docker container environment</h3>
+<p>Run the following command to start a Docker container with WebSight CMS:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>--name<span class="w"> </span>websight-cms-ce<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>tar-repo,target<span class="o">=</span>/websight/repository<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>europe-docker.pkg.dev/websight-io/public/websight-cms-starter:1.22.0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>websight-cms-starter-tar
 </code></pre></div>
 <p>A fresh WebSight instance will start within a couple of seconds. After it launches, you can open a Web browser to the URL <a href="http://localhost:8080/">http://localhost:8080/</a> to view the WebSight admin panel.
 Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the password.</p>
@@ -3526,14 +3480,14 @@ Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the passwo
 <p>Open the list of <em>Pages</em> using the left sidebar. Select all pages and click <em>Publish</em>.</p>
 <p><img alt="Pages publication" src="quick-start-pages-publication.png" /></p>
 <h3 id="4-view-the-demo-site">4. View the demo site</h3>
-<p>Congratulations! The demo site is now available by navigating to <a href="http://luna.127.0.0.1.nip.io/">http://luna.127.0.0.1.nip.io/</a> in a Web browser.</p>
+<p>Congratulations! The demo site is now available by navigating to <a href="http://localhost:8080/published/luna/pages/Homepage.html">http://localhost:8080/published/luna/pages/Homepage.html</a> in a Web browser.</p>
 <div class="admonition info">
 <p class="admonition-title">Additional sample sites </p>
-<p>The distribution contains other demo sites. We used <a href="https://nip.io">nip.io</a> to support their preview in a browser (having just one local instance of WebSight CMS). After assets and pages publication, they are available at: </p>
+<p>The distribution contains other demo sites. After assets and pages publication, they are available at: </p>
 <ul>
-<li><a href="http://kyanite-personal-template.127.0.0.1.nip.io/">http://kyanite-personal-template.127.0.0.1.nip.io/</a> Personal page created with the Kyanite components library</li>
-<li><a href="http://luna-low-code.127.0.0.1.nip.io/">http://luna-low-code.127.0.0.1.nip.io/</a> Luna - low code</li>
-<li><a href="http://luna-no-code.127.0.0.1.nip.io/">http://luna-no-code.127.0.0.1.nip.io/</a> Luna - no code</li>
+<li><a href="http://localhost:8080/published/kyanite/pages/Personal.html">http://localhost:8080/published/kyanite/pages/Personal.html</a>  Personal page created with the Kyanite components library</li>
+<li><a href="http://localhost:8080/lowcodeluna/pages/Homepage.html">http://localhost:8080/lowcodeluna/pages/Homepage.html</a>  Luna - low code</li>
+<li><a href="http://localhost:8080/published/nocodeluna/pages/Homepage.html">http://localhost:8080/published/nocodeluna/pages/Homepage.html</a> Luna - no code</li>
 </ul>
 </div>
 <p><img alt="Published demo page" src="quick-start-published-page.png" /></p>
@@ -3554,14 +3508,14 @@ Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the passwo
 <p>Click on the new component to check its properties on the side panel on the right.</p>
 <p><img alt="Actions available for RTE component" src="quick-start-RTE-panel.png" /></p>
 <p>Copy &amp; paste the following text into the <em>Text</em> field on the <em>General</em> tab.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Every couple is unique and we want to deliver an engagement ring that is unique too – taking the tastes of the couple into account. We love having couples visit the store and work with them to create a unique custom engagement ring according to their tastes.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Every couple is unique and we want to deliver an engagement ring that is unique too – taking the tastes of the couple into account. We love having couples visit the store and work with them to create a unique custom engagement ring according to their tastes.
 </code></pre></div>
 <p><img alt="RTE component properties" src="quick-start-RTE-panel-updated.png" /></p>
 <h3 id="4-publish-changes">4. Publish changes</h3>
 <p>At this point, you've updated the page. However, unpublished changes are not visible on the site yet. To apply them, open the dropdown in the right corner of the admin interface and select action <em>Publish</em>.</p>
 <p><img alt="Publish page action" src="quick-start-publish-page.png" /></p>
 <h3 id="5-view-the-updated-page">5. View the updated page</h3>
-<p>Congratulations! Your changes should be visible now at <a href="http://luna.127.0.0.1.nip.io/">http://luna.127.0.0.1.nip.io/</a>. </p>
+<p>Congratulations! Your changes should be visible now at <a href="http://localhost:8080/published/luna/pages/Homepage.html">http://localhost:8080/published/luna/pages/Homepage.html</a>. </p>
 <p><img alt="Publish page action" src="quick-start-updated-page.png" /></p>
 <h2 id="next-steps">Next steps</h2>
 <p>This page demonstrated the basics of editing pages with WebSight CMS. As a next step, we encourage you to explore more technical details about WebSight:</p>
@@ -3572,9 +3526,9 @@ Log in with <code>wsadmin</code> username and <code>wsadmin</code> as the passwo
 </ul>
 <p>The <em>Luna</em> site (i.e., <em>Luna - custom code</em>) you looked through utilizes the <a href="../authors/component-libs/howlite/">Howlite</a> components library. However, the distribution contains other demo sites, and we recommend exploring them too. Before you open the following links, visit the <a href="http://localhost:8080/">admin panel</a>, and publish pages and assets for a given space.</p>
 <ul>
-<li><a href="http://kyanite-personal-template.127.0.0.1.nip.io/"><em>Kyanite</em> - personal template</a>. It is a sample inspired by the <a href="https://bulmatemplates.github.io/bulma-templates/templates/personal.html">Portfolio page</a>. We created it using the <a href="https://github.com/websight-io/kyanite/">Kyanite components</a>.</li>
-<li><a href="http://luna-no-code.127.0.0.1.nip.io/"><em>Luna - no code</em></a>. We authored the <em>Luna</em> site with the <a href="https://github.com/websight-io/kyanite/">Kyanite components</a> without additional custom code or development.</li>
-<li><a href="http://luna-low-code.127.0.0.1.nip.io/"><em>Luna - low code</em></a>. We added some custom styling and implemented only components missing in the <a href="https://github.com/websight-io/kyanite/">Kyanite</a> library.</li>
+<li><a href="http://localhost:8080/published/kyanite/pages/Personal.html"><em>Kyanite</em> - personal template</a>. It is a sample inspired by the <a href="https://bulmatemplates.github.io/bulma-templates/templates/personal.html">Portfolio page</a>. We created it using the <a href="https://github.com/websight-io/kyanite/">Kyanite components</a>.</li>
+<li><a href="http://localhost:8080/published/nocodeluna/pages/Homepage.html"><em>Luna - no code</em></a>. We authored the <em>Luna</em> site with the <a href="https://github.com/websight-io/kyanite/">Kyanite components</a> without additional custom code or development.</li>
+<li><a href="http://localhost:8080/lowcodeluna/pages/Homepage.html"><em>Luna - low code</em></a>. We added some custom styling and implemented only components missing in the <a href="https://github.com/websight-io/kyanite/">Kyanite</a> library.</li>
 </ul>
 
               
