@@ -1,5 +1,21 @@
 # WebSight CMS release notes
 
+## 1.22.0 <small>Nov 6, 2023</small>
+
+**Page Management**
+
+- Added align content for versions to easily enable side-by-side comparison.
+- Fixed the extra loading state display.
+- Fixed jumping resource selector in the content tree.
+
+**Page Editor**
+
+- Added multiport viewport support.
+- Improved hierarchy levels representation in the content tree.
+- Improved drag-and-drop reordering components in the content tree.
+- Fixed [#139](https://github.com/websight-io/starter/issues/179) possibility of dropping component into ancestors of an empty containers.
+- Fixed element selectors alignment.
+
 ## 1.21.2 <small>Oct 13, 2023</small>
 
 **Page Editor**
