@@ -24,25 +24,34 @@ Your task in completing this guide is to update the _Luna Title_ component and e
 
 ## Part A: Prerequisites
 
-1. Install [AdoptOpenJDK 17](https://adoptium.net/) with 'x64/aarch64' architecture (on macOS use `brew install openjdk@17`):
-1. Install Node.js and NPM
-1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
-1. Install [Git](https://git-scm.com/)
-
+1. Install [AdoptOpenJDK 17](https://adoptium.net/), make sure to install the version matching your CPU architecture (on macOS use `brew install openjdk@17`):
+2. Install [Git](https://git-scm.com/)
+3. _Optionally_, install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+ 
 ## Part B: Setup local environment
 
-First, clone the _Luna_ repository and build it within your local environment using the following commands:
+First, clone the _Starter_ repository and build it within your local environment using the following commands:
 
 ```shell
 git clone https://github.com/websight-io/starter.git
 cd starter
-./mvnw clean install
 ```
 
-Then, start a Docker environment.
-```shell
-docker compose -f environment/local-mongo/docker-compose.yml up -d
-```
+Depending on your choice, you can use Docker to build and run the CMS instance or build and run it locally as a JVM application.
+
+!!! tip "JVM application"
+    ```bash
+    ./mvnw clean package
+    distribution/target/dependency/org.apache.sling.feature.launcher/bin/launcher \
+      -f distribution/target/slingfeature-tmp/feature-websight-cms-starter-tar.json
+    ```
+
+!!! tip "Docker"
+    ```bash
+    docker build -t ds/websight-cms-starter . 
+    docker run -p 8080:8080 --name websight-cms-ce --rm \
+      --mount source=tar-repo,target=/websight/repository ds/websight-cms-starter
+    ```
 
 Congratulations! Your local environment is now ready. To view it, open [http://localhost:8080/](http://localhost:8080/) in a Web browser and log in using the credentials `wsadmin`/`wsadmin`.
 
@@ -189,21 +198,20 @@ The title should appear as expected now. You can delete the original _Title_ com
 
 ### Stop the environment
 
-After completing this guide, you can stop your local environment using Docker:
-
-```shell
-docker compose -f environment/local-mongo/docker-compose.yml down
-```
-
+After completing this guide, you can stop your local environment by hitting `Ctrl+C` in the terminal window where you started it.
 The environment will still exist but will no longer be running.
 
 ### Delete environment
 
-If you don't need your environment anymore, you can delete it permanently using a script.
+If you don't need your environment anymore, you can delete it permanently by running the following command (depending on your choice of running the CMS as a JVM application or using Docker):
 
-```shell
-sh environment/local-mongo/delete.sh
-```
+!!! tip "JVM application"
+    Remove the `launcher` directory created by your local environment.
+
+!!! tip "Docker"
+    ```bash
+    docker volume rm tar-repo
+    ```
 
 ## Next steps
 
