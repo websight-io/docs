@@ -10,7 +10,7 @@
 
 **Page Editor**
 
-- Added multiport viewport support.
+- Added multiple viewport support.
 - Improved hierarchy levels representation in the content tree.
 - Improved drag-and-drop reordering components in the content tree.
 - Fixed [#139](https://github.com/websight-io/starter/issues/179) possibility of dropping component into ancestors of an empty containers.
