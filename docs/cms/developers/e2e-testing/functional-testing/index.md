@@ -24,13 +24,14 @@ We recommend also reading about best practices in Cypress:
 
 Cypress tests are located in `tests/end-to-end/tests` folder.
 
-To run them, you need to start your docker instance:
+To run them, you need to start your CMS instance first from `tests/end-to-end`:
 
 ```shell
-docker compose -f environment/local-mongo/docker-compose.yml up -d
+target/dependency/org.apache.sling.feature.launcher/bin/launcher \
+  -f target/slingfeature-tmp/feature-starter-project-tests.json
 ```
 
-Then add test content located in `/tests/content` folder by executing this script:
+Then update test content located in `/tests/content` folder execute the following script:
 
 ```shell
 ./mvnw -f tests/content/pom.xml clean install -P autoInstallPackage
@@ -52,7 +53,7 @@ This will launch the Cypress interactive GUI. It is the most convenient way to w
 To run E2E tests on CI server, you need to launch Cypress in headless mode. It can be done by using this command from the root directory:
 
 ```bash
-mvn clean verify -P e2e-functional
+./mvnw clean verify -P e2e-functional
 ```
 
 In `.github/workflows/ci.yml` you can check how we have configured running Cypress tests in Github Actions as a part of pull request validation.
