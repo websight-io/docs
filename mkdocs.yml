@@ -81,6 +81,7 @@ plugins:
 
           # legacy URL / moved pages
           'cms/release-notes/websight-cms/index.md': 'cms/release-notes/index.md'
+          'cms/architecture/cms-modules-layers/index.md': 'cms/architecture/layers-and-modules/index.md'
 
 
           # 'docs/index.md': 'docs/quick-start/index.md'
@@ -163,5 +164,3 @@ plugins:
           # 'docs/developers/development/page-editor/extending-editor/index.md': 'docs/developers/page-editor/extending-editor/index.md'
           # 'docs/developers/development/page-editor/side-panel/index.md': 'docs/developers/page-editor/side-panel/index.md'
           # 'docs/developers/development/wcm-mode/index.md': 'docs/developers/wcm-mode/index.md'
-
-          

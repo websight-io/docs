@@ -1,4 +1,4 @@
-# WebSight CMS layers & modules
+# Layers & modules
 
 The diagram below represents the WebSight CMS layers and their responsibilities. 
 

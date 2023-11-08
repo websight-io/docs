@@ -350,6 +350,5 @@ The `test` module contains content used during end-to-end test execution to vali
 
 Congratulations! You've learned the application development process for WebSight CMS. Now, we recommend exploring details about deployment:
 
-- [Deployment in AWS](/cms/deployment/aws-ecs/)
 - [Deployment with Kubernetes](/cms/deployment/kubernetes/)
-- [Deployment to Linux using Docker Compose](/cms/deployment/linux/)
+- [Deployment to Google Cloud Run](/cms/deployment/gcp-cloud-run/)

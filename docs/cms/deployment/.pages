@@ -1,5 +1,3 @@
 nav:
-- Amazon ECS: aws-ecs
 - Google Cloud Run: gcp-cloud-run
 - Kubernetes: kubernetes
-- Linux Docker Compose: linux

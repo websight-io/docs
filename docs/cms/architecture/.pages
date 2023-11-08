@@ -1,5 +1,3 @@
 nav:
 - ...
-- CMS layers & modules: cms-modules-layers
-- AWS ECS: aws-ecs
-- Kubernetes: kubernetes
+- Layers & modules: layers-and-modules
