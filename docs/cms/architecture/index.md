@@ -32,4 +32,4 @@ As a next step, we encourage you to explore more details about WebSight architec
 
 - ["Building OSGi applications with Sling Feature Model"](https://www.websight.io/blog/2022/building-osgi-applications-with-sling-feature-model.html)
 - ["Why we decided to ship and develop the OSGi application in containers"](https://www.websight.io/blog/2022/why-we-decided-to-ship-and-develop-the-osgi-application-in-containers.html)
-- [CMS Layers and Modules](./cms-modules-layers/)
+- [Layers and Modules](./layers-and-modules/)
