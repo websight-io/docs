@@ -4,7 +4,6 @@
 
 **Page Management**
 
-- Added align content for versions to easily enable side-by-side comparison.
 - Fixed the extra loading state display.
 - Fixed jumping resource selector in the content tree.
 
