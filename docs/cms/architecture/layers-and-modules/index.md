@@ -24,7 +24,7 @@ With OSGi pluggability and Sling Feature configurability, our platform is compos
 
 <div style="width: 100%; float: left; margin-top: 50px">
 <img class="image--layers" src="./layers/cms-layer-4.jpg" alt="CMS Layer 4" />
-React is our first choice for building resource-oriented views. Each view is a single-page application with extension points for dynamically loaded React components. However, adding custom views with other JS Frameworks like Vue.js or Angular is as simple as adding libraries and bootstrapping the app.<div>
+React is our first choice for building resource-oriented views. Each view is a single-page application with extension points for dynamically loaded React components. However, adding custom views with other JS Frameworks like Vue.js or Angular is as simple as adding libraries and bootstrapping the app.</div>
 
 <div style="width: 100%; float: left; margin-top: 50px">
 <img class="image--layers" src="./layers/cms-layer-5.jpg" alt="CMS Layer 5" />
@@ -42,3 +42,14 @@ Built on top of the open-source Apache Software Foundation stack:
 <div style="width: 100%; float: left; margin-top: 50px; margin-bottom: 50px">
 <img class="image--layers" src="./layers/cms-layer-7.jpg" alt="CMS Layer 7" />
 We store the content and assets in MongoDB, a scalable and performant NoSQL database. Our clients can switch to other Oak store implementations based on TAR files to decrease costs.</div>
+
+## Next steps
+
+If you want to extend the WebSight CMS with custom features, we encourage you to explore:
+
+- [Developers quick start guide](/cms/developers/quick-start/)
+
+To learn how to deploy the WebSight CMS to the cloud, check:
+
+- [Google Cloud Run](/cms/deployment/gcp-cloud-run/)
+- [Kubernetes](/cms/deployment/kubernetes/)

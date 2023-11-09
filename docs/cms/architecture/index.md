@@ -28,8 +28,11 @@ WebSight CMS uses Kubernetes as the target platform and comes with a [Helm chart
 
 ## Next steps
 
-As a next step, we encourage you to explore more details about WebSight architecture principles:
+As a next step, we encourage you to explore more details about WebSight modules:
 
-- ["Building OSGi applications with Sling Feature Model"](https://www.websight.io/blog/2022/building-osgi-applications-with-sling-feature-model.html)
-- ["Why we decided to ship and develop the OSGi application in containers"](https://www.websight.io/blog/2022/why-we-decided-to-ship-and-develop-the-osgi-application-in-containers.html)
 - [Layers and Modules](./layers-and-modules/)
+
+## Read More
+
+- [Building OSGi applications with Sling Feature Model](https://www.websight.io/blog/2022/building-osgi-applications-with-sling-feature-model.html)
+- [Why we decided to ship and develop the OSGi application in containers](https://www.websight.io/blog/2022/why-we-decided-to-ship-and-develop-the-osgi-application-in-containers.html)
