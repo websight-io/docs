@@ -2,17 +2,17 @@
 
 ## Overview
 
-When content (like pages or assets) is published from actions available in the authoring UI, it is getting copied from `/content` to `/published` content tree.
+When content (such as pages or assets) is published via actions available in the authoring UI, it is copied from `/content` to `/published` within the content tree.
 
-Content references (paths save in JCR) are updated (in same way as when pages are copied/moved) automatically during publishing.
-So published content reference other published content items after publishing.
+Content references (paths saved in JCR) are automatically updated (just as they would be when pages are copied or moved) during publishing.
+This means that published content references other published content items after publishing.
 
-Publishing API allows to get information about status of content and publish/unpublish the content.
-SPI interfaces allows to take actions before/after publishing/unpublishing and customize published content if needed.
+The publishing API allows you to get information about the status of content and to publish/unpublish content.
+SPI interfaces allow you to take actions before publishing, after publishing, before unpublishing, and after unpublishing. You can also customize published content if needed.
 
-CMS by default contains bundle `pl.ds.websight:websight-content-push-filesystem` providing `PublishingPostprocessor` SPI implementation saving published 
-content to file system for the backward compatibility with previous approach for the content publishing. The saved files can be served for end users via HTTP server.
-OSGi configurations for services `FileSystemService` and `ContentPushConfigurationService` can be used to change the published content files in file system.
+By default, the CMS contains the bundle `pl.ds.websight:websight-content-push-filesystem` which provides the `PublishingPostprocessor` SPI implementation for saving published 
+content to the file system for backwards compatibility with the previous approach to content publishing. The saved files can be served to end users via an HTTP server.
+OSGi configurations for the services `FileSystemService` and `ContentPushConfigurationService` can be used to change the published content files in the file system.
 
 See [the blog post about publishing](https://www.websight.io/blog/2023/new-publishing-framework.html).
 
@@ -30,7 +30,7 @@ Dependency:
 
 ### API
 
-API allows to use the publishing framework.
+The API allows you to use the publishing framework.
 
 #### PublishService
 
@@ -44,22 +44,22 @@ import org.apache.sling.api.resource.Resource;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Provides operations for publishing of resources based on copying the resources from
+ * Provides operations for publishing of resources by copying the resources from
  * {@value CONTENT_ROOT} to {@value PUBLISHED_ROOT}. Only JCR resources are supported.
  * <br><br>
  * It is assumed that read access to {@value PUBLISHED_ROOT} is granted for everyone. Rights for
- * modification of {@value PUBLISHED_ROOT} nodes by client session is not required - only
+ * modification of {@value PUBLISHED_ROOT} nodes by client session is not required; only
  * {@value PUBLISH_PRIVILEGE} on corresponding {@value CONTENT_ROOT} path is required.
  * <br><br>
- * Publication logic utilize Node Types Primary Item. If published node use type having primary item
- * then publication (recursive copying to {@value PUBLISHED_ROOT}) is done on the primary item. In
- * case of publishing node using type not defining primary item only the published resource will be
+ * Publication logic uses Node Types Primary Item. If a published node use type has a primary item,
+ * publication (recursive copying to {@value PUBLISHED_ROOT}) is done on the primary item. If the
+ * publishing node uses a type that is not defined as a primary item, only the published resource will be
  * copied.
  * <p>
  * see {@link javax.jcr.Node#getPrimaryItem()} and {@link NodeTypeDefinition#getPrimaryItemName()}
  * </p>
  * <br><br>
- * Parents of published node are created with original primary types and required properties only.
+ * Parents of published nodes are created with original primary types and required properties only.
  */
 public interface PublishService {
 
@@ -88,15 +88,15 @@ public interface PublishService {
   boolean hasPublishRights(@NotNull Resource resource) throws PublishException;
 
   /**
-   * Publishes a single resource. Implementation has to ensure that all the preconditions are met.
+   * Publishes a single resource. Implementation must ensure that all the preconditions are met.
    *
-   * @param resource a resource to be published
+   * @param a resource to be published
    * @throws PublishException may be thrown if an error occurs trying to publish a resource
    */
   void publish(@NotNull Resource resource) throws PublishException;
 
   /**
-   * Optimized publish method for multiple resources. Implementation has to ensure that all the
+   * Optimized publish method for multiple resources. Implementation must ensure that all the
    * preconditions are met.
    *
    * @param resources a resource to be published
@@ -105,7 +105,7 @@ public interface PublishService {
   void publish(@NotNull List<Resource> resources) throws PublishException;
 
   /**
-   * Unpublishes a single resource. Implementation has to ensure that all the preconditions are
+   * Unpublishes a single resource. Implementation must ensure that all the preconditions are
    * met.
    *
    * @param resource a resource to be unpublished
@@ -114,16 +114,16 @@ public interface PublishService {
   void unpublish(@NotNull Resource resource) throws PublishException;
 
   /**
-   * Optimized unpublish method for multiple resources. Implementation has to ensure that all the
+   * Optimized unpublish method for multiple resources. Implementation must ensure that all the
    * preconditions are met.
    *
-   * @param resources a resource to be unpublished
+   * @param a resource to be unpublished
    * @throws PublishException may be thrown if an error occurs trying to unpublish resources
    */
   void unpublish(@NotNull List<Resource> resources) throws PublishException;
 
   /**
-   * Get publish view for the given content resource. The method resolves published version of the
+   * Get publish view for the given content resource. The method resolves the published version of the
    * resource from {@link #CONTENT_ROOT} by searching for the corresponding resource under the
    * {@link #PUBLISHED_ROOT}.
    *
@@ -134,14 +134,14 @@ public interface PublishService {
   PublishView getPublishView(@NotNull Resource resource);
 
   /**
-   * Get publish view for the given content resources parent. The view may contain
+   * Get publish view for the given content resource's parent. The view may contain
    * {@link PublishStatus#GHOST} resource views. Results are returned only for child resources
-   * matching the predicate - the predicate is applied also to published resources during getting
+   * that match the predicate. The predicate is also applied to published resources when getting
    * ghosts.
    *
    * @param parent content resources parent
    * @param filter used to filter the child resources
-   * @return publish views for resources matching the predicate
+   * @return publish views for resources that match the predicate
    */
   @NotNull
   List<PublishView> getPublishViews(@NotNull Resource parent, @NotNull Predicate<Resource> filter);
@@ -219,7 +219,7 @@ public enum PublishStatus {
 
 ### SPI
 
-SPI allows to change behaviour and inject additional actions to the operations triggered by the publishing framework API.
+SPI makes it possible to change behavior and inject additional actions into operations triggered by the publishing framework API.
 
 #### NamedPublishingOperation
 
@@ -229,8 +229,8 @@ package pl.ds.websight.publishing.framework.spi;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Allows to define operation name. Name of operation service of particular type must be unique. If
- * another operation of given type with same name is provided it replaces previous one.
+ * Allows you to define operation name. The name of operation service of a particular type must be unique. If
+ * another operation of a given type with the same name is provided, it replaces the previous one.
  */
 public interface NamedPublishingOperation {
 
@@ -283,14 +283,14 @@ import org.jetbrains.annotations.NotNull;
 import pl.ds.websight.publishing.framework.PublishException;
 
 /**
- * Allows to customize already created, published (located under
+ * Allows you to customize an already created and published (located under
  * {@link  pl.ds.websight.publishing.framework.PublishService#PUBLISHED_ROOT}) node during
- * publishing of the content.
+ * publication of the content.
  */
 public interface PublishingNodeCustomizer extends NamedPublishingOperation {
 
   /**
-   * Customizes published node during publishing of the content.
+   * Customizes published node during publication of the content.
    *
    * @param context current publishing context
    * @param node    already created, published node (located under
@@ -313,12 +313,12 @@ import org.jetbrains.annotations.NotNull;
 import pl.ds.websight.publishing.framework.PublishException;
 
 /**
- * Allows to filter out content node during publishing.
+ * Allows you to filter out a content node during publishing.
  */
 public interface PublishingNodeFilter extends NamedPublishingOperation {
 
   /**
-   * Accepts published node during publishing of the content. If node is not accepted by the filter
+   * Accepts a published node during publishing of the content. If the node is not accepted by the filter
    * it will not be published.
    *
    * @param context current publishing context
@@ -342,21 +342,21 @@ import org.jetbrains.annotations.NotNull;
 import pl.ds.websight.publishing.framework.PublishException;
 
 /**
- * Provides processing logic to be executed after the publishing/unpublishing.
+ * Provides processing logic to be executed after publishing/unpublishing.
  */
 public interface PublishingPostprocessor extends NamedPublishingOperation {
 
   /**
    * Executed after publish.
    *
-   * @param resources resources which were published
+   * @param resources resources that were published
    */
   void afterPublish(@NotNull List<Resource> resources) throws PublishException;
 
   /**
    * Executed after unpublish.
    *
-   * @param resources resources which were unpublished
+   * @param resources resources that were unpublished
    */
   void afterUnpublish(@NotNull List<Resource> resources) throws PublishException;
 
@@ -374,21 +374,21 @@ import org.jetbrains.annotations.NotNull;
 import pl.ds.websight.publishing.framework.PublishException;
 
 /**
- * Provides processing logic to be executed before the publishing/unpublishing.
+ * Provides processing logic to be executed before publishing or unpublishing.
  */
 public interface PublishingPreprocessor extends NamedPublishingOperation {
 
   /**
-   * Executed before publish. If exception is thrown the publishing process will be stopped.
+   * Executed before publish. If an exception is thrown, the publishing process will be stopped.
    *
-   * @param resources resources which will be published
+   * @param resources that will be published
    */
   void beforePublish(@NotNull List<Resource> resources) throws PublishException;
 
   /**
-   * Executed before unpublish. If exception is thrown the unpublishing process will be stopped.
+   * Executed before unpublish. If an exception is thrown, the unpublishing process will be stopped.
    *
-   * @param resources resources which will be unpublished
+   * @param resources that will be unpublished
    */
   void beforeUnpublish(@NotNull List<Resource> resources) throws PublishException;
 
@@ -406,14 +406,14 @@ import org.jetbrains.annotations.NotNull;
 import pl.ds.websight.publishing.framework.PublishException;
 
 /**
- * Allows to customize already created, published (located under
+ * Allows you to customize an already created and published (located under
  * {@link  pl.ds.websight.publishing.framework.PublishService#PUBLISHED_ROOT}) property during
- * publishing of the content.
+ * publication of the content.
  */
 public interface PublishingPropertyCustomizer extends NamedPublishingOperation {
 
   /**
-   * Customizes published property during publishing of the content.
+   * Customizes a published property during publication of the content.
    *
    * @param context  current publishing context
    * @param property already created, published property (located under
@@ -436,13 +436,13 @@ import org.jetbrains.annotations.NotNull;
 import pl.ds.websight.publishing.framework.PublishException;
 
 /**
- * Allows to filter out content property during publishing.
+ * Allows you to filter out content property during publishing.
  */
 public interface PublishingPropertyFilter extends NamedPublishingOperation {
 
   /**
-   * Accepts published property during publishing of the content. If property is not accepted by the
-   * filter it will not be published.
+   * Accepts a published property during publication of the content. If the property is not accepted by the
+   * filter, it will not be published.
    *
    * @param context  current publishing context
    * @param property content property  (located under
