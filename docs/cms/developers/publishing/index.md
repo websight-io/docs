@@ -8,7 +8,7 @@ Content references (paths saved in JCR) are automatically updated (just as they 
 This means that published content references other published content items after publishing.
 
 The publishing API allows you to get information about the status of content and to publish/unpublish content.
-SPI interfaces allow you to take actions before publishing, after publishing and during unpublishing. You can also customize published content if needed.
+SPI interfaces allow you to take actions before publishing, after publishing, before unpublishing, and after unpublishing. You can also customize published content if needed.
 
 By default, the CMS contains the bundle `pl.ds.websight:websight-content-push-filesystem` which provides the `PublishingPostprocessor` SPI implementation for saving published 
 content to the file system for backwards compatibility with the previous approach to content publishing. The saved files can be served to end users via an HTTP server.
