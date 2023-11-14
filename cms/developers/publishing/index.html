@@ -3271,14 +3271,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="content-publishing">Content publishing</h1>
 <h2 id="overview">Overview</h2>
-<p>When content (like pages or assets) is published from actions available in the authoring UI, it is getting copied from <code>/content</code> to <code>/published</code> content tree.</p>
-<p>Content references (paths save in JCR) are updated (in same way as when pages are copied/moved) automatically during publishing.
-So published content reference other published content items after publishing.</p>
-<p>Publishing API allows to get information about status of content and publish/unpublish the content.
-SPI interfaces allows to take actions before/after publishing/unpublishing and customize published content if needed.</p>
-<p>CMS by default contains bundle <code>pl.ds.websight:websight-content-push-filesystem</code> providing <code>PublishingPostprocessor</code> SPI implementation saving published 
-content to file system for the backward compatibility with previous approach for the content publishing. The saved files can be served for end users via HTTP server.
-OSGi configurations for services <code>FileSystemService</code> and <code>ContentPushConfigurationService</code> can be used to change the published content files in file system.</p>
+<p>When content (such as pages or assets) is published via actions available in the authoring UI, it is copied from <code>/content</code> to <code>/published</code> within the content tree.</p>
+<p>Content references (paths saved in JCR) are automatically updated (just as they would be when pages are copied or moved) during publishing.
+This means that published content references other published content items after publishing.</p>
+<p>The publishing API allows you to get information about the status of content and to publish/unpublish content.
+SPI interfaces allow you to take actions before publishing, after publishing, before unpublishing, and after unpublishing. You can also customize published content if needed.</p>
+<p>By default, the CMS contains the bundle <code>pl.ds.websight:websight-content-push-filesystem</code> which provides the <code>PublishingPostprocessor</code> SPI implementation for saving published 
+content to the file system for backwards compatibility with the previous approach to content publishing. The saved files can be served to end users via an HTTP server.
+OSGi configurations for the services <code>FileSystemService</code> and <code>ContentPushConfigurationService</code> can be used to change the published content files in the file system.</p>
 <p>See <a href="https://www.websight.io/blog/2023/new-publishing-framework.html">the blog post about publishing</a>.</p>
 <h2 id="using-publishing-module">Using publishing module</h2>
 <p>Dependency:
@@ -3290,7 +3290,7 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>&lt;/dependency&gt;
 </code></pre></div></p>
 <h3 id="api">API</h3>
-<p>API allows to use the publishing framework.</p>
+<p>The API allows you to use the publishing framework.</p>
 <h4 id="publishservice">PublishService</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">pl.ds.websight.publishing.framework</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -3301,22 +3301,22 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.jetbrains.annotations.NotNull</span><span class="p">;</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="cm">/**</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm"> * Provides operations for publishing of resources based on copying the resources from</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm"> * Provides operations for publishing of resources by copying the resources from</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="cm"> * {@value CONTENT_ROOT} to {@value PUBLISHED_ROOT}. Only JCR resources are supported.</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cm"> * &lt;br&gt;&lt;br&gt;</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="cm"> * It is assumed that read access to {@value PUBLISHED_ROOT} is granted for everyone. Rights for</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="cm"> * modification of {@value PUBLISHED_ROOT} nodes by client session is not required - only</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="cm"> * modification of {@value PUBLISHED_ROOT} nodes by client session is not required; only</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="cm"> * {@value PUBLISH_PRIVILEGE} on corresponding {@value CONTENT_ROOT} path is required.</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="cm"> * &lt;br&gt;&lt;br&gt;</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="cm"> * Publication logic utilize Node Types Primary Item. If published node use type having primary item</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="cm"> * then publication (recursive copying to {@value PUBLISHED_ROOT}) is done on the primary item. In</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="cm"> * case of publishing node using type not defining primary item only the published resource will be</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="cm"> * Publication logic uses Node Types Primary Item. If a published node use type has a primary item,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="cm"> * publication (recursive copying to {@value PUBLISHED_ROOT}) is done on the primary item. If the</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="cm"> * publishing node uses a type that is not defined as a primary item, only the published resource will be</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="cm"> * copied.</span>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="cm"> * &lt;p&gt;</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="cm"> * see {@link javax.jcr.Node#getPrimaryItem()} and {@link NodeTypeDefinition#getPrimaryItemName()}</span>
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="cm"> * &lt;/p&gt;</span>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="cm"> * &lt;br&gt;&lt;br&gt;</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="cm"> * Parents of published node are created with original primary types and required properties only.</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="cm"> * Parents of published nodes are created with original primary types and required properties only.</span>
 <a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="cm"> */</span>
 <a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PublishService</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
@@ -3345,15 +3345,15 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">  </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasPublishRights</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">resource</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
 <a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="cm">   * Publishes a single resource. Implementation has to ensure that all the preconditions are met.</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="cm">   * Publishes a single resource. Implementation must ensure that all the preconditions are met.</span>
 <a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="cm">   *</span>
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="cm">   * @param resource a resource to be published</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="cm">   * @param a resource to be published</span>
 <a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="cm">   * @throws PublishException may be thrown if an error occurs trying to publish a resource</span>
 <a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="cm">   */</span>
 <a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">publish</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">resource</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>
 <a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="cm">   * Optimized publish method for multiple resources. Implementation has to ensure that all the</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="cm">   * Optimized publish method for multiple resources. Implementation must ensure that all the</span>
 <a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="cm">   * preconditions are met.</span>
 <a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="cm">   *</span>
 <a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="cm">   * @param resources a resource to be published</span>
@@ -3362,7 +3362,7 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">publish</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resources</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>
 <a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="cm">   * Unpublishes a single resource. Implementation has to ensure that all the preconditions are</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="cm">   * Unpublishes a single resource. Implementation must ensure that all the preconditions are</span>
 <a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="cm">   * met.</span>
 <a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a><span class="cm">   *</span>
 <a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="cm">   * @param resource a resource to be unpublished</span>
@@ -3371,16 +3371,16 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">unpublish</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">resource</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>
 <a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a><span class="cm">   * Optimized unpublish method for multiple resources. Implementation has to ensure that all the</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a><span class="cm">   * Optimized unpublish method for multiple resources. Implementation must ensure that all the</span>
 <a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a><span class="cm">   * preconditions are met.</span>
 <a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a><span class="cm">   *</span>
-<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="cm">   * @param resources a resource to be unpublished</span>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="cm">   * @param a resource to be unpublished</span>
 <a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a><span class="cm">   * @throws PublishException may be thrown if an error occurs trying to unpublish resources</span>
 <a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a><span class="cm">   */</span>
 <a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">unpublish</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resources</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>
 <a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a><span class="cm">   * Get publish view for the given content resource. The method resolves published version of the</span>
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a><span class="cm">   * Get publish view for the given content resource. The method resolves the published version of the</span>
 <a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a><span class="cm">   * resource from {@link #CONTENT_ROOT} by searching for the corresponding resource under the</span>
 <a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a><span class="cm">   * {@link #PUBLISHED_ROOT}.</span>
 <a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a><span class="cm">   *</span>
@@ -3391,14 +3391,14 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a><span class="w">  </span><span class="n">PublishView</span><span class="w"> </span><span class="nf">getPublishView</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">resource</span><span class="p">);</span>
 <a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a>
 <a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a><span class="cm">   * Get publish view for the given content resources parent. The view may contain</span>
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a><span class="cm">   * Get publish view for the given content resource&#39;s parent. The view may contain</span>
 <a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a><span class="cm">   * {@link PublishStatus#GHOST} resource views. Results are returned only for child resources</span>
-<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a><span class="cm">   * matching the predicate - the predicate is applied also to published resources during getting</span>
+<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a><span class="cm">   * that match the predicate. The predicate is also applied to published resources when getting</span>
 <a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a><span class="cm">   * ghosts.</span>
 <a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a><span class="cm">   *</span>
 <a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a><span class="cm">   * @param parent content resources parent</span>
 <a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a><span class="cm">   * @param filter used to filter the child resources</span>
-<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a><span class="cm">   * @return publish views for resources matching the predicate</span>
+<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a><span class="cm">   * @return publish views for resources that match the predicate</span>
 <a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a><span class="cm">   */</span>
 <a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a><span class="w">  </span><span class="nd">@NotNull</span>
 <a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a><span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">PublishView</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getPublishViews</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">filter</span><span class="p">);</span>
@@ -3467,15 +3467,15 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="spi">SPI</h3>
-<p>SPI allows to change behaviour and inject additional actions to the operations triggered by the publishing framework API.</p>
+<p>SPI makes it possible to change behavior and inject additional actions into operations triggered by the publishing framework API.</p>
 <h4 id="namedpublishingoperation">NamedPublishingOperation</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">pl.ds.websight.publishing.framework.spi</span><span class="p">;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.jetbrains.annotations.NotNull</span><span class="p">;</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cm">/**</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="cm"> * Allows to define operation name. Name of operation service of particular type must be unique. If</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="cm"> * another operation of given type with same name is provided it replaces previous one.</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="cm"> * Allows you to define operation name. The name of operation service of a particular type must be unique. If</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="cm"> * another operation of a given type with the same name is provided, it replaces the previous one.</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="cm"> */</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">NamedPublishingOperation</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
@@ -3521,14 +3521,14 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pl.ds.websight.publishing.framework.PublishException</span><span class="p">;</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="cm">/**</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="cm"> * Allows to customize already created, published (located under</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="cm"> * Allows you to customize an already created and published (located under</span>
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="cm"> * {@link  pl.ds.websight.publishing.framework.PublishService#PUBLISHED_ROOT}) node during</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="cm"> * publishing of the content.</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="cm"> * publication of the content.</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="cm"> */</span>
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PublishingNodeCustomizer</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">NamedPublishingOperation</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
 <a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="cm">   * Customizes published node during publishing of the content.</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="cm">   * Customizes published node during publication of the content.</span>
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="cm">   *</span>
 <a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="cm">   * @param context current publishing context</span>
 <a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="cm">   * @param node    already created, published node (located under</span>
@@ -3548,12 +3548,12 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pl.ds.websight.publishing.framework.PublishException</span><span class="p">;</span>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="cm">/**</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="cm"> * Allows to filter out content node during publishing.</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="cm"> * Allows you to filter out a content node during publishing.</span>
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="cm"> */</span>
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PublishingNodeFilter</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">NamedPublishingOperation</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
 <a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="cm">   * Accepts published node during publishing of the content. If node is not accepted by the filter</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="cm">   * Accepts a published node during publishing of the content. If the node is not accepted by the filter</span>
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="cm">   * it will not be published.</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="cm">   *</span>
 <a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="cm">   * @param context current publishing context</span>
@@ -3574,21 +3574,21 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pl.ds.websight.publishing.framework.PublishException</span><span class="p">;</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="cm">/**</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="cm"> * Provides processing logic to be executed after the publishing/unpublishing.</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="cm"> * Provides processing logic to be executed after publishing/unpublishing.</span>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="cm"> */</span>
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PublishingPostprocessor</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">NamedPublishingOperation</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="cm">/**</span>
 <a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="cm">   * Executed after publish.</span>
 <a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="cm">   *</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="cm">   * @param resources resources which were published</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="cm">   * @param resources resources that were published</span>
 <a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="cm">   */</span>
 <a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterPublish</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resources</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
 <a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">  </span><span class="cm">/**</span>
 <a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="cm">   * Executed after unpublish.</span>
 <a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="cm">   *</span>
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="cm">   * @param resources resources which were unpublished</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="cm">   * @param resources resources that were unpublished</span>
 <a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="cm">   */</span>
 <a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterUnpublish</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resources</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
@@ -3603,21 +3603,21 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pl.ds.websight.publishing.framework.PublishException</span><span class="p">;</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="cm">/**</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="cm"> * Provides processing logic to be executed before the publishing/unpublishing.</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="cm"> * Provides processing logic to be executed before publishing or unpublishing.</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="cm"> */</span>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PublishingPreprocessor</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">NamedPublishingOperation</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
 <a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="cm">   * Executed before publish. If exception is thrown the publishing process will be stopped.</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="cm">   * Executed before publish. If an exception is thrown, the publishing process will be stopped.</span>
 <a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="cm">   *</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="cm">   * @param resources resources which will be published</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="cm">   * @param resources that will be published</span>
 <a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="cm">   */</span>
 <a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">beforePublish</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resources</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
 <a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="cm">   * Executed before unpublish. If exception is thrown the unpublishing process will be stopped.</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="cm">   * Executed before unpublish. If an exception is thrown, the unpublishing process will be stopped.</span>
 <a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="cm">   *</span>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="cm">   * @param resources resources which will be unpublished</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="cm">   * @param resources that will be unpublished</span>
 <a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="cm">   */</span>
 <a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">beforeUnpublish</span><span class="p">(</span><span class="nd">@NotNull</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Resource</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resources</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">PublishException</span><span class="p">;</span>
 <a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
@@ -3632,14 +3632,14 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pl.ds.websight.publishing.framework.PublishException</span><span class="p">;</span>
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="cm">/**</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="cm"> * Allows to customize already created, published (located under</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="cm"> * Allows you to customize an already created and published (located under</span>
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="cm"> * {@link  pl.ds.websight.publishing.framework.PublishService#PUBLISHED_ROOT}) property during</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="cm"> * publishing of the content.</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="cm"> * publication of the content.</span>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="cm"> */</span>
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PublishingPropertyCustomizer</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">NamedPublishingOperation</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
 <a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="cm">   * Customizes published property during publishing of the content.</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="cm">   * Customizes a published property during publication of the content.</span>
 <a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="cm">   *</span>
 <a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="cm">   * @param context  current publishing context</span>
 <a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="cm">   * @param property already created, published property (located under</span>
@@ -3659,13 +3659,13 @@ OSGi configurations for services <code>FileSystemService</code> and <code>Conten
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pl.ds.websight.publishing.framework.PublishException</span><span class="p">;</span>
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="cm">/**</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="cm"> * Allows to filter out content property during publishing.</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="cm"> * Allows you to filter out content property during publishing.</span>
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="cm"> */</span>
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PublishingPropertyFilter</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">NamedPublishingOperation</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
 <a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span><span class="cm">/**</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="cm">   * Accepts published property during publishing of the content. If property is not accepted by the</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="cm">   * filter it will not be published.</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="cm">   * Accepts a published property during publication of the content. If the property is not accepted by the</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="cm">   * filter, it will not be published.</span>
 <a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="cm">   *</span>
 <a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="cm">   * @param context  current publishing context</span>
 <a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="cm">   * @param property content property  (located under</span>

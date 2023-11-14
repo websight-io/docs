@@ -3216,15 +3216,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="inline-editing">Inline editing</h1>
 <h2 id="overview">Overview</h2>
-<p>Inline editing allows updating components directly in page content while using <a href="../page-editor">Page Editor</a>.</p>
+<p>Inline editing makes it possible to update components directly within a page's content using the <a href="../page-editor">Page Editor</a>.</p>
 <p>Currently, inline editing supports editing of single component properties. When inline editing is enabled 
-for the component then action triggering the editing is available.</p>
+for the component, the action triggering the editing is available.</p>
 <p><img alt="Action staring inline editing" src="images/component-action.png" /></p>
 <p><img alt="Text inline editor" src="images/text-editor.png" /></p>
 <h2 id="enabling-inline-editing-for-component">Enabling inline editing for component</h2>
-<p>Inline editing can be enabled for a component by the update of the <a href="../components/#edit-configuration">Edit configuration</a>.</p>
-<p>To enable the inline editing add <code>inlineEditing</code> and <code>config</code> nodes to the component edit config.
-<code>config</code> node contains configuration related to editing of single component property.</p>
+<p>Inline editing can be enabled for a component by updating the <a href="../components/#edit-configuration">Edit configuration</a>.</p>
+<p>To enable the editing add the <code>inlineEditing</code> and <code>config</code> nodes to the component edit config.
+The <code>config</code> node contains configuration related to editing of a single component property.</p>
 <div class="highlight"><span class="filename">Example component edit config enabling inline editing</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;inlineEditing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3237,20 +3237,19 @@ for the component then action triggering the editing is available.</p>
 </code></pre></div>
 <h3 id="property">Property</h3>
 <p><code>property</code> contains the relative path of the component property where the edited value will be saved in the content.
-The values can be just a property name which will be saved on the component content nod, for example <code>"property": "title"</code> or
-may contain sub-nodes on the component node, for example <code>"property": "node1/node2/title"</code>.</p>
-<p>The value of property must correspond to a field defined in the component dialog - if the field is
-not needed in the dialog it can be disabled using dialogs <em>context</em>, see <a href="/cms/developers/components/#dialog">component dialog documentation</a>.</p>
-<p>It is recommended to avoid inline editing of fields using <a href="/cms/developers/dialogs/#validation">validation</a> for better content 
-authoring experience - the validation error will be reported as notification and value will not be updated.</p>
+The values can be a property name that will be saved on the component content node (for example: <code>"property": "title"</code>). It
+may also contain sub-nodes on the component node (for example: <code>"property": "node1/node2/title"</code>).</p>
+<p>The value of <code>property</code> must correspond to a field defined in the component dialog. If the field is
+not needed in the dialog it can be disabled using dialogs <em>context</em>. See <a href="/cms/developers/components/#dialog">component dialog documentation</a> for more information.</p>
+<p>For the best content authoring experience, it is recommended to avoid inline editing of fields using <a href="/cms/developers/dialogs/#validation">validation</a>. Validation errors will be reported as notifications and the values will not be updated.</p>
 <h3 id="dom-selectors">DOM selectors</h3>
-<p>The <code>domSelectors</code> are used to find DOM element the inline editing should be done on.
-Selectors will be evaluated in order on all Component DOM nodes till finding the first result.
-If not provided or empty, then the first Component DOM node is used.</p>
+<p>The <code>domSelectors</code> are used to find the DOM element for which the inline editing should take place.
+Selectors will be evaluated one-by-one on all Component DOM nodes until the first result is found.
+If a DOM selector value is not provided or is empty, then the first Component DOM node is used.</p>
 <h3 id="inline-editor">Inline editor</h3>
-<p>The <code>editor</code> property contains the ID of the inline editor implementation which will be used for editing.
+<p>The <code>editor</code> property contains the ID of the inline editor implementation, which will be used for editing.
 See the provided editors below.</p>
-<p>Depending on the editor implementation additional <code>editorConfiguration</code> object can be provided.</p>
+<p>Depending on the editor implementation, an additional <code>editorConfiguration</code> object may be provided.</p>
 <div class="highlight"><span class="filename">Example component edit config using inline editor configuration</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;inlineEditing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3264,9 +3263,9 @@ See the provided editors below.</p>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="provided-inline-editors">Provided inline editors</h2>
-<p>WebSight CMS provides inline editors available to use only by updating component edit configuration as described.</p>
+<p>WebSight CMS provides inline editors, which are available to use only by updating the edit configuration for the component as described below.</p>
 <h3 id="text-editor">Text editor</h3>
-<p>The WebSight text editor allows single line, plain text editing. The ID of the editor is <code>text</code>.</p>
+<p>The WebSight text editor allows single-line plain text editing. The ID of the editor is <code>text</code>.</p>
 <div class="highlight"><span class="filename">Example component edit config enabling text inline editing</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;inlineEditing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3290,8 +3289,8 @@ The ID of the editor is <code>rich-text</code>.</p>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
 </code></pre></div>
 <p><img alt="Rich text inline editor" src="images/rich-text-inline-editor.png" /></p>
-<p>To specify the <a href="/cms/developers/dialogs/richtext-editor/configuration">rich text configuration</a> add
-<code>editorConfiguration</code> with the <code>rteConfiguration</code> property of containing path to the configuration.</p>
+<p>To specify the <a href="/cms/developers/dialogs/richtext-editor/configuration">rich text configuration</a>, add
+<code>editorConfiguration</code> and define the path to the configuration via <code>rteConfiguration</code>.</p>
 <div class="highlight"><span class="filename">Example component edit config enabling rich text inline editing and specified configuration</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;inlineEditing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
