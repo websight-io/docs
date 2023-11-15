@@ -24,13 +24,13 @@ With this variant you will deploy a sample CMS instance to Cloud Run using the p
     gcloud artifacts docker tags list \
       europe-docker.pkg.dev/websight-io/public/websight-cms-starter --format="table(tag)"
     ```
-2. Use one of the tags to deploy the CMS to Cloud Run by replacing `<IMAGE_TAG>` and simply run:
+2. Use the most recent tag to deploy the CMS to Cloud Run by replacing `<IMAGE_TAG>` and simply run:
     ```bash
     gcloud run deploy my-websight-cms \
       --image=europe-docker.pkg.dev/websight-io/public/websight-cms-starter:<IMAGE_TAG> \
       --cpu=2 --memory=2Gi --no-cpu-throttling \
       --min-instances=1 --max-instances=1 --region=europe-west1 \
-      --allow-unauthenticated --args=websight-cms-starter-tar
+      --allow-unauthenticated
     ```
     Follow the instructions on the screen.
       - Reply with `y` if asked whether to allow unauthenticated invocations to make your CMS instance publicly available.
