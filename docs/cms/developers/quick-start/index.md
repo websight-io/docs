@@ -49,8 +49,8 @@ Depending on your choice, you can use Docker to build and run the CMS instance o
 !!! tip "Docker"
     ```bash
     docker build -t ds/websight-cms-starter . 
-    docker run -p 8080:8080 --name websight-cms-ce --rm \
-      --mount source=tar-repo,target=/websight/repository ds/websight-cms-starter
+    docker run -p 8080:8080 --name websight-cms --rm \
+      --mount source=segment-store-repository,target=/websight/launcher/repository ds/websight-cms-starter
     ```
 
 Congratulations! Your local environment is now ready. To view it, open [http://localhost:8080/](http://localhost:8080/) in a Web browser and log in using the credentials `wsadmin`/`wsadmin`.
