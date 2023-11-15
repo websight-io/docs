@@ -22,8 +22,8 @@ If this method doesn't work for you, follow the step (1) below to set up the Web
 Run the following command to start a Docker container with WebSight CMS:
 
 ```bash
-docker run -p 8080:8080 --name websight-cms-ce --rm \
-  --mount source=tar-repo,target=/websight/repository \
+docker run -p 8080:8080 --name websight-cms --rm \
+  --mount source=segment-store-repository,target=/websight/launcher/repository \
   europe-docker.pkg.dev/websight-io/public/websight-cms-starter:1.22.1
 ```
 

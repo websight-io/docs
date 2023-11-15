@@ -7,9 +7,6 @@ ECHO_NO_COLOR='\033[0m'
 MAX_RETRIES=100;
 counter=1;
 if [ -x "$(command -v docker)" ]; then
-    rm -rf websight-cms-ce/
-    mkdir websight-cms-ce
-    cd websight-cms-ce
     curl --silent https://docs.websight.io/scripts/logo.ascii.txt
     {
         sleep 5
@@ -25,7 +22,7 @@ if [ -x "$(command -v docker)" ]; then
         echo "${ECHO_GREEN_BOLD}***WebSight Launcher*** WebSight is ready.${ECHO_NO_COLOR} Launching the browser..."
         open http://localhost:8080
     }&
-    docker run -p 8080:8080 --name websight-cms-ce --rm --mount source=tar-repo,target=/websight/repository europe-docker.pkg.dev/websight-io/public/websight-cms-starter:${CMS_STARTER_TAG}
+    docker run -p 8080:8080 --name websight-cms --rm --mount source=segment-store-repository,target=/websight/launcher/repository europe-docker.pkg.dev/websight-io/public/websight-cms-starter:${CMS_STARTER_TAG}
 else
     echo "${ECHO_RED_BOLD}Docker is not found on the system${ECHO_NO_COLOR}"
 fi
