@@ -24,8 +24,7 @@ Run the following command to start a Docker container with WebSight CMS:
 ```bash
 docker run -p 8080:8080 --name websight-cms-ce --rm \
   --mount source=tar-repo,target=/websight/repository \
-  europe-docker.pkg.dev/websight-io/public/websight-cms-starter:1.22.0 \
-  websight-cms-starter-tar
+  europe-docker.pkg.dev/websight-io/public/websight-cms-starter:1.22.1
 ```
 
 A fresh WebSight instance will start within a couple of seconds. After it launches, you can open a Web browser to the URL [http://localhost:8080/](http://localhost:8080/) to view the WebSight admin panel.
