@@ -3213,12 +3213,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gcloud<span class="w"> </span>artifacts<span class="w"> </span>docker<span class="w"> </span>tags<span class="w"> </span>list<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>europe-docker.pkg.dev/websight-io/public/websight-cms-starter<span class="w"> </span>--format<span class="o">=</span><span class="s2">&quot;table(tag)&quot;</span>
 </code></pre></div></li>
-<li>Use one of the tags to deploy the CMS to Cloud Run by replacing <code>&lt;IMAGE_TAG&gt;</code> and simply run:
+<li>Use the most recent tag to deploy the CMS to Cloud Run by replacing <code>&lt;IMAGE_TAG&gt;</code> and simply run:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gcloud<span class="w"> </span>run<span class="w"> </span>deploy<span class="w"> </span>my-websight-cms<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--image<span class="o">=</span>europe-docker.pkg.dev/websight-io/public/websight-cms-starter:&lt;IMAGE_TAG&gt;<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--cpu<span class="o">=</span><span class="m">2</span><span class="w"> </span>--memory<span class="o">=</span>2Gi<span class="w"> </span>--no-cpu-throttling<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--min-instances<span class="o">=</span><span class="m">1</span><span class="w"> </span>--max-instances<span class="o">=</span><span class="m">1</span><span class="w"> </span>--region<span class="o">=</span>europe-west1<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--allow-unauthenticated<span class="w"> </span>--args<span class="o">=</span>websight-cms-starter-tar
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--allow-unauthenticated
 </code></pre></div>
     Follow the instructions on the screen.<ul>
 <li>Reply with <code>y</code> if asked whether to allow unauthenticated invocations to make your CMS instance publicly available.</li>
