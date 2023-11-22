@@ -93,7 +93,7 @@ Your task is to enable setup of the overline font size.
 
 To start, first you need to add a new field, `overlineSize`, to the model class `LunaTitleComponent.java`. Let's define a default size `hl-title__heading--size-5` according to the received design as well. The following Java code will do this:
 
-```java title="application/backend/src/main/java/pl/ds/luna/components/models/LunaTitleComponent.java"
+```java title="applications/luna-custom-code/backend/src/main/java/pl/ds/luna/components/models/LunaTitleComponent.java"
 package pl.ds.luna.components.models;
 
 import javax.inject.Inject;
@@ -124,14 +124,14 @@ Next, you need to update the component HTML template. The original one defines t
 ```
 Because you updated the model class, you can use its property now.
 
-```html title="application/backend/src/main/resources/apps/luna/components/lunatitle/lunatitle.html"
+```html title="applications/luna-custom-code/backend/src/main/resources/apps/luna/components/lunatitle/lunatitle.html"
 <h6 class="hl-title__heading ${model.overlineSize}" 
     data-testid="overline">${model.subtitle}</h6>
 ```
 
 The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. To enable this, you have to override the dialog definition from Howlite. Do so by creating a new `dialog` directory and put `.content.json` file inside.
 
-```json title="application/backend/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json"
+```json title="applications/luna-custom-code/backend/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json"
 {
   "tabs": {
     "generalTab": {
@@ -164,7 +164,7 @@ The above definition specifies the new `overlineSize` field. It is placed before
 ### Apply changes 
 Run the following command to apply the changes to your local environment.
 ```shell
-./mvnw -f application/backend/pom.xml clean install -P autoInstallBundle
+./mvnw -f applications/luna-custom-code/backend/pom.xml clean install -P autoInstallBundle
 ```
 
 ## Part D: Use updated component
