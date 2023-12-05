@@ -17,13 +17,12 @@ This tutorial explains how to deploy our demo site _Luna_ (see [quick start guid
     - number of nodes: `3`
     - zone: any zone of your choice, e.g. `europe-west1-b` to place the cluster in Belgium
     - machine type: `e2-standard-2 (2 vCPUs, 8 GB memory)`
+    ```bash
+    gcloud container clusters create my-websight-cms \
+      --num-nodes 3 --zone europe-west1-b --machine-type e2-standard-2
+    ```
 
-```bash
-gcloud container clusters create my-websight-cms \
-  --num-nodes 3 --zone europe-west1-b --machine-type e2-standard-2
-```
-
-Running the command above may take a couple of minutes to finish. It will also configure `kubectl` to use the cluster.
+    Running the command above may take a couple of minutes to finish. It will also configure `kubectl` to use the cluster.
 
 ## Step 2: Install prerequisites
 
@@ -53,7 +52,7 @@ Running the command above may take a couple of minutes to finish. It will also c
     mongodb-0.mongodb-headless.cms.svc.cluster.local:27017
     mongodb-1.mongodb-headless.cms.svc.cluster.local:27017
     ```
-    You will need the connection details in the next step.
+    You will use the connection details in the next section.
 
     !!! tip "MongoDB"
         For simplicity in this step we use [Bitnami MongoDB Helm chart](https://bitnami.com/stack/mongodb/helm) with default configuration for replicaset architecture (2 data-bearing members and 1 arbiter).
@@ -67,7 +66,7 @@ Running the command above may take a couple of minutes to finish. It will also c
     ```
     - Nginx [configuration](https://raw.githubusercontent.com/websight-io/charts/main/websight-cms/examples/luna-proxy/luna-site.conf.template) for the CMS Proxy
     ```bash
-    curl -O https://raw.githubusercontent.com/websight-io/charts/main/websight-cms/examples/luna-proxy/luna-site.conf.template)
+    curl -O https://raw.githubusercontent.com/websight-io/charts/main/websight-cms/examples/luna-proxy/luna-site.conf.template
     ```
 2. Find the external IP address of the Ingress Controller in your cluster (`YOUR_CLUSTER_IP`):
     ```bash
