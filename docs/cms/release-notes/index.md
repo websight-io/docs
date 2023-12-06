@@ -1,5 +1,13 @@
 # WebSight CMS release notes
 
+## 1.23.0 <small>Dec 5, 2023</small>
+
+**Page Editor**
+
+- Added validation to user rights for toolbar actions.
+- Improved performance in save action in page editor.
+- Improved performance on drag-and-drop functionality within content tree.
+
 ## 1.22.0 <small>Nov 6, 2023</small>
 
 **Page Management**
