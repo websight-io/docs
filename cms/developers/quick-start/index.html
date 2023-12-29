@@ -3319,7 +3319,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 id="component-update">Component update</h3>
 <p>Your task is to enable setup of the overline font size. </p>
 <p>To start, first you need to add a new field, <code>overlineSize</code>, to the model class <code>LunaTitleComponent.java</code>. Let's define a default size <code>hl-title__heading--size-5</code> according to the received design as well. The following Java code will do this:</p>
-<div class="highlight"><span class="filename">application/backend/src/main/java/pl/ds/luna/components/models/LunaTitleComponent.java</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">pl.ds.luna.components.models</span><span class="p">;</span>
+<div class="highlight"><span class="filename">applications/luna-custom-code/backend/src/main/java/pl/ds/luna/components/models/LunaTitleComponent.java</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">pl.ds.luna.components.models</span><span class="p">;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.inject.Inject</span><span class="p">;</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.sling.api.resource.Resource</span><span class="p">;</span>
@@ -3345,11 +3345,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="na">data-testid</span><span class="o">=</span><span class="s">&quot;overline&quot;</span><span class="p">&gt;</span>${model.subtitle}<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
 </code></pre></div>
 Because you updated the model class, you can use its property now.</p>
-<div class="highlight"><span class="filename">application/backend/src/main/resources/apps/luna/components/lunatitle/lunatitle.html</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">h6</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hl-title__heading ${model.overlineSize}&quot;</span> 
+<div class="highlight"><span class="filename">applications/luna-custom-code/backend/src/main/resources/apps/luna/components/lunatitle/lunatitle.html</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">h6</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hl-title__heading ${model.overlineSize}&quot;</span> 
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="na">data-testid</span><span class="o">=</span><span class="s">&quot;overline&quot;</span><span class="p">&gt;</span>${model.subtitle}<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>The last step is to add the field to the dialog used by authors. They need it to define component properties in the page editor. To enable this, you have to override the dialog definition from Howlite. Do so by creating a new <code>dialog</code> directory and put <code>.content.json</code> file inside.</p>
-<div class="highlight"><span class="filename">application/backend/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<div class="highlight"><span class="filename">applications/luna-custom-code/backend/src/main/resources/apps/luna/components/lunatitle/dialog/.content.json</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;tabs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;generalTab&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">&quot;container&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3378,7 +3378,7 @@ Because you updated the model class, you can use its property now.</p>
 <p>The above definition specifies the new <code>overlineSize</code> field. It is placed before the <code>overline</code> field and uses a heading size definition from Howlite, but with <em>small</em> size selected by default.</p>
 <h3 id="apply-changes">Apply changes</h3>
 <p>Run the following command to apply the changes to your local environment.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./mvnw<span class="w"> </span>-f<span class="w"> </span>application/backend/pom.xml<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-P<span class="w"> </span>autoInstallBundle
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./mvnw<span class="w"> </span>-f<span class="w"> </span>applications/luna-custom-code/backend/pom.xml<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-P<span class="w"> </span>autoInstallBundle
 </code></pre></div></p>
 <h2 id="part-d-use-updated-component">Part D: Use updated component</h2>
 <div class="admonition info">
