@@ -18,8 +18,8 @@ theme:
       primary: white
       accent: blue
 
-repo_name: websight-io/starter
-repo_url: https://github.com/websight-io/starter
+repo_name: websight-io/websight-blueprint
+repo_url: https://github.com/websight-io/websight-blueprint
 edit_uri: ../docs/edit/main/docs
 
 extra_css:

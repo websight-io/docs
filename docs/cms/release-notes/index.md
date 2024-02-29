@@ -20,7 +20,7 @@
 - Added multiple viewport support.
 - Improved hierarchy levels representation in the content tree.
 - Improved drag-and-drop reordering components in the content tree.
-- Fixed [#139](https://github.com/websight-io/starter/issues/179) possibility of dropping component into ancestors of an empty containers.
+- Fixed [#139](https://github.com/websight-io/websight-blueprint/issues/179) possibility of dropping component into ancestors of an empty containers.
 - Fixed element selectors alignment.
 
 ## 1.21.2 <small>Oct 13, 2023</small>
@@ -64,7 +64,7 @@
 
 **Page and Asset Management**
 
-- Fixed [#179](https://github.com/websight-io/starter/issues/179) - the broken preview of a selected asset.
+- Fixed [#179](https://github.com/websight-io/websight-blueprint/issues/179) - the broken preview of a selected asset.
 - Fixed the lack of an icon for the page action _view as published_.
 
 **Page Editor**
@@ -83,7 +83,7 @@
 
 **Page Editor**
 
-- Added an ability to view a page as published before its publication [#98](https://github.com/websight-io/starter/issues/98).
+- Added an ability to view a page as published before its publication [#98](https://github.com/websight-io/websight-blueprint/issues/98).
 - Fixed the right-side panel refresh after a user clears a property in a dialog.
 - Fixed missing trailing new lines in the rich text editor input field in the right side panel.
 
@@ -233,7 +233,7 @@
 
 - Fixed the issue with inserting an empty resource name while creating a new item.
 - Fixed the issue for creating new items in the Resource Browser - the resource name can't be empty now. 
-- Fixed [#158](https://github.com/websight-io/starter/issues/158) - the issue with the resource path input.
+- Fixed [#158](https://github.com/websight-io/websight-blueprint/issues/158) - the issue with the resource path input.
 
 **Other**
 
@@ -248,7 +248,7 @@
 
 **Dialogs**
 
-- Fixed [#159](https://github.com/websight-io/starter/issues/159) - saving a multifield by a modal and the side panel leads to conflicts.
+- Fixed [#159](https://github.com/websight-io/websight-blueprint/issues/159) - saving a multifield by a modal and the side panel leads to conflicts.
 
 **Admin tools**
 
@@ -304,7 +304,7 @@
 
 **Dialogs**
 
-- Fixed [#63](https://github.com/websight-io/starter/issues/63) and [#149](https://github.com/websight-io/starter/issues/149) - [toggle](/cms/developers/dialogs/toggle/), [select](/cms/developers/dialogs/select/), [checkbox](/cms/developers/dialogs/checkbox/), [radio](/cms/developers/dialogs/radio/), [rich text editor](/cms/developers/dialogs/richtext-editor/), and [text area](/cms/developers/dialogs/text-area/) work right in the [multifield](/cms/developers/dialogs/multifield/) now. Additionally, the description for the input field included in the multifield is presented on hover.
+- Fixed [#63](https://github.com/websight-io/websight-blueprint/issues/63) and [#149](https://github.com/websight-io/websight-blueprint/issues/149) - [toggle](/cms/developers/dialogs/toggle/), [select](/cms/developers/dialogs/select/), [checkbox](/cms/developers/dialogs/checkbox/), [radio](/cms/developers/dialogs/radio/), [rich text editor](/cms/developers/dialogs/richtext-editor/), and [text area](/cms/developers/dialogs/text-area/) work right in the [multifield](/cms/developers/dialogs/multifield/) now. Additionally, the description for the input field included in the multifield is presented on hover.
 
 
 ## 1.11.0 <small>March 15, 2023</small>
@@ -313,7 +313,7 @@
 
 - New feature from the roadmap [#2](https://github.com/websight-io/roadmap/issues/2) - added the side panel with component properties.
 - Improved workspace refresh after edit action  - only the updated component is reloaded now.
-- Added [#140](https://github.com/websight-io/starter/issues/140) - the ability to set WCM mode in HTL.
+- Added [#140](https://github.com/websight-io/websight-blueprint/issues/140) - the ability to set WCM mode in HTL.
 - Improved UX for concurrent assets management - opening the list of assets from the assets panel in the page editor. 
 
 ## 1.10.0 <small>March 1, 2023</small>
@@ -323,8 +323,8 @@
 - Fixed crash when a user uploads multiple assets at the same time.
 - Fixed broken list of pages for a space when its first node in the resource browser contains an object other than pages, for example, policies.
 - Fixed blinking space dropdown when a user removed a space, and not available anymore.
-- Fixed [#133](https://github.com/websight-io/starter/issues/133) - page name generated from the tile is lowercase now.
-- Improved [#15](https://github.com/websight-io/starter/issues/15) - clicking a page name opens the page editor now.
+- Fixed [#133](https://github.com/websight-io/websight-blueprint/issues/133) - page name generated from the tile is lowercase now.
+- Improved [#15](https://github.com/websight-io/websight-blueprint/issues/15) - clicking a page name opens the page editor now.
 - Improved the expandable panel with the tree on the left - added icons for pages and folders.
 - Improved the preview of assets containing white objects on a transparent background (changed preview background to grey).
 
@@ -386,7 +386,7 @@
 
 **Page and Asset Management**
 
-- Fixed [#25](https://github.com/websight-io/starter/issues/25) - SVG files are displayed properly now.
+- Fixed [#25](https://github.com/websight-io/websight-blueprint/issues/25) - SVG files are displayed properly now.
 
 **Dialogs**
 
@@ -396,7 +396,7 @@
 
 **Admin Tools**
 
-- Fixed [#12](https://github.com/websight-io/starter/issues/12) -  updated layout of the landing page for Admin Tools.
+- Fixed [#12](https://github.com/websight-io/websight-blueprint/issues/12) -  updated layout of the landing page for Admin Tools.
 
 **Other**
 
@@ -413,7 +413,7 @@
 
 **Admin Tools**
 
-- Fixed [#13](https://github.com/websight-io/starter/issues/13) - updated keyboard shortcut for script execution.
+- Fixed [#13](https://github.com/websight-io/websight-blueprint/issues/13) - updated keyboard shortcut for script execution.
 
 **Other**
 
@@ -426,9 +426,9 @@
 
 - Improved the placeholder text for empty containers to guide users on how to add components.
 - Fixed issues with overlays for components.
-- Fixed [#33](https://github.com/websight-io/starter/issues/33) - reduced panel size leads to cropped images thumbnails.
+- Fixed [#33](https://github.com/websight-io/websight-blueprint/issues/33) - reduced panel size leads to cropped images thumbnails.
 - [Path picker](/cms/developers/dialogs/pathpicker/) input field:
-    - Fixed [#19](https://github.com/websight-io/starter/issues/19) - updated placeholder text to guide on how to choose a path.
+    - Fixed [#19](https://github.com/websight-io/websight-blueprint/issues/19) - updated placeholder text to guide on how to choose a path.
     - Added an arrow to expand the dropdown for selection.
     - Fixed an issue with the _rootPath_ property.
 
@@ -437,7 +437,7 @@
 **Page Editor**
 
 - Added ability to drag-and-drop a component between others included in a container.
-- Added [#22](https://github.com/websight-io/starter/issues/22) - scrolling the page to a component when the user clicks it in the content tree.
+- Added [#22](https://github.com/websight-io/websight-blueprint/issues/22) - scrolling the page to a component when the user clicks it in the content tree.
 - Improved UX for the component list. It contains only items allowed for a given page (based on its template).
 - Fixed an issue with misaligned overlays when the user resized the window.
 
@@ -460,7 +460,7 @@
 
 **Page and Asset Management**
 
-- Fixed [#26](https://github.com/websight-io/starter/issues/26) - asset preview dropdown is cut off and has no icons.
+- Fixed [#26](https://github.com/websight-io/websight-blueprint/issues/26) - asset preview dropdown is cut off and has no icons.
 
 **Other**
 
@@ -481,7 +481,7 @@
 
 **Admin Tools**
 
-- Fixed [#14](https://github.com/websight-io/starter/issues/14) and [#16](https://github.com/websight-io/starter/issues/16) - removed the artificial footer for Package Manager, User Manager, Groovy Console and Swagger Browser.
+- Fixed [#14](https://github.com/websight-io/websight-blueprint/issues/14) and [#16](https://github.com/websight-io/websight-blueprint/issues/16) - removed the artificial footer for Package Manager, User Manager, Groovy Console and Swagger Browser.
 
 
 ## 1.1.0 <small>October 11, 2022</small>
@@ -493,7 +493,7 @@
 **Page and Asset Management**
 
 - Improved assets publication. Publish and unpublish actions include assets in sub-folders. 
-- Fixed [#24](https://github.com/websight-io/starter/issues/24): assets download has no effect.
+- Fixed [#24](https://github.com/websight-io/websight-blueprint/issues/24): assets download has no effect.
 - Fixed the hidden top bar with actions for pages and assets (when scrolling).
 
 **Other**

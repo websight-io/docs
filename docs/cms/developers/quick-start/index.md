@@ -6,7 +6,7 @@
 
     Before you complete this guide, we recommend completing the basic [quick start guide](/cms/quick-start/) first so that you understand basic WebSight CMS concepts.
 
-This guide uses [starter](https://github.com/websight-io/starter) - our sample project which demonstrates various functionality of Websight CMS and pre-configures for you the following features:
+This guide uses [WebSight Blueprint](https://github.com/websight-io/websight-blueprint) - our sample project which demonstrates various functionality of Websight CMS and pre-configures for you the following features:
 
 - Demo site project _Luna_
 - [Howlite](https://github.com/websight-io/howlite) components library
@@ -14,7 +14,7 @@ This guide uses [starter](https://github.com/websight-io/starter) - our sample p
 
 We will walk through the process of updating a simple Howlite component. 
 
-In [starter](https://github.com/websight-io/starter) for the sake of simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and created the _Luna Title_ component inside the demo project. 
+In [WebSight Blueprint](https://github.com/websight-io/websight-blueprint) for the sake of simplicity, we overrode the _Title_ component included in the [Howlite](https://github.com/websight-io/howlite) collection in advance and created the _Luna Title_ component inside the demo project. 
 
 Your task in completing this guide is to update the _Luna Title_ component and extend existing functionality. The sections below explain more detail.
 
@@ -30,11 +30,11 @@ Your task in completing this guide is to update the _Luna Title_ component and e
  
 ## Part B: Setup local environment
 
-First, clone the _Starter_ repository and build it within your local environment using the following commands:
+First, clone the _WebSight Blueprint_ repository and build it within your local environment using the following commands:
 
 ```shell
-git clone https://github.com/websight-io/starter.git
-cd starter
+git clone https://github.com/websight-io/websight-blueprint.git
+cd websight-blueprint
 ```
 
 Depending on your choice, you can use Docker to build and run the CMS instance or build and run it locally as a JVM application.
