@@ -17,7 +17,7 @@ Cloud Run is a serverless platform that allows you to run `stateless` HTTP conta
 Choose one of the following options to run the CMS instance on Cloud Run.
 
 ### Sample `starter` CMS instance
-With this variant you will deploy a sample CMS instance to Cloud Run using the publicly available `websight-cms-starter` image of a [sample WebSight CMS project](https://github.com/websight-io/starter).
+With this variant you will deploy a sample CMS instance to Cloud Run using the publicly available `websight-cms-starter` image of a [sample WebSight CMS project](https://github.com/websight-io/websight-blueprint).
 
 1. See the available `websight-cms-starter` image tags with the following command:
     ```bash
@@ -45,7 +45,7 @@ With this variant you will deploy a sample CMS instance to Cloud Run using the p
     CMS might need additional 20 seconds to start after the message above. Open the url and login with username `wsadmin` and password `wsadmin`.
 
 ### Customized CMS instance
-In this variant you will deploy your customized WebSight CMS instance to Cloud Run. Start with cloning the [websight-cms-starter](https://github.com/websight-io/starter).
+In this variant you will deploy your customized WebSight CMS instance to Cloud Run. Start with cloning the [websight-blueprint](https://github.com/websight-io/websight-blueprint).
 Feel free to modify any part of the CMS. You may follow the [quick-start](/cms/developers/quick-start/) guide to learn how to customize the CMS. 
 When you have your changes ready and working locally, follow the steps below to deploy the CMS to Cloud Run.
 

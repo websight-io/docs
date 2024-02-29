@@ -12,7 +12,7 @@ Developers can easily extend the WebSight CMS with custom code. New functionalit
 ![WebSight CMS project](websight-cms-project.png)
 
 !!! note "Sample project"
-    Check the [WebSight Starter](https://github.com/websight-io/starter) sample project to see how the custom project can be structured and assembled.
+    Check the [WebSight Blueprint](https://github.com/websight-io/websight-blueprint) sample project to see how the custom project can be structured and assembled.
 
 ## Containers
 Once we have a distributable unit, it is easy to package it into a container image. Working with containers enables consistency and standardization. With Docker, we can use the same tooling to work locally as well as to deploy production environments to the cloud.

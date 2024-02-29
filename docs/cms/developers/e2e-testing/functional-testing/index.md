@@ -4,11 +4,11 @@
 
 ## Introduction
 
-Cypress is a modern open-source end-to-end testing framework which provides good developer experience. You can check how we leverage Cypress in [starter](https://github.com/websight-io/starter) to perform **functional testing**. Its goal is to check if the end user can complete all the flows and actions available on the website.
+Cypress is a modern open-source end-to-end testing framework which provides good developer experience. You can check how we leverage Cypress in [WebSight Blueprint](https://github.com/websight-io/websight-blueprint) to perform **functional testing**. Its goal is to check if the end user can complete all the flows and actions available on the website.
 
 !!! info "Important notice"
 
-    For more information about [starter](https://github.com/websight-io/starter) project see [Quick start for developers](/cms/developers/quick-start).
+    For more information about [WebSight Blueprint](https://github.com/websight-io/websight-blueprint) project see [Quick start for developers](/cms/developers/quick-start).
 
 ## Documentation
 
