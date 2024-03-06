@@ -1,5 +1,28 @@
 # WebSight CMS release notes
 
+## 1.24.0 <small>Feb 28, 2024</small>
+
+**Page and Asset Management**
+
+- Added Reference Search functionality for moving ans renaming pages and assets.
+- Fixed the issue with the remove action not working on newly created assets.
+
+**Page Editor**
+
+- Added a preview mode for users with read-only access in the page editor.
+- Improved the drag-and-drop functionality within the content tree.
+- Fixed text alignment issues on checkbox buttons.
+
+**Resource Browser**
+
+- Fixed issues with displaying properties and the list of resources correctly.
+
+**Dialogs**
+
+- Fixed text wrapping for labels in radio button options.
+- Fixed issues with copying values while adding rows to multifields.
+
+
 ## 1.23.0 <small>Dec 5, 2023</small>
 
 **Page Editor**
