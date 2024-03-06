@@ -4,7 +4,7 @@
 
 **Page and Asset Management**
 
-- Added Reference Search functionality for moving ans renaming pages and assets.
+- Added Reference Search functionality for moving and renaming pages and assets.
 - Fixed the issue with the remove action not working on newly created assets.
 
 **Page Editor**
