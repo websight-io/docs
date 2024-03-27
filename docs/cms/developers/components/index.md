@@ -198,25 +198,31 @@ Use the following resource properties to define the component:
         </td>
     </tr>
     <tr>
-        <td>isLayout</td>
+        <td>isBuildingBlock</td>
         <td>No</td>
         <td>boolean, false by default</td>
-        <td>Defines the component as a layout component.
-            Layout components are displayed in a separate section in the WebSight CMS pages editor from components that are not layout components. <br> <br>
+        <td>Defines the component as a building block component.
+            Building block components are displayed in a separate section in the WebSight CMS pages editor from components that are not building block components. <br> <br>
 
-            It’s up to the component developer to set <code>isLayout=true</code>, but the guideline is to use it for components that: <br> 
-            - are used to define page layout <br>
-            - must contain other components to be usable <br> 
+            It’s up to the component developer to set <code>isBuildingBlock=true</code>, but the guideline is to use it for components that: <br>
+            - are used to speed up page content creation process <br>
+            - create components instances allowing to set the content in specific layout and initial setup <br>
+            - must use other components to be usable <br> 
             - contain no logic (other than logic related to layout calculation) <br> 
-            - interact only on page resize (no other “user actions” allowed) <br> 
+            - interact only on page resize (no other “user actions” allowed) <br>
             - have no visible UI elements (like texts)<br> <br>
 
-            Examples of Layouts: <br>
-            - 2-column container <br>
-            - 1-column container <br>
-            - Section with title, image, text and CTA (container including components) <br> <br>
+            Name of the building block should be describing the usage, like 'Hero section' for container including texts, images, etc dedicated to be used at the top section of the page. <br>
+            To implement a building block component use the <code>instanceResourceType</code> component definition property and define the component template. 
+            The building block component should not provide it own rendering script or dialog. <br> <br>
 
-            Example of components that are not Layouts: <br>
+            Examples of building block: <br>
+            - containers including texts, images, etc dedicated to be used at the top section of the page <br>
+            - container including title and containers for 4 columns with title + RTE in each <br>
+            - Section with title, image, text and CTA (container including components) <br>
+            
+            Example of components that are not building blocks: <br>
+            - 2-columns, 3-columns, empty section, empty containers setup, etc - containers and sections should contain components allowing to set content to be useful building block - components like that which are also using <code>instanceResourceType</code> component definition and define the component template, without own rendering script should not be marked as building block and should be present in Editor components section <br>
             - image, title or CTA, all of which have visible UI elements (like texts) <br>
             - logo cloud, which contain very specific CSS logic and should not be used to create generic page layouts) <br>
             - Accordion, which contains logic not related to layout calculation <br>
