@@ -67,7 +67,7 @@ Congratulations! The demo site is now available by navigating to [http://localho
     The distribution contains other demo sites. After assets and pages publication, they are available at: 
     
     - [http://localhost:8080/published/kyanite/pages/Personal.html](http://localhost:8080/published/kyanite/pages/Personal.html)  Personal page created with the Kyanite components library
-    - [http://localhost:8080/lowcodeluna/pages/Homepage.html](http://localhost:8080/lowcodeluna/pages/Homepage.html)  Luna - low code
+    - [http://localhost:8080/published/lowcodeluna/pages/Homepage.html](http://localhost:8080/published/lowcodeluna/pages/Homepage.html)  Luna - low code
     - [http://localhost:8080/published/nocodeluna/pages/Homepage.html](http://localhost:8080/published/nocodeluna/pages/Homepage.html) Luna - no code
 
 ![Published demo page](./quick-start-published-page.png)
