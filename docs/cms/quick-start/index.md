@@ -60,15 +60,15 @@ Open the list of _Pages_ using the left sidebar. Select all pages and click _Pub
 
 ### 4. View the demo site
 
-Congratulations! The demo site is now available by navigating to [http://localhost:8080/published/luna/pages/Homepage.html](http://localhost:8080/published/luna/pages/Homepage.html) in a Web browser.
+Congratulations! The demo site is now available by navigating to [http://localhost:8080/luna/pages/Homepage.html](http://localhost:8080/luna/pages/Homepage.html) in a Web browser.
 
 !!! info "Additional sample sites "
 
     The distribution contains other demo sites. After assets and pages publication, they are available at: 
     
-    - [http://localhost:8080/published/kyanite/pages/Personal.html](http://localhost:8080/published/kyanite/pages/Personal.html)  Personal page created with the Kyanite components library
+    - [http://localhost:8080/kyanite/pages/Personal.html](http://localhost:8080/kyanite/pages/Personal.html)  Personal page created with the Kyanite components library
     - [http://localhost:8080/lowcodeluna/pages/Homepage.html](http://localhost:8080/lowcodeluna/pages/Homepage.html)  Luna - low code
-    - [http://localhost:8080/published/nocodeluna/pages/Homepage.html](http://localhost:8080/published/nocodeluna/pages/Homepage.html) Luna - no code
+    - [http://localhost:8080/nocodeluna/pages/Homepage.html](http://localhost:8080/nocodeluna/pages/Homepage.html) Luna - no code
 
 ![Published demo page](./quick-start-published-page.png)
 
