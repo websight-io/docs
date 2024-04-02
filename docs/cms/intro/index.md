@@ -4,12 +4,6 @@ This documentation contains all technical details related to the setting up, dep
 
 ## Community
 
-### Roadmap
-
-Are you interested in what is coming? See our public [roadmap](https://github.com/orgs/websight-io/projects/2/views/2).
-
-The roadmap presents what features we are working on and ideas we are exploring and analyzing. Have any suggestions, comments, or questions? Share them via [GitHub discussions](https://github.com/websight-io/websight-blueprint/discussions).
-
 ### Support
 To support WebSight and engage with our community please use the following channels:
 
