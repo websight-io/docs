@@ -1,9 +1,15 @@
-# WebSight.io documentation
+# WebS[.idea](.idea)ight.io documentation
 WebSight documentation created using [MkDocs Material](https://squidfunk.github.io/mkdocs-material/getting-started/) project.
 
 ## Setup
-1. Install Python
+1. Install Python 3
 2. Install PIP (for Windows) or PIP3 (for Mac or Linux)
+3. (optionally) Create a separate Python virtual environment. It is recommended to use a separate
+environment to prevent [conflicts between OS package managers and pip](https://peps.python.org/pep-0668/).
+Example of creating and activating an environment using [venv](https://docs.python.org/3/library/venv.html):
+   * `mkdir path/to/venv`
+   * `python3 -m venv path/to/venv`
+   * `source path/to/venv/bin/activate`
 3. Run command:  
    * On Windows: `pip install -r requirements.txt`
    * On Mac/Linux: `pip3 install -r requirements.txt`
