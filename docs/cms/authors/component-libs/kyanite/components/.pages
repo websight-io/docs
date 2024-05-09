@@ -1,2 +1,4 @@
 nav:
+  - Navbar: navbar
+  - Footer: footer
   - Search: search
