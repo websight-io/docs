@@ -12,13 +12,13 @@ By default it references the parent pages's author info.
 If the page references an existing author bio page or has its own author properties, the component will show info about respective author:
 
 <p align="center" width="100%">
-    <img src="./blogarticleauthorbio-initial.png">
+    <img src="./_images/blogarticleauthorbio-initial.png">
 </p>
 
 Otherwise, error message will be shown until you refer to a valid author info source or input your own properties, <a href="../../authorinfo/example">as explained here</a>
 
 <p align="center" width="100%">
-    <img src="./blogarticleauthorbio-error.png">
+    <img src="./_images/blogarticleauthorbio-error.png">
 </p>
 
 ### <a name="socialmedia">Social media icons</a>
@@ -30,13 +30,13 @@ You can drag & drop Buttons into the Social Media section.
 Initially you will see a Button with no label and linkedin icon there, with a link leading to WebSight account.
 
 <p align="center" width="100%">
-    <img src="blogarticleauthorbio-structure.png">
+    <img src="./_images/blogarticleauthorbio-structure.png">
 </p>
 
 When there is nothing in the section, it will display a placeholder when in edit mode.
 
 <p align="center" width="100%">
-    <img src="blogarticleauthorbio-socialmedia-empty.png">
+    <img src="./_images/blogarticleauthorbio-socialmedia-empty.png">
 </p>
 
 ## Authorable properties
@@ -45,5 +45,5 @@ Blog Article Author Bio component uses <a href="../../authorinfo#config">common 
 It doesn't have any other properties. 
 
 <p align="center" width="100%">
-    <img src="blogarticleauthorbio-dialog.png">
+    <img src="./_images/blogarticleauthorbio-dialog.png">
 </p>

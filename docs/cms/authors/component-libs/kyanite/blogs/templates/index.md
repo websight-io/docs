@@ -20,7 +20,7 @@ Author bio page serves both as a storage and representation of information about
 
 Author info configuration in the Metadata tab is the only configuration specific for this type of page.
 
-<img src="./author-bio-page-initial.png">
+<img src="./_images/author-bio-page-initial.png">
 
 ## Blog Article Page
 
@@ -31,11 +31,11 @@ Blog article page is just that, an article by some author. It can be created und
 
 It has predefined layout with article header, table of contents, and a container for actual content.
 
-<img src="./blog-article-page-initial.png">
+<img src="./_images/blog-article-page-initial.png">
 
 Besides author info configuration mentioned earlier, it has properties for article header:
 
-<img src="./blog-article-page-properties.png">
+<img src="./_images/blog-article-page-properties.png">
 
 ## Blog Listing Page
 
@@ -45,7 +45,7 @@ Initially it has feature blog article and blog list added.
 
 It has no unique properties.
 
-<img src="./blog-listing-page-initial.png">
+<img src="./_images/blog-listing-page-initial.png">
 
 ## Blog Category Page
 

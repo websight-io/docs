@@ -24,17 +24,17 @@ Every page/component consuming author info uses the common dialog that has three
 
 * Take author info from parent (containing) page - actual for components like Blog Article Header and Blog Article Author Info. Parent page itself may refer to another page - however many redirections there are, author info will be resolved.
 <p align="center" width="100%">
-    <img src="./author-info-dialog-parent.png">
+    <img src="./_images/author-info-dialog-parent.png">
 </p>
 
 * Refer to Author bio page of corresponding author. It is the initial choice for Blog Article pages.
 <p align="center" width="100%">
-    <img src="./author-info-dialog-author.png">
+    <img src="./_images/author-info-dialog-author.png">
 </p>
 
 * Input your own properties. Having own properties automatically makes page/component a valid source of author info for another pages/components. This is the only option for Author Bio page - it cannot refer to any other authors.
 <p align="center" width="100%">
-    <img src="./author-info-dialog-ownproperties.png">
+    <img src="./_images/author-info-dialog-ownproperties.png">
 </p>
 
 ## Example

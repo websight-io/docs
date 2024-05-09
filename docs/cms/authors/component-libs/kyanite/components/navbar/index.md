@@ -12,7 +12,7 @@ When you open the newly created Homepage, at the top of the page you will see a 
 with Navbar Brand and Navbar Menu components inside.
 
 <p align="center" width="100%">
-    <img class="image--with-border" src="_images/navbar-editmode-added-initially.png" alt="navbar-editmode-initial">
+    <img class="image--with-border" src="./_images/navbar-editmode-added-initially.png" alt="navbar-editmode-initial">
 </p>
 
 You also can add Navbar to a page manually. Initial layout will slightly differ in this case. 

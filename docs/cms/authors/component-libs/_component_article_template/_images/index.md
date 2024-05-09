@@ -29,3 +29,11 @@ Describe authorable properties here. Add a screenshot for every tab of component
 <p align="center" width="100%">
     <img class="image--with-border" src="./_images/dialog-tab-screenshot.png" alt="">
 </p>
+
+## Rendered component
+
+Add screenshots of rendered component here, if relevant.
+
+<p align="center" width="100%">
+    <img class="image--with-border" src="./_images/component-rendered.png" alt="">
+</p>
