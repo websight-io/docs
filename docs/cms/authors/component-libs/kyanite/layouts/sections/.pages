@@ -1,0 +1,13 @@
+nav:
+- Banner: banner
+- CTA: cta
+- Hero: hero
+- Left-right: leftright
+- Left-right card: leftrightcard
+- Right-left: rightleft
+- Right-left card: rightleftcard
+- Logo Carousel: logocarousel
+- Social Proof: socialproof
+- Subtle Table: subtletable
+- Tabs Switching Columns: tabsswitchingcolumns
+- Tabs Switching Rows: tabsswitchingrows
