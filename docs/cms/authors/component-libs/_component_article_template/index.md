@@ -1,4 +1,4 @@
-[//]: # (
+<!--
     Keep to the rules:
     -
     Keep images that you insert into the article under _images.
@@ -6,7 +6,7 @@
     Feel free to fix any missing references you find.
     -
     Remove this comment from actual component page.
-)
+-->
 
 # Put component name here
 
