@@ -10,7 +10,14 @@ Drag and drop Grid to a page section. It will initially have four Grid cells in 
 
 <p align="center" width="100%">
     <img class="image--with-border" src="_images/grid/grid-initial.png" 
-         alt="grid-iinitial">
+         alt="grid-initial">
+</p>
+
+You can drag and drop Grid cells into Grid.
+
+<p align="center" width="100%">
+    <img class="image--with-border" src="_images/grid/grid-components.png" 
+         alt="grid-components">
 </p>
 
 You can drag and drop any content into Grid cells.
@@ -21,11 +28,22 @@ You can drag and drop any content into Grid cells.
 
 Grid has the following properties:
 
-- Columns number - defines width of the Grid
+- Columns number for different viewports (desktop/tablet/mobile) - defines width of the Grid.
+Try to input different values and switch between viewports to see the difference.
 
 <p align="center" width="100%">
-    <img class="image--with-border" src="_images/grid/grid-columns-number.png" 
-         alt="grid-columns-number">
+    <img class="image--with-border" src="_images/grid/grid-columns-number-desktop.png" 
+         alt="grid-columns-number-desktop">
+</p>
+
+<p align="center" width="100%">
+    <img class="image--with-border" src="_images/grid/grid-columns-number-tablet.png" 
+         alt="grid-columns-number-tablet">
+</p>
+
+<p align="center" width="100%">
+    <img class="image--with-border" src="_images/grid/grid-columns-number-mobile.png" 
+         alt="grid-columns-number-mobile">
 </p>
 
 - Column gap and Row gap - space between columns/rows, in _rem_. 
