@@ -1,5 +1,5 @@
 #!/bin/sh
-CMS_STARTER_TAG='1.24.0'
+CMS_STARTER_TAG='1.24.12'
 ECHO_RED_BOLD='\033[1;31m'
 ECHO_GREEN_BOLD='\033[1;32m'
 ECHO_YELLOW_BOLD='\033[1;33m'
@@ -22,7 +22,7 @@ if [ -x "$(command -v docker)" ]; then
         echo "${ECHO_GREEN_BOLD}***WebSight Launcher*** WebSight is ready.${ECHO_NO_COLOR} Launching the browser..."
         open http://localhost:8080
     }&
-    docker run -p 8080:8080 --name websight-cms --rm --mount source=segment-store-repository,target=/websight/launcher/repository europe-docker.pkg.dev/websight-io/public/websight-cms-starter:${CMS_STARTER_TAG}
+    docker run -p 8080:8080 --name websight-cms --rm --mount source=segment-store-repository,target=/websight/launcher/repository europe-west1-docker.pkg.dev/websight-io/websight-docker-releases/websight-cms-starter:${CMS_STARTER_TAG}
 else
     echo "${ECHO_RED_BOLD}Docker is not found on the system${ECHO_NO_COLOR}"
 fi

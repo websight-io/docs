@@ -40,14 +40,14 @@ Example command:
 mvn archetype:generate                                     \
   -DarchetypeGroupId=pl.ds.websight                        \
   -DarchetypeArtifactId=websight-cms-ce-project-archetype  \
-  -DarchetypeVersion=3                                     \
+  -DarchetypeVersion=5                                     \
   -DgroupId=my.groupId                                     \
   -DartifactId=my-artifactId                               \
   -Dversion=1.0.0-SNAPSHOT                                 \
   -DprojectName="Example Project"                          \
   -DprojectId=example-project                              \
   -Dpackage=com.example.project                            \
-  -DcmsVersion=1.24.0
+  -DcmsVersion=1.24.2
 ```
 
 The above command creates a project with the following structure:
