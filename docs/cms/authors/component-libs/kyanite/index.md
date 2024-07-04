@@ -4,8 +4,8 @@ Kyanite is a sample component library for the [WebSight CMS](https://www.websigh
 It contains components similar to ones from Bulma with small style/features adjustments as well as
 brand new components created to improve authoring experience with WebSight and Kyanite.
 
-This documentation corresponds to version **0.4.19** of Kyanite.
+The Kyanite library currently consists of two groups of components:
 
-Kyanite components are currently split on two groups, going under separate packages:
-* common - basic components and page templates
-* blogs - components and page templates serving for easy creation of blog articles and managing information about blog authors
+* [Common](./common) - basic components and page templates
+* [Blogs](./blogs) - built upon Commons, 
+includes components and page templates serving for easy creation of blog articles
