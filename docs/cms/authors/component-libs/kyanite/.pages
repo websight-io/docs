@@ -1,6 +1,3 @@
 nav:
-  - Components: components
-  - Containers: containers
-  - Layouts: layouts
-  - Page templates: templates
+  - Common: common
   - Blogs: blogs

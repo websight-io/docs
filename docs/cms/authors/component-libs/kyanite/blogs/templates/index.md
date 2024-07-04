@@ -1,5 +1,7 @@
 # Blog Page Templates
 
+[//]: # ( TODO convert Kyanite/blogs/templates into article-per-page-template structure )
+
 In Kyanite, we have a set of dedicated page templates for maintaining blog structure under your website:
 
 * Templates for creating article pages:
