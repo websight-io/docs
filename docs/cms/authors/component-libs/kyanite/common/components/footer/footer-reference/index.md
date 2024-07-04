@@ -2,6 +2,8 @@
 
 _Since_: 0.0.2
 
+[//]: # (TODO add component groups info)
+
 Footer reference allows authors to use Footer content from Homepage at any page within the same space.
 
 <!--

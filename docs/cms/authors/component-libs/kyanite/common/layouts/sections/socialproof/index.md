@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Social Proof section is a ready-to-use component where authors can show user feedbacks using the
 name, the profile picture, the job title and the actual feedback of the reviewer in a carousel.
 

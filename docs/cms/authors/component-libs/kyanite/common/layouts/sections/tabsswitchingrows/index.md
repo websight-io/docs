@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Tabs Switching Rows section is a ready-to-use component having a main title and description
 and three pre-defined rows under as tabs. Each tab contains a title, a description and an
 image under.

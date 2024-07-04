@@ -2,6 +2,8 @@
 
 _Since_: 0.0.1
 
+[//]: # (TODO add component groups info)
+
 Footer component is technically just a container for any content, but with additional feature:
 once you have in on your Homepage, you can use it on any page via <a href="./footer-reference/">Footer reference</a>.
 

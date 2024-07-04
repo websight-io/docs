@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Hero section is a ready-to-use component to appear as the first part of each page to make first
 impressions. Also, there is a small description included with a button to take action.
 

@@ -2,6 +2,8 @@
 
 _Since_: 0.5.1
 
+[//]: # (TODO add component groups info)
+
 Quote component allows you to add quotes to a Blog Article Page content.
 
 ## Usage

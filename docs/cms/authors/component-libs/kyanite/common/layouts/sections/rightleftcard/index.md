@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Right-left card section is a ready-to-use component split into two parts, a title and a description
 is shown on the left-hand side while an image can be found on the right-hand side. The difference
 to the <a href="../leftright">Right-left</a> section is that in this layout all content is

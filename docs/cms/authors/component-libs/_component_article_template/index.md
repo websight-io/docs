@@ -1,16 +1,18 @@
 <!--
     Keep to the rules:
     -
-    Keep images that you insert into the article under _images.
-    If you mention any element that has or will have an article in the future - make a link to it.
-    Feel free to fix any missing references you find.
+    Keep the images under _images.
+    If you mention an existing element - make a link to its article.
+    If you mention an existing element with no article - make a TODO.
+    Fix any missing references found throughout your work
     -
-    Remove this comment from actual component page.
+    Remove this comment from the resulting page.
 -->
 
 # Put component name here
 
 _Since_: Kyanite version when the component was introduced.
+_Groups_: list of groups that component belongs to
 
 Add short component description.
 

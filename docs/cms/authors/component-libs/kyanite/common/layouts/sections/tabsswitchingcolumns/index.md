@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Tabs Switching Columns section is a ready-to-use component having a main title and description
 and three pre-defined columns under as tabs. Each tab contains a title and a description 
 on the left and an image on the right.

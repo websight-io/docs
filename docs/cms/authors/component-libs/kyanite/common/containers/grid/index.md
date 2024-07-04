@@ -2,6 +2,8 @@
 
 _Since_: 0.4.21
 
+[//]: # (TODO add component groups info)
+
 Grid is a two-dimensional container similar to <a href="https://bulma.io/documentation/grid/fixed-grid/">Bulma Grid</a>
 
 ## Usage

@@ -2,6 +2,8 @@
 
 _Since_: 0.0.1
 
+[//]: # (TODO add component groups info)
+
 Navbar component serves as a navigation bar for your website. Once you have in on your Homepage, 
 you can use it on any page via <a href="./navbar-reference/">Navbar reference</a>.
 

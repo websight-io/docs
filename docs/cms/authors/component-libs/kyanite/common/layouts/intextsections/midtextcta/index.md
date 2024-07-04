@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Mid-text CTA section is a ready-to-use component that is designed to use between paragraphs. It is
 basically a Card component with some text used to raise the attention of the user and 
 possibly redirect them.

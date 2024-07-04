@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 CTA section is a ready-to-use component to capture the attention of the users and provide
 a button to take action.
 

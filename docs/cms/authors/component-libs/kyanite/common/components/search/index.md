@@ -39,6 +39,8 @@ Click <img class="image--inline" src="../_images/edit-icon.png" alt="Edit icon">
 
 ## Rendered component
 
+[//]: # (TODO add component groups info)
+
 If search endpoint is not set, component will not be rendered in preview/published mode.
 
 If search endpoint is configured, you will see a single input.

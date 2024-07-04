@@ -1,5 +1,7 @@
 # Navbar components
 
+[//]: # (TODO add component groups info)
+
 There are several components that serve as building blocks for Navbar.
 
 Available as Navbar direct children are:

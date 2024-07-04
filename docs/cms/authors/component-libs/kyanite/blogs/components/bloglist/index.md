@@ -2,6 +2,8 @@
 
 _Since:_ 0.0.4
 
+[//]: # (TODO add component groups info)
+
 Blog list allows you to display a grid of blog article previews.
 
 ## Usage

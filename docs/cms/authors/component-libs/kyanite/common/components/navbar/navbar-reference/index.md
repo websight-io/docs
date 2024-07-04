@@ -1,5 +1,7 @@
 # Navbar reference
 
+[//]: # (TODO add component groups info)
+
 _Since_: 0.0.2
 
 Navbar reference allows authors to use Navbar from Homepage at any page within the same space. 

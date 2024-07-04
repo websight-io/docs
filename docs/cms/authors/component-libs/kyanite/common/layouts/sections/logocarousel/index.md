@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Logo Carousel section is a ready-to-use component where following a title and a description,
 authors can showcase a selection of logos with logo names.
 

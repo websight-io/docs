@@ -1,5 +1,8 @@
 # Blog Article Author Bio
 
+[//]: # (TODO add initial Kyanite version)
+[//]: # (TODO add component groups info)
+
 Blog Article Author Bio component allows you to display short info about the author.
 While the most common usage is to place it at the top/bottom of an article or author's bio page, 
 it is allowed on any blog-related page.

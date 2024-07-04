@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Social Proof Item section is a ready-to-use component that is designed for the authors to be
 able to extend the <a href="../socialproof">Social Proof</a> section with additional proofs.
 

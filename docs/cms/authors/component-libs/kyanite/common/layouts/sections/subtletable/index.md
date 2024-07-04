@@ -2,6 +2,8 @@
 
 _Since_: 0.4.19
 
+[//]: # (TODO add component groups info)
+
 Subtle Table section is a ready-to-use component defining a 2x4 table where authors can showcase
 keywords or catchphrases related to various topics.
 
