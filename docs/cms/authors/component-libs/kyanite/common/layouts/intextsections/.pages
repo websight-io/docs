@@ -1,7 +1,7 @@
 nav:
-  - In-text EAD: intextead
-  - Mid-text CTA: midtextcta
-  #- CTA centered: intextctacentered
-  #- CTA left: intextctaleft
-  #- 2 in 1 row: 2in1row
-  - Social Proof Item: socialproofitem
+  - CTA Card - Image and Text: intextead
+  - CTA Card - Text with Eyebrow: midtextcta
+  #- CTA Card - Centered Text: intextctacentered
+  #- CTA Card - Left-aligned Text: intextctaleft
+  #- Bento Box 2 in 1 Row: 2in1row
+  - Social Proof Card: socialproofitem

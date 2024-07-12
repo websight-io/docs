@@ -13,3 +13,4 @@ includes components and page templates serving for easy creation of blog article
 [//]: # (TODO think over division into layouts/non-layouts, because 'Kyanite layouts' are not actually layouts in the UI)
 [//]: # (TODO should columns be in a separate 'Kyanite Columns' group?)
 [//]: # (TODO should featuredblogarticle be in 'Kyanite Components' group?)
+[//]: # (TODO fix links in sections' component lists)

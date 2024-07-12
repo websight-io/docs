@@ -1,20 +1,20 @@
-# Tabs Switching Rows
+# Content Tabs - Rows
 
 _Since_: 0.4.19
 
 [//]: # (TODO add component groups info)
 
-Tabs Switching Rows section is a ready-to-use component having a main title and description
+_Content Tabs - Rows_ section is a ready-to-use component having a main title and description
 and three pre-defined rows under as tabs. Each tab contains a title, a description and an
 image under.
 
 ## Usage
 
-Drag & drop Tabs Switching Rows component from Kyanite Sections to the page directly, as the
+Drag & drop _Content Tabs - Rows_ component from Kyanite Sections to the page directly, as the
 component already contains a Section component.
 After adding it to the page, it should look like this:
 <p align="center" width="100%">
-    <img class="image--with-border" src="_images/initial-tabsswitchingrows.png" alt="Initial Tabs Switching Rows">
+    <img class="image--with-border" src="_images/initial-tabsswitchingrows.png" alt="Initial Content Tabs - Rows">
 </p>
 
 ## Authorable properties

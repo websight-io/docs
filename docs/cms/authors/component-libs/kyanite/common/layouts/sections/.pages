@@ -1,15 +1,15 @@
 nav:
-  - Banner: banner
+  - Banner with Links: banner
   - CTA: cta
   - Hero: hero
-  #- Bento box 4 in 2 rows: bentobox.4in2rows
-  #- Bento box 5 in 2 rows: bentobox.5in2rows
-  - Left-right: leftright
-  - Left-right card: leftrightcard
-  - Right-left: rightleft
-  - Right-left card: rightleftcard
+  #- Bento Box 4 in 2 Rows: bentobox.4in2rows
+  #- Bento Box 5 in 2 Rows: bentobox.5in2rows
+  - Block - Image Left, Text Right: leftright
+  - Block - Image Right, Text Left: rightleft
+  - Block on Card - Image Left, Text Right: leftrightcard
+  - Block on Card - Image Right, Text Left: rightleftcard
   - Logo Carousel: logocarousel
   - Social Proof: socialproof
   - Subtle Table: subtletable
-  - Tabs Switching Columns: tabsswitchingcolumns
-  - Tabs Switching Rows: tabsswitchingrows
+  - Content Tabs - Columns: tabsswitchingcolumns
+  - Content Tabs - Rows: tabsswitchingrows

@@ -1,21 +1,21 @@
-# Right-left card
+# Block on Card - Image Right, Text Left
 
 _Since_: 0.4.19
 
 [//]: # (TODO add component groups info)
 
-Right-left card section is a ready-to-use component split into two parts, a title and a description
+_Block on Card - Image Right, Text Left_ section is a ready-to-use component split into two parts, a title and a description
 is shown on the left-hand side while an image can be found on the right-hand side. The difference
 to the <a href="../leftright">Right-left</a> section is that in this layout all content is
 wrapped inside a Card component.
 
 ## Usage
 
-Drag & drop Right-left card component from Kyanite Sections to the page directly, as the
+Drag & drop _Block on Card - Image Right, Text Left_ component from Kyanite Sections to the page directly, as the
 component already contains a Section component.
 After adding it to the page, it should look like this:
 <p align="center" width="100%">
-    <img class="image--with-border" src="_images/initial-rightleftcard.png" alt="Initial Right-left card">
+    <img class="image--with-border" src="_images/initial-rightleftcard.png" alt="Initial Block on Card - Image Right, Text Left">
 </p>
 
 ## Authorable properties

@@ -1,19 +1,19 @@
-# Banner
+# Banner with Links
 
 _Since_: 0.4.19
 
 [//]: # (TODO add component groups info)
 
-Banner section is a ready-to-use component to capture the attention of the users and provide
+_Banner with Links_ section is a ready-to-use component to capture the attention of the users and provide
 navigation options.
 
 ## Usage
 
-Drag & drop Banner component from Kyanite Sections to the page directly, as the component already
+Drag & drop _Banner with Links_ component from Kyanite Sections to the page directly, as the component already
 contains a Section component.
 After adding it to the page, it should look like this:
 <p align="center" width="100%">
-    <img class="image--with-border" src="_images/initial-banner.png" alt="Initial Banner">
+    <img class="image--with-border" src="_images/initial-banner.png" alt="Initial Banner with Links">
 </p>
 
 ## Authorable properties

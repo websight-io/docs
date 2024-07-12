@@ -1,19 +1,19 @@
-# Left-right
+# Block - Image Left, Text Right
 
 _Since_: 0.4.19
 
 [//]: # (TODO add component groups info)
 
-Left-right section is a ready-to-use component split into two parts, an image is shown on the
+_Block - Image Left, Text Right_ section is a ready-to-use component split into two parts, an image is shown on the
 left-hand side while a title and a description can be found on the right-hand side.
 
 ## Usage
 
-Drag & drop Left-right component from Kyanite Sections to the page directly, as the component already
+Drag & drop _Block - Image Left, Text Right_ component from Kyanite Sections to the page directly, as the component already
 contains a Section component.
 After adding it to the page, it should look like this:
 <p align="center" width="100%">
-    <img class="image--with-border" src="_images/initial-leftright.png" alt="Initial Left-right">
+    <img class="image--with-border" src="_images/initial-leftright.png" alt="Initial Block - Image Left, Text Right">
 </p>
 
 ## Authorable properties

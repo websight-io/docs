@@ -1,19 +1,19 @@
-# Right-left
+# Block - Image Right, Text Left
 
 _Since_: 0.4.19
 
 [//]: # (TODO add component groups info)
 
-Right-left section is a ready-to-use component split into two parts, a title and a description
+_Block - Image Right, Text Left_ section is a ready-to-use component split into two parts, a title and a description
 is shown on the left-hand side while an image can be found on the right-hand side.
 
 ## Usage
 
-Drag & drop Right-left component from Kyanite Sections to the page directly, as the component already
+Drag & drop _Block - Image Right, Text Left_ component from Kyanite Sections to the page directly, as the component already
 contains a Section component.
 After adding it to the page, it should look like this:
 <p align="center" width="100%">
-    <img class="image--with-border" src="_images/initial-rightleft.png" alt="Initial Right-left">
+    <img class="image--with-border" src="_images/initial-rightleft.png" alt="Initial Block - Image Right, Text Left">
 </p>
 
 ## Authorable properties

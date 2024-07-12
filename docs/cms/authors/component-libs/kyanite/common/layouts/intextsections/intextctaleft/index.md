@@ -9,7 +9,7 @@
     Remove this comment from the resulting page.
 -->
 
-# In-text CTA (left alignment)
+# CTA Card - Left-aligned Text
 
 [//]: # (TODO write an article for kyanite/common/components/layouts/intextctaleft )
 

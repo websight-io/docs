@@ -1,15 +1,15 @@
-# Social Proof Item
+# Social Proof Card
 
 _Since_: 0.4.19
 
 [//]: # (TODO add component groups info)
 
-Social Proof Item section is a ready-to-use component that is designed for the authors to be
+_Social Proof Card_ section is a ready-to-use component that is designed for the authors to be
 able to extend the <a href="../socialproof">Social Proof</a> section with additional proofs.
 
 ## Usage
 
-Drag & drop Social Proof Item component from Kyanite In-Text Sections to a Carousel Item component
+Drag & drop _Social Proof Card_ component from Kyanite In-Text Sections to a Carousel Item component
 inside a previously placed Social Proof section.
 After adding it to the carousel, it should look like this:
 <p align="center" width="100%">

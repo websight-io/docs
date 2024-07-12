@@ -1,16 +1,16 @@
-# Mid-text CTA
+# CTA Card - Text with Eyebrow
 
 _Since_: 0.4.19
 
 [//]: # (TODO add component groups info)
 
-Mid-text CTA section is a ready-to-use component that is designed to use between paragraphs. It is
+_CTA Card - Text with Eyebrow_ section is a ready-to-use component that is designed to use between paragraphs. It is
 basically a Card component with some text used to raise the attention of the user and 
 possibly redirect them.
 
 ## Usage
 
-Drag & drop Mid-text CTA component from Kyanite In-Text Sections to a Section or a Container.
+Drag & drop _CTA Card - Text with Eyebrow_ component from Kyanite In-Text Sections to a Section or a Container.
 After adding it to the page, it should look like this:
 <p align="center" width="100%">
     <img class="image--with-border" src="_images/initial-midtextcta.png" alt="Initial Mid-text CTA">

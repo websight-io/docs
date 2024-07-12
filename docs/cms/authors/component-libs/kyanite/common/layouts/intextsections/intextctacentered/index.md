@@ -9,7 +9,7 @@
     Remove this comment from the resulting page.
 -->
 
-# In-text CTA (centered)
+# CTA Card - Centered Text
 
 [//]: # (TODO write an article for kyanite/common/components/layouts/intextctacentered )
 

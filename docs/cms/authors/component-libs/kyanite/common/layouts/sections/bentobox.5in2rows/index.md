@@ -9,7 +9,7 @@
     Remove this comment from the resulting page.
 -->
 
-# Bento box 5 in 2 rows
+# Bento Box 5 in 2 Rows
 
 [//]: # (TODO write an article for kyanite/common/components/layouts/bentobox.5in2rows )
 

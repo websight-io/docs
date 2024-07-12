@@ -1,16 +1,16 @@
-# In-text EAD
+# CTA Card - Image and Text
 
 _Since_: 0.4.19
 
 [//]: # (TODO add component groups info)
 
-In-ext EAD section is a ready-to-use component that is designed to use between paragraphs. It is
+_CTA Card - Image and Text_ section is a ready-to-use component that is designed to use between paragraphs. It is
 basically a Card component with an image on the left and text on the right side, all used
 to raise the attention of the user and possibly redirect them.
 
 ## Usage
 
-Drag & drop In-text EAD component from Kyanite In-Text Sections to a Section or a Container.
+Drag & drop _CTA Card - Image and Text_ from Kyanite In-Text Sections to a Section or a Container.
 After adding it to the page, it should look like this:
 <p align="center" width="100%">
     <img class="image--with-border" src="_images/initial-intextead.png" alt="Initial In-text EAD">
