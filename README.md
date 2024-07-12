@@ -1,4 +1,4 @@
-# WebS[.idea](.idea)ight.io documentation
+# WebSight.io documentation
 WebSight documentation created using [MkDocs Material](https://squidfunk.github.io/mkdocs-material/getting-started/) project.
 
 ## Setup
