@@ -9,9 +9,9 @@
     Remove this comment from the resulting page.
 -->
 
-# Put component name here
+# Panel
 
-[//]: # (TODO write an article for COMPONENT_PATH_HERE )
+[//]: # (TODO write an article for kyanite/common/components/panel and kyanite/common/components/panel/panelblock and kyanite/common/components/panel/paneltabs and kyanite/common/components/panel/paneltabs/paneltab and kyanite/common/components/panel/paneltabs/paneltabcontent)
 
 _Since_: Kyanite version when the component was introduced.
 

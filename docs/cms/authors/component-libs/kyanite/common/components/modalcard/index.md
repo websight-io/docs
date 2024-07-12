@@ -9,9 +9,9 @@
     Remove this comment from the resulting page.
 -->
 
-# Put component name here
+# Modal card
 
-[//]: # (TODO write an article for COMPONENT_PATH_HERE )
+[//]: # (TODO write an article for kyanite/common/components/modalcard and kyanite/common/components/modalcard/modalcardcontent and kyanite/common/components/modalcard/modalcardfooter)
 
 _Since_: Kyanite version when the component was introduced.
 

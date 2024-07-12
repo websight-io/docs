@@ -1,4 +1,8 @@
 nav:
-  - Blog Article Author Bio: blogarticleauthorbio
+  #- Blog Article Header: blogarticleheader
+  #- Table of Contents: blogarticletableofcontents
+  #- Back Button: blogpostbackbutton
+  #- Featured Blog Article: featuredblogarticle
   - Blog List: bloglist
   - Quote: quote
+  - Blog Article Author Bio: blogarticleauthorbio

@@ -9,9 +9,9 @@
     Remove this comment from the resulting page.
 -->
 
-# Put component name here
+# Breadcrumb
 
-[//]: # (TODO write an article for COMPONENT_PATH_HERE )
+[//]: # (TODO write an article for kyanite/common/components/breadcrumb and kyanite/common/components/breadcrumb/breadcrumbitem)
 
 _Since_: Kyanite version when the component was introduced.
 

@@ -9,9 +9,9 @@
     Remove this comment from the resulting page.
 -->
 
-# Put component name here
+# Carousel
 
-[//]: # (TODO write an article for COMPONENT_PATH_HERE )
+[//]: # (TODO write an article for kyanite/common/components/carousel and kyanite/common/components/carousel/carouselitem )
 
 _Since_: Kyanite version when the component was introduced.
 

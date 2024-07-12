@@ -9,3 +9,7 @@ The Kyanite library currently consists of two groups of components:
 * [Common](./common) - basic components and page templates
 * [Blogs](./blogs) - built upon Commons, 
 includes components and page templates serving for easy creation of blog articles
+
+[//]: # (TODO think over division into layouts/non-layouts, because 'Kyanite layouts' are not actually layouts in the UI)
+[//]: # (TODO should columns be in a separate 'Kyanite Columns' group?)
+[//]: # (TODO should featuredblogarticle be in 'Kyanite Components' group?)

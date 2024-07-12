@@ -9,9 +9,9 @@
     Remove this comment from the resulting page.
 -->
 
-# Put component name here
+# Back button
 
-[//]: # (TODO write an article for COMPONENT_PATH_HERE )
+[//]: # (TODO create an article for kyanite/blogs/components/blogpostbackbutton)
 
 _Since_: Kyanite version when the component was introduced.
 

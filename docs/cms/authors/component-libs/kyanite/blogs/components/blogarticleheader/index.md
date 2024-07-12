@@ -9,9 +9,9 @@
     Remove this comment from the resulting page.
 -->
 
-# Put component name here
+# Blog Article Header
 
-[//]: # (TODO write an article for COMPONENT_PATH_HERE )
+[//]: # (TODO create an article for kyanite/blogs/components/blogarticleheader)
 
 _Since_: Kyanite version when the component was introduced.
 

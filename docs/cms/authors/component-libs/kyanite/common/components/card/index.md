@@ -9,9 +9,9 @@
     Remove this comment from the resulting page.
 -->
 
-# Put component name here
+# Card
 
-[//]: # (TODO write an article for COMPONENT_PATH_HERE )
+[//]: # (TODO write an article for kyanite/common/components/card and kyanite/common/components/card/cardcontent)
 
 _Since_: Kyanite version when the component was introduced.
 

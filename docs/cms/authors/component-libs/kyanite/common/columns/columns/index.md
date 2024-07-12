@@ -9,15 +9,12 @@
     Remove this comment from the resulting page.
 -->
 
-# Put component name here
+# Columns
 
-[//]: # (TODO write an article for COMPONENT_PATH_HERE )
+[//]: # (TODO write an article for kyanite/common/components/columns and kyanite/common/components/columns/column)
 
 _Since_: Kyanite version when the component was introduced.
-
 _Group_: Link to the group that component belongs to
-
-_Allowed children_: List allowed children, if relevant
 
 Add short component description.
 
