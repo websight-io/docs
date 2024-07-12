@@ -1,4 +1,7 @@
 nav:
-- In-text EAD: intextead
-- Mid-text CTA: midtextcta
-- Social Proof Item: socialproofitem
+  - In-text EAD: intextead
+  - Mid-text CTA: midtextcta
+  #- CTA centered: intextctacentered
+  #- CTA left: intextctaleft
+  #- 2 in 1 row: 2in1row
+  - Social Proof Item: socialproofitem

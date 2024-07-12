@@ -1,6 +1,6 @@
 nav:
   - Components: components
-  - Containers: containers
+  #- Elements: elements
   - Layouts: layouts
   - Page templates: templates
-  - Component groups: groups
+  #- Component groups: groups
