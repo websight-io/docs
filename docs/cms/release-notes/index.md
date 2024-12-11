@@ -1,5 +1,65 @@
 # WebSight CMS release notes
 
+## 1.25.0 <small>Sep 18, 2024</small>
+
+**Artifact Repository**
+
+The artifact repository has been migrated from `https://repo.websight.io/maven/` to `artifactregistry://europe-west1-maven.pkg.dev/websight-io/websight-maven-releases`. To update to the new version, follow these steps:
+
+1. Update the repository in your pom.xml file:
+
+Replace the old repository configuration:
+
+```xml
+<repository>
+  <id>websight-repo</id>
+  <url>https://repo.websight.io/maven/</url>
+  <snapshots>
+    <enabled>false</enabled>
+  </snapshots>
+</repository>
+```
+With the new configuration:
+```xml
+<repository>
+  <id>artifact-registry</id>
+  <url>artifactregistry://europe-west1-maven.pkg.dev/websight-io/websight-maven-releases</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>false</enabled>
+  </snapshots>
+</repository>
+```
+2. Add the `.mvn/extensions.xml` file to your project:
+
+```xml
+<extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
+  <extension>
+    <groupId>com.google.cloud.artifactregistry</groupId>
+    <artifactId>artifactregistry-maven-wagon</artifactId>
+    <version>2.2.1</version>
+  </extension>
+</extensions>
+```
+
+3. Update all the WebSight dependencies to the latest versions.
+
+**Maintenance Management**
+
+- Introduced a new Maintenance module, which provides implementations for managing and maintaining an Apache Jackrabbit OAK repository within Apache Sling.
+
+**Page Editor**
+
+- Resolved an issue where the publish overlay wouldn’t close after an action was selected. 
+- Fixed a bug where the sidebar was refreshed after each change, when working with components that trigger a full page refresh.
+
+**Page and Asset Management**
+
+- Improved the clarity of reference search modal messages for better user experience.
+
 ## 1.24.0 <small>Feb 28, 2024</small>
 
 **Page and Asset Management**
